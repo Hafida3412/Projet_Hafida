@@ -10,8 +10,9 @@ use Model\Entities\Utilisateur;
 
 <?php
 
-foreach($logements as $logement ){ ?>
-    <p><a href="#"><?= $logement->getNomType()->getId() ?></a> de <?= $logement->getUtilisateur()->getId() ?></p>
-<?php 
-
+foreach($logements as $logement){
+    echo "<p><a href='#'>".$logement->getNomType()->getId()."</a> de ".$logement->getUtilisateur()->getId()."</p>";
 }
+?>
+
+

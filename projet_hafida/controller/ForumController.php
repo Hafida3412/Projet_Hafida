@@ -27,20 +27,5 @@ class ForumController extends AbstractController implements ControllerInterface{
         ];
     }
 
-    public function listLogementsByAnnnonce($id) {
-
-        $logemenentManager = new LogementManager();
-        $annonceManager = new AnnonceManager();
-        $annonce = $annonceManager->findOneById($id);
-        $logements = $logementManager->findLogementsByAnnonce($id);
-
-        return [
-            "view" => VIEW_DIR."forum/listLogements.php",
-            "meta_description" => "Liste des logements par annonce : ".$annonce,
-            "data" => [
-                "annonce" => $annonce,
-                "logements" => $logements
-            ]
-        ];
-    }
+    
 }

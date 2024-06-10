@@ -8,11 +8,10 @@
 <h1>Liste des annonces</h1>
 
 <?php
-foreach($annonces as $annonce){ ?>
-    <p><a href="index.php?ctrl=forum&action=listLogementsByAnnonce&id=<?= $annonce->getId() ?>"><?= $annonce->getUtilisateur()->getId() ?></a></p>
-   
-<?php 
 
+foreach($annonces as $annonce){ 
+    echo "<p>"."Annonce du ".$annonce->getDateCreation()."<br> Nb de chats: ".$annonce->getNbChat()."<br>
+    Date de début: ".$annonce->getDateDebut()."<br>
+    Date de fin: ".$annonce->getDateFin()."<br> Description: ".$annonce->getDescription()."</p><br>";
 }
-
 
