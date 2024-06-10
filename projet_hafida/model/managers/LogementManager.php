@@ -26,7 +26,7 @@ class LogementManager extends Manager{
             DAO::select($sql, ['id' => $id]), 
             $this->className
         );
-         }
+    }
     
 }
 

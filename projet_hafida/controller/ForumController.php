@@ -6,6 +6,7 @@ use App\AbstractController;
 use App\ControllerInterface;
 use Model\Managers\AnnonceManager;
 use Model\Managers\LogementManager;
+use Model\Managers\UtilisateurManager;
 
 class ForumController extends AbstractController implements ControllerInterface{
 
