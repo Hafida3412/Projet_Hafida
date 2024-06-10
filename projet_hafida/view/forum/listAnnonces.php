@@ -6,7 +6,7 @@
 
 <?php
 foreach($annonces as $annonce){ ?>
-    <p><a href="index.php?ctrl=forum&action=listTopicsByCategory&id=<?= $category->getId() ?>"><?= $category->getName() ?></a></p>
+    <p><a href="index.php?ctrl=forum&action=listLogementsByAnnonce&id=<?= $annonce->getId() ?>"><?= $annonce->getdateCreation() ?></a></p>
 <?php }
 
 
