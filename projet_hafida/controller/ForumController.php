@@ -26,12 +26,12 @@ class ForumController extends AbstractController implements ControllerInterface{
         ];
     }
 
-    public function listLogementssByAnnnonce($id) {
+    public function listLogementsByAnnnonce($id) {
 
         $logemenentManager = new LogementManager();
         $annonceManager = new AnnonceManager();
         $annonce = $annonceManager->findOneById($id);
-        $logements = $logementManager->findTopicsByCategory($id);
+        $logements = $logementManager->findLogementsByAnnonce($id);
 
         return [
             "view" => VIEW_DIR."forum/listLogements.php",
