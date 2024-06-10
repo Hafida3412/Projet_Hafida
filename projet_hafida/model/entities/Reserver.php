@@ -16,6 +16,8 @@ final class Reserver extends Entity{
     private $nbEnfants;
     private $paiement;
     private $question;
+    private $utilisateur;
+    private $annonce;
 
     public function __construct($data){         
         $this->hydrate($data);  
@@ -102,6 +104,30 @@ final class Reserver extends Entity{
     public function setQuestion($question)
     {
         $this->question = $question;
+
+        return $this;
+    }
+
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur($utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    public function getAnnonce()
+    {
+        return $this->annonce;
+    }
+
+    public function setAnnonce($annonce)
+    {
+        $this->annonce = $annonce;
 
         return $this;
     }

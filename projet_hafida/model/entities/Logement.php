@@ -15,6 +15,8 @@ final class Logement extends Entity{
     private $cp;
     private $ville;
     private $image;
+    private $type;
+    private $utilisateur;
 
     public function __construct($data){         
         $this->hydrate($data);  
@@ -26,7 +28,6 @@ final class Logement extends Entity{
         return $this->id;
     }
 
-    
     public function setId($id)
     {
         $this->id = $id;
@@ -34,13 +35,11 @@ final class Logement extends Entity{
         return $this;
     }
 
-  
     public function getNbChambre()
     {
         return $this->nbChambre;
     }
 
-   
     public function setNbChambre($nbChambre)
     {
         $this->nbChambre = $nbChambre;
@@ -54,7 +53,6 @@ final class Logement extends Entity{
         return $this->adresse;
     }
 
- 
     public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
@@ -67,7 +65,6 @@ final class Logement extends Entity{
         return $this->cp;
     }
 
-   
     public function setCp($cp)
     {
         $this->cp = $cp;
@@ -75,13 +72,11 @@ final class Logement extends Entity{
         return $this;
     }
 
- 
     public function getVille()
     {
         return $this->ville;
     }
 
-  
     public function setVille($ville)
     {
         $this->ville = $ville;
@@ -94,10 +89,34 @@ final class Logement extends Entity{
         return $this->image;
     }
 
-  
     public function setImage($image)
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur($utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

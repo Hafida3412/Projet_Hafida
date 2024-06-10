@@ -12,6 +12,8 @@ final class Avis extends Entity{
     private $id;
     private $dateAvis;
     private $commentaire;
+    private $logement;
+    private $utilisateur;
 
     public function __construct($data){         
         $this->hydrate($data);        
@@ -51,6 +53,31 @@ final class Avis extends Entity{
     public function setCommentaire($commentaire)
     {
         $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    public function getLogement()
+    {
+        return $this->logement;
+    }
+
+ 
+    public function setLogement($logement)
+    {
+        $this->logement = $logement;
+
+        return $this;
+    }
+
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur($utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

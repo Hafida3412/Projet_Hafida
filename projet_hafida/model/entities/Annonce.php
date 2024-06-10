@@ -16,6 +16,8 @@ final class Annonce extends Entity{
     private $dateFin;
     private $description;
     private $estValide;
+    private $logement;
+    private $utilisateur;
 
 
     // chaque entité aura le même constructeur grâce à la méthode hydrate (issue de App\Entity)
@@ -115,6 +117,30 @@ final class Annonce extends Entity{
     public function setEstValide($estValide)
     {
         $this->estValide = $estValide;
+
+        return $this;
+    }
+
+    public function getLogement()
+    {
+        return $this->logement;
+    }
+
+    public function setLogement($logement)
+    {
+        $this->logement = $logement;
+
+        return $this;
+    }
+
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur($utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
