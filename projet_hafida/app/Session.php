@@ -3,23 +3,23 @@ namespace App;
 
 class Session{
 
-    private static $categories = ['error', 'success'];
+    private static $annonces = ['error', 'success'];
 
     /**
-    *   ajoute un message en session, dans la catégorie $categ
+    *   ajoute un message en session, dans la catégorie $ann
     */
-    public static function addFlash($categ, $msg){
-        $_SESSION[$categ] = $msg;
+    public static function addFlash($ann, $msg){
+        $_SESSION[$ann] = $msg;
     }
 
     /**
-    *   renvoie un message de la catégorie $categ, s'il y en a !
+    *   renvoie un message de la catégorie $ann, s'il y en a !
     */
-    public static function getFlash($categ){
+    public static function getFlash($ann){
         
-        if(isset($_SESSION[$categ])){
-            $msg = $_SESSION[$categ];  
-            unset($_SESSION[$categ]);
+        if(isset($_SESSION[$ann])){
+            $msg = $_SESSION[$ann];  
+            unset($_SESSION[$ann]);
         }
         else $msg = "";
         
