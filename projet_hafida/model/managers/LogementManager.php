@@ -20,11 +20,13 @@ class LogementManager extends Manager{
         $sql = "SELECT * 
                 FROM ".$this->tableName." t 
                 WHERE t.annonce_id = :id";
-       
+        
         // la requête renvoie plusieurs enregistrements --> getMultipleResults
         return  $this->getMultipleResults(
             DAO::select($sql, ['id' => $id]), 
             $this->className
         );
-    }
+         }
+    
 }
+
