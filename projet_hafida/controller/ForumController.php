@@ -37,8 +37,8 @@ class ForumController extends AbstractController implements ControllerInterface{
             "view" => VIEW_DIR."forum/listLogements.php",
             "meta_description" => "Liste des logements par annonce : ".$annonce,
             "data" => [
-                "category" => $annonce,
-                "topics" => $logements
+                "annonce" => $annonce,
+                "logements" => $logements
             ]
         ];
     }
