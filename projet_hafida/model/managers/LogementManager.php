@@ -1,8 +1,6 @@
 <?php
 namespace Model\Managers;
 
-
-
 use App\Manager;
 use App\DAO;
 
@@ -16,5 +14,8 @@ class LogementManager extends Manager{
         parent::connect();
     }
     
-}
+        
+    }
+
+
 

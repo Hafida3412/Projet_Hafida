@@ -14,4 +14,6 @@ class AnnonceManager extends Manager{
     public function __construct(){
         parent::connect();
     }
+    // Ajoutez une méthode pour récupérer tous les avis liés à une annonce
+    
 }

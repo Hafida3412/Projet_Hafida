@@ -2,8 +2,7 @@
 $annonce = $result["data"]['annonce'];
 $logement = $annonce->getLogement(); 
 $type = $logement->getType()->getNomType();
-// Modifier pour obtenir tous les avis du logement
-//$avis = $logement->getAvis();
+
 ?>
 
 
@@ -20,3 +19,5 @@ $type = $logement->getType()->getNomType();
 <p>Ville: <?= $logement->getVille() ?></p>
 <img src="<?= $logement->getImage() ?>" alt="Image du logement">
 
+
+<p><a href="index.php?ctrl=forum&action=listAvisByLogement&id=<?= $logement->getId()?>">Voir les avis pour ce logement</a></p>
