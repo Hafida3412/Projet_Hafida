@@ -13,4 +13,14 @@ class AvisManager extends Manager{
     public function __construct(){
         parent::connect();
     }
+    public function findAllByLogementId($id){
+        $sql = "SELECT * 
+                FROM avis 
+                WHERE logement_id = :id";
+    
+        return  $this->getMultipleResults(
+            DAO::select($sql, ['id' => $id]), 
+            "Model\Entities\Avis"
+        );
+    }
 }

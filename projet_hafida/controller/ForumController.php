@@ -7,6 +7,8 @@ use App\ControllerInterface;
 use Model\Managers\AnnonceManager;
 use Model\Managers\LogementManager;
 use Model\Managers\UtilisateurManager;
+use Model\Managers\AvisManager;
+
 
 class ForumController extends AbstractController implements ControllerInterface{
 
@@ -40,6 +42,23 @@ class ForumController extends AbstractController implements ControllerInterface{
         ];
     }
     
-   
+    public function listAvisByLogement($id){
+        $logementManager = new LogementManager();
+        $avisManager = new AvisManager();
 
-}
+        $logement = $logementManager->findOneById($id); // Récupérer les informations sur le logement
+        $avis = $avisManager->findAllByLogementId($id); // Modifier cette méthode pour qu'elle récupère les avis par ID de logement
+
+        return [
+            "view" => VIEW_DIR."logement/listAvis.php",
+            "meta_description" => "Liste des avis pour le logement ".$logement->getNom(),
+            "data" => [
+                "logement" => $logement,
+                "avis" => $avis
+            ]
+        ];
+    }
+
+} 
+
+
