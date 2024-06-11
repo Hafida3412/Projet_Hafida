@@ -20,4 +20,12 @@ $type = $logement->getType()->getNomType();
 <img src="<?= $logement->getImage() ?>" alt="Image du logement">
 
 
-<p><a href="index.php?ctrl=forum&action=listAvisByLogement&id=<?= $logement->getId()?>">Voir les avis pour ce logement</a></p>
+<p>Avis</p>
+<?php if(!empty($avis)): ?>
+    <?php foreach($avis as $avi): ?>
+        <p>Date de l'avis: <?= $avi->getDateAvis() ?></p>
+        <p>Commentaire: <?= $avi->getCommentaire() ?></p>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p>Aucun avis disponible.</p>
+<?php endif; ?>

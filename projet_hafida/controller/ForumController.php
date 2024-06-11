@@ -34,14 +34,19 @@ class ForumController extends AbstractController implements ControllerInterface{
         $annonceManager = new AnnonceManager();
         $annonce = $annonceManager->findOneById($id);
         
+        $avisManager = new AvisManager();
+        $avis = $annonceManager->findAvisByAnnonce($id);
+        
         return [
             "view" => VIEW_DIR."forum/detailsAnnonce.php",
             "meta_description" => "Détails de l'annonce",
             "data" => [
-                "annonce" => $annonce
+                "annonce" => $annonce,
+                "avis" => $avis
             ]
         ];
     }  
+
 }
 
 
