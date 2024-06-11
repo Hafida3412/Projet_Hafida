@@ -14,8 +14,8 @@ class AnnonceManager extends Manager{
     public function __construct(){
         parent::connect();
     }
-    // Ajoutez une méthode pour récupérer tous les avis liés à une annonce
-    public function findAvisByAnnonce($id){
+    // On ajoute une méthode pour récupérer tous les avis liés à une annonce
+    public function findAvisByAnnonce($id){//requête pour récupérer les avis:
         $sql = "SELECT a.*
                 FROM avis a
                 WHERE a.logement_id = :id";
