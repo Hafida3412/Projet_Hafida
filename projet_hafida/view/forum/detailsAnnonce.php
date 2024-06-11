@@ -5,7 +5,6 @@ $type = $logement->getType()->getNomType();
 
 ?>
 
-
 <h1>Détails de l'annonce</h1>
 
 <p>Annonce de <?= $annonce->getUtilisateur()->getPseudo() ?></p>
@@ -20,7 +19,7 @@ $type = $logement->getType()->getNomType();
 <img src="<?= $logement->getImage() ?>" alt="Image du logement">
 
 
-<p>Avis</p>
+<p>Avis:</p>
 <?php if(!empty($avis)): ?>
     <?php foreach($avis as $avi): ?>
         <p>Date de l'avis: <?= $avi->getDateAvis() ?></p>
