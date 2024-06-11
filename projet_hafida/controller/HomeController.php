@@ -30,17 +30,4 @@ class HomeController extends AbstractController implements ControllerInterface {
         ];
     }
 
-    public function listLogements(){
-        $manager = new LogementManager();
-        $logements = $manager->findAll(['id_logement', 'DESC']);
-
-        return [
-            "view" => VIEW_DIR."logements.php",
-            "meta_description" => "Liste de tous les logements",
-            "data" => [
-                "logements" => $logements
-            ]
-        ];
-    }
 }
-

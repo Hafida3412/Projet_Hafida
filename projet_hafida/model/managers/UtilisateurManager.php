@@ -13,4 +13,5 @@ class UtilisateurManager extends Manager{
     public function __construct(){
         parent::connect();
     }
+
 }

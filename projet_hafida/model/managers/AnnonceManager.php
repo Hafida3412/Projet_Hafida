@@ -2,7 +2,8 @@
 namespace Model\Managers;
 
 use App\Manager;
-use App\DAO;
+use App\DAO;use Model\Managers\LogementManager;
+use Model\Managers\UtilisateurManager;
 
 class AnnonceManager extends Manager{
 
