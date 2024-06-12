@@ -23,6 +23,6 @@ $type = $logement->getTypeLogement()->getNomType();
 <p><br>Avis:</p><br>
 <?php
 foreach($avis as $avi){ ?> <!--"avi" au singulier car on récupére un élément-->
-   <p><?= $avi->getCommentaire() ?> <?= (date('d-m-Y ', strtotime($avi->getDateAvis()))) ?> par <?= $avi->getUtilisateur()?></p>
+   <p><?= $avi->getCommentaire() ?> <?= ((date('d-m-Y ', strtotime($avi->getDateAvis())))) ?> par <?= $avi->getUtilisateur()?></p>
 <?php 
 }
