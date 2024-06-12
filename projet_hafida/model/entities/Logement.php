@@ -15,7 +15,7 @@ final class Logement extends Entity{
     private $cp;
     private $ville;
     private $image;
-    private $type;
+    private $typeLogement;
     private $utilisateur;
 
     public function __construct($data){         
@@ -95,19 +95,6 @@ final class Logement extends Entity{
 
         return $this;
     }
-
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
     
     public function getUtilisateur()
     {
@@ -117,6 +104,26 @@ final class Logement extends Entity{
     public function setUtilisateur($utilisateur)
     {
         $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of typeLogement
+     */ 
+    public function getTypeLogement()
+    {
+        return $this->typeLogement;
+    }
+
+    /**
+     * Set the value of typeLogement
+     *
+     * @return  self
+     */ 
+    public function setTypeLogement($typeLogement)
+    {
+        $this->typeLogement = $typeLogement;
 
         return $this;
     }

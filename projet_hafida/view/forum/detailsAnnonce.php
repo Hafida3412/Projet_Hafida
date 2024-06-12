@@ -1,7 +1,7 @@
 <?php
 $annonce = $result["data"]['annonce'];
 $logement = $annonce->getLogement(); 
-$type = $logement->getType()->getNomType();
+$type = $logement->getTypeLogement()->getNomType();
 
 ?>
 
@@ -13,7 +13,7 @@ $type = $logement->getType()->getNomType();
 <p>Date de fin: <?= (date('d-m-Y ', strtotime($annonce->getDateFin()))) ?></p>
 <p>Description: <?= $annonce->getDescription() ?></p>
 
-<p>Type de logement: <?= $logement->getType()->getNomType() ?></p>
+<p>Type de logement: <?= $logement->getTypeLogement() ?></p>
 <p>Nombre de chambres: <?= $logement->getNbChambre() ?></p>
 <p>Ville: <?= $logement->getVille() ?></p>
 <img src="<?= $logement->getImage() ?>" alt="Image du logement">
