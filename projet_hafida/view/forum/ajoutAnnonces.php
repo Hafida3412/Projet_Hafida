@@ -8,8 +8,10 @@
     <body>
 
     <h1>Déposer une annonce</h1>
-
-    <form action="index.php?ctrl=forum&action=ajoutAnnonces&id" method="post">
+    
+    <?php
+  ?> 
+    <form action="index.php?ctrl=forum&action=ajoutAnnonces&id<?= $id ?>" method="post">
         <label for="dateDebut">Date début</label>
         <input type="date" name="dateDebut"><br>
 
@@ -29,9 +31,8 @@
         <textarea name="description" rows="4" cols="50"></textarea><br>
 
         <input type="submit" name="submitAnnonce" value="Déposer l'annonce">
-
     </form>
-
+    
     </body>
     
 </html>
