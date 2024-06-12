@@ -66,7 +66,7 @@ class ForumController extends AbstractController implements ControllerInterface{
         
         // On vérifie que toutes les données nécessaires sont présentes
         if($dateDebut && $dateFin && $typeLogement && $nbChambre && $nbChat && $description){
-        $annonce_id = $annonceManager->add([
+        $annonceManager->add([
             "dateDebut" => $dateDebut,
             "dateFin"  => $dateFin,
             "typeLogement" => $typeLogement,
@@ -75,10 +75,10 @@ class ForumController extends AbstractController implements ControllerInterface{
             "description"  => $description,
             //ON AJOUTE EGALEMENT L UTILISATEUR QUI CREE LE SUJET
             "utilisateur_id" => Session::getUtilisateur()->getId(),//ça reprend le fichier session/ on écrit Session :: car ça reprend la session "static" utilisateur
-            "logement_id" => $id,
+            "logement_id"=> $id
         ]);
         // Rediriger après l'ajout de l'annonce
-        $this->redirectTo("forum", "listAnnonces", $id);
+        $this->redirectTo("forum", "index", $id);
         }
 
     }
