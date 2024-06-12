@@ -9,7 +9,7 @@
 
     <h1>Déposer une annonce</h1>
 
-    <form action="index.php?ctrl=forum&action=" method="post">
+    <form action="index.php?ctrl=forum&action==ajoutAnnonces" method="post">
         <label for="dateDebut">Date début</label>
         <input type="date" name="dateDebut"><br>
 
@@ -25,10 +25,10 @@
         <label for="NbChat">Nombre de chat:</label>
         <input type="text" name="text"><br>
 
-        <label for="Description">Description</label>
-        <input type="text" name="text"><br>
-        
-        <input type="submit" name="submitAnnonce" value="Valider">
+        <label for="description">Description :</label>
+        <textarea name="description" rows="4" cols="50"></textarea><br>
+
+        <input type="submit" name="submitAnnonce" value="Déposer l'annonce">
 
     </form>
 

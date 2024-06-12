@@ -51,17 +51,47 @@ class ForumController extends AbstractController implements ControllerInterface{
     }  
     
 
-    //Ajouter/Déposer une annonce
-    //public function ajoutAnnonces($id){
-    //    $annonceManager = new AnnonceManager();
+    //AJOUTER/DEPOSER UNE ANNONCE
+    public function ajoutAnnonces($id){
+
+        $annonceManager = new AnnonceManager();
+
+        if(isset($_POST["submitAnnonce"])){
+            $dateDebut = (filter_input(INPUT_POST, 'dateDebut', FILTER_SANITIZE_SPECIAL_CHARS));
+            $dateFin = (filter_input(INPUT_POST, 'dateFin', FILTER_SANITIZE_SPECIAL_CHARS));
+            $nbChambre = (filter_input(INPUT_POST, 'nbChambre', FILTER_VALIDATE_INT));
+            $nbChat = (filter_input(INPUT_POST, 'nbChat', FILTER_VALIDATE_INT));
+            $description = (filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS));
+        
+        // On vérifie que toutes les données nécessaires sont présentes
+        if($dateDebut && $dateFin && $nbChambre && $nbChat && $description){
+        $annonce = $annonceManager->add([
+            "dateDebut" => $dateDebut,
+            "dateFin"  => $dateFin,
+            "nbChambre"  => $nbChambre,
+            "nbChat"  => $nbChat,
+            "description"  => $description,
+            //ON AJOUTE EGALEMENT L UTILISATEUR QUI CREE LE SUJET
+            "utilisateur_id" => Session::getUtilisateur()->getId(),//ça reprend le fichier session/ on écrit Session :: car ça reprend la session "static" utilisateur
+        ]);
+        // Rediriger après l'ajout de l'annonce
+        $this->redirectTo("forum", "index");
+        }
+
+    }
+         // Afficher le formulaire de dépôt d'annonce
+        return [
+        "view" => VIEW_DIR."forum/ajoutAnnonces.php",
+        "meta_description" => "Déposer une annonce"
+    ];
+        }    
+    }
+
     
-    //if(isset($POST["submitAnnonce"])){
-    //    $dateDebut = filter_input(INPUT_POST, 'dateDebut', FILTER_VALIDATE_REGEXP);
-   // }
 
 
-   // }
-}
+    
+
 
 
  
