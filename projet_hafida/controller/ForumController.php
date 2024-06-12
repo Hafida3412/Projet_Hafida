@@ -49,10 +49,18 @@ class ForumController extends AbstractController implements ControllerInterface{
             ]
         ];
     }  
+    
 
-    public function addAnnonces($id){
-        
-    }
+    //Ajouter/Déposer une annonce
+    //public function ajoutAnnonces($id){
+    //    $annonceManager = new AnnonceManager();
+    
+    //if(isset($POST["submitAnnonce"])){
+    //    $dateDebut = filter_input(INPUT_POST, 'dateDebut', FILTER_VALIDATE_REGEXP);
+   // }
+
+
+   // }
 }
 
 
