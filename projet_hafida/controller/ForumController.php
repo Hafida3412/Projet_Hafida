@@ -59,23 +59,26 @@ class ForumController extends AbstractController implements ControllerInterface{
         if(isset($_POST["submitAnnonce"])){
             $dateDebut = (filter_input(INPUT_POST, 'dateDebut', FILTER_SANITIZE_SPECIAL_CHARS));
             $dateFin = (filter_input(INPUT_POST, 'dateFin', FILTER_SANITIZE_SPECIAL_CHARS));
+            $typeLogement = (filter_input(INPUT_POST, 'typeLogement', FILTER_SANITIZE_SPECIAL_CHARS));
             $nbChambre = (filter_input(INPUT_POST, 'nbChambre', FILTER_VALIDATE_INT));
             $nbChat = (filter_input(INPUT_POST, 'nbChat', FILTER_VALIDATE_INT));
             $description = (filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS));
         
         // On vérifie que toutes les données nécessaires sont présentes
-        if($dateDebut && $dateFin && $nbChambre && $nbChat && $description){
-        $annonce = $annonceManager->add([
+        if($dateDebut && $dateFin && $typeLogement && $nbChambre && $nbChat && $description){
+        $annonce_id = $annonceManager->add([
             "dateDebut" => $dateDebut,
             "dateFin"  => $dateFin,
+            "typeLogement" => $typeLogement,
             "nbChambre"  => $nbChambre,
             "nbChat"  => $nbChat,
             "description"  => $description,
             //ON AJOUTE EGALEMENT L UTILISATEUR QUI CREE LE SUJET
             "utilisateur_id" => Session::getUtilisateur()->getId(),//ça reprend le fichier session/ on écrit Session :: car ça reprend la session "static" utilisateur
+            "logement_id" => $id,
         ]);
         // Rediriger après l'ajout de l'annonce
-        $this->redirectTo("forum", "index");
+        $this->redirectTo("forum", "listAnnonces", $id);
         }
 
     }
