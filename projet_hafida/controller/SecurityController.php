@@ -25,7 +25,7 @@ class SecurityController extends AbstractController{
                  //VERIFIER LA VALIDITE DES FILTRES:
                  if($pseudo && $email && $pass1 && $pass2){
  
-                     // var_dump("ok");die;
+                     //var_dump("ok");die;
                      $userManager = new UtilisateurManager();
                      $utilisateur = $userManager->checkUserExists($email);//création de la function checkUserExists dans utilisateurManager pour vérifier si l'utilisateur existe
                  //SI L UTILISATEUR EXISTE
@@ -35,28 +35,28 @@ class SecurityController extends AbstractController{
                      } else {
                          //var_dump("utilisateur inexistant");die;
                          //insertion de l'utilisateur en BDD
-                         if($pass1 == $pass2 && strlen($pass1) >= 5) {//VERIFICATION QUE LES MDP SONT IDENTIQUES
+                    if($pass1 == $pass2 && strlen($pass1) >= 5) {//VERIFICATION QUE LES MDP SONT IDENTIQUES
                              
-                             $userManager->add([//on récupère la function add du fichier Manager
-                                 "pseudo" => $pseudo,
-                                 "email" => $email,
-                                 "password" => password_hash($pass1, PASSWORD_DEFAULT)
-                             ]);
- 
-                             //REDIRECTION APRES L INSCRIPTION
-                             header("Location: index.php?ctrl=security&action=login");
-                             exit;
-                         } else {
-                             header("Location: index.php?ctrl=security&action=register");
-                             exit;
-                             // $this->redirectTo("security","register")
-                         }
+                        $userManager->add([//on récupère la function add du fichier Manager
+                        "pseudo" => $pseudo,
+                        "email" => $email,
+                        "password" => password_hash($pass1, PASSWORD_DEFAULT)
+                        ]
+                    );
+                    //REDIRECTION APRES L INSCRIPTION
+                        // header("Location: index.php?ctrl=security&action=login");
+                        // exit;
+                     //} else {
+                          header("Location: index.php?ctrl=security&action=register");
+                         exit;
+                    // $this->redirectTo("security","register")
+                        }
                      }
                  }
              }
-              return [
-                 "view" => VIEW_DIR . "connexion/register.php",
-                 "meta_description" => "Formulaire d'inscription"
+                    return [
+                    "view" => VIEW_DIR . "connexion/register.php",
+                    "meta_description" => "Formulaire d'inscription"
              ];
      }  
     
