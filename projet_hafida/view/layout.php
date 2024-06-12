@@ -34,6 +34,7 @@
                                 <a href="index.php?ctrl=security&action=profile"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur()?></a>
                                 <a href="index.php?ctrl=security&action=logout">Déconnexion</a>
                                 <a href="index.php?ctrl=forum&action=index">Liste des annonces</a>
+                                <a href="index.php?ctrl=forum&action=index">Déposer une annonce</a>
                                 <?php
                             }
                             else{

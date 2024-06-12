@@ -50,6 +50,9 @@ class ForumController extends AbstractController implements ControllerInterface{
         ];
     }  
 
+    public function addAnnonces($id){
+        
+    }
 }
 
 
