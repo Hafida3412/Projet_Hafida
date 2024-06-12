@@ -43,35 +43,35 @@ class SecurityController extends AbstractController{
                 "password" => password_hash($pass1, PASSWORD_DEFAULT)
                  ]
         );
-      //REDIRECTION APRES L INSCRIPTION
+     //REDIRECTION APRES L INSCRIPTION
                header("Location: index.php?ctrl=security&action=login");
         exit;
-        //} else {
+        } else {
                header("Location: index.php?ctrl=security&action=register");
         exit;
         $this->redirectTo("security","register");
     }   
         }
     }
-            }
+            } 
         return [
                  "view" => VIEW_DIR . "connexion/register.php",
                  "meta_description" => "Formulaire d'inscription"
             ];
      }  
 
-         //MISE EN PLACE DE LA FONCTION SE CONNECTER
+    //MISE EN PLACE DE LA FONCTION SE CONNECTER
     public function login() {
 
         if(isset($_POST["submitLogin"])) {
    
-        //PROTECTION XSS (=FILTRES)
+    //PROTECTION XSS (=FILTRES)
             $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         if($email && $password) {//REQUETE PREPARE POUR LUTTER CTRE LES INJECTIONS SQL
         //var_dump("ok");die;
-        //si l'utilisateur existe
+    //si l'utilisateur existe
             $userManager = new UtilisateurManager();
             $utilisateur = $userManager->checkUserExists($email);
 
@@ -82,22 +82,22 @@ class SecurityController extends AbstractController{
         if(password_verify($password, $hash)){//VERIFICATION DU MDP
             $_SESSION["utilisateur"] = $utilisateur; //on stocke dans un tableau SESSION l'intégralité des infos du user
                 header("Location:index.php?ctrl=home&action=index");//SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D ACCUEIL
-        // Dans Forum, la redirection sera par exemple: header("Location: index.php?ctrl=home&action=index&id=");    
+    // Dans Forum, la redirection sera par exemple: header("Location: index.php?ctrl=home&action=index&id=");    
         exit;  
                     
         } else {
-        // Erreur d'adresse mail ou de mot de passe
+    // Erreur d'adresse mail ou de mot de passe
                 header("Location: index.php?ctrl=security&action=login");
         exit;
                 }
         } else {
-        // Utilisateur introuvable
+    // Utilisateur introuvable
                 header("Location: index.php?security&action=login");
         exit;
         }
     }
 
-        // Afficher le formulaire de connexion
+    // Afficher le formulaire de connexion
                 }
         return [
             "view" => VIEW_DIR . "connexion/login.php",
@@ -105,9 +105,10 @@ class SecurityController extends AbstractController{
         ];
 }
     
+    // MISE EN PLACE DE LA FONCTION LOGOUT
     public function logout () {
         session_unset();// Supprimer toutes les données de la session
-        // Redirection après la déconnexion
+    // Redirection après la déconnexion
         header("Location: index.php");
         exit;
         }
