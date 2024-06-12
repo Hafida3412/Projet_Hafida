@@ -82,7 +82,7 @@ class SecurityController extends AbstractController{
         if(password_verify($password, $hash)){//VERIFICATION DU MDP
             $_SESSION["utilisateur"] = $utilisateur; //on stocke dans un tableau SESSION l'intégralité des infos du user
                 header("Location:index.php?ctrl=home&action=index");//SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D ACCUEIL
-        //Dans Forum, la redirection sera par exemple: header("Location: index.php?ctrl=home&action=index&id=");    
+        // Dans Forum, la redirection sera par exemple: header("Location: index.php?ctrl=home&action=index&id=");    
         exit;  
                     
         } else {
@@ -105,5 +105,14 @@ class SecurityController extends AbstractController{
         ];
 }
     
-    public function logout () {}
-}
+    public function logout () {
+        session_unset();// Supprimer toutes les données de la session
+        // Redirection après la déconnexion
+        header("Location: index.php");
+        exit;
+        }
+    
+    }
+    
+    
+
