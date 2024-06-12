@@ -13,4 +13,17 @@ class AvisManager extends Manager{
     public function __construct(){
         parent::connect();
     }
+
+    // On ajoute une méthode pour récupérer tous les avis liés à une annonce
+    public function findAvisByLogement($id){//requête pour récupérer les avis:
+        $sql = "SELECT a.*
+                FROM avis a
+                WHERE a.logement_id = :id
+                ORDER BY dateAvis DESC";
+
+        return $this->getMultipleResults(
+            DAO::select($sql, ['id' => $id]), 
+            $this->className
+        );
+    }
 }

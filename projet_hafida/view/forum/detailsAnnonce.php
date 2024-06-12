@@ -1,5 +1,6 @@
 <?php
-$annonce = $result["data"]['annonce'];
+$annonce = $result["data"]['annonce'];//on récupère les annonces
+$avis = $result["data"]['avis'];//on récupère les avis
 $logement = $annonce->getLogement(); 
 $type = $logement->getTypeLogement()->getNomType();
 
@@ -19,12 +20,9 @@ $type = $logement->getTypeLogement()->getNomType();
 <img src="<?= $logement->getImage() ?>" alt="Image du logement">
 
 
-<p>Avis:</p>
-<?php if(!empty($avis)): ?>
-    <?php foreach($avis as $avi): ?>
-        <p>Date de l'avis: <?= $avi->getDateAvis() ?></p>
-        <p>Commentaire: <?= $avi->getCommentaire() ?></p>
-    <?php endforeach; ?>
-<?php else: ?>
-    <p>Aucun avis disponible.</p>
-<?php endif; ?>
+<p><br>Avis:</p><br>
+<?php
+foreach($avis as $avi){ ?> <!--"avi" au singulier car on récupére un élément-->
+   <p><?= $avi->getCommentaire() ?> <?= (date('d-m-Y ', strtotime($avi->getDateAvis()))) ?> par <?= $avi->getUtilisateur()?></p>
+<?php 
+}

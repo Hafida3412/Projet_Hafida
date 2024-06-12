@@ -33,15 +33,18 @@ class ForumController extends AbstractController implements ControllerInterface{
     public function detailsAnnonce($id) {
         $annonceManager = new AnnonceManager();//création d'une instance de la classe AnnonceManager pour gérer les annonces.
         $annonce = $annonceManager->findOneById($id);//on récupère l'annonce correspondant à l'identifiant passé en paramètre 
-        
+        $logementManager= new LogementManager();
+        $logement = $logementManager->findOneById($id);
+
         $avisManager = new AvisManager();//création de l'instance de la classe AvisManager pour gérer les avis.
-        $avis = $annonceManager->findAvisByAnnonce($id);// on récupère les avis associés à l'annonce (cf annonceManager)
+        $avis = $avisManager->findAvisByLogement($id);// on récupère les avis associés à l'annonce (cf annonceManager)
         
         return [
             "view" => VIEW_DIR."forum/detailsAnnonce.php",
             "meta_description" => "Détails de l'annonce",
             "data" => [
                 "annonce" => $annonce,
+                "logement" => $logement,
                 "avis" => $avis
             ]
         ];
