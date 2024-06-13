@@ -14,5 +14,18 @@ class AnnonceManager extends Manager{
     public function __construct(){
         parent::connect();
     }
+
+
+     //Requête pour supprimer une annonce
+     public function deleteAnnonce($id) {
+        $sql ="DELETE
+                FROM ".$this->tableName. " t
+                WHERE id_annonce = :id";
+    //la requête renvoie un seul ou aucun résultat
+        return  $this->getOneOrNullResult(
+            DAO::delete($sql, ['id' => $id]), //on précise "delete"
+            $this->className
+        );
+    }
    
 }
