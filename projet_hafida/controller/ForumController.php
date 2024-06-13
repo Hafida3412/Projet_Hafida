@@ -116,7 +116,7 @@ class ForumController extends AbstractController implements ControllerInterface{
                 $this->redirectTo("forum", "index", $annonce->getLogement()->getId());
             }  
             return [
-                "view" => VIEW_DIR."forum/index.php", 
+                "view" => VIEW_DIR."forum/listAnnonces.php", 
                 "data" => [
                     "annonces" => $annonceManager->findOneById($id)
                 ]
