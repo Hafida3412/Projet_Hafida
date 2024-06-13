@@ -20,9 +20,18 @@
         <label for="logements">Logements:</label> 
         <select name="logements"><!--boucle pour récupérer les éléments via id_logement dans un menu déroulant-->
         <?php foreach($logements as $logement): ?>
-            <option value="<?= $logement->getId() ?>"><?= $logement->getAdresseComplete() ?></option><!--cf public function getAdresseComplete créee dans l'"entities" logement-->
+        <option value="<?= $logement->getId() ?>"><?= $logement->getAdresseComplete() ?>
+        </option><!--cf public function getAdresseComplete créee dans l'"entities" logement-->
         <?php endforeach; ?>
         </select>
+        <br>
+        
+        <label for="NbChambre">Nombre de chambre:</label>
+        <input type="number" name="nbChambre"><br>
+
+        <label for="image">Photos:</label> 
+        <input type = "image" name= "image">
+
         <br>
         <br>
         <label for="description">Description :</label>
