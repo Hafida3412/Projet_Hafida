@@ -103,7 +103,28 @@ class ForumController extends AbstractController implements ControllerInterface{
 
 
     //SUPPRIMER UNE ANNONCE D UN UTILISATEUR
+    public function supprimerAnnonce($id){
+
+        $annonceManager = new annonceManager();
+        $annonce = $annonceManager->findOneById($id);;
+
+        // si l'utilisateur est connecté
+        if(Session::getUtilisateur()) {
+            // si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
+            if(Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) {
+                $annonceManager->deleteAnnonce($id);//on récupére la fonction "deleteAnnonce"
+                $this->redirectTo("forum", "index", $annonce->getLogement()->getId());
+            }  
+            return [
+                "view" => VIEW_DIR."forum/index.php", 
+                "data" => [
+                    "annonces" => $annonceManager->findOneById($id)
+                ]
+            ];
     
+        }
+    }
+
     
 }
 
