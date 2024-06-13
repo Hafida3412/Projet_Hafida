@@ -53,35 +53,35 @@ class ForumController extends AbstractController implements ControllerInterface{
 
     //AJOUTER/DEPOSER UNE ANNONCE
     public function ajoutAnnonces($id){
+
+        // requete qui récupère la liste des logements de l'utilisateur connecté
+
         if(Session::getUtilisateur()) {
             $annonceManager = new AnnonceManager();
           
-            if(isset($_POST["submitAnnonce"])){
-                $dateDebut = filter_input(INPUT_POST, 'dateDebut', FILTER_SANITIZE_SPECIAL_CHARS);
-                $dateFin = filter_input(INPUT_POST, 'dateFin', FILTER_SANITIZE_SPECIAL_CHARS);
-                $typeLogement = filter_input(INPUT_POST, 'typeLogement', FILTER_SANITIZE_SPECIAL_CHARS);
-                $nbChambre = filter_input(INPUT_POST, 'nbChambre', FILTER_VALIDATE_INT);
-                $nbChat = filter_input(INPUT_POST, 'nbChat', FILTER_VALIDATE_INT);
-                $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
-                
-                // Vérifiez que toutes les données nécessaires sont présentes
-                if($dateDebut && $dateFin && $typeLogement && $nbChambre && $nbChat && $description){
-                    $annonceManager->add([
-                        "dateDebut" => $dateDebut,
-                        "dateFin"  => $dateFin,
-                        "typeLogement" => $typeLogement,
-                        "nbChambre"  => $nbChambre,
-                        "nbChat"  => $nbChat,
-                        "description"  => $description,
-                        // Ajoutez l'utilisateur qui crée l'annonce
-                        "utilisateur_id" => Session::getUtilisateur()->getId(),
-                        "logement_id" => $id
-                    ]);
-                   
-                    // Rediriger après l'ajout de l'annonce
-                    $this->redirectTo("forum", "index", $id);
+        if(isset($_POST["submitAnnonce"])){
+            $dateDebut = filter_input(INPUT_POST, 'dateDebut', FILTER_SANITIZE_SPECIAL_CHARS);
+            $dateFin = filter_input(INPUT_POST, 'dateFin', FILTER_SANITIZE_SPECIAL_CHARS);
+            $nbChat = filter_input(INPUT_POST, 'nbChat', FILTER_VALIDATE_INT);
+            $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);   
+        // Vérifiez que toutes les données nécessaires sont présentes
+        if($dateDebut && $dateFin && $nbChat && $description){
+        
+            // var_dump("ok");die;
+            $annonceManager->add([
+                "dateDebut" => $dateDebut,
+                "dateFin"  => $dateFin,
+                "nbChat"  => $nbChat,
+                "description"  => $description,
+                // Ajoutez l'utilisateur qui crée l'annonce
+                "utilisateur_id" => Session::getUtilisateur()->getId(),
+                "logement_id" => $id
+                ]);
+
+                // Rediriger après l'ajout de l'annonce
+                $this->redirectTo("forum", "index");
+                }
             }
-        }
         }
     
         // Afficher le formulaire de dépôt d'annonce
@@ -91,7 +91,7 @@ class ForumController extends AbstractController implements ControllerInterface{
         ];
     }
     
-    }
+}
 
     
 
