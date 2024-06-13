@@ -35,6 +35,7 @@
                                 <a href="index.php?ctrl=security&action=logout">Déconnexion</a>
                                 <a href="index.php?ctrl=forum&action=index">Liste des annonces</a>
                                 <a href="index.php?ctrl=forum&action=ajoutAnnonces">Déposer une annonce</a>
+                                <a href="index.php?ctrl=forum&action=monCompte">Mon Compte</a>
                                 <?php
                             }
                             else{
