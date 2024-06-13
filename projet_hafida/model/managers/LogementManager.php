@@ -13,9 +13,22 @@ class LogementManager extends Manager{
     public function __construct(){
         parent::connect();
     }
-    
-        
+  
+    // requete qui récupère la liste des logements de l'utilisateur connecté
+    public function listLogementsByUser($id){
+        $sql = "SELECT * 
+        FROM ".$this->tableName." 
+        WHERE utilisateur_id = :id";
+
+        return $this->getMultipleResults(
+            DAO::select($sql, ['id' => $id]), 
+            $this->className
+        );
+
     }
+
+}
+    
 
 
 

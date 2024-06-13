@@ -11,7 +11,7 @@ final class Logement extends Entity{
 
     private $id;
     private $nbChambre;
-    private $adresse;
+    private $rue;
     private $cp;
     private $ville;
     private $image;
@@ -48,14 +48,14 @@ final class Logement extends Entity{
     }
 
 
-    public function getAdresse()
+    public function getRue()
     {
-        return $this->adresse;
+        return $this->rue;
     }
 
-    public function setAdresse($adresse)
+    public function setRue($rue)
     {
-        $this->adresse = $adresse;
+        $this->rue = $rue;
 
         return $this;
     }
@@ -82,6 +82,11 @@ final class Logement extends Entity{
         $this->ville = $ville;
 
         return $this;
+    }
+
+    public function getAdresseComplete()
+    {
+        return $this->rue." ".$this->cp." ".$this->ville;
     }
 
     public function getImage()
