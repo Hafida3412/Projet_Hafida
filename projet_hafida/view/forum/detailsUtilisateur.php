@@ -9,3 +9,7 @@ $utilisateur = $result["data"]['utilisateur'];
 <p>Nom: <?= $utilisateur->getNom() ?></p>
 <p>Prénom: <?= $utilisateur->getPrenom() ?></p>
 <p>Rôle: <?= $utilisateur->getRole() ?></p>
+
+<p>Mes annonces: </p>
+
+

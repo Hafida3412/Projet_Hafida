@@ -54,17 +54,19 @@ class ForumController extends AbstractController implements ControllerInterface{
     // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
     public function monCompte(){
         if(Session::getUtilisateur()) {
-            // Récupérer l'ID de l'utilisateur connecté
+            // On récupère l'ID de l'utilisateur connecté
             $id_utilisateur = Session::getUtilisateur()->getId();
         
-            // Utilisateur connecté
-            // Récupérer les informations de l'utilisateur à partir de l'ID
+            // L'utilisateur est connecté
+            // On récupère les informations de l'utilisateur à partir de l'ID
             $utilisateurManager = new UtilisateurManager();
             $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
         } else {
-            // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
-            $this->redirectTo("forum", "index");
+            // si l'utilisateur n'est pas connecté, on le renvoie vers la page Login
+            $this->redirectTo("forum", "login");
         }
+
+        // Afficher la vue detailsUtilisateur.php (= Mon compte)
         return [
             "view" => VIEW_DIR . "forum/detailsUtilisateur.php",
             "meta_description" => "Mon compte",
