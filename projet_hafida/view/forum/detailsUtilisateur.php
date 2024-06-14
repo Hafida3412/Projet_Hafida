@@ -1,5 +1,6 @@
 <?php
-$utilisateur = $result["data"]['utilisateur'];   
+$utilisateur = $result["data"]['utilisateur']; 
+
 ?>
 
 <h1>Mon Compte</h1>
@@ -10,6 +11,12 @@ $utilisateur = $result["data"]['utilisateur'];
 <p>Prénom: <?= $utilisateur->getPrenom() ?></p>
 <p>Rôle: <?= $utilisateur->getRole() ?></p>
 
-<p>Mes annonces: </p>
+<p>Mes annonces:</p>
+<?php
 
 
+        
+        
+   
+   
+       

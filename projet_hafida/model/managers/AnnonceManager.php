@@ -15,10 +15,21 @@ class AnnonceManager extends Manager{
         parent::connect();
     }
 
+    //REQUETE POUR AFFICHER LES ANNONCES PAR UTILISATEUR
+    public function findAnnoncesByUtilisateur($id){
+        $sql = "SELECT*
+        FROM ".$this->tableName. " t
+        WHERE utilisateur_id = :id";
+    //la requête renvoie un seul ou aucun résultat
+    return  $this->getOneOrNullResult(
+        DAO::delete($sql, ['id' => $id]), //on précise "delete"
+        $this->className
+    );
+    }
 
-     //Requête pour supprimer une annonce
+     //REQUETE POUR SUPPRIMER UNE ANNONCE
      public function deleteAnnonce($id) {
-        $sql ="DELETE
+        $sql = "DELETE
                 FROM ".$this->tableName. " t
                 WHERE id_annonce = :id";
     //la requête renvoie un seul ou aucun résultat

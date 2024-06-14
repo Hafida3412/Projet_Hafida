@@ -51,7 +51,51 @@ class ForumController extends AbstractController implements ControllerInterface{
             ]
         ];
     }  
+    
+     //FONCTION POUR LISTER LES ANNONCES PAR UTILISATEUR
+     public function listAnnoncesByUtilisateur($id) {
 
+        $annonceManager = new AnnonceManager();
+        $utilisateurManager = new UtilisateurManager();
+        $utilisateur = $utilisateurManager->findOneById($id);
+        $annonces = $annonceManager->findAnnoncesByUtilisateur($id);
+
+        return [
+            "view" => VIEW_DIR."forum/detailsUtilisateur.php",
+            "meta_description" => "Liste des annonces par utilisateur : ".$utilisateur,
+            "data" => [
+                "annonces" => $annonces,
+                "utilisateur" => $utilisateur
+            ]
+        ];
+    }
+
+    // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
+    public function monCompte(){
+        if(Session::getUtilisateur()) {
+            // On récupère l'ID de l'utilisateur connecté
+            $id_utilisateur = Session::getUtilisateur()->getId();
+        
+            // L'utilisateur est connecté
+            // On récupère les informations de l'utilisateur à partir de l'ID
+            $utilisateurManager = new UtilisateurManager();
+            $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
+        } else {
+            // si l'utilisateur n'est pas connecté, on le renvoie vers la page Login
+            $this->redirectTo("forum", "login");
+        }
+    
+        // Afficher la vue detailsUtilisateur.php (= Mon compte)
+        return [
+            "view" => VIEW_DIR . "forum/detailsUtilisateur.php",
+            "meta_description" => "Mon compte",
+            "data" => [
+                "utilisateur" => $utilisateur
+            ]
+        ];
+        
+    }    
+    
     //AJOUTER/DEPOSER UNE ANNONCE
     public function ajoutAnnonces(){
         

@@ -103,34 +103,8 @@ class SecurityController extends AbstractController{
             "view" => VIEW_DIR . "connexion/login.php",
             "meta_description" => "Formulaire de connexion"
         ];
-}
-    
- // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
- public function monCompte(){
-    if(Session::getUtilisateur()) {
-        // On récupère l'ID de l'utilisateur connecté
-        $id_utilisateur = Session::getUtilisateur()->getId();
-    
-        // L'utilisateur est connecté
-        // On récupère les informations de l'utilisateur à partir de l'ID
-        $utilisateurManager = new UtilisateurManager();
-        $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
-    } else {
-        // si l'utilisateur n'est pas connecté, on le renvoie vers la page Login
-        $this->redirectTo("forum", "login");
     }
-
-    // Afficher la vue detailsUtilisateur.php (= Mon compte)
-    return [
-        "view" => VIEW_DIR . "forum/detailsUtilisateur.php",
-        "meta_description" => "Mon compte",
-        "data" => [
-            "utilisateur" => $utilisateur
-        ]
-    ];
     
-}    
-
     // MISE EN PLACE DE LA FONCTION LOGOUT
     public function logout () {
         session_unset();// Supprimer toutes les données de la session
@@ -138,7 +112,7 @@ class SecurityController extends AbstractController{
         header("Location: index.php");
         exit;
         }
-    
+
     }
 
 
