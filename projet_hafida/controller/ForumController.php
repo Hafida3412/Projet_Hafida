@@ -51,24 +51,6 @@ class ForumController extends AbstractController implements ControllerInterface{
             ]
         ];
     }  
-    
-     //FONCTION POUR LISTER LES ANNONCES PAR UTILISATEUR
-     public function listAnnoncesByUtilisateur($id) {
-
-        $annonceManager = new AnnonceManager();
-        $utilisateurManager = new UtilisateurManager();
-        $utilisateur = $utilisateurManager->findOneById($id);
-        $annonces = $annonceManager->findAnnoncesByUtilisateur($id);
-
-        return [
-            "view" => VIEW_DIR."forum/detailsUtilisateur.php",
-            "meta_description" => "Liste des annonces par utilisateur : ".$utilisateur,
-            "data" => [
-                "annonces" => $annonces,
-                "utilisateur" => $utilisateur
-            ]
-        ];
-    }
 
     // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
     public function monCompte(){
