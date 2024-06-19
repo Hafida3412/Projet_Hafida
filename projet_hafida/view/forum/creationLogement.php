@@ -1,4 +1,7 @@
+<?php
+$logement = $result["data"]['logement']; 
 
+?>
  <h1>Créer un logement</h1>
  
     <form action="index.php?ctrl=logement&action=create" method="post">

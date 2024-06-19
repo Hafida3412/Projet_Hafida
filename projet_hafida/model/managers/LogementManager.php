@@ -27,25 +27,23 @@ class LogementManager extends Manager{
 
     }
 
-    public function addLogement($data){
-        $keys = array_keys($data);
-        $values = array_values($data);
+    //requête pour ajouter un logement
+    public function addLogement($id){
+        
+        $sql = "INSERT INTO ".$this->tableName." VALUES (:id)";
+            
+        return $this->getMultipleResults(
+            DAO::select($sql, ['id' => $id]), 
+            $this->className
+        );
     
-        $sql = "INSERT INTO ".$this->tableName."
-                (".implode(',', $keys).") 
-                VALUES
-                ('".implode("','",$values)."')";
-    
-        try{
-            return DAO::insert($sql);
-        }
-        catch(\PDOException $e){
-            echo $e->getMessage();
-            die();
-        }
     }
+    
 
-}
+    }
+    
+
+
     
 
 

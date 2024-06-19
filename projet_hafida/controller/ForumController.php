@@ -120,7 +120,38 @@ class ForumController extends AbstractController implements ControllerInterface{
             ]
         ];
     }
-
+    
+    //CREATION D UN LOGEMENT
+    public function createLogement(){
+        if(isset($_POST["submitLogement"])) {
+            $nbChambre = filter_input(INPUT_POST, "nbChambre", FILTER_VALIDATE_INT);
+            $rue = filter_input(INPUT_POST, "rue", FILTER_SANITIZE_SPECIAL_CHARS);
+            $CP = filter_input(INPUT_POST, "CP", FILTER_SANITIZE_SPECIAL_CHARS);
+            $ville = filter_input(INPUT_POST, "ville", FILTER_SANITIZE_SPECIAL_CHARS);
+            $image = filter_input(INPUT_POST, "image", FILTER_VALIDATE_URL);
+            $typeLogement = filter_input(INPUT_POST, "typeLogement", FILTER_VALIDATE_INT);
+    
+            if($nbChambre && $rue && $CP && $ville && $image && $typeLogement){
+                $logementManager = new LogementManager();
+                $logementManager->addLogement([
+                    "nbChambre" => $nbChambre,
+                    "rue" => $rue,
+                    "CP" => $CP,
+                    "ville" => $ville,
+                    "image" => $image,
+                    "typeLogement_id" => $typeLogement,
+                    "utilisateur_id" => Session::getUtilisateur()->getId()
+                ]);
+    
+                // On redirige l'utilisateur vers la création d'annonce ou une autre page
+            }
+        }
+    
+        return [
+            "view" => VIEW_DIR."logement/create.php",
+            "meta_description" => "Création d'un logement"
+        ];
+    }
 
     //SUPPRIMER UNE ANNONCE D UN UTILISATEUR
     public function supprimerAnnonce($id){
