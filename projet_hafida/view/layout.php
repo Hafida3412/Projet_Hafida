@@ -36,7 +36,7 @@
                                 <a href="index.php?ctrl=forum&action=index">Liste des annonces</a>
                                 <a href="index.php?ctrl=forum&action=ajoutAnnonces">Déposer une annonce</a>
                                 <a href="index.php?ctrl=forum&action=monCompte">Mon Compte</a>
-                                <a href="index.php?ctrl=logement&action=create">Créer un logement</a>
+                                <a href="index.php?ctrl=forum&action=creationLogement">Créer un logement</a>
                                 <?php
                             }
                             else{

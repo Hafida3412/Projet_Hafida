@@ -9,7 +9,7 @@ use Model\Managers\LogementManager;
 use Model\Managers\UtilisateurManager;
 use Model\Managers\Manager;
 use Model\Managers\AvisManager;
-
+use Model\Managers\TypeLogementManager;
 
 class ForumController extends AbstractController implements ControllerInterface{
 
@@ -122,7 +122,9 @@ class ForumController extends AbstractController implements ControllerInterface{
     }
     
     //CREATION D UN LOGEMENT
-    public function createLogement(){
+    public function creationLogement() {
+        $logementManager = new LogementManager();
+               
         if(isset($_POST["submitLogement"])) {
             $nbChambre = filter_input(INPUT_POST, "nbChambre", FILTER_VALIDATE_INT);
             $rue = filter_input(INPUT_POST, "rue", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -131,9 +133,8 @@ class ForumController extends AbstractController implements ControllerInterface{
             $image = filter_input(INPUT_POST, "image", FILTER_VALIDATE_URL);
             $typeLogement = filter_input(INPUT_POST, "typeLogement", FILTER_VALIDATE_INT);
     
-            if($nbChambre && $rue && $CP && $ville && $image && $typeLogement){
-                $logementManager = new LogementManager();
-                $logementManager->addLogement([
+            if($nbChambre && $rue && $CP && $ville && $image && $typeLogement) {
+                $logementManager->add([
                     "nbChambre" => $nbChambre,
                     "rue" => $rue,
                     "CP" => $CP,
@@ -141,15 +142,16 @@ class ForumController extends AbstractController implements ControllerInterface{
                     "image" => $image,
                     "typeLogement_id" => $typeLogement,
                     "utilisateur_id" => Session::getUtilisateur()->getId()
-                ]);
+                ]); 
     
-                // On redirige l'utilisateur vers la création d'annonce ou une autre page
+                $this->redirectTo("forum", "monCompte");
             }
         }
-    
+        
         return [
-            "view" => VIEW_DIR."logement/create.php",
-            "meta_description" => "Création d'un logement"
+            "view" => VIEW_DIR."forum/creationLogement.php",
+            "meta_description" => "Création d'un logement",
+            "data" => []
         ];
     }
 

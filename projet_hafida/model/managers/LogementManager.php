@@ -4,6 +4,7 @@ namespace Model\Managers;
 use App\Manager;
 use App\DAO;
 
+
 class LogementManager extends Manager{
 
     // on indique la classe POO et la table correspondante en BDD pour le manager concerné
@@ -26,21 +27,11 @@ class LogementManager extends Manager{
         );
 
     }
-
-    //requête pour ajouter un logement
-    public function addLogement($id){
-        
-        $sql = "INSERT INTO ".$this->tableName." VALUES (:id)";
-            
-        return $this->getMultipleResults(
-            DAO::select($sql, ['id' => $id]), 
-            $this->className
-        );
     
     }
     
 
-    }
+    
     
 
 
