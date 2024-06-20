@@ -10,7 +10,7 @@ $utilisateur = $result["data"]['utilisateur'];
 <p>Nom: <?= $utilisateur->getNom() ?></p>
 <p>Prénom: <?= $utilisateur->getPrenom() ?></p>
 <p>Rôle: <?= $utilisateur->getRole() ?></p>
-
+<br>
 <p>Mes annonces:</p>
 <?php
 if(!empty($annonces)) {
@@ -26,9 +26,11 @@ if(!empty($annonces)) {
 } else {
     echo "<p>Pas d'annonces à afficher pour le moment.</p>";
 }
+
 ?>
-
-
+<br>
+<p>Mes logements:</p>
+<?php
         
         
    
