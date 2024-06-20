@@ -105,7 +105,7 @@ class ForumController extends AbstractController implements ControllerInterface{
                         "logement_id" => $id_logement// on rajoute l'id du logement
                         ]);
                     //var_dump("ok");die;
-                        // Rediriger après l'ajout de l'annonce
+                        // Redirection après l'ajout de l'annonce
                         $this->redirectTo("forum", "index");
                 }
             }
@@ -140,7 +140,8 @@ class ForumController extends AbstractController implements ControllerInterface{
                     "CP" => $CP,
                     "ville" => $ville,
                     "image" => $image,
-                    "typeLogement_id" => $typeLogement,
+                    "typeLogement_id" => $typeLogement,// on rajoute l'id du type de logement
+                    // on rajoute l'utilisateur qui crée le logement
                     "utilisateur_id" => Session::getUtilisateur()->getId()
                 ]); 
     
