@@ -22,7 +22,7 @@
         <?php foreach($logements as $logement): ?>
         <option value="<?= $logement->getId() ?>"><?= $logement->getAdresseComplete() ?>:<?= $logement->getTypeLogement() ?> 
          avec <?= $logement->getNbChambre() ?> chambres.
-        </option><!--cf public function getAdresseComplete créee dans l'"entities" logement-->
+        </option><!--cf public function getAdresseComplete créée dans l'"entities" logement-->
         <?php endforeach; ?>
         </select>
         <br>
