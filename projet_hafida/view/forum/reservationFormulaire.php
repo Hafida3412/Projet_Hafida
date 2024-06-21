@@ -12,7 +12,7 @@
     <label for="paiement">Paiement:</label>
     <input type="text" name="paiement"><br>
 
-    <label for="question">Question spécifique:</label>
+    <label for="question">Avez-vous des questions?</label>
     <textarea name="question" rows="4" cols="50"></textarea><br>
 
     <input type="submit" name="submitReservation" value="Réserver">
