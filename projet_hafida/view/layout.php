@@ -31,13 +31,16 @@
                             // si l'utilisateur est connecté 
                             if(App\Session::getUtilisateur()){
                                 ?>
-                                <a href="index.php?ctrl=security&action=profile"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur()?></a>
-                                <a href="index.php?ctrl=security&action=logout">Déconnexion</a>
-                                <a href="index.php?ctrl=forum&action=index">Liste des annonces</a>
-                                <a href="index.php?ctrl=forum&action=creationLogement">Créer un logement</a>
-                                <a href="index.php?ctrl=forum&action=ajoutAnnonces">Déposer une annonce</a>
-                                <a href="index.php?ctrl=forum&action=monCompte">Mon Compte</a>
-                        <?php
+                        <nav>
+                            <ul class="nav-list">
+                             <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li> 
+                             <li><a href="index.php?ctrl=forum&action=index">Liste des annonces</a></li> 
+                             <li><a href="index.php?ctrl=forum&action=creationLogement">Créer un logement</a></li> 
+                             <li><a href="index.php?ctrl=forum&action=ajoutAnnonces">Déposer une annonce</a></li> 
+                             <li><a href="index.php?ctrl=forum&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur()?></a></li> 
+                            </ul>
+                        </nav>
+                       <?php
                             }
                             else{
                                 ?>
