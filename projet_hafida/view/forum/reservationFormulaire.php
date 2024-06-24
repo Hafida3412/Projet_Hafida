@@ -22,6 +22,12 @@
     <label for="email">Email</label>
     <input type="text" name="email" id="email"><br>
 
+    <label for="nbAdultes">Nb d'adultes</label>
+    <input type="number" name="nbAdultes"><br>
+
+    <label for="nbEnfants">Nb d'enfants (<=12ans)</label>
+    <input type="number" name="nbEnfants"><br>
+
     <label for="paiement">Mode de Paiement:</label><br>
     <input type="radio" id="cb" name="paiement" value="cb">
     <label for="cb">Carte Bancaire (Visa, Mastercard)</label><br>
