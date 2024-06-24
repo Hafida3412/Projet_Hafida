@@ -30,7 +30,7 @@
                         <?php*/
                             // si l'utilisateur est connecté 
                             if(App\Session::getUtilisateur()){
-                                ?>
+                                ?><!--CREATION D UNE NAVBAR-->
                         <nav>
                             <ul class="nav-list">
                              <li><a href="index.php?ctrl=forum&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur()?></a></li> 
