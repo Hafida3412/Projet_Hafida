@@ -25,7 +25,7 @@
     <label for="nbAdultes">Nb d'adultes</label>
     <input type="number" name="nbAdultes"><br>
 
-    <label for="nbEnfants">Nb d'enfants (<=12ans)</label>
+    <label for="nbEnfants">Nb d'enfants</label>
     <input type="number" name="nbEnfants"><br>
 
     <label for="paiement">Mode de Paiement:</label><br>
