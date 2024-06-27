@@ -22,6 +22,12 @@ $type = $logement->getTypeLogement()->getNomType();
 
 <p><br>Avis:</p>
 <?php
-foreach($avis as $avi){ ?> <!--"avi" au singulier car on récupére un élément-->
-   <p><?= $avi->getCommentaire() ?> (le <?= (date('d-m-Y ', strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p>
-<?php }
+if($avis) {
+    foreach($avis as $avi){ ?> 
+       <p><?= $avi->getCommentaire() ?> (le <?= (date('d-m-Y ', strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p>
+    <?php 
+    }
+} else {
+    echo "<p>Aucun avis pour cette annonce.</p>";
+}
+
