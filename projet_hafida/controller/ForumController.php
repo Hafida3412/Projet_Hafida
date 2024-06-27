@@ -178,7 +178,50 @@ class ForumController extends AbstractController implements ControllerInterface{
     
         }
     }
-
+    
+    public function reservation(){
+        if(isset($_POST["submitReservation"])){
+            // Traitez les données du formulaire
+            $nom = filter_input(INPUT_POST, "nom",FILTER_SANITIZE_SPECIAL_CHARS);
+            $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_SPECIAL_CHARS);
+            $rue = filter_input(INPUT_POST, "rue", FILTER_SANITIZE_SPECIAL_CHARS);
+            $CP = filter_input(INPUT_POST, "codePostal", FILTER_SANITIZE_SPECIAL_CHARS);
+            $ville = filter_input(INPUT_POST, "ville", FILTER_SANITIZE_SPECIAL_CHARS);
+            $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $nbAdultes = filter_input(INPUT_POST, "nbAdultes", FILTER_VALIDATE_INT);
+            $nbEnfants = filter_input(INPUT_POST, "nbEnfants", FILTER_VALIDATE_INT);
+            $paiement = filter_input(INPUT_POST, "paiement", FILTER_SANITIZE_SPECIAL_CHARS);
+            $question = filter_input(INPUT_POST, "question", FILTER_SANITIZE_SPECIAL_CHARS);
+    
+            // Enregistrez les informations de la réservation dans la base de données
+            $reserverManager = new ReserverManager();
+            if($nom && $prenom && $rue && $CP && $ville && $numeroTelephone && $email 
+            && $nbAdultes && $nbEnfants && $paiement && $question ){
+            $reserverManager->add([
+                "nom" => $nom,
+                "prenom" => $prenom,
+                "rue" => $rue,
+                "codePostal" => $codePostal,
+                "ville" => $ville,
+                "numeroTelephone" => $numeroTelephone,
+                "email" => $email,
+                "nbAdultes" => $nbAdultes,
+                "nbEnfants" => $nbEnfants,
+                "paiement" => $paiement,
+                "question" => $question,
+            ]);
+    
+            // Redirection après l'enregistrement de la réservation
+            $this->redirectTo("forum", "index");
+        }
+    
+        return [
+            "view" => VIEW_DIR."form/reservation.php",
+            "meta_description" => "Formulaire de réservation"
+        ];
+    }
+    
     
 }
 
