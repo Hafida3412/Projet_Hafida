@@ -29,9 +29,13 @@ foreach($annonces as $annonce){
         }
         
     }
+    // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
+
 ?>
 <?php }
 } else {
 echo "<p>Pas d'annonce à supprimer pour le moment</p>";
 }
 
+
+    ?>

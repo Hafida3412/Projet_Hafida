@@ -175,11 +175,11 @@ class ForumController extends AbstractController implements ControllerInterface{
                     "annonces" => $annonceManager->findOneById($id)
                 ]
             ];
-    
         }
     }
     
     public function reservation(){
+       
         if(isset($_POST["submitReservation"])){
             // Traitez les données du formulaire
             $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -188,18 +188,18 @@ class ForumController extends AbstractController implements ControllerInterface{
             $paiement = filter_input(INPUT_POST, "paiement", FILTER_SANITIZE_SPECIAL_CHARS);
             $question = filter_input(INPUT_POST, "question", FILTER_SANITIZE_SPECIAL_CHARS);
             $annonce = filter_input(INPUT_POST, "annonce", FILTER_VALIDATE_INT);
-    
+           
             // Enregistrez les informations de la réservation dans la base de données
             $reserverManager = new ReserverManager();
-            if($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement && $question && $annonce ){
+            if($numeroTelephone && $nbAdultes && $nbEnfants && $paiement && $question && $annonce ){
                 $reserverManager->add([
                     "numeroTelephone" => $numeroTelephone,
                     "nbAdultes" => $nbAdultes,
                     "nbEnfants" => $nbEnfants,
                     "paiement" => $paiement,
                     "question" => $question,
-                    "annonce_id" => $annonce,// on rajoute l'id du type de logement
-                    // on rajoute l'utilisateur qui crée le logement
+                    "annonce_id" => $annonce, // On rajoute l'id du type de l'annonce
+                    // On rajoute l'utilisateur qui crée le logement
                     "utilisateur_id" => Session::getUtilisateur()->getId()
                 ]);
     
@@ -207,12 +207,18 @@ class ForumController extends AbstractController implements ControllerInterface{
                 $this->redirectTo("forum", "index");
             }
         } 
-    
+        $annonceManager = new AnnonceManager();
+        $annonces = $annonceManager->findAll(); // Récupérer toutes les annonces disponibles
+        
         return [
-            "view" => VIEW_DIR."reservation.php",
-            "meta_description" => "Formulaire de réservation"
+            "view" => VIEW_DIR."forum/reservation.php",
+            "meta_description" => "Formulaire de réservation",
+            "data" => [
+                "annonces" => $annonces
+            ]
         ];
     }
+
 }
     
 

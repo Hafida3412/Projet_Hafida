@@ -1,7 +1,9 @@
+<?php
 
+?>
 <h1>Réservation</h1>
 <form action="index.php?ctrl=forum&action=reservation" method="post">
-    
+
     <label for="numeroTelephone">Numéro de téléphone</label>
     <input type="text" name="numeroTelephone" id="numeroTelephone"><br>
 

@@ -30,4 +30,14 @@ if($avis) {
 } else {
     echo "<p>Aucun avis pour cette annonce.</p>";
 }
+ // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
+ if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId() != App\Session::getUtilisateur()->getId()) {
+   ?>
+       <a href="index.php?ctrl=forum&action=reservation&id=<?=$annonce->getId() ?>"><button>Réserver</button></a><br>
+   <?php   
+       }
+   
+?>
+<?php 
+?>
 
