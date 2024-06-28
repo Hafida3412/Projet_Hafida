@@ -33,6 +33,7 @@ if($avis) {
  // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
  if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId() != App\Session::getUtilisateur()->getId()) {
    ?>
+   <!--création du bouton réserver qui fait le lien avec le formulaire de réservation-->
        <a href="index.php?ctrl=forum&action=reservation&id=<?=$annonce->getId() ?>"><button>Réserver</button></a><br>
    <?php   
        }
