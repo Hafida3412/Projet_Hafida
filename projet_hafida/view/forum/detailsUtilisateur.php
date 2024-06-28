@@ -18,7 +18,9 @@ $utilisateur = $result["data"]['utilisateur'];
 <br>
 <p>Mes logements:</p>
 <br>
-
+<br>
+<!--Création du bouton "créer un nouveau logement" pour faire le lien vers le formulaire "Créer un logement"-->
+<a href="index.php?ctrl=forum&action=creationLogement"><button>Créer un nouveau logement</button></a><br>
 
         
    
