@@ -29,8 +29,6 @@ foreach($annonces as $annonce){
         }
         
     }
-    // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
-
 ?>
 <?php }
 } else {

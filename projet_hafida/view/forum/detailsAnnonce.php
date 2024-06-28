@@ -36,7 +36,6 @@ if($avis) {
        <a href="index.php?ctrl=forum&action=reservation&id=<?=$annonce->getId() ?>"><button>Réserver</button></a><br>
    <?php   
        }
-   
 ?>
 <?php 
 ?>
