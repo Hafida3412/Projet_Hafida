@@ -37,6 +37,7 @@
                              <li><a href="index.php?ctrl=forum&action=index">Liste des annonces</a></li> 
                              <li><a href="index.php?ctrl=forum&action=creationLogement">Créer un logement</a></li> 
                              <li><a href="index.php?ctrl=forum&action=ajoutAnnonces">Déposer une annonce</a></li> 
+                             <li><a href="index.php?ctrl=forum&action=reservation">Réservation</a></li> 
                              <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li> 
                             </ul>
                         </nav>

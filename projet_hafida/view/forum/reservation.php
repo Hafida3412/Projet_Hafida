@@ -1,26 +1,9 @@
+
 <h1>Réservation</h1>
 <form action="index.php?ctrl=forum&action=reservation" method="post">
     
-    <label for="nom">Nom</label>
-    <input type="text" name="nom"><br>
-
-    <label for="prenom">Prénom</label>
-    <input type="text" name="prenom"><br>
-
-    <label for="rue">Rue</label>
-    <input type="text" name="rue"><br>
-    
-    <label for="codePostal">Code Postal</label>
-    <input type="text" name="codePostal"><br>
-
-    <label for="ville">Ville</label>
-    <input type="text" name="ville"><br>
-
     <label for="numeroTelephone">Numéro de téléphone</label>
     <input type="text" name="numeroTelephone" id="numeroTelephone"><br>
-
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email"><br>
 
     <label for="nbAdultes">Nb d'adultes</label>
     <input type="number" name="nbAdultes"><br>
