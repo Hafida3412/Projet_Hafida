@@ -207,15 +207,11 @@ class ForumController extends AbstractController implements ControllerInterface{
                 $this->redirectTo("forum", "index");
             }
         } 
-        $annonceManager = new AnnonceManager();
-        $annonces = $annonceManager->findAll(); // Récupérer toutes les annonces disponibles
-        
+                
         return [
             "view" => VIEW_DIR."forum/reservation.php",
             "meta_description" => "Formulaire de réservation",
-            "data" => [
-                "annonces" => $annonces
-            ]
+            
         ];
     }
 
