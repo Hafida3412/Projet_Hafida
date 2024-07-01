@@ -202,7 +202,7 @@ class ForumController extends AbstractController implements ControllerInterface{
                     // On rajoute l'utilisateur qui crée le logement
                     "utilisateur_id" => Session::getUtilisateur()->getId()
                 ]);
-    
+  
                 // Redirection après l'enregistrement de la réservation
                 $this->redirectTo("forum", "index");
             }

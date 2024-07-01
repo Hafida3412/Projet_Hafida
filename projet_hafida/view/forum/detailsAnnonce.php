@@ -30,6 +30,9 @@ if($avis) {
 } else {
     echo "<p>Aucun avis pour cette annonce.</p>";
 }
+?> 
+<br>
+<?php
  // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
  if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId() != App\Session::getUtilisateur()->getId()) {
    ?>
