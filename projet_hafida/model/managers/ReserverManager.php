@@ -13,4 +13,19 @@ class ReserverManager extends Manager{
     public function __construct(){
         parent::connect();
     }
+    public function add($data){
+        $keys = array_keys($data);
+        $values = array_values($data);
+        
+        $sql = "INSERT INTO ".$this->tableName." (".implode(',', $keys).") 
+                VALUES ('".implode("','",$values)."')";
+                
+        try{
+            return DAO::insert($sql);
+        }
+        catch(\PDOException $e){
+            echo $e->getMessage();
+            die();
+        }
+    }
 }

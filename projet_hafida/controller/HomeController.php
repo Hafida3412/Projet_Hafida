@@ -11,7 +11,7 @@ class HomeController extends AbstractController implements ControllerInterface {
     public function index(){
         return [
             "view" => VIEW_DIR."home.php",
-            "meta_description" => "Page d'accueil du forum"
+            "meta_description" => "Page d'accueil"
         ];
     }
         

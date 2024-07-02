@@ -11,7 +11,7 @@ use Model\Managers\Manager;
 use Model\Managers\AvisManager;
 use Model\Managers\TypeLogementManager;
 use Model\Managers\ReserverManager;
-class reservationController extends AbstractController implements ControllerInterface{
+class LocationController extends AbstractController implements ControllerInterface{
 
     //FONCTION POUR LISTER TOUTES LES ANNONCES
     public function index() {
@@ -23,7 +23,7 @@ class reservationController extends AbstractController implements ControllerInte
 
         // le controller communique avec la vue "listAnnonces" (view) pour lui envoyer la liste des annonces (data)
         return [
-            "view" => VIEW_DIR."forum/listAnnonces.php",
+            "view" => VIEW_DIR."location/listAnnonces.php",
             "meta_description" => "Liste des annonces",
             "data" => [
                 "annonces" => $annonces
@@ -42,7 +42,7 @@ class reservationController extends AbstractController implements ControllerInte
         $avis = $avisManager->findAvisByLogement($id);// on récupère les avis associés à l'annonce (cf annonceManager)
         
         return [
-            "view" => VIEW_DIR."forum/detailsAnnonce.php",
+            "view" => VIEW_DIR."location/detailsAnnonce.php",
             "meta_description" => "Détails de l'annonce",
             "data" => [
                 "annonce" => $annonce,
@@ -59,10 +59,10 @@ class reservationController extends AbstractController implements ControllerInte
             $utilisateurManager = new UtilisateurManager();
             $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
         } else {
-            $this->redirectTo("forum", "login");
+            $this->redirectTo("location", "login");
         }
         return [
-            "view" => VIEW_DIR . "forum/detailsUtilisateur.php",
+            "view" => VIEW_DIR . "location/detailsUtilisateur.php",
             "meta_description" => "Mon compte",
             "data" => [
                 "utilisateur" => $utilisateur
@@ -105,14 +105,14 @@ class reservationController extends AbstractController implements ControllerInte
                         ]);
                     //var_dump("ok");die;
                         // Redirection après l'ajout de l'annonce
-                        $this->redirectTo("forum", "index");
+                        $this->redirectTo("location", "index");
                 }
             }
         }
     
         // Afficher le formulaire de dépôt d'annonce
         return [
-            "view" => VIEW_DIR . "forum/ajoutAnnonces.php",
+            "view" => VIEW_DIR . "location/ajoutAnnonces.php",
             "meta_description" => "Déposer une annonce",
             "data" => [
                 "logements" => $logements
@@ -144,12 +144,12 @@ class reservationController extends AbstractController implements ControllerInte
                     "utilisateur_id" => Session::getUtilisateur()->getId()
                 ]); 
     
-                $this->redirectTo("forum", "monCompte");
+                $this->redirectTo("location", "monCompte");
             }
         }
         
         return [
-            "view" => VIEW_DIR."forum/creationLogement.php",
+            "view" => VIEW_DIR."location/creationLogement.php",
             "meta_description" => "Création d'un logement",
             "data" => []
         ];
@@ -166,10 +166,10 @@ class reservationController extends AbstractController implements ControllerInte
             // si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
             if(Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) {
                 $annonceManager->deleteAnnonce($id);//on récupére la fonction "deleteAnnonce"
-                $this->redirectTo("forum", "index", $annonce->getLogement()->getId());
+                $this->redirectTo("location", "index", $annonce->getLogement()->getId());
             }  
             return [
-                "view" => VIEW_DIR."forum/listAnnonces.php", 
+                "view" => VIEW_DIR."location/listAnnonces.php", 
                 "data" => [
                     "annonces" => $annonceManager->findOneById($id)
                 ]
@@ -203,12 +203,12 @@ class reservationController extends AbstractController implements ControllerInte
                 ]);
   
                 // Redirection après l'enregistrement de la réservation
-                $this->redirectTo("forum", "index");
+                $this->redirectTo("location", "index");
             }
         } 
                 
         return [
-            "view" => VIEW_DIR."reservation/reservation.php",
+            "view" => VIEW_DIR."location/reservation.php",
             "meta_description" => "Formulaire de réservation", 
         ];
     }
