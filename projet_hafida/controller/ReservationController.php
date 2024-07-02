@@ -70,7 +70,6 @@ class reservationController extends AbstractController implements ControllerInte
         ];
     }
     
-    
     //AJOUTER/DEPOSER UNE ANNONCE
     public function ajoutAnnonces(){
         
@@ -210,11 +209,9 @@ class reservationController extends AbstractController implements ControllerInte
                 
         return [
             "view" => VIEW_DIR."reservation/reservation.php",
-            "meta_description" => "Formulaire de réservation",
-            
+            "meta_description" => "Formulaire de réservation", 
         ];
     }
-
 }
     
 
