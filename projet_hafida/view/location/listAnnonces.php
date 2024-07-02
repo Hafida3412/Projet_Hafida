@@ -11,7 +11,7 @@
 
 if($annonces){
 foreach($annonces as $annonce){ 
-    echo "<p>"."Annonce de <a href='index.php?ctrl=forum&action=detailsAnnonce&id=".$annonce->getId()."'>"
+    echo "<p>"."Annonce de <a href='index.php?ctrl=location&action=detailsAnnonce&id=".$annonce->getId()."'>"
     .$annonce->getUtilisateur()->getPseudo()."</a>" ." du "
     .(date('d-m-Y H:i:s', strtotime($annonce->getDateCreation()))).
     "<br> Nb de chats: ".$annonce->getNbChat()."<br>
@@ -24,7 +24,7 @@ foreach($annonces as $annonce){
         // si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
         if(App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) {
         ?>
-            <a href="index.php?ctrl=forum&action=supprimerAnnonce&id=<?=$annonce->getId() ?>"><button>Supprimer</button></a><br>
+            <a href="index.php?ctrl=location&action=supprimerAnnonce&id=<?=$annonce->getId() ?>"><button>Supprimer</button></a><br>
             <?php   
         }
         

@@ -2,7 +2,7 @@
 
 ?>
  <h1>Créer un logement</h1>
-    <form action="index.php?ctrl=forum&action=creationLogement" method="post">
+    <form action="index.php?ctrl=location&action=creationLogement" method="post">
         <label for="nbChambre">Nombre de chambres:</label>
         <input type="number" name="nbChambre"><br>
 
