@@ -80,7 +80,7 @@ class LocationController extends AbstractController implements ControllerInterfa
         if(Session::getUtilisateur()) {
             $annonceManager = new AnnonceManager();
         
-            //FILTRER LES CHAMPS DU FORMULAIRE D AJOUT D ANNONCE
+            //ON FILTRE LES CHAMPS DU FORMULAIRE D AJOUT D ANNONCE
             if(isset($_POST["submitAnnonce"])){
                 $dateDebut = filter_input(INPUT_POST, 'dateDebut', FILTER_SANITIZE_SPECIAL_CHARS);
                 $dateFin = filter_input(INPUT_POST, 'dateFin', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -178,28 +178,38 @@ class LocationController extends AbstractController implements ControllerInterfa
     }
     
     public function reservation(){
-       
-        if(isset($_POST["submitReservation"])){
-            // Traitez les données du formulaire
+       // On vérifie que l'utilisateur est connecté
+    if (!Session::getUtilisateur()) {
+        // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
+        $this->redirectTo("connexion", "login");
+        return;
+    }
+        
+    if(isset($_POST["submitReservation"])){
+            // On filtre les données du formulaire
             $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
             $nbAdultes = filter_input(INPUT_POST, "nbAdultes", FILTER_VALIDATE_INT);
             $nbEnfants = filter_input(INPUT_POST, "nbEnfants", FILTER_VALIDATE_INT);
             $paiement = filter_input(INPUT_POST, "paiement", FILTER_SANITIZE_SPECIAL_CHARS);
             $question = filter_input(INPUT_POST, "question", FILTER_SANITIZE_SPECIAL_CHARS);
             $annonce = filter_input(INPUT_POST, "annonce", FILTER_VALIDATE_INT);
-           
-            // Enregistrez les informations de la réservation dans la base de données
-            $reserverManager = new ReserverManager();
-            if($numeroTelephone && $nbAdultes && $nbEnfants && $paiement && $question && $annonce ){
+            $valide = 0; // Ajout de la variable $valide
+
+            
+            // On enregistre les informations de la réservation dans la base de données
+            if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement && $annonce !== false) {
+                $reserverManager = new ReserverManager();
                 $reserverManager->add([
                     "numeroTelephone" => $numeroTelephone,
                     "nbAdultes" => $nbAdultes,
                     "nbEnfants" => $nbEnfants,
                     "paiement" => $paiement,
                     "question" => $question,
+                    "valide" => $valide,
                     "annonce_id" => $annonce, // On rajoute l'id du type de l'annonce
                     // On rajoute l'utilisateur qui crée le logement
                     "utilisateur_id" => Session::getUtilisateur()->getId()
+
                 ]);
   
                 // Redirection après l'enregistrement de la réservation
