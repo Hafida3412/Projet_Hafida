@@ -211,7 +211,7 @@ class LocationController extends AbstractController implements ControllerInterfa
                     "utilisateur_id" => Session::getUtilisateur()->getId()
 
                 ]);
-  
+
                 // Redirection après l'enregistrement de la réservation
                 $this->redirectTo("location", "index");
             }

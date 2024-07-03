@@ -38,5 +38,7 @@ class AnnonceManager extends Manager{
             $this->className
         );
     }
-   
+
 }
+   
+
