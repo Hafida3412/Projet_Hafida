@@ -1,6 +1,7 @@
 <?php
 namespace Controller;
 
+use App\Session;
 use App\AbstractController;
 use App\ControllerInterface;
 use Model\Managers\UtilisateurManager;
@@ -105,6 +106,23 @@ class SecurityController extends AbstractController{
         ];
     }
     
+    // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
+    public function monCompte(){
+        if(Session::getUtilisateur()) {
+            $id_utilisateur = Session::getUtilisateur()->getId();
+            $utilisateurManager = new UtilisateurManager();
+            $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
+        } else {
+            $this->redirectTo("connexion", "login.php");
+        }
+        return [
+            "view" => VIEW_DIR . "connexion/detailsUtilisateur.php",
+            "meta_description" => "Mon compte",
+            "data" => [
+                "utilisateur" => $utilisateur
+            ]
+        ];
+    }
     // MISE EN PLACE DE LA FONCTION LOGOUT
     public function logout () {
         session_unset();// Supprimer toutes les données de la session

@@ -33,7 +33,7 @@
                                 ?><!--CREATION D UNE NAVBAR-->
                         <nav>
                             <ul class="nav-list">
-                             <li><a href="index.php?ctrl=location&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur()?></a></li> 
+                             <li><a href="index.php?ctrl=connexion&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur()?></a></li> 
                              <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li> 
                              <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li> 
                              <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li> 

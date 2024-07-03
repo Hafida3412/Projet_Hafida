@@ -52,23 +52,6 @@ class LocationController extends AbstractController implements ControllerInterfa
         ];
     }  
 
-    // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
-    public function monCompte(){
-        if(Session::getUtilisateur()) {
-            $id_utilisateur = Session::getUtilisateur()->getId();
-            $utilisateurManager = new UtilisateurManager();
-            $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
-        } else {
-            $this->redirectTo("location", "login");
-        }
-        return [
-            "view" => VIEW_DIR . "location/detailsUtilisateur.php",
-            "meta_description" => "Mon compte",
-            "data" => [
-                "utilisateur" => $utilisateur
-            ]
-        ];
-    }
     
     //AJOUTER/DEPOSER UNE ANNONCE
     public function ajoutAnnonces(){
@@ -177,6 +160,7 @@ class LocationController extends AbstractController implements ControllerInterfa
         }
     }
     
+    //CREATION DE LA FONCTION RESERVATION
     public function reservation(){
        // On vérifie que l'utilisateur est connecté
     if (!Session::getUtilisateur()) {
