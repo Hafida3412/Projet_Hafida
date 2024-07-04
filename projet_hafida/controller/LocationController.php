@@ -51,7 +51,6 @@ class LocationController extends AbstractController implements ControllerInterfa
             ]
         ];
     }  
-
     
     //AJOUTER/DEPOSER UNE ANNONCE
     public function ajoutAnnonces(){
