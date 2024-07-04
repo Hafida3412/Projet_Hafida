@@ -1,5 +1,5 @@
-<?php
-
+<?php  
+  
 ?>
 <h1>Réservation</h1>
 <form action="index.php?ctrl=location&action=reservation" method="post">
@@ -22,8 +22,8 @@
     <label for="question">Avez-vous une demande particulière?</label>
     <textarea name="question" rows="4" cols="50"></textarea><br>
 
-    <label for="annonce">ID de l'annonce</label>
-    <input type="number" name="annonce" required><br>
-    
+    <label for="annonce">ID de l'annonce: </label>
+    <input type="number" name="annonce" value="number"><br>
+
     <input type="submit" name="submitReservation" value="Réserver">
 </form>

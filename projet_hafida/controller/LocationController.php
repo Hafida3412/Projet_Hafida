@@ -177,8 +177,7 @@ class LocationController extends AbstractController implements ControllerInterfa
             $paiement = filter_input(INPUT_POST, "paiement", FILTER_SANITIZE_SPECIAL_CHARS);
             $question = filter_input(INPUT_POST, "question", FILTER_SANITIZE_SPECIAL_CHARS);
             $annonce = filter_input(INPUT_POST, "annonce", FILTER_VALIDATE_INT);
-            $valide = 0; // Ajout de la variable $valide
-
+            $valide = 1; // Réservation validée
             
             // On enregistre les informations de la réservation dans la base de données
             if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement && $annonce !== false) {
@@ -195,7 +194,9 @@ class LocationController extends AbstractController implements ControllerInterfa
                     "utilisateur_id" => Session::getUtilisateur()->getId()
 
                 ]);
-
+            // Mise à jour du statut de l'annonce pour indiquer qu'elle est fermée
+            $annonceManager = new AnnonceManager();
+            $annonceManager->updateDisponibilite($annonce); // pour indiquer que l'annonce est fermée
                 // Redirection après l'enregistrement de la réservation
                 $this->redirectTo("location", "index");
             }

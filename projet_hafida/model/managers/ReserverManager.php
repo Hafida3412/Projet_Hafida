@@ -13,5 +13,6 @@ class ReserverManager extends Manager{
     public function __construct(){
         parent::connect();
     }
-        
+    
+    
 }

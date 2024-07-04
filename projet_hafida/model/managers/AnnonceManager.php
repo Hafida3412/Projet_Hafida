@@ -39,6 +39,16 @@ class AnnonceManager extends Manager{
         );
     }
 
+    // Ajoutez cette méthode pour mettre à jour le statut de l'annonce
+    public function updateDisponibilite($annonceId){
+        $sql = "UPDATE ".$this->tableName." SET estValide=1 WHERE id = :id";
+        return  $this->getOneOrNullResult(
+            DAO::update($sql, ['id' => $annonceId]),
+           
+            $this->className
+        );
+    }
+
 }
    
 
