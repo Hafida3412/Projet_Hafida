@@ -161,14 +161,14 @@ class LocationController extends AbstractController implements ControllerInterfa
     
     //CREATION DE LA FONCTION RESERVATION
     public function reservation(){
-       // On vérifie que l'utilisateur est connecté
-    if (!Session::getUtilisateur()) {
-        // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
-        $this->redirectTo("connexion", "login");
-        return;
-    }
+        // On vérifie que l'utilisateur est connecté
+        if (!Session::getUtilisateur()) {
+            // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
+            $this->redirectTo("connexion", "login");
+            return;
+        }
         
-    if(isset($_POST["submitReservation"])){
+        if(isset($_POST["submitReservation"])){
             // On filtre les données du formulaire
             $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
             $nbAdultes = filter_input(INPUT_POST, "nbAdultes", FILTER_VALIDATE_INT);
@@ -178,12 +178,9 @@ class LocationController extends AbstractController implements ControllerInterfa
             $annonce = filter_input(INPUT_POST, "annonce", FILTER_VALIDATE_INT);
             $valide = 1; // Réservation validée
             
-            // On vérifie si l'annonce est déjà réservée
-        $reserverManager = new ReserverManager();
-        $reservationExist = $reserverManager;
-            // On enregistre les informations de la réservation dans la base de données
-            // Si l'annonce n'est pas déjà réservée, poursuivre avec la réservation
-        if (!$reservationExist && $numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement && $annonce !== false) {
+            // Vérification des données
+            if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement && $annonce !== false) {
+                // Enregistrement des informations de la réservation dans la base de données
                 $reserverManager = new ReserverManager();
                 $reserverManager->add([
                     "numeroTelephone" => $numeroTelephone,
@@ -192,30 +189,28 @@ class LocationController extends AbstractController implements ControllerInterfa
                     "paiement" => $paiement,
                     "question" => $question,
                     "valide" => $valide,
-                    "annonce_id" => $annonce, // On rajoute l'id du type de l'annonce
-                    // On rajoute l'utilisateur qui crée le logement
+                    "annonce_id" => $annonce,
                     "utilisateur_id" => Session::getUtilisateur()->getId()
-
                 ]);
-            // Mise à jour du statut de l'annonce pour indiquer qu'elle est fermée
-            $annonceManager = new AnnonceManager();
-            $annonceManager->updateDisponibilite($annonce); // pour indiquer que l'annonce est fermée
+                
+                // Mise à jour du statut de l'annonce pour indiquer qu'elle est fermée
+                $annonceManager = new AnnonceManager();
+                $annonceManager->updateDisponibilite($annonce); 
+                
                 // Redirection après l'enregistrement de la réservation
                 $this->redirectTo("location", "index");
-            }} else {
-                // Si l'annonce est déjà réservée
-                $message = "Cette annonce est déjà réservée.";
-                Session::addFlash("error", $message);
+            } else {
+                // Gérer les erreurs de validation des données
+                // Vous pouvez implémenter la gestion des erreurs ici
             }
-         
-                
+        }
+        
         return [
-            "view" => VIEW_DIR."location/reservation.php",
-            "meta_description" => "Formulaire de réservation", 
+            "view" => VIEW_DIR . "location/reservation.php",
+            "meta_description" => "Formulaire de réservation"
         ];
     }
 }
-    
 
 
     
