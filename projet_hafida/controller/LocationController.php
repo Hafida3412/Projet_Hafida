@@ -178,8 +178,12 @@ class LocationController extends AbstractController implements ControllerInterfa
             $annonce = filter_input(INPUT_POST, "annonce", FILTER_VALIDATE_INT);
             $valide = 1; // Réservation validée
             
+            // On vérifie si l'annonce est déjà réservée
+        $reserverManager = new ReserverManager();
+        $reservationExist = $reserverManager;
             // On enregistre les informations de la réservation dans la base de données
-            if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement && $annonce !== false) {
+            // Si l'annonce n'est pas déjà réservée, poursuivre avec la réservation
+        if (!$reservationExist && $numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement && $annonce !== false) {
                 $reserverManager = new ReserverManager();
                 $reserverManager->add([
                     "numeroTelephone" => $numeroTelephone,
@@ -198,8 +202,12 @@ class LocationController extends AbstractController implements ControllerInterfa
             $annonceManager->updateDisponibilite($annonce); // pour indiquer que l'annonce est fermée
                 // Redirection après l'enregistrement de la réservation
                 $this->redirectTo("location", "index");
+            }} else {
+                // Si l'annonce est déjà réservée
+                $message = "Cette annonce est déjà réservée.";
+                Session::addFlash("error", $message);
             }
-        } 
+         
                 
         return [
             "view" => VIEW_DIR."location/reservation.php",
