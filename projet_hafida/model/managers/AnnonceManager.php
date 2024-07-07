@@ -50,6 +50,16 @@ class AnnonceManager extends Manager{
         );
     }
 
+    public function isAnnonceValide($annonceId){
+        $sql = "SELECT estValide
+                FROM ".$this->tableName."
+                WHERE id_annonce = :id AND estValide = 1";;
+    
+        return $this->getSingleScalarResult(
+            DAO::select($sql, ['id' => $annonceId], false)
+        ) == 1;
+    }
+
 }
    
 
