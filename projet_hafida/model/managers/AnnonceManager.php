@@ -50,6 +50,8 @@ class AnnonceManager extends Manager{
         );
     }
 
+    //On vérifie si l'annonce est réservée en vérifiant si la colonne "estValide" est égale à 1
+    //pour l'annonce sélectionnée
     public function isAnnonceValide($annonceId){
         $sql = "SELECT estValide
                 FROM ".$this->tableName."
@@ -59,7 +61,6 @@ class AnnonceManager extends Manager{
             DAO::select($sql, ['id' => $annonceId], false)
         ) == 1;
     }
-
 }
    
 
