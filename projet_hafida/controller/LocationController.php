@@ -171,7 +171,7 @@ class LocationController extends AbstractController implements ControllerInterfa
         if(isset($_POST["submitReservation"])){
             $annonceId = $_POST["annonce"];
         
-            // Vérifier si l'annonce est déjà validée
+            // On vérifie si l'annonce est déjà réservée
             $annonceManager = new AnnonceManager();
             $estValide = $annonceManager->isAnnonceValide($annonceId);
         
@@ -210,9 +210,6 @@ class LocationController extends AbstractController implements ControllerInterfa
         
                 // Redirection après l'enregistrement de la réservation
                 $this->redirectTo("location", "index");
-            } else {
-                // Gérer les erreurs de validation des données
-                // Vous pouvez implémenter la gestion des erreurs ici
             }
         }
         
@@ -220,11 +217,10 @@ class LocationController extends AbstractController implements ControllerInterfa
             "view" => VIEW_DIR . "location/reservation.php",
             "meta_description" => "Formulaire de réservation"
         ];
-        }
-}
+        
+    }
 
-
-    
+}   
 
 
 
