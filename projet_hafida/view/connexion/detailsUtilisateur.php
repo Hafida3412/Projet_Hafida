@@ -24,8 +24,8 @@ if(isset($reservations) && $reservations){
         // On affiche les détails de chaque réservation
         echo  
         "</p>  Nombre de chats:".$reservation->getAnnonce()->getNbChat()."<br>".
-        " Date de début: ".date('d/m/Y', strtotime($reservation->getAnnonce()->getDateDebut()))."<br>". 
-        " Date de fin: ".date('d/m/Y', strtotime($reservation->getAnnonce()->getDateFin()))."<br>".
+        " Date de début: ".date('d-m-Y', strtotime($reservation->getAnnonce()->getDateDebut()))."<br>". 
+        " Date de fin: ".date('d-m-Y', strtotime($reservation->getAnnonce()->getDateFin()))."<br>".
         " Description: ". $reservation->getAnnonce()->getDescription()."<br>".
         " Numéro de téléphone: " . $reservation->getNumeroTelephone() ."<br>".
         " Nombre d'adultes:" .$reservation->getNbAdultes() ."<br>".
