@@ -115,7 +115,7 @@ class SecurityController extends AbstractController{
         } else {
             $this->redirectTo("connexion", "login.php");
         }
-
+        //Appel de la méthode pour récupérer les réservations de l'utilisateur connecté.
         $reserverManager = new ReserverManager();
         $reservations = $reserverManager->findReservationsByUser($id_utilisateur);
 
@@ -124,7 +124,7 @@ class SecurityController extends AbstractController{
             "meta_description" => "Mon compte",
             "data" => [
                 "utilisateur" => $utilisateur,
-                "reservations" =>$reservations
+                "reservations" =>$reservations// Rajout de la variable $reservations dans le tableau data
             ]
         ];
     }
