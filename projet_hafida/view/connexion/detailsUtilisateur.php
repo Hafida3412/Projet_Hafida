@@ -32,15 +32,17 @@ if(isset($reservations) && $reservations){
         " Nombre d'enfants:". $reservation->getNbEnfants() ."<br>".
         " Mode de paiement:" .$reservation->getPaiement() ."<br>".
         " Question:" .$reservation->getQuestion() ."<br>"."</p>"."<br>"."<br>";
+         
+    //Création du bouton "Poster un avis" dans la boucle foreach pour pouvoir poster un avis pour chaque annonce   
+    ?>  
+ <!-- Lien vers le formulaire d'avis pour l'annonce spécifique -->
+    <a href='index.php?ctrl=location&action=avisAnnonce&id=<?= $reservation->getAnnonce()->getId() ?>'><button>Poster un avis</button></a>
+<?php } ?>
+ <?php
+    } 
     
-    // Ajoutez le lien pour poster un avis
-    echo '<a href="index.php?ctrl=location&action=avisAnnonce&annonce_id=' . $reservation->getAnnonce()->getId() . '">Poster un avis</a>';
-  
-    echo "</p><br><br>";
-}
-} else {
-    echo "<p>Aucune réservation pour le moment.</p>";
-}
+ else { echo "<p>Aucune réservation pour le moment.</p>"; 
+    }
 ?>
 
 
