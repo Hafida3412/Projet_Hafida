@@ -31,7 +31,7 @@ if(isset($reservations) && $reservations){
         " Nombre d'adultes:" .$reservation->getNbAdultes() ."<br>".
         " Nombre d'enfants:". $reservation->getNbEnfants() ."<br>".
         " Mode de paiement:" .$reservation->getPaiement() ."<br>".
-        " Question:" .$reservation->getQuestion() ."</p>"."<br>"."<br>";
+        " Question:" .$reservation->getQuestion() ."<br>"."</p>"."<br>"."<br>";
     }
 } else {
     echo "<p>Aucune réservation pour le moment.</p>";
