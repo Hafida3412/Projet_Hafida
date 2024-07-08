@@ -32,11 +32,17 @@ if(isset($reservations) && $reservations){
         " Nombre d'enfants:". $reservation->getNbEnfants() ."<br>".
         " Mode de paiement:" .$reservation->getPaiement() ."<br>".
         " Question:" .$reservation->getQuestion() ."<br>"."</p>"."<br>"."<br>";
-    }
+    
+    // Ajoutez le lien pour poster un avis
+    echo '<a href="index.php?ctrl=location&action=avisAnnonce&annonce_id=' . $reservation->getAnnonce()->getId() . '">Poster un avis</a>';
+  
+    echo "</p><br><br>";
+}
 } else {
     echo "<p>Aucune réservation pour le moment.</p>";
 }
 ?>
+
 
 <br>
 <h1>Mes logements:</h1>
