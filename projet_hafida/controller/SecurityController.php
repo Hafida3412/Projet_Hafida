@@ -5,7 +5,7 @@ use App\Session;
 use App\AbstractController;
 use App\ControllerInterface;
 use Model\Managers\UtilisateurManager;
-
+use Model\Managers\ReserverManager;
 
 class SecurityController extends AbstractController{
     // contiendra les méthodes liées à l'authentification : register, login et logout
@@ -115,11 +115,16 @@ class SecurityController extends AbstractController{
         } else {
             $this->redirectTo("connexion", "login.php");
         }
+
+        $reserverManager = new ReserverManager();
+        $reservations = $reserverManager->findReservationsByUser($id_utilisateur);
+
         return [
             "view" => VIEW_DIR . "connexion/detailsUtilisateur.php",
             "meta_description" => "Mon compte",
             "data" => [
-                "utilisateur" => $utilisateur
+                "utilisateur" => $utilisateur,
+                "reservations" =>$reservations
             ]
         ];
     }

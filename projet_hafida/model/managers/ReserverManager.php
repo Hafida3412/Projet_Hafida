@@ -16,13 +16,13 @@ class ReserverManager extends Manager{
         parent::connect();
     }
 
-public function findReservationsByUser($userId){
+public function findReservationsByUser($id_utilisateur){
     $sql = "SELECT *
             FROM ".$this->tableName."
             WHERE utilisateur_id = :id";
 
     return $this->getMultipleResults(
-        DAO::select($sql, ['id' => $userId]),
+        DAO::select($sql, ['id' => $id_utilisateur]),
         $this->className
     );
 }
