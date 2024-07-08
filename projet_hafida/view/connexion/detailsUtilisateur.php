@@ -21,7 +21,7 @@ $reservations = $result["data"]['reservations'];
 
 if(isset($reservations) && $reservations){
     foreach($reservations as $reservation){
-        // Afficher les détails de chaque réservation
+        // On affiche les détails de chaque réservation
         echo "<p>Numéro de téléphone: " . $reservation->getNumeroTelephone() .
         " Nombre d'adultes:" .$reservation->getNbAdultes() ." Nombre d'enfants:". $reservation->getNbEnfants()
         ." Mode de paiement:" .$reservation->getPaiement() .

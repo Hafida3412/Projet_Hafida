@@ -16,6 +16,7 @@ class ReserverManager extends Manager{
         parent::connect();
     }
 
+//Méthode pour récupérer les réservations pour chaque utilisateur
 public function findReservationsByUser($id_utilisateur){
     $sql = "SELECT *
             FROM ".$this->tableName."
