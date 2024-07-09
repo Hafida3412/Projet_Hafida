@@ -220,11 +220,28 @@ class LocationController extends AbstractController implements ControllerInterfa
         
     }
 
-}   
-
-
-
- 
+    public function donnerAvis($id) {
+        if(isset($_POST["submitAvis"])) {
+            $commentaire = filter_input(INPUT_POST, "commentaire", FILTER_SANITIZE_SPECIAL_CHARS);
+            
+            // Vérifiez que le commentaire n'est pas vide
+            if($commentaire) {
+                // Enregistrez l'avis dans la base de données
+                // Utilisez le manager correspondant pour enregistrer l'avis
+                $avisManager = new AvisManager();
+                $avisManager->add([
+                    "dateAvis" => date("Y-m-d H:i:s"),
+                    "commentaire" => $commentaire,
+                    "logement_id" => $id,
+                    "utilisateur_id" => Session::getUtilisateur()->getId() // L'utilisateur connecté
+                ]);
+                
+                // Redirigez vers une page de confirmation ou de détails de l'annonce
+                $this->redirectTo("location", "detailsAnnonce");
+            }
+        }
+    }
+}
 
 
 
