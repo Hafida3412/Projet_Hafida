@@ -37,7 +37,7 @@ if(isset($reservations) && $reservations){
     //Création du bouton "Poster un avis" dans la boucle foreach pour pouvoir poster un avis pour chaque annonce   
     ?>  
  <!-- Lien vers le formulaire d'avis pour l'annonce spécifique -->
- <a href='index.php?ctrl=location&action=donnerAvis&id=<?= $id ?>'><button>Poster un avis</button></a>
+ <a href="index.php?ctrl=location&action=donnerAvis&id=<?= $reservation->getAnnonce()->getId() ?>">Poster un avis</a>
 <?php } ?>
  <?php
     } 

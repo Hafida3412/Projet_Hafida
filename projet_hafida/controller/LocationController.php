@@ -237,10 +237,18 @@ class LocationController extends AbstractController implements ControllerInterfa
                 ]);
                 
                 // Redirigez vers une page de confirmation ou de détails de l'annonce
-                $this->redirectTo("location", "detailsAnnonce");
+                $this->redirectTo("avis", "annonce", $id);
             }
         }
+        return [
+            "view" => VIEW_DIR."location/avisAnnonce.php",
+            "meta_description" => "Poster un avis",
+            "data" => [
+                "annonce_id" => $id // Vous pouvez transmettre l'id de l'annonce dans les données
+            ]
+        ];
     }
+    
 }
 
 
