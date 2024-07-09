@@ -1,6 +1,7 @@
 <?php
 $utilisateur = $result["data"]['utilisateur']; 
 $reservations = $result["data"]['reservations'];
+
 ?>
 
 <h1>Mon Compte</h1>
@@ -36,7 +37,7 @@ if(isset($reservations) && $reservations){
     //Création du bouton "Poster un avis" dans la boucle foreach pour pouvoir poster un avis pour chaque annonce   
     ?>  
  <!-- Lien vers le formulaire d'avis pour l'annonce spécifique -->
-    <a href='index.php?ctrl=location&action=avisAnnonce&id=<?= $reservation->getAnnonce()->getId() ?>'><button>Poster un avis</button></a>
+ <a href='index.php?ctrl=location&action=avisAnnonce&id=<?= $reservation->getAnnonce()->getId() ?>'><button>Poster un avis</button></a>
 <?php } ?>
  <?php
     } 
