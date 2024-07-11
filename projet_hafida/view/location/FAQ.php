@@ -1,4 +1,4 @@
-<?php  
+<p?php  
   
 ?>
     <h1>FAQ - Foire aux questions</h1><br>
@@ -13,7 +13,7 @@
         <li><strong>Question 6:</strong> Quels sont les modes de paiement?</li>
         <li><strong>Question 7:</strong> Comment supprimer mon compte?</li><br>
     
-    <p>N'hésitez pas à nous contacter pour toute autre question!</p>
+        <p>N'hésitez pas à nous contacter pour toute autre question!</p>
 
     <footer>
         <p>&copy; <?= date('Y') ?> - Chez Mon Chat</p>
