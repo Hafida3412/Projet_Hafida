@@ -222,25 +222,25 @@ class LocationController extends AbstractController implements ControllerInterfa
 
     //ACTION POUR DONNER UN AVIS SUR UNE ANNONCE
 public function donnerAvis($id) {
-    // Vérification si l'utilisateur est connecté
+    // On vérifie si l'utilisateur est connecté
     if(!Session::getUtilisateur()){
         Session::addFlash("error", "Veuillez vous connecter pour donner un avis.");
         $this->redirectTo("security", "login");
     }
     
-    // Récupérer l'annonce à laquelle l'utilisateur souhaite poster un avis
+    // On récupère l'annonce à laquelle l'utilisateur souhaite poster un avis
     $annonceManager = new AnnonceManager();
     $annonce = $annonceManager->findOneById($id);
 
-    // Traitement du formulaire d'ajout d'avis
+    // On filtre le formulaire d'ajout d'avis
     if(isset($_POST["submitAvis"])){
         $commentaire = filter_input(INPUT_POST, 'commentaire', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        // Vérifier que le commentaire est présent
+        // On vérifie que le commentaire est présent
         if($commentaire){
             $avisManager = new AvisManager();
             
-            // Ajouter l'avis en base de données
+            // On ajoute l'avis en base de données
             $avisManager->add([
                 "dateAvis" => date("Y-m-d H:i:s"),
                 "commentaire" => $commentaire,
