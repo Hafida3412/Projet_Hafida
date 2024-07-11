@@ -220,52 +220,52 @@ class LocationController extends AbstractController implements ControllerInterfa
         
     }
 
-    //ACTION POUR DONNER UN AVIS SUR UNE ANNONCE
-public function donnerAvis($id) {
-    // On vérifie si l'utilisateur est connecté
-    if(!Session::getUtilisateur()){
-        Session::addFlash("error", "Veuillez vous connecter pour donner un avis.");
-        $this->redirectTo("security", "login");
-    }
-    
-    // On récupère l'annonce à laquelle l'utilisateur souhaite poster un avis
-    $annonceManager = new AnnonceManager();
-    $annonce = $annonceManager->findOneById($id);
-
-    // On filtre le formulaire d'ajout d'avis
-    if(isset($_POST["submitAvis"])){
-        $commentaire = filter_input(INPUT_POST, 'commentaire', FILTER_SANITIZE_SPECIAL_CHARS);
-
-        // On vérifie que le commentaire est présent
-        if($commentaire){
-            $avisManager = new AvisManager();
-            
-            // On ajoute l'avis en base de données
-            $avisManager->add([
-                "dateAvis" => date("Y-m-d H:i:s"),
-                "commentaire" => $commentaire,
-                "logement_id" => $annonce->getLogement()->getId(), // Lier l'avis au logement de l'annonce
-                "utilisateur_id" => Session::getUtilisateur()->getId() // Lier l'avis à l'utilisateur connecté
-            ]);
-
-            Session::addFlash("success", "Votre avis a été enregistré.");
-            $this->redirectTo("location", "index");
-        } else {
-            Session::addFlash("error", "Veuillez saisir un commentaire pour donner un avis.");
-            $this->redirectTo("location", "donnerAvis", $id);
+    //CREATION DE LA FONCTION POUR DONNER UN AVIS SUR UNE ANNONCE
+    public function donnerAvis($id) {
+        // On vérifie si l'utilisateur est connecté
+        if(!Session::getUtilisateur()){
+            Session::addFlash("error", "Veuillez vous connecter pour donner un avis.");
+            $this->redirectTo("security", "login");
         }
-    }
-    
-    return [
-        "view" => VIEW_DIR . "location/donnerAvis.php",
-        "meta_description" => "Donner un avis sur une annonce",
-        "data" => [
-            "annonce_id" => $id
-        ]
-    ];
-}
+        
+        // On récupère l'annonce à laquelle l'utilisateur souhaite poster un avis
+        $annonceManager = new AnnonceManager();
+        $annonce = $annonceManager->findOneById($id);
 
-    
+        // On filtre le formulaire d'ajout d'avis
+        if(isset($_POST["submitAvis"])){
+            $commentaire = filter_input(INPUT_POST, 'commentaire', FILTER_SANITIZE_SPECIAL_CHARS);
+
+            // On vérifie que le commentaire est présent
+            if($commentaire){
+                $avisManager = new AvisManager();
+                
+                // On ajoute l'avis en base de données
+                $avisManager->add([
+                    "dateAvis" => date("Y-m-d H:i:s"),
+                    "commentaire" => $commentaire,
+                    "logement_id" => $annonce->getLogement()->getId(), // Lier l'avis au logement de l'annonce
+                    "utilisateur_id" => Session::getUtilisateur()->getId() // Lier l'avis à l'utilisateur connecté
+                ]);
+
+                Session::addFlash("success", "Votre avis a été enregistré.");
+                $this->redirectTo("location", "index");
+            } else {
+                Session::addFlash("error", "Veuillez saisir un commentaire pour donner un avis.");
+                $this->redirectTo("location", "donnerAvis", $id);
+            }
+        }
+        
+        // Retourner la vue pour donner un avis avec les données nécessaires
+        return [
+            "view" => VIEW_DIR . "location/donnerAvis.php",
+            "meta_description" => "Donner un avis sur une annonce",
+            "data" => [
+                "annonce_id" => $id
+            ]
+        ];
+    }
+
 }
 
 
