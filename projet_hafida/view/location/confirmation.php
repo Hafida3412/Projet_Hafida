@@ -1,10 +1,10 @@
 <?php
 
 ?>
-<p>Votre réservation est confirmée!</p>
-<br>
+<p><strong>Votre réservation est confirmée!</strong></p>
+
 <p>Vous allez chez Chouchou à Strasbourg!</p> 
-<br>
+
 <p>Veuillez consulter les informations ci-dessous:</p>
 
 <ul>
