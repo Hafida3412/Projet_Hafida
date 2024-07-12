@@ -25,3 +25,4 @@ veuillez nous contacter au plus tôt.</p>
 <p>Nous vous souhaitons un agréable séjour chez Chouchou!</p> 
 <br>
 <p>L'équipe Chez mon Chat.</p>
+<br>
