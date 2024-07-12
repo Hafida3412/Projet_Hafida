@@ -1,9 +1,11 @@
 <?php
 
 ?>
-
-<p>Merci pour votre réservation chez Chouchou à Strasbourg! 
-Veuillez consulter les informations ci-dessous:</p>
+<p>Votre réservation est confirmée!</p>
+<br>
+<p>Vous allez chez Chouchou à Strasbourg!</p> 
+<br>
+<p>Veuillez consulter les informations ci-dessous:</p>
 
 <ul>
     <li>Nom: </li>
