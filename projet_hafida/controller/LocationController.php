@@ -208,8 +208,8 @@ class LocationController extends AbstractController implements ControllerInterfa
                 // Mise à jour du statut de l'annonce pour indiquer qu'elle est fermée
                 $annonceManager->updateDisponibilite($annonce);
         
-                // Redirection après l'enregistrement de la réservation
-                $this->redirectTo("location", "index");
+                // Redirection vers la confirmation de réservation
+$this->redirectTo("location", "confirmation");
             }
         }
         
@@ -220,6 +220,15 @@ class LocationController extends AbstractController implements ControllerInterfa
         
     }
 
+
+    public function confirmation(){
+        return [
+            "view" => VIEW_DIR . "location/confirmation.php",
+            "meta_description" => "Confirmation de réservation"
+        ];
+    }
+
+    
     //CREATION DE LA FONCTION POUR DONNER UN AVIS SUR UNE ANNONCE
     public function donnerAvis($id) {
         // On vérifie si l'utilisateur est connecté

@@ -26,4 +26,5 @@
     <input type="number" name="annonce" value="number"><br>
 
     <input type="submit" name="submitReservation" value="Réserver">
+     
 </form>
