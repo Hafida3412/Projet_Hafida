@@ -10,12 +10,12 @@
 <ul>
     <li>Nom: </li>
     <li>Prénom: </li>
-    <li>Date de début: <?= date('d-m-Y', strtotime($annonce->getDateDebut())) ?></li>
-    <li>Date de fin: <?= date('d-m-Y', strtotime($annonce->getDateFin())) ?></li>
+    <li>Date de début: </li>
+    <li>Date de fin: </li>
     <li>Adresse: </li>
 </ul>
 
-<img src="" alt="Image de Chouchou">
+<img src="https://media.gettyimages.com/id/1335776677/fr/photo/beautiful-blue-persian-cat-relaxed-on-livingroom.jpg?s=612x612&w=0&k=20&c=EJ1-vXhuEZfquyuSeCH5I0e4DPmwFnpfl8EUA7ljfQY=" alt="Image de Chouchou">
 
 <p>Le montant de la réservation est de: </p>
 
