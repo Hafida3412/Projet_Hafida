@@ -13,6 +13,8 @@ Veuillez consulter les informations ci-dessous:</p>
     <li>Adresse: </li>
 </ul>
 
+<img src="" alt="Image de Chouchou">
+
 <p>Le montant de la réservation est de: </p>
 
 <p>Si vous avez des questions ou des modifications à apporter à votre réservation, 
