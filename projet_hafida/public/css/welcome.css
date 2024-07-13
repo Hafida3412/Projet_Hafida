@@ -1,0 +1,29 @@
+/* Welcome page styles */
+
+.welcome-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .welcome-text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  
+  .welcome-links {
+    text-align: center;
+  }
+  
+  .welcome-links a {
+    text-decoration: none;
+    color: #337ab7;
+    margin: 0 10px;
+  }
+  
+  .welcome-links a:hover {
+    color: #23527c;
+  }
