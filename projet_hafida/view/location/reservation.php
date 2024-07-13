@@ -2,6 +2,7 @@
   
 ?>
 <h1>Réservation</h1>
+
 <form action="index.php?ctrl=location&action=reservation" method="post">
 
     <label for="numeroTelephone">Numéro de téléphone</label>
@@ -26,5 +27,5 @@
     <input type="number" name="annonce" value="number"><br>
 
     <input type="submit" name="submitReservation" value="Réserver">
-     
+
 </form>

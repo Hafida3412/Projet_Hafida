@@ -1,13 +1,10 @@
 <?php
-
     $annonces = $result["data"]['annonces']; 
-    
 ?>
 
-<h1>Liste des annonces</h1>
+    <h1>Liste des annonces</h1>
 
 <?php
-
 
 if($annonces){
 foreach($annonces as $annonce){ 
