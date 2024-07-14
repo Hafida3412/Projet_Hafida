@@ -1,6 +1,11 @@
    /*CREATION DU LOGIN.CSS*/
-    
+
+    body { 
+        background-color: #F5F5F5; 
+    }
+
     h1 {
+        color:rgb(22, 191, 22);
         text-align: center;
         font-size: 24px;
         margin-bottom: 20px;
@@ -25,8 +30,8 @@
     }
 
     input[type="submit"] {
-        background-color: #007bff;
-        color: #fff;
+        background-color:rgb(22, 191, 22);
+        color:black;
         border: none;
         cursor: pointer;
     }
