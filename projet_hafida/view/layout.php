@@ -64,7 +64,7 @@
                     <?= $page ?>
                 </main>
             </div>
-            <footer>
+            <footer class="footer">
                 <p>&copy; <?= date_create("now")->format("Y") ?> - <a href="#">Règlement de notre site</a> - <a href="#">Mentions légales</a></p>
             </footer>
         </div>
