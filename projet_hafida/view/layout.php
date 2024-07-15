@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/layout.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/welcome.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/login.css">
+        <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/listAnnonces.css">
+
 
         <title>Chez Mon Chat</title>
     </head>
