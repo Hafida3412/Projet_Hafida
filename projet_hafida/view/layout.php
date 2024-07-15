@@ -22,7 +22,8 @@
                 <h3 class="message" style="color: green"><?= App\Session::getFlash("success") ?></h3>
                 <header>
                     <nav>
-                        <div id="nav-left">
+                    <div id="nav-left" class="full-width">
+                        <img src="public\img\logo.png" alt="Logo">
                             <a href="/">Accueil</a>
                             <?php
                         /*   if(App\Session::isAdmin()){

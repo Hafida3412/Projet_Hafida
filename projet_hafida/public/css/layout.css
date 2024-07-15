@@ -9,37 +9,44 @@ body {
 #wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
     border-top: 1px solid #333; 
-}
-
-#mainpage {
-    padding: 20px;
 }
 
 header {
     background: #F5F5F5;
     color: black;
-    padding: 10px;
-    border-bottom: 1px solid #333; /*Ajouter une ligne de séparation entre le header et le body*/ 
+    border-bottom: 1px solid #333; /*création d'une ligne de séparation entre le header et le body*/ 
 }
 
-nav { 
+#nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+#nav-left img {
+    margin-right: 10px; /* Marge entre le logo et les autres éléments de la nav-left */
+}
+
+img {
+    width: 80px; /*largeur du logo */
+    height: auto; /* pour conserver les proportions de l'image */
+}
+nav{ 
     width: 100%; 
     background:#F5F5F5;; 
     color: black; 
-    padding: 10px; 
-    display: flex;
-    justify-content: space-around; /* Aligne les éléments sur toute la largeur */
+    padding: 10px;    
 }
-
-
-
+  
 nav a {
     color: black;
     text-decoration: none;
     margin-right: 10px;
-    flex: 1; /* Fait en sorte que les liens occupent l'espace disponible */
+    flex: 1; /* ça fait en sorte que les liens occupent l'espace disponible */
 }
 
 nav a:hover {
