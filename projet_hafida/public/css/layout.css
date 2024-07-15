@@ -18,7 +18,7 @@ body {
 }
 
 header {
-    background: #F5F5F5;;
+    background: #F5F5F5;
     color: black;
     padding: 10px;
     border-bottom: 1px solid #333; /*Ajouter une ligne de séparation entre le header et le body*/ 
@@ -29,13 +29,17 @@ nav {
     background:#F5F5F5;; 
     color: black; 
     padding: 10px; 
+    display: flex;
+    justify-content: space-around; /* Aligne les éléments sur toute la largeur */
 }
+
 
 
 nav a {
     color: black;
     text-decoration: none;
     margin-right: 10px;
+    flex: 1; /* Fait en sorte que les liens occupent l'espace disponible */
 }
 
 nav a:hover {
