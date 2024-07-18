@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/login.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/listAnnonces.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/ajoutAnnonces.css">
+        <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/detailsUtilisateur.css">
+
 
 
         <title>Chez Mon Chat</title>

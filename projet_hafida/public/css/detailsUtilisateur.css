@@ -1,0 +1,68 @@
+/* Styles pour la page Mon Compte */
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Styles pour les réservations */
+
+.reservation {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation p {
+    margin-bottom: 10px;
+}
+
+.reservation button {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.reservation button:hover {
+    background-color: #3e8e41;
+}
+
+/* Styles pour les logements */
+
+.logement {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logement button {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.logement button:hover {
+    background-color: #3e8e41;
+}
+
+/* Suppression des cadres vides */
+
+.reservation, .logement {
+    border: none;
+    box-shadow: none;
+}
+
