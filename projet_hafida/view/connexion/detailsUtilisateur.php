@@ -13,7 +13,7 @@ $reservations = $result["data"]['reservations'];
 <p>Rôle: <?= $utilisateur->getRole() ?></p>
 <br>
 
-<?php
+<p?php
 
 ?>
 
@@ -25,7 +25,7 @@ if(isset($reservations) && $reservations){
         // On affiche les détails de chaque réservation
         echo  
         "<br>"."<br>".
-        "<u>Ma réservation:</u>"."<br>". // Ajout des balises <u> pour souligner le texte
+        "<p>"."<u>Ma réservation:</u>"."<br>". // Ajout des balises <u> pour souligner le texte
         " Nombre de chats:".$reservation->getAnnonce()->getNbChat()."<br>".
         " Date de début: ".date('d-m-Y', strtotime($reservation->getAnnonce()->getDateDebut()))."<br>". 
         " Date de fin: ".date('d-m-Y', strtotime($reservation->getAnnonce()->getDateFin()))."<br>".
@@ -38,7 +38,7 @@ if(isset($reservations) && $reservations){
          
     //Création du bouton "Poster un avis" dans la boucle foreach pour pouvoir poster un avis pour chaque annonce   
     ?>  
- <a href="index.php?ctrl=location&action=donnerAvis&id=<?= $reservation->getAnnonce()->getId() ?>"><button>Poster un avis</button></a>
+ <a href="index.php?ctrl=location&action=donnerAvis&id=<?= $reservation->getAnnonce()->getId() ?>"><button>Poster un avis</button></a>.</p>
 <?php } ?>
  <?php
     } 
