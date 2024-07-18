@@ -1,11 +1,11 @@
 /*CREATION DU LOGIN.CSS*/
 
 body { 
-    background-color: #F5F5F5; 
+    background-color: #FFFFFF; 
 }
 
 h1 {
-    color:rgb(22, 191, 22);
+    color:#4CAF50;
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
@@ -30,7 +30,7 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-    background-color:rgb(22, 191, 22);
+    background-color:#4CAF50;
     color:black;
     border: none;
     cursor: pointer;
@@ -40,7 +40,7 @@ body {
     }
 
     h1 {
-        color:rgb(22, 191, 22);
+        color:#4CAF50;
         text-align: center;
         font-size: 24px;
         margin-bottom: 20px;
@@ -65,8 +65,8 @@ body {
     }
 
     input[type="submit"] {
-        background-color:rgb(22, 191, 22);
-        color:black;
+        background-color:#4CAF50;
+        color:white;
         border: none;
         cursor: pointer;
     }

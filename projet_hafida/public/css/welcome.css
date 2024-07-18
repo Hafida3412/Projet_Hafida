@@ -20,10 +20,10 @@
   
   .welcome-links a {
     text-decoration: none;
-    color: #337ab7;
+    color: #00698F;
     margin: 0 10px;
   }
   
   .welcome-links a:hover {
-    color: #23527c;
+    color: #3e8e41;;
   }

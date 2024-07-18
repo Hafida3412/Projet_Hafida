@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background: #F5F5F5;
+    background: #FFFFFF;
     color: black;
     border-bottom: 1px solid #333; /*création d'une ligne de séparation entre le header et le body*/ 
 }
@@ -37,13 +37,13 @@ img {
 }
 nav{ 
     width: 100%; 
-    background:#F5F5F5;; 
+    background:#FFFFFF; 
     color: black; 
     padding: 10px;    
 }
   
 nav a {
-    color: black;
+    color: #00698F;
     text-decoration: none;
     margin-right: 10px;
     flex: 1; /* ça fait en sorte que les liens occupent l'espace disponible */
@@ -82,7 +82,7 @@ main {
 
 }
 .footer a {
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;
     margin-right: 10px;
 }

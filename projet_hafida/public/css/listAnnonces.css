@@ -1,27 +1,28 @@
 p { 
-    background: #f9f9f9; 
-    border: 1px solid #ccc; 
-    padding: 10px; margin: 10px 0; 
-} 
+    background: #FFFFFF; /* Blanc */ 
+    border: 1px solid #333; /* Gris foncé */ 
+    padding: 10px; 
+    margin: 10px 0; 
+}
 
 a { 
     text-decoration: none; 
-    color:rgb(0, 122, 156); 
-} 
+    color: #00698F; /* Bleu foncé */ 
+}
 
 a:hover { 
     text-decoration: underline; 
-} 
+}
 
 button { 
-    background:rgb(22, 191, 22); 
-    color: #fff; 
+    background: #4CAF50; /* Vert foncé*/ 
+    color: #FFFFFF; 
     border: none; 
     padding: 5px 10px; 
     margin-top: 5px; 
-    cursor: pointer;
- } 
- 
- button:hover  { 
-    background: #7AB989;/*changement de la couleur du bouton lorsque l'on passe la souris dessus*/  
+    cursor: pointer; 
+}
+
+button:hover { 
+    background: #3e8e41; /* Vert moyen/ changement de la couleur du bouton lorsque l'on passe la souris dessus*/  
 } 
