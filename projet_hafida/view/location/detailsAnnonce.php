@@ -8,16 +8,16 @@ $type = $logement->getTypeLogement()->getNomType();
 
 <h1>Détails de l'annonce</h1>
 
-<p>Annonce de <?= $annonce->getUtilisateur()->getPseudo() ?></p>
-<p>Nb de chats: <?= $annonce->getNbChat() ?></p>
-<p>Date de début: <?= (date('d-m-Y ', strtotime($annonce->getDateDebut())))?></p>
-<p>Date de fin: <?= (date('d-m-Y ', strtotime($annonce->getDateFin()))) ?></p>
-<p>Description: <?= $annonce->getDescription() ?></p>
+<p>Annonce de <?= $annonce->getUtilisateur()->getPseudo() ?><br>
+ Nb de chats: <?= $annonce->getNbChat() ?><br>
+ Date de début: <?= (date('d-m-Y ', strtotime($annonce->getDateDebut())))?><br>
+ Date de fin: <?= (date('d-m-Y ', strtotime($annonce->getDateFin()))) ?><br>
+ Description: <?= $annonce->getDescription() ?><br>
 
-<p>Type de logement: <?= $logement->getTypeLogement() ?></p>
-<p>Nombre de chambres: <?= $logement->getNbChambre() ?></p>
-<p>Ville: <?= $logement->getVille() ?></p>
-<img src="<?= $logement->getImage() ?>" alt="Image du logement">
+ Type de logement: <?= $logement->getTypeLogement() ?><br>
+ Nombre de chambres: <?= $logement->getNbChambre() ?><br>
+ Ville: <?= $logement->getVille() ?><br>
+<img src="<?= $logement->getImage() ?>" alt="Image du logement"></p>
 
 
 <p>Avis:
