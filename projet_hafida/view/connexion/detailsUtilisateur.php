@@ -24,7 +24,8 @@ if(isset($reservations) && $reservations){
     foreach($reservations as $reservation){
         // On affiche les détails de chaque réservation
         echo  
-        "<br>"."<br>"."<br>".
+        "<br>"."<br>".
+        "<u>Ma réservation:</u>"."<br>". // Ajout des balises <u> pour souligner le texte
         " Nombre de chats:".$reservation->getAnnonce()->getNbChat()."<br>".
         " Date de début: ".date('d-m-Y', strtotime($reservation->getAnnonce()->getDateDebut()))."<br>". 
         " Date de fin: ".date('d-m-Y', strtotime($reservation->getAnnonce()->getDateFin()))."<br>".
