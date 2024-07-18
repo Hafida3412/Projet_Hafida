@@ -20,11 +20,11 @@ $type = $logement->getTypeLogement()->getNomType();
 <img src="<?= $logement->getImage() ?>" alt="Image du logement">
 
 
-<p><br>Avis:</p>
+<p>Avis:
 <?php
 if($avis) {
     foreach($avis as $avi){ ?> 
-       <p><?= $avi->getCommentaire() ?> (le <?= (date('d-m-Y ', strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p>
+       <?= $avi->getCommentaire() ?> (le <?= (date('d-m-Y ', strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p>
     <?php 
     }
 } else {
