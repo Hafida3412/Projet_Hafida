@@ -1,41 +1,6 @@
 /*CREATION DU LOGIN.CSS*/
 
 body { 
-    background-color: #FFFFFF; 
-}
-
-h1 {
-    color:#4CAF50;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-form {
-    width: 300px;
-    margin: 0 auto;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="email"],
-input[type="password"],
-input[type="submit"] {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-input[type="submit"] {
-    background-color:#4CAF50;
-    color:black;
-    border: none;
-    cursor: pointer;
-}
-body { 
         background-color: #F5F5F5; 
     }
 
