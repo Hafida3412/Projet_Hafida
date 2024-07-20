@@ -6,7 +6,7 @@
 
 <form action="index.php?ctrl=location&action=donnerAvis&id=<?= $id?>" method="post">
     <label for="commentaire">Commentaires:</label><br>
-    <textarea name="commentaire" rows="4" cols="50"></textarea><br>
+    <textarea name="commentaire" rows="10" cols="200"></textarea><br>
     <input type="submit" name="submitAvis" value="Poster l'avis">
 </form>
 
