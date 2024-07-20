@@ -1,5 +1,11 @@
 /*CSS de la page HOME*/
 
+h1{
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  }
+  
 .welcome-title {
     font-size: 36px;
     font-weight: bold;

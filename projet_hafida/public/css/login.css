@@ -1,5 +1,11 @@
 /*CREATION DU LOGIN.CSS*/
 
+h1{
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    }
+    
 form {
     width: 300px;
     margin: 0 auto;
