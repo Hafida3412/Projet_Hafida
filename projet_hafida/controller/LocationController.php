@@ -139,7 +139,7 @@ class LocationController extends AbstractController implements ControllerInterfa
 
     //SUPPRIMER UNE ANNONCE D UN UTILISATEUR
     public function supprimerAnnonce($id){
-
+        //On récupère l'annonce à supprimer
         $annonceManager = new annonceManager();
         $annonce = $annonceManager->findOneById($id);;
 
@@ -147,6 +147,7 @@ class LocationController extends AbstractController implements ControllerInterfa
         if(Session::getUtilisateur()) {
             // si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
             if(Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) {
+               //On supprime l'annonce
                 $annonceManager->deleteAnnonce($id);//on récupére la fonction "deleteAnnonce"
                 $this->redirectTo("location", "index", $annonce->getLogement()->getId());
             }  
