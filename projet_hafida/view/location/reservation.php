@@ -3,7 +3,7 @@
 ?>
 <h1>Réservation</h1>
 
-<form action="index.php?ctrl=location&action=reservation" method="post">
+<form action="index.php?ctrl=reservations&action=reservation" method="post">
 
     <label for="numeroTelephone">Numéro de téléphone</label>
     <input type="text" name="numeroTelephone" id="numeroTelephone"><br>

@@ -37,7 +37,7 @@ if($avis) {
  if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId() != App\Session::getUtilisateur()->getId()) {
    ?>
    <!--création du bouton réserver qui fait le lien avec le formulaire de réservation-->
-       <a href="index.php?ctrl=location&action=reservation&id=<?=$annonce->getId() ?>"><button>Réserver</button></a><br>
+       <a href="index.php?ctrl=reservations&action=reservation&id=<?=$annonce->getId() ?>"><button>Réserver</button></a><br>
    <?php   
        }
 ?>

@@ -7,7 +7,7 @@ use App\ControllerInterface;
 use Model\Managers\AnnonceManager;
 use Model\Managers\ReserverManager;
 
-class LocationController extends AbstractController implements ControllerInterface{
+class ReservationsController extends AbstractController implements ControllerInterface{
 //CREATION DE LA FONCTION RESERVATION
     public function reservation(){
         // On vérifie que l'utilisateur est connecté
@@ -58,7 +58,7 @@ class LocationController extends AbstractController implements ControllerInterfa
                 $annonceManager->updateDisponibilite($annonce);
         
                 // Redirection vers la confirmation de réservation
-$this->redirectTo("location", "confirmation");
+                $this->redirectTo("location", "confirmation");
             }
         }
         
