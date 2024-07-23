@@ -21,8 +21,8 @@ class AnnonceManager extends Manager{
         FROM ".$this->tableName. " t
         WHERE utilisateur_id = :id";
     //la requête renvoie un seul ou aucun résultat
-    return  $this->getOneOrNullResult(
-        DAO::delete($sql, ['id' => $id]), //on précise "delete"
+    return  $this->getMultipleResults(
+        DAO::select($sql, ['id' => $id]), //on précise "select"
         $this->className
     );
     }
@@ -33,10 +33,8 @@ class AnnonceManager extends Manager{
                 FROM ".$this->tableName. " t
                 WHERE id_annonce = :id";
     //la requête renvoie un seul ou aucun résultat
-        return  $this->getOneOrNullResult(
-            DAO::delete($sql, ['id' => $id]), //on précise "delete"
-            $this->className
-        );
+     
+        return DAO::delete($sql, ['id' => $id]);
     }
 
     // On ajoute cette méthode pour mettre à jour le statut de l'annonce
