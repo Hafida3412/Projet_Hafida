@@ -16,17 +16,12 @@ foreach($annonces as $annonce){
     Date de fin: ".(date('d-m-Y ', strtotime($annonce->getDateFin()))).
     "<br> Description: ".$annonce->getDescription()."<br> Ville: ".$annonce->getLogement()->getVille()."<br>"."<br>";
 
-    // si l'utilisateur est connecté
-    if(App\Session::getUtilisateur()) {
-        // si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
-        if(App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) {
-        ?>
-            <a href="index.php?ctrl=location&action=supprimerAnnonce&id=<?=$annonce->getId() ?>"><button>Supprimer</button></a><br><br></p>
-            <?php   
-        }
-        
-    }
-?>
+    if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
+        <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
+            <button type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
+        </form><br><br>
+    <?php } ?>
+</p>
 <?php }
 } else {
 echo "<p>Pas d'annonce à supprimer pour le moment</p>";
