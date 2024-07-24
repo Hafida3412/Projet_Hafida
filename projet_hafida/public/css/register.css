@@ -5,17 +5,7 @@ h1{
     text-align: center;
     }
 
-    form { 
-        width: 450px; 
-        margin: 0 auto; 
-        margin-top: 50px; 
-        padding: 20px; 
-        background-color: #ffffff; 
-        border: 1px solid #cccccc; 
-        border-radius: 5px; 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    }
-
+    
     label { 
         display: block; 
         margin-bottom: 10px; 
