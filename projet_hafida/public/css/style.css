@@ -22,6 +22,7 @@ body {
   h1 {
     color: #00698F; /* couleur de titre */
     margin-top: 50px;
+    text-align: center;
   }
   
   h2, h3, h4, h5, h6 {
