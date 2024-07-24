@@ -58,6 +58,8 @@ body {
     color: black; /* couleur de texte des liens */
     text-decoration: none;
     padding: 10px; /* ajoute un padding pour que les éléments soient plus larges */
+    font-size: 18px;
+  
   }
   
   nav a:hover {
@@ -71,8 +73,8 @@ body {
   }
   
   #nav-left img {
-    width: 50px; /* taille du logo */
-    height: 50px;
+    width: 100px; /* taille du logo */
+    height: 100px;
     margin-right: 10px; /* espace entre le logo et le texte */
   }
   
