@@ -30,7 +30,7 @@
                     <nav>
                     <div id="nav-left" class="full-width">
                         <img src="public\img\logo.png" alt="Logo">
-                            <a href="/">Accueil</a>
+                        <!--    <a href="/">Accueil</a>-->
                             <?php
                         /*   if(App\Session::isAdmin()){
                                 ?>
