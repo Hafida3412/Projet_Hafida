@@ -31,8 +31,8 @@ body {
   
   /* Navbar */
   nav {
-    background-color: #333; /* couleur de fond de la navigation */
-    color: #fff; /* couleur de texte de la navigation */
+    background-color:white; /* couleur de fond de la navigation */
+    color: black; /* couleur de texte de la navigation */
     padding: 10px;
     display: flex; /* utilise flexbox pour aligner les éléments */
     justify-content: space-between; /* espaces les éléments sur toute la largeur */
@@ -53,7 +53,7 @@ body {
   }
   
   nav a {
-    color: #fff; /* couleur de texte des liens */
+    color: black; /* couleur de texte des liens */
     text-decoration: none;
     padding: 10px; /* ajoute un padding pour que les éléments soient plus larges */
   }
@@ -75,7 +75,7 @@ body {
   }
   
   #nav-left a {
-    color: #fff; /* couleur de texte du logo */
+    color:#23527c; /* couleur de texte du logo */
     text-decoration: none;
   }
   
@@ -86,7 +86,7 @@ body {
   
   /* Footer */
   footer {
-    background-color: #333; /* couleur de fond du pied de page */
+    background-color:  #335db7;/* couleur de fond du pied de page */
     color: #fff; /* couleur de texte du pied de page */
     padding: 10px;
     text-align: center;
@@ -97,6 +97,4 @@ body {
     color: #fff;
   }
   
-  footer a:hover {
-    color: #337ab7;
-  }
+ 
