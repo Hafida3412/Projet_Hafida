@@ -8,6 +8,7 @@
 
 if($annonces){
 foreach($annonces as $annonce){ 
+    echo "<div class='annonce'>"; // Ouverture du cadre de l'annonce
     echo "<p>"."Annonce de <a href='index.php?ctrl=location&action=detailsAnnonce&id=".$annonce->getId()."'>"
     .$annonce->getUtilisateur()->getPseudo()."</a>" ." du "
     .(date('d-m-Y H:i:s', strtotime($annonce->getDateCreation()))).
@@ -20,9 +21,9 @@ foreach($annonces as $annonce){
         <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
             <button type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
         </form><br><br>
-    <?php } ?>
-</p>
-<?php }
+    <?php } 
+    echo "</p></div>"; // Fermeture du cadre de l'annonce</p>
+}
 } else {
 echo "<p>Pas d'annonce à supprimer pour le moment</p>";
 }
