@@ -1,0 +1,28 @@
+.annonce {
+    background-color: #fff; /* couleur de fond du cadre de l'annonce */
+    border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
+    padding: 10px; /* espacement interne du cadre de l'annonce */
+    margin-bottom: 10px; /* espacement entre les annonces */
+}
+
+.annonce p {
+    font-size: 18px; /* taille de la police du texte de l'annonce */
+    line-height: 1.5; /* hauteur de ligne du texte de l'annonce */
+}
+
+.annonce a {
+    font-weight: bold; /* texte en gras pour les liens */
+}
+
+.annonce button {
+    background-color: #f00; /* couleur de fond du bouton */
+    color: #fff; /* couleur de texte du bouton */
+    padding: 5px 10px; /* espacement interne du bouton */
+    border: none; /* pas de bordure sur le bouton */
+    cursor: pointer; /* curseur style pointer au survol */
+    margin-top: 10px; /* espacement au-dessus du bouton */
+}
+
+.annonce button:hover {
+    background-color: #d00; /* couleur de fond du bouton au survol */
+}
