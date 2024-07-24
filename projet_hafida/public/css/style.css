@@ -4,7 +4,99 @@
     box-sizing: border-box;
 }
 
-h1 {
-    color: #00698F;
+/* Couleurs */
+body {
+    background-color: #f9f9f9; /* couleur de fond claire */
+    color: #333; /* couleur de texte sombre */
+  }
+  
+  a {
+    color: #337ab7; /* couleur de lien bleu */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #23527c; /* couleur de lien survolée */
+  }
+  
+  h1 {
+    color: #00698F; /* couleur de titre */
     margin-top: 50px;
-}
+  }
+  
+  h2, h3, h4, h5, h6 {
+    color: #333; /* couleur de titre sombre */
+    margin-bottom: 10px;
+  }
+  
+  /* Navbar */
+  nav {
+    background-color: #333; /* couleur de fond de la navigation */
+    color: #fff; /* couleur de texte de la navigation */
+    padding: 10px;
+    display: flex; /* utilise flexbox pour aligner les éléments */
+    justify-content: space-between; /* espaces les éléments sur toute la largeur */
+    align-items: center; /* centre les éléments verticalement */
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* utilise flexbox pour aligner les éléments */
+    justify-content: space-between; /* espaces les éléments sur toute la largeur */
+    align-items: center; /* centre les éléments verticalement */
+  }
+  
+  nav li {
+    margin-right: 20px; /* espace entre les éléments */
+  }
+  
+  nav a {
+    color: #fff; /* couleur de texte des liens */
+    text-decoration: none;
+    padding: 10px; /* ajoute un padding pour que les éléments soient plus larges */
+  }
+  
+  nav a:hover {
+    color: #337ab7; /* couleur de lien survolée */
+  }
+  
+  /* Logo */
+  #nav-left {
+    display: flex; /* utilise flexbox pour aligner les éléments */
+    align-items: center; /* centre les éléments verticalement */
+  }
+  
+  #nav-left img {
+    width: 50px; /* taille du logo */
+    height: 50px;
+    margin-right: 10px; /* espace entre le logo et le texte */
+  }
+  
+  #nav-left a {
+    color: #fff; /* couleur de texte du logo */
+    text-decoration: none;
+  }
+  
+  /* Contenu */
+  main {
+    padding: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333; /* couleur de fond du pied de page */
+    color: #fff; /* couleur de texte du pied de page */
+    padding: 10px;
+    text-align: center;
+    clear: both;
+  }
+  
+  footer a {
+    color: #fff;
+  }
+  
+  footer a:hover {
+    color: #337ab7;
+  }
