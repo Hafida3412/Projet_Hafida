@@ -21,7 +21,7 @@
     font-weight: bold; /* texte en gras pour les liens */
 }
 
-.annonce button {
+button.btn-delete {
     background-color: #337ab7; /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
@@ -30,6 +30,6 @@
     margin-top: 10px; /* espacement au-dessus du bouton */
 }
 
-.annonce button:hover {
+button.btn-delete:hover {
     background-color:  #23527c; /* couleur de fond du bouton au survol */
 }
