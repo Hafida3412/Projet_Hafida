@@ -85,7 +85,8 @@ body {
   
   /* Contenu */
   main {
-    padding: 20px;
+    width: 80%; /* largeur du conteneur des annonces */
+    margin: 0 auto; /* centrage du conteneur */
   }
   
   /* Footer */

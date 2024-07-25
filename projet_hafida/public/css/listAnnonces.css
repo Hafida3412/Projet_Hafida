@@ -2,10 +2,14 @@
     background-color: #fff; /* couleur de fond du cadre de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
     padding: 10px; /* espacement interne du cadre de l'annonce */
-    margin-bottom: 10px; /* espacement entre les annonces */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    width: 30%; /* largeur du cadre de l'annonce */
+    margin: 10px; /* espacement entre les annonces */
+    display: inline-block; /* affichage en ligne pour permettre les annonces à côté */
+    vertical-align: top; /* alignement vertical pour éviter les espaces entre les annonces */
+}
+
+.annonce:nth-child(n+2) {
+    margin-left: 5px; /* espace entre les annonces */
 }
 
 .annonce p {
