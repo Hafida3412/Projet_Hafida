@@ -16,7 +16,7 @@ foreach($annonces as $annonce){
     Date de début: ".(date('d-m-Y ', strtotime($annonce->getDateDebut())))."<br>
     Date de fin: ".(date('d-m-Y ', strtotime($annonce->getDateFin()))).
     "<br> Description: ".$annonce->getDescription()."<br> 
-    Ville: ".$annonce->getLogement()->getVille()."<br>"."<br>";
+    Ville: ".$annonce->getLogement()->getVille();
 
     if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
         <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
