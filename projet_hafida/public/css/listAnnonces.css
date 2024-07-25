@@ -27,8 +27,11 @@ button.btn-delete {
     padding: 5px 10px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
-    margin-top: 10px; /* espacement au-dessus du bouton */
+    display: block; /* Affichage en tant que bloc */
+    margin: 0 auto; /* On centre horizontalement */
+    text-align: center; /* On aligne le texte au centre */
 }
+    
 
 button.btn-delete:hover {
     background-color:  #23527c; /* couleur de fond du bouton au survol */
