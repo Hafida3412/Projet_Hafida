@@ -1,8 +1,19 @@
+/* CREATION DU RESERVATION.CSS*/
 
-    div.paiement {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: baseline;;
-    }
-    input[type="radio"] { margin-right: 0; } label { margin-bottom: 5px; } 
+/* Le style pour la classe paiement*/
+.paiement {
+    display: flex;/*On utilise le modèe de la boîte flex*/
+    flex-direction: row;/*Disposition horizontale des éléments */
+    flex-wrap: nowrap;/*Pas de saut de ligne pour les éléments */
+    align-items: baseline; /* Alignement des éléments sur la ligne de base */
+}
+
+/* Style pour les boutons radio*/
+input[type="radio"] { 
+    margin-right:0; /*Pas de marge à droite */
+} 
+
+/* Style pour les étiquettes */
+label { 
+    margin-bottom: 5px; /* Marge en bas de 5px */
+}     
