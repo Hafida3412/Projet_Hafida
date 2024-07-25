@@ -50,9 +50,9 @@
     padding: 10px; 
     border: none; 
     cursor: pointer; 
-    display: block; /* Afficher en tant que bloc */
-    margin: 0 auto; /* Centrer horizontalement */
-    text-align: center; /* Aligner le texte au centre */
+    display: block; /* Affichage en tant que bloc */
+    margin: 0 auto; /* On centre horizontalement */
+    text-align: center; /* On aligne le texte au centre */
 }
 
 .btn-reserver:hover {
