@@ -3,12 +3,12 @@ form {
     border: 1px solid #ccc; /*bordure autour du formulaire */ 
     padding: 20px; /*espacement interne du formulaire */ 
     margin-bottom: 20px; /* espacement en dessous du formulaire */ 
-    width: 50%; /* Limiter la largeur du formulaire à 80% */
-    margin: 0 auto; /* Centrer le formulaire horizontalement */
+    width: 50%; /* pour limiter la largeur du formulaire à 80% */
+    margin: 0 auto; /* Cela permet de centrer le formulaire horizontalement */
 }
 
 form label { 
-    display: block; /* affichage en bloc des labels */ 
+    display: block; /* cela permet l'affichage en bloc des labels */ 
     margin-top: 10px; /* espacement au-dessus des labels */ 
 }
 
@@ -27,10 +27,11 @@ form input[type="submit"] {
     background-color: #337ab7; /* couleur de fond du bouton de soumission */ 
     color: #fff; /* couleur de texte du bouton de soumission */ 
     padding: 10px; /* espacement interne du bouton de soumission */ 
-    border: none; /*pasde bordure sur le bouton de soumission */ 
-    cursor: pointer; /* curser style pointer au survol du bouton */ 
+    border: none; /*pas de bordure sur le bouton de soumission */ 
+    cursor: pointer; /* curseur style pointer au survol du bouton */ 
     margin-top: 10px; /*espacement au-dessus du bouton de soumission */ 
 }
 
 form input[type="submit"]:hover { 
-    background-color: #23527c; /* couleur de fond du bouton de soumission au survol */ }
+    background-color: #23527c; /* couleur de fond du bouton de soumission au survol */ 
+}
