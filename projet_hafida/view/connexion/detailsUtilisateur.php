@@ -3,21 +3,19 @@ $utilisateur = $result["data"]['utilisateur'];
 $reservations = $result["data"]['reservations'];
 
 ?>
-
+<!-- Utilisateur Info -->
 <h1>Mon Compte</h1>
-
+<div class="utilisateur-info">
 <p>Pseudo: <?= $utilisateur->getPseudo() ?></p>
 <p>Email: <?= $utilisateur->getEmail() ?></p>
 <p>Nom: <?= $utilisateur->getNom() ?></p>
 <p>Prénom: <?= $utilisateur->getPrenom() ?></p>
 <p>Rôle: <?= $utilisateur->getRole() ?></p>
-<br>
+</div>
 
-<p?php
-
-?>
-
-<h1>Mes réservations:</h1>
+<!-- Réservations -->
+<h1>Mes réservations</h1>
+<div class="reservations">
 <?php
 
 if(isset($reservations) && $reservations){
@@ -46,15 +44,15 @@ if(isset($reservations) && $reservations){
  else { echo "Aucune réservation pour le moment."; 
     }
 ?>
-<br>
-<br>
-<br>
-<h1>Mes logements:</h1>
-<br>
-<br>
-<!--Création du bouton "créer un nouveau logement" pour faire le lien vers le formulaire "Créer un logement"-->
-<a href="index.php?ctrl=location&action=creationLogement"><button>Créer un nouveau logement</button></a><br>
 
+</div>
+
+<!-- Créer un logement -->
+<div class="create-logement"></div>
+<h1>Mes logements</h1>
+<!--Création du bouton "créer un nouveau logement" pour faire le lien vers le formulaire "Créer un logement"-->
+<a href="index.php?ctrl=location&action=creationLogement"><button class="btn-reserver">Créer un nouveau logement</button></a><br>
+</div>
         
    
    
