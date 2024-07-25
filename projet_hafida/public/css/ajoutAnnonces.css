@@ -1,0 +1,36 @@
+form { 
+    background-color: #fff; /* couleur de fond du formulaire */ 
+    border: 1px solid #ccc; /*bordure autour du formulaire */ 
+    padding: 20px; /*espacement interne du formulaire */ 
+    margin-bottom: 20px; /* espacement en dessous du formulaire */ 
+    width: 50%; /* Limiter la largeur du formulaire à 80% */
+    margin: 0 auto; /* Centrer le formulaire horizontalement */
+}
+
+form label { 
+    display: block; /* affichage en bloc des labels */ 
+    margin-top: 10px; /* espacement au-dessus des labels */ 
+}
+
+form input, form select, form textarea { 
+    width: 100%; /* largeur à 100% des champs de saisie */ 
+    padding: 5px; /* espacement interne des champs de saisie */ 
+    margin-bottom: 10px; /*espacement en dessous des champs de saisie */ 
+    box-sizing: border-box; /*inclut le padding dans la largeur */ 
+}
+
+form textarea { 
+    height: 100px; /* hauteur de 100px pour le champ de texte */ 
+}
+
+form input[type="submit"] { 
+    background-color: #337ab7; /* couleur de fond du bouton de soumission */ 
+    color: #fff; /* couleur de texte du bouton de soumission */ 
+    padding: 10px; /* espacement interne du bouton de soumission */ 
+    border: none; /*pasde bordure sur le bouton de soumission */ 
+    cursor: pointer; /* curser style pointer au survol du bouton */ 
+    margin-top: 10px; /*espacement au-dessus du bouton de soumission */ 
+}
+
+form input[type="submit"]:hover { 
+    background-color: #23527c; /* couleur de fond du bouton de soumission au survol */ }
