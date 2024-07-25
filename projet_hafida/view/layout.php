@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/detailsAnnonce.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/ajoutAnnonces.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/detailsUtilisateur.css">
+        <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/reservation.css">
 
 
 
