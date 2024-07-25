@@ -1,6 +1,5 @@
 form { 
     background-color: #fff; /* couleur de fond du formulaire */ 
-    border: 1px solid #ccc; /*bordure autour du formulaire */ 
     padding: 20px; /*espacement interne du formulaire */ 
     margin-bottom: 20px; /* espacement en dessous du formulaire */ 
     width: 50%; /* pour limiter la largeur du formulaire à 80% */

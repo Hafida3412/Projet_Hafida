@@ -3,6 +3,9 @@
     border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
     padding: 10px; /* espacement interne du cadre de l'annonce */
     margin-bottom: 10px; /* espacement entre les annonces */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .annonce p {
