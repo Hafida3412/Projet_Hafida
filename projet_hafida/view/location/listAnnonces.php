@@ -29,5 +29,4 @@ foreach($annonces as $annonce){
 echo "<p>Pas d'annonce à supprimer pour le moment</p>";
 }
 
-
     ?>
