@@ -22,7 +22,7 @@
 }
 
 .annonce button {
-    background-color: #f00; /* couleur de fond du bouton */
+    background-color: #337ab7; /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
@@ -31,5 +31,5 @@
 }
 
 .annonce button:hover {
-    background-color: #d00; /* couleur de fond du bouton au survol */
+    background-color:  #23527c; /* couleur de fond du bouton au survol */
 }
