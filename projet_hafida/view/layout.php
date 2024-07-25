@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/register.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/login.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/listAnnonces.css">
+        <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/detailsAnnonce.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/ajoutAnnonces.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/detailsUtilisateur.css">
 

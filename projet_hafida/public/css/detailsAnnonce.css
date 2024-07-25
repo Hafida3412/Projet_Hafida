@@ -1,0 +1,47 @@
+.annonce-info {
+    background-color: #fff; /* couleur de fond du cadre des informations de l'annonce */
+    border: 1px solid #ccc; /* bordure autour du cadre */
+    padding: 10px; /* espacement interne du cadre */
+    width: 50%; /* largeur du cadre */  
+    margin: 10px auto; /* centrer le cadre */
+    
+}
+
+.annonce-info p {
+    font-size: 18px; /* taille de la police du texte */
+    line-height: 1.5; /* hauteur de ligne du texte */
+}
+
+.annonce-info img {
+    width: 100%; /* taille de l'image */
+    height: auto; /* hauteur automatique */
+    object-fit: contain; /* ajustement de l'image */
+}
+
+.avis {
+    background-color: #fff; /* couleur de fond du cadre des avis */
+    border: 1px solid #ccc; /* bordure autour du cadre */
+    padding: 10px; /* espacement interne du cadre */
+    width: 50%; /* largeur du cadre */
+    margin: 10px auto; /* Centrer horizontalement */
+}
+
+.avis p {
+    font-size: 18px; /* taille de la police du texte */
+    line-height: 1.5; /* hauteur de ligne du texte */
+}
+
+button.annonce-info{
+    background-color:#337ab7; /* couleur de fond du bouton */
+    color: #fff; /* couleur de texte du bouton */
+    padding: 5px 10px; /* espacement interne du bouton */
+    border: none; /* pas de bordure sur le bouton */
+    cursor: pointer; /* curseur style pointer au survol */
+    margin-top: 10px;
+    display: block; /* Afficher le bouton en bloc pour le centrer */
+    margin: 0 auto; /* Centrer le bouton horizontalement */
+}
+
+button.annonce-info:hover {
+    background-color: #23527c;; /* couleur de fond du bouton au survol */
+}
