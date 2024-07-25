@@ -91,15 +91,19 @@ body {
   
   /* Footer */
   footer {
-    background-color:  #335db7;/* couleur de fond du pied de page */
+    background-color: #223354; /* couleur de fond du pied de page plus foncée */
     color: #fff; /* couleur de texte du pied de page */
     padding: 10px;
     text-align: center;
     clear: both;
-  }
-  
-  footer a {
+}
+
+footer a {
     color: #fff;
-  }
+}
+
+footer a:hover {
+    color: #ccc; /* couleur de lien survolée plus lisible */
+}
   
  
