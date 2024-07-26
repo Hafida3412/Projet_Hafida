@@ -1,4 +1,4 @@
-<p?php
+<?php
 
 ?>
 <h1>Votre réservation est confirmée!</h1>
