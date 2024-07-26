@@ -15,7 +15,7 @@
     Date de fin: <br>
 </p>
 <br>
-<img src="https://media.gettyimages.com/id/1335776677/fr/photo/beautiful-blue-persian-cat-relaxed-on-livingroom.jpg?s=612x612&w=0&k=20&c=EJ1-vXhuEZfquyuSeCH5I0e4DPmwFnpfl8EUA7ljfQY=" alt="Image de Chouchou">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZFtpXQtltulLsfr3eZodTAYqMdwKd7uA-KEvkHBj2duu4hEDI097-6Ia3cwVS3xcbzHk&usqp=CAU" alt="Image de Chouchou">
 <br>
 <p>Le montant de la réservation est de: </p>
 <br>
