@@ -58,7 +58,7 @@ class ReservationsController extends AbstractController implements ControllerInt
                 $annonceManager->updateDisponibilite($annonce);
         
                 // Redirection vers la confirmation de réservation
-                $this->redirectTo("location", "confirmation");
+                $this->redirectTo("reservations", "confirmation");
             }
         }
         
