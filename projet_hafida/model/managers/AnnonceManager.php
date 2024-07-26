@@ -59,6 +59,19 @@ class AnnonceManager extends Manager{
             DAO::select($sql, ['id' => $annonceId], false)
         ) == 1;
     }
+    //REQUETE POUR AFFICHER LES ANNONCES PAR VILLE
+public function findAnnoncesByVille($ville){
+    $sql = "SELECT *
+            FROM ".$this->tableName." t
+            INNER JOIN logement l ON t.logement_id = l.id_logement
+            WHERE l.ville = :ville";
+    
+    return $this->getMultipleResults(
+        DAO::select($sql, ['ville' => $ville]), 
+        $this->className
+    );
+}
+
 }
    
 

@@ -2,6 +2,15 @@
     $annonces = $result["data"]['annonces']; 
 ?>
 
+<form method="GET" action="index.php">
+    <input type="hidden" name="ctrl" value="location">
+    <input type="hidden" name="action" value="rechercheAnnonce">
+
+    <label for="ville">Rechercher par ville</label>
+    <input type="text" name="ville" id="ville" placeholder="Entrez une ville">
+    <button type="submit">Rechercher</button>
+</form>
+
     <h1>Liste des annonces</h1>
 
 <?php
