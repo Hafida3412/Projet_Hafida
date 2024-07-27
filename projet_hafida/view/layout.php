@@ -17,9 +17,6 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/confirmation.css">
         
 
-
-
-
         <title>Chez Mon Chat</title>
     </head>
     <body>

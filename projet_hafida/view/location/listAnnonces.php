@@ -34,8 +34,6 @@ foreach($annonces as $annonce){
     <?php } 
     echo "</p></div>"; // Fermeture du cadre de l'annonce</p>
 }
-} else {
-echo "<p>Pas d'annonce à supprimer pour le moment</p>";
 }
 
     ?>
