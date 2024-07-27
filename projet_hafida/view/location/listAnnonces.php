@@ -1,7 +1,9 @@
+<!--Ce code affiche la liste des annonces récupérées depuis la base de données-->
 <?php
     $annonces = $result["data"]['annonces']; 
 ?>
 <br>
+<!--CREATION DU FORMULAIRE DE RECHERCHE D ANNONCE PAR VILLE-->
 <form method="GET" action="index.php">
     <input type="hidden" name="ctrl" value="location">
     <input type="hidden" name="action" value="rechercheAnnonce">
@@ -16,8 +18,9 @@
 <?php
 
 if($annonces){
-foreach($annonces as $annonce){ 
+foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et affiche les détails de celle-ci 
     echo "<div class='annonce'>"; // Ouverture du cadre de l'annonce
+    //L'utilisateur peut cliquer sur le pseudo de l'utilisateur pour accéder aux détails de l'annonce
     echo "<p>"."Annonce de <a href='index.php?ctrl=location&action=detailsAnnonce&id=".$annonce->getId()."'>"
     .$annonce->getUtilisateur()->getPseudo()."</a>" ." du "
     .(date('d-m-Y H:i:s', strtotime($annonce->getDateCreation()))).
@@ -27,6 +30,7 @@ foreach($annonces as $annonce){
     "<br> Description: ".$annonce->getDescription()."<br> 
     Ville: ".$annonce->getLogement()->getVille();
 
+    //Il peut également supprimer une annonce s'il en est l'auteur en cliquant sur le bouton "Supprimer" après confirmation
     if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
         <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
             <button class="btn-delete"on  type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
