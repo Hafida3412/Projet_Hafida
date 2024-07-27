@@ -1,10 +1,6 @@
 /*CREATION DU CSS DE LA VUE HOME*/
 
-img {
-  width: 100%;/* La largeur de l'image occupe 100% de la largeur du conteneur parent*/
-  height: auto;/*La hauteur de l'image s'ajuste automatiquement pour préserver les proportions */
-  object-fit: contain;/*L'image est ajustée pour être contenue dans son cadre sans être déformée */
-}
+
 
 /* Style pour le titre de bienvenue */
 .welcome-title {
