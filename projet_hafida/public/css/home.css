@@ -1,38 +1,44 @@
-```css
+/*CREATION DU CSS DE LA VUE HOME*/
+
 img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  width: 100%;/* La largeur de l'image occupe 100% de la largeur du conteneur parent*/
+  height: auto;/*La hauteur de l'image s'ajuste automatiquement pour préserver les proportions */
+  object-fit: contain;/*L'image est ajustée pour être contenue dans son cadre sans être déformée */
 }
 
+/* Style pour le titre de bienvenue */
 .welcome-title {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 10px;
+  font-size: 24px;/* Taille de police de 24px */
+  font-weight: bold;/* Texte en gras */ 
+  text-align: center;/* Centrage du texte */
+  margin-bottom: 10px;/* Marge inférieure de 10px */
 }
 
+/* Style pour le texte de bienvenue */ 
 .welcome-text {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.5; /* Hauteur de ligne de 1.5 fois la taille de police */ 
   text-align: justify;
   margin-bottom: 20px;
 }
 
+/* Style pour les liens de bienvenue */ 
 .welcome-links {
-  text-align: center;
+  text-align: center;/* Centrage du texte */ 
 }
 
+/* Style des liens dans la section de bienvenue */
 .welcome-links a {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 5px 10px;
-  border: 1px solid #000;
-  text-decoration: none;
-  color:white;
-  background-color: #337ab7;
+  display: inline-block;/* Les liens sont affichés en ligne */
+  margin: 0 10px;/* Marge de 0 sur les côtés horizontaux et de 10px en haut et en bas */
+  padding: 5px 10px;/* Remplissage de 5px en haut et en bas, 10px à gauche et à droite*/ 
+  border: 1px solid #000;/* Bordure de 1px solide de couleur noire */
+  text-decoration: none;/* Pas de soulignement du texte */
+  color:white; /* Texte en blanc */
+  background-color: #337ab7;/* Fond de couleur bleue */
 }
 
+/* Changement de style au survol des liens*/
 .welcome-links a:hover {
-  background-color: #23527c;
+  background-color: #23527c; /* Changement de couleur de fond en survol à une nuance plus foncée */ 
 }
