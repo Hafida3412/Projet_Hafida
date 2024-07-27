@@ -1,0 +1,38 @@
+```css
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.welcome-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.welcome-text {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.welcome-links {
+  text-align: center;
+}
+
+.welcome-links a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color:white;
+  background-color: #337ab7;
+}
+
+.welcome-links a:hover {
+  background-color: #23527c;
+}

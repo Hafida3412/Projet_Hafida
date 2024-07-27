@@ -10,8 +10,9 @@
   N'hésitez pas à consulter les annonces disponibles et à contacter les propriétaires 
   pour organiser cette garde temporaire. 
   Bonnes vacances à vous !</p>
-
+  <br>
 <p class="welcome-links">
   <a href="index.php?ctrl=security&action=login">Se connecter</a>
   <a href="index.php?ctrl=security&action=register">S'inscrire</a>
-</p>
+  </p>
+<br>
