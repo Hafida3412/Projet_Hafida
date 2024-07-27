@@ -1,5 +1,5 @@
 <?php
-
+use App\Session;
 ?>
 <h1>Votre réservation est confirmée!</h1>
 <br>
@@ -8,11 +8,11 @@
 <p>Veuillez consulter les informations ci-dessous:</p>
 <br>
 <p>
-    Nom: <br>
-    Prénom: <br>
-    Adresse de destination: <br>
-    Date de début: <br>
-    Date de fin: <br>
+Nom: <?= Session::getUtilisateur()->getNom() ?><br>
+Prénom: <?= Session::getUtilisateur()->getPrenom() ?><br>
+Adresse de destination: <br>
+Date de début: <br>
+Date de fin: <br>
 </p>
 <br>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZFtpXQtltulLsfr3eZodTAYqMdwKd7uA-KEvkHBj2duu4hEDI097-6Ia3cwVS3xcbzHk&usqp=CAU" width="300px" height="200px" alt="Image de Chouchou">
@@ -26,3 +26,4 @@ veuillez nous contacter au plus tôt.</p>
 <br>
 <p>L'équipe Chez mon Chat.</p>
 <br>
+<?php 

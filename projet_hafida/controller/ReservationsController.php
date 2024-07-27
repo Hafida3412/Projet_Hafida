@@ -69,11 +69,14 @@ class ReservationsController extends AbstractController implements ControllerInt
         
     }
 
-
     public function confirmation(){
-        return [
-            "view" => VIEW_DIR . "location/confirmation.php",
-            "meta_description" => "Confirmation de réservation"
-        ];
+        
+                return [
+                    "view" => VIEW_DIR . "location/confirmation.php",
+                    "meta_description" => "Confirmation de réservation",
+                ];
+            
+        }
     }
-}
+    
+    
