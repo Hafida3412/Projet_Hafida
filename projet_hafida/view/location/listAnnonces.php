@@ -3,7 +3,7 @@
     $annonces = $result["data"]['annonces']; 
 ?>
 <br>
-<!--CREATION DU FORMULAIRE DE RECHERCHE D ANNONCE PAR VILLE-->
+<!--Création du formulaire de recherche d'annonce par ville-->
 <form method="GET" action="index.php">
     <input type="hidden" name="ctrl" value="location">
     <input type="hidden" name="action" value="rechercheAnnonce">
