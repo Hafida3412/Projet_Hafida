@@ -91,9 +91,6 @@ body {
   
   /* Footer */
   footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     background-color: #223354; /* couleur de fond du pied de page plus foncée */
     color: #fff; /* couleur de texte du pied de page */
     padding: 10px;
