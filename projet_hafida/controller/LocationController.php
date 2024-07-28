@@ -76,9 +76,12 @@ public function rechercheAnnonce() {
     //AJOUTER/DEPOSER UNE ANNONCE
     public function ajoutAnnonces(){
         
-        $logementManager = new logementManager();//création de l'instance de la classe logementManager pour gérer les logements.
-        $id = Session::getUtilisateur()->getId();//on récupère l'id de l'utilisateur connecté
-        $logements = $logementManager->listLogementsByUser($id);// on récupère les logements par utilisateur
+        //création de l'instance de la classe logementManager pour gérer les logements.
+        $logementManager = new logementManager();
+        //on récupère l'id de l'utilisateur connecté
+        $id = Session::getUtilisateur()->getId();
+        // on récupère les logements par utilisateur en utilisant la requête créée dans logementManager
+        $logements = $logementManager->listLogementsByUser($id);
     
         if(Session::getUtilisateur()) {//On vérifie si l'utilisateur est connecté
             $annonceManager = new AnnonceManager();/* Si oui, on crée une instance de 
@@ -91,7 +94,6 @@ public function rechercheAnnonce() {
                 $nbChat = filter_input(INPUT_POST, 'nbChat', FILTER_VALIDATE_INT);
                 $description  = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);   
                 $id_logement  = filter_input(INPUT_POST, 'logements', FILTER_SANITIZE_SPECIAL_CHARS);   
-                
                 
                 // On vérifie que toutes les données nécessaires sont présentes
                 if($dateDebut && $dateFin && $nbChat && $description && $id_logement){
