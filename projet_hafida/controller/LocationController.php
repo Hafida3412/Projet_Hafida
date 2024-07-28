@@ -16,12 +16,14 @@ class LocationController extends AbstractController implements ControllerInterfa
     //FONCTION POUR LISTER TOUTES LES ANNONCES
     public function index() {
         
-        // créer une nouvelle instance de AnnonceManager
+        // On crée une nouvelle instance de AnnonceManager
         $annonceManager = new AnnonceManager();
-        // récupérer la liste de toutes les annonces grâce à la méthode findAll de Manager.php (triés par nom)
+        // On récupère la liste de toutes les annonces grâce à la méthode findAll de
+        // Manager.php (triés par nom)
         $annonces = $annonceManager->findAll(["dateCreation", "DESC"]);
 
-        // le controller communique avec la vue "listAnnonces" (view) pour lui envoyer la liste des annonces (data)
+        // le controller communique avec la vue "listAnnonces" (view) pour lui envoyer 
+        //la liste des annonces (data)
         return [
             "view" => VIEW_DIR."location/listAnnonces.php",
             "meta_description" => "Liste des annonces",
@@ -35,10 +37,11 @@ class LocationController extends AbstractController implements ControllerInterfa
 public function rechercheAnnonce() {
     $annonceManager = new AnnonceManager();
     
-    // Récupérer la valeur de la ville saisie dans le formulaire de recherche
+    // On récupère la valeur de la ville saisie dans le formulaire de recherche
     $ville = filter_input(INPUT_GET, 'ville', FILTER_SANITIZE_SPECIAL_CHARS);
 
-    // Rechercher les annonces par ville
+    // On recherche les annonces par ville en utilisant la requête findAnnoncesByVille
+    // dans annonceManager
     $annonces = $annonceManager->findAnnoncesByVille($ville);
 
     return [
@@ -77,8 +80,9 @@ public function rechercheAnnonce() {
         $id = Session::getUtilisateur()->getId();//on récupère l'id de l'utilisateur connecté
         $logements = $logementManager->listLogementsByUser($id);// on récupère les logements par utilisateur
     
-        if(Session::getUtilisateur()) {
-            $annonceManager = new AnnonceManager();
+        if(Session::getUtilisateur()) {//On vérifie si l'utilisateur est connecté
+            $annonceManager = new AnnonceManager();/* Si oui, on crée une instance de 
+            annonceManager pour gérer les annonces*/
         
             //ON FILTRE LES CHAMPS DU FORMULAIRE D AJOUT D ANNONCE
             if(isset($_POST["submitAnnonce"])){
@@ -89,10 +93,10 @@ public function rechercheAnnonce() {
                 $id_logement  = filter_input(INPUT_POST, 'logements', FILTER_SANITIZE_SPECIAL_CHARS);   
                 
                 
-                // Vérifiez que toutes les données nécessaires sont présentes
+                // On vérifie que toutes les données nécessaires sont présentes
                 if($dateDebut && $dateFin && $nbChat && $description && $id_logement){
                 
-                // Insertion de l'annonce dans la BDD grâce à la fonction "add" du fichier Manager
+                // On insert l'annonce dans la BDD grâce à la fonction "add" du fichier Manager
                     // var_dump("ok");die;
                     $annonceManager->add([
                         "dateDebut" => $dateDebut,
@@ -110,7 +114,7 @@ public function rechercheAnnonce() {
             }
         }
     
-        // Afficher le formulaire de dépôt d'annonce
+        // On affiche le formulaire de dépôt d'annonce
         return [
             "view" => VIEW_DIR . "location/ajoutAnnonces.php",
             "meta_description" => "Déposer une annonce",
