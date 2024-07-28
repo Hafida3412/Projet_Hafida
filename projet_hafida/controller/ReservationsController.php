@@ -25,6 +25,7 @@ class ReservationsController extends AbstractController implements ControllerInt
             $estValide = $annonceManager->isAnnonceValide($annonceId);
         
             if($estValide){
+            // Message d'erreur si l'annonce est déjà réservée
                 Session::addFlash("error", "Cette annonce est déjà réservée.");
                 $this->redirectTo("location", "index");
                 return;
