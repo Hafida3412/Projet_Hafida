@@ -195,13 +195,14 @@ public function rechercheAnnonce() {
     public function donnerAvis($id) {
         // On vérifie si l'utilisateur est connecté
         if(!Session::getUtilisateur()){
+            // Message d'erreur si l'utilisateur n'est pas connecté
             Session::addFlash("error", "Veuillez vous connecter pour donner un avis.");
             $this->redirectTo("security", "login");
         }
         
         // On récupère l'annonce à laquelle l'utilisateur souhaite poster un avis
-        $annonceManager = new AnnonceManager();
-        $annonce = $annonceManager->findOneById($id);
+        $annonceManager = new AnnonceManager();//On crée une instance de AnnonceManager pour gérer les annonce
+        $annonce = $annonceManager->findOneById($id);// On récupère l'annonce spécifique à partir de son identifiant
 
         // On filtre le formulaire d'ajout d'avis
         if(isset($_POST["submitAvis"])){
@@ -209,6 +210,7 @@ public function rechercheAnnonce() {
 
             // On vérifie que le commentaire est présent
             if($commentaire){
+                // On crée une nouvelle instance de AvisManager pour gérer les avis
                 $avisManager = new AvisManager();
                 
                 // On ajoute l'avis en base de données
@@ -219,15 +221,17 @@ public function rechercheAnnonce() {
                     "utilisateur_id" => Session::getUtilisateur()->getId() // Lier l'avis à l'utilisateur connecté
                 ]);
 
+                //On affiche un message pour confirmer que l'avis est enregistré
                 Session::addFlash("success", "Votre avis a été enregistré.");
                 $this->redirectTo("location", "index");
             } else {
+                //Ou un message d'erreur
                 Session::addFlash("error", "Veuillez saisir un commentaire pour donner un avis.");
                 $this->redirectTo("location", "donnerAvis", $id);
             }
         }
         
-        // Retourner la vue pour donner un avis avec les données nécessaires
+        // On retourne à la vue pour donner un avis avec les données nécessaires
         return [
             "view" => VIEW_DIR . "location/donnerAvis.php",
             "meta_description" => "Donner un avis sur une annonce",
