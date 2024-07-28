@@ -126,16 +126,20 @@ public function rechercheAnnonce() {
     
     //CREATION D UN LOGEMENT
     public function creationLogement() {
+        //Instanciation d'un objet LogementManager
         $logementManager = new LogementManager();
-               
+        
+        //On vérifie si le formulaire de la création d'un logement est soumis
         if(isset($_POST["submitLogement"])) {
+            //On récupère et on filtre les données du formulaire
             $nbChambre = filter_input(INPUT_POST, "nbChambre", FILTER_VALIDATE_INT);
             $rue = filter_input(INPUT_POST, "rue", FILTER_SANITIZE_SPECIAL_CHARS);
             $CP = filter_input(INPUT_POST, "CP", FILTER_SANITIZE_SPECIAL_CHARS);
             $ville = filter_input(INPUT_POST, "ville", FILTER_SANITIZE_SPECIAL_CHARS);
             $image = filter_input(INPUT_POST, "image", FILTER_VALIDATE_URL);
             $typeLogement = filter_input(INPUT_POST, "typeLogement", FILTER_VALIDATE_INT);
-    
+        
+        //On vérifie si toutes les données requises sont présentes
             if($nbChambre && $rue && $CP && $ville && $image && $typeLogement) {
                 $logementManager->add([
                     "nbChambre" => $nbChambre,
@@ -147,11 +151,13 @@ public function rechercheAnnonce() {
                     // on rajoute l'utilisateur qui crée le logement
                     "utilisateur_id" => Session::getUtilisateur()->getId()
                 ]); 
-    
+                
+            // Redirection vers la page de compte utilisateur après ajout du logement
                 $this->redirectTo("location", "monCompte");
             }
         }
         
+        // Retour des informations nécessaires pour la vue de création de logement
         return [
             "view" => VIEW_DIR."location/creationLogement.php",
             "meta_description" => "Création d'un logement",
