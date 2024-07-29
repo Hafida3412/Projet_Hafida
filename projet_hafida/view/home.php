@@ -16,8 +16,7 @@
   <a href="index.php?ctrl=security&action=register">S'inscrire</a>
   </p>
 <br>
-
-<!--CREATTION DU POP UP COOKIE-->
+<!--CREATION DU POP UP COOKIE-->
 <div id="cookie-popup">
   <p>Notre site utilise des cookies pour améliorer votre expérience. En continuant à naviguer sur notre site, vous acceptez l'utilisation de ces cookies.</p>
       <button id="accept-cookies" onclick="acceptCookies()">J'accepte</button>
