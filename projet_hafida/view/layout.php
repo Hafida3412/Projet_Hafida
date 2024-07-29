@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/detailsUtilisateur.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/reservation.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/confirmation.css">
-        
+        <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/faq.css">
 
         <title>Chez Mon Chat</title>
     </head>

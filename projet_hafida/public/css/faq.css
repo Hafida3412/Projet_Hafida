@@ -1,0 +1,17 @@
+ol {
+    list-style: none; /* enlever les puces par défaut */
+}
+
+li {
+    margin-bottom: 10px; /* espacement entre les questions */
+}
+
+p {
+    margin-bottom: 10px; /* espacement entre les paragraphes */
+}
+
+#faq {
+    width: 80%; /* largeur du conteneur des questions */
+    margin: 0 auto; /* centrage du conteneur */
+    padding: 20px; /* espacement interne du conteneur */
+}
