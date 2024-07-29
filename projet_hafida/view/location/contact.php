@@ -4,7 +4,7 @@
 
 <h1>Contactez notre service client</h1>
 
-<form action="index.php?ctrl=contact&action=" method="post">
+<form action="index.php?ctrl=location&action=contact" method="post">
     <label for="nom">Nom:</label><br>
     <input type="text" name="nom" required><br><br>
 
