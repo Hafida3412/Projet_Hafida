@@ -12,3 +12,10 @@
 <input type="password" name="password" id="password" value="aaaaa"><br>
 <input type="submit" name="submitLogin" value="Se connecter">
 </form>
+
+<!--CREATION DU POP UP COOKIE-->
+<div id="cookie-popup">
+  <p>Notre site utilise des cookies pour améliorer votre expérience. En continuant à naviguer sur notre site, vous acceptez l'utilisation de ces cookies.</p>
+      <button id="accept-cookies" onclick="acceptCookies()">J'accepte</button>
+      <button id="refuse-cookies" onclick="refuseCookies()">Je refuse</button>
+</div>
