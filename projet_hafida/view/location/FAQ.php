@@ -14,8 +14,8 @@
         <li><strong>Question 6:</strong> Quels sont les modes de paiement?</li>
         <li><strong>Question 7:</strong> Comment supprimer mon compte?</li><br>
     
-        <p>N'hésitez pas à nous contacter pour toute autre question!</p>
-</section>
+    <p>N'hésitez pas à nous contacter pour toute autre question!</p>
     
+</section>
 </body>
 </html>

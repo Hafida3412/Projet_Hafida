@@ -247,6 +247,14 @@ public function rechercheAnnonce() {
             "meta_description" => "Nous contacter",
         ];
     }
+
+    public function FAQ() {
+        return [
+            "view" => VIEW_DIR . "location/FAQ.php",
+            "meta_description" => "Foire aux Questions",
+        ];
+    }
+    
 }
 
 
