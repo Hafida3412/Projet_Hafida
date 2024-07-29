@@ -254,6 +254,13 @@ public function rechercheAnnonce() {
             "meta_description" => "Foire aux Questions",
         ];
     }
+
+    public function MentionsLegales() {
+        return [
+            "view" => VIEW_DIR . "location/mentionsLegales.php",
+            "meta_description" => "Mentions Légales",
+        ];
+    }
     
 }
 

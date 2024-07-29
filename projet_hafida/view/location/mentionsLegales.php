@@ -2,7 +2,7 @@
 
 ?>
 
-<h1>Mentions légales conformes au RGPD pour le site "Chez Mon Chat"</h1>
+<h1>Mentions légales conformes au RGPD (Réglement Général des Protections de Données) pour le site "Chez Mon Chat"</h1>
     <ul>
         <li>Responsable de traitement : [Nom de l'entreprise]</li>
         <li>Siège social : [Adresse]</li>
