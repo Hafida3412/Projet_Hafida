@@ -1,5 +1,15 @@
 <?php
 namespace App;
+/*
+Ce fichier est le point d'entrée de notre application et sert à gérer les 
+requêtes HTTP en utilisant le modèle MVC (Modèle-Vue-Contrôleur).
+*/
+
+/*
+DEFINITION DES CONSTANTES: Il définit les constantes telles que le caractère 
+séparateur de dossier, les chemins des dossiers de vues, des fichiers publics, 
+le contrôleur par défaut, et l'email de l'administrateur.
+*/
 
 define('DS', DIRECTORY_SEPARATOR); // le caractère séparateur de dossier (/ ou \)
 // meilleure portabilité sur les différents systêmes.
@@ -12,19 +22,38 @@ define('ADMIN_MAIL', "admin@gmail.com");//mail de l'administrateur
 
 require("app/Autoloader.php");
 
+/*
+INCLUSION DE LA CLASSE AUTOLOADER: Il inclut la classe Autoloader qui permet de charger 
+automatiquement les classes PHP lorsqu'elles sont utilisées.
+*/
+
 Autoloader::register();
 
-//démarre une session ou récupère la session actuelle
+//DEMARRAGE DE LA SESSION: il démarre une session ou récupère la session actuelle
+
 session_start();
 //et on intègre la classe Session qui prend la main sur les messages en session
 use App\Session as Session;
 
+
 //---------REQUETE HTTP INTERCEPTEE-----------
+/*
+Interception de la requête HTTP : Il récupère le nom du contrôleur à appeler à partir 
+de la requête HTTP et vérifie si la classe du contrôleur existe. 
+S'il n'existe pas, il utilise le contrôleur par défaut.
+*/
+
 $ctrlname = DEFAULT_CTRL;//on prend le controller par défaut
 //ex : index.php?ctrl=home
 if(isset($_GET['ctrl'])){
     $ctrlname = $_GET['ctrl'];
 }
+
+/*Appel de la méthode du contrôleur: Il appelle la méthode du contrôleur en fonction de l'action 
+spécifiée dans la requête HTTP. 
+Si aucune action n'est spécifiée, il utilise une action par défaut
+*/
+
 //on construit le namespace de la classe Controller à appeller
 $ctrlNS = "controller\\".ucfirst($ctrlname)."Controller";
 //on vérifie que le namespace pointe vers une classe qui existe
@@ -48,6 +77,10 @@ else $id = null;
 $result = $ctrl->$action($id);
 
 /*--------CHARGEMENT PAGE--------*/
+/*
+Chargement de la page : Selon l'action effectuée, il charge la vue correspondante 
+dans un buffer et inclut le layout principal pour afficher la page finale.
+*/
 if($action == "ajax"){ //si l'action était ajax
     //on affiche directement le return du contrôleur (càd la réponse HTTP sera uniquement celle-ci)
     echo $result;
@@ -64,3 +97,7 @@ else{
     /* j'affiche le template principal (layout) */
     include VIEW_DIR."layout.php";
 }
+
+/*En résumé, ce fichier gère le routage des requêtes HTTP vers les contrôleurs, 
+appelle les méthodes des contrôleurs, charge les vues et affiche le contenu final 
+de la page à l'utilisateur.*/

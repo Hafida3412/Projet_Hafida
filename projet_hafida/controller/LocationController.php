@@ -241,6 +241,12 @@ public function rechercheAnnonce() {
         ];
     }
 
+    public function contact() {
+        return [
+            "view" => VIEW_DIR . "location/contact.php",
+            "meta_description" => "Nous contacter",
+        ];
+    }
 }
 
 

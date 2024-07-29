@@ -1,6 +1,7 @@
 <p?php  
   
 ?>
+<section id="faq">
     <h1>FAQ - Foire aux questions</h1><br>
     <p>Voici une liste de questions fréquemment posées :</p>
     
@@ -14,9 +15,7 @@
         <li><strong>Question 7:</strong> Comment supprimer mon compte?</li><br>
     
         <p>N'hésitez pas à nous contacter pour toute autre question!</p>
-
-    <footer>
-        <p>&copy; <?= date('Y') ?> - Chez Mon Chat</p>
-    </footer>
+</section>
+    
 </body>
 </html>
