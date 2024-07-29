@@ -23,6 +23,7 @@
         <label for="logements">Logements</label> 
         <select name="logements"><!--boucle pour récupérer les éléments via id_logement dans un menu déroulant-->
         <?php foreach($logements as $logement): ?>
+          <!--Chaque option affiche l'adresse complète du logement, le type de logement et le nombre de chambres-->
         <option value="<?= $logement->getId() ?>"><?= $logement->getAdresseComplete() ?>:<?= $logement->getTypeLogement() ?> 
          avec <?= $logement->getNbChambre() ?> chambres.
         </option><!--cf public function getAdresseComplete créée dans l'"entities" logement-->
@@ -30,9 +31,11 @@
         </select>
         <br>
         <br>
+        <!--Création d'un champs de texte pour la description de l'annonce-->
         <label for="description">Description :</label>
         <textarea name="description" rows="4" cols="50"></textarea><br>
 
+        <!--Création du bouton "Déposer l'annonce"-->
         <input type="submit" name="submitAnnonce" value="Déposer l'annonce">
     </form>
     
