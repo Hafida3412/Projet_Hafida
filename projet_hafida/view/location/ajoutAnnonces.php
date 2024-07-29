@@ -1,4 +1,5 @@
 <?php
+//On définit la variable $logements qui contient la liste des logements disponibles
     $logements = $result["data"]['logements'];   
 ?>
 
@@ -6,8 +7,10 @@
     
     <?php
   ?> 
+<!--Création du formulaire pour déposer une annonce-->  
     <form action="index.php?ctrl=location&action=ajoutAnnonces" method="post">
-        <!--on ne rajoute pas de "id" à ajoutAnnonces pour ne pas insérer l'id de l'utilisateur dans l'Url, trop dangereux.-->
+        <!--on ne rajoute pas de "id" à ajoutAnnonces pour ne pas insérer l'id 
+        de l'utilisateur dans l'Url, trop dangereux.-->
         <label for="dateDebut">Date début</label>
         <input type="date" name="dateDebut"><br>
 
