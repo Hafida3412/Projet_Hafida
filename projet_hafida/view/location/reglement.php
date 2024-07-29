@@ -1,6 +1,6 @@
 <?php 
 ?>
-<h1>Réglement du site</h1>
+<h1>Réglement de notre site</h1>
 <ul> 
     <li>Collecte et traitement des données personnelles:<br>
     Nous collectons uniquement les données personnelles nécessaires pour fournir et 

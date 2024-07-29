@@ -261,6 +261,14 @@ public function rechercheAnnonce() {
             "meta_description" => "Mentions Légales",
         ];
     }
+
+    public function Reglement() {
+        return [
+            "view" => VIEW_DIR . "location/reglement.php",
+            "meta_description" => "Règlement de notre site",
+        ];
+    }
+    
     
 }
 
