@@ -69,7 +69,7 @@
                 </main>
             </div>
             <footer class="footer">
-                <p>&copy; <?= date_create("now")->format("Y") ?> - <a href="#">Règlement de notre site</a> - <a href="#">Mentions légales</a></p>
+                <p>&copy; <?= date_create("now")->format("Y") ?> - <a href="#">Règlement de notre site</a> - <a href="#">Mentions légales</a> - <a href="#">FAQ</a> - <a href="#">Nous contacter</a></p>
             </footer>
         </div>
         <script
@@ -105,7 +105,6 @@
                 });
             })
         </script>
-        
-        <script src="<?= PUBLIC_DIR ?>/js/script.js"></script>
+               <script src="<?= PUBLIC_DIR ?>/js/script.js"></script>
     </body>
 </html>
