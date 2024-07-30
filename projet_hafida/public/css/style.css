@@ -1,3 +1,4 @@
+/* Styles généraux pour les écrans de toutes les tailles */
 * {
     margin: 0;
     padding: 0;
@@ -136,4 +137,31 @@ footer a:hover {
 
 #cookie-popup button:hover {
   background-color: #f2f2f2;
+}
+
+/* Styles spécifiques aux écrans de taille moyenne (tablettes) */
+@media screen and (max-width: 1024px) {
+  main {
+      width: 90%; /* ajustez la largeur du conteneur des annonces pour les tablettes */
+  }
+}
+
+/* Styles spécifiques aux écrans de petite taille (smartphones) */
+@media screen and (max-width: 768px) {
+  main {
+      width: 100%; /* ajustez la largeur du conteneur des annonces pour les smartphones */
+  }
+
+  nav ul {
+      flex-direction: column; /* change la direction des éléments de la navigation en colonne pour les smartphones */
+  }
+
+  nav li {
+      margin: 10px 0; /* ajustez l'espacement entre les éléments de la navigation pour les smartphones */
+  }
+
+  #nav-left img {
+      width: 80px; /* ajustez la taille du logo pour les smartphones */
+      height: 80px;
+  }
 }
