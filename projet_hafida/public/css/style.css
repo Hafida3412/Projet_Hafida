@@ -107,36 +107,39 @@ footer a:hover {
     color: #ccc; /* couleur de lien survolée plus lisible */
 }
 
+/* Style du popup de cookie */ 
 #cookie-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f2f2f2;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: block;
-  width: 300px; /* ajustez la largeur à votre convenance */
-  text-align: center;
+  position: fixed;/*Le popup restera fixe par rapport à la fenêtre */
+  top: 50%;/* Positionnement vertical au centre de l'écran */ 
+  left: 50%; /*Positionnement horizontal au centre de l'écran */
+  transform: translate(-50%, -50%);/* Centre le popup exactement au milieu */
+  background-color: #f2f2f2;/* Couleur de fond du popup */
+  padding: 10px;/* Espacement interne du contenu du popup */
+  border: 1px solid #ccc; /*Bordure du popup */ 
+  border-radius: 5px;/* Coins arrondis du popup */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);/* Ombre portée du popup */ 
+  display: block;/* Affiche le popup en tant que bloc */
+  width: 300px; /*Largeur du popup  */
+  text-align: center; /* Centrage horizontal du contenu du popup */ 
 }
 
+/* Style du contenu texte du popup */ 
 #cookie-popup p {
-  margin-bottom: 20px;
+  margin-bottom: 20px;/*Espacement en bas du texte du popup */ 
 }
 
+/* Style du bouton d'acceptation des cookies */ 
 #cookie-popup button {
-  background-color:#ccc;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+  background-color:#ccc;/*Couleur de fond du bouton */ 
+  color: black;/*Couleur du texte*/
+  border: none;/*Pas de bordure autour du bouton */ 
+  padding: 10px 20px; /*Espacement interne du bouton */ 
+  font-size: 16px;/*Taille de police*/
+  cursor: pointer;/*Curseur de la souris*/
 }
 
 #cookie-popup button:hover {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /* Changement de couleur de fond au survol du bouton */
 }
 
 /* Styles spécifiques aux écrans de taille moyenne (tablettes) */
