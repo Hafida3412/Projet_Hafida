@@ -33,11 +33,13 @@
     margin: 10px auto; /* Centrer horizontalement */
 }
 
+/* Style pour les paragraphes dans le cadre des avis */
 .avis p {
     font-size: 18px; /* taille de la police du texte */
     line-height: 1.5; /* hauteur de ligne du texte */
 }
 
+/* Style pour le bouton "réserver" dans le cadre des informations de l'annonce */
 button.annonce-info{
     background-color:#337ab7; /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
@@ -47,8 +49,10 @@ button.annonce-info{
     margin-top: 10px;
     display: block; /* Afficher le bouton en bloc pour le centrer */
     margin: 0 auto; /* Centrer le bouton horizontalement */
+     /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
 }
 
+/* Style pour le bouton "réserver" dans le cadre des informations de l'annonce au survol */
 button.annonce-info:hover {
     background-color: #23527c;; /* couleur de fond du bouton au survol */
 }
