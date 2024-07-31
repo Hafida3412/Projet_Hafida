@@ -1,5 +1,6 @@
 /*CSS de la vue detailsAnnonce*/
 
+/* Style pour le cadre des informations de l'annonce */
 .annonce-info {
     background-color: #fff; /* couleur de fond du cadre des informations de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre */
@@ -9,17 +10,21 @@
     
 }
 
+/* Style pour les paragraphes dans le cadre des informations de l'annonce */
 .annonce-info p {
     font-size: 18px; /* taille de la police du texte */
     line-height: 1.5; /* hauteur de ligne du texte */
 }
 
+/* Style pour les images dans le cadre des informations de l'annonce */
 .annonce-info img {
     width: 100%; /* taille de l'image */
     height: auto; /* hauteur automatique */
     object-fit: contain; /* ajustement de l'image */
+/* Note: cela permet d'avoir des images qui s'adaptent à la taille du cadre sans être déformées */
 }
 
+/* Style pour le cadre des avis */
 .avis {
     background-color: #fff; /* couleur de fond du cadre des avis */
     border: 1px solid #ccc; /* bordure autour du cadre */
