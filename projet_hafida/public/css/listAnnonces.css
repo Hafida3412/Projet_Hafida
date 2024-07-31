@@ -1,3 +1,4 @@
+/* Style pour les annonces */
 .annonce {
     background-color: #fff; /* couleur de fond du cadre de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
@@ -8,10 +9,12 @@
     vertical-align: top; /* alignement vertical pour éviter les espaces entre les annonces */
 }
 
+/* Style pour les annonces à partir de la deuxième annonce*/
 .annonce:nth-child(n+2) {
     margin-left: 5px; /* espace entre les annonces */
 }
 
+/* Style pour les paragraphes dans les annonces */
 .annonce p {
     font-size: 18px; /* taille de la police du texte de l'annonce */
     line-height: 1.5; /* hauteur de ligne du texte de l'annonce */
