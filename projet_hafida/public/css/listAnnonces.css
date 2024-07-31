@@ -14,7 +14,7 @@
     margin-left: 5px; /* espace entre les annonces */
 }
 
-/* Style pour les paragraphes dans les annonces */
+/* Style pour le paragraphe dans les annonces */
 .annonce p {
     font-size: 18px; /* taille de la police du texte de l'annonce */
     line-height: 1.5; /* hauteur de ligne du texte de l'annonce */
@@ -25,7 +25,7 @@
     font-weight: bold; /* texte en gras pour les liens */
 }
 
-/* Style pour les boutons de suppression */
+/* Style pour le bouton de suppression */
 button.btn-delete {
     background-color: #337ab7; /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
@@ -37,7 +37,7 @@ button.btn-delete {
     text-align: center; /* On aligne le texte au centre */
 }
     
-/* Style pour les boutons de suppression au survol */
+/* Style pour le bouton de suppression au survol */
 button.btn-delete:hover {
     background-color:  #23527c; /* couleur de fond du bouton au survol */
 }
