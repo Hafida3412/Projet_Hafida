@@ -55,8 +55,6 @@ if(isset($reservations) && $reservations){
 </div>
     
 
-<!-- Lien vers la liste des logements de l'utilisateur -->
-<a href="index.php?ctrl=location&action=listeLogementsUtilisateur"><button>Voir mes logements</button></a><br>
 
    
    
