@@ -167,6 +167,34 @@ public function rechercheAnnonce() {
         ];
     }
 
+    //CREATION DE LA LISTE DES LOGEMENTS PAR UTILISATEUR
+    public function listeLogementsUtilisateur() {
+        // On vérifie si l'utilisateur est connecté
+        if (Session::getUtilisateur()) {
+            // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
+            $this->redirectTo("connexion", "login");
+            return;
+        }
+    
+        // On récupère l'ID de l'utilisateur connecté
+        $id_utilisateur = Session::getUtilisateur()->getId();
+    
+        // On crée une instance de LogementManager pour gérer les logements
+        $logementManager = new LogementManager();
+    
+        // On récupère la liste des logements de l'utilisateur connecté
+        $logements = $logementManager->listLogementsByUser($id_utilisateur);
+
+        return [
+            "view" => VIEW_DIR . "location/listeLogementsUtilisateur.php",
+            "meta_description" => "Liste des logements de l'utilisateur",
+            "data" => [
+                "logements" => $logements
+            ]
+        ];
+    }
+    
+
     //SUPPRIMER UNE ANNONCE D UN UTILISATEUR
     public function supprimerAnnonce($id){
         //On récupère l'annonce à supprimer
