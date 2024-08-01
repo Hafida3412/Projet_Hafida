@@ -63,8 +63,8 @@ class AnnonceManager extends Manager{
 public function findAnnoncesByVille($ville){
     $sql = "SELECT *
             FROM ".$this->tableName." t
-            INNER JOIN logement l ON t.logement_id = l.id_logement
-            WHERE l.ville = :ville";
+            INNER JOIN logement ON logement_id = logement.id_logement
+            WHERE ville = :ville";
     
     return $this->getMultipleResults(
         DAO::select($sql, ['ville' => $ville]), 
