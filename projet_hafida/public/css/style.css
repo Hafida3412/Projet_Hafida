@@ -32,7 +32,7 @@ body {
     margin-bottom: 10px;
   }
   
-  /* Navbar */
+/* Navbar */
   nav {
     background-color:white; /* couleur de fond de la navigation */
     color: black; /* couleur de texte de la navigation */
@@ -60,8 +60,7 @@ body {
     text-decoration: none;
     padding: 10px; /* ajoute un padding pour que les éléments soient plus larges */
     font-size: 18px;
-  
-  }
+    }
   
   nav a:hover {
     color: #337ab7; /* couleur de lien survolée */
@@ -84,13 +83,13 @@ body {
     text-decoration: none;
   }
   
-  /* Contenu */
+/* Contenu */
   main {
     width: 80%; /* largeur du conteneur des annonces */
     margin: 0 auto; /* centrage du conteneur */
   }
   
-  /* Footer */
+/* Footer */
   footer {
     background-color: #223354; /* couleur de fond du pied de page plus foncée */
     color: #fff; /* couleur de texte du pied de page */
