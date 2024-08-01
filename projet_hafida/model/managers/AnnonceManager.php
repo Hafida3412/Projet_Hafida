@@ -61,9 +61,15 @@ class AnnonceManager extends Manager{
     }
     //REQUETE POUR AFFICHER LES ANNONCES PAR VILLE
 public function findAnnoncesByVille($ville){
+    /*1. on sélectionne tous les colonnes des tables "annonce" et "logement"
+      2. on joint les deux tables en utilisant la colonne "logement_id" de la 
+    table "annonce" et la colonne "id_logement" de la table "logement"
+      3. on filtre les résultats pour ne récupérer que les lignes où la ville 
+    est égale à la ville que nous recherchons*/
     $sql = "SELECT *
-            FROM ".$this->tableName." t
-            INNER JOIN logement ON logement_id = logement.id_logement
+            FROM ".$this->tableName." t 
+            INNER JOIN logement 
+            ON logement_id = logement.id_logement
             WHERE ville = :ville";
     
     return $this->getMultipleResults(
