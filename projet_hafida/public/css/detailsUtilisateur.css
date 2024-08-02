@@ -52,7 +52,7 @@
     margin-top: 20px; 
 }
 
-/* Style du bouton de réservation */ 
+/* Style du bouton de réservation, du bouton "créer un logement" et du bouton "voir mes logements */ 
 .btn-reserver{
     background-color: #337ab7; 
     color: #fff; 
@@ -64,7 +64,7 @@
     text-align: center; /* On aligne le texte au centre */
 }
 
-/* Style du survol du bouton de réservation */
+/* Style du survol du bouton de réservation, du bouton "créer un logement" et du bouton "voir mes logements*/
 .btn-reserver:hover {
     background-color: #23527c; 
 }
