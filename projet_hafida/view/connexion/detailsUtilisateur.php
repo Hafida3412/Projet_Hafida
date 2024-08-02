@@ -3,7 +3,7 @@ $utilisateur = $result["data"]['utilisateur'];
 $reservations = $result["data"]['reservations'];
 
 ?>
-<!-- Utilisateur Info -->
+<!--Informations de l'utilisateur-->
 <h1>Mon Compte</h1>
 <div class="utilisateur-info">
 <p>Pseudo: <?= $utilisateur->getPseudo() ?></p>
@@ -26,6 +26,7 @@ $reservations = $result["data"]['reservations'];
     <input type="submit" name="submitUpdate" value="Modifier mes données personnelles">
 </form>
 </div>
+
 <!-- Réservations -->
 <h1>Mes réservations</h1>
 <div class="reservations">
