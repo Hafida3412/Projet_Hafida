@@ -1,23 +1,40 @@
-/* Style des informations sur le logement */
+
+/* Style pour les informations du logement */
 .logement-info {
-    background-color: #fff; /* couleur de fond du cadre des informations sur le logement */
-    border: 1px solid #ccc; /* bordure autour du cadre */
-    padding: 10px; /* espacement interne du cadre */
-    width: 30%; /* largeur du cadre */
-    margin: 10px; /* espacement entre les cadres */
-    display: inline-block; /* affichage en ligne pour permettre les cadres à côté */
-    vertical-align: top; /* alignement vertical pour éviter les espaces entre les cadres */
+    background-color: #fff; /* couleur de fond du cadre des informations du logement */
+    border: 1px solid #ccc; /* bordure autour du cadre des informations du logement */
+    padding: 10px; /* espacement interne du cadre des informations du logement */
+    width: 50%; /* largeur du cadre des informations du logement */
+    margin: 10px auto; /* espacement autour du cadre des informations du logement */
 }
 
-/* Style des paragraphes dans les informations sur le logement */
+/* Style pour les paragraphes dans les informations du logement */
 .logement-info p {
     font-size: 18px; /* taille de la police du texte */
     line-height: 1.5; /* hauteur de ligne du texte */
 }
 
-/* Style de l'image du logement */
+/* Style pour l'image du logement */
 .logement-image img {
-    width: 100%; /* taille de l'image */
-    height: auto; /* hauteur automatique */
-    object-fit: contain; /* ajustement de l'image pour éviter les déformations */
+    width: 300px; /* taille de l'image du logement */
+    height: 200px; /* hauteur automatique de l'image du logement */
+    object-fit: contain; /* ajustement de l'image du logement */
 }
+
+/* Style pour le bouton de "Voir mes logements" */
+.Voir-mes-logements {
+    background-color: #337ab7; /* couleur de fond du bouton */
+    color: #fff; /* couleur de texte du bouton */
+    padding: 10px; /* espacement interne du bouton */
+    border: none; /* pas de bordure sur le bouton */
+    cursor: pointer; /* curseur style pointer au survol du bouton */
+    display: block; /* affichage en bloc pour le bouton */
+    margin: 0 auto; /* centrage horizontal du bouton */
+    text-align: center; /* alignement du texte centré */
+}
+
+/* Style du survol du bouton "Voir mes logements" */
+.Voir-mes-logements:hover {
+    background-color: #23527c; /* couleur de fond du bouton au survol */
+}
+
