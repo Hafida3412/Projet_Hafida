@@ -13,7 +13,9 @@ $reservations = $result["data"]['reservations'];
 <p>Rôle: <?= $utilisateur->getRole() ?></p>
 </div>
 
+
 <!-- Formulaire de modification des données personnelles -->
+<div class="utilisateur-info">
 <form method="post" action="index.php?ctrl=security&action=updateInfo">
     <label for="pseudo">Pseudo:</label>
     <input type="text" name="pseudo" value="<?= $utilisateur->getPseudo() ?>"><br>
@@ -23,7 +25,7 @@ $reservations = $result["data"]['reservations'];
     
     <input type="submit" name="submitUpdate" value="Modifier mes données personnelles">
 </form>
-
+</div>
 <!-- Réservations -->
 <h1>Mes réservations</h1>
 <div class="reservations">
