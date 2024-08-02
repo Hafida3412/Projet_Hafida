@@ -167,6 +167,32 @@ public function rechercheAnnonce() {
         ];
     }
 
+    public function listeLogementsUtilisateur(){
+        // Vérifiez si l'utilisateur est connecté
+        if(!Session::getUtilisateur()){
+            // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
+            return $this->redirectTo("security", "login");
+        }
+
+        // Récupérer l'ID de l'utilisateur connecté
+        $userId = Session::getUtilisateur()->getId();
+
+        // Créer une instance du manager de logements
+        $logementManager = new LogementManager();
+
+        // Récupérer la liste des logements de l'utilisateur connecté
+        $logements = $logementManager->listLogementsByUser($userId);
+
+        return [
+            "view" => VIEW_DIR."location/listeLogementsUtilisateur.php",
+            "meta_description" => "Détails de l'utilisateur et de ses logements",
+            "data" => [
+                "logements" => $logements
+            ]
+        ];
+    }
+
+
     //SUPPRIMER UNE ANNONCE D UN UTILISATEUR
     public function supprimerAnnonce($id){
         //On récupère l'annonce à supprimer

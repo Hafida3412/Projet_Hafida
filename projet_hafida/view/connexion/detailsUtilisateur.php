@@ -54,7 +54,7 @@ if(isset($reservations) && $reservations){
 <a href="index.php?ctrl=location&action=creationLogement"><button class="btn-reserver">Créer un nouveau logement</button></a><br>
 </div>
     
-
+<a href="index.php?ctrl=location&action=listeLogementsUtilisateur"><button class="Voir mes logements">Voir mes logements</button></a><br>
 
    
    
