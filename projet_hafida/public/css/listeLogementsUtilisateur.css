@@ -1,0 +1,23 @@
+/* Style des informations sur le logement */
+.logement-info {
+    background-color: #fff; /* couleur de fond du cadre des informations sur le logement */
+    border: 1px solid #ccc; /* bordure autour du cadre */
+    padding: 10px; /* espacement interne du cadre */
+    width: 30%; /* largeur du cadre */
+    margin: 10px; /* espacement entre les cadres */
+    display: inline-block; /* affichage en ligne pour permettre les cadres à côté */
+    vertical-align: top; /* alignement vertical pour éviter les espaces entre les cadres */
+}
+
+/* Style des paragraphes dans les informations sur le logement */
+.logement-info p {
+    font-size: 18px; /* taille de la police du texte */
+    line-height: 1.5; /* hauteur de ligne du texte */
+}
+
+/* Style de l'image du logement */
+.logement-image img {
+    width: 100%; /* taille de l'image */
+    height: auto; /* hauteur automatique */
+    object-fit: contain; /* ajustement de l'image pour éviter les déformations */
+}
