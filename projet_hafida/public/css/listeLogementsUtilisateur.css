@@ -21,20 +21,5 @@
     object-fit: contain; /* ajustement de l'image du logement */
 }
 
-/* Style pour le bouton de "Voir mes logements" */
-.Voir-mes-logements {
-    background-color: #337ab7; /* couleur de fond du bouton */
-    color: #fff; /* couleur de texte du bouton */
-    padding: 10px; /* espacement interne du bouton */
-    border: none; /* pas de bordure sur le bouton */
-    cursor: pointer; /* curseur style pointer au survol du bouton */
-    display: block; /* affichage en bloc pour le bouton */
-    margin: 0 auto; /* centrage horizontal du bouton */
-    text-align: center; /* alignement du texte centré */
-}
 
-/* Style du survol du bouton "Voir mes logements" */
-.Voir-mes-logements:hover {
-    background-color: #23527c; /* couleur de fond du bouton au survol */
-}
 
