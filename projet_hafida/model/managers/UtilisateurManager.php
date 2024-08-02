@@ -14,7 +14,9 @@ class UtilisateurManager extends Manager{
         parent::connect();
     }
 
-    public function checkUserExists($email) {//Requ^te qui permet de vérifier si l'utilisateur existe via son mail
+    
+    //CREATION DE LA REQUETE QUI PERMET DE VERIFIER SI L UTILISATEUR EXISTE VIA SON MAIL
+    public function checkUserExists($email) {
         $sql ="SELECT * 
                 FROM ".$this->tableName. " t
                 WHERE email = :email";
@@ -26,5 +28,20 @@ class UtilisateurManager extends Manager{
         );
     }
 
+    //CREATION DE LA REQUETE UPDATE POUR MODIFIER LES DONNEES PERSONNELLES DE L UTILISATEUR
+    public function update($utilisateur) {
+        $sql = "UPDATE ".$this->tableName."
+                SET pseudo = :pseudo, email = :email
+                WHERE id_".$this->tableName." = :id";
 
+      return $this->getOneOrNullResult(
+        DAO::select($sql, [
+            'pseudo' => $utilisateur->getPseudo(),
+            'email' => $utilisateur->getEmail(),
+            'id' => $utilisateur->getId()
+        ], false), //on rajoute "false" car la  public static function select dans DAO renvoie des réponses multiples "true"
+        $this->className
+    );
+    }
 }
+

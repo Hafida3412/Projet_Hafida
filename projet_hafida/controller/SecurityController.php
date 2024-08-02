@@ -136,6 +136,33 @@ class SecurityController extends AbstractController{
         exit;
         }
 
+    //CREATION DE LA FONCTION UPDATE INFO POUR MODIFIER LES INFOS PERSORNELLES
+    public function updateInfo() {
+    if(Session::getUtilisateur()) {
+        if(isset($_POST["submitUpdate"])) {
+            $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
+            
+            if($pseudo && $email) {
+                $id_utilisateur = Session::getUtilisateur()->getId();
+                $utilisateurManager = new UtilisateurManager();
+                $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
+                
+                $utilisateur->setPseudo($pseudo);
+                $utilisateur->setEmail($email);
+                
+                $utilisateurManager->update($utilisateur);
+                
+                // Redirection vers la page de mon compte après la modification
+                header("Location: index.php?ctrl=security&action=monCompte");
+                exit;
+            }
+        }
+    } else {
+        $this->redirectTo("connexion", "login.php");
+    }
+}
+
     }
 
 
