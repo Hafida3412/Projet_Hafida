@@ -157,8 +157,11 @@ class SecurityController extends AbstractController{
                 $utilisateur->setEmail($email);
                 //On met à jour les informations de l'utilisateur dans la base de données
                 $utilisateurManager->update($utilisateur);
+
+                 // Message de confirmation de la modification
+                 Session::addFlash("success", "Vos données personnelles ont été modifiées avec succès.");
                 
-                // Redirection vers la page de "mon compte" après la modification
+                 // Redirection vers la page de "mon compte" après la modification
                 header("Location: index.php?ctrl=security&action=monCompte");
                 exit;
             }
