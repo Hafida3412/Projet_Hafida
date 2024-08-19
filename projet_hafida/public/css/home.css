@@ -1,39 +1,83 @@
-/*CREATION DU CSS DE LA VUE HOME*/
+/* UPDATE CSS DE LA PAGE D'ACCUEIL */
 
-/* Style pour le titre de bienvenue */
+/* Style du fond d'écran en parallaxe */
+
+.parallax{
+  background-image: none; /* Supprimer l'image de fond */
+  height: 100vh;
+  overflow: hidden; /* Ajouter overflow hidden pour que le contenu ne dépasse pas du container */
+  position: relative;
+}
+
+/* Ajouter une nouvelle classe pour l'image de fond */
+.parallax-bg {
+  background-image: url("public/img/chat.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Mettre l'image de fond derrière le contenu */
+}
+
+.content{
+  text-align: center;
+  padding: 90px;
+  color: white;
+  background-color: rgba(0,0,0,0.7);
+  position: relative; /* Changer position en relative pour que le contenu soit positionné par rapport au container */
+  z-index: 1; /* Mettre le contenu devant l'image de fond */
+}
+
+/* Style du titre de bienvenue */
 .welcome-title {
-  font-size: 24px;/* Taille de police de 24px */
-  font-weight: bold;/* Texte en gras */ 
-  text-align: center;/* Centrage du texte */
-  margin-bottom: 10px;/* Marge inférieure de 10px */
-}
-
-/* Style pour le texte de bienvenue */ 
-.welcome-text {
-  font-size: 16px;
-  line-height: 1.5; /* Hauteur de ligne de 1.5 fois la taille de police */ 
-  text-align: justify;
+  font-size: 36px;
+  font-weight: bold;
   margin-bottom: 20px;
+  opacity: 0; /* Définir l'opacité initiale à 0 */ 
+  animation: fade-in 2s forwards; /* Ajouter une animation d'apparition */ 
+  animation-delay: 0s; /* Délai d'attente avant l'apparition du titre */
 }
 
-/* Style pour les liens de bienvenue */ 
+/* Style du texte de bienvenue */
+.welcome-text {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  opacity: 0; /* Définir l'opacité initiale à 0 */ 
+  animation: fade-in 2s forwards; /* Ajouter une animation d'apparition */ 
+  animation-delay: 1s; /* Délai d'attente avant l'apparition du texte */
+}
+
+/* Animation d'apparition */ 
+@keyframes fade-in { 
+  0% { opacity: 0; } 
+  100% { opacity: 1; } 
+}
+
+/* Style des liens de bienvenue */
 .welcome-links {
-  text-align: center;/* Centrage du texte */ 
+  margin-top: 20px;
 }
 
 /* Style des liens dans la section de bienvenue */
 .welcome-links a {
-  display: inline-block;/* Les liens sont affichés en ligne */
-  margin: 0 10px;/* Marge de 0 sur les côtés horizontaux et de 10px en haut et en bas */
-  padding: 5px 10px;/* Remplissage de 5px en haut et en bas, 10px à gauche et à droite*/ 
-  border: 1px solid #000;/* Bordure de 1px solide de couleur noire */
-  text-decoration: none;/* Pas de soulignement du texte */
-  color:white; /* Texte en blanc */
-  background-color: #337ab7;/* Fond de couleur bleue */
+  display: inline-block;
+  margin: 0 15px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  background-color: #3498db;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 5px; /* Bords arrondis */
 }
 
-/* Changement de style au survol des liens*/
+/* Changement de style au survol des liens */
 .welcome-links a:hover {
-  background-color: #23527c; /* Changement de couleur de fond en survol à une nuance plus foncée */ 
-  transform: translateY(-15%);
+  background-color: #2980b9;
+  transform: translateY(-5px);
 }
