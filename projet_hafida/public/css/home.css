@@ -4,7 +4,7 @@
 
 .parallax{
   background-image: none; /* Supprimer l'image de fond */
-  height: 100vh;
+  margin-bottom: 50px;
   overflow: hidden; /* Ajouter overflow hidden pour que le contenu ne dépasse pas du container */
   position: relative;
 }
@@ -25,7 +25,7 @@
 
 .content{
   text-align: center;
-  padding: 90px;
+  padding: 50px;
   color: white;
   background-color: rgba(0,0,0,0.7);
   position: relative; /* Changer position en relative pour que le contenu soit positionné par rapport au container */
@@ -63,21 +63,92 @@
   margin-top: 20px;
 }
 
-/* Style des liens dans la section de bienvenue */
-.welcome-links a {
-  display: inline-block;
-  margin: 0 15px;
-  padding: 10px 20px;
-  border: 2px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  background-color: #3498db;
-  transition: background-color 0.3s, transform 0.3s;
-  border-radius: 5px; /* Bords arrondis */
+/* Section des avantages */
+.avantages{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-/* Changement de style au survol des liens */
-.welcome-links a:hover {
-  background-color: #2980b9;
-  transform: translateY(-5px);
+.avantages h2{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #23527c;
+}
+
+.avantages ul{
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+}
+
+.avantages li{
+  display: flex;
+  background-color: #1294b8;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.5s;
+  margin: 20px;
+  flex-direction: column;
+}
+
+.avantages li:hover{
+  transform: scale(1.1);
+}
+
+.avantages i{
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.temoignages { 
+  background-color: #fff; 
+  padding: 40px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px; }
+
+.temoignages h2 { 
+  display: flex;
+  justify-content: center;
+  font-size: 30px; 
+  font-weight: bold; 
+  margin-bottom: 10px; 
+  color: #23527c; 
+}
+
+.temoignages blockquote { 
+  background-color: #f7f7f7; 
+  padding: 20px; 
+  border-radius: 10px; 
+  margin-bottom: 20px; }
+
+.temoignages blockquote p { 
+  font-size: 18px; 
+  color: #666; }
+
+.temoignages signature { 
+  font-size: 16px; 
+  color: #999; 
+  font-style: italic; }
+
+/* Section des liens */
+.welcome-links a { 
+  display: inline-block; 
+  margin: 0 15px; 
+  padding: 10px 20px; 
+  border: 2px solid #fff; 
+  color: #fff; 
+  text-decoration: none; 
+  background-color: #3498db; 
+  transition: background-color 0.3s, transform 0.3s; border-radius: 5px; }
+
+.welcome-links a:hover { 
+  background-color: #2980b9; 
+  transform: translateY(-5px); 
 }
