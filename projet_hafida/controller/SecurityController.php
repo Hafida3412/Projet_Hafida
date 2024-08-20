@@ -145,8 +145,9 @@ class SecurityController extends AbstractController{
         //On filtre et nettoie les données saisies par l'utilisateur
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
+            $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             //On vérifie si le pseudo et l'email sont renseignés 
-            if($pseudo && $email) {
+            if($pseudo && $email && $password) {
                 //On récupère l'ID de l'utilisateur connecté 
                 $id_utilisateur = Session::getUtilisateur()->getId();
                 //On récupère les informations de l'utilisateur à partir de l'ID
@@ -155,6 +156,7 @@ class SecurityController extends AbstractController{
                 //On met à jour le pseudo et l'email de l'utilisateur
                 $utilisateur->setPseudo($pseudo);
                 $utilisateur->setEmail($email);
+                $utilisateur->setPassword($password);
                 //On met à jour les informations de l'utilisateur dans la base de données
                 $utilisateurManager->update($utilisateur);
 

@@ -31,13 +31,14 @@ class UtilisateurManager extends Manager{
     //CREATION DE LA REQUETE UPDATE POUR MODIFIER LES DONNEES PERSONNELLES DE L UTILISATEUR
     public function update($utilisateur) {
         $sql = "UPDATE ".$this->tableName."
-                SET pseudo = :pseudo, email = :email
+                SET pseudo = :pseudo, email = :email, password = :password
                 WHERE id_".$this->tableName." = :id";
 
       return $this->getOneOrNullResult(
         DAO::select($sql, [
             'pseudo' => $utilisateur->getPseudo(),
             'email' => $utilisateur->getEmail(),
+            'password' => $utilisateur->getPassword(),
             'id' => $utilisateur->getId()
         ], false), //on rajoute "false" car la  public static function select dans DAO renvoie des réponses multiples "true"
         $this->className
