@@ -22,6 +22,9 @@ $reservations = $result["data"]['reservations'];
     
     <label for="email">Email:</label>
     <input type="email" name="email" value="<?= $utilisateur->getEmail() ?>"><br>
+
+    <label for="pseudo">Mot de passe:</label>
+    <input type="text" name="pseudo" value="<?= $utilisateur->getPassword() ?>"><br>
     
     <input type="submit" name="submitUpdate" value="Modifier mes données personnelles">
 </form>
