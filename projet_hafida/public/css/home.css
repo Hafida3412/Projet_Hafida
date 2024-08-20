@@ -27,7 +27,7 @@
   text-align: center;
   padding: 50px;
   color: white;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
   position: relative; /* Changer position en relative pour que le contenu soit positionné par rapport au container */
   z-index: 1; /* Mettre le contenu devant l'image de fond */
 }
@@ -36,6 +36,7 @@
 .welcome-title {
   font-size: 36px;
   font-weight: bold;
+  color:white;
   margin-bottom: 20px;
   opacity: 0; /* Définir l'opacité initiale à 0 */ 
   animation: fade-in 2s forwards; /* Ajouter une animation d'apparition */ 
@@ -146,7 +147,7 @@
   color: #fff; 
   text-decoration: none; 
   background-color: #3498db; 
-  transition: background-color 0.3s, transform 0.3s; border-radius: 5px; }
+  border-radius: 5px; }
 
 .welcome-links a:hover { 
   background-color: #2980b9; 
