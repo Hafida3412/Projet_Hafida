@@ -43,7 +43,7 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
 
 <section class="explications">
   <div class="benefice1">
-    <h2>Pourquoi opter pour le home-sitting pour votre chat :</h2>
+    <h2>Pourquoi opter pour le home-sitting pour votre chat:</h2>
     <ul>
       <li>Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
       <li>Bénéficie d'une présence rassurante et constante à la maison</li>
@@ -53,7 +53,7 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
   </div>
   
   <div class="benefice2">
-    <h2>Les avantages du home-sitting pour vous :</h2>
+    <h2>Les avantages du home-sitting pour vous:</h2>
     <ul>
       <li>Garde à domicile gratuite, seule la chambre du home-sitter est à vos frais</li>
       <li>Sérénité de confier votre chat et votre maison à une personne de confiance</li>
