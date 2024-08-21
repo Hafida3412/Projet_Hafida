@@ -1,8 +1,6 @@
 <div class="parallax">
-  <div class="parallax-bg">
-  <img src="public\img\chat.png" alt="regard d'un chat" style="width: 100%; height: auto; object-fit: contain;">
-  </div>
-  <div class="content">
+ 
+    <div class="content">
     
     <h1 class="welcome-title">BIENVENUE CHEZ MON CHAT</h1>
     <p class="welcome-text">Sur notre site chez mon chat, vous pouvez trouver des 
@@ -15,7 +13,8 @@
       Bonnes vacances à vous !</p>
     <br>
   </div>
-</div>
+  </div>
+
 
 <section class="avantages">
   <h2>Les avantages de notre site</h2>
@@ -26,6 +25,10 @@
   </ul>
 </section>
 <br>
+
+<section class="parallax-image">
+  
+</section>
 <section class="temoignages">
   <h2>Ce que nos utilisateurs disent de nous</h2>
   <blockquote>

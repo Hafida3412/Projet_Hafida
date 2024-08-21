@@ -85,7 +85,7 @@ body {
   
 /* Contenu */
   main {
-    width: 80%; /* largeur du conteneur des annonces */
+    width: 100%; /* largeur du conteneur des annonces */
     margin: 0 auto; /* centrage du conteneur */
   }
   

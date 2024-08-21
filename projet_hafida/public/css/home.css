@@ -2,25 +2,11 @@
 
 /* Style du fond d'écran en parallaxe */
 
-.parallax{
-  background-image: none; /* Supprimer l'image de fond */
-  margin-bottom: 50px;
-  overflow: hidden; /* Ajouter overflow hidden pour que le contenu ne dépasse pas du container */
-  position: relative;
-}
-
 /* Ajouter une nouvelle classe pour l'image de fond */
-.parallax-bg {
-  background-image: url("public/img/chat.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0; /* Mettre l'image de fond derrière le contenu */
+
+.parallax{
+  background-image: url(../img/chatdodo.jpg);
+  background-size: 100%;
 }
 
 .content{
@@ -107,6 +93,17 @@
   margin-bottom: 10px;
 }
 
+.parallax-image{
+  /* The image used */
+  background-image: url("../img/chatcri.jpg");
+  /* Set a specific height */
+  min-height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .temoignages { 
   background-color: #fff; 
   padding: 40px; 

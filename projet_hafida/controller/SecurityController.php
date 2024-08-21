@@ -155,7 +155,7 @@ class SecurityController extends AbstractController{
                 //On met à jour le pseudo et l'email de l'utilisateur
                 $utilisateur->setPseudo($pseudo);
                 $utilisateur->setEmail($email);
-                $utilisateur->setPassword($password);
+                $utilisateur->setPassword(password_hash($password, PASSWORD_DEFAULT));
                 //On met à jour les informations de l'utilisateur dans la base de données
                 $utilisateurManager->update($utilisateur);
 
