@@ -29,25 +29,13 @@
 <h2>Rejoignez-nous</h2> 
 </section>
 
-<section class="temoignages">
-  <h2>Ce que nos utilisateurs disent de nous</h2>
-  <blockquote>
-    <p>"Je suis vraiment satisfaite de mon expérience. J'ai pu trouver un propriétaire de chat qui m'a laissé prendre soin de son animal pendant mes vacances."</p>
-    <signature>Maria B.</signature>
-  </blockquote>
-  <blockquote>
-    <p>"Je recommande ce site à tous les propriétaires de félins qui cherchent quelqu'un pour s'occuper de leur animal."</p>
-    <signature>Ali E.</signature>
-  </blockquote>
-</section>
-
 <section class="concept">
 <br>
 <br>
 <br>
 <br>
 <br>
-<p><strong>Le concept ?</strong> <br><br>
+<p><strong><span style="font-size: 30px;">Le concept ?</span></strong> <br><br>
 Un pet-sitter vient résider chez vous et s'occupe de votre chat en votre absence.<br>
 Le home-sitting séduit de plus en plus de propriétaires de chats,<br> 
 offrant ainsi une solution moderne pour allier le bien-être de l'animal et des vacances économiques.</br>
@@ -61,6 +49,7 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
       <li>Bénéficie d'une présence rassurante et constante à la maison</li>
       <li>Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
     </ul>
+    <img src="public\img\catsitter.jpg" alt="catsitter">
   </div>
   
   <div class="benefice2">
@@ -70,9 +59,20 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
       <li>Sérénité de confier votre chat et votre maison à une personne de confiance</li>
       <li>Recevez régulièrement des nouvelles et des photos de votre chat pendant votre absence</li>
     </ul>
+    <img src="public\img\catsitter2.jpg" alt="catsitter">
   </div>
-  
-  
+  </div>
 </section>
-<br>
+
+<section class="temoignages">
+  <h2>Ce que nos utilisateurs disent de nous</h2>
+  <blockquote>
+    <p>"Je suis vraiment satisfaite de mon expérience. J'ai pu trouver un propriétaire de chat qui m'a laissé prendre soin de son animal pendant mes vacances."</p>
+    <signature>Maria B.</signature>
+  </blockquote>
+  <blockquote>
+    <p>"Je recommande ce site à tous les propriétaires de félins qui cherchent quelqu'un pour s'occuper de leur animal."</p>
+    <signature>Ali E.</signature>
+  </blockquote>
+</section>
 
