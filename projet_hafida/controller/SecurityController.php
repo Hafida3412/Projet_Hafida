@@ -83,8 +83,7 @@ class SecurityController extends AbstractController{
         if(password_verify($password, $hash)){//VERIFICATION DU MDP
             $_SESSION["utilisateur"] = $utilisateur; //on stocke dans un tableau SESSION l'intégralité des infos du user
                 header("Location:index.php?ctrl=home&action=index");//SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D ACCUEIL
-    // Dans Forum, la redirection sera par exemple: header("Location: index.php?ctrl=home&action=index&id=");    
-        exit;  
+                exit;  
                     
         } else {
     // Erreur d'adresse mail ou de mot de passe
