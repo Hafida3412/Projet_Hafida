@@ -143,20 +143,66 @@
 .temoignages signature { 
   font-size: 16px; 
   color: #999; 
-  font-style: italic; }
-
-/* Section des liens */
-.welcome-links a { 
-  display: inline-block; 
-  margin: 0 15px; 
-  padding: 10px 20px; 
-  border: 2px solid #fff; 
-  color: #fff; 
-  text-decoration: none; 
-  background-color: #3498db; 
-  border-radius: 5px; }
-
-.welcome-links a:hover { 
-  background-color: #2980b9; 
-  transform: translateY(-5px); 
+  font-style: italic; 
 }
+
+.concept {
+  background-image: url("../img/catwhite.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: black;
+  padding: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  filter: grayscale(150%); /* Rend l'image en noir et blanc */
+  transition: filter 0.5s; /* Ajoute une transition pour un changement progressif */
+}
+
+.concept:hover {
+  filter: grayscale(0%); /* Passe l'image en couleur au survol */
+}
+
+.concept p{ 
+  font-size: 20px; 
+}
+
+.explications {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.benefice1, .benefice2 {
+  width: 45%;
+  padding: 10px;
+}
+
+.benefice1, .benefice2 h2 {
+  color: #333;
+  text-align: center;
+}
+
+.benefice1 ul, .benefice2 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.benefice1 ul li, .benefice2 ul li {
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.benefice1 {
+  background-image: url("../img/catsitter.jpg");
+  background-size: cover;
+  color: black;
+}
+
+.benefice2 {
+  background-image: url("../img/catsitter2.jpg");;
+  background-size: cover;
+  color: black;
+}
+
