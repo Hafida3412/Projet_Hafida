@@ -30,6 +30,7 @@ $reservations = $result["data"]['reservations'];
 </form>
 </div>
 
+
 <!-- Réservations -->
 <h1>Mes réservations</h1>
 <div class="reservations">
