@@ -2,8 +2,6 @@
 
 /* Style du fond d'écran en parallaxe */
 
-/* Ajouter une nouvelle classe pour l'image de fond */
-
 .parallax{
   background-image: url(../img/chatdodo.jpg);
   background-size: 100%;
