@@ -105,6 +105,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.parallax-image h2 { 
+  color: white; 
+  font-size: 36px;
+  text-align: center; 
+  padding: 50px; 
+  
+} 
+
 .temoignages { 
   background-color: #fff; 
   padding: 40px; 

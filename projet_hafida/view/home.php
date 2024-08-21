@@ -27,7 +27,7 @@
 <br>
 
 <section class="parallax-image">
-  
+<h2>Rejoignez-nous</h2> 
 </section>
 <section class="temoignages">
   <h2>Ce que nos utilisateurs disent de nous</h2>
