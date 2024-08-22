@@ -21,8 +21,7 @@ final class Utilisateur extends Entity{
         $this->hydrate($data);        
     }
 
-    
-    public function getId(){
+        public function getId(){
         return $this->id;
     }
 
