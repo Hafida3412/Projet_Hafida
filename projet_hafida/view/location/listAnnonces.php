@@ -41,4 +41,4 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     echo "</p></div>"; // Fermeture du cadre de l'annonce</p>
     }
 }
-    ?>
+?>
