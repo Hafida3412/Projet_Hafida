@@ -4,6 +4,7 @@ namespace Controller;
 use App\AbstractController;
 use App\Session;
 use Model\Managers\AnnonceManager;
+use Model\Managers\UtilisateurManager;
 
 class AdminController extends AbstractController{
     
@@ -27,5 +28,17 @@ class AdminController extends AbstractController{
         }
     }
 
+    public function users(){
+        $userManager = new UtilisateurManager();
+        $users = $userManager->findAll();
+        
+        return [
+            "view" => VIEW_DIR."admin/dashboard.php",
+            "meta_description" => "Tableau de bord de l'administrateur",
+            "data" => [
+                "utilisateurs" => $users
+            ]
+        ];
+    }
 }
 

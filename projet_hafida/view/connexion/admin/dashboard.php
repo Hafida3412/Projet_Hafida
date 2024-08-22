@@ -11,3 +11,14 @@
             </li>
         <?php endforeach; ?>
     </ul>
+
+    
+    <h2>Liste des utilisateurs :</h2>
+<ul>
+    <?php foreach($data["utilisateurs"] as $utilisateur): ?>
+        <li>
+            <p><?= $utilisateur->getPseudo(); ?> - <?= $utilisateur->getEmail(); ?></p>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
