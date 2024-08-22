@@ -7,38 +7,34 @@ use Model\Managers\AnnonceManager;
 use Model\Managers\UtilisateurManager;
 
 class AdminController extends AbstractController{
-    
-    public function dashboard(){
+
+    public function annonces(){
+        $this->restrictTo("ROLE_ADMIN");
+
         $annonceManager = new AnnonceManager();
         $annonces = $annonceManager->findAll();
 
-        // Vérifier si l'utilisateur est connecté en tant qu'administrateur
-        if(Session::isAdmin()){
-            return [
-                "view" => VIEW_DIR."admin/dashboard.php",
-                "meta_description" => "Tableau de bord de l'administrateur",
-                "data" => [
-                    "annonces" => $annonces
-                ]
-            ];
-        } else {
-            // Rediriger vers la page de connexion si l'utilisateur n'est pas administrateur
-            Session::addFlash("error", "Accès refusé. Vous n'êtes pas autorisé à accéder à cette page.");
-            $this->redirectTo("security", "login");
-        }
+        return [
+            "view" => VIEW_DIR."admin/annonces.php",
+            "meta_description" => "Liste de toutes les annonces",
+            "data" => [
+                "annonces" => $annonces
+            ]
+        ];
     }
 
-    public function users(){
+    public function utilisateurs(){
+        $this->restrictTo("ROLE_ADMIN");
+
         $userManager = new UtilisateurManager();
-        $users = $userManager->findAll();
+        $utilisateurs = $userManager->findAll();
         
         return [
-            "view" => VIEW_DIR."admin/dashboard.php",
-            "meta_description" => "Tableau de bord de l'administrateur",
+            "view" => VIEW_DIR."admin/utilisateurs.php",
+            "meta_description" => "Liste de tous les utilisateurs",
             "data" => [
-                "utilisateurs" => $users
+                "utilisateurs" => $utilisateurs
             ]
         ];
     }
 }
-
