@@ -55,7 +55,7 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
   <div class="benefice2">
     <h2>Les avantages du home-sitting pour vous:</h2>
     <ul>
-      <li>Garde à domicile gratuite, seule la chambre du home-sitter est à vos frais</li>
+      <li>Garde à domicile</li>
       <li>Sérénité de confier votre chat et votre maison à une personne de confiance</li>
       <li>Recevez régulièrement des nouvelles et des photos de votre chat pendant votre absence</li>
     </ul>
