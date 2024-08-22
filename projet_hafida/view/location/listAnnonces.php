@@ -22,7 +22,7 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     echo "<div class='annonce'>"; // Ouverture du cadre de l'annonce
     //L'utilisateur peut cliquer sur le pseudo de l'utilisateur pour accéder aux détails de l'annonce
     //Détails de l'annonce:
-    echo "<p>"."Annonce de ".$annonce->getUtilisateur()->getPseudo()."<br>" .
+    echo "<p>"."<strong>"."Annonce de ".$annonce->getUtilisateur()->getPseudo()."</strong>"."<br>" .
     (date('d-m-Y H:i:s', strtotime($annonce->getDateCreation()))).
     "<br> Nb de chats: ".$annonce->getNbChat()."<br>
     Date de début: ".(date('d-m-Y ', strtotime($annonce->getDateDebut())))."<br>
