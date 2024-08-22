@@ -22,14 +22,14 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     echo "<div class='annonce'>"; // Ouverture du cadre de l'annonce
     //L'utilisateur peut cliquer sur le pseudo de l'utilisateur pour accéder aux détails de l'annonce
     //Détails de l'annonce:
-    echo "<p>"." <a href='index.php?ctrl=location&action=detailsAnnonce&id=".$annonce->getId()."'>"
-    ."Annonce de ".$annonce->getUtilisateur()->getPseudo()."</a>"."<br>"
-    .(date('d-m-Y H:i:s', strtotime($annonce->getDateCreation()))).
+    echo "<p>"."Annonce de ".$annonce->getUtilisateur()->getPseudo()."<br>" .
+    (date('d-m-Y H:i:s', strtotime($annonce->getDateCreation()))).
     "<br> Nb de chats: ".$annonce->getNbChat()."<br>
     Date de début: ".(date('d-m-Y ', strtotime($annonce->getDateDebut())))."<br>
     Date de fin: ".(date('d-m-Y ', strtotime($annonce->getDateFin()))).
     "<br> Description: ".$annonce->getDescription()."<br> 
-    Ville: ".$annonce->getLogement()->getVille();
+    Ville: ".$annonce->getLogement()->getVille()."<br> 
+    <a href='index.php?ctrl=location&action=detailsAnnonce&id=".$annonce->getId()."'>Consulter</a>"."<br>";
 
     //Il peut également supprimer une annonce s'il en est l'auteur en cliquant sur le bouton "Supprimer" après confirmation
     if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
