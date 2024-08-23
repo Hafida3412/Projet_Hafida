@@ -22,19 +22,25 @@ class Autoloader{
 		namespace et le nom de la classe:
 		  $parts = ['Model', 'Managers', 'TopicManager']*/
 
-		// on extrait le dernier element 
+		// On récupère le nom de la classe en supprimant le dernier élément du tableau
 		$className = array_pop($parts);
 		//$className = TopicManager
 
-		// on créé le chemin vers la classe
-		// on utilise DS car plus propre et meilleure portabilité entre les différents systèmes (windows/linux) 
+		/* on créé le chemin vers la classe
+	    on utilise DS car plus propre et meilleure portabilité entre les différents 
+		systèmes (windows/linux)*/
 
 		$path = strtolower(implode(DS, $parts));
 		//$path = 'model/manager'
+
+		/*On crée le nom complet du fichier en ajoutant l'extension .php*/
 		$file = $className.'.php';
 		//$file = TopicManager.php
 
+		/*On crée le chemin complet vers le fichier */
 		$filepath = BASE_DIR.$path.DS.$file;
+
+		/*On vérifie si le fichier existe, et si c'est le cas, on le charge avec require */
 		//$filepath = model/managers/TopicManager.php
 		if(file_exists($filepath)){
 			require $filepath;
