@@ -3,18 +3,24 @@ namespace App;
 
 class Autoloader{
 
+	/*Méthode statique pour enregistrer notre autoloader*/
 	public static function register(){
+	/* On enregistre notre méthode autoload comme fonction d'autochargement de 
+	classes avec spl_autoload_register*/
 		spl_autoload_register(array(__CLASS__, 'autoload'));
 	}
 
+	/* Méthode statique pour charger automatiquement les classes */
 	public static function autoload($class){
 
 		//$class = Model\Managers\TopicManager (FullyQualifiedClassName)
 		//namespace = Model\Managers, nom de la classe = TopicManager
 
-		// on explose notre variable $class par \
+		// on explose la chaîne de caractère $class en segments en fonction des \
 		$parts = preg_split('#\\\#', $class);
-		//$parts = ['Model', 'Managers', 'TopicManager']
+		/*$parts contient maintenant un tableau avec les différentes parties du 
+		namespace et le nom de la classe:
+		  $parts = ['Model', 'Managers', 'TopicManager']*/
 
 		// on extrait le dernier element 
 		$className = array_pop($parts);
