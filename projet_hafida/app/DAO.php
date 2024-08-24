@@ -22,6 +22,9 @@ abstract class DAO{
     /**
      * cette méthode permet de créer l'unique instance de PDO de l'application
      */
+    /**
+    * Méthode de connexion à la base de données
+    */
     public static function connect(){
         
         self::$bdd = new \PDO(
@@ -35,7 +38,11 @@ abstract class DAO{
             )   
         );
     }
-
+    /**
+    * Méthode pour exécuter des requêtes d'insertion
+    * @param string $sql Requête SQL d'insertion
+    * @return string L'identifiant de l'enregistrement ajouté en base
+    */
     public static function insert($sql){
         try{
             $stmt = self::$bdd->prepare($sql);
@@ -49,7 +56,12 @@ abstract class DAO{
             echo $e->getMessage();
         }
     }
-
+    /**
+    * Méthode pour exécuter des requêtes d'update
+    * @param string $sql Requête SQL d'update
+    * @param mixed $params Les paramètres de la requête
+    * @return boolean Etat de l'exécution de la requête
+    */
     public static function update($sql, $params){
         try{
             $stmt = self::$bdd->prepare($sql);
@@ -64,6 +76,12 @@ abstract class DAO{
         }
     }
     
+    /**
+    * Méthode pour exécuter des requêtes de suppression
+    * @param string $sql Requête SQL de suppression
+    * @param mixed $params Les paramètres de la requête
+    * @return boolean Etat de l'exécution de la requête
+    */
     public static function delete($sql, $params){
         try{
             $stmt = self::$bdd->prepare($sql);
