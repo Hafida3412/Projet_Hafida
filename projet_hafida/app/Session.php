@@ -33,12 +33,19 @@ class Session{
         $_SESSION["utilisateur"] = $utilisateur;
     }
 
+    /**
+    *   récupère l'utilisateur actuellement connecté en session
+    */
     public static function getUtilisateur(){
         return (isset($_SESSION['utilisateur'])) ? $_SESSION['utilisateur'] : false;
     }
 
+    /**
+    *   vérifie si l'utilisateur connecté est un administrateur
+    */
     public static function isAdmin(){
-        // attention de bien définir la méthode "hasRole" dans l'entité User en fonction de la façon dont sont gérés les rôles en base de données
+        /* attention de bien définir la méthode "hasRole" dans l'entité User 
+        en fonction de la façon dont sont gérés les rôles en base de données*/
         if(self::getUtilisateur() && self::getUtilisateur()->hasRole("ROLE_ADMIN")){
             return true;
         }
