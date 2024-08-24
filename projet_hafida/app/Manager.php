@@ -78,20 +78,24 @@ le résultat
         }
     }
     
+    // Méthode pour supprimer un enregistrement par son identifiant
     public function delete($id){
+         // Construction de la requête SQL pour supprimer un enregistrement
         $sql = "DELETE FROM ".$this->tableName."
                 WHERE id_".$this->tableName." = :id
                 ";
-
+// Appel de la méthode delete de la classe DAO pour exécuter la requête de suppression
         return DAO::delete($sql, ['id' => $id]); 
     }
 
+    // Méthode génératrice pour convertir des lignes en objets de la classe spécifiée
     private function generate($rows, $class){
         foreach($rows as $row){
             yield new $class($row);
         }
     }
     
+    // Méthode pour obtenir plusieurs résultats sous forme d'objets
     protected function getMultipleResults($rows, $class){
 
         if(is_iterable($rows)){
@@ -100,6 +104,7 @@ le résultat
         else return null;
     }
 
+    // Méthode pour obtenir un seul résultat sous forme d'objet
     protected function getOneOrNullResult($row, $class){
 
         if($row != null){
@@ -108,6 +113,7 @@ le résultat
         return false;
     }
 
+    // Méthode pour obtenir un seul résultat scalaire
     protected function getSingleScalarResult($row){
 
         if($row != null){
