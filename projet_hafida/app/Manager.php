@@ -32,27 +32,34 @@ abstract class Manager{
         );
     }
     
+    // Méthode pour trouver un enregistrement par son identifiant
     public function findOneById($id){
-
+        // Construction de la requête SQL pour récupérer un enregistrement par son ID
         $sql = "SELECT *
                 FROM ".$this->tableName." a
                 WHERE a.id_".$this->tableName." = :id
                 ";
 
+/* 
+Appel de la méthode select de la classe DAO pour exécuter la requête et récupérer 
+le résultat
+*/
         return $this->getOneOrNullResult(
             DAO::select($sql, ['id' => $id], false), 
             $this->className
         );
     }
 
+    // Méthode pour ajouter un nouvel enregistrement
     //$data = ['username' => 'Squalli', 'password' => 'dfsyfshfbzeifbqefbq', 'email' => 'sql@gmail.com'];
-
     public function add($data){
         //$keys = ['username' , 'password', 'email']
         $keys = array_keys($data);
         //$values = ['Squalli', 'dfsyfshfbzeifbqefbq', 'sql@gmail.com']
         $values = array_values($data);
         //"username,password,email"
+
+        // Construction de la requête SQL d'insertion
         $sql = "INSERT INTO ".$this->tableName."
                 (".implode(',', $keys).") 
                 VALUES
@@ -62,11 +69,12 @@ abstract class Manager{
             INSERT INTO user (username,password,email) VALUES ('Squalli', 'dfsyfshfbzeifbqefbq', 'sql@gmail.com') 
         */
         try{
+            // Appel de la méthode insert de la classe DAO pour exécuter la requête d'insertion
             return DAO::insert($sql);
         }
         catch(\PDOException $e){
-            echo $e->getMessage();
-            die();
+            echo $e->getMessage();// Affichage de l'erreur PDO en cas d'échec
+            die();// Arrêt de l'exécution du script
         }
     }
     
