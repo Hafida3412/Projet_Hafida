@@ -1,0 +1,222 @@
+LastSessions<|||>1<|||>localhost
+LastActiveSession<|||>1<|||>localhost
+ColWidths_connform.ListSessions<|||>1<|||>163,50,50,50,50,50,10
+ColsVisible_connform.ListSessions<|||>1<|||>0,1,4,6
+ColPositions_connform.ListSessions<|||>1<|||>0,1,2,3,4,5,6
+ColSort_connform.ListSessions<|||>1<|||>0,0
+MainWinOnMonitor<|||>3<|||>0
+ColWidths_MainForm.ListDatabases<|||>1<|||>150,80,50,50,50,50,50,50,50,50,120
+ColsVisible_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColPositions_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColSort_MainForm.ListDatabases<|||>1<|||>0,0
+ColWidths_MainForm.ListVariables<|||>1<|||>160,200,428
+ColsVisible_MainForm.ListVariables<|||>1<|||>0,1,2
+ColPositions_MainForm.ListVariables<|||>1<|||>0,1,2
+ColSort_MainForm.ListVariables<|||>1<|||>0,0
+ColWidths_MainForm.ListStatus<|||>1<|||>160,428,100,100
+ColsVisible_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColPositions_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColSort_MainForm.ListStatus<|||>1<|||>0,0
+ColWidths_MainForm.ListProcesses<|||>1<|||>70,80,80,80,80,50,50,303
+ColsVisible_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColPositions_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColSort_MainForm.ListProcesses<|||>1<|||>0,1
+ColWidths_MainForm.ListCommandStats<|||>1<|||>120,100,100,100,368
+ColsVisible_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColPositions_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColSort_MainForm.ListCommandStats<|||>1<|||>1,1
+ColWidths_MainForm.ListTables<|||>1<|||>120,70,70,120,120,70,100,50,70,70,70,70,70,90,120,70,70,70,50
+ColsVisible_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,18
+ColPositions_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+ColSort_MainForm.ListTables<|||>1<|||>0,0
+MainWinWidth<|||>3<|||>992
+MainWinHeight<|||>3<|||>523
+SessionManager_WindowLeft<|||>3<|||>40
+SessionManager_WindowTop<|||>3<|||>0
+CreateDbCollation<|||>1<|||>latin1_swedish_ci
+ColWidths_frmTableEditor.listColumns<|||>1<|||>41,100,152,90,60,65,50,116,130,137,100,100
+ColsVisible_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
+ColPositions_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
+ColSort_frmTableEditor.listColumns<|||>1<|||>-1,0
+ColWidths_frmTableEditor.treeIndexes<|||>1<|||>388,100,80,120
+ColsVisible_frmTableEditor.treeIndexes<|||>1<|||>0,1,2,3
+ColPositions_frmTableEditor.treeIndexes<|||>1<|||>0,1,2,3
+ColSort_frmTableEditor.treeIndexes<|||>1<|||>-1,0
+ColWidths_frmTableEditor.listForeignKeys<|||>1<|||>277,80,100,80,80,80
+ColsVisible_frmTableEditor.listForeignKeys<|||>1<|||>0,1,2,3,4,5
+ColPositions_frmTableEditor.listForeignKeys<|||>1<|||>0,1,2,3,4,5
+ColSort_frmTableEditor.listForeignKeys<|||>1<|||>-1,0
+ColWidths_frmTableEditor.listCheckConstraints<|||>1<|||>200,179
+ColsVisible_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
+ColPositions_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
+ColSort_frmTableEditor.listCheckConstraints<|||>1<|||>-1,0
+DateTimeEditor_CursorPos_Type4<|||>3<|||>10
+ExportSQL_Filenames<|||>1<|||>C:\laragon\www\projet_hafida_sql\projet_hafida.sql<{{{><}}}>projet_hafida_sql<{{{><}}}>
+ExportSQL_CreateTables<|||>3<|||>1
+ExportSQL_DataHow<|||>3<|||>2
+MainWinMaximized<|||>3<|||>0
+PromptSaveFileOnTabClose<|||>3<|||>0
+querymemoheight<|||>3<|||>181
+MainWinLeft<|||>3<|||>400
+MainWinTop<|||>3<|||>70
+SQLFile0<|||>1<|||>C:\laragon\bin\heidisql\Backups\query-tab-2024-05-29_08-41-00-999.sql
+FavoriteObjectsOnly<|||>3<|||>0
+Servers\Laragon.MySQL\SessionCreated<|||>1<|||>2022-09-09 20:36:07
+Servers\Laragon.MySQL\Host<|||>1<|||>127.0.0.1
+Servers\Laragon.MySQL\WindowsAuth<|||>3<|||>0
+Servers\Laragon.MySQL\CleartextPluginEnabled<|||>3<|||>0
+Servers\Laragon.MySQL\User<|||>1<|||>root
+Servers\Laragon.MySQL\Password<|||>1<|||>2
+Servers\Laragon.MySQL\LoginPrompt<|||>3<|||>0
+Servers\Laragon.MySQL\Port<|||>1<|||>3306
+Servers\Laragon.MySQL\NetType<|||>3<|||>0
+Servers\Laragon.MySQL\Compressed<|||>3<|||>0
+Servers\Laragon.MySQL\LocalTimeZone<|||>3<|||>0
+Servers\Laragon.MySQL\QueryTimeout<|||>3<|||>30
+Servers\Laragon.MySQL\KeepAlive<|||>3<|||>20
+Servers\Laragon.MySQL\FullTableStatus<|||>3<|||>1
+Servers\Laragon.MySQL\Databases<|||>1<|||>
+Servers\Laragon.MySQL\Library<|||>1<|||>libmysql.dll
+Servers\Laragon.MySQL\Comment<|||>1<|||>
+Servers\Laragon.MySQL\StartupScriptFilename<|||>1<|||>
+Servers\Laragon.MySQL\TreeBackground<|||>3<|||>536870911
+Servers\Laragon.MySQL\SshExecutable<|||>1<|||>plink.exe
+Servers\Laragon.MySQL\SSHtunnelHost<|||>1<|||>
+Servers\Laragon.MySQL\SSHtunnelHostPort<|||>3<|||>22
+Servers\Laragon.MySQL\SSHtunnelUser<|||>1<|||>
+Servers\Laragon.MySQL\SSHtunnelPassword<|||>1<|||>2
+Servers\Laragon.MySQL\SSHtunnelTimeout<|||>3<|||>4
+Servers\Laragon.MySQL\SSHtunnelPrivateKey<|||>1<|||>
+Servers\Laragon.MySQL\SSHtunnelPort<|||>3<|||>3307
+Servers\Laragon.MySQL\SSL_Active<|||>3<|||>0
+Servers\Laragon.MySQL\SSL_Key<|||>1<|||>
+Servers\Laragon.MySQL\SSL_Cert<|||>1<|||>
+Servers\Laragon.MySQL\SSL_CA<|||>1<|||>
+Servers\Laragon.MySQL\SSL_Cipher<|||>1<|||>
+Servers\Laragon.MySQL\IgnoreDatabasePattern<|||>1<|||>
+Servers\Laragon.MySQL\LogFileDdl<|||>3<|||>0
+Servers\Laragon.MySQL\LogFileDml<|||>3<|||>0
+Servers\Laragon.MySQL\LogFilePath<|||>1<|||>C:\Users\Administrator\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
+Servers\Laragon.MySQL\RefusedCount<|||>3<|||>2
+Servers\Laragon.MySQL\ServerVersionFull<|||>1<|||>8.0.30 - MySQL Community Server - GPL
+Servers\Laragon.MySQL\ConnectCount<|||>3<|||>3
+Servers\Laragon.MySQL\ServerVersion<|||>3<|||>80030
+Servers\Laragon.MySQL\LastConnect<|||>1<|||>2022-09-09 20:37:19
+Servers\localhost\SessionCreated<|||>1<|||>2024-05-29 08:43:01
+Servers\localhost\Host<|||>1<|||>127.0.0.1
+Servers\localhost\WindowsAuth<|||>3<|||>0
+Servers\localhost\CleartextPluginEnabled<|||>3<|||>0
+Servers\localhost\User<|||>1<|||>root
+Servers\localhost\Password<|||>1<|||>4
+Servers\localhost\LoginPrompt<|||>3<|||>0
+Servers\localhost\Port<|||>1<|||>3306
+Servers\localhost\NetType<|||>3<|||>0
+Servers\localhost\Compressed<|||>3<|||>0
+Servers\localhost\LocalTimeZone<|||>3<|||>0
+Servers\localhost\QueryTimeout<|||>3<|||>30
+Servers\localhost\KeepAlive<|||>3<|||>20
+Servers\localhost\FullTableStatus<|||>3<|||>1
+Servers\localhost\Databases<|||>1<|||>
+Servers\localhost\Library<|||>1<|||>libmariadb.dll
+Servers\localhost\Comment<|||>1<|||>
+Servers\localhost\StartupScriptFilename<|||>1<|||>
+Servers\localhost\TreeBackground<|||>3<|||>536870911
+Servers\localhost\SshExecutable<|||>1<|||>
+Servers\localhost\SSHtunnelHost<|||>1<|||>
+Servers\localhost\SSHtunnelHostPort<|||>3<|||>22
+Servers\localhost\SSHtunnelUser<|||>1<|||>
+Servers\localhost\SSHtunnelPassword<|||>1<|||>2
+Servers\localhost\SSHtunnelTimeout<|||>3<|||>4
+Servers\localhost\SSHtunnelPrivateKey<|||>1<|||>
+Servers\localhost\SSHtunnelPort<|||>3<|||>3307
+Servers\localhost\SSL_Active<|||>3<|||>0
+Servers\localhost\SSL_Key<|||>1<|||>
+Servers\localhost\SSL_Cert<|||>1<|||>
+Servers\localhost\SSL_CA<|||>1<|||>
+Servers\localhost\SSL_Cipher<|||>1<|||>
+Servers\localhost\IgnoreDatabasePattern<|||>1<|||>
+Servers\localhost\LogFileDdl<|||>3<|||>0
+Servers\localhost\LogFileDml<|||>3<|||>0
+Servers\localhost\LogFilePath<|||>1<|||>C:\Users\Administrateur\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
+Servers\localhost\ServerVersionFull<|||>1<|||>8.0.30 - MySQL Community Server - GPL
+Servers\localhost\ConnectCount<|||>3<|||>12
+Servers\localhost\ServerVersion<|||>3<|||>80030
+Servers\localhost\LastConnect<|||>1<|||>2024-07-08 14:54:41
+Servers\localhost\lastUsedDB<|||>1<|||>projet_hafida
+Servers\localhost\FavoriteObjects<|||>1<|||>
+Servers\localhost\RefusedCount<|||>3<|||>6
+Servers\localhost\forum_hafida|message\MemoEditorHighlighter_texte<|||>1<|||>
+Servers\localhost\projet_hafida|\MemoEditorHighlighter_commentaire<|||>1<|||>
+Servers\localhost\projet_hafida|annonce\MemoEditorHighlighter_estValide<|||>1<|||>
+Servers\localhost\projet_hafida|avis\MemoEditorHighlighter_commentaire<|||>1<|||>
+Servers\localhost\projet_hafida|logement\MemoEditorHighlighter_CP<|||>1<|||>
+Servers\localhost\projet_hafida|logement\MemoEditorHighlighter_ville<|||>1<|||>
+Servers\localhost\projet_hafida|logement\MemoEditorHighlighter_image<|||>1<|||>
+Servers\localhost\projet_hafida|reserver\MemoEditorHighlighter_rue<|||>1<|||>
+Servers\localhost\projet_hafida|reserver\MemoEditorHighlighter_paiement<|||>1<|||>
+Servers\localhost\projet_hafida|utilisateur\MemoEditorHighlighter_pseudo<|||>1<|||>
+Servers\localhost\projet_hafida|utilisateur\MemoEditorHighlighter_nom<|||>1<|||>
+Servers\localhost\projet_hafida|utilisateur\MemoEditorHighlighter_password<|||>1<|||>
+Servers\localhost\projet_hafida|utilisateur\MemoEditorHighlighter_role<|||>1<|||>
+Servers\localhost\QueryHistory\4<|||>1<|||>2024-07-04 17:34:21|projet_hafida|32|UPDATE ANNONCE SET estValide= 1 <{{{><}}}>WHERE id_annonce = 1<{{{><}}}>
+Servers\localhost\QueryHistory\5<|||>1<|||>2024-07-07 00:03:50|projet_hafida|16|SELECT *<{{{><}}}>            FROM reserver<{{{><}}}>            WHERE annonce_id = 1<{{{><}}}><{{{><}}}>
+Servers\localhost\QueryHistory\6<|||>1<|||>2024-07-07 00:51:11|projet_hafida|0|SELECT estValide<{{{><}}}>                FROM annonce<{{{><}}}>                <{{{><}}}>    <{{{><}}}><{{{><}}}>
+Servers\localhost\QueryHistory\7<|||>1<|||>2024-07-07 00:53:30|projet_hafida|0|SELECT estValide<{{{><}}}>                FROM annonce<{{{><}}}>                WHERE id_annonce = 6<{{{><}}}>                <{{{><}}}>                <{{{><}}}>    <{{{><}}}><{{{><}}}>
+Servers\localhost\QueryHistory\8<|||>1<|||>2024-07-07 00:53:38|projet_hafida|16|SELECT estValide<{{{><}}}>                FROM annonce<{{{><}}}>                WHERE id_annonce = 1<{{{><}}}>                <{{{><}}}>                <{{{><}}}>    <{{{><}}}><{{{><}}}>
+Servers\localhost\QueryHistory\9<|||>1<|||>2024-07-07 01:18:58|projet_hafida|0|SELECT *<{{{><}}}>                FROM annonce<{{{><}}}>                WHERE estValide = 1<{{{><}}}>                <{{{><}}}>                <{{{><}}}>    <{{{><}}}><{{{><}}}>
+Servers\localhost\QueryHistory\10<|||>1<|||>2024-07-07 22:51:23|projet_hafida|0|SELECT * <{{{><}}}>                FROM reserver<{{{><}}}>                WHERE utilisateur_id = 1<{{{><}}}>                <{{{><}}}>                <{{{><}}}>    <{{{><}}}><{{{><}}}>
+Servers\localhost\QueryHistory\11<|||>1<|||>2024-07-07 22:51:30|projet_hafida|0|SELECT * <{{{><}}}>                FROM reserver<{{{><}}}>                WHERE utilisateur_id = 4<{{{><}}}>                <{{{><}}}>                <{{{><}}}>    <{{{><}}}><{{{><}}}>
+Servers\localhost\QueryHistory\1<|||>1<|||>2024-07-24 00:18:04|projet_hafida|0|SELECT *<{{{><}}}>                FROM annonce<{{{><}}}>      <{{{><}}}>    <{{{><}}}><{{{><}}}>
+Servers\localhost\QueryHistory\2<|||>1<|||>2024-07-24 00:44:54|projet_hafida|0|SELECT *<{{{><}}}>                FROM reserver<{{{><}}}>                <{{{><}}}>
+Servers\localhost\QueryHistory\3<|||>1<|||>2024-07-24 00:45:42|projet_hafida|32|DELETE <{{{><}}}>                FROM reserver<{{{><}}}>                WHERE annonce_id = 6<{{{><}}}>                <{{{><}}}>
+Servers\localhost\QueryHistory\12<|||>1<|||>2024-07-26 15:56:26|projet_hafida|0|SELECT *<{{{><}}}>            FROM reserver<{{{><}}}>            INNER JOIN annonce annonce <{{{><}}}>				ON reserver.annonce_id = annonce_id<{{{><}}}>            WHERE reserver.utilisateur_id = 4           <{{{><}}}>
+Servers\localhost\QueryHistory\13<|||>1<|||>2024-07-26 16:00:37|projet_hafida|16|SELECT *<{{{><}}}>            FROM reserver<{{{><}}}>            INNER JOIN annonce<{{{><}}}>				ON reserver.annonce_id = annonce_id<{{{><}}}>            WHERE reserver.utilisateur_id = 4           <{{{><}}}>
+Servers\localhost\QueryHistory\14<|||>1<|||>2024-07-27 16:44:36|projet_hafida|0|SELECT *<{{{><}}}>            FROM reserver<{{{><}}}>           <{{{><}}}>            WHERE reserver.utilisateur_id = 4           <{{{><}}}>
+Servers\localhost\QueryHistory\15<|||>1<|||>2024-07-27 17:28:20|projet_hafida|0|SELECT *<{{{><}}}>            FROM reserver<{{{><}}}>           <{{{><}}}>            WHERE valide = 1         <{{{><}}}>
+Servers\localhost\QueryHistory\16<|||>1<|||>2024-08-01 11:11:22|projet_hafida|0|SELECT *<{{{><}}}>            FROM annonce<{{{><}}}>            <{{{><}}}>            
+Servers\localhost\QueryHistory\17<|||>1<|||>2024-08-01 11:27:30|projet_hafida|0|SELECT *<{{{><}}}>FROM Annonce <{{{><}}}>INNER JOIN Logement  ON annonce.logement_id = logement_id<{{{><}}}>WHERE logement.ville = 'Vesoul'<{{{><}}}>            
+Servers\localhost\QueryHistory\18<|||>1<|||>2024-08-01 11:27:49|projet_hafida|0|SELECT *<{{{><}}}>FROM Annonce <{{{><}}}>INNER JOIN Logement  ON annonce.logement_id = logement_id<{{{><}}}>WHERE logement.ville = 'Vesoul'<{{{><}}}><{{{><}}}>            
+Servers\localhost\QueryHistory\19<|||>1<|||>2024-08-01 11:30:55|projet_hafida|0|SELECT *<{{{><}}}>FROM Annonce <{{{><}}}>INNER JOIN Logement  ON annonce.logement_id = logement_id<{{{><}}}>WHERE ville = 'Vesoul'<{{{><}}}><{{{><}}}>            
+Servers\localhost\QueryHistory\20<|||>1<|||>2024-08-01 11:31:42|projet_hafida|0|SELECT *<{{{><}}}>FROM Annonce <{{{><}}}>INNER JOIN logement  ON logement_id = logement_id<{{{><}}}>WHERE ville = 'Vesoul'<{{{><}}}><{{{><}}}>            
+Servers\localhost\QueryHistory\21<|||>1<|||>2024-08-01 11:32:37|projet_hafida|0|SELECT *<{{{><}}}>FROM Annonce <{{{><}}}>INNER JOIN logement <{{{><}}}>WHERE ville = 'Vesoul'<{{{><}}}><{{{><}}}>            
+Servers\localhost\QueryHistory\22<|||>1<|||>2024-08-01 11:34:02|projet_hafida|0|SELECT *<{{{><}}}>FROM annonce<{{{><}}}>INNER JOIN logement<{{{><}}}>WHERE ville = 'Vesoul'<{{{><}}}><{{{><}}}>            
+Servers\localhost\QueryHistory\23<|||>1<|||>2024-08-01 11:34:21|projet_hafida|0|SELECT *<{{{><}}}>FROM logement<{{{><}}}><{{{><}}}>WHERE ville = 'Vesoul'<{{{><}}}><{{{><}}}>            
+Servers\localhost\QueryHistory\24<|||>1<|||>2024-08-01 12:32:15|projet_hafida|0|SELECT *<{{{><}}}>FROM annonce<{{{><}}}>INNER JOIN logement<{{{><}}}><{{{><}}}>WHERE ville = 'Vesoul'<{{{><}}}><{{{><}}}>            
+Servers\localhost\QueryHistory\25<|||>1<|||>2024-08-01 13:06:36|projet_hafida|0|SELECT *<{{{><}}}>FROM annonce<{{{><}}}>INNER JOIN logement ON logement_id = logement.id_logement<{{{><}}}>WHERE ville = 'Vesoul'<{{{><}}}><{{{><}}}>            
+Servers\localhost\QueryHistory\26<|||>1<|||>2024-08-01 13:08:23|projet_hafida|0|SELECT *<{{{><}}}>FROM annonce<{{{><}}}>INNER JOIN logement ON logement_id = logement.id_logement<{{{><}}}>WHERE ville = 'strasbourg'<{{{><}}}><{{{><}}}>            
+Servers\Unnamed\SessionCreated<|||>1<|||>2024-06-10 20:52:34
+Servers\Unnamed\Host<|||>1<|||>127.0.0.1
+Servers\Unnamed\WindowsAuth<|||>3<|||>0
+Servers\Unnamed\CleartextPluginEnabled<|||>3<|||>0
+Servers\Unnamed\User<|||>1<|||>root
+Servers\Unnamed\Password<|||>1<|||>3
+Servers\Unnamed\LoginPrompt<|||>3<|||>0
+Servers\Unnamed\Port<|||>1<|||>3306
+Servers\Unnamed\NetType<|||>3<|||>0
+Servers\Unnamed\Compressed<|||>3<|||>0
+Servers\Unnamed\LocalTimeZone<|||>3<|||>0
+Servers\Unnamed\QueryTimeout<|||>3<|||>30
+Servers\Unnamed\KeepAlive<|||>3<|||>20
+Servers\Unnamed\FullTableStatus<|||>3<|||>1
+Servers\Unnamed\Databases<|||>1<|||>
+Servers\Unnamed\Library<|||>1<|||>libmariadb.dll
+Servers\Unnamed\Comment<|||>1<|||>
+Servers\Unnamed\StartupScriptFilename<|||>1<|||>
+Servers\Unnamed\TreeBackground<|||>3<|||>536870911
+Servers\Unnamed\SshExecutable<|||>1<|||>
+Servers\Unnamed\SSHtunnelHost<|||>1<|||>
+Servers\Unnamed\SSHtunnelHostPort<|||>3<|||>22
+Servers\Unnamed\SSHtunnelUser<|||>1<|||>
+Servers\Unnamed\SSHtunnelPassword<|||>1<|||>7
+Servers\Unnamed\SSHtunnelTimeout<|||>3<|||>4
+Servers\Unnamed\SSHtunnelPrivateKey<|||>1<|||>
+Servers\Unnamed\SSHtunnelPort<|||>3<|||>3307
+Servers\Unnamed\SSL_Active<|||>3<|||>0
+Servers\Unnamed\SSL_Key<|||>1<|||>
+Servers\Unnamed\SSL_Cert<|||>1<|||>
+Servers\Unnamed\SSL_CA<|||>1<|||>
+Servers\Unnamed\SSL_Cipher<|||>1<|||>
+Servers\Unnamed\IgnoreDatabasePattern<|||>1<|||>
+Servers\Unnamed\LogFileDdl<|||>3<|||>0
+Servers\Unnamed\LogFileDml<|||>3<|||>0
+Servers\Unnamed\LogFilePath<|||>1<|||>C:\Users\Administrateur\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
