@@ -1,15 +1,18 @@
 <?php
 namespace App;
 
+// Classe abstraite Entity namespace App;
 abstract class Entity{
 
+    // Méthode pour hydrater l'objet avec les données passées en paramètre
     protected function hydrate($data){
-
+        // Séparation du champ en deux parties s'il contient un "_"
         foreach($data as $field => $value){
             // field = topic_id
             // fieldarray = ['topic','id']
             $fieldArray = explode("_", $field);
 
+             // Vérification si la deuxième partie du champ est "id"
             if(isset($fieldArray[1]) && $fieldArray[1] == "id"){
                 // manName = TopicManager 
                 $manName = ucfirst($fieldArray[0])."Manager";
