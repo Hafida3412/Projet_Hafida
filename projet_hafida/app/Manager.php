@@ -2,27 +2,30 @@
 namespace App;
 
 abstract class Manager{
-
+    // Méthode pour se connecter à la base de données:
     protected function connect(){
         DAO::connect();
     }
 
     /**
-     * get all the records of a table, sorted by optionnal field and order
+     * Récupère tous les enregistrements d'une table, triés par champ et ordre optionnels
      * 
-     * @param array $order an array with field and order option
-     * @return Collection a collection of objects hydrated by DAO, which are results of the request sent
+     * @param array $order un tableau avec champ et ordre en option
+     * @return Collection une collection d'objets hydratés par DAO, qui sont les résultats de la requête envoyée
      */
     public function findAll($order = null){
 
+        // Construction de la clause ORDER BY en fonction des paramètres reçus
         $orderQuery = ($order) ?                 
             "ORDER BY ".$order[0]. " ".$order[1] :
             "";
 
+        // Construction de la requête SQL pour récupérer tous les enregistrements de la table
         $sql = "SELECT *
                 FROM ".$this->tableName." a
                 ".$orderQuery;
 
+        // Appel de la méthode select de la classe DAO pour exécuter la requête et récupérer les résultats
         return $this->getMultipleResults(
             DAO::select($sql), 
             $this->className
