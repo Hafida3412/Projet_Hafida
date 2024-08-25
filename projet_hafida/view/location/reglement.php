@@ -37,4 +37,10 @@
     votre consentement à tout moment en nous contactant. Vous avez également le droit 
     d'accéder, de rectifier ou de supprimer vos données personnelles.
     </li> 
+
+    <li>Contact:<br>
+    Si vous avez des questions ou des préoccupations concernant notre politique de 
+    confidentialité, veuillez nous contacter à l'adresse suivante : 
+    <b>admin@gmail.com</b>.
+    </li> 
 </ul>
