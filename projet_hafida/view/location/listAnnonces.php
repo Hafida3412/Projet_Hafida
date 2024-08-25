@@ -58,20 +58,22 @@ $totalPages = 5; // Nombre total de pages
 <nav aria-label="Pagination">
   <ul class="pagination">
     <?php if ($page > 1): // Si la page courante n'est pas la première ?> 
-      <li class="page-item"><a class="page-link" 
-      href="index.php?ctrl=location&action=index&page=<?php 
+      <li class="page-item">
+    <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
       echo $page - 1; ?>">Précédent</a></li>
     <?php endif; ?>
 
     <?php for ($i = 1; $i <= $totalPages; $i++): // Boucle pour afficher les numéros de page?>
       <li class="page-item <?php if ($i == $page) 
-      echo 'active'; ?>"><a class="page-link" 
-      href="index.php?ctrl=location&action=index&page=<?php echo $i; ?>"><?php 
+      echo 'active'; ?>">
+      <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
+      echo $i; ?>"><?php 
       echo $i; ?></a></li>
     <?php endfor; ?>
 
     <?php if ($page < $totalPages): // Si la page courante n'est pas la dernière?>
-      <li class="page-item"><a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
+      <li class="page-item">
+      <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
       echo $page + 1; ?>">Suivant</a></li>
     <?php endif; ?>
   </ul>
