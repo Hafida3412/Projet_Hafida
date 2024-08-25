@@ -21,7 +21,7 @@ class LocationController extends AbstractController implements ControllerInterfa
         
         // Pagination settings
         $pageNum = isset($_GET['page']) ? (int)$_GET['page'] : 1;// Récupère le numéro de page
-        $perPage = 2;
+        $perPage = 3;
     
         // Récupérer le nombre total d'annonces
         $totalAnnonces = $annonceManager->countAll(); 
