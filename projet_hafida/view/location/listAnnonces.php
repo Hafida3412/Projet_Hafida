@@ -50,22 +50,22 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
 
 // Pagination
 
-// Définir la page courante
+// On définit la page courante
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page depuis l'URL
 $totalPages = 5; // Nombre total de pages
 
 ?>
 <nav aria-label="Pagination">
   <ul class="pagination">
-    <?php if ($page > 1): ?>
+    <?php if ($page > 1): // Si la page courante n'est pas la première ?> 
       <li class="page-item"><a class="page-link" href="index.php?ctrl=location&action=index&page=<?php echo $page - 1; ?>">Précédent</a></li>
     <?php endif; ?>
 
-    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+    <?php for ($i = 1; $i <= $totalPages; $i++): // Boucle pour afficher les numéros de page?>
       <li class="page-item <?php if ($i == $page) echo 'active'; ?>"><a class="page-link" href="index.php?ctrl=location&action=index&page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
     <?php endfor; ?>
 
-    <?php if ($page < $totalPages): ?>
+    <?php if ($page < $totalPages): // Si la page courante n'est pas la dernière?>
       <li class="page-item"><a class="page-link" href="index.php?ctrl=location&action=index&page=<?php echo $page + 1; ?>">Suivant</a></li>
     <?php endif; ?>
   </ul>
