@@ -46,8 +46,6 @@ class LocationController extends AbstractController implements ControllerInterfa
         ];
     }
     
-
-
     //RECHERCHER UNE ANNONCE PAR VILLE
 public function rechercheAnnonce() {
     $annonceManager = new AnnonceManager();
@@ -182,6 +180,7 @@ public function rechercheAnnonce() {
         ];
     }
 
+    //LISTE DE LOGEMENTS PAR UTILISATEUR
     public function listeLogementsUtilisateur(){
         // Vérifiez si l'utilisateur est connecté
         if(!Session::getUtilisateur()){
@@ -207,7 +206,6 @@ public function rechercheAnnonce() {
         ];
     }
 
-
     //SUPPRIMER UNE ANNONCE D UN UTILISATEUR
     public function supprimerAnnonce($id){
         //On récupère l'annonce à supprimer
@@ -230,7 +228,6 @@ public function rechercheAnnonce() {
             ];
         }
     }
-    
     
     //CREATION DE LA FONCTION POUR DONNER UN AVIS SUR UNE ANNONCE
     public function donnerAvis($id) {
@@ -282,6 +279,7 @@ public function rechercheAnnonce() {
         ];
     }
 
+    //FONCTION CONTACT
     public function contact() {
         return [
             "view" => VIEW_DIR . "location/contact.php",
@@ -289,6 +287,7 @@ public function rechercheAnnonce() {
         ];
     }
 
+    //FONCTION FAQ
     public function FAQ() {
         return [
             "view" => VIEW_DIR . "location/FAQ.php",
@@ -296,6 +295,7 @@ public function rechercheAnnonce() {
         ];
     }
 
+    //FONCTION MENTIONS LEGALES
     public function MentionsLegales() {
         return [
             "view" => VIEW_DIR . "location/mentionsLegales.php",
@@ -303,14 +303,13 @@ public function rechercheAnnonce() {
         ];
     }
 
+    //FONCTION REGLEMENT
     public function Reglement() {
         return [
             "view" => VIEW_DIR . "location/reglement.php",
             "meta_description" => "Règlement de notre site",
         ];
-    }
-    
-    
+    }    
 }
 
 
