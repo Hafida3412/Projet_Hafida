@@ -51,9 +51,13 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
 // Pagination
 
 // On définit la page courante
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page depuis l'URL
-$totalPages = 5; // Nombre total de pages
 
+/*On utilise la fonction isset($_GET['page']) pour vérifier si la page est définie 
+dans l'URL. Si c'est le cas, on utilise la valeur récupérée via intval($_GET['page']) 
+pour convertir la valeur en entier. Sinon, on utilise la valeur 1 par défaut.
+*/
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page depuis l'URL
+$totalPages = 5; //On définit la variable $totalPages qui représente le nombre total de pages.
 ?>
 <nav aria-label="Pagination">
   <ul class="pagination">
@@ -63,14 +67,16 @@ $totalPages = 5; // Nombre total de pages
       echo $page - 1; ?>">Précédent</a></li>
     <?php endif; ?>
 
-    <?php for ($i = 1; $i <= $totalPages; $i++): // Boucle pour afficher les numéros de page?>
+    <?php for ($i = 1; $i <= $totalPages; $i++): // Boucle FOR pour afficher les numéros de page?>
       <li class="page-item <?php if ($i == $page) 
-      echo 'active'; ?>">
+      echo 'active'; ?>"><!--On utilise la classe active pour la page courante.-->
       <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
       echo $i; ?>"><?php 
       echo $i; ?></a></li>
     <?php endfor; ?>
 
+    <!--On utilise une condition if pour vérifier si la page courante est inférieure
+     au nombre total de pages. Si c'est le cas, on affiche le lien "Suivant".-->
     <?php if ($page < $totalPages): // Si la page courante n'est pas la dernière?>
       <li class="page-item">
       <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
@@ -78,7 +84,7 @@ $totalPages = 5; // Nombre total de pages
     <?php endif; ?>
   </ul>
 </nav>
-</nav>
+
 
 
 
