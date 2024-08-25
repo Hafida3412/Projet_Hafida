@@ -69,6 +69,7 @@ class ReservationsController extends AbstractController implements ControllerInt
         ];   
     }
 
+    //FONCTION CONFIRMATION
     public function confirmation(){
         
                 return [
