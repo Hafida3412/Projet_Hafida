@@ -15,6 +15,22 @@ class AnnonceManager extends Manager{
         parent::connect();
     }
 
+
+    // Méthode pour compter le nombre total d'annonces
+public function countAll() {
+    $sql = "SELECT COUNT(id_annonce) as total FROM ".$this->tableName;
+    return $this->getSingleScalarResult(
+        DAO::select($sql)
+    );
+}
+public function findAll($order = null, $offset = 0, $perPage = 2) {
+    $sql = "SELECT *
+            FROM " . $this->tableName . "
+            ORDER BY " . $order[0] . " " . $order[1] . "
+            LIMIT " . $offset . ", " . $perPage;
+    return $this->getMultipleResults(DAO::select($sql), $this->className);
+}
+
     //REQUETE POUR AFFICHER LES ANNONCES PAR UTILISATEUR
     public function findAnnoncesByUtilisateur($id){
         $sql = "SELECT*

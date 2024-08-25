@@ -1,6 +1,8 @@
 <!--Ce code affiche la liste des annonces récupérées depuis la base de données-->
 <?php
     $annonces = $result["data"]['annonces']; 
+    $page = $result["data"]['page'];
+    $totalPages = $result["data"]['totalPages'];  
 ?>
 <br>
 <!--Création du formulaire de recherche d'annonce par ville-->
@@ -41,4 +43,6 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     echo "</p></div>"; // Fermeture du cadre de l'annonce</p>
     }
 }
-?>
+
+?><?php
+
