@@ -50,7 +50,9 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
 
 // Pagination
 
-$page = 2 ; $totalPages = 5
+// Définir la page courante
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page depuis l'URL
+$totalPages = 5; // Nombre total de pages
 
 ?>
 <nav aria-label="Pagination">
@@ -67,6 +69,7 @@ $page = 2 ; $totalPages = 5
       <li class="page-item"><a class="page-link" href="index.php?ctrl=location&action=index&page=<?php echo $page + 1; ?>">Suivant</a></li>
     <?php endif; ?>
   </ul>
+</nav>
 </nav>
 
 
