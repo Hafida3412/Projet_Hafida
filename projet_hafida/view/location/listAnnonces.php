@@ -44,5 +44,32 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     }
 }
 
-?><?php
+?>
+
+<?php
+
+// Pagination
+
+$page = 2 ; $totalPages = 5
+
+?>
+<nav aria-label="Pagination">
+  <ul class="pagination">
+    <?php if ($page > 1): ?>
+      <li class="page-item"><a class="page-link" href="index.php?ctrl=location&action=index&page=<?php echo $page - 1; ?>">Précédent</a></li>
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+      <li class="page-item <?php if ($i == $page) echo 'active'; ?>"><a class="page-link" href="index.php?ctrl=location&action=index&page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+    <?php endfor; ?>
+
+    <?php if ($page < $totalPages): ?>
+      <li class="page-item"><a class="page-link" href="index.php?ctrl=location&action=index&page=<?php echo $page + 1; ?>">Suivant</a></li>
+    <?php endif; ?>
+  </ul>
+</nav>
+
+
+
+
 
