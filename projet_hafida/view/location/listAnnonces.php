@@ -1,8 +1,6 @@
 <!--Ce code affiche la liste des annonces récupérées depuis la base de données-->
 <?php
     $annonces = $result["data"]['annonces']; 
-    $page = $result["data"]['page'];
-    $totalPages = $result["data"]['totalPages'];  
 ?>
 <br>
 <!--Création du formulaire de recherche d'annonce par ville-->
@@ -57,7 +55,7 @@ dans l'URL. Si c'est le cas, on utilise la valeur récupérée via intval($_GET[
 pour convertir la valeur en entier. Sinon, on utilise la valeur 1 par défaut.
 */
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page depuis l'URL
-$totalPages = 5; //On définit la variable $totalPages qui représente le nombre total de pages.
+$totalPages = 2 ; //On définit la variable $totalPages qui représente le nombre total de pages.
 ?>
 <nav aria-label="Pagination">
   <ul class="pagination">
