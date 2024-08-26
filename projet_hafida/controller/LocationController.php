@@ -56,17 +56,22 @@ class LocationController extends AbstractController implements ControllerInterfa
     // On recherche les annonces par ville en utilisant la requête findAnnoncesByVille
     // dans annonceManager
        $annonces = $annonceManager->findAnnoncesByVille($ville);
+// Message à afficher si aucune annonce n'est trouvée
+$message = null;
+if (empty($annonces)) {
+    $message = "Aucune annonce trouvée pour la ville : " . htmlspecialchars($ville);
+}
 
-        return [
-         "view" => VIEW_DIR . "location/listAnnonces.php",
-            "meta_description" => "Liste des annonces",
-         "data" => [
-             "annonces" => $annonces,
-            
-            ]
-        ];
-    }
-    
+return [
+    "view" => VIEW_DIR . "location/listAnnonces.php",
+    "meta_description" => "Liste des annonces",
+    "data" => [
+        "annonces" => $annonces,
+        "message" => $message, // On passe le message à la vue
+    ]
+];
+}
+        
 
     //FONCTION POUR AFFICHER LES DETAILS DES ANNONCES
     public function detailsAnnonce($id) {

@@ -1,6 +1,12 @@
 <!--Ce code affiche la liste des annonces récupérées depuis la base de données-->
 <?php
-    $annonces = $result["data"]['annonces']; 
+$annonces = $result["data"]['annonces']; 
+$message = $result["data"]['message']; // Récupération du message
+
+// Affichage du message si présent
+if ($message) {
+    echo "<div class='alert alert-info'>$message</div>";
+}
 ?>
 <br>
 <!--Création du formulaire de recherche d'annonce par ville-->
