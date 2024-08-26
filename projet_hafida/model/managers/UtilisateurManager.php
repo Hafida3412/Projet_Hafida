@@ -14,7 +14,7 @@ class UtilisateurManager extends Manager{
         parent::connect();
     }
 
-    
+ 
     //CREATION DE LA REQUETE QUI PERMET DE VERIFIER SI L UTILISATEUR EXISTE VIA SON MAIL
     public function checkUserExists($email) {
         $sql ="SELECT * 
