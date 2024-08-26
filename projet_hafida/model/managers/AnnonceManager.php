@@ -16,14 +16,16 @@ class AnnonceManager extends Manager{
     }
 
 
-    // Méthode pour compter le nombre total d'annonces
-public function countAll() {
+    // METHODE POUR COMPTER LE NOMBRE TOTAL D ANNONCES
+    public function countAll() {
     $sql = "SELECT COUNT(id_annonce) as total FROM ".$this->tableName;
     return $this->getSingleScalarResult(
         DAO::select($sql)
     );
 }
-public function findAll($order = null, $offset = 0, $perPage = 2) {
+
+    //METHODE POUR PAGINER LES ANNONCES
+    public function findAll($order = null, $offset = 0, $perPage = 2) {
     $sql = "SELECT *
             FROM " . $this->tableName . "
             ORDER BY " . $order[0] . " " . $order[1] . "
