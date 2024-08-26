@@ -3,7 +3,7 @@
 $annonces = $result["data"]['annonces']; 
 $message = $result["data"]['message']; // Récupération du message
 
-// Affichage du message si présent
+// Affichage du message s'il n'y a aucune annonce correspondant à la ville recherchée
 if ($message) {
     echo "<div class='alert alert-info'>$message</div>";
 }
