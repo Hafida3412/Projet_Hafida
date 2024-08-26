@@ -47,24 +47,25 @@ class LocationController extends AbstractController implements ControllerInterfa
     }
     
     //RECHERCHER UNE ANNONCE PAR VILLE
-public function rechercheAnnonce() {
-    $annonceManager = new AnnonceManager();
+    public function rechercheAnnonce() {
+        $annonceManager = new AnnonceManager();
     
     // On récupère la valeur de la ville saisie dans le formulaire de recherche
-    $ville = filter_input(INPUT_GET, 'ville', FILTER_SANITIZE_SPECIAL_CHARS);
+        $ville = filter_input(INPUT_GET, 'ville', FILTER_SANITIZE_SPECIAL_CHARS);
 
     // On recherche les annonces par ville en utilisant la requête findAnnoncesByVille
     // dans annonceManager
-    $annonces = $annonceManager->findAnnoncesByVille($ville);
+        $annonces = $annonceManager->findAnnoncesByVille($ville);
 
-    return [
-        "view" => VIEW_DIR . "location/listAnnonces.php",
-        "meta_description" => "Liste des annonces",
-        "data" => [
-            "annonces" => $annonces
-        ]
-    ];
-}
+        return [
+         "view" => VIEW_DIR . "location/listAnnonces.php",
+            "meta_description" => "Liste des annonces",
+         "data" => [
+             "annonces" => $annonces
+            ]
+        ];
+    }
+
     //FONCTION POUR AFFICHER LES DETAILS DES ANNONCES
     public function detailsAnnonce($id) {
         $annonceManager = new AnnonceManager();//création d'une instance de la classe AnnonceManager pour gérer les annonces.

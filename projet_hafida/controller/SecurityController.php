@@ -96,10 +96,10 @@ class SecurityController extends AbstractController{
         exit;
         }
     }
-
     // Afficher le formulaire de connexion
                 }
-        return [
+        
+            return [
             "view" => VIEW_DIR . "connexion/login.php",
             "meta_description" => "Formulaire de connexion"
         ];
