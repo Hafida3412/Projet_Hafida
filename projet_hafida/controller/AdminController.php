@@ -8,22 +8,6 @@ use Model\Managers\UtilisateurManager;
 
 class AdminController extends AbstractController{
 
-//FONCTION POUR LISTER TOUS LES UTILISATEURS
-
-public function listUtilisateurs(){
-    $utilisateurManager= new UtilisateurManager();
-
-    $utilisateurs = $utilisateurManager->findAll();
-
-    return [
-        "view" => VIEW_DIR."location/dashboard.php",
-        "meta_description" => "Liste des utilisateurs",
-        "data" => [
-            "utilisateurs" => $utilisateurs,
-            ]
-        ];
-}
-
 //FONCTION POUR LISTER TOUTES LES ANNONCES
 public function index($id = null) {
     
@@ -56,6 +40,4 @@ public function index($id = null) {
         ]
     ];
 }
-
-
 }

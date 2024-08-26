@@ -18,10 +18,9 @@ class AnnonceManager extends Manager{
 
     // METHODE POUR COMPTER LE NOMBRE TOTAL D ANNONCES
     public function countAll() {
-    $sql = "SELECT COUNT(id_annonce) as total FROM ".$this->tableName;
-    return $this->getSingleScalarResult(
-        DAO::select($sql)
-    );
+        $sql = "SELECT COUNT(id_annonce) as total FROM " . $this->tableName;
+        $result = DAO::select($sql);
+        return $this->getSingleScalarResult($result);
 }
 
     //METHODE POUR PAGINER LES ANNONCES

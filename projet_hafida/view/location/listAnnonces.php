@@ -1,12 +1,8 @@
 <!--Ce code affiche la liste des annonces récupérées depuis la base de données-->
 <?php
 $annonces = $result["data"]['annonces']; 
-$message = $result["data"]['message']; // Récupération du message
 
-// Affichage du message s'il n'y a aucune annonce correspondant à la ville recherchée
-if ($message) {
-    echo "<div class='alert alert-info'>$message</div>";
-}
+
 ?>
 <br>
 <!--Création du formulaire de recherche d'annonce par ville-->
@@ -23,7 +19,7 @@ if ($message) {
 
 <?php
 
-if($annonces){
+if (!empty($annonces)) {
 foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et affiche les détails de celle-ci 
     echo "<div class='annonce'>"; // Ouverture du cadre de l'annonce
     //L'utilisateur peut cliquer sur le pseudo de l'utilisateur pour accéder aux détails de l'annonce
@@ -46,6 +42,8 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     <?php } 
     echo "</p></div>"; // Fermeture du cadre de l'annonce</p>
     }
+} else {
+  echo "<p>Aucune annonce trouvée.</p>";
 }
 
 ?>
