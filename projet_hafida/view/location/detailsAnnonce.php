@@ -33,6 +33,12 @@ $type = $logement->getTypeLogement()->getNomType();
         echo "<p>Aucun avis pour cette annonce.</p>";
     }
    ?> 
+   <form action="index.php?ctrl=location&action=uploadImage&id=<?= $logement->getId() ?>" method="post" enctype="multipart/form-data">
+    <label for="file">Télécharger une image :</label>
+    <input type="file" name="file" accept=".jpg, .png, .jpeg, .webp" required />
+    <button type="submit">Uploader</button>
+</form>
+
 </div>
 
 <?php

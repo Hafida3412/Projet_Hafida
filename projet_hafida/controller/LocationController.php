@@ -11,6 +11,9 @@ use Model\Managers\Manager;
 use Model\Managers\AvisManager;
 use Model\Managers\TypeLogementManager;
 use Model\Managers\ReserverManager;
+use Model\Managers\ImageManager;
+use App\DAO; 
+
 class LocationController extends AbstractController implements ControllerInterface{
 
     //FONCTION POUR LISTER TOUTES LES ANNONCES
@@ -148,6 +151,7 @@ return [
         ];
     }
     
+    
     //CREATION D UN LOGEMENT
     public function creationLogement() {
         //Instanciation d'un objet LogementManager
@@ -163,7 +167,7 @@ return [
             $image = filter_input(INPUT_POST, "image", FILTER_VALIDATE_URL);
             $typeLogement = filter_input(INPUT_POST, "typeLogement", FILTER_VALIDATE_INT);
         
-        //On vérifie si toutes les données requises sont présentes
+            //On vérifie si toutes les données requises sont présentes
             if($nbChambre && $rue && $CP && $ville && $image && $typeLogement) {
                 $logementManager->add([
                     "nbChambre" => $nbChambre,
@@ -319,7 +323,53 @@ return [
             "meta_description" => "Règlement de notre site",
         ];
     }    
+
+    //CREATION DE LA FONCTION UPLOAD IMAGE
+   
+    public function uploadImage($logement_id) {
+
+        if (isset($_FILES['file'])) {
+            $tmpName = $_FILES['file']['tmp_name'];
+            $name = $_FILES['file']['name'];
+            $size = $_FILES['file']['size'];
+            $error = $_FILES['file']['error'];
+            $type = $_FILES['file']['type'];
+    
+            // Extraction de l'extension
+            $tabExtension = explode('.', $name);
+            $extension = strtolower(end($tabExtension));
+    
+            // Liste des extensions autorisées
+            $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png'];
+            $tailleMax = 2000000; // Taille en bytes
+    
+            // Vérification
+            if (in_array($extension, $extensionsAutorisees) && $size <= $tailleMax && $error == 0) {
+                $uniqueName = uniqid('', true);
+                $fileName = $uniqueName . '.' . $extension;
+    
+                // Déplacement de l'upload
+                if (move_uploaded_file($tmpName, './upload/' . $fileName)) {
+                    // Insertion dans la base de données
+                    $req = 'INSERT INTO image (logement_id, nom_image) VALUES (?, ?)';
+                    $req= [$logement_id, $fileName]; 
+    
+                    if ($req) {
+                        echo "Image enregistrée";
+                    } else {
+                        echo "Erreur lors de l'enregistrement de l'image dans la base de données.";
+                    }
+                } else {
+                    echo "Erreur lors du déplacement de l'image.";
+                }
+            } else {
+                echo 'Mauvaise extension ou taille trop importante ou erreur';
+            }
+        } else {
+            echo 'Aucun fichier téléchargé.';
+        }
+    }
+    
+    
+
 }
-
-
-
