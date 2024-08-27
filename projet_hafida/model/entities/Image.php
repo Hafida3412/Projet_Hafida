@@ -12,6 +12,8 @@ final class Image extends Entity{
     private $id;
     private $nom_image;
     private $alt_image;
+    private $logement;
+    
 
     public function __construct($data){         
         $this->hydrate($data);        
@@ -49,6 +51,18 @@ final class Image extends Entity{
     public function setAlt_image($alt_image)
     {
         $this->alt_image = $alt_image;
+
+        return $this;
+    }
+
+    public function getLogement()
+    {
+        return $this->logement;
+    }
+
+    public function setLogement($logement)
+    {
+        $this->logement = $logement;
 
         return $this;
     }
