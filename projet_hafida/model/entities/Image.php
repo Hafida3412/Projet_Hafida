@@ -10,8 +10,8 @@ use App\Entity;
 final class Image extends Entity{
 
     private $id;
-    private $nom_image;
-    private $alt_image;
+    private $nomImage;
+    private $altImage;
     private $logement;
     
 
@@ -29,31 +29,8 @@ final class Image extends Entity{
         return $this;
     }
     
-    public function getNom_image()
-    {
-        return $this->nom_image;
-    }
-
-    public function setNom_image($nom_image)
-    {
-        $this->nom_image = $nom_image;
-
-        return $this;
-    }
-
-
-    public function getAlt_image()
-    {
-        return $this->alt_image;
-    }
-
-
-    public function setAlt_image($alt_image)
-    {
-        $this->alt_image = $alt_image;
-
-        return $this;
-    }
+    
+    
 
     public function getLogement()
     {

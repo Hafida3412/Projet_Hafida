@@ -328,6 +328,8 @@ return [
    
     public function uploadImage($logement_id) {
 
+        $ImageManager = new ImageManager();
+
         if (isset($_FILES['file'])) {
             $tmpName = $_FILES['file']['tmp_name'];
             $name = $_FILES['file']['name'];
@@ -351,25 +353,23 @@ return [
                 // Déplacement de l'upload
                 if (move_uploaded_file($tmpName, './upload/' . $fileName)) {
                     // Insertion dans la base de données
-                    $req = 'INSERT INTO image (logement_id, nom_image) VALUES (?, ?)';
-                    $req= [$logement_id, $fileName]; 
-    
-                    if ($req) {
-                        echo "Image enregistrée";
-                    } else {
-                        echo "Erreur lors de l'enregistrement de l'image dans la base de données.";
-                    }
-                } else {
-                    echo "Erreur lors du déplacement de l'image.";
+                    $ImageManager->add([
+                        "nomImage"=> $nomImage,
+                        "altImage" => $altImage,
+                        "logement_id" => getLogement()->getId(), // On lie l'image au logement de l'annonce 
+                    ]);
                 }
-            } else {
-                echo 'Mauvaise extension ou taille trop importante ou erreur';
+            
             }
-        } else {
-            echo 'Aucun fichier téléchargé.';
         }
+        
+        // Retour des informations nécessaires pour la vue de création de logement
+        return [
+            "view" => VIEW_DIR."location/detailsAnnonce.php",
+            "meta_description" => "DetailsAnnonce",
+           
+        ];
     }
-    
-    
-
 }
+            
+        
