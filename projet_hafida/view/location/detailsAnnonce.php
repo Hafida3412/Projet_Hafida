@@ -3,6 +3,7 @@ $annonce = $result["data"]['annonce'];//on récupère les annonces
 $avis = $result["data"]['avis'];//on récupère les avis
 $logement = $annonce->getLogement(); 
 $type = $logement->getTypeLogement()->getNomType();
+$image = [];
 
 ?>
 
@@ -20,6 +21,7 @@ $type = $logement->getTypeLogement()->getNomType();
     Ville: <?= $logement->getVille()?><br>
     <img src="<?= $logement->getImage()?>" alt="Image du logement" class="annonce-info-img">
 </div>
+ 
 
 <div class="avis">
     <p>Avis:
@@ -48,5 +50,5 @@ if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId()!= App\Se
    <!--création du bouton réserver qui fait le lien avec le formulaire de réservation-->
        <a href="index.php?ctrl=reservations&action=reservation&id=<?=$annonce->getId()?>"><button class="annonce-info" type="button">Réserver</button></a><br>
    <?php   
-       }
+}
 ?>

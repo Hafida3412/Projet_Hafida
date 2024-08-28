@@ -9,8 +9,6 @@ use Model\Managers\LogementManager;
 use Model\Managers\UtilisateurManager;
 use Model\Managers\Manager;
 use Model\Managers\AvisManager;
-use Model\Managers\TypeLogementManager;
-use Model\Managers\ReserverManager;
 use Model\Managers\ImageManager;
 use App\DAO; 
 
@@ -86,17 +84,17 @@ return [
 
         $avisManager = new AvisManager();//création de l'instance de la classe AvisManager pour gérer les avis.
         $avis = $avisManager->findAvisByLogement($id);// on récupère les avis associés à l'annonce (cf annonceManager)
-        
+
         return [
-            "view" => VIEW_DIR."location/detailsAnnonce.php",
-            "meta_description" => "Détails de l'annonce",
-            "data" => [
-                "annonce" => $annonce,
-                "logement" => $logement,
-                "avis" => $avis
-            ]
-        ];
-    }  
+        "view" => VIEW_DIR."location/detailsAnnonce.php",
+        "meta_description" => "Détails de l'annonce",
+        "data" => [
+        "annonce" => $annonce,
+        "logement" => $logement,
+        "avis" => $avis,
+        ]
+    ];
+}  
     
     //AJOUTER/DEPOSER UNE ANNONCE
     public function ajoutAnnonces(){

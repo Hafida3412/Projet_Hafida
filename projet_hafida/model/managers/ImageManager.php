@@ -15,6 +15,11 @@ class ImageManager extends Manager{
         parent::connect();
     }
 
+    public function findImagesByLogement($logementID) {
+    $sql = "SELECT * FROM image WHERE logement_id = :logement_id";
+    return DAO::select($sql, ['logement_id' => $logementID], true); // Vérifiez que vous renvoyez les résultats avec 'true'
+}
+
     
     
 }
