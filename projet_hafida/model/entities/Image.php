@@ -28,19 +28,45 @@ final class Image extends Entity{
         $this->id = $id;
         return $this;
     }
+
+    
+    public function getNomImage()
+    {
+        return $this->nomImage;
+    }
+
+    
+    public function setNomImage($nomImage)
+    {
+        $this->nomImage = $nomImage;
+        
+        return $this;
+    }
     
     
+    public function getAltImage()
+    {
+        return $this->altImage;
+    }
     
+    
+    public function setAltImage($altImage)
+    {
+        $this->altImage = $altImage;
+        
+        return $this;
+    }
 
     public function getLogement()
     {
         return $this->logement;
     }
-
+    
+    
     public function setLogement($logement)
     {
         $this->logement = $logement;
-
+    
         return $this;
     }
 }
