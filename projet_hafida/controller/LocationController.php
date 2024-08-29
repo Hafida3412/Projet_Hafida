@@ -79,8 +79,13 @@ return [
     public function detailsAnnonce($id) {
         $annonceManager = new AnnonceManager();//création d'une instance de la classe AnnonceManager pour gérer les annonces.
         $annonce = $annonceManager->findOneById($id);//on récupère l'annonce correspondant à l'identifiant passé en paramètre 
+        
         $logementManager= new LogementManager();
         $logement = $logementManager->findOneById($id);
+
+        // Création de l'instance de la classe ImageManager pour gérer les images
+        $imageManager = new ImageManager();
+        $images = $imageManager->findImagesByLogement($logement->getId()); // On récupère les images en utilisant cette méthode qui est dans ImageManager
 
         $avisManager = new AvisManager();//création de l'instance de la classe AvisManager pour gérer les avis.
         $avis = $avisManager->findAvisByLogement($id);// on récupère les avis associés à l'annonce (cf annonceManager)
@@ -91,7 +96,9 @@ return [
         "data" => [
         "annonce" => $annonce,
         "logement" => $logement,
+        "images" => $images, // Passez les images à la vue
         "avis" => $avis,
+
         ]
     ];
 }  
@@ -351,7 +358,7 @@ return [
                 $fileName = $uniqueName . '.' . $extension;
     
                 // Déplacement de l'upload
-                if (move_uploaded_file($tmpName, './upload/' . $fileName)) {
+                if (move_uploaded_file($tmpName, './public/upload/' . $fileName)) {
                        
                     // Insertion dans la base de données
                     $ImageManager->add([

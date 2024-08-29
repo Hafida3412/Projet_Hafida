@@ -1,9 +1,10 @@
 <?php
 $annonce = $result["data"]['annonce'];//on récupère les annonces
 $avis = $result["data"]['avis'];//on récupère les avis
-$logement = $annonce->getLogement(); 
-$type = $logement->getTypeLogement()->getNomType();
-$image = [];
+$logement = $annonce->getLogement(); // On récupère l'objet 'logement' à partir de l'objet 'annonce'
+$type = $logement->getTypeLogement()->getNomType();// On récupère le type de logement associé à l'objet 'logement'
+// et extrait le nom du type à partir de cet objet
+$images = $result["data"]['images']; // On récupère les images
 
 ?>
 
@@ -22,6 +23,20 @@ $image = [];
     <img src="<?= $logement->getImage()?>" alt="Image du logement" class="annonce-info-img">
 </div>
  
+<div class="images">
+    <h2>Images du logement:</h2>
+    <?php
+ 
+        // On vérifie si des images existent
+        if (!empty($images)) {
+            foreach ($images as $image) {
+                echo '<img src="public/upload/' . $image->getNomImage() . '" width="200px"><br>';
+            }
+        } else {
+            echo '<p>Aucune image disponible pour ce logement.</p>';
+        }
+    ?>
+</div>
 
 <div class="avis">
     <p>Avis:
