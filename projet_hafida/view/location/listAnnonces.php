@@ -22,7 +22,7 @@ $annonces = $result["data"]['annonces'];
 if (!empty($annonces)) {
 foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et affiche les détails de celle-ci 
     echo "<div class='annonce'>"; // Ouverture du cadre de l'annonce
-    //L'utilisateur peut cliquer sur le pseudo de l'utilisateur pour accéder aux détails de l'annonce
+    
     //Détails de l'annonce:
     echo "<p>"."<strong>"."Annonce de ".$annonce->getUtilisateur()->getPseudo()."</strong>"."<br>" .
     (date('d-m-Y H:i:s', strtotime($annonce->getDateCreation()))).
@@ -53,15 +53,15 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
 // Pagination
 
 // On définit la page courante
-
 /*On utilise la fonction isset($_GET['page']) pour vérifier si la page est définie 
 dans l'URL. Si c'est le cas, on utilise la valeur récupérée via intval($_GET['page']) 
-pour convertir la valeur en entier. Sinon, on utilise la valeur 1 par défaut.
+pour convertir la valeur en entier. (Sinon, on peut utiliser la valeur 1 par défaut.)
 */
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page depuis l'URL
 $totalPages = 2 ; //On définit la variable $totalPages qui représente le nombre total de pages.
 ?>
-<nav aria-label="Pagination">
+<nav aria-label="Pagination"><!--Cet attribut indique aux utilisateurs de technologies 
+d'assistance que cette section de navigation est dédiée à la pagination--> 
   <ul class="pagination">
     <?php if ($page > 1): // Si la page courante n'est pas la première ?> 
       <li class="page-item">
