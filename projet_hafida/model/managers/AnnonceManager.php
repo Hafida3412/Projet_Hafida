@@ -21,7 +21,7 @@ class AnnonceManager extends Manager{
         $sql = "SELECT COUNT(id_annonce) as total FROM " . $this->tableName;
         $result = DAO::select($sql);
         return $this->getSingleScalarResult($result);
-}
+    }
 
     //METHODE POUR PAGINER LES ANNONCES
     public function findAll($order = null, $offset = 0, $perPage = 2) {
@@ -30,7 +30,7 @@ class AnnonceManager extends Manager{
             ORDER BY " . $order[0] . " " . $order[1] . "
             LIMIT " . $offset . ", " . $perPage;
     return $this->getMultipleResults(DAO::select($sql), $this->className);
-}
+    }
 
     //REQUETE POUR AFFICHER LES ANNONCES PAR UTILISATEUR
     public function findAnnoncesByUtilisateur($id){
