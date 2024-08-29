@@ -24,14 +24,18 @@ class AnnonceManager extends Manager{
     }
 
     //METHODE POUR PAGINER LES ANNONCES
-    public function findAll($order = null, $offset = 0, $perPage = 2) {
-    $sql = "SELECT *
-            FROM " . $this->tableName . "
-            ORDER BY " . $order[0] . " " . $order[1] . "
-            LIMIT " . $offset . ", " . $perPage;
-    return $this->getMultipleResults(DAO::select($sql), $this->className);
+    public function findAll($order = null, $offset = 0, $perPage = PHP_INT_MAX) {
+        if ($order === null) {
+            $order = ['id_annonce', 'ASC'];
+        }
+    
+        $sql = "SELECT *
+                FROM " . $this->tableName . "
+                ORDER BY " . $order[0] . " " . $order[1] . "
+                LIMIT " . $offset . ", " . $perPage;
+        return $this->getMultipleResults(DAO::select($sql), $this->className);
     }
-
+    
     //REQUETE POUR AFFICHER LES ANNONCES PAR UTILISATEUR
     public function findAnnoncesByUtilisateur($id){
         $sql = "SELECT*

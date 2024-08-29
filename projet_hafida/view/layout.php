@@ -49,6 +49,7 @@
                              <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li> 
                              <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li> 
                              <li><a href="index.php?ctrl=admin&action=listUtilisateurs">Liste des utilisateurs</a></li>
+                             <li><a href="index.php?ctrl=admin&action=AllAnnonces">Liste de toutes les annonces</a></li>
                              <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li> 
                             </ul>
                         </nav>
