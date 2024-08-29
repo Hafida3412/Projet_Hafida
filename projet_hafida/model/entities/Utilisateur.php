@@ -108,8 +108,13 @@ final class Utilisateur extends Entity{
         return $this;
         }
 
-        
-    public function __toString() {
+    // Méthode pour vérifier le rôle
+    public function hasRole($role) {
+        // On suppose que $this->role est un tableau de rôles, 
+        // sinon modifiez la logique pour s'adapter à votre modèle de données
+     return  $this->role; // Adapte en fonction de la façon dont les rôles sont stockés.
+    }
+        public function __toString() {
         return $this->pseudo;
         }
 

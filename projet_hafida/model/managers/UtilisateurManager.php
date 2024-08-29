@@ -14,19 +14,19 @@ class UtilisateurManager extends Manager{
         parent::connect();
     }
 
- 
     //CREATION DE LA REQUETE QUI PERMET DE VERIFIER SI L UTILISATEUR EXISTE VIA SON MAIL
     public function checkUserExists($email) {
-        $sql ="SELECT * 
-                FROM ".$this->tableName. " t
+        $sql = "SELECT * 
+                FROM " . $this->tableName . " t
                 WHERE email = :email";
-
-        // la requête renvoie un objet ou rien --> getOneOrNullResult (cf fonctions dans Manager)
-        return  $this->getOneOrNullResult(
-            DAO::select($sql, ['email' => $email], false), //on rajoute "false" car la  public static function select dans DAO renvoie des réponses multiples "true"
+    
+        // Utilisez le bon paramètre pour exécuter la requête
+        return $this->getOneOrNullResult(
+            DAO::select($sql, ['email' => $email], false), // Envoie l'email pour la requête
             $this->className
         );
     }
+    
 
     //CREATION DE LA REQUETE UPDATE POUR MODIFIER LES DONNEES PERSONNELLES DE L UTILISATEUR
     public function update($utilisateur) {
@@ -44,5 +44,7 @@ class UtilisateurManager extends Manager{
         $this->className
     );
     }
+
+
 }
 

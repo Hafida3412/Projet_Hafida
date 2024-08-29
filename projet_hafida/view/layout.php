@@ -48,6 +48,7 @@
                              <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur()?></a></li> 
                              <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li> 
                              <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li> 
+                             <a href="index.php?ctrl=admin&action=listUtilisateurs">Liste des utilisateurs</a>
                              <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li> 
                             </ul>
                         </nav>

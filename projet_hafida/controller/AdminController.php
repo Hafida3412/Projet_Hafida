@@ -5,39 +5,32 @@ use App\AbstractController;
 use App\Session;
 use Model\Managers\AnnonceManager;
 use Model\Managers\UtilisateurManager;
+use SessionHandler;
 
 class AdminController extends AbstractController{
 
-//FONCTION POUR LISTER TOUTES LES ANNONCES
-public function index($id = null) {
-    
-    // On crée une nouvelle instance de AnnonceManager
-    $annonceManager = new AnnonceManager();
-    
-    // Pagination settings
-    $pageNum = isset($_GET['page']) ? (int)$_GET['page'] : 1;// Récupère le numéro de page
-    $perPage = 3;
+//FONCTION POUR LISTER TOUS LES UTILISATEURS
 
-    // Récupérer le nombre total d'annonces
-    $totalAnnonces = $annonceManager->countAll(); 
+public function listUtilisateurs() {
+    // Vérifier si l'utilisateur est connecté et s'il a le rôle "ROLE_ADMIN"
+    if (!Session::getUtilisateur() || !Session::getUtilisateur()->hasRole("ROLE_ADMIN")) {
+        header('Location: index.php?ctrl=security&action=login'); // Rediriger vers la page de connexion si l'utilisateur n'est pas admin
+        exit;
+    }
 
-   // Calculer le nombre de pages
-    $totalPages = ceil(count($totalAnnonces) / $perPage);
-    $offset = ($pageNum - 1) * $perPage;// Calcule l'offset pour la requête SQL
+    // Récupérer tous les utilisateurs
+    $utilisateurManager = new UtilisateurManager();
+    $utilisateurs = $utilisateurManager->findAll();
 
-    // On récupère les annonces paginées en utilisant la méthode findAll avec la pagination
-    $annonces = $annonceManager->findAll(["dateCreation", "DESC"], $offset, $perPage);
-    
-    // le controller communique avec la vue "listAnnonces" (view) pour lui envoyer la liste des annonces (data) et les informations de pagination
+
+    // Retourner la vue et les données
     return [
-        "view" => VIEW_DIR."location/listAnnonces.php",
-        "meta_description" => "Liste des annonces",
+        'view' => VIEW_DIR . 'admin/listUtilisateurs.php',
+        "meta_description" => "Liste des Utilisateurs",
         "data" => [
-            "annonces" => $annonces,
-            "page" => $pageNum, // Passer le numéro de la page actuelle
-            "totalPages" => $totalPages,
-            "id" => $id
+            "utilisateurs" => $utilisateurs
         ]
     ];
 }
+
 }
