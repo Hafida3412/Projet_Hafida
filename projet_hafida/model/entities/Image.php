@@ -23,18 +23,15 @@ final class Image extends Entity{
         return $this->id;
     }
 
-
     public function setId($id){
         $this->id = $id;
         return $this;
     }
 
-    
-    public function getNomImage()
+        public function getNomImage()
     {
         return $this->nomImage;
     }
-
     
     public function setNomImage($nomImage)
     {
@@ -43,13 +40,11 @@ final class Image extends Entity{
         return $this;
     }
     
-    
-    public function getAltImage()
+        public function getAltImage()
     {
         return $this->altImage;
     }
-    
-    
+        
     public function setAltImage($altImage)
     {
         $this->altImage = $altImage;
@@ -62,11 +57,10 @@ final class Image extends Entity{
         return $this->logement;
     }
     
-    
     public function setLogement($logement)
     {
         $this->logement = $logement;
     
         return $this;
-    }
+    }   
 }

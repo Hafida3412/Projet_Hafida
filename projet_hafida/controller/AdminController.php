@@ -12,9 +12,14 @@ class AdminController extends AbstractController{
 //FONCTION POUR LISTER TOUS LES UTILISATEURS
 
 public function listUtilisateurs() {
-    // On vérifie si l'utilisateur est connecté et s'il a le rôle "ROLE_ADMIN"
-    if (!Session::getUtilisateur() || !Session::getUtilisateur()->hasRole("ROLE_ADMIN")) {
-        header('Location: index.php?ctrl=security&action=login'); // Rediriger vers la page de connexion si l'utilisateur n'est pas admin
+    // Vérifie si l'utilisateur est connecté
+    $utilisateur = Session::getUtilisateur();
+    
+    // Si l'utilisateur n'est pas connecté ou n'a pas le rôle "ROLE_ADMIN"
+    if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN")) {
+        // Rediriger vers la page de connexion si l'utilisateur n'est pas admin
+        Session::addFlash('error', 'Accès refusé. Vous devez être administrateur pour voir cette page.');
+        header('Location: index.php?ctrl=security&action=login');
         exit;
     }
 
