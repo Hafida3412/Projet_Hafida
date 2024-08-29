@@ -31,40 +31,45 @@
                     <nav>
                     <div id="nav-left" class="full-width">
                         <img src="public\img\logo.png" alt="Logo">
-                        <!--    <a href="/">Accueil</a>-->
-                            <?php
-                        /*   if(App\Session::isAdmin()){
-                                ?>
-                                <a href="index.php?ctrl=home&action=users">Voir la liste des gens</a>
-                            <?php } ?>
-                        </div>
                         <div id="nav-right">
-                        <?php*/
-                            // si l'utilisateur est connecté 
-                            if(App\Session::getUtilisateur()){
-                                ?><!--CREATION D UNE NAVBAR-->
-                        <nav>
-                            <ul class="nav-list">
-                             <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur()?></a></li> 
-                             <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li> 
-                             <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li> 
-                             <li><a href="index.php?ctrl=admin&action=listUtilisateurs">Liste des utilisateurs</a></li>
-                             <li><a href="index.php?ctrl=admin&action=AllAnnonces">Liste de toutes les annonces</a></li>
-                             <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li> 
-                            </ul>
-                        </nav>
-                       <?php
-                            }
-                            else{
-                                ?>
-                                <a href="index.php?ctrl=security&action=login">Connexion</a>
-                                <a href="index.php?ctrl=security&action=register">Inscription</a>
-                                
                         <?php
+                        // Si l'utilisateur est connecté
+                        if(App\Session::getUtilisateur()) {
+                            // Vérifiez si l'utilisateur est un administrateur
+                            if(App\Session::isAdmin()) {
+                                // Navbar pour les administrateurs
+                                ?>
+                                <ul class="nav-list">
+                                    <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur() ?></a></li>
+                                    <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li>
+                                    <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li>
+                                    <li><a href="index.php?ctrl=admin&action=listUtilisateurs">Liste des utilisateurs</a></li>
+                                    <li><a href="index.php?ctrl=admin&action=AllAnnonces">Liste de toutes les annonces</a></li>
+                                    <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
+                                </ul>
+                                <?php
+                            } else {
+                                // Navbar pour les utilisateurs normaux
+                                ?>
+                                <ul class="nav-list">
+                                    <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur() ?></a></li>
+                                    <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li>
+                                    <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li>
+                                    <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
+                                </ul>
+                                <?php
                             }
+                        } else {
+                            ?>
+                            <ul class="nav-list">
+                                <li><a href="index.php?ctrl=security&action=login">Connexion</a></li>
+                                <li><a href="index.php?ctrl=security&action=register">Inscription</a></li>
+                            </ul>
+                        <?php
+                        }
                         ?>
-                        </div>
-                    </nav>
+                    </div>
+                </nav>
                 </header>
                 
                 <main id="forum">
