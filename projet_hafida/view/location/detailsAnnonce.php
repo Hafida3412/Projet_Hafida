@@ -25,7 +25,8 @@ $images = $result["data"]['images']; // On récupère les images
     Ville: <?= $logement->getVille()?><br>
 
     <!-- Affichage de l'image du logement: -->
-    <img src="<?= $logement->getImage()?>" alt="Image du logement" class="annonce-info-img">
+    <img src="<?= $logement->getImage()?>" alt="Image du logement" 
+    class="annonce-info-img">
 </div>
  
 <div class="images">
@@ -51,7 +52,8 @@ $images = $result["data"]['images']; // On récupère les images
     if($avis) {
         // Si des avis existent, on les affiche
         foreach($avis as $avi){?> 
-           <?= $avi->getCommentaire()?> (le <?= (date('d-m-Y ', strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p>
+           <?= $avi->getCommentaire()?> (le <?= (date('d-m-Y ', 
+           strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p>
         <?php 
         }
     } else {
@@ -59,7 +61,8 @@ $images = $result["data"]['images']; // On récupère les images
     }
    ?> 
    <!-- Formulaire pour uploader une nouvelle image -->
-   <form action="index.php?ctrl=location&action=uploadImage&id=<?= $logement->getId() ?>" method="post" enctype="multipart/form-data">
+   <form action="index.php?ctrl=location&action=uploadImage&id=
+   <?= $logement->getId() ?>" method="post" enctype="multipart/form-data">
     <label for="file">Télécharger une image :</label>
     <input type="file" name="file" accept=".jpg, .png, .jpeg, .webp" required /><!-- Champ de saisie pour le fichier -->
     <button type="submit">Uploader</button><!-- Bouton pour soumettre le formulaire -->
@@ -70,10 +73,12 @@ $images = $result["data"]['images']; // On récupère les images
 
 <?php
 // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
-if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId()!= App\Session::getUtilisateur()->getId()) {
+if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId()
+!= App\Session::getUtilisateur()->getId()) {
   ?>
    <!--création du bouton réserver qui fait le lien avec le formulaire de réservation-->
-       <a href="index.php?ctrl=reservations&action=reservation&id=<?=$annonce->getId()?>"><button class="annonce-info" type="button">Réserver</button></a><br>
+       <a href="index.php?ctrl=reservations&action=reservation&id=<?=$annonce->getId()?>">
+        <button class="annonce-info" type="button">Réserver</button></a><br>
    <?php   
 }
 ?>
