@@ -76,8 +76,9 @@ class AnnonceManager extends Manager{
             DAO::select($sql, ['id' => $annonceId], false)
         ) == 1;
     }
+
     //REQUETE POUR AFFICHER LES ANNONCES PAR VILLE
-public function findAnnoncesByVille($ville){
+    public function findAnnoncesByVille($ville){
     /*1. on sélectionne tous les colonnes des tables "annonce" et "logement"
       2. on joint les deux tables en utilisant la colonne "logement_id" de la 
     table "annonce" et la colonne "id_logement" de la table "logement"

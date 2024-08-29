@@ -109,9 +109,8 @@ final class Utilisateur extends Entity{
         }
 
     // Méthode pour vérifier le rôle ADMIN
-    public function hasRole($role) {
-        // Vérifiez si le rôle est présent dans les rôles de l'utilisateur (vous pouvez embrasser ce qui est le plus approprié pour votre structure de données)
-        return $this->role === $role; // possible d'adapter pour vérifier un tableau de rôles
+    public function hasRole(...$roles) {
+        return in_array($this->role, $roles);
     }
     
     public function __toString() {

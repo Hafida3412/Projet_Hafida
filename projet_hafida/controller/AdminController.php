@@ -16,7 +16,7 @@ public function listUtilisateurs() {
     $utilisateur = Session::getUtilisateur();
     
     // Si l'utilisateur n'est pas connecté ou n'a pas le rôle "ROLE_ADMIN"
-    if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN")) {
+    if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN", "Admin")){
         // Rediriger vers la page de connexion si l'utilisateur n'est pas admin
         Session::addFlash('error', 'Accès refusé. Vous devez être administrateur pour voir cette page.');
         header('Location: index.php?ctrl=security&action=login');
