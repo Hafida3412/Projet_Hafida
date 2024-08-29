@@ -1,10 +1,10 @@
 <?php
+// On extrait la liste des utilisateurs depuis le tableau de résultats
 $utilisateurs = $result["data"]['utilisateurs']; 
 ?>
 
-
 <h1>Liste des utilisateurs</h1>
-
+<!--création d'un tableau-->
 <table>
     <thead>
         <tr>
@@ -17,9 +17,9 @@ $utilisateurs = $result["data"]['utilisateurs'];
         </tr>
     </thead>
     <tbody>
-        <?php if (!empty($utilisateurs)): // Assurez-vous que c'est $data['utilisateurs'] ?>
+        <?php if (!empty($utilisateurs)): ?>
             <?php foreach ($utilisateurs as $utilisateur): ?>
-                <tr>
+                <tr><!-- On affiche les détails de l'utilisateur correspondant -->
                     <td><?= $utilisateur->getId() ?></td>
                     <td><?= $utilisateur->getPseudo() ?></td>
                     <td><?= $utilisateur->getEmail() ?></td>
