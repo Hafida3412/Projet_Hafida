@@ -80,9 +80,16 @@ return [
         $annonceManager = new AnnonceManager();//création d'une instance de la classe AnnonceManager pour gérer les annonces.
         $annonce = $annonceManager->findOneById($id);//on récupère l'annonce correspondant à l'identifiant passé en paramètre 
         
-        $logementManager= new LogementManager();
-        $logement = $logementManager->findOneById($id);
+        // On peut maintenant récupérer le logement lié à l'annonce
+        $logementManager = new LogementManager();
+        $logement = $logementManager->findOneById($annonce->getLogement()->getId());
 
+        if (!$logement) {
+            // Erreur: le logement avec cet id n'existe pas
+            Session::addFlash("error", "Logement introuvable.");
+            $this->redirectTo("location", "index"); 
+        }
+        
         // Création de l'instance de la classe ImageManager pour gérer les images
         $imageManager = new ImageManager();
         $images = $imageManager->findImagesByLogement($logement->getId()); // On récupère les images en utilisant cette méthode qui est dans ImageManager
