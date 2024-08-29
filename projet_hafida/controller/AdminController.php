@@ -37,4 +37,26 @@ public function listUtilisateurs() {
     ];
 }
 
+// Méthode pour lister toutes les annonces
+public function AllAnnonces() {
+    // Vérifie si l'utilisateur est connecté et a le rôle "ROLE_ADMIN"
+    $utilisateur = Session::getUtilisateur();
+    if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN")) {
+        Session::addFlash('error', 'Accès refusé. Vous devez être administrateur pour voir cette page.');
+        header('Location: index.php?ctrl=security&action=login');
+        exit;
+    }
+
+    // On récupère toutes les annonces
+    $annonceManager = new AnnonceManager();
+    $annonces = $annonceManager->findAll();
+
+    return [
+        'view' => VIEW_DIR . 'admin/allAnnonces.php',
+        "meta_description" => "Toutes les annonces",
+        "data" => [
+            "annonces" => $annonces
+        ]
+    ];
+}
 }
