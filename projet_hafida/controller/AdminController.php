@@ -5,7 +5,7 @@ use App\AbstractController;
 use App\Session;
 use Model\Managers\AnnonceManager;
 use Model\Managers\UtilisateurManager;
-use SessionHandler;
+
 
 class AdminController extends AbstractController{
 
