@@ -21,8 +21,5 @@ class ImageManager extends Manager{
             DAO::select($sql, ['logementId' => $logementId]), 
             $this->className
         );
-    }
-    
-    
-    
+    }   
 }
