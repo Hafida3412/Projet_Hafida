@@ -62,6 +62,7 @@ $images = $result["data"]['images']; // On récupère les images
    ?> 
    </div>
    <?php 
+   // On vérifie si l'utilisateur connecté est le propriétaire de l'annonce
    if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
    <div class="upload_img">
    <!-- Formulaire pour uploader une nouvelle image -->
