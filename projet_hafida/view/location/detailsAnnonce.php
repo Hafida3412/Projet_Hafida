@@ -61,7 +61,8 @@ $images = $result["data"]['images']; // On récupère les images
     }
    ?> 
    </div>
-
+   <?php 
+   if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
    <div class="upload_img">
    <!-- Formulaire pour uploader une nouvelle image -->
         <form action="index.php?ctrl=location&action=uploadImage&id=
@@ -72,6 +73,7 @@ $images = $result["data"]['images']; // On récupère les images
         </form>
         </div>
     <?php
+   }
    
 // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
 $utilisateurConnecte = App\Session::getUtilisateur();
@@ -82,7 +84,6 @@ if ($utilisateurConnecte && $annonce->getUtilisateur()->getId() != $utilisateurC
         <button class="annonce-info" type="button">Réserver</button>
     </a>
     <br>
-    <?php
-   
+    <?php   
 }
 ?> 

@@ -103,9 +103,8 @@ return [
         "data" => [
         "annonce" => $annonce,
         "logement" => $logement,
-        "images" => $images, // Passez les images à la vue
+        "images" => $images, // On passe les images à la vue
         "avis" => $avis,
-
         ]
     ];
 }  
