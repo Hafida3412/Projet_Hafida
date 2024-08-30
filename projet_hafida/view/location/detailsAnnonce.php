@@ -62,7 +62,7 @@ $images = $result["data"]['images']; // On récupère les images
    ?> 
    </div>
 
-   <div class="upload_img"></div>
+   <div class="upload_img">
    <!-- Formulaire pour uploader une nouvelle image -->
         <form action="index.php?ctrl=location&action=uploadImage&id=
             <?= $logement->getId() ?>" method="post" enctype="multipart/form-data">
@@ -70,16 +70,19 @@ $images = $result["data"]['images']; // On récupère les images
             <input type="file" name="file" accept=".jpg, .png, .jpeg, .webp" required /><!-- Champ de saisie pour le fichier -->
             <button type="submit">Uploader</button><!-- Bouton pour soumettre le formulaire -->
         </form>
-    </div>
-
-<?php
-    // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
-    if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId()
-    != App\Session::getUtilisateur()->getId()) {
-  ?>
-   <!--création du bouton réserver qui fait le lien avec le formulaire de réservation-->
-       <a href="index.php?ctrl=reservations&action=reservation&id=<?=$annonce->getId()?>">
-        <button class="annonce-info" type="button">Réserver</button></a><br>
-<?php   
+        </div>
+    <?php
+   
+// On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
+$utilisateurConnecte = App\Session::getUtilisateur();
+if ($utilisateurConnecte && $annonce->getUtilisateur()->getId() != $utilisateurConnecte->getId()) {
+    // Création du bouton réserver qui fait le lien avec le formulaire de réservation
+    ?>
+    <a href="index.php?ctrl=reservations&action=reservation&id=<?= $annonce->getId() ?>">
+        <button class="annonce-info" type="button">Réserver</button>
+    </a>
+    <br>
+    <?php
+   
 }
-  ?>
+?> 
