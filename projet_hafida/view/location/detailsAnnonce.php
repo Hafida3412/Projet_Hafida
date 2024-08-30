@@ -60,25 +60,26 @@ $images = $result["data"]['images']; // On récupère les images
         echo "<p>Aucun avis pour cette annonce.</p>";// Message quand il n'y a pas d'avis
     }
    ?> 
-   <!-- Formulaire pour uploader une nouvelle image -->
-   <form action="index.php?ctrl=location&action=uploadImage&id=
-   <?= $logement->getId() ?>" method="post" enctype="multipart/form-data">
-    <label for="file">Télécharger une image :</label>
-    <input type="file" name="file" accept=".jpg, .png, .jpeg, .webp" required /><!-- Champ de saisie pour le fichier -->
-    <button type="submit">Uploader</button><!-- Bouton pour soumettre le formulaire -->
-    </form>
-</form>
+   </div>
 
-</div>
+   <div class="upload_img"></div>
+   <!-- Formulaire pour uploader une nouvelle image -->
+        <form action="index.php?ctrl=location&action=uploadImage&id=
+            <?= $logement->getId() ?>" method="post" enctype="multipart/form-data">
+            <label for="file">Télécharger une image :</label>
+            <input type="file" name="file" accept=".jpg, .png, .jpeg, .webp" required /><!-- Champ de saisie pour le fichier -->
+            <button type="submit">Uploader</button><!-- Bouton pour soumettre le formulaire -->
+        </form>
+    </div>
 
 <?php
-// On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
-if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId()
-!= App\Session::getUtilisateur()->getId()) {
+    // On vérifie si l'utilisateur connecté n'est pas le propriétaire de l'annonce
+    if(App\Session::getUtilisateur() && $annonce->getUtilisateur()->getId()
+    != App\Session::getUtilisateur()->getId()) {
   ?>
    <!--création du bouton réserver qui fait le lien avec le formulaire de réservation-->
        <a href="index.php?ctrl=reservations&action=reservation&id=<?=$annonce->getId()?>">
         <button class="annonce-info" type="button">Réserver</button></a><br>
-   <?php   
+<?php   
 }
-?>
+  ?>
