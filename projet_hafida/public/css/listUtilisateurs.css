@@ -1,0 +1,33 @@
+/* Styles de base pour le tableau */
+table {
+    width: 100%; /* Prend toute la largeur disponible */
+    border-collapse: collapse; /* Efface les espaces entre les bordures des cellules */
+    margin-top: 20px; /* Marge supérieure pour espacer du contenu précédent */
+}
+
+/* En-tête du tableau */
+th {
+    background-color:#337ab7; /* Couleur de fond de l'en-tête */
+    color: white; /* Couleur du texte dans l'en-tête */
+    text-align: left; /* Alignement à gauche */
+    padding: 12px; /* Espacement interne */
+}
+
+/* Cellules du tableau (données) */
+td {
+    border: 1px solid #dddddd; /* Bordure grise claire */
+    text-align: left; /* Alignement à gauche */
+    padding: 8px; /* Espacement interne */
+}
+
+/* Ligne survolée */
+tr:hover {
+    background-color: #f1f1f1; /* Couleur de fond lors du survol */
+}
+
+/* Alerte lorsque aucun utilisateur n'est trouvé */
+td[colspan="6"] {
+    text-align: center; /* Centrer le message d'alerte */
+    color: #ff0000; /* Couleur du texte d'alerte */
+    font-weight: bold; /* Mettre en gras */
+}
