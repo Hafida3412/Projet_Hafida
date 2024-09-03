@@ -63,7 +63,7 @@ body {
     }
 
   nav a:hover {
-    background-color: #337ab7; /* couleur de fond au survol */
+    background-color: #23527c; /* couleur de fond au survol */
     transform: translateY(4px); /* déplace légèrement vers le bas pour simuler un appui */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ajout d'une ombre portée pour l'effet de profondeur */
     color: white; /* couleur de texte blanche au survol */
