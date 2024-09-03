@@ -91,6 +91,7 @@ body {
   
 /* Footer */
   footer {
+    margin-top: 20px;
     background-color: #223354; /* couleur de fond du pied de page plus foncée */
     color: #fff; /* couleur de texte du pied de page */
     padding: 10px;
