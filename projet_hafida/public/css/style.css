@@ -87,8 +87,11 @@ body {
   main {
     width: 100%; /* largeur du conteneur des annonces */
     margin: 0 auto; /* centrage du conteneur */
+    background-image: url(../img/pattes.jpg);
+    background-size: 100%;
+    
   }
-  
+
 /* Footer */
   footer {
     margin-top: 20px;
