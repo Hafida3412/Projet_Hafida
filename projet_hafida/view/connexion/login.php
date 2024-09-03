@@ -12,7 +12,7 @@
 <input type="email" name="email" id="email" value="lea@gmail.com"><br>
 
 <label for="password">Mot de passe</label>
-<input type="password" name="password" id="password" value="helloworld"><br>
+<input type="password" name="password" id="password" value="AZERTY12345"><br>
 
 <input type="submit" name="submitLogin" value="Se connecter">
 </form>

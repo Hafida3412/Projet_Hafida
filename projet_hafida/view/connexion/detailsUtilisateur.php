@@ -3,6 +3,7 @@ $utilisateur = $result["data"]['utilisateur'];
 $reservations = $result["data"]['reservations'];
 
 ?>
+<div class="details-utilisateur">
 <!--Informations de l'utilisateur-->
 <h1>Mon Compte</h1>
 <div class="utilisateur-info">
@@ -77,6 +78,6 @@ if(isset($reservations) && $reservations){
 <!--Création du bouton "voir mes logements" pour faire la redirection vers la vue "listeLogementsUtilisateur.php-->
 <a href="index.php?ctrl=location&action=listeLogementsUtilisateur"><button class="btn-reserver">Voir mes logements</button></a><br>
 </div>
-   
+</div>  
    
        

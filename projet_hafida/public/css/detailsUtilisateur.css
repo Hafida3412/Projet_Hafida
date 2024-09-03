@@ -1,5 +1,10 @@
 /* CSS de la vue detailsUtilisateur*/
 
+.details-utilisateur {
+    background-image: url(../img/chaton.jpg); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Pour couvrir tout le conteneur */
+}
+
 /* Style de la section d'informations sur l'utilisateur */
 .utilisateur-info {
     background-color: #fff; /*Couleur de fond blanche */ 
