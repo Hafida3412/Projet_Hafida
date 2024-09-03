@@ -4,6 +4,8 @@ $annonces = $result["data"]['annonces'];
 
 
 ?>
+    <h1>Profitez de l’opportunité de garder un chat à domicile pendant
+       l’absence de son <br> propriétaire!</h1>
 <br>
 <!--Création du formulaire de recherche d'annonce par ville-->
 <form method="GET" action="index.php">
@@ -15,7 +17,7 @@ $annonces = $result["data"]['annonces'];
     <button class="annonce-info" type="submit">Rechercher</button>
 </form>
 
-    <h1>Liste des annonces</h1>
+    <h1>Consulter les annonces</h1>
 
 <?php
 
