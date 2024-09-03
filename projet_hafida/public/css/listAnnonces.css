@@ -1,12 +1,24 @@
 /* Style pour les annonces */
+
+/* Style pour le conteneur des annonces */
+.annonce-container {
+    display: flex; /* Utilise flexbox pour centrer les éléments */
+    justify-content: center; /* Centre les éléments horizontalement */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    margin: 0 auto; /* Centre le conteneur */
+    max-width: 1200px; /* Largeur maximum du conteneur */
+}
+
+
 .annonce {
     background-color: #fff; /* couleur de fond du cadre de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
     padding: 10px; /* espacement interne du cadre de l'annonce */
     width: 30%; /* largeur du cadre de l'annonce */
     margin: 10px; /* espacement entre les annonces */
-    display: inline-block; /* affichage en ligne pour permettre les annonces à côté */
-    vertical-align: top; /* alignement vertical pour éviter les espaces entre les annonces */
+    display: flex; /* Utilise flexbox pour l'affichage interne si nécessaire */
+    flex-direction: column; /* Empile les enfants en colonne */
+    align-items: flex-start; /* Aligne le contenu à gauche */
 }
 
 /* Style pour les annonces à partir de la deuxième annonce*/

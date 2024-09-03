@@ -18,7 +18,8 @@ $annonces = $result["data"]['annonces'];
 </form>
 
     <h1>Consulter les annonces</h1>
-
+   
+    <div class="annonce-container">
 <?php
 
 if (!empty($annonces)) {
@@ -49,7 +50,7 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
 }
 
 ?>
-
+</div>
 <?php
 
 // Pagination
