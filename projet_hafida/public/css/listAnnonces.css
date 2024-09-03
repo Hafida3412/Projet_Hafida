@@ -19,6 +19,8 @@
     display: flex; /* Utilise flexbox pour l'affichage interne si nécessaire */
     flex-direction: column; /* Empile les enfants en colonne */
     align-items: flex-start; /* Aligne le contenu à gauche */
+    border-radius: 10px;
+    box-shadow: 4px 2px 2px rgb(207, 202, 202);
 }
 
 /* Style pour les annonces à partir de la deuxième annonce*/
@@ -47,6 +49,7 @@ button.btn-delete {
     display: block; /* Affichage en tant que bloc */
     margin: 0 auto; /* On centre horizontalement */
     text-align: center; /* On aligne le texte au centre */
+    border-radius: 10px;
 }
     
 /* Style pour le bouton de suppression au survol */

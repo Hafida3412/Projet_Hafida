@@ -46,10 +46,10 @@ button.annonce-info{
     padding: 5px 10px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
-    margin-top: 10px;
     display: block; /* Afficher le bouton en bloc pour le centrer */
     margin: 0 auto; /* Centrer le bouton horizontalement */
      /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
+    border-radius: 10px;    
 }
 
 /* Style pour le bouton "réserver" dans le cadre des informations de l'annonce au survol */
