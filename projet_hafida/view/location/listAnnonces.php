@@ -1,9 +1,9 @@
 <!--Ce code affiche la liste des annonces récupérées depuis la base de données-->
 <?php
 $annonces = $result["data"]['annonces']; 
-
-
 ?>
+
+<main class="bg-annonces">
     <h1>Profitez de l’opportunité de garder un chat à domicile pendant
        l’absence de son <br> propriétaire!</h1>
 <br>
@@ -16,6 +16,7 @@ $annonces = $result["data"]['annonces'];
     <input type="text" name="ville" id="ville" placeholder="Entrez une ville">
     <button class="annonce-info" type="submit">Rechercher</button>
 </form>
+
 
     <h1>Consulter les annonces</h1>
    
@@ -51,6 +52,7 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
 
 ?>
 </div>
+</main>
 <?php
 
 // Pagination

@@ -2,7 +2,7 @@
 //On définit la variable $logements qui contient la liste des logements disponibles
     $logements = $result["data"]['logements'];   
 ?>
-
+<main class="bg-annonces">
     <h1>Déposer une annonce</h1>
     
     <?php
@@ -40,4 +40,4 @@
         <input type="submit" name="submitAnnonce" value="Déposer l'annonce">
     </form>
         </div>
-    
+        </main>

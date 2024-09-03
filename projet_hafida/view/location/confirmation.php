@@ -3,6 +3,7 @@ use App\Session;
 ?>
 <h1>Votre réservation est confirmée!</h1>
 <br>
+<div class="confirmation-container">
 <p>Vous allez chez Chouchou à Strasbourg!</p> 
 <br>
 <p>Veuillez consulter les informations ci-dessous:</p>
@@ -26,4 +27,5 @@ veuillez nous contacter au plus tôt.</p>
 <br>
 <p>L'équipe Chez mon Chat.</p>
 <br>
+</div>
 <?php 

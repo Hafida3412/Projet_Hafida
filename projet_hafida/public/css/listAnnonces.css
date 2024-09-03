@@ -10,7 +10,11 @@
   
 }
 
-
+.bg-annonces {
+    background-image: url(../img/chat_canape.jpg);
+    background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
+    
+}
 .annonce {
     background-color: #fff; /* couleur de fond du cadre de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
