@@ -35,7 +35,6 @@ body {
 /* Navbar */
   nav {
     background-color:white; /* couleur de fond de la navigation */
-    color: black; /* couleur de texte de la navigation */
     padding: 10px;
     display: flex; /* utilise flexbox pour aligner les éléments */
     justify-content: space-between; /* espaces les éléments sur toute la largeur */
@@ -56,16 +55,35 @@ body {
   }
   
   nav a {
-    color: black; /* couleur de texte des liens */
-    text-decoration: none;
     padding: 10px; /* ajoute un padding pour que les éléments soient plus larges */
     font-size: 18px;
+    color: white;
+    background-color: transparent; /* couleur de fond par défaut */
+    border-radius: 5px; /* arrondir les coins pour un effet de bouton */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* animation fluide */
     }
-  
-  nav a:hover {
-    color: #337ab7; /* couleur de lien survolée */
+
+    nav a:hover {
+      color: #fff; /* Couleur de texte au survol */
+      background-color: #223354; /* couleur de fond au survol */
+      transform: translateY(2px); /* déplace légèrement vers le bas pour simuler un appui */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ajout d'une ombre portée pour l'effet de profondeur */
   }
+
+  /* Ajoutez également un focus pour l'accessibilité */
+nav a:focus {
+  outline: none; /* Enlève le contour par défaut du focus */
+  background-color: #337ab7; /* couleur de fond au focus */
+  color: #fff; /* couleur de texte au focus */
+  transform: translateY(2px); /* même translation que le hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* même ombre que le hover */
+}
   
+nav a:active {
+  color: #fff; /* Couleur de texte au clic */
+  background-color: #337ab7; /* couleur de fond au clic */
+}
+
   /* Logo */
   #nav-left {
     display: flex; /* utilise flexbox pour aligner les éléments */
