@@ -8,6 +8,10 @@ form {
    
 }
 
+.container-creation form{
+    box-shadow: 4px 2px 2px rgb(207, 202, 202);
+}
+
 form label { 
     display: block; /* cela permet l'affichage en bloc des labels */ 
     margin-top: 10px; /* espacement au-dessus des labels */ 

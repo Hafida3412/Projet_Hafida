@@ -8,6 +8,7 @@
     <?php
   ?> 
 <!--Création du formulaire pour déposer une annonce-->  
+<div class= "container-creation">
     <form action="index.php?ctrl=location&action=ajoutAnnonces" method="post">
         <!--on ne rajoute pas de "id" à ajoutAnnonces pour ne pas insérer l'id 
         de l'utilisateur dans l'Url, trop dangereux.-->
@@ -38,4 +39,5 @@
         <!--Création du bouton "Déposer l'annonce"-->
         <input type="submit" name="submitAnnonce" value="Déposer l'annonce">
     </form>
+        </div>
     
