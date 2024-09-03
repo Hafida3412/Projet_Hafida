@@ -1,7 +1,10 @@
 <?php
 
 ?>
+
 <img src="public\img\chat.png" alt="regard d'un chat" style="width: 100%; height: auto; object-fit: contain;">
+
+<div class="login-container">
 <h1>Se connecter</h1>
 
 <form action="index.php?ctrl=security&action=login"method="post">
@@ -9,10 +12,11 @@
 <input type="email" name="email" id="email" value="lea@gmail.com"><br>
 
 <label for="password">Mot de passe</label>
-<input type="password" name="password" id="password" value="AZERTY12345"><br>
+<input type="password" name="password" id="password" value="helloworld"><br>
 
 <input type="submit" name="submitLogin" value="Se connecter">
 </form>
+</div>
 
 <!--CREATION DU POP UP COOKIE-->
 <div id="cookie-popup">

@@ -16,4 +16,6 @@ input[type="radio"] {
 /* Style pour les étiquettes */
 label { 
     margin-bottom: 5px; /* Marge en bas de 5px */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
 }     

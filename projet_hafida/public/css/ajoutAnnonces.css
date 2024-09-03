@@ -4,6 +4,9 @@ form {
     margin-bottom: 20px; /* espacement en dessous du formulaire */ 
     width: 30%; /* pour limiter la largeur du formulaire à 80% */
     margin: 0 auto; /* Cela permet de centrer le formulaire horizontalement */
+    border-radius: 10px;
+
+    box-shadow: 4px 2px 2px rgb(207, 202, 202);
 }
 
 form label { 
@@ -14,8 +17,9 @@ form label {
 form input, form select, form textarea { 
     width: 100%; /* largeur à 100% des champs de saisie */ 
     padding: 5px; /* espacement interne des champs de saisie */ 
-    margin-bottom: 10px; /*espacement en dessous des champs de saisie */ 
+    margin-bottom: 50px; /*espacement en dessous des champs de saisie */ 
     box-sizing: border-box; /*inclut le padding dans la largeur */ 
+    border-radius: 10px;
 }
 
 form textarea { 
