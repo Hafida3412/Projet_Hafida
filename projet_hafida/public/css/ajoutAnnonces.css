@@ -4,9 +4,7 @@ form {
     margin-bottom: 20px; /* espacement en dessous du formulaire */ 
     width: 35%; /* pour limiter la largeur du formulaire à 80% */
     margin: 0 auto; /* Cela permet de centrer le formulaire horizontalement */
-    border-radius:10px;
-
-   
+    border-radius:10px;  
 }
 
 .container-creation form{
@@ -38,6 +36,7 @@ form input[type="submit"] {
     border: none; /*pas de bordure sur le bouton de soumission */ 
     cursor: pointer; /* curseur style pointer au survol du bouton */ 
     margin-top: 10px; /*espacement au-dessus du bouton de soumission */ 
+    width:225px;
 }
 
 form input[type="submit"]:hover { 
