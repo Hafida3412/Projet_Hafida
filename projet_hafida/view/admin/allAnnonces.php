@@ -2,7 +2,7 @@
 // On extrait la liste des utilisateurs depuis le tableau de résultats
 $annonces = $result["data"]["annonces"]; // Sert à éviter l'erreur si 'annonces' n'existe pas
 ?>
-
+<div class="bg_allAnnonces">
 <h1>Toutes les annonces</h1>
 
 <?php if (!empty($annonces)): ?>
@@ -24,4 +24,4 @@ $annonces = $result["data"]["annonces"]; // Sert à éviter l'erreur si 'annonce
     </div>
 <?php else: ?>
     <p>Aucune annonce trouvée.</p>
-<?php endif; ?>
+<?php endif; ?></div>
