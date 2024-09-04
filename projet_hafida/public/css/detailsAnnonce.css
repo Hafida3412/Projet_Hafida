@@ -1,5 +1,9 @@
 /*CSS de la vue detailsAnnonce*/
 
+.bg_details{
+    background-image: url(../img/oreille.jpg); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Pour couvrir tout le conteneur */
+}
 /* Style pour le cadre des informations de l'annonce */
 .annonce-info {
     background-color: #fff; /* couleur de fond du cadre des informations de l'annonce */
@@ -7,6 +11,8 @@
     padding: 10px; /* espacement interne du cadre */
     width: 50%; /* largeur du cadre */  
     margin: 10px auto; /* centrer le cadre */
+    border-radius: 10px;
+    box-shadow: 4px 2px 2px rgb(207, 202, 202);
     
 }
 
@@ -31,6 +37,8 @@
     padding: 10px; /* espacement interne du cadre */
     width: 50%; /* largeur du cadre */
     margin: 10px auto; /* Centrer horizontalement */
+    border-radius: 10px;
+    box-shadow: 4px 2px 2px rgb(207, 202, 202);
 }
 
 /* Style pour les paragraphes dans le cadre des avis */

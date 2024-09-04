@@ -11,9 +11,10 @@ $images = $result["data"]['images']; // On récupère les images
 
 <h1>Détails de l'annonce</h1>
 
+<div class="bg_details">
 <div class="annonce-info">
     <!-- Affichage des informations de l'annonce -->
-    <p>Annonce de <?= $annonce->getUtilisateur()->getPseudo()?><br>
+    <p><strong>Annonce de <?= $annonce->getUtilisateur()->getPseudo()?><br></strong>
     Nb de chats: <?= $annonce->getNbChat()?><br>
     Date de début: <?= (date('d-m-Y ', strtotime($annonce->getDateDebut())))?><br>
     Date de fin: <?= (date('d-m-Y ', strtotime($annonce->getDateFin())))?><br>
@@ -84,7 +85,7 @@ if ($utilisateurConnecte && $annonce->getUtilisateur()->getId() != $utilisateurC
     <a href="index.php?ctrl=reservations&action=reservation&id=<?= $annonce->getId() ?>">
         <button class="annonce-info" type="button">Réserver</button>
     </a>
-    <br>
+    <br> </div>
     <?php   
 }
 ?> 
