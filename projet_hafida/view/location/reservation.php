@@ -1,6 +1,7 @@
 <div?php  
   
 ?>
+<div class="bg_reservation">
 <h1>Réservation</h1>
 
 <form action="index.php?ctrl=reservations&action=reservation" method="post">
@@ -28,3 +29,4 @@
     <input type="submit" name="submitReservation" value="Réserver">
 
 </form>
+</div>

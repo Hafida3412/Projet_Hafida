@@ -1,5 +1,10 @@
 /* CREATION DU RESERVATION.CSS*/
 
+.bg_reservation{
+    background-image: url(../img/ordi.jpg);
+    background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
+}
+
 /* Le style pour la classe paiement*/
 .paiement {
     display: flex;/*On utilise le modèe de la boîte flex*/
