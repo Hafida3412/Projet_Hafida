@@ -26,6 +26,9 @@
     <label for="question">Avez-vous une demande particulière?</label>
     <textarea name="question" rows="4" cols="50"></textarea><br>
 
+    <label for="annonce">ID de l'annonce: </label>
+    <input type="number" name="annonce" value="number"><br>
+    
     <input type="submit" name="submitReservation" value="Réserver">
 
 </form>

@@ -9,7 +9,7 @@ use Model\Managers\ReserverManager;
 
 class ReservationsController extends AbstractController implements ControllerInterface{
 //CREATION DE LA FONCTION RESERVATION
-    public function reservation($idAnnonce){
+    public function reservation(){
         // On vérifie que l'utilisateur est connecté
         if (!Session::getUtilisateur()) {
             // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
@@ -37,7 +37,7 @@ class ReservationsController extends AbstractController implements ControllerInt
             $nbEnfants = filter_input(INPUT_POST, "nbEnfants", FILTER_VALIDATE_INT);
             $paiement = filter_input(INPUT_POST, "paiement", FILTER_SANITIZE_SPECIAL_CHARS);
             $question = filter_input(INPUT_POST, "question", FILTER_SANITIZE_SPECIAL_CHARS);
-            $annonce = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+            $annonce = filter_input(INPUT_POST, "annonce", FILTER_VALIDATE_INT);
             $valide = 1; // Réservation validée
         
             // Vérification des données
@@ -56,7 +56,7 @@ class ReservationsController extends AbstractController implements ControllerInt
                 ]);
         
                 // Mise à jour du statut de l'annonce pour indiquer qu'elle est fermée
-                $annonceManager->updateDisponibilite($annonce);
+                $annonceManager->updateDisponibilite($annonceId);
         
                 // Redirection vers la confirmation de réservation
                 $this->redirectTo("reservations", "confirmation");
