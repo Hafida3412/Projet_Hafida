@@ -3,7 +3,7 @@
 $utilisateurs = $result["data"]['utilisateurs']; 
 ?>
 
-<h1>Liste des utilisateurs</h1>
+<h1>Liste de tous les utilisateurs</h1>
 <!--création d'un tableau-->
 <table>
     <thead>
