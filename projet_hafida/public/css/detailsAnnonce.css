@@ -47,6 +47,15 @@
     line-height: 1.5; /* hauteur de ligne du texte */
 }
 
+/* Style pour chaque avis */
+.avis-item {
+    background-color: #f9f9f9; /* couleur de fond légèrement différente */
+    border: 1px solid #ddd; /* bordure pour séparer les avis */
+    border-radius: 5px; /* arrondir les coins */
+    padding: 10px; /* espacement interne pour les avis */
+    margin: 10px 0; /* marge pour séparer les avis les uns des autres */
+}
+
 /* Style pour le bouton "réserver" dans le cadre des informations de l'annonce */
 button.annonce-info{
     background-color:#337ab7; /* couleur de fond du bouton */

@@ -47,14 +47,15 @@ $images = $result["data"]['images']; // On récupère les images
 </div>
 
 <div class="avis">
-    <p>Avis:
+    <strong><p>Avis:</strong>
     <?php
     // Vérification de l'existence d'avis
     if($avis) {
         // Si des avis existent, on les affiche
         foreach($avis as $avi){?> 
+        <div class="avis-item">
            <?= $avi->getCommentaire()?> (le <?= (date('d-m-Y ', 
-           strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p>
+           strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p></div>
         <?php 
         }
     } else {
