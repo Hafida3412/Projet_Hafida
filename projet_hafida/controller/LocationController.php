@@ -273,7 +273,9 @@ return [
             // On vérifie que le commentaire est présent
             if($commentaire){
                 // On crée une nouvelle instance de AvisManager pour gérer les avis
-                $avisManager = new AvisManager();
+                // Récupération des avis
+    $avisManager = new AvisManager();
+    $avis = $avisManager->findAvisByLogement($id); // Assurez-vous que vous récupérez les avis par logement
                 
                 // On ajoute l'avis en base de données
                 $avisManager->add([
@@ -298,7 +300,8 @@ return [
             "view" => VIEW_DIR . "location/donnerAvis.php",
             "meta_description" => "Donner un avis sur une annonce",
             "data" => [
-                "annonce_id" => $id
+                "annonce_id" => $id,
+                
             ]
         ];
     }
