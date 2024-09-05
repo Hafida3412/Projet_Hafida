@@ -301,7 +301,7 @@ return [
             "meta_description" => "Donner un avis sur une annonce",
             "data" => [
                 "annonce_id" => $id,
-                
+                "avis" =>$avis = $avisManager->findAvisByLogement($id);
             ]
         ];
     }
