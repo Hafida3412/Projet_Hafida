@@ -77,37 +77,46 @@ return [
 
     //FONCTION POUR AFFICHER LES DETAILS DES ANNONCES
     public function detailsAnnonce($id) {
-        $annonceManager = new AnnonceManager();//création d'une instance de la classe AnnonceManager pour gérer les annonces.
-        $annonce = $annonceManager->findOneById($id);//on récupère l'annonce correspondant à l'identifiant passé en paramètre 
-        
+        $annonceManager = new AnnonceManager(); //création d'une instance de la classe AnnonceManager pour gérer les annonces.
+        $annonce = $annonceManager->findOneById($id); //on récupère l'annonce correspondant à l'identifiant passé en parametre 
+    
+        if (!$annonce) {
+            // Si l'annonce n'existe pas, vous pouvez gérer l'erreur en affichant un message ou en redirigeant
+            Session::addFlash("error", "Annonce introuvable.");
+            $this->redirectTo("location", "index");
+            return; // important de sortir de la fonction après la redirection
+        }
+    
         // On peut maintenant récupérer le logement lié à l'annonce
         $logementManager = new LogementManager();
         $logement = $logementManager->findOneById($annonce->getLogement()->getId());
-
+    
         if (!$logement) {
             // Erreur: le logement avec cet id n'existe pas
             Session::addFlash("error", "Logement introuvable.");
             $this->redirectTo("location", "index"); 
+            return; // important de sortir de la fonction après la redirection
         }
-        
+    
         // Création de l'instance de la classe ImageManager pour gérer les images
         $imageManager = new ImageManager();
         $images = $imageManager->findImagesByLogement($logement->getId()); // On récupère les images en utilisant cette méthode qui est dans ImageManager
-
-        $avisManager = new AvisManager();//création de l'instance de la classe AvisManager pour gérer les avis.
-        $avis = $avisManager->findAvisByLogement($id);// on récupère les avis associés à l'annonce (cf annonceManager)
-
+    
+        $avisManager = new AvisManager(); //création de l'instance de la classe AvisManager pour gérer les avis.
+        $avis = $avisManager->findAvisByLogement($id); // on récupère les avis associés à l'annonce (cf annonceManager)
+    
         return [
-        "view" => VIEW_DIR."location/detailsAnnonce.php",
-        "meta_description" => "Détails de l'annonce",
-        "data" => [
-        "annonce" => $annonce,
-        "logement" => $logement,
-        "images" => $images, // On passe les images à la vue
-        "avis" => $avis,
-        ]
-    ];
-}  
+            "view" => VIEW_DIR . "location/detailsAnnonce.php",
+            "meta_description" => "Détails de l'annonce",
+            "data" => [
+                "annonce" => $annonce,
+                "logement" => $logement,
+                "images" => $images, // On passe les images à la vue
+                "avis" => $avis,
+            ]
+        ];
+    }
+    
     
     //AJOUTER/DEPOSER UNE ANNONCE
     public function ajoutAnnonces(){
