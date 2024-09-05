@@ -60,4 +60,35 @@ public function AllAnnonces() {
     ];
 }
 
+public function supprimerUtilisateur() {
+    // Vérifie si l'utilisateur est connecté et a le rôle "ROLE_ADMIN"
+    $utilisateur = Session::getUtilisateur();
+    if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN")) {
+        Session::addFlash('error', 'Accès refusé. Vous devez être administrateur pour effectuer cette action.');
+        header('Location: index.php?ctrl=security&action=login');
+        exit;
+    }
+
+    // Vérifie si un ID d'utilisateur est passé dans l'URL
+    if (isset($_GET['id'])) {
+        $utilisateurId = $_GET['id'];
+        
+        // Création d'un gestionnaire d'utilisateur
+        $utilisateurManager = new UtilisateurManager();
+        
+        // Suppression de l'utilisateur
+        if ($utilisateurManager->delete($utilisateurId)) {
+            Session::addFlash('success', 'L\'utilisateur a été supprimé avec succès.');
+        } else {
+            Session::addFlash('error', 'Erreur lors de la suppression de l\'utilisateur.');
+        }
+    } else {
+        Session::addFlash('error', 'Aucun utilisateur à supprimer.');
+    }
+
+    // Redirection après la suppression
+    header('Location: index.php?ctrl=admin&action=listUtilisateurs');
+    exit;
+}
+
 }

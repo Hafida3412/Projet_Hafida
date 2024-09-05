@@ -1,3 +1,5 @@
+
+
 /* Styles de base pour le tableau */
 table {
     width: 100%; /* Prend toute la largeur disponible */
@@ -30,4 +32,13 @@ td[colspan="6"] {
     text-align: center; /* Centrer le message d'alerte */
     color: #ff0000; /* Couleur du texte d'alerte */
     font-weight: bold; /* Mettre en gras */
+}
+
+.supprimer a {
+    text-decoration: none; /* Enlève le soulignement sur les liens */
+    font-size: 18px; /* Taille de l'icône */
+}
+
+.supprimer a:hover {
+    color: darkred; /* Change la couleur de l'icône au survol */
 }
