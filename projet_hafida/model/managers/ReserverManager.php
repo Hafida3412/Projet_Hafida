@@ -28,4 +28,10 @@ public function findReservationsByUser($id_utilisateur){
     );
 }
 
+public function deleteByUserId($userId) {
+    $sql = "DELETE FROM ".$this->tableName."
+            WHERE utilisateur_id = :userId";
+
+    return DAO::delete($sql, ['userId' => $userId]);
+}
 }

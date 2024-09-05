@@ -5,6 +5,7 @@ use App\AbstractController;
 use App\Session;
 use Model\Managers\AnnonceManager;
 use Model\Managers\UtilisateurManager;
+use Model\Managers\ReserverManager;
 
 
 class AdminController extends AbstractController{
@@ -75,6 +76,10 @@ public function supprimerUtilisateur() {
         
         // Création d'un gestionnaire d'utilisateur
         $utilisateurManager = new UtilisateurManager();
+        
+        // Suppression des réservations associées
+        $reserverManager = new ReserverManager(); // Ajoutez cette ligne pour le nouvel objet ReservationManager
+        $reserverManager->deleteByUserId($utilisateurId); // Ajoutez cette méthode à ReservationManager
         
         // Suppression de l'utilisateur
         if ($utilisateurManager->delete($utilisateurId)) {
