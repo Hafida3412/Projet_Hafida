@@ -256,7 +256,7 @@ return [
             if(Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) {
                 // Supprimer d'abord les réservations associées
                 $annonceManager->deleteReservations($id);
-                // Ensuite, supprimez l'annonce
+                // Ensuite, on supprime l'annonce
                 $annonceManager->deleteAnnonce($id);
                 $this->redirectTo("location", "index", $annonce->getLogement()->getId());
             }  
