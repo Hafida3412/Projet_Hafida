@@ -184,6 +184,11 @@
   padding: 20px;
   text-align: center;
   font-size: 20px;
+  transition: transform 0.3s ease; /* Ajout de la transition pour le zoom */
+}
+
+.benefice1:hover, .benefice2:hover {
+  transform: scale(1.05); /* Appliquer un effet de zoom au survol */
 }
 
 .benefice1 ul, .benefice2 ul {
