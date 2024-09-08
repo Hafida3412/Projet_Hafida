@@ -6,6 +6,9 @@
 }
 /* Style pour le cadre des informations de l'annonce */
 .annonce-info {
+    display: flex;             /* Activer Flexbox */
+    flex-direction: column;    /* Aligner les éléments en colonne */
+    align-items: center;      /* Centrer les éléments horizontalement */
     background-color: #fff; /* couleur de fond du cadre des informations de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre */
     padding: 10px; /* espacement interne du cadre */
@@ -24,10 +27,11 @@
 
 /* Style pour les images dans le cadre des informations de l'annonce */
 .annonce-info img {
-    width: 100%; /* taille de l'image */
-    height: auto; /* hauteur automatique */
-    object-fit: contain; /* ajustement de l'image */
-/* Note: cela permet d'avoir des images qui s'adaptent à la taille du cadre sans être déformées */
+    display: block;          /* Pour que l'image soit un bloc */
+    margin: 0 auto;        /* Pour centrer l'image horizontalement */
+    max-width: 80%;       /* Pour ne pas dépasser la largeur du conteneur */
+    height: auto;          /* Pour conserver le ratio */
+    object-fit: contain;   /* Ajuste l'image sans la déformer */
 }
 
 .images {
