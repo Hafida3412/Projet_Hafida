@@ -76,3 +76,7 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
   </blockquote>
 </section>
 
+<!--BOUTON SCROLL TO TOP-->
+<div id="scrollUp">
+    <a href="#top"><i class="fa-solid fa-circle-arrow-up"></i></a><!-- Lien pour remonter en haut de la page -->
+</div>
