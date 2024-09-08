@@ -377,7 +377,7 @@ return [
     
             // Liste des extensions autorisées
             $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png'];
-            $tailleMax = 2000000; // Taille en bytes
+            $tailleMax = 3000000; // Taille en bytes
     
             // Vérification
             if (in_array($extension, $extensionsAutorisees) && $size <= $tailleMax && $error == 0) {

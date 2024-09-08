@@ -34,31 +34,27 @@
     object-fit: contain;   /* Ajuste l'image sans la déformer */
 }
 
-.images {
-    display: flex; /* Activer Flexbox pour un alignement horizontal */
-    flex-wrap: wrap; /* Permet aux images de passer à la ligne suivante si elles dépassent la largeur du conteneur */
-    gap: 10px; /* Espace entre les images */
-    justify-content: center; /* Centrer les images horizontalement */
-    overflow: hidden; /* Masquer les débordements */
-    position: relative; /* Pour le positionnement absolu des images */
-    height: 200px; /* Hauteur fixe pour le conteneur */
+.images img {
+    width: 20%; /* Ajuster pour remplir le conteneur */
+    height: auto; /* Maintenir le ratio */
+    max-height: 200px; /* Limiter la hauteur maximale */
+    object-fit: cover; /* Couvrir le conteneur sans déformation */
 }
 
-.images img {
-    width: 25%; /* Faîtes les images occupent toute la largeur */
-    height: auto; /* Préserver l'aspect ratio */
-    max-height: 200px; /* Limiter la hauteur max pour s’assurer qu’elles s’intègrent bien */
-    transition: transform 0.5s ease; /* Transition pour l'effet zoom */
-    position: absolute; /* Positionner chaque image de manière absolue */
-    opacity: 0; /* Masquer initialement */
-    top: 0;
-    
+.images {
+    display: flex; /* Activez Flexbox */
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne suivante */
+    justify-content: center; /* Centre les images horizontalement */
+    overflow: hidden; /* Masque les débordements */
+    height: 200px; /* Hauteur fixe pour le conteneur des images */
 }
+
 
 .images img.active {
     opacity: 1; /* Rendre visible l'image active */
     transform: scale(1.2); /* Zoomer sur l'image active */
 }
+
 
 /* Style pour le cadre des avis */
 .avis {
