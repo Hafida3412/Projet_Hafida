@@ -155,8 +155,12 @@ return [
                         "logement_id" => $id_logement// on rajoute l'id du logement
                         ]);
                     //var_dump("ok");die;
-                        // Redirection après l'ajout de l'annonce
-                        $this->redirectTo("location", "index");
+
+                // Ajout d'un message de succès
+                Session::addFlash("success", "Votre annonce a été déposée avec succès.");
+
+                // Redirection après l'ajout de l'annonce
+                $this->redirectTo("location", "index");
                 }
             }
         }
@@ -199,9 +203,11 @@ return [
                     // on rajoute l'utilisateur qui crée le logement
                     "utilisateur_id" => Session::getUtilisateur()->getId()
                 ]); 
+            // Ajout de message flash
+            Session::addFlash("success", "Votre logement a été créé avec succès.");
                 
-            // Redirection vers la page de compte utilisateur après ajout du logement
-                $this->redirectTo("location", "monCompte");
+            // Redirection vers la page de dépôt d'annonce après l'ajout
+            return $this->redirectTo("location", "ajoutAnnonces");
             }
         }
         
