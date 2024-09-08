@@ -114,38 +114,53 @@
   
 } 
 
-.temoignages { 
-  background-color: #fff; 
-  padding: 40px; 
-  border-radius: 10px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+.temoignages {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  padding: 50px;
 }
 
-.temoignages h2 { 
+.temoignages h2 {
   display: flex;
   justify-content: center;
-  font-size: 30px; 
-  font-weight: bold; 
-  margin-bottom: 10px; 
-  color: #23527c; 
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #23527c;
 }
 
-.temoignages blockquote { 
-  background-color: #f7f7f7; 
-  padding: 20px; 
-  border-radius: 10px; 
-  margin-bottom: 20px; }
+.temoignages blockquote {
+  display: flex; /* Utiliser flexbox pour l'alignement */
+  align-items: center; /* Aligner les items centrés verticalement */
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
 
-.temoignages blockquote p { 
-  font-size: 18px; 
-  color: #666; }
+.temoignages blockquote .avatar {
+  margin-right: 20px; /* Ajouter un espace entre l'avatar et le texte */
+}
 
-.temoignages signature { 
-  font-size: 16px; 
-  color: #999; 
-  font-style: italic; 
+.temoignages blockquote .avatar img {
+  width: 60px; /* Largeur de l'image */
+  height: 60px; /* Hauteur de l'image */
+  border-radius: 50%; /* Bord arrondi pour l'effet circulaire */
+}
+
+.temoignages blockquote p {
+  font-size: 18px;
+  color: #666;
+  margin: 0; /* Supprimer la marge par défaut du paragraphe */
+}
+
+.temoignages signature {
+  font-size: 16px;
+  color: #999;
+  font-style: italic;
+  margin-top: 5px; /* Ajouter une petite marge au-dessus de la signature */
 }
 
 .concept {

@@ -67,10 +67,16 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
 <section class="temoignages">
   <h2>Ce que nos utilisateurs disent de nous</h2>
   <blockquote>
-    <p>"Je suis vraiment satisfaite de mon expérience. J'ai pu trouver un propriétaire de chat qui m'a laissé prendre soin de son animal pendant mes vacances."</p>
+    <div class="avatar">
+      <img src="public\img\maria.jpg" alt="Maria B.">
+    </div>
+    <p>"Je suis vraiment satisfaite de mon expérience. Je renouvellerai cette expérience sans hésiter."</p>
     <signature>Maria B.</signature>
   </blockquote>
   <blockquote>
+    <div class="avatar">
+      <img src="public\img\ali.jpg" alt="Ali E.">
+    </div>
     <p>"Je recommande ce site à tous les propriétaires de félins qui cherchent quelqu'un pour s'occuper de leur animal."</p>
     <signature>Ali E.</signature>
   </blockquote>
