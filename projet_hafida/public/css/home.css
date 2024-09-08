@@ -188,7 +188,7 @@
 }
 
 .benefice1:hover, .benefice2:hover {
-  transform: scale(1.05); /* Appliquer un effet de zoom au survol */
+  transform: scale(1.05); /* effet de zoom au survol */
 }
 
 .benefice1 ul, .benefice2 ul {
