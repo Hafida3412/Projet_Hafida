@@ -35,7 +35,7 @@
                     <nav>
                     <div id="nav-left" class="full-width">
                         <img src="public\img\logo.png" alt="Logo">
-                        <div id="nav-right">
+                    <div id="nav-right">
                         <?php
                         // Si l'utilisateur est connecté
                         if(App\Session::getUtilisateur()) {
@@ -44,11 +44,12 @@
                                 // Navbar pour les administrateurs
                                 ?>
                                 <ul class="nav-list">
+                                    <li><a href="index.php?ctrl=home&action=view">Accueil</a></li>
                                     <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur() ?></a></li>
                                     <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li>
                                     <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li>
-                                    <li><a href="index.php?ctrl=admin&action=listUtilisateurs">Liste de tous les utilisateurs</a></li>
-                                    <li><a href="index.php?ctrl=admin&action=AllAnnonces">Liste de toutes les annonces</a></li>
+                                    <li><a href="index.php?ctrl=admin&action=listUtilisateurs">Utilisateurs</a></li>
+                                    <li><a href="index.php?ctrl=admin&action=AllAnnonces">Annonces</a></li>
                                     <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
                                 </ul>
                                 <?php
@@ -56,6 +57,7 @@
                                 // Navbar pour les utilisateurs normaux
                                 ?>
                                 <ul class="nav-list">
+                                    <li><a href="index.php?ctrl=home&action=view">Accueil</a></li>
                                     <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur() ?></a></li>
                                     <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li>
                                     <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li>
