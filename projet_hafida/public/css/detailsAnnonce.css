@@ -30,6 +30,19 @@
 /* Note: cela permet d'avoir des images qui s'adaptent à la taille du cadre sans être déformées */
 }
 
+.images {
+    display: flex; /* Activer Flexbox pour un alignement horizontal */
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne suivante si elles dépassent la largeur du conteneur */
+    gap: 10px; /* Espace entre les images */
+    justify-content: center; /* Centrer les images horizontalement */
+}
+
+.images img {
+    width: 200px; /* Largeur fixe pour les images */
+    height: auto; /* Préserver l'aspect ratio */
+}
+
+
 /* Style pour le cadre des avis */
 .avis {
     background-color: #fff; /* couleur de fond du cadre des avis */

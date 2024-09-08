@@ -58,6 +58,13 @@ class AnnonceManager extends Manager{
         return DAO::delete($sql, ['id' => $id]);
     }
 
+    // Méthode pour supprimer les réservations liées à une annonce
+    public function deleteReservations($annonceId) {
+        $sql = "DELETE FROM reserver 
+        WHERE annonce_id = :id";
+    return DAO::delete($sql, ['id' => $annonceId]);
+}
+
     // On ajoute cette méthode pour mettre à jour le statut de l'annonce
     public function updateDisponibilite($annonceId){
         $sql = "UPDATE ".$this->tableName.

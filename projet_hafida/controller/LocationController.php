@@ -251,12 +251,13 @@ return [
         $annonceManager = new annonceManager();
         $annonce = $annonceManager->findOneById($id);;
 
-        // si l'utilisateur est connecté
         if(Session::getUtilisateur()) {
-            // si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
+            // Vérifiez si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
             if(Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) {
-               //On supprime l'annonce
-                $annonceManager->deleteAnnonce($id);//on récupére la fonction "deleteAnnonce"
+                // Supprimer d'abord les réservations associées
+                $annonceManager->deleteReservations($id);
+                // Ensuite, supprimez l'annonce
+                $annonceManager->deleteAnnonce($id);
                 $this->redirectTo("location", "index", $annonce->getLogement()->getId());
             }  
             return [

@@ -31,7 +31,7 @@ $images = $result["data"]['images']; // On récupère les images
 </div>
  
 <div class="images">
-    <h3>Voir plus d'images</h3>
+    <h3></h3><br>
     <?php
         // On vérifie si des images existent
         if (!empty($images)) {

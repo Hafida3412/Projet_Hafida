@@ -63,7 +63,7 @@ dans l'URL. Si c'est le cas, on utilise la valeur récupérée via intval($_GET[
 pour convertir la valeur en entier. (Sinon, on peut utiliser la valeur 1 par défaut.)
 */
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page depuis l'URL
-$totalPages = 2 ; //On définit la variable $totalPages qui représente le nombre total de pages.
+$totalPages = 3; //On définit la variable $totalPages qui représente le nombre total de pages.
 ?>
 <nav aria-label="Pagination"><!--Cet attribut indique aux utilisateurs de technologies 
 d'assistance que cette section de navigation est dédiée à la pagination--> 
