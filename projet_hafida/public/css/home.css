@@ -171,38 +171,37 @@
   font-size: 20px; 
 }
 
-  .explications {
-    display: flex;
-    justify-content: space-around;
-    margin: 50px auto;
-  }
+.explications {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
+}
   
-  .benefice1, .benefice2 {
-    width: 45%;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    text-align: center;
-    font-size: 20px;
-  }
-
-  .benefice1 ul, .benefice2 ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .benefice1 img, .benefice2 img {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  /* Styles pour le bouton de défilement vers le haut */
-#scrollUp {
-  position: fixed; /* Positionnement fixe par rapport à la fenêtre */
-  bottom: 10px; /* Espacement du bas */
-  right: 100px; /* Espacement à droite */
+.benefice1, .benefice2 {
+  width: 45%;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
 }
 
+.benefice1 ul, .benefice2 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.benefice1 img, .benefice2 img {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Styles pour le bouton de défilement vers le haut */
+#scrollUp {
+position: fixed; /* Positionnement fixe par rapport à la fenêtre */
+bottom: 10px; /* Espacement du bas */
+right: 100px; /* Espacement à droite */
+}
 /* Styles pour l'icône dans le bouton de défilement vers le haut */
 #scrollUp .fa-solid {
   font-size: 2em; /* Taille de police pour l'icône */
