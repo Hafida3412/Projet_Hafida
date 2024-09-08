@@ -102,8 +102,10 @@ return [
         $imageManager = new ImageManager();
         $images = $imageManager->findImagesByLogement($logement->getId()); // On récupère les images en utilisant cette méthode qui est dans ImageManager
     
-        $avisManager = new AvisManager(); //création de l'instance de la classe AvisManager pour gérer les avis.
-        $avis = $avisManager->findAvisByLogement($id); // on récupère les avis associés à l'annonce (cf annonceManager)
+
+        // Récupérer les avis (changez ici l'identifiant)
+        $avisManager = new AvisManager();
+        $avis = $avisManager->findAvisByLogement($logement->getId()); // Assurez-vous que c'est correct
     
         return [
             "view" => VIEW_DIR . "location/detailsAnnonce.php",

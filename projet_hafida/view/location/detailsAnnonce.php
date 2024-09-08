@@ -50,19 +50,19 @@ $images = $result["data"]['images']; // On récupère les images
     <strong><p>Avis:</strong>
     <?php
     // Vérification de l'existence d'avis
-    if($avis) {
+    if ($avis) {
         // Si des avis existent, on les affiche
-        foreach($avis as $avi){?> 
-        <div class="avis-item">
-           <?= $avi->getCommentaire()?> (le <?= (date('d-m-Y ', 
-           strtotime($avi->getDateAvis())))?> par <?= $avi->getUtilisateur()?>)</p></div>
+        foreach ($avis as $avi) { ?> 
+            <div class="avis-item">
+                <?= htmlspecialchars($avi->getCommentaire()) ?> (le <?= date('d-m-Y', strtotime($avi->getDateAvis())) ?> par <?= htmlspecialchars($avi->getUtilisateur()->getPseudo()) ?>)
+            </div>
         <?php 
-        }
+        } 
     } else {
-        echo "<p>Aucun avis pour cette annonce.</p>";// Message quand il n'y a pas d'avis
+        echo "<p>Aucun avis pour cette annonce.</p>"; // Message quand il n'y a pas d'avis
     }
-   ?> 
-   </div>
+    ?> 
+</div>
    <?php 
    // On vérifie si l'utilisateur connecté est le propriétaire de l'annonce
    if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
