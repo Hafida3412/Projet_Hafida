@@ -16,7 +16,7 @@
 
 
 -- Listage de la structure de la base pour projet_hafida
-CREATE DATABASE IF NOT EXISTS `projet_hafida` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `projet_hafida` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `projet_hafida`;
 
 -- Listage de la structure de table projet_hafida. annonce
@@ -35,14 +35,15 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   KEY `id_utilisateur` (`utilisateur_id`) USING BTREE,
   CONSTRAINT `FK_annonce_logement` FOREIGN KEY (`logement_id`) REFERENCES `logement` (`id_logement`),
   CONSTRAINT `FK_annonce_utilisateur` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.annonce : ~4 rows (environ)
-REPLACE INTO `annonce` (`id_annonce`, `logement_id`, `utilisateur_id`, `dateCreation`, `nbChat`, `dateDebut`, `dateFin`, `description`, `estValide`) VALUES
+-- Listage des données de la table projet_hafida.annonce : ~6 rows (environ)
+INSERT INTO `annonce` (`id_annonce`, `logement_id`, `utilisateur_id`, `dateCreation`, `nbChat`, `dateDebut`, `dateFin`, `description`, `estValide`) VALUES
 	(1, 1, 1, '2024-06-09 13:15:48', 1, '2024-07-15', '2024-07-30', 'Jolie maison au coeur de la ville', 0),
-	(2, 2, 2, '2024-06-09 13:19:21', 2, '2024-08-01', '2024-08-15', 'Bel appartement haussmanien, spacieux et confortable', 0),
-	(6, 3, 3, '2024-06-13 20:22:08', 2, '2024-06-13', '2024-06-20', 'Belle maison, spacieuse. Située en plein coeur de la nature. Commerces à proximité.', 1),
-	(8, 5, 5, '2024-08-26 20:24:55', 2, '2024-08-31', '2024-09-07', 'Belle maison. Située en plein coeur de la nature. ', 0);
+	(2, 2, 2, '2024-06-09 13:19:21', 2, '2024-08-01', '2024-08-15', 'Bel appartement haussmanien, spacieux et confortable', 1),
+	(8, 6, 5, '2024-09-08 11:35:11', 1, '2024-09-09', '2024-09-15', 'Grande maison spacieuse, bien située. Chat sociable. Commerces et aires de jeux à proximité.', 0),
+	(9, 6, 5, '2024-09-08 11:46:40', 1, '2024-09-16', '2024-09-22', 'Maison spacieuse, située en pleine nature. Chat sociable', 0),
+	(10, 7, 5, '2024-09-08 11:59:35', 1, '2024-09-23', '2024-09-29', 'Grande maison, très spacieuse, avec vue sur la mer. Chat très sociable.', 1);
 
 -- Listage de la structure de table projet_hafida. avis
 CREATE TABLE IF NOT EXISTS `avis` (
@@ -58,32 +59,44 @@ CREATE TABLE IF NOT EXISTS `avis` (
   CONSTRAINT `FK__utilisateur` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id_utilisateur`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.avis : ~3 rows (environ)
-REPLACE INTO `avis` (`id_avis`, `dateAvis`, `commentaire`, `logement_id`, `utilisateur_id`) VALUES
+-- Listage des données de la table projet_hafida.avis : ~7 rows (environ)
+INSERT INTO `avis` (`id_avis`, `dateAvis`, `commentaire`, `logement_id`, `utilisateur_id`) VALUES
 	(1, '2024-06-10 09:21:52', 'Nous avons passé un super séjour. Le logement est super confortable et bien situé.', 1, 3),
 	(2, '2024-06-10 09:23:15', 'Nous sommes très satisfaits de notre séjour. L\'hôte était disponible et son logement super', 2, 3),
-	(3, '2024-08-30 09:00:34', 'Super', 2, 5),
-	(4, '2024-09-04 12:53:30', 'Nous avons passé un super séjour!', 3, 6),
-	(6, '2024-09-04 14:00:13', 'super', 5, 6),
-	(7, '2024-09-04 14:20:42', 'Nous avons passé un super moment. Logement très confortable et spacieux. Chat super sociable.', 3, 6);
+	(3, '2024-09-04 21:01:19', 'Le séjour s&#39;est très bien passé...L&#39;endroit est magnifique.', 3, 5),
+	(4, '2024-09-04 22:14:39', 'Je suis ravie de mon séjour', 4, 5),
+	(5, '2024-09-05 10:57:00', 'Très ravie de mon expérience', 1, 5),
+	(6, '2024-09-08 11:02:06', 'Très satisfait', 7, 5),
+	(7, '2024-09-08 12:53:16', 'Nous avons passé une semaine super! La mer à proximité, l&#39;endroit est bien situé. Chat trop mignon.', 7, 7);
 
 -- Listage de la structure de table projet_hafida. image
 CREATE TABLE IF NOT EXISTS `image` (
   `id_image` int NOT NULL AUTO_INCREMENT,
+  `nomImage` varchar(255) NOT NULL DEFAULT '0',
+  `altImage` varchar(255) NOT NULL DEFAULT '0',
   `logement_id` int NOT NULL DEFAULT '0',
-  `nomImage` varchar(500) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '0',
-  `altImage` varchar(255) NOT NULL,
   PRIMARY KEY (`id_image`),
-  KEY `FK_image_logement` (`logement_id`),
+  KEY `logement_id` (`logement_id`),
   CONSTRAINT `FK_image_logement` FOREIGN KEY (`logement_id`) REFERENCES `logement` (`id_logement`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.image : ~4 rows (environ)
-REPLACE INTO `image` (`id_image`, `logement_id`, `nomImage`, `altImage`) VALUES
-	(16, 2, '66d02e023a5742.22947578.jpg', 'Vesoul'),
-	(17, 3, '66d0daa6b58899.89483344.jpg', 'Mulhouse'),
-	(18, 3, '66d0dafdd57d69.71140796.jpg', 'Mulhouse'),
-	(19, 1, '66d0dc54c3a565.66578166.jpg', 'Strasbourg');
+-- Listage des données de la table projet_hafida.image : ~14 rows (environ)
+INSERT INTO `image` (`id_image`, `nomImage`, `altImage`, `logement_id`) VALUES
+	(1, '66d9f7254e3a84.68958559.jpg', 'Mulhouse', 3),
+	(2, '66d9f8f505ed79.79606379.jpg', 'Mulhouse', 3),
+	(3, '66d9fc0e0857a2.30074603.jpg', 'Mulhouse', 3),
+	(4, '66d9fd6dd1fe81.63138725.jpg', 'Mulhouse', 3),
+	(5, '66da0194cd6ef0.30255880.jpg', 'Mulhouse', 3),
+	(6, '66da025bdd50a7.20389027.jpg', 'Mulhouse', 3),
+	(7, '66da06514f3662.03961193.jpg', 'Mulhouse', 3),
+	(8, '66da0bcb6d14f5.41886514.jpg', 'Mulhouse', 3),
+	(9, '66da11ca3d9ce2.32791332.jpg', 'Mulhouse', 3),
+	(10, '66da13af7021f4.16493588.jpg', 'Mulhouse', 3),
+	(11, '66da145dd6de19.67453339.jpg', 'Mulhouse', 3),
+	(13, '66dd7f112fde88.96962414.jpg', 'Montpellier', 7),
+	(14, '66dd800da7ec90.88429143.jpg', 'Montpellier', 7),
+	(15, '66dd814446d639.40718676.jpg', 'Montpellier', 7),
+	(16, '66de0383891190.99721721.jpg', 'Montpellier', 7);
 
 -- Listage de la structure de table projet_hafida. logement
 CREATE TABLE IF NOT EXISTS `logement` (
@@ -100,15 +113,17 @@ CREATE TABLE IF NOT EXISTS `logement` (
   KEY `id_type` (`typeLogement_id`) USING BTREE,
   CONSTRAINT `FK_logement_typelogement` FOREIGN KEY (`typeLogement_id`) REFERENCES `typelogement` (`id_typeLogement`),
   CONSTRAINT `FK_logement_utilisateur` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.logement : ~5 rows (environ)
-REPLACE INTO `logement` (`id_logement`, `typeLogement_id`, `utilisateur_id`, `nbChambre`, `rue`, `CP`, `ville`, `image`) VALUES
-	(1, 1, 1, 4, 'rue Emile Mathis', '67000', 'Strasbourg', 'https://images.pexels.com/photos/6538945/pexels-photo-6538945.jpeg?auto=compress&cs=tinysrgb&w=600'),
-	(2, 2, 2, 3, 'rue du Chemin', '70000', 'Vesoul', 'https://images.pexels.com/photos/7147284/pexels-photo-7147284.jpeg?auto=compress&cs=tinysrgb&w=600'),
-	(3, 1, 3, 3, 'rue du Poitou', '68000', 'Mulhouse', 'https://images.pexels.com/photos/3555615/pexels-photo-3555615.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'),
+-- Listage des données de la table projet_hafida.logement : ~7 rows (environ)
+INSERT INTO `logement` (`id_logement`, `typeLogement_id`, `utilisateur_id`, `nbChambre`, `rue`, `CP`, `ville`, `image`) VALUES
+	(1, 1, 4, 4, 'rue Emile Mathis', '67000', 'Strasbourg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRejWjXOlNie6FTSAeZ2RJoyumDhGJV_fhlaw&s'),
+	(2, 2, 1, 3, 'rue du Chemin', '70000', 'Vesoul', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLKSrOL_x6rdXBh7i4bJ9o7NJXiK3RjuCK3g&s'),
+	(3, 1, 4, 3, 'rue du Poitou', '68000', 'Mulhouse', 'https://images.pexels.com/photos/3555615/pexels-photo-3555615.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'),
 	(4, 1, 4, 4, 'rue des Platanes', '68000', 'Mulhouse', 'https://th.bing.com/th/id/R.21658bbd6bd48d461370b96c05580dba?rik=GFSJzRIkgsui5A&pid=ImgRaw&r=0'),
-	(5, 1, 5, 4, 'rue des Jonquilles', '70000', 'Vesoul', 'https://th.bing.com/th/id/R.2ba5d5204d04be664899c094a482327a?rik=Jk7ANqt4NAQBRA&riu=http%3a%2f%2fmedias.residences-immobilier.com%2farticles_RI%2fimages%2fPhoto_8489_679.jpg&ehk=i8Us4QINxY8MbmajIunoZuW6Mrr9%2ftV1JKCgAlOMPQE%3d&risl=&pid=ImgRaw&r=0');
+	(5, 1, 4, 4, 'rue des Jonquilles', '70000', 'Vesoul', 'https://th.bing.com/th/id/R.2ba5d5204d04be664899c094a482327a?rik=Jk7ANqt4NAQBRA&riu=http%3a%2f%2fmedias.residences-immobilier.com%2farticles_RI%2fimages%2fPhoto_8489_679.jpg&ehk=i8Us4QINxY8MbmajIunoZuW6Mrr9%2ftV1JKCgAlOMPQE%3d&risl=&pid=ImgRaw&r=0'),
+	(6, 1, 5, 4, 'rue de la Papeterie', '66000', 'Perpignan', 'https://images.pexels.com/photos/18559615/pexels-photo-18559615/free-photo-of-maison-table-luxe-cuisine.jpeg?auto=compress&cs=tinysrgb&w=600'),
+	(7, 1, 5, 3, 'rue des Flamands', '34000', 'Montpellier', 'https://images.pexels.com/photos/1571457/pexels-photo-1571457.jpeg?auto=compress&cs=tinysrgb&w=600');
 
 -- Listage de la structure de table projet_hafida. reserver
 CREATE TABLE IF NOT EXISTS `reserver` (
@@ -126,12 +141,13 @@ CREATE TABLE IF NOT EXISTS `reserver` (
   CONSTRAINT `FK_reserver_utilisateur` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id_utilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.reserver : ~0 rows (environ)
-REPLACE INTO `reserver` (`utilisateur_id`, `annonce_id`, `valide`, `numeroTelephone`, `nbAdultes`, `nbEnfants`, `paiement`, `question`) VALUES
-	(5, 2, 0, '0670809000', 2, 2, 'carte Visa', 'Y a t il le Wi-fi?'),
+-- Listage des données de la table projet_hafida.reserver : ~5 rows (environ)
+INSERT INTO `reserver` (`utilisateur_id`, `annonce_id`, `valide`, `numeroTelephone`, `nbAdultes`, `nbEnfants`, `paiement`, `question`) VALUES
+	(3, 2, 0, '0670809000', 2, 2, 'carte Visa', 'Y a t il le Wi-fi?'),
 	(2, 2, 0, '0765432189', 2, 1, 'Paypal', 'Y a t\'il un parking pour se garer?'),
-	(6, 8, 0, '0654897584', 2, 2, 'Paypal\r\n', 'Quelles sont les activités proposées dans les alentours?'),
-	(6, 6, 1, '0764432167', 2, 2, 'paypal', 'ok');
+	(5, 1, 0, '0987654321', 2, 2, 'paypal', 'Quelles sont les activités proposées aux enfants dans les alentours?'),
+	(5, 2, 1, '0987654321', 2, 2, 'paypal', 'NO'),
+	(7, 10, 1, '0786543291', 2, 2, 'paypal', 'NON');
 
 -- Listage de la structure de table projet_hafida. typelogement
 CREATE TABLE IF NOT EXISTS `typelogement` (
@@ -140,8 +156,8 @@ CREATE TABLE IF NOT EXISTS `typelogement` (
   PRIMARY KEY (`id_typeLogement`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.typelogement : ~0 rows (environ)
-REPLACE INTO `typelogement` (`id_typeLogement`, `nomType`) VALUES
+-- Listage des données de la table projet_hafida.typelogement : ~2 rows (environ)
+INSERT INTO `typelogement` (`id_typeLogement`, `nomType`) VALUES
 	(1, 'maison'),
 	(2, 'appartement');
 
@@ -158,13 +174,13 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- Listage des données de la table projet_hafida.utilisateur : ~6 rows (environ)
-REPLACE INTO `utilisateur` (`id_utilisateur`, `pseudo`, `email`, `password`, `role`, `nom`, `prenom`) VALUES
+INSERT INTO `utilisateur` (`id_utilisateur`, `pseudo`, `email`, `password`, `role`, `nom`, `prenom`) VALUES
 	(1, 'Glenn\r\n', 'glenn67@gmail.com', '123456AZERTY', 'user', 'DUPONT', 'Marc'),
 	(2, 'Zack', 'zack67@gmail.com', '123456AZERTY', 'user', 'ROLLAND', 'René'),
-	(3, 'Magda', 'magda67@gmail.com', 'AZERTY12345', 'user', 'ARNAUD  ', 'Julie'),
+	(3, 'Magda', 'magda67@gmail.com', '123456AZERTY', 'user', 'ARNAUD  ', 'Julie'),
 	(4, 'micka', 'micka@exemple.com', '$2y$10$J0Eoq08vM/Ht5ZCPNV.1H.aCkncUeWaP592HshWbGu/bAMUK4AjnW', 'user', 'STURME', 'Mickael'),
-	(5, 'Lea', 'lea@gmail.com', '$2y$10$98Ce7ZlJXuhgRNnrK4BwO.vm3eGZ1kMqnm12HwFXsUEpVAD8u3Tiy', 'ROLE_ADMIN', 'BECKER', 'Léa'),
-	(6, 'Joe', 'joe@gmail.com', '$2y$10$Qc/.TcrpivsFdJh/8DNPKeg04zXsLVqdYh4XVw10ULcwRrPGz2i1e', 'user', 'MARTIN', 'Joe');
+	(5, 'L&eacute;a', 'lea@gmail.com', '$2y$10$DbAEw/lJ3H.nHPmMWLCtE.fi8o9HuLLx3hgFcZ1Kv9/m2M7ZQmqaK', 'ROLE_ADMIN', 'DURAND', 'Léa'),
+	(7, 'Joe', 'joe@gmail.com', '$2y$10$MQR8VNDid1mJI7C3oBqo3eLmkOZvbN1x3loWmFo7fKbrqGelZlpQm', 'user', NULL, NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
