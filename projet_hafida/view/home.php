@@ -70,7 +70,7 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
     <div class="avatar">
       <img src="public\img\maria.jpg" alt="Maria B.">
     </div>
-    <p>"Je suis vraiment satisfaite de mon expérience. Je renouvellerai cette expérience sans hésiter."</p>
+    <p>"Je suis vraiment satisfaite de mon expérience. A refaire sans ausune hésitation."</p>
     <signature>Maria B.</signature>
   </blockquote>
   <blockquote>
