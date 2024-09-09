@@ -55,7 +55,7 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
 </main>
 <?php
 
-// Pagination
+// PAGINATION DE LA LISTE DES ANNONCES
 
 // On définit la page courante
 /*On utilise la fonction isset($_GET['page']) pour vérifier si la page est définie 
