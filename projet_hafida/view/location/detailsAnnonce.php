@@ -69,7 +69,7 @@ $images = $result["data"]['images']; // On récupère les images
    <div class="upload_img">
    <!-- Formulaire pour uploader une nouvelle image -->
    <form action="index.php?ctrl=location&action=uploadImage&id=<?= 
-   $annonce->getLogement()->getId() ?>" method="post" enctype="multipart/form-data">
+   $annonce->getId() ?>" method="post" enctype="multipart/form-data">
             <label for="file">Télécharger une image :</label>
             <input type="file" name="file" accept=".jpg, .png, .jpeg, .webp" required /><!-- Champ de saisie pour le fichier -->
             <button type="submit">Uploader</button><!-- Bouton pour soumettre le formulaire -->

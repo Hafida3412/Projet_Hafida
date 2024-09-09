@@ -359,44 +359,58 @@ return [
     //CREATION DE LA FONCTION UPLOAD IMAGE
    
     public function uploadImage($annonce_id) {
-
-        $ImageManager = new ImageManager();
-        $logementManager = new LogementManager();
-        $logement= $logementManager->findOneById($annonce_id);
-
+        $annonceManager = new AnnonceManager();
+        $imageManager = new ImageManager();
+    
+        // On vérifie que l'annonce existe en récupérant les détails via l'ID
+        $annonce = $annonceManager->findOneById($annonce_id);
+        if (!$annonce) {
+            //Si l'annonce n'est pas trouvée, on ajoute un message d'erreur à la session
+            Session::addFlash("error", "Annonce introuvable.");
+            // On redirige vers la page d'index des annonces
+            $this->redirectTo("location", "index");
+            return;// On termine l'exécution de cette fonction
+        }
+    
+         // On vérifie si un fichier a été soumis
         if (isset($_FILES['file'])) {
-            $tmpName = $_FILES['file']['tmp_name'];
-            $name = $_FILES['file']['name'];
-            $size = $_FILES['file']['size'];
-            $error = $_FILES['file']['error'];
-            $type = $_FILES['file']['type'];
+         // On récupére des informations sur le fichier téléchargé
+            $tmpName = $_FILES['file']['tmp_name']; // Chemin temporaire du fichier
+            $name = $_FILES['file']['name']; // Nom original du fichier
+            $size = $_FILES['file']['size']; // Taille du fichier
+            $error = $_FILES['file']['error']; // Erreur, s'il y en a une
+            $type = $_FILES['file']['type']; // Type MIME du fichier
+
     
-            // Extraction de l'extension
-            $tabExtension = explode('.', $name);
-            $extension = strtolower(end($tabExtension));
+            // Extraction de l'extension du fichier
+            $tabExtension = explode('.', $name);  // Séparation du nom en utilisant le point comme séparateur
+            $extension = strtolower(end($tabExtension)); // Récupérer la dernière partie (extension) et la mettre en minuscules
     
-            // Liste des extensions autorisées
+            // Liste des extensions autorisées pour le téléchargement
             $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png'];
-            $tailleMax = 4000000; // Taille en bytes
+            $tailleMax = 4000000; // // Taille maximale en bytes (4 Mo)
     
-            // Vérification
+            // Vérification des conditions : extension autorisée, taille acceptable, et pas d'erreur
             if (in_array($extension, $extensionsAutorisees) && $size <= $tailleMax && $error == 0) {
+                // Génération d'un nom de fichier unique pour éviter les collisions
                 $uniqueName = uniqid('', true);
-                $fileName = $uniqueName . '.' . $extension;
+                $fileName = $uniqueName . '.' . $extension; // Création du nom de fichier complet
+
     
-                // Déplacement de l'upload
+                // Déplacement du fichier téléchargé vers le répertoire de destination
                 if (move_uploaded_file($tmpName, './public/upload/' . $fileName)) {
-                       
-                    // Insertion dans la base de données
-                    $ImageManager->add([
-                        "nomImage"=> $fileName,
-                        "altImage" => $logement-> getVille(),
-                        "logement_id" => $logement->getId(), // On lie l'image au logement de l'annonce 
+                     // Insertion des informations sur l'image dans la base de données
+                    $imageManager->add([
+                        "nomImage"=> $fileName, // Nom du fichier
+                        "altImage" => $annonce->getLogement()->getVille(), // Texte alternatif, basé sur la ville de logement
+                        "logement_id" => $annonce->getLogement()->getId() // ID du logement associé à l'annonce
                     ]);
                 }
-                $this->redirectTo("location", "detailsAnnonce","$annonce_id");
             }
-           
+        }
+    
+        // Redirect to the details of the uploaded image's advertisement
+        $this->redirectTo("location", "detailsAnnonce", $annonce_id);
     }
-}
+    
 }
