@@ -288,14 +288,14 @@ return [
         if(isset($_POST["submitAvis"])){
             $commentaire = filter_input(INPUT_POST, 'commentaire', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            // On vérifie que le commentaire est présent
+        // On vérifie que le commentaire est présent
             if($commentaire){
-                // On crée une nouvelle instance de AvisManager pour gérer les avis
-                // Récupération des avis
-    $avisManager = new AvisManager();
-    $avis = $avisManager->findAvisByLogement($id); // Assurez-vous que vous récupérez les avis par logement
+        // On crée une nouvelle instance de AvisManager pour gérer les avis
+        // Récupération des avis
+        $avisManager = new AvisManager();
+        $avis = $avisManager->findAvisByLogement($id); // Assurez-vous que vous récupérez les avis par logement
                 
-                // On ajoute l'avis en base de données
+        // On ajoute l'avis en base de données
                 $avisManager->add([
                     "dateAvis" => date("Y-m-d H:i:s"),
                     "commentaire" => $commentaire,
@@ -303,7 +303,7 @@ return [
                     "utilisateur_id" => Session::getUtilisateur()->getId() // Lier l'avis à l'utilisateur connecté
                 ]);
 
-                //On affiche un message pour confirmer que l'avis est enregistré
+        //On affiche un message pour confirmer que l'avis est enregistré
                 Session::addFlash("success", "Votre avis a été enregistré.");
                 $this->redirectTo("location", "index");
             } else {
@@ -377,7 +377,7 @@ return [
     
             // Liste des extensions autorisées
             $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png'];
-            $tailleMax = 3000000; // Taille en bytes
+            $tailleMax = 4000000; // Taille en bytes
     
             // Vérification
             if (in_array($extension, $extensionsAutorisees) && $size <= $tailleMax && $error == 0) {
