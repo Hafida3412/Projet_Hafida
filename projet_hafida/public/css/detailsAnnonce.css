@@ -1,9 +1,11 @@
 /*CSS de la vue detailsAnnonce*/
 
+/* Fond de la vue détails annonce */
 .bg_details{
     background-image: url(../img/oreille.jpg); /* Remplacez par le chemin de votre image */
     background-size: cover; /* Pour couvrir tout le conteneur */
 }
+
 /* Style pour le cadre des informations de l'annonce */
 .annonce-info {
     display: flex;             /* Activer Flexbox */
@@ -34,6 +36,7 @@
     object-fit: cover; /* Rendre l'image cohérente en taille */
 }
 
+/* Style pour le conteneur des images supplémentaires */
 .images img {
     width: auto; /* Laissez la largeur s'ajuster automatiquement */
     height: 200px; /* Définissez une hauteur fixe pour toutes les images */
@@ -41,6 +44,7 @@
     object-fit: cover; /* Remplir le conteneur tout en conservant les proportions */
 }
 
+/* Style pour le conteneur des images supplémentaires */
 .images {
     display: flex; /* Activez Flexbox */
     flex-wrap: wrap; /* Permet aux images de passer à la ligne suivante */
@@ -49,52 +53,57 @@
     height: 200px; /* Hauteur fixe pour le conteneur des images */
 }
 
+/* Style pour l'image active dans le carrousel */
 .images img.active {
     opacity: 1; /* Rendre visible l'image active */
     transform: scale(1.2); /* Zoomer sur l'image active */
 }
 
+/* Style pour le conteneur du carrousel d'images */
 .carousel {
-    position: relative;
-    width: 100%;
-    max-width: 200px; /* Ajustez la largeur selon vos besoins */
-    margin: auto;
-    overflow: hidden;
+    position: relative;/* Position relative pour permettre la position absolue des boutons */
+    width: 100%; /* Largeur à 100% du conteneur parent */
+    max-width: 200px; /* Largeur maximale ajustable pour le carrousel */
+    margin: auto; /* Centrer le carrousel */
+    overflow: hidden; /* Masque les images qui dépassent du conteneur */
 }
 
+/* Style pour chaque diapositive d'image dans le carrousel */
 .image-slide {
-    min-width: 100%;
-    box-sizing: border-box;
+    min-width: 100%; /* Chaque diapositive doit occuper 100% de la largeur du carrousel */
+    box-sizing: border-box; /* Inclure la bordure et le padding dans les dimensions définies */
 }
 
+/* Style pour les images dans le carrousel */
 .carousel-image {
-    width: 100%;
-    height: 200px; /* Conserve le rapport d'aspect de l'image */
+    width: 100%; /* Largeur à 100% pour s'adapter au conteneur */
+    height: 200px; /* Hauteur fixe pour conserver le rapport d'aspect de l'image */
 }
 
+/* Style pour les boutons de navigation (précédent et suivant) */
 .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 2;
+    position: absolute;  /* Positionnement absolu pour les placer par-dessus l'image */
+    top: 50%; /* Placer verticalement au milieu */
+    transform: translateY(-50%); /* Ajuste la position pour un centrage parfait verticalement */
+    background-color: rgba(255, 255, 255, 0.7); /* Couleur de fond avec transparence */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Change le curseur en pointeur sur le survol */
+    padding: 10px; /* Espacement interne du bouton */
+    z-index: 2; /* Assure que les boutons sont au-dessus d'autres éléments */
 }
 
 .prev {
-    left: 10px;
+    left: 10px; /* Positionne le bouton précédent à 10px du bord gauche */
 }
 
 .next {
-    right: 10px;
+    right: 10px; /* Positionne le bouton suivant à 10px du bord droit */
 }
 
+/* Style au survol des boutons de navigation */
 .prev:hover, .next:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 1); /* Augmente l'opacité de fond au survol */
 }
-
 
 /* Style pour le cadre des avis */
 .avis {
