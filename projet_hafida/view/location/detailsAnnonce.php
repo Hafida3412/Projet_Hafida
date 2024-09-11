@@ -33,21 +33,29 @@ $images = $result["data"]['images']; // On récupère les images
 <div class="carousel">
     <div class="carousel-images">
         <?php
-        // On vérifie si des images existent
+        // On vérifie si des images existent dans la variable $images
         if (!empty($images)) {
             // Affichage des images dans le carrousel
+            // Parcours des images à l'aide d'une boucle foreach
             foreach ($images as $index => $image) {
-                $displayStyle = $index === 0 ? 'block' : 'none'; // Afficher la première image
+                // Détermine si l'image actuelle est la première (index 0)
+                $displayStyle = $index === 0 ? 'block' : 'none'; /// Afficher la première image et cacher les autres par défaut
+                
+                // Affiche chaque image dans un div avec la classe 'image-slide'
+                // Utilise la propriété 'style' pour contrôler l'affichage
                 echo '<div class="image-slide" style="display: ' . $displayStyle . ';">
                           <img src="public/upload/' . $image->getNomImage() . '" alt="Image" class="carousel-image">
                       </div>';
             }
         } else {
+            // Si aucune image n'est disponible, afficher un message d'information
             echo '<p>Aucune image disponible pour ce logement.</p>';
         }
         ?>
     </div>
+    <!-- Bouton pour aller à la diapositive précédente -->
     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <!-- Bouton pour aller à la diapositive suivante -->
     <button class="next" onclick="changeSlide(1)">&#10095;</button>
 </div>
 
