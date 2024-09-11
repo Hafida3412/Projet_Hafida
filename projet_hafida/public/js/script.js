@@ -20,30 +20,39 @@ window.onload = function() {
     // Si l'utilisateur a déjà accepté ou refusé, ne rien faire
 };
 
-  //ANIMATION DES IMAGES UPLOADEES DANS DETAILSANNONCE
-  // Index actuel pour l'image affichée
-  let currentIndex = 0;
-  // Sélectionne tous les éléments <img> dans la classe 'images'
-  const images = document.querySelectorAll('.images img');
-  // Nombre total d'images
-  const totalImages = images.length;
 
+let currentSlide = 0;
 
-  // Fonction pour afficher l'image correspondant à l'index donné
-  function showImage(index) {
-      images.forEach((img, i) => {
-          img.classList.remove('active'); // masque toutes les images en retirant la classe 'active'
-          if (i === index) {
-              img.classList.add('active'); // ajoute la classe 'active' uniquement à l'image correspondante à l'index
-          }
-      });
-  }
+function changeSlide(direction) {
+    const slides = document.querySelectorAll('.image-slide');
+    const totalSlides = slides.length;
 
-  // Fonction pour passer à l'image suivante
-  function nextImage() {
-      currentIndex = (currentIndex + 1) % totalImages; //  // Passe à l'image suivante en réinitialisant à 0 si à la fin
-      showImage(currentIndex);// Affiche l'image active mise à jour
-  }
+    // Cacher la diapositive actuelle
+    slides[currentSlide].style.display = 'none';
 
-  setInterval(nextImage, 3000); // Change d'image toutes les 3 secondes
-  showImage(currentIndex); // Affiche la première image au chargement de la page
+    // Calculer la nouvelle diapositive
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+
+    // Afficher la nouvelle diapositive
+    slides[currentSlide].style.display = 'block';
+}
+
+// Code pour changer automatiquement les diapositives en survolant
+const carousel = document.querySelector('.carousel');
+carousel.addEventListener('mouseenter', () => {
+    clearInterval(slideInterval);
+});
+carousel.addEventListener('mouseleave', () => {
+    startSlideShow();
+});
+
+// Fonction pour démarrer le diaporama
+let slideInterval; 
+function startSlideShow() {
+    slideInterval = setInterval(() => {
+        changeSlide(1);
+    }, 3000); // changement toutes les 3 secondes
+}
+
+// Démarrer le diaporama automatique
+startSlideShow();

@@ -27,18 +27,18 @@
 
 /* Style pour les images dans le cadre des informations de l'annonce */
 .annonce-info img {
-    display: block;          /* Pour que l'image soit un bloc */
-    margin: 0 auto;        /* Pour centrer l'image horizontalement */
-    max-width: 80%;       /* Pour ne pas dépasser la largeur du conteneur */
-    height: auto;          /* Pour conserver le ratio */
-    object-fit: contain;   /* Ajuste l'image sans la déformer */
+    display: block; /* Pour que l'image soit un bloc */
+    margin: 0 auto; /* Pour centrer l'image horizontalement */
+    width: 100%; /* Utilisez 100% pour remplir le conteneur */
+    height: 100px; /* Hauteur fixe pour uniformiser */
+    object-fit: cover; /* Rendre l'image cohérente en taille */
 }
 
 .images img {
-    width: 20%; /* Ajuster pour remplir le conteneur */
-    height: auto; /* Maintenir le ratio */
-    max-height: 200px; /* Limiter la hauteur maximale */
-    object-fit: cover; /* Couvrir le conteneur sans déformation */
+    width: auto; /* Laissez la largeur s'ajuster automatiquement */
+    height: 200px; /* Définissez une hauteur fixe pour toutes les images */
+    max-height: 200px; /* Optionnel, mais pour assurer la contrainte maximale */
+    object-fit: cover; /* Remplir le conteneur tout en conservant les proportions */
 }
 
 .images {
@@ -49,10 +49,50 @@
     height: 200px; /* Hauteur fixe pour le conteneur des images */
 }
 
-
 .images img.active {
     opacity: 1; /* Rendre visible l'image active */
     transform: scale(1.2); /* Zoomer sur l'image active */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 200px; /* Ajustez la largeur selon vos besoins */
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 200px; /* Conserve le rapport d'aspect de l'image */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 

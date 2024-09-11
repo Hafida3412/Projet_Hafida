@@ -30,21 +30,27 @@ $images = $result["data"]['images']; // On récupère les images
     class="annonce-info-img">
 </div>
  
-<div class="images">
-    <h3></h3><br>
-    <?php
+<div class="carousel">
+    <div class="carousel-images">
+        <?php
         // On vérifie si des images existent
         if (!empty($images)) {
-            // Si des images existent, on les affiche
-            foreach ($images as $image) {
-                // Affichage des images
-                echo '<img src="public/upload/' . $image->getNomImage() . '" width="200px"><br>';
+            // Affichage des images dans le carrousel
+            foreach ($images as $index => $image) {
+                $displayStyle = $index === 0 ? 'block' : 'none'; // Afficher la première image
+                echo '<div class="image-slide" style="display: ' . $displayStyle . ';">
+                          <img src="public/upload/' . $image->getNomImage() . '" alt="Image" class="carousel-image">
+                      </div>';
             }
         } else {
             echo '<p>Aucune image disponible pour ce logement.</p>';
         }
-    ?>
+        ?>
+    </div>
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
 </div>
+
 
 <div class="avis">
     <strong><p>Avis:</strong>
