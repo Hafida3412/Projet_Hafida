@@ -32,7 +32,7 @@
     display: block; /* Pour que l'image soit un bloc */
     margin: 0 auto; /* Pour centrer l'image horizontalement */
     width: 100%; /* Utilisez 100% pour remplir le conteneur */
-    height: 100px; /* Hauteur fixe pour uniformiser */
+    height: auto; /* Hauteur fixe pour uniformiser */
     object-fit: cover; /* Rendre l'image cohérente en taille */
 }
 
