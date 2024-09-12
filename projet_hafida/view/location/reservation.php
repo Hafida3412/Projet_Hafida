@@ -4,7 +4,7 @@
 <div class="bg_reservation">
 <h1>Réservation</h1>
 
-<form action="index.php?ctrl=reservations&action=reservation" method="post">
+<form action="index.php?ctrl=reservations&action=reservation$id=<?= $annonceId?>" method="post">
 
     <label for="numeroTelephone">Numéro de téléphone</label>
     <input type="text" name="numeroTelephone" id="numeroTelephone"><br>
@@ -26,8 +26,8 @@
     <label for="question">Avez-vous une demande particulière?</label>
     <textarea name="question" rows="4" cols="50"></textarea><br>
 
-    <label for="annonce">ID de l'annonce: </label>
-    <input type="number" name="annonce" value="number"><br>
+    <!-- <label for="annonce">ID de l'annonce: </label>
+    <input type="number" name="annonce" value="number"><br> -->
     
     <input type="submit" name="submitReservation" value="Réserver">
 

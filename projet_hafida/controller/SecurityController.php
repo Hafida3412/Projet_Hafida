@@ -56,7 +56,7 @@ class SecurityController extends AbstractController{
     }
             } 
         return [
-                 "view" => VIEW_DIR . "connexion/register.php",
+                 "view" => VIEW_DIR . "connexion/login.php",
                  "meta_description" => "Formulaire d'inscription"
             ];
      }  
