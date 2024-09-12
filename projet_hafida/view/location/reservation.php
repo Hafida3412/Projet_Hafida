@@ -4,7 +4,7 @@
 <div class="bg_reservation">
 <h1>Réservation</h1>
 
-<form action="index.php?ctrl=reservations&action=reservation$id=<?= $annonceId?>" method="post">
+<form action="index.php?ctrl=reservations&action=reservation$id=<?= $annonce_id?>" method="post">
 
     <label for="numeroTelephone">Numéro de téléphone</label>
     <input type="text" name="numeroTelephone" id="numeroTelephone"><br>

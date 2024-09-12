@@ -11,17 +11,21 @@ class ReservationsController extends AbstractController implements ControllerInt
 //CREATION DE LA FONCTION RESERVATION
     public function reservation($idReserv){
 
-       // $idReserv = $_GET['id'];
+        $annonceManager = new AnnonceManager();   
+        $annonce= $annonceManager->findOneById($idReserv);
+
+        $idReserv = $_GET['id'];
         // On vérifie que l'utilisateur est connecté
         if (!Session::getUtilisateur()) {
-            // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
+            //Redirection vers la page de connexion si l'utilisateur n'est pas connecté
             $this->redirectTo("connexion", "login");
             return;
-        }
+     }
 
         if(isset($_POST["submitReservation"])){
             $annonceId = $_POST["annonce"];
         
+            
             var_dump($annonceId);
             die();
             // On vérifie si l'annonce est déjà réservée
@@ -41,11 +45,11 @@ class ReservationsController extends AbstractController implements ControllerInt
             $nbEnfants = filter_input(INPUT_POST, "nbEnfants", FILTER_VALIDATE_INT);
             $paiement = filter_input(INPUT_POST, "paiement", FILTER_SANITIZE_SPECIAL_CHARS);
             $question = filter_input(INPUT_POST, "question", FILTER_SANITIZE_SPECIAL_CHARS);
-           // $idReserv = filter_input(INPUT_POST, "annonce", FILTER_VALIDATE_INT);
+            $idReserv = filter_input(INPUT_GET,"annonce_id", FILTER_VALIDATE_INT);
             $valide = 1; // Réservation validée
         
             // Vérification des données
-            if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement && $idReserv !== false) {
+            if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement) {
                 // Enregistrement des informations de la réservation dans la base de données
                 $reserverManager = new ReserverManager();
                 $reserverManager->add([
@@ -55,7 +59,7 @@ class ReservationsController extends AbstractController implements ControllerInt
                     "paiement" => $paiement,
                     "question" => $question,
                     "valide" => $valide,
-                   // "annonce_id" => $idReserv,
+                    "annonce_id" => $idReserv,
                     "utilisateur_id" => Session::getUtilisateur()->getId()
                 ]);
         
@@ -69,8 +73,11 @@ class ReservationsController extends AbstractController implements ControllerInt
         
         return [
             "view" => VIEW_DIR . "location/reservation.php",
-            "meta_description" => "Formulaire de réservation"
-        ];   
+            "meta_description" => "Formulaire de réservation",
+            "data" => [
+            "annonce_id" => $idReserv,
+        ]
+            ];  
     }
 
     //FONCTION CONFIRMATION
