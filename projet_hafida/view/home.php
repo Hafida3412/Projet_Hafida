@@ -5,11 +5,11 @@
     <h1 class="welcome-title">BIENVENUE CHEZ MON CHAT</h1>
     <p class="welcome-text">Sur notre site chez mon chat, vous pouvez trouver des 
       propriétaires de félins qui cherchent quelqu'un pour s'occuper de leur animal 
-      pendant leur absence. 
+      pendant leur absence. <br>
       Cela vous permet de profiter de vacances à moindre coût en échange de quelques 
-      attentions pour leur chat. 
+      attentions pour leur chat. <br>
       N'hésitez pas à consulter les annonces disponibles et à contacter les propriétaires 
-      pour organiser cette garde temporaire. 
+      pour organiser cette garde temporaire. <br>
       Bonnes vacances à vous !</p>
     <br>
   </div>
@@ -30,20 +30,16 @@
 </section>
 
 <section class="concept">
-<br>
-<br>
-<br>
-<br>
-<br>
-<p><strong><span style="font-size: 30px;">Le concept ?</span></strong> <br><br>
-Un pet-sitter vient résider chez vous et s'occupe de votre chat en votre absence.<br>
-Le home-sitting séduit de plus en plus de propriétaires de chats,<br> 
-offrant ainsi une solution moderne pour allier le bien-être de l'animal et des vacances économiques.</br>
+
+<p><strong><span style="font-size: 30px;">Le concept ?</span></strong> <br> <br>
+Un pet-sitter vient résider chez vous et s'occupe de votre chat en votre absence. Le<br><br>
+home-sitting séduit de plus en plus de propriétaires de chats, offrant ainsi une solution<br> <br>
+moderne pour allier le bien-être de l'animal et des vacances économiques.</br>
 </p></section>
 
 <section class="explications">
   <div class="benefice1">
-    <h2>Pourquoi opter pour le home-sitting pour votre chat:</h2>
+    <h2>Pourquoi opter pour le home-sitting pour votre chat</h2>
     <ul>
       <li>Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
       <li>Bénéficie d'une présence rassurante et constante à la maison</li>
@@ -53,7 +49,7 @@ offrant ainsi une solution moderne pour allier le bien-être de l'animal et des 
   </div>
   
   <div class="benefice2">
-    <h2>Les avantages du home-sitting pour vous:</h2>
+    <h2>Les avantages du home-sitting pour vous</h2>
     <ul>
       <li>Garde à domicile</li>
       <li>Sérénité de confier votre chat et votre maison à une personne de confiance</li>

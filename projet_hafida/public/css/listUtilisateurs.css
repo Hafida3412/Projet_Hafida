@@ -5,11 +5,13 @@ table {
     width: 100%; /* Prend toute la largeur disponible */
     border-collapse: collapse; /* Efface les espaces entre les bordures des cellules */
     margin-top: 20px; /* Marge supérieure pour espacer du contenu précédent */
+    max-width: 1500px; 
+    margin: 0 auto; /* Centre la section horizontalement */
 }
 
 /* En-tête du tableau */
 th {
-    background-color:#337ab7; /* Couleur de fond de l'en-tête */
+    background-color: #6b2c1a;; /* Couleur de fond de l'en-tête */
     color: white; /* Couleur du texte dans l'en-tête */
     text-align: left; /* Alignement à gauche */
     padding: 12px; /* Espacement interne */

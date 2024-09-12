@@ -30,7 +30,7 @@ form textarea {
 }
 
 form input[type="submit"] { 
-    background-color: #337ab7; /* couleur de fond du bouton de soumission */ 
+    background-color: #330802; /* couleur de fond du bouton de soumission */ 
     color: #fff; /* couleur de texte du bouton de soumission */ 
     padding: 10px; /* espacement interne du bouton de soumission */ 
     border: none; /*pas de bordure sur le bouton de soumission */ 
@@ -40,5 +40,5 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover { 
-    background-color: #23527c; /* couleur de fond du bouton de soumission au survol */ 
+    background-color: #6b2c1a; /* couleur de fond du bouton de soumission au survol */ 
 }

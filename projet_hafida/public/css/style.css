@@ -26,24 +26,25 @@ body {
   }
   
   a {
-    color: #337ab7; /* couleur de lien bleu */
+    color: #6B2C1A; /* couleur de lien bleu */
     text-decoration: none;
   }
   
   a:hover {
-    color: #23527c; /* couleur de lien survolée */
+    color: #f0b85f;; /* couleur de lien survolée */
   }
   
   h1 {
-    color: #23527c; /* couleur de titre */
+    color: #6B2C1A; /* couleur de titre */
     margin-top: 10px;
     margin-bottom:10px;
     text-align: center;
   }
   
   h2, h3, h4, h5, h6 {
-    color: #333; /* couleur de titre sombre */
+    color:#6B2C1A; /* couleur de titre sombre */
     margin-bottom: 10px;
+    font-size: 30px;
   }
   
 /* Navbar */
@@ -77,7 +78,7 @@ body {
     }
 
   nav a:hover {
-    background-color: #23527c; /* couleur de fond au survol */
+    background-color: #6B2C1A; /* couleur de fond au survol */
     transform: translateY(4px); /* déplace légèrement vers le bas pour simuler un appui */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ajout d'une ombre portée pour l'effet de profondeur */
     color: white; /* couleur de texte blanche au survol */
@@ -108,12 +109,11 @@ body {
 /* Footer */
   footer {
     margin-top: 20px;
-    background-color: #223354; /* couleur de fond du pied de page plus foncée */
+    background-color: #330802; /* couleur de fond du pied de page plus foncée */
     color: #fff; /* couleur de texte du pied de page */
     padding: 10px;
     text-align: center;
-    clear: both;
-}
+  }
 
 footer a {
     color: #fff;

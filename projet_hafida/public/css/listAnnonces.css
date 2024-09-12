@@ -46,7 +46,8 @@
 
 /* Style pour le bouton de suppression */
 button.btn-delete {
-    background-color: #337ab7; /* couleur de fond du bouton */
+    background-color: #330802;
+     /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
@@ -59,5 +60,5 @@ button.btn-delete {
     
 /* Style pour le bouton de suppression au survol */
 button.btn-delete:hover {
-    background-color:  #23527c; /* couleur de fond du bouton au survol */
+    background-color:   #6b2c1a; /* couleur de fond du bouton au survol */
 }

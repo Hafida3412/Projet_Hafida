@@ -133,7 +133,7 @@
 
 /* Style pour le bouton "réserver" dans le cadre des informations de l'annonce */
 button.annonce-info{
-    background-color:#337ab7; /* couleur de fond du bouton */
+    background-color:#330802; /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
@@ -146,5 +146,5 @@ button.annonce-info{
 
 /* Style pour le bouton "réserver" dans le cadre des informations de l'annonce au survol */
 button.annonce-info:hover {
-    background-color: #23527c;; /* couleur de fond du bouton au survol */
+    background-color: #6b2c1a; /* couleur de fond du bouton au survol */
 }

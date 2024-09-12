@@ -5,15 +5,27 @@
 .parallax{
   background-image: url(../img/chatdodo.jpg);
   background-size: 100%;
+  max-width: 1500px; 
+  margin: 0 auto; /* Centre la section horizontalement */
+  
 }
 
+/* Style pour centrer le contenu et limiter la largeur des sections */
+section {
+  max-width: 1500px; 
+  margin: 0 auto; /* Centre la section horizontalement */
+  padding: 20px; /* Ajoute un espacement interne */
+}
 .content{
+  max-width: 1500px; 
+  margin: 0 auto; /* Centre la section horizontalement */
+  padding: 20px; /* Ajoute un espacement interne */
   text-align: center;
   padding: 50px;
   color: white;
   background-color: rgba(0,0,0,0.5);
-  position: relative; /* Changer position en relative pour que le contenu soit positionné par rapport au container */
-  z-index: 1; /* Mettre le contenu devant l'image de fond */
+  position: relative; 
+  z-index: 1; 
 }
 
 /* Style du titre de bienvenue */
@@ -55,14 +67,13 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
-  padding: 50px;
 }
 
 .avantages h2{
   text-align: center;
   font-size: 30px;
   margin-bottom: 30px;
-  color: #23527c;
+  color: #6B2C1A
 }
 
 .avantages ul{
@@ -73,7 +84,7 @@
 
 .avantages li{
   display: flex;
-  background-color: #1294b8;
+  background-color: #6B2C1A ;
   color: white;
   border-radius: 10px;
   padding: 50px;
@@ -81,8 +92,9 @@
   transition: 0.5s;
   margin: 20px;
   flex-direction: column;
-  width: 300px; /*ajout de cette ligne pour agrandir les cartes*/
+  width: 300px; 
   font-size: 20px;
+  font-style: bold;
 }
 
 .avantages li:hover{
@@ -92,6 +104,7 @@
 .avantages i{
   font-size: 50px;
   margin-bottom: 10px;
+  color:white;
 }
 
 .parallax-image{
@@ -119,7 +132,6 @@
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
 }
 
 .temoignages h2 {
@@ -128,13 +140,13 @@
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #23527c;
+  color: #6B2C1A;
 }
 
 .temoignages blockquote {
-  display: flex; /* Utiliser flexbox pour l'alignement */
-  align-items: center; /* Aligner les items centrés verticalement */
-  background-color: #f7f7f7;
+  display: flex; 
+  align-items: center; 
+  background-color: #CCC4B8;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -158,7 +170,7 @@
 
 .temoignages signature {
   font-size: 16px;
-  color: #999;
+  color: #3b3b3b;
   font-style: italic;
   margin-top: 5px; /* Ajouter une petite marge au-dessus de la signature */
 }
@@ -171,8 +183,8 @@
   color: black;
   padding: 150px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
   filter: grayscale(150%); /* Rend l'image en noir et blanc */
   transition: filter 0.5s; /* Ajoute une transition pour un changement progressif */
   margin-top: 40px; /* Ajouter une marge supérieure pour espacer la section concept */
@@ -193,7 +205,7 @@
 }
   
 .benefice1, .benefice2 {
-  width: 45%;
+  width: 35%;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   padding: 20px;
