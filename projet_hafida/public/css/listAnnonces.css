@@ -35,6 +35,7 @@
 
 /* Style pour le paragraphe dans les annonces */
 .annonce p {
+    font-family: 'Open Sans', sans-serif; /* police par défaut */
     font-size: 18px; /* taille de la police du texte de l'annonce */
     line-height: 1.5; /* hauteur de ligne du texte de l'annonce */
 }
@@ -46,7 +47,7 @@
 
 /* Style pour le bouton de suppression */
 button.btn-delete {
-    background-color: #330802;
+    background-color: #6b2c1a;
      /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
@@ -60,5 +61,5 @@ button.btn-delete {
     
 /* Style pour le bouton de suppression au survol */
 button.btn-delete:hover {
-    background-color:   #6b2c1a; /* couleur de fond du bouton au survol */
+    background-color:   #f0b85f; /* couleur de fond du bouton au survol */
 }
