@@ -42,7 +42,15 @@ body {
     margin-bottom:10px;
     text-align: center;
   }
-  
+   
+  /* Supprimer les hauteurs différentes pour h2 dans les sections */
+  .avantages h2, 
+  .concept h2, 
+  .temoignages h2, 
+  .explications .benefice1 h2, 
+  .explications .benefice2 h2 {
+    font-size: 30px; /* Assurez-vous que tous les h2 sont à la même taille */
+  }
   h2, h3, h4, h5, h6 {
     font-family: 'Cormorant', serif; /* police Cormorant pour H1 */
     color:#6B2C1A; /* couleur de titre sombre */

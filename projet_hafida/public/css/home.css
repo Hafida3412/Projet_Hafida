@@ -132,86 +132,100 @@ section {
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;         
+  flex-direction: column; /* Change to column to stack items */
+  align-items: center;     /* Center align */
 }
 
-.temoignages h2 {
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #6B2C1A;
+.temoignages-container {
+  display: flex;            /* Activate flexbox for testimonials */
+  flex-wrap: wrap;         /* Allow items to wrap */
+  justify-content: center;  /* Center align items */
+  gap: 20px;               /* Add space between items */
 }
 
 .temoignages blockquote {
-  display: flex; 
-  align-items: center; 
+  flex: 1 0 300px;        /* Allow flexibility with a minimum width */
+  margin: 10px;          /* Add margin for spacing */
   background-color: #CCC4B8;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  text-align: center; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
 }
 
 .temoignages blockquote .avatar {
-  margin-right: 20px; /* Ajouter un espace entre l'avatar et le texte */
+  margin-bottom: 10px; 
 }
 
 .temoignages blockquote .avatar img {
-  width: 60px; /* Largeur de l'image */
-  height: 60px; /* Hauteur de l'image */
-  border-radius: 50%; /* Bord arrondi pour l'effet circulaire */
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
 }
 
 .temoignages blockquote p {
   font-size: 18px;
   color: #666;
-  margin: 0; /* Supprimer la marge par défaut du paragraphe */
+  margin: 0; 
 }
 
 .temoignages signature {
   font-size: 16px;
   color: #3b3b3b;
   font-style: italic;
-  margin-top: 5px; /* Ajouter une petite marge au-dessus de la signature */
+  margin-top: 10px; 
 }
+
+
 
 .concept {
   background-image: url("../img/catwhite.jpg");
   background-size: cover;
   background-position: center;
-  text-align: center;
+  text-align: left; /* Aligne le texte à gauche */
   color: black;
-  padding: 150px;
+  padding: 150px; /* Ajustez si nécessaire */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  filter: grayscale(150%); /* Rend l'image en noir et blanc */
-  transition: filter 0.5s; /* Ajoute une transition pour un changement progressif */
-  margin-top: 40px; /* Ajouter une marge supérieure pour espacer la section concept */
+  filter: grayscale(150%);
+  transition: filter 0.5s;
+  margin-top: 40px;
+  position: relative; /* Permet le positionnement absolu d'éléments enfants */
 }
 
 .concept:hover {
-  filter: grayscale(0%); /* Passe l'image en couleur au survol */
+  filter: grayscale(0%);
 }
 
-.concept p{ 
+.concept-text {
+  max-width: 400px; /* Ajuster la largeur du texte selon vos besoins */
+  margin-left: 20px; /* Espacement à gauche */
+  z-index: 1; /* S'assure que le texte est au-dessus de l'image */
+}
+
+.concept p { 
   font-size: 20px; 
 }
+
 
 .explications {
   display: flex;
   justify-content: space-around;
   margin: 50px auto;
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si nécessaire */
 }
-  
+
 .benefice1, .benefice2 {
-  width: 35%;
+  width: 40%; /* Réduire la largeur de chaque carte */
+  padding: 15px; /* Réduire le padding pour compacter la carte */
+  font-size: 18px; /* Ajuster la taille de la police */
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 20px;
   text-align: center;
-  font-size: 20px;
-  transition: transform 0.3s ease; /* Ajout de la transition pour le zoom */
+  transition: transform 0.3s ease;
+  border-radius: 10px;
 }
 
 .benefice1:hover, .benefice2:hover {
@@ -224,8 +238,8 @@ section {
 }
 
 .benefice1 img, .benefice2 img {
-  width: 100%;
-  margin-top: 20px;
+  width: 80%; /* Ajuster la taille de l'image */
+  margin-top: 10px; /* Réduire la marge supérieure des images */
 }
 
 /* Styles pour le bouton de défilement vers le haut */

@@ -30,12 +30,15 @@
 </section>
 
 <section class="concept">
-
-<p><strong><span style="font-size: 30px;">Le concept ?</span></strong> <br> <br>
-Un pet-sitter vient résider chez vous et s'occupe de votre chat en votre absence. Le<br><br>
-home-sitting séduit de plus en plus de propriétaires de chats, offrant ainsi une solution<br> <br>
-moderne pour allier le bien-être de l'animal et des vacances économiques.</br>
-</p></section>
+  <div class="concept-text">
+    <h2>Le concept ?</h2>
+    <p>
+      Un pet-sitter vient résider chez vous et s'occupe de votre chat en votre absence. 
+      Le home-sitting séduit de plus en plus de propriétaires de chats, offrant ainsi 
+      une solution moderne pour allier le bien-être de l'animal et des vacances économiques.
+    </p>
+  </div>
+</section>
 
 <section class="explications">
   <div class="benefice1">
@@ -62,21 +65,32 @@ moderne pour allier le bien-être de l'animal et des vacances économiques.</br>
 
 <section class="temoignages">
   <h2>Ce que nos utilisateurs disent de nous</h2>
-  <blockquote>
-    <div class="avatar">
-      <img src="public\img\maria.jpg" alt="Maria B.">
-    </div>
-    <p>"Je suis vraiment satisfaite de mon expérience. A refaire sans ausune hésitation."</p>
-    <signature>Maria B.</signature>
-  </blockquote>
-  <blockquote>
-    <div class="avatar">
-      <img src="public\img\ali.jpg" alt="Ali E.">
-    </div>
-    <p>"Je recommande ce site à tous les propriétaires de félins qui cherchent quelqu'un pour s'occuper de leur animal."</p>
-    <signature>Ali E.</signature>
-  </blockquote>
+  <div class="temoignages-container">
+    <blockquote>
+      <div class="avatar">
+        <img src="public/img/maria.jpg" alt="Maria B.">
+      </div>
+      <p>"Je suis vraiment satisfaite de mon expérience. A renouveler sans aucune hésitation."</p>
+      <signature>Maria B.</signature>
+    </blockquote>
+    <blockquote>
+      <div class="avatar">
+        <img src="public/img/ali.jpg" alt="Ali E.">
+      </div>
+      <p>"Je recommande ce site à tous les propriétaires de félins qui cherchent quelqu'un pour s'occuper de leur animal."</p>
+      <signature>Ali E.</signature>
+    </blockquote>
+    <blockquote>
+      <div class="avatar">
+        <img src="public/img/chloe.jpg" alt="Chloé P.">
+      </div>
+      <p>"Une expérience formidable ! Mon chat a été traité comme un roi."</p>
+      <signature>Chloé P.</signature>
+    </blockquote>
+  </div>
+  </div>
 </section>
+
 
 <!--BOUTON SCROLL TO TOP-->
 <div id="scrollUp">
