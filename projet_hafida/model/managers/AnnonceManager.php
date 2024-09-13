@@ -67,14 +67,11 @@ class AnnonceManager extends Manager{
 
     // On ajoute cette méthode pour mettre à jour le statut de l'annonce
     public function updateDisponibilite($annonceId){
-        $sql = "UPDATE ".$this->tableName.
-        " SET estValide= 1 
-        WHERE id_annonce = :id";//requête pour verrouiller l'annonce réservée
-        return  $this->getOneOrNullResult(
-            DAO::update($sql, ['id' => $annonceId]),//on précise "update"
-            $this->className
-        );
-    }
+        $sql = "UPDATE ".$this->tableName."
+        SET estValide = 1 
+        WHERE id_annonce = :id"; 
+    return DAO::update($sql, ['id' => $annonceId]);
+}
 
     //On vérifie si l'annonce est réservée en vérifiant si la colonne "estValide" est égale à 1
     //pour l'annonce sélectionnée

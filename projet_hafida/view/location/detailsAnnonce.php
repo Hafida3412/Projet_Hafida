@@ -97,8 +97,8 @@ $utilisateurConnecte = App\Session::getUtilisateur();
 if ($utilisateurConnecte && $annonce->getUtilisateur()->getId() != $utilisateurConnecte->getId()) {
     // Création du bouton réserver qui fait le lien avec le formulaire de réservation
     ?>
-    <a href="index.php?ctrl=reservations&action=reservation&id=<?= $annonce->getId() ?>">
-        <button class="annonce-info" type="button">Réserver</button>
+    <a href="index.php?ctrl=reservations&action=reservation&annonceId=<?= $annonce->getId() ?>">
+<button class="annonce-info" type="button">Réserver</button>
     </a>
     <br> </div>
     <?php   
