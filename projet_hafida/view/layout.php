@@ -92,8 +92,34 @@
                 </main>
             </div>
             <footer class="footer">
-                <p>&copy; <?= date_create("now")->format("Y") ?> - <a href="index.php?ctrl=location&action=reglement">Règlement de notre site</a> - <a href="index.php?ctrl=location&action=mentionsLegales">Mentions légales</a> - <a href="index.php?ctrl=location&action=FAQ">FAQ</a> - <a href="index.php?ctrl=location&action=contact">Nous contacter</a></p>
-            </footer>
+    <div class="footer-content">
+        <div class="newsletter">
+            <h4>Inscrivez-vous à notre newsletter</h4>
+            <form action="#" method="POST">
+                <input type="email" placeholder="Votre email" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+        <div class="social-media">
+            <h4>Suivez-nous</h4>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="footer-links">
+        <p>&copy; <?= date_create("now")->format("Y") ?> - 
+            <a href="index.php?ctrl=location&action=reglement">Règlement de notre site</a> - 
+            <a href="index.php?ctrl=location&action=mentionsLegales">Mentions légales</a> - 
+            <a href="index.php?ctrl=location&action=FAQ">FAQ</a> - 
+            <a href="index.php?ctrl=location&action=contact">Nous contacter</a>
+        </p>
+    </div>
+</footer>
+
+
+
         </div>
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"

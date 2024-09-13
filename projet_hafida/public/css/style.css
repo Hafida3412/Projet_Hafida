@@ -118,21 +118,97 @@ body {
 
 
 /* Footer */
-  footer {
-    margin-top: 20px;
-    background-color: #333; /* couleur de fond du pied de page plus foncée */
-    color: #fff; /* couleur de texte du pied de page */
-    padding: 10px;
-    text-align: center;
-  }
-
-footer a {
-    color: #fff;
+.footer {
+  margin-top: 20px;
+  background-color: #330802; 
+  color: #fff; 
+  padding: 20px; /* Augmentation de l'espacement interne */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-footer a:hover {
-    color: #ccc4b8; /* couleur de lien survolée plus lisible */
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Espace entre le formulaire et les réseaux sociaux */
+  width: 100%; /* Prendre toute la largeur disponible */
+  max-width: 1200px; /* Limite la largeur maximale */
+  margin-bottom: 20px; /* Espace entre le contenu et les liens en bas */
 }
+
+.newsletter {
+    flex: 1;
+    margin-right: 200px; /* Réduction de l'espacement à droite pour déplacer le formulaire plus à gauche */
+}
+
+.newsletter form {
+  width:300px;
+  height: auto;
+}
+
+.newsletter h4, .social-media h4, .footer-links p {
+  color: #fff; /* Mettre les titres et le texte du footer en blanc */
+}
+
+/* Styles spécifiques pour le formulaire de souscription à la newsletter */
+.newsletter input[type="email"] {
+  padding: 10px;
+  margin-right: 10px; /* Espacement à droite */
+  border: none; 
+  border-radius: 5px; 
+  background-color: white; /* Fond blanc */
+  color: black; /* Texte en noir */
+  border: solid 2px;
+  width: 90%; /* Augmentez la largeur à 70% */
+}
+
+.newsletter button {
+  padding: 10px; 
+  background-color: #f0b85f; /* Couleur personnalisée pour le bouton */
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.newsletter button:hover {
+  background-color: #6B2C1A; /* Couleur changée au survol */
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  margin-right: 190px; /* Réduction de l'espacement à gauche pour déplacer les icônes plus à gauche */
+}
+
+.social-media a {
+  color: #fff; 
+  margin: 0 10px; /* Espacement entre les icônes */
+  font-size: 20px; /* Taille des icônes */
+  transition: color 0.3s ease; /* Animation pour le changement de couleur */
+}
+
+.social-media a:hover {
+  color: #f0b85f; /* Couleur des icônes au survol */
+}
+
+.footer-links {
+  text-align: center; /* Centrer les liens */
+  margin-top: 20px; /* Espacement entre les sections et les liens */
+}
+.footer-text {
+  color: white; /* Définit la couleur du texte en blanc */
+}
+
+/* Changement de couleur au survol pour les liens dans le footer */
+.footer-links a {
+  color: white; /* Définit la couleur des liens en blanc */
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Ajoute une décoration au survol (facultatif) */
+  color: #f0b85f; /* Changement de couleur au survol */
+}
+
 
 /* Style du popup de cookie */ 
 #cookie-popup {
