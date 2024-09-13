@@ -43,7 +43,9 @@
                 <header>
                     <nav>
                     <div id="nav-left" class="full-width">
-                        <img src="public\img\logo.png" alt="Logo">
+                    <a href="index.php?ctrl=home&action=view">
+                <img src="public/img/logo.png" alt="Logo">
+            </a>
                     <div id="nav-right">
                         <?php
                         // Si l'utilisateur est connecté
@@ -117,9 +119,6 @@
         </p>
     </div>
 </footer>
-
-
-
         </div>
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
