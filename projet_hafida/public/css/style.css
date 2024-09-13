@@ -31,7 +31,7 @@ body {
   }
   
   a:hover {
-    color: #f0b85f;; /* couleur de lien survolée */
+    color: #f0b85f; /* couleur de lien survolée */
   }
   
   h1 {
@@ -109,7 +109,7 @@ body {
 /* Footer */
   footer {
     margin-top: 20px;
-    background-color: #330802; /* couleur de fond du pied de page plus foncée */
+    background-color: #333; /* couleur de fond du pied de page plus foncée */
     color: #fff; /* couleur de texte du pied de page */
     padding: 10px;
     text-align: center;
