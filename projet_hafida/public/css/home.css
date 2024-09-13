@@ -66,7 +66,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
 }
 
 .avantages h2{
@@ -107,6 +106,57 @@ section {
   color:white;
 }
 
+.attraction {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9; /* Couleur de fond de la section */
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd; /* Bordure des cartes */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 20px;
+  width: 40%; /* Largeur de chaque carte */
+  height: 350px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre des cartes */
+  transition: transform 0.2s; /* Transition pour l'effet de survol */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Effet de survol */
+}
+
+.card h3 {
+  margin-bottom: 15px; /* Marge entre le titre et le contenu */
+}
+
+.card p {
+  margin-bottom: 20px; /* Marge entre la description et le bouton */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6B2C1A  ; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  text-decoration: none; /* Pas de souligné sur le lien */
+  border-radius: 5px; /* Coins arrondis du bouton */
+  transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+.button:hover {
+  background-color:  #f0b85f; /* Couleur légèrement transparente */
+  color: #6B2C1A; /* Couleur du texte au survol */
+}
+
 .parallax-image{
   /* The image used */
   background-image: url("../img/pattemain.jpg");
@@ -123,7 +173,7 @@ section {
   color: white; 
   font-size: 36px;
   text-align: center; 
-  padding: 50px; 
+  padding: 150px;
   
 } 
 
