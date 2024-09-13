@@ -1,12 +1,10 @@
 /* Style pour les annonces */
 
-header {
-    background-color: #333; /* Couleur de fond sombre pour l'en-tête */
-    color: #fff; /* Couleur du texte blanche */
-    padding: 1rem;
-    text-align: center;
-  }
-  
+.bg-annonces {
+    background-image: url(../img/chat_canape.jpg);
+    background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
+    
+}
 /* Style pour le conteneur des annonces */
 .annonce-container {
     display: flex; /* Utilise flexbox pour centrer les éléments */
@@ -14,13 +12,9 @@ header {
     flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
     margin: 0 auto; /* Centre le conteneur */
     max-width: 1200px; /* Largeur maximum du conteneur */
+  
 }
 
-.bg-annonces {
-    background-image: url(../img/chat_canape.jpg);
-    background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
-    
-}
 .annonce {
     background-color: #fff; /* couleur de fond du cadre de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
@@ -52,7 +46,7 @@ header {
 
 /* Style pour le bouton de suppression */
 button.btn-delete {
-    background-color:#6B2C1A ;
+    background-color: #330802;
      /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
@@ -66,5 +60,5 @@ button.btn-delete {
     
 /* Style pour le bouton de suppression au survol */
 button.btn-delete:hover {
-    background-color:  #f0b85f /* couleur de fond du bouton au survol */
+    background-color:   #6b2c1a; /* couleur de fond du bouton au survol */
 }
