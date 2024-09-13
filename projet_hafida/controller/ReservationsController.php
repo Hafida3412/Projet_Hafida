@@ -56,7 +56,7 @@ return;
   if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
         //Enregistrement des informations de la réservation dans la base de données
         $reserverManager = new ReserverManager();
-        $reserverManager->add([
+        $result= $reserverManager->add([
             "numeroTelephone" => $numeroTelephone,
             "nbAdultes" => $nbAdultes,
             "nbEnfants" => $nbEnfants,
@@ -68,11 +68,13 @@ return;
         ]);
        //var_dump($result);die;
         // Mise à jour du statut de l'annonce pour indiquer qu'elle est fermée
-        $annonceManager->updateDisponibilite($annonceId);
+            $annonceManager->updateDisponibilite($annonceId);
+            // Ajout d'un message de confirmation pour l'utilisateur
+            Session::addFlash("success", "Votre réservation a été effectuée avec succès.");
 
-        // Redirection vers la confirmation de réservation
-        $this->redirectTo("location", "confirmation");
-        return;
+            // Redirection vers la confirmation de réservation
+            $this->redirectTo("location", "confirmation");
+            return;
   }
 }
 
@@ -88,7 +90,7 @@ return [
  
 //FONCTION CONFIRMATION
  public function confirmation(){
-    
+
             return [
                 "view" => VIEW_DIR . "location/confirmation.php",
                 "meta_description" => "Confirmation de réservation",
