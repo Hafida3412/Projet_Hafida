@@ -244,11 +244,23 @@ section {
 
 /* Styles pour le bouton de défilement vers le haut */
 #scrollUp {
-position: fixed; /* Positionnement fixe par rapport à la fenêtre */
-bottom: 10px; /* Espacement du bas */
-right: 100px; /* Espacement à droite */
+  position: fixed; /* Positionnement fixe par rapport à la fenêtre */
+  bottom: 10px; /* Espacement du bas */
+  right: 100px; /* Espacement à droite */
+  background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+  border-radius: 50%; /* Pour le rendre circulaire */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre pour le rendre plus visible */
+  padding: 10px; /* Espacement interne pour agrandir la zone cliquable */
+  transition: background-color 0.3s ease; /* Transition pour un effet au survol */
 }
+
 /* Styles pour l'icône dans le bouton de défilement vers le haut */
 #scrollUp .fa-solid {
   font-size: 2em; /* Taille de police pour l'icône */
+  color: #6B2C1A; /* Couleur de l'icône */
+}
+
+/* Change la couleur de fond au survol */
+#scrollUp:hover {
+  background-color: rgba(255, 255, 255, 1); /* Fond opaque au survol */
 }
