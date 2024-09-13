@@ -1,10 +1,10 @@
 <?php  
-  
+  $annonceId = $result["data"]['annonceId']; 
 ?>
 <div class="bg_reservation">
 <h1>Réservation</h1>
 
-<form action="index.php?ctrl=reservations&action=reservation&annonceId" method="POST">
+<form action="index.php?ctrl=reservations&action=reservation&annonceId=<?= $annonceId?>" method="POST">
 
 
 

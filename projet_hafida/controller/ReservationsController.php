@@ -8,7 +8,10 @@ use Model\Managers\AnnonceManager;
 use Model\Managers\ReserverManager;
 
 class ReservationsController extends AbstractController implements ControllerInterface{
-    public function reservation(){ // On vérifie que l'utilisateur est connecté if (!Session::getUtilisateur()) { // Redirection vers la page de connexion si l'utilisateur n'est pas connecté $this->redirectTo("connexion", "login"); return; }
+    public function reservation(){ // On vérifie que l'utilisateur est connecté
+         if (!Session::getUtilisateur()) {
+             // Redirection vers la page de connexion si l'utilisateur n'est pas connecté 
+             $this->redirectTo("connexion", "login"); return; }
 
  
 // On récupère l'ID de l'annonce via GET
@@ -24,7 +27,7 @@ $this->redirectTo("location", "index");
 return;
 }
 //var_dump($annonceId);die;
- //if(isset($_POST["submitReservation"])){
+ if(isset($_POST["submitReservation"])){
  
         // On vérifie si l'annonce est déjà réservée
      $annonceManager = new AnnonceManager();
@@ -45,12 +48,12 @@ return;
     $paiement = filter_input(INPUT_POST, "paiement", FILTER_SANITIZE_SPECIAL_CHARS);
     $question = filter_input(INPUT_POST, "question", FILTER_SANITIZE_SPECIAL_CHARS);
     //$annonceId = filter_input(INPUT_GET, "annonceId", FILTER_VALIDATE_INT);
-    //var_dump($_GET);die;
+    //var_dump($_GET['id']);die;
     $valide = 1; // Réservation validée
    //var_dump($numeroTelephone, $nbAdultes, $nbEnfants, $paiement, $question);die;
    
    // Vérification des données
-  //if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
+  if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
         //Enregistrement des informations de la réservation dans la base de données
         $reserverManager = new ReserverManager();
         $reserverManager->add([
@@ -70,21 +73,22 @@ return;
         // Redirection vers la confirmation de réservation
         $this->redirectTo("location", "confirmation");
         return;
-  // }
-//}
+  }
+}
 
 return [
     "view" => VIEW_DIR . "location/reservation.php",
     "meta_description" => "Formulaire de réservation",
-    "annonceId" => $annonceId 
+    "data" => [ 
+        "annonceId" => $annonceId 
+    ]
 ];   
    }
 
  
 //FONCTION CONFIRMATION
  public function confirmation(){
-
- 
+    
             return [
                 "view" => VIEW_DIR . "location/confirmation.php",
                 "meta_description" => "Confirmation de réservation",
