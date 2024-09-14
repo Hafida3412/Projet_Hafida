@@ -124,6 +124,10 @@ section {
 }
 
 .card {
+  display: flex;
+  flex-direction: column; /* Align les éléments en colonne */
+  justify-content: space-between; /* Espace entre les éléments pour que le contenu prenne toute la hauteur disponible */
+
   background-color: #fff;
   border: 1px solid #ddd; /* Bordure des cartes */
   border-radius: 8px; /* Coins arrondis */
@@ -154,6 +158,13 @@ section {
   text-decoration: none; /* Pas de souligné sur le lien */
   border-radius: 5px; /* Coins arrondis du bouton */
   transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+.button-container {
+  display: flex;
+  flex-grow: 1; /* Permet au conteneur du bouton de croître et d'occuper l'espace restant */
+  align-items: flex-end; /* Aligne le bouton en bas */
+  justify-content: center;
 }
 
 .button:hover {

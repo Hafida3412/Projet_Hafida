@@ -35,7 +35,9 @@
         Inscrivez-vous sur notre site pour trouver la personne idéale pour s'occuper de votre chat pendant votre absence. 
         Profitez de vacances sans soucis et d'un service sur mesure !
       </p><br>
+      <div class="button-container">
       <a href="#" class="button">Déposez votre annonce</a>
+    </div>
     </div>
 
     <div class="card">
@@ -44,9 +46,10 @@
         Devenez pet-sitter et aidez les propriétaires tout en profitant de la compagnie de ces adorables félins. 
         Parfait pour les amoureux des animaux cherchant à gagner un peu d'argent pendant leurs temps libres !
       </p><br>
+      <div class="button-container">
       <a href="#" class="button">Consultez nos annonces</a>
     </div>
-  
+    </div>
   </div>
 </section>
 
