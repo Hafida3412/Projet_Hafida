@@ -58,56 +58,72 @@ body {
     font-size: 30px;
   }
   
+/* Header */
+header {
+  background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de fond */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet de profondeur */
+}
+
 /* Navbar */
-  nav {
-    background-color:white; /* couleur de fond de la navigation */
-    padding: 10px;
-    display: flex; /* utilise flexbox pour aligner les éléments */
-    justify-content: space-between; /* espaces les éléments sur toute la largeur */
-    align-items: center; /* centre les éléments verticalement */
-  }
-  
+nav {
+  display: flex;
+  justify-content: space-between; /* espace les éléments sur toute la largeur */
+  align-items: center; /* centre les éléments verticalement */
+}
+
+nav ul {
+  list-style: none; /* A enlever les puces */
+  display: flex; /* utilise flexbox pour aligner les éléments */
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-right: 30px; /* espace entre les éléments */
+}
+
+nav a {
+  padding: 12px 20px; /* Ajout de padding pour augmenter la zone cliquable */
+  font-size: 18px;
+  background-color: transparent; /* Couleur de fond par défaut */
+  border-radius: 25px; /* Coins arrondis pour un look doux */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+  color: white; /* Couleur de texte blanche pour augmenter le contraste */
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Fond semi-translucide au survol */
+  color: #330802; /* Couleur du texte au survol */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre au survol pour un effet de brillance */
+}
+
+/* Logo */
+#nav-left {
+  display: flex; /* utilise flexbox pour aligner les éléments */
+  align-items: center; /* centre les éléments verticalement */
+}
+
+#nav-left img {
+  width: 120px; /* Ajustement de la taille du logo */
+  height: auto; /* Assure le bon ratio */
+  margin-right: 10px; /* espace entre le logo et le texte */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
   nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* utilise flexbox pour aligner les éléments */
-    justify-content: space-between; /* espaces les éléments sur toute la largeur */
-    align-items: center; /* centre les éléments verticalement */
+      flex-direction: column; /* Changement en colonne pour les petites écrans */
   }
   
   nav li {
-    margin-right: 20px; /* espace entre les éléments */
-  }
-  
-  nav a {
-    padding: 10px; /* ajoute un padding pour que les éléments soient plus larges */
-    font-size: 18px;
-    background-color: transparent; /* couleur de fond par défaut */
-    border-radius: 5px; /* arrondir les coins pour un effet de bouton */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* animation fluide */
-    }
-
-  nav a:hover {
-    background-color: #6B2C1A; /* couleur de fond au survol */
-    transform: translateY(4px); /* déplace légèrement vers le bas pour simuler un appui */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ajout d'une ombre portée pour l'effet de profondeur */
-    color: white; /* couleur de texte blanche au survol */
+      margin: 10px 0; /* Ajuste la marge entre les éléments */
   }
 
-  
-  /* Logo */
-  #nav-left {
-    display: flex; /* utilise flexbox pour aligner les éléments */
-    align-items: center; /* centre les éléments verticalement */
-  }
-  
   #nav-left img {
-    width: 100px; /* taille du logo */
-    height: 100px;
-    margin-right: 10px; /* espace entre le logo et le texte */
+      width: 100px; /* Ajustement pour la petite taille */
   }
-  
+}
+
     
 /* Contenu */
 

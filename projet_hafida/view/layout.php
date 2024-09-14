@@ -87,7 +87,7 @@
                         ?>
                     </div>
                 </nav>
-                </header>
+            </header>
                 
                 <main id="forum">
                     <?= $page ?>

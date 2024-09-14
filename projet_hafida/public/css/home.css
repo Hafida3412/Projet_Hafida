@@ -1,5 +1,7 @@
 /* UPDATE CSS DE LA PAGE D'ACCUEIL */
 
+
+
 /* Style du fond d'écran en parallaxe */
 
 .parallax{
@@ -18,6 +20,7 @@ section {
 }
 .content{
   max-width: 1500px; 
+  gap:20px;
   margin: 0 auto; /* Centre la section horizontalement */
   padding: 20px; /* Ajoute un espacement interne */
   text-align: center;
@@ -43,7 +46,6 @@ section {
 .welcome-text {
   font-size: 20px;
   line-height: 1.8;
-  margin-bottom: 30px;
   opacity: 0; /* Définir l'opacité initiale à 0 */ 
   animation: fade-in 2s forwards; /* Ajouter une animation d'apparition */ 
   animation-delay: 1s; /* Délai d'attente avant l'apparition du texte */
