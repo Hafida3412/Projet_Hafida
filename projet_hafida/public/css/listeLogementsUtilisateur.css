@@ -20,6 +20,9 @@
     height: 200px; /* hauteur automatique de l'image du logement */
     object-fit: contain; /* ajustement de l'image du logement */
 }
-
+/* Si besoin, ajuster les styles pour la liste des logements */
+.details-container {
+    margin: 20px; /* Ajoutez un margin pour espacer le conteneur de la page */
+}
 
 
