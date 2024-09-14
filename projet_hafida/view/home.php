@@ -28,13 +28,13 @@
 <section class="attraction">
   <h2>Rejoignez notre communauté</h2>
   <div class="card-container">
-    
+
     <div class="card">
       <h3>Propriétaire de chat ?</h3>
       <p>
         Inscrivez-vous sur notre site pour trouver la personne idéale pour s'occuper de votre chat pendant votre absence. 
         Profitez de vacances sans soucis et d'un service sur mesure !
-      </p>
+      </p><br>
       <a href="#" class="button">Déposez votre annonce</a>
     </div>
 
@@ -43,12 +43,13 @@
       <p>
         Devenez pet-sitter et aidez les propriétaires tout en profitant de la compagnie de ces adorables félins. 
         Parfait pour les amoureux des animaux cherchant à gagner un peu d'argent pendant leurs temps libres !
-      </p>
+      </p><br>
       <a href="#" class="button">Consultez nos annonces</a>
     </div>
   
   </div>
 </section>
+
 <section class="parallax-image">
 <h2>Rejoignez-nous</h2> 
 </section>
@@ -61,6 +62,7 @@
       Le home-sitting séduit de plus en plus de propriétaires de chats, offrant ainsi 
       une solution moderne pour allier le bien-être de l'animal et des vacances économiques.
     </p>
+    <a href="#" class="button">En savoir plus</a>
   </div>
 </section>
 

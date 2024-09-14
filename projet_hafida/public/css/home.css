@@ -15,9 +15,10 @@
 /* Style pour centrer le contenu et limiter la largeur des sections */
 section {
   max-width: 1500px; 
-  margin: 0 auto; /* Centre la section horizontalement */
-  padding: 20px; /* Ajoute un espacement interne */
+  margin: 20px auto; /* Centre la section horizontalement */
+  min-height: 400px;
 }
+
 .content{
   max-width: 1500px; 
   gap:20px;
@@ -68,6 +69,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .avantages h2{
@@ -109,9 +111,9 @@ section {
 }
 
 .attraction {
-  padding: 20px;
   text-align: center;
   background-color: #f9f9f9; /* Couleur de fond de la section */
+  margin-top: 10px;
 }
 
 .card-container {
@@ -126,7 +128,7 @@ section {
   border: 1px solid #ddd; /* Bordure des cartes */
   border-radius: 8px; /* Coins arrondis */
   padding: 20px;
-  width: 40%; /* Largeur de chaque carte */
+  width: 35%; /* Largeur de chaque carte */
   height: 350px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre des cartes */
   transition: transform 0.2s; /* Transition pour l'effet de survol */
@@ -197,8 +199,8 @@ section {
 }
 
 .temoignages blockquote {
-  flex: 1 0 300px;        /* Allow flexibility with a minimum width */
-  margin: 10px;          /* Add margin for spacing */
+  flex: 1 1 300px;        /* Allow flexibility with a minimum width */
+  margin: 20px;          /* Add margin for spacing */
   background-color: #CCC4B8;
   padding: 20px;
   border-radius: 10px;
@@ -229,8 +231,6 @@ section {
   margin-top: 10px; 
 }
 
-
-
 .concept {
   background-image: url("../img/catwhite.jpg");
   background-size: cover;
@@ -252,7 +252,7 @@ section {
 }
 
 .concept-text {
-  max-width: 400px; /* Ajuster la largeur du texte selon vos besoins */
+  max-width: 460px; /* Ajuster la largeur du texte selon vos besoins */
   margin-left: 20px; /* Espacement à gauche */
   z-index: 1; /* S'assure que le texte est au-dessus de l'image */
 }
@@ -260,7 +260,20 @@ section {
 .concept p { 
   font-size: 20px; 
 }
+.concept .button {
+  margin-top: 20px; /* Ajoute un espace au-dessus du bouton */
+  background-color: #6B2C1A; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  text-decoration: none; /* Pas de souligné */
+  padding: 10px 20px;
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s;
+}
 
+.concept .button:hover {
+  background-color: #f0b85f; /* Couleur légèrement différente au survol */
+  color: #6B2C1A; /* Couleur du texte au survol */
+}
 
 .explications {
   display: flex;
@@ -272,6 +285,7 @@ section {
 .benefice1, .benefice2 {
   width: 40%; /* Réduire la largeur de chaque carte */
   padding: 15px; /* Réduire le padding pour compacter la carte */
+  margin:10px;
   font-size: 18px; /* Ajuster la taille de la police */
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
