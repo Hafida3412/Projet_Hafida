@@ -70,13 +70,15 @@ if(isset($reservations) && $reservations){
 <h1>Mes logements</h1>
 <div class="reservations"> 
 
-<!--Création du bouton "créer un nouveau logement" pour faire le lien vers le formulaire "Créer un logement"-->
-<a href="index.php?ctrl=location&action=creationLogement"><button class="btn-reserver">Créer un nouveau logement</button></a><br>
+<!-- Création du bouton "Créer un nouveau logement" avec une classe -->
+<a href="index.php?ctrl=location&action=creationLogement">
+        <button class="btn-reserver create-logement">Créer un nouveau logement</button>
+    </a><br>
 
-
-
-<!--Création du bouton "voir mes logements" pour faire la redirection vers la vue "listeLogementsUtilisateur.php-->
-<a href="index.php?ctrl=location&action=listeLogementsUtilisateur"><button class="btn-reserver">Voir mes logements</button></a><br>
+    <!-- Création du bouton "Voir mes logements" avec une classe -->
+    <a href="index.php?ctrl=location&action=listeLogementsUtilisateur">
+        <button class="btn-reserver see-logements">Voir mes logements</button>
+    </a><br>
 </div>
 </div>  
    
