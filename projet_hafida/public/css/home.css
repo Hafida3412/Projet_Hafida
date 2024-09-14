@@ -87,7 +87,7 @@ section {
 
 .avantages li{
   display: flex;
-  background-color: #6B2C1A ;
+  background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
   color: white;
   border-radius: 10px;
   padding: 50px;
@@ -152,7 +152,7 @@ section {
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #6B2C1A  ; /* Couleur du bouton */
+  background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
   color: white; /* Couleur du texte */
   text-decoration: none; /* Pas de souligné sur le lien */
   border-radius: 5px; /* Coins arrondis du bouton */
@@ -168,7 +168,7 @@ section {
 
 .button:hover {
   background-color:  #f0b85f; /* Couleur légèrement transparente */
-  color: #6B2C1A; /* Couleur du texte au survol */
+  color: #330802; /* Couleur du texte au survol */
 }
 
 .parallax-image{
@@ -272,7 +272,7 @@ section {
 }
 .concept .button {
   margin-top: 20px; /* Ajoute un espace au-dessus du bouton */
-  background-color: #6B2C1A; /* Couleur du bouton */
+  background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
   color: white; /* Couleur du texte */
   text-decoration: none; /* Pas de souligné */
   padding: 10px 20px;
