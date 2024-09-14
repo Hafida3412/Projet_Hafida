@@ -161,7 +161,7 @@ button.annonce-info{
     padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
-    display: block; /* Afficher le bouton en bloc pour le centrer */
+    width: 200px; /* ou utilisez un pourcentage comme width: 80%;*/ 
     margin: 0 auto; /* Centrer le bouton horizontalement */
      /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
     border-radius: 5px;    
