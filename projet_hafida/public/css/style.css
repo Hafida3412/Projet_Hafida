@@ -170,12 +170,12 @@ nav a:hover {
 .newsletter input[type="email"] {
   padding: 10px;
   margin-right: 10px; /* Espacement à droite */
-  border: none; 
+  border: solid 1px #ccc; /* Ajout d'une bordure solide grise */
   border-radius: 5px; 
   background-color: white; /* Fond blanc */
-  color: white; /* Texte en noir */
-  border: solid 2px;
-  width: 90%; /* Augmentez la largeur à 70% */
+  color: #000; /* Texte en noir */
+  width: 90%; /* Augmentez la largeur à 90% */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Effet estompé */
 }
 
 .newsletter button {
