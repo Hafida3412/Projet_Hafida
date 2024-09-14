@@ -45,6 +45,55 @@
     font-weight: bold; /* texte en gras pour les liens */
 }
 
+/* Style pour la pagination */
+.pagination {
+    padding: 12px 20px;
+    background-color: transparent; /* Couleur de fond par défaut */
+    border-radius: 25px; /* Coins arrondis pour un look doux */
+    display: flex; /* Utilisez flexbox pour aligner les éléments */
+    list-style-type: none; /* Pour enlever les puces */
+}
+
+/* Style pour les éléments de la pagination */
+.pagination .page-item {
+    margin: 0 5px; /* Espace entre les éléments de pagination */
+}
+
+/* Style pour le lien des numéros de page */
+.page-link {
+    display: inline-block; /* Afficher en tant qu'élément en ligne */
+    padding: 10px 15px; /* Espacement autour du lien */
+    border-radius: 50%; /* Pour donner une forme ronde */
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+    text-decoration: none; /* Pas de soulignement */
+}
+
+/* Changement de couleur au survol des numéros de page */
+.page-link:hover {
+  color: #330802; /* Change la couleur du texte au survol */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+}
+
+/* Styles pour les boutons Précédent et Suivant */
+.page-item a.page-link {
+    border-radius: 5px; /* Coins arrondis pour les boutons */
+}
+
+/* Appliquer des styles à tous les boutons de navigation */
+.page-item a.page-link {
+    color: white; /* Couleur du texte */
+    background-color: #6B2C1A; /* Couleur de fond */
+    padding: 10px 15px; /* Espacement autour du bouton */
+}
+
+/* Style au survol pour les boutons de navigation */
+.page-item a.page-link:hover {
+    background-color: #f0b85f; /* Changer la couleur au survol */
+    color: #6B2C1A; /* Couleur du texte au survol */
+}
+
+
 /* Style pour le bouton de suppression */
 button.btn-delete {
     background: linear-gradient(90deg, #6B2C1A, #f0b85f);

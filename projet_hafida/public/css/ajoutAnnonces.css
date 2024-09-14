@@ -5,6 +5,8 @@ form {
     width: 35%; /* pour limiter la largeur du formulaire à 35% */
     margin: 0 auto; /* Cela permet de centrer le formulaire horizontalement */
     border-radius:10px;  
+}
+.container-creation{
     box-shadow: 4px 2px 2px rgb(207, 202, 202);
 }
 
