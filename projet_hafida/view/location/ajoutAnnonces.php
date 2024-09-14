@@ -12,13 +12,13 @@
     <form action="index.php?ctrl=location&action=ajoutAnnonces" method="post">
         <!--on ne rajoute pas de "id" à ajoutAnnonces pour ne pas insérer l'id 
         de l'utilisateur dans l'Url, trop dangereux.-->
-        <label for="dateDebut">Date début</label>
+        <label for="dateDebut">Date de début</label>
         <input type="date" name="dateDebut"><br>
 
-        <label for="dateFin">Date fin</label>
+        <label for="dateFin">Date de fin</label>
         <input type="date" name="dateFin"><br>
 
-        <label for="NbChat">Nombre de chat:</label>
+        <label for="NbChat">Nombre de chat à garder:</label>
         <input type="number" name="nbChat"><br>
 
         <label for="logements">Logements</label> 
