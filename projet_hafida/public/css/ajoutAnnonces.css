@@ -29,7 +29,6 @@ form textarea {
 
 .button-container {
     text-align: center; /* Cela centre le contenu à l'intérieur */
-    margin-top: 20px; /* Espacement au-dessus du bouton */
 }
 
 form input[type="submit"] { 
