@@ -167,7 +167,6 @@ section {
 }
 
 .button:hover {
-  background-color:  #f0b85f; /* Couleur légèrement transparente */
   color: #330802; /* Couleur du texte au survol */
 }
 
@@ -282,7 +281,7 @@ section {
 
 .concept .button:hover {
   background-color: #f0b85f; /* Couleur légèrement différente au survol */
-  color: #6B2C1A; /* Couleur du texte au survol */
+  color: #330802; /* Couleur du texte au survol */
 }
 
 .explications {

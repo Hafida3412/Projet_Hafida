@@ -27,7 +27,7 @@ body {
   }
   
   a {
-    color: #6B2C1A; /* couleur de lien bleu */
+    color:#330802; /* couleur de lien bleu */
     text-decoration: none;
   }
   
@@ -173,21 +173,26 @@ nav a:hover {
   border: none; 
   border-radius: 5px; 
   background-color: white; /* Fond blanc */
-  color: black; /* Texte en noir */
+  color: white; /* Texte en noir */
   border: solid 2px;
   width: 90%; /* Augmentez la largeur à 70% */
 }
 
 .newsletter button {
-  padding: 10px; 
-  background-color: #f0b85f; /* Couleur personnalisée pour le bouton */
+  padding: 10px;
+  background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
   border: none; 
   border-radius: 5px; 
   cursor: pointer; 
+  color: white; /* Changez ici pour garantir une bonne lisibilité */
+  font-weight: bold; /* Rendre le texte un peu plus gros */
 }
 
 .newsletter button:hover {
-  background-color: #6B2C1A; /* Couleur changée au survol */
+  background-color: #f0b85f; /* Change la couleur de fond au survol */
+  color: #330802; /* Change la couleur du texte au survol */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
 
 .social-media {
