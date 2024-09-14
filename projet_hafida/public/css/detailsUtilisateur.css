@@ -5,6 +5,25 @@
     background-size: cover; /* Pour couvrir tout le conteneur */
 }
 
+.details-utilisateur h1 {
+    font-size: 30px; /* Augmenter la taille de la police */
+    color: #6B2C1A; /* Changer la couleur du texte */
+    text-align: center; /* Centrer le texte */
+    margin-top: 20px; /* Espace au-dessus du titre */
+    margin-bottom: 20px; /* Espace en dessous du titre */
+    background-color: rgba(255, 255, 255, 0.5); /* Fond blanc plus translucide */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 10px; /* Espacement intérieur */
+    width: 50%; /* Définir la largeur du titre */
+    margin-left: auto; /* Centrer horizontalement */
+    margin-right: auto; /* Centrer horizontalement */
+    backdrop-filter: blur(5px); /* Ajoute un flou en arrière-plan */
+}
+
+
+
+
+
 /* Style de la section d'informations sur l'utilisateur */
 .utilisateur-info {
     background-color: #fff; /*Couleur de fond blanche */ 
@@ -14,8 +33,6 @@
     margin: 10px auto; /*Marge de 10 pixels de tous les côtés et centré horizontalment*/
     vertical-align: top; /*Alignement vertical en haut */ 
     border-radius: 10px;
-    box-shadow: 4px 2px 2px rgb(207, 202, 202);
-
 }
 
 /* Style des paragraphes*/
@@ -33,7 +50,6 @@
     width: 60%; 
     margin: 10px auto; /* Ajout de la propriété pour centrer horizontalement */
     border-radius: 10px;
-    box-shadow: 4px 2px 2px rgb(207, 202, 202);
 }
 
 /* Style des paragraphes dans la section des réservations */
@@ -45,17 +61,23 @@
 
 /* Style des boutons dans la section des réservations */ 
 .reservations a button {
-    background-color:  #6B2C1A; 
-    color: #fff; 
-    padding: 5px 10px; 
-    border: none; 
-    cursor: pointer; 
-    margin-top: 10px; 
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+    color: #fff; /* couleur de texte du bouton */
+    padding: 10px 15px; /* espacement interne du bouton */
+    border: none; /* pas de bordure sur le bouton */
+    cursor: pointer; /* curseur style pointer au survol */
+    width: 200px; /* ou utilisez un pourcentage comme width: 80%;*/ 
+    margin: 0 auto; /* Centrer le bouton horizontalement */
+     /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
+    border-radius: 5px;    
 }
 
 /* Style du survol des boutons dans la section des réservations */
 .reservations a button:hover {
-    background-color: #f0b85f; 
+    transform: scale(1.05); /* Légère amplification au survol */
+    color: #330802; /* Change la couleur du texte au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
 
 .create-logement {
@@ -64,19 +86,32 @@
 
 /* Style du bouton de réservation, du bouton "créer un logement" et du bouton "voir mes logements */ 
 .btn-reserver{
-    background-color: #6B2C1A; 
-    color: #fff; 
-    padding: 10px; 
-    border: none; 
-    cursor: pointer; 
-    display: block; /* Affichage en tant que bloc */
-    margin: 0 auto; /* On centre horizontalement */
-    text-align: center; /* On aligne le texte au centre */
-    border-radius: 10px;
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+    color: #fff; /* couleur de texte du bouton */
+    padding: 10px 15px; /* espacement interne du bouton */
+    border: none; /* pas de bordure sur le bouton */
+    cursor: pointer; /* curseur style pointer au survol */
+    width: 200px; /* ou utilisez un pourcentage comme width: 80%;*/ 
+    margin: 0 auto; /* Centrer le bouton horizontalement */
+     /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
+    border-radius: 5px;    
 }
 
 /* Style du survol du bouton de réservation, du bouton "créer un logement" et du bouton "voir mes logements*/
 .btn-reserver:hover {
-    background-color: #f0b85f;; 
+    transform: scale(1.05); /* Légère amplification au survol */
+    color: #330802; /* Change la couleur du texte au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+}
+
+.button-container {
+    text-align: center; /* Centre le texte et les éléments à l'intérieur */
+    margin: 10px 0; /* Espace au-dessus et en dessous des boutons */
+}
+
+.logement-actions {
+    text-align: center; /* Centre les boutons de création et de visualisation de logements */
+    margin: 20px 0; /* Espace au-dessus et en dessous de la section */
 }
 
