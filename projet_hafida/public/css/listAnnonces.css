@@ -17,7 +17,8 @@
 
 .annonce {
     background-color: #fff; /* couleur de fond du cadre de l'annonce */
-    border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
+    border: solid 1px #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* bordure autour du cadre de l'annonce */
     padding: 10px; /* espacement interne du cadre de l'annonce */
     width: 30%; /* largeur du cadre de l'annonce */
     margin: 10px; /* espacement entre les annonces */
@@ -25,7 +26,6 @@
     flex-direction: column; /* Empile les enfants en colonne */
     align-items: flex-start; /* Aligne le contenu à gauche */
     border-radius: 10px;
-    box-shadow: 4px 2px 2px rgb(207, 202, 202);
 }
 
 /* Style pour les annonces à partir de la deuxième annonce*/
@@ -47,7 +47,7 @@
 
 /* Style pour le bouton de suppression */
 button.btn-delete {
-    background-color: #6b2c1a;
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f);
      /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
@@ -61,5 +61,7 @@ button.btn-delete {
     
 /* Style pour le bouton de suppression au survol */
 button.btn-delete:hover {
-    background-color:   #f0b85f; /* couleur de fond du bouton au survol */
+    color: #330802; /* Change la couleur du texte au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }

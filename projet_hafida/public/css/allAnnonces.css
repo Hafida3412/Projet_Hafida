@@ -15,11 +15,11 @@
 
     .annonce {
         background-color: #ffffff;
-        border: 1px solid #ccc;
+        border: solid 1px #ccc;
         border-radius: 5px;
         padding: 15px;
         width: calc(33% - 20px); /* Trois annonces par ligne avec un espace de 20px */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
         transition: transform 0.2s;
     }
 

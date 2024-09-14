@@ -16,9 +16,9 @@
     padding: 10px; /* espacement interne du cadre */
     width: 50%; /* largeur du cadre */  
     margin: 10px auto; /* centrer le cadre */
-    border-radius: 10px;
-    box-shadow: 4px 2px 2px rgb(207, 202, 202);
-    
+    border-radius: 10px;   
+    border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Style pour les paragraphes dans le cadre des informations de l'annonce */
@@ -31,7 +31,7 @@
 .annonce-info img {
     display: block; /* Pour que l'image soit un bloc */
     margin: 0 auto; /* Pour centrer l'image horizontalement */
-    width: 100%; /* Utilisez 100% pour remplir le conteneur */
+    width: 80%; /* Utilisez 100% pour remplir le conteneur */
     height: auto; /* Hauteur fixe pour uniformiser */
     object-fit: cover; /* Rendre l'image cohérente en taille */
 }
@@ -63,7 +63,7 @@
 .carousel {
     position: relative;/* Position relative pour permettre la position absolue des boutons */
     width: 100%; /* Largeur à 100% du conteneur parent */
-    max-width: 200px; /* Largeur maximale ajustable pour le carrousel */
+    max-width: 500px; /* Largeur maximale ajustable pour le carrousel */
     margin: auto; /* Centrer le carrousel */
     overflow: hidden; /* Masque les images qui dépassent du conteneur */
 }
@@ -77,7 +77,8 @@
 /* Style pour les images dans le carrousel */
 .carousel-image {
     width: 100%; /* Largeur à 100% pour s'adapter au conteneur */
-    height: 200px; /* Hauteur fixe pour conserver le rapport d'aspect de l'image */
+    height: 300px; /* Hauteur fixe pour conserver le rapport d'aspect de l'image */
+    object-fit: cover; /* Conserve le rapport d'aspect de l'image */
 }
 
 /* Style pour les boutons de navigation (précédent et suivant) */
@@ -113,7 +114,8 @@
     width: 50%; /* largeur du cadre */
     margin: 10px auto; /* Centrer horizontalement */
     border-radius: 10px;
-    box-shadow: 4px 2px 2px rgb(207, 202, 202);
+    border: solid 1px #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* bordure autour du cadre de l'annonce */
 }
 
 /* Style pour les paragraphes dans le cadre des avis */
@@ -133,7 +135,7 @@
 
 /* Style pour le bouton "réserver" dans le cadre des informations de l'annonce */
 button.annonce-info{
-    background-color: #6B2C1A;; /* couleur de fond du bouton */
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
     color: #fff; /* couleur de texte du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
@@ -146,5 +148,7 @@ button.annonce-info{
 
 /* Style pour le bouton "réserver" dans le cadre des informations de l'annonce au survol */
 button.annonce-info:hover {
-    background-color: #f0b85f; /* couleur de fond du bouton au survol */
+    color: #330802; /* Change la couleur du texte au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
