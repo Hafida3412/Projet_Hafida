@@ -11,19 +11,23 @@ $images = $result["data"]['images']; // On récupère les images
 
 <h1>Détails de l'annonce</h1>
 
+<div class="details-container">
 <div class="bg_details">
 <div class="annonce-info">
     <!-- Affichage des informations de l'annonce -->
-    <p><strong>Annonce de <?= $annonce->getUtilisateur()->getPseudo()?><br></strong>
-    Nb de chats: <?= $annonce->getNbChat()?><br>
-    Date de début: <?= (date('d-m-Y ', strtotime($annonce->getDateDebut())))?><br>
-    Date de fin: <?= (date('d-m-Y ', strtotime($annonce->getDateFin())))?><br>
-    Description: <?= $annonce->getDescription()?><br>
+    <h2>Annonce de <?= htmlspecialchars($annonce->getUtilisateur()->getPseudo()) ?></h2>
+        <p><strong>Nb de chats à garder:</strong> <?= $annonce->getNbChat() ?></p>
+        <p><strong>Date de début:</strong> <?= date('d-m-Y', strtotime($annonce->getDateDebut())) ?></p>
+        <p><strong>Date de fin:</strong> <?= date('d-m-Y', strtotime($annonce->getDateFin())) ?></p>
+        <p><strong>Description:</strong><br> <?= nl2br(htmlspecialchars($annonce->getDescription())) ?></p>
 
-    <!-- Affichage des informations sur le logement -->
-    Type de logement: <?= $logement->getTypeLogement()?><br>
-    Nombre de chambres: <?= $logement->getNbChambre()?><br>
-    Ville: <?= $logement->getVille()?><br>
+        <!-- Affichage des informations sur le logement -->
+        <hr>
+        <h3>Informations sur le Logement</h3>
+        <p><strong>Type de logement:</strong> <?= htmlspecialchars($logement->getTypeLogement()->getNomType()) ?></p>
+        <p><strong>Nombre de chambres:</strong> <?= $logement->getNbChambre() ?></p>
+        <p><strong>Ville:</strong> <?= htmlspecialchars($logement->getVille()) ?></p>
+
 
     <!-- Affichage de l'image du logement: -->
     <img src="<?= $logement->getImage()?>" alt="Image du logement" 
@@ -59,7 +63,6 @@ $images = $result["data"]['images']; // On récupère les images
     <button class="next" onclick="changeSlide(1)">&#10095;</button>
 </div>
 
-
 <div class="avis">
     <strong><p>Avis:</strong>
     <?php
@@ -80,7 +83,7 @@ $images = $result["data"]['images']; // On récupère les images
    <?php 
    // On vérifie si l'utilisateur connecté est le propriétaire de l'annonce
    if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
-   <div class="upload_img">
+   <div class="upload_img upload-img-container">
    <!-- Formulaire pour uploader une nouvelle image -->
    <form action="index.php?ctrl=location&action=uploadImage&id=<?= 
    $annonce->getId() ?>" method="post" enctype="multipart/form-data">
@@ -100,7 +103,7 @@ if ($utilisateurConnecte && $annonce->getUtilisateur()->getId() != $utilisateurC
     <a href="index.php?ctrl=reservations&action=reservation&annonceId=<?= $annonce->getId() ?>">
 <button class="annonce-info" type="button">Réserver</button>
     </a>
-    <br> </div>
+    <br> </div></div>
     <?php   
 }
 ?> 

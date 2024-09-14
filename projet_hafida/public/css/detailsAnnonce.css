@@ -4,6 +4,11 @@
 .bg_details{
     background-image: url(../img/oreille.jpg); /* Remplacez par le chemin de votre image */
     background-size: cover; /* Pour couvrir tout le conteneur */
+    padding: 20px; /* Ajouter du padding pour éviter que le contenu touche le bord */
+    display: flex;
+    flex-direction: column; /* Pour empiler les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+
 }
 
 /* Style pour le cadre des informations de l'annonce */
@@ -11,11 +16,11 @@
     display: flex;             /* Activer Flexbox */
     flex-direction: column;    /* Aligner les éléments en colonne */
     align-items: center;      /* Centrer les éléments horizontalement */
-    background-color: #fff; /* couleur de fond du cadre des informations de l'annonce */
+    background-color: rgba(255, 255, 255, 0.9); /* couleur de fond du cadre des informations de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre */
-    padding: 10px; /* espacement interne du cadre */
+    padding: 20px; /* espacement interne du cadre */
     width: 50%; /* largeur du cadre */  
-    margin: 10px auto; /* centrer le cadre */
+    margin: 15px 0; /* centrer le cadre */
     border-radius: 10px;   
     border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -34,6 +39,7 @@
     width: 80%; /* Utilisez 100% pour remplir le conteneur */
     height: auto; /* Hauteur fixe pour uniformiser */
     object-fit: cover; /* Rendre l'image cohérente en taille */
+    border-radius: 5px;
 }
 
 /* Style pour le conteneur des images supplémentaires */
@@ -61,17 +67,22 @@
 
 /* Style pour le conteneur du carrousel d'images */
 .carousel {
-    position: relative;/* Position relative pour permettre la position absolue des boutons */
-    width: 100%; /* Largeur à 100% du conteneur parent */
+    position: relative; /* Nécessaire pour positionner les flèches par rapport au carrousel */
+    display: flex; /* Utilisation de Flexbox pour centrer */
+    flex-direction: column; /* Aligne les images du carrousel en colonne */
+    align-items: center; /* Centre le carrousel horizontalement */
+    width: 100%; /* Prendre 100% de largeur pour centrer */
     max-width: 500px; /* Largeur maximale ajustable pour le carrousel */
-    margin: auto; /* Centrer le carrousel */
-    overflow: hidden; /* Masque les images qui dépassent du conteneur */
+    margin: 20px auto; /* Centrer le carrousel verticalement */
 }
+
 
 /* Style pour chaque diapositive d'image dans le carrousel */
 .image-slide {
-    min-width: 100%; /* Chaque diapositive doit occuper 100% de la largeur du carrousel */
-    box-sizing: border-box; /* Inclure la bordure et le padding dans les dimensions définies */
+    min-width: 100%; 
+    box-sizing: border-box; 
+    display: flex; /* Assurez-vous d'utiliser flex pour un alignement correct */
+    justify-content: center; /* Centre le contenu des slides */
 }
 
 /* Style pour les images dans le carrousel */
@@ -80,6 +91,7 @@
     height: 300px; /* Hauteur fixe pour conserver le rapport d'aspect de l'image */
     object-fit: cover; /* Conserve le rapport d'aspect de l'image */
 }
+
 
 /* Style pour les boutons de navigation (précédent et suivant) */
 .prev, .next {
@@ -91,6 +103,9 @@
     cursor: pointer; /* Change le curseur en pointeur sur le survol */
     padding: 10px; /* Espacement interne du bouton */
     z-index: 2; /* Assure que les boutons sont au-dessus d'autres éléments */
+    border-radius: 50%; /* Bord arrondi pour les boutons */
+    width: 40px; /* Largeur du bouton */
+    height: 40px; /* Hauteur du bouton */
 }
 
 .prev {
@@ -104,6 +119,12 @@
 /* Style au survol des boutons de navigation */
 .prev:hover, .next:hover {
     background-color: rgba(255, 255, 255, 1); /* Augmente l'opacité de fond au survol */
+}
+
+.upload-img-container {
+    width: 100%; /* Ajustez le pourcentage selon vos besoins */
+    margin: 0 auto; /* Pour centrer horizontalement */
+    text-align: center; /* Centre le texte à l'intérieur */
 }
 
 /* Style pour le cadre des avis */
@@ -137,17 +158,18 @@
 button.annonce-info{
     background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
     color: #fff; /* couleur de texte du bouton */
-    padding: 5px 10px; /* espacement interne du bouton */
+    padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
     display: block; /* Afficher le bouton en bloc pour le centrer */
     margin: 0 auto; /* Centrer le bouton horizontalement */
      /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
-    border-radius: 10px;    
+    border-radius: 5px;    
 }
 
 /* Style pour le bouton "réserver" dans le cadre des informations de l'annonce au survol */
 button.annonce-info:hover {
+    transform: scale(1.05); /* Légère amplification au survol */
     color: #330802; /* Change la couleur du texte au survol */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
