@@ -1,6 +1,8 @@
 <?php
 $logements = $result["data"]['logements']; 
 ?>
+
+
 <h1>Mes logements</h1>
 
 <div class="details-container">
@@ -19,7 +21,7 @@ $logements = $result["data"]['logements'];
             echo "<p><strong>Nombre de chambres:</strong> " . htmlspecialchars($logement->getNbChambre()) . "</p>";
             echo "<p><strong>Ville:</strong> " . htmlspecialchars($logement->getVille()) . "</p>";
             echo "<div class='logement-image'><img src='" . htmlspecialchars($logement->getImage()) . "' alt='Image du logement' class='annonce-info-img'></div>";
-            echo "</div>";
+            echo "</div>"; 
         }
     }
     ?>

@@ -1,5 +1,6 @@
 
 /* Style pour les informations du logement */
+
 .logement-info {
     background-color: #fff; /* couleur de fond du cadre des informations du logement */
     border: 1px solid #ccc; /* bordure autour du cadre des informations du logement */
@@ -20,9 +21,6 @@
     height: 200px; /* hauteur automatique de l'image du logement */
     object-fit: contain; /* ajustement de l'image du logement */
 }
-/* Si besoin, ajuster les styles pour la liste des logements */
-.details-container {
-    margin: 20px; /* Ajoutez un margin pour espacer le conteneur de la page */
-}
+
 
 

@@ -1,7 +1,7 @@
 /* CSS de la vue detailsUtilisateur*/
 
 .details-utilisateur {
-    background-image: url(../img/oreille.jpg); /* Remplacez par le chemin de votre image */
+    background-image: url(../img/oreille.jpg);
     background-size: cover; /* Pour couvrir tout le conteneur */
 }
 
