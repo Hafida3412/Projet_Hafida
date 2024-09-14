@@ -37,7 +37,10 @@
         <textarea name="description" rows="4" cols="50"></textarea><br>
 
         <!--Création du bouton "Déposer l'annonce"-->
-        <input type="submit" name="submitAnnonce" value="Déposer l'annonce">
+        <!-- Création d'un conteneur pour centrer le bouton -->
+<div class="button-container">
+    <input type="submit" name="submitAnnonce" value="Déposer l'annonce">
+</div>
     </form>
         </div>
         </main>

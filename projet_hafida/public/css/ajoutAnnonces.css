@@ -25,16 +25,26 @@ form textarea {
     height: 100px; /* hauteur de 100px pour le champ de texte */ 
 }
 
+.button-container {
+    text-align: center; /* Cela centre le contenu à l'intérieur */
+    margin-top: 20px; /* Espacement au-dessus du bouton */
+}
+
 form input[type="submit"] { 
-    background-color:  #6B2C1A; /* couleur de fond du bouton de soumission */ 
-    color: #fff; /* couleur de texte du bouton de soumission */ 
-    padding: 10px; /* espacement interne du bouton de soumission */ 
-    border: none; /*pas de bordure sur le bouton de soumission */ 
-    cursor: pointer; /* curseur style pointer au survol du bouton */ 
-    margin-top: 10px; /*espacement au-dessus du bouton de soumission */ 
-    width:225px;
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+    color: #fff; /* couleur de texte du bouton */
+    padding: 10px 15px; /* espacement interne du bouton */
+    border: none; /* pas de bordure sur le bouton */
+    cursor: pointer; /* curseur style pointer au survol */
+    width: 200px; /* ou utilisez un pourcentage comme width: 80%;*/ 
+    margin: 0 auto; /* Centrer le bouton horizontalement */
+     /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
+    border-radius: 5px;    
 }
 
 form input[type="submit"]:hover { 
-    background-color:  #f0b85f; /* couleur de fond du bouton de soumission au survol */ 
+    transform: scale(1.05); /* Légère amplification au survol */
+    color: #330802; /* Change la couleur du texte au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
