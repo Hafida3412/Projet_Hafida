@@ -20,10 +20,6 @@
     backdrop-filter: blur(5px); /* Ajoute un flou en arrière-plan */
 }
 
-
-
-
-
 /* Style de la section d'informations sur l'utilisateur */
 .utilisateur-info {
     background-color: #fff; /*Couleur de fond blanche */ 
