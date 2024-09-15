@@ -36,7 +36,7 @@
         Profitez de vacances sans soucis et d'un service sur mesure !
       </p><br>
       <div class="button-container">
-      <a href="#" class="button">Déposez votre annonce</a>
+      <a href="index.php?ctrl=location&action=ajoutAnnonces" class="button">Déposez votre annonce</a>
     </div>
     </div>
 
@@ -47,7 +47,7 @@
         Parfait pour les amoureux des animaux cherchant à gagner un peu d'argent pendant leurs temps libres !
       </p><br>
       <div class="button-container">
-      <a href="#" class="button">Consultez nos annonces</a>
+      <a href="index.php?ctrl=location&action=index" class="button">Consultez nos annonces</a>
     </div>
     </div>
   </div>
