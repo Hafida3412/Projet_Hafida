@@ -144,7 +144,13 @@ return [
                 
                 // On vérifie que toutes les données nécessaires sont présentes
                 if($dateDebut && $dateFin && $nbChat && $description && $id_logement){
-                
+                    $currentDate = date("Y-m-d"); // Date actuelle
+
+                    // Vérification que la date de début n'est pas dans le passé
+                    if ($dateDebut < $currentDate) {
+                        Session::addFlash("error", "La date de début ne peut pas être antérieure à aujourd'hui.");
+                    } else {
+                        // On insère l'annonce dans la BDD grâce à la fonction "add" du fichier Manager
                 // On insert l'annonce dans la BDD grâce à la fonction "add" du fichier Manager
                     // var_dump("ok");die;
                     $annonceManager->add([
@@ -166,7 +172,7 @@ return [
                 }
             }
         }
-    
+    }
         // On affiche le formulaire de dépôt d'annonce
         return [
             "view" => VIEW_DIR . "location/ajoutAnnonces.php",
@@ -176,8 +182,8 @@ return [
             ]
         ];
     }
-    
-    
+   
+
     //CREATION D UN LOGEMENT
     public function creationLogement() {
         //Instanciation d'un objet LogementManager

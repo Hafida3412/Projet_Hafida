@@ -13,7 +13,8 @@
         <!--on ne rajoute pas de "id" à ajoutAnnonces pour ne pas insérer l'id 
         de l'utilisateur dans l'Url, trop dangereux.-->
         <label for="dateDebut">Date de début</label>
-        <input type="date" name="dateDebut"><br>
+<!--Pour éviter que l'utilisateur sélectionne une date antérieure à celle où il se connecte-->         
+        <input type="date" name="dateDebut" min="<?= date('Y-m-d'); ?>" required><br>
 
         <label for="dateFin">Date de fin</label>
         <input type="date" name="dateFin"><br>
