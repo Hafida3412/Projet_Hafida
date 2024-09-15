@@ -126,7 +126,7 @@ section {
 .card {
   display: flex;
   flex-direction: column; /* Align les éléments en colonne */
-  justify-content: space-between; /* Espace entre les éléments pour que le contenu prenne toute la hauteur disponible */
+  justify-content: flex-end; /* Espace entre les éléments pour que le contenu prenne toute la hauteur disponible */
   background-color: #fff;
   border: 1px solid #ddd; /* Bordure des cartes */
   border-radius: 8px; /* Coins arrondis */
