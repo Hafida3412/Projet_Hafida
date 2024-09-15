@@ -45,6 +45,35 @@ class UtilisateurManager extends Manager{
     );
     }
 
-
+    public function storeResetToken($userId, $token) {
+        // Stocker le jeton dans la base de données avec une expiration / vérification ultérieure
+        $sql = "UPDATE " . $this->tableName . "
+                SET reset_token = :token, token_expires_at = NOW() + INTERVAL 1 HOUR
+                WHERE id_utilisateur = :id";
+    
+        DAO::select($sql, [
+            'token' => $token,
+            'id' => $userId
+        ]);
+    }
+    
+    public function validateResetToken($token) {
+        // Obtenir l'ID utilisateur associé au jeton de réinitialisation
+        $sql = "SELECT id_utilisateur 
+                FROM " . $this->tableName . " 
+                WHERE reset_token = :token AND token_expires_at > NOW()";
+    
+        $result = DAO::select($sql, ['token' => $token]);
+        return $result ? $result[0]['id_utilisateur'] : null; // Si le jeton est valide, retourner l'ID utilisateur
+    }
+    
+    public function updatePassword($userId, $hashedPassword) {
+        $sql = "UPDATE " . $this->tableName . " SET password = :password WHERE id_utilisateur = :id";
+        
+        return DAO::select($sql, [
+            'password' => $hashedPassword,
+            'id' => $userId
+        ]);
+    }
 }
 

@@ -15,6 +15,10 @@
 <input type="password" name="password" id="password" value="AZERTY12345"><br>
 
 <input type="submit" name="submitLogin" value="Se connecter">
+
+<!-- Lien vers la vue forgotPassword -->
+<p><a href="index.php?ctrl=security&action=forgotPassword">Mot de passe oublié ?</a></p>
+
 </form>
 </div>
 
