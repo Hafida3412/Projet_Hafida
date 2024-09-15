@@ -24,7 +24,10 @@
     </label><br>
 
         
-    <input type="submit" name="submitRegister" value="S'enregistrer">
+    <div class="submit-container">
+        <input type="submit" name="submitRegister" value="S'enregistrer">
+    </div>
+
 
 </form>
    

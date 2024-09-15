@@ -1,7 +1,17 @@
 /*CREATION DU REGISTER.CSS*/
 
+.submit-container {
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-top: 20px; /* Marge au-dessus du bouton pour l'espacement */
+}
+
 label[for="consentement"] {
     display: flex;/*utilisation de flexbox*/
     flex-wrap: nowrap;/*affichage en ligne des éléments à l'intérieur du label*/
     align-items: baseline;/*éléments alignés sur la même ligne de base*/
 }
+
+
+
+
