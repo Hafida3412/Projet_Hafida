@@ -17,7 +17,7 @@
         <input type="date" name="dateDebut" min="<?= date('Y-m-d'); ?>" required><br>
 
         <label for="dateFin">Date de fin</label>
-        <input type="date" name="dateFin"><br>
+        <input type="date" id="dateFin" name="dateFin" required><br>
 
         <label for="NbChat">Nombre de chat à garder:</label>
         <input type="number" name="nbChat"><br>
@@ -45,3 +45,18 @@
     </form>
         </div>
         </main>
+
+        <script>
+    // Écouteur d'événement sur le champ de date de début
+    document.getElementById('dateDebut').addEventListener('change', function() {
+        // Récupère la date sélectionnée
+        var dateDebut = new Date(this.value);
+        // Active le champ de date de fin
+        var dateFinInput = document.getElementById('dateFin');
+        dateFinInput.disabled = false;
+
+        // Réinitialiser la date de fin et configurer le minimum
+        dateFinInput.min = this.value; // Le minimum de dateFin doit être égale à dateDebut
+        dateFinInput.value = this.value; // Réinitialise dateFin pour correspondre à dateDebut (si l'on veut que par défaut cela soit la même date)
+    });
+</script>

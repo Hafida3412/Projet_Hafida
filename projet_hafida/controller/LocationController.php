@@ -121,58 +121,59 @@ return [
     
     
     //AJOUTER/DEPOSER UNE ANNONCE
-    public function ajoutAnnonces(){
-        
-        //création de l'instance de la classe logementManager pour gérer les logements.
-        $logementManager = new logementManager();
-        //on récupère l'id de l'utilisateur connecté
+    public function ajoutAnnonces() {
+        // création de l'instance de la classe logementManager pour gérer les logements.
+        $logementManager = new LogementManager();
+        // on récupère l'id de l'utilisateur connecté
         $id = Session::getUtilisateur()->getId();
         // on récupère les logements par utilisateur en utilisant la requête créée dans logementManager
         $logements = $logementManager->listLogementsByUser($id);
     
-        if(Session::getUtilisateur()) {//On vérifie si l'utilisateur est connecté
-            $annonceManager = new AnnonceManager();/* Si oui, on crée une instance de 
-            annonceManager pour gérer les annonces*/
-        
-            //ON FILTRE LES CHAMPS DU FORMULAIRE D AJOUT D ANNONCE
-            if(isset($_POST["submitAnnonce"])){
+        if (Session::getUtilisateur()) { // On vérifie si l'utilisateur est connecté
+            $annonceManager = new AnnonceManager(); // Si oui, on crée une instance de annonceManager pour gérer les annonces
+    
+            // On filtre les champs du formulaire d'ajout d'annonce
+            if (isset($_POST["submitAnnonce"])) {
                 $dateDebut = filter_input(INPUT_POST, 'dateDebut', FILTER_SANITIZE_SPECIAL_CHARS);
                 $dateFin = filter_input(INPUT_POST, 'dateFin', FILTER_SANITIZE_SPECIAL_CHARS);
                 $nbChat = filter_input(INPUT_POST, 'nbChat', FILTER_VALIDATE_INT);
-                $description  = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);   
-                $id_logement  = filter_input(INPUT_POST, 'logements', FILTER_SANITIZE_SPECIAL_CHARS);   
-                
+                $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+                $id_logement = filter_input(INPUT_POST, 'logements', FILTER_SANITIZE_SPECIAL_CHARS);
+    
                 // On vérifie que toutes les données nécessaires sont présentes
-                if($dateDebut && $dateFin && $nbChat && $description && $id_logement){
-                    $currentDate = date("Y-m-d"); // Date actuelle
-
+                if ($dateDebut && $dateFin && $nbChat && $description && $id_logement) {
                     // Vérification que la date de début n'est pas dans le passé
+                    $currentDate = date("Y-m-d"); // Assurez-vous d'avoir la variable $currentDate définie
                     if ($dateDebut < $currentDate) {
                         Session::addFlash("error", "La date de début ne peut pas être antérieure à aujourd'hui.");
-                    } else {
-                        // On insère l'annonce dans la BDD grâce à la fonction "add" du fichier Manager
-                // On insert l'annonce dans la BDD grâce à la fonction "add" du fichier Manager
-                    // var_dump("ok");die;
+                        return $this->redirectTo("location", "ajoutAnnonces");
+                    }
+    
+                    // Vérification que la date de fin est supérieure ou égale à la date de début
+                    if ($dateFin < $dateDebut) {
+                        Session::addFlash("error", "La date de fin doit être postérieure ou égale à la date de début.");
+                        return $this->redirectTo("location", "ajoutAnnonces");
+                    }
+                    
+                    // On insère l'annonce dans la BDD grâce à la fonction "add" du fichier Manager
                     $annonceManager->add([
                         "dateDebut" => $dateDebut,
-                        "dateFin"  => $dateFin,
-                        "nbChat"  => $nbChat,
-                        "description"  => $description,
-                        // on rajoute l'utilisateur qui crée l'annonce
+                        "dateFin" => $dateFin,
+                        "nbChat" => $nbChat,
+                        "description" => $description,
                         "utilisateur_id" => Session::getUtilisateur()->getId(),
-                        "logement_id" => $id_logement// on rajoute l'id du logement
-                        ]);
-                    //var_dump("ok");die;
-
-                // Ajout d'un message de succès
-                Session::addFlash("success", "Votre annonce a été déposée avec succès.");
-
-                // Redirection après l'ajout de l'annonce
-                $this->redirectTo("location", "index");
+                        "logement_id" => $id_logement // on rajoute l'id du logement
+                    ]);
+                    
+                    // Ajout d'un message de succès
+                    Session::addFlash("success", "Votre annonce a été déposée avec succès.");
+    
+                    // Redirection après l'ajout de l'annonce
+                    $this->redirectTo("location", "index");
                 }
             }
         }
-    }
+    
         // On affiche le formulaire de dépôt d'annonce
         return [
             "view" => VIEW_DIR . "location/ajoutAnnonces.php",
@@ -182,7 +183,7 @@ return [
             ]
         ];
     }
-   
+    
 
     //CREATION D UN LOGEMENT
     public function creationLogement() {
