@@ -19,8 +19,8 @@
 
     <label for="consentement">
         <input type="checkbox" name="consentement" id="consentement">
-        J'accepte que mes informations personnelles soient utilisées 
-        conformément à la politique de confidentialité.
+        <a href="index.php?ctrl=location&action=mentionsLegales">J'accepte que mes informations personnelles soient utilisées 
+        conformément à la politique de confidentialité.</a>
     </label><br>
 
         
