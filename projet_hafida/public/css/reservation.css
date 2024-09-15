@@ -23,3 +23,10 @@ label {
     margin-bottom: 5px; /* Marge en bas de 5px */
     font-size: 18px;
 }     
+
+.btn-reservation {
+    display: block; /* Transforme l'input en élément bloc */
+    margin: 20px auto; /* Ajoute une marge de 20px en haut et en bas, et centre horizontalement */
+    padding: 10px 20px; /* Ajoute un peu de padding pour la taille */
+}
+

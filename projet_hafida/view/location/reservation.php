@@ -34,6 +34,6 @@
     <textarea name="question" rows="4" cols="50"></textarea><br>
     
     <!-- Bouton de soumission pour la réservation -->
-    <input type="submit" name="submitReservation" value="Réserver">
+    <input type="submit" name="submitReservation" class="btn-reservation" value="Réserver">
 </form>
 </div>
