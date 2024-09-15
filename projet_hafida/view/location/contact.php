@@ -14,5 +14,7 @@
     <label for="message">Message:</label><br>
     <textarea name="message" rows="4" cols="50" required></textarea><br><br>
 
+    <div class="submit-container">
     <input type="submit" value="Envoyer">
+    </div>
 </form>
