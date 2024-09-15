@@ -65,7 +65,7 @@
       Le home-sitting séduit de plus en plus de propriétaires de chats, offrant ainsi 
       une solution moderne pour allier le bien-être de l'animal et des vacances économiques.
     </p>
-    <a href="#" class="button">En savoir plus</a>
+    <a href="index.php?ctrl=location&action=contact" class="button">En savoir plus</a>
   </div>
 </section>
 
