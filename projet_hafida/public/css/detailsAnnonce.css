@@ -38,6 +38,7 @@
     margin: 0 auto; /* Pour centrer l'image horizontalement */
     width: 80%; /* Utilisez 100% pour remplir le conteneur */
     height: auto; /* Hauteur fixe pour uniformiser */
+    max-height: 400px;
     object-fit: cover; /* Rendre l'image cohérente en taille */
     border-radius: 5px;
 }
@@ -74,6 +75,8 @@
     width: 100%; /* Prendre 100% de largeur pour centrer */
     max-width: 500px; /* Largeur maximale ajustable pour le carrousel */
     margin: 20px auto; /* Centrer le carrousel verticalement */
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 
@@ -87,11 +90,17 @@
 
 /* Style pour les images dans le carrousel */
 .carousel-image {
-    width: 100%; /* Largeur à 100% pour s'adapter au conteneur */
-    height: 300px; /* Hauteur fixe pour conserver le rapport d'aspect de l'image */
-    object-fit: cover; /* Conserve le rapport d'aspect de l'image */
+    width: 100%; /* S'assure que l'image remplit le conteneur */
+    height: auto; /* Assure le respect du rapport d'aspect */
+    max-height: 400px; /* Définir la hauteur maximale pour éviter un débordement trop important */
+    object-fit: cover; /* Assure que l'image remplit le conteneur en conservant le rapport d'aspect */
 }
 
+/* Gestion de la hauteur de l'image dans le carousel */
+.carousel-images {
+    width: 100%; /* Largeur à 100% pour s'adapter au conteneur */
+    height: auto; /* Pas de contrainte de hauteur spécifique pour garder l'aspect naturel */
+}
 
 /* Style pour les boutons de navigation (précédent et suivant) */
 .prev, .next {
