@@ -88,7 +88,7 @@ nav a {
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
-  color: white; /* Couleur de texte blanche pour augmenter le contraste */
+  color:  #eeeeee; /* Couleur de texte blanche pour augmenter le contraste */
 }
 
 nav a:hover {
