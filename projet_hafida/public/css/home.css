@@ -229,13 +229,13 @@ section {
 
 .temoignages blockquote p {
   font-size: 18px;
-  color: #666;
+  color: black;
   margin: 0; 
 }
 
 .temoignages signature {
   font-size: 16px;
-  color: #3b3b3b;
+  color:black;
   font-style: italic;
   margin-top: 10px; 
 }
