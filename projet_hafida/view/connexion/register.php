@@ -23,11 +23,10 @@
         conformément à la politique de confidentialité.</a>
     </label><br>
 
-        
+    <div class="g-recaptcha" data-sitekey="6LeUhkYqAAAAALeAYNXSofNNSW3Fw9vzIRzl4Ngw" data-action="LOGIN"></div>
+<br/>
     <div class="submit-container">
         <input type="submit" name="submitRegister" value="S'enregistrer">
     </div>
-
-
 </form>
-   
+<script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
