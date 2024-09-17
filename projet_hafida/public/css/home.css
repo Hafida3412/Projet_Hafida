@@ -22,7 +22,7 @@ section {
 .content{
   max-width: 1500px; 
   gap:20px;
-  margin: 0 auto; /* Centre la section horizontalement */
+  margin-top: 20px; /* Centre la section horizontalement */
   padding: 20px; /* Ajoute un espacement interne */
   text-align: center;
   padding: 50px;
