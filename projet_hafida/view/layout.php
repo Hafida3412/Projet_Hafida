@@ -44,7 +44,7 @@
                     <nav>
                     <div id="nav-left" class="full-width">
                     <a href="index.php?ctrl=home&action=view">
-                <img src="public/img/logo.png" alt="Logo">
+                <img src="public\img\Logo_gold-removebg-preview.png" alt="Logo">
             </a>
                     <div id="nav-right">
                         <?php
