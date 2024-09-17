@@ -268,26 +268,66 @@ nav a:hover {
 /* Styles spécifiques aux écrans de taille moyenne (tablettes) */
 @media screen and (max-width: 1024px) {
   main {
-      width: 90%; /* on ajuste la largeur du conteneur des annonces pour les tablettes */
+      width: 90%; /* largeur du conteneur des annonces pour les tablettes */
+      margin: 0 auto; /* centrage du conteneur */
+  }
+
+  .card {
+      width: 70%; /* Ajustement pour tablette */
+  }
+
+  .benefice1, .benefice2 {
+      width: 45%; /* réduction de la largeur des cartes */
   }
 }
 
 /* Styles spécifiques aux écrans de petite taille (smartphones) */
 @media screen and (max-width: 768px) {
   main {
-      width: 100%; /* on ajuste la largeur du conteneur des annonces pour les smartphones */
+      width: 100%; /* ajustement de la largeur du conteneur des annonces pour les smartphones */
+  }
+
+  body {
+      font-size: 14px; /* réduction de la taille de police pour les petits écrans */
   }
 
   nav ul {
-      flex-direction: column; /* on change la direction des éléments de la navigation en colonne pour les smartphones */
+      flex-direction: column; /* navigation en colonne pour les petits écrans */
+      align-items: center; /* centrer les éléments de navigation */
   }
 
   nav li {
-      margin: 10px 0; /* on ajuste l'espacement entre les éléments de la navigation pour les smartphones */
+      margin: 10px 0; /* ajuster l'espacement entre les éléments */
   }
 
   #nav-left img {
-      width: 80px; /* on ajuste la taille du logo pour les smartphones */
-      height: 80px;
+      width: 80px; /* ajustement pour mobile */
+      height: 80px; /* hauteur ajustée */
+  }
+
+  /* Sections */
+  .explications, .concept {
+      flex-direction: column; /* modifier pour une seule colonne */
+      padding: 20px;
+  }
+
+  .benefice1, .benefice2 {
+      width: 100%; /* pleine largeur pour les petits écrans */
+      margin: 10px 0; /* espacement ajusté */
+  }
+
+  .card {
+      width: 100%; /* ajustement pour la card */
+      margin-bottom: 20px; /* espace entre les cartes */
+  }
+
+  .temoignages-container {
+      flex-direction: column; /* stack les témoignages */
+      align-items: center; /* centre les témoignages */
+  }
+
+  /* Cookies popup */
+  #cookie-popup {
+      width: 80%; /* popup plus large pour les petits écrans */
   }
 }
