@@ -175,6 +175,68 @@ return [
         $this->redirectTo("connexion", "login.php");
     }
 }
+
+public function forgotPassword() {
+    if (isset($_POST["submitForgotPassword"])) {
+        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+
+        if ($email) {
+            $userManager = new UtilisateurManager();
+            $utilisateur = $userManager->checkUserExists($email);
+
+            if ($utilisateur) {
+                // Ici nous générerons un jeton de réinitialisation
+                $token = bin2hex(random_bytes(16)); // Générer un jeton
+                // Stocker le jeton dans la base de données contre l'utilisateur, définir une date d'expiration (ex : 1 heure)
+                $userManager->storeResetToken($utilisateur->getId(), $token);
+
+                // Envoyer un email à l'utilisateur
+                $resetLink = "Location: index.php?ctrl=security&action=resetPassword&token=" . $token;
+                mail($email, "Demande de réinitialisation de mot de passe", "Pour réinitialiser votre mot de passe, cliquez sur ce lien : " . $resetLink);
+
+                Session::addFlash("success", "Un lien de réinitialisation du mot de passe a été envoyé à votre adresse email.");
+                header("Location: index.php?ctrl=security&action=login");
+                exit;
+            } else {
+                Session::addFlash("error", "Aucun utilisateur trouvé avec cet email.");
+            }
+        }
+    }
+
+    return [
+        "view" => VIEW_DIR . "connexion/forgotPassword.php",
+        "meta_description" => "Réinitialiser le mot de passe"
+    ];
+}
+
+// MISE EN PLACE DE LA FONCTION POUR RÉINITIALISER LE MOT DE PASSE
+public function resetPassword() {
+    if (isset($_POST["submitResetPassword"])) {
+        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $token = filter_input(INPUT_GET, "token", FILTER_SANITIZE_STRING);
+
+        if ($password && $token) {
+            $userManager = new UtilisateurManager();
+            $utilisateurId = $userManager->validateResetToken($token); // Vérifier la validité du jeton
+
+            if ($utilisateurId) {
+                // Mettre à jour le mot de passe de l'utilisateur
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                $userManager->updatePassword($utilisateurId, $hashedPassword);
+                Session::addFlash("success", "Votre mot de passe a été mis à jour avec succès.");
+                header("Location: index.php?ctrl=security&action=login");
+                exit;
+            } else {
+                Session::addFlash("error", "Le lien de réinitialisation est invalide ou a expiré.");
+            }
+        }
+    }
+
+    return [
+        "view" => VIEW_DIR . "connexion/resetPassword.php",
+        "meta_description" => "Réinitialiser le mot de passe"
+    ];
+}
 }
 
 
