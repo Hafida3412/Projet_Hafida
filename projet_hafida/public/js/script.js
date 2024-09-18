@@ -1,26 +1,3 @@
-//ANIMATION DES COOKIES DANS LA VUE LOGIN
-// Fonction pour accepter les cookies
-function acceptCookies() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    document.getElementById('cookie-popup').style.display = 'none';
-}
-
-// Fonction pour refuser les cookies
-function refuseCookies() {
-    localStorage.setItem('cookiesAccepted', 'false');
-    document.getElementById('cookie-popup').style.display = 'none';
-}
-
-// Vérifier si l'utilisateur a déjà fait un choix concernant les cookies
-window.onload = function() {
-    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
-    if (cookiesAccepted === null) {
-        // Afficher le popup s'il n'y a pas de choix enregistré
-        document.getElementById('cookie-popup').style.display = 'block';
-    }
-    // Si l'utilisateur a déjà accepté ou refusé, ne rien faire
-};
-
 
 //MISE EN PLACE D UN CAROUSEL D IMAGES DANS LA VUE DETAILSANNONCE
 let currentSlide = 0; // Variable pour suivre la diapositive actuellement affichée
