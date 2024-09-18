@@ -18,6 +18,7 @@
 <br/>
 <input type="submit" name="submitLogin" value="Se connecter">
 <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+
 <!-- Lien vers la vue forgotPassword -->
 <p><a href="index.php?ctrl=security&action=forgotPassword">Mot de passe oublié ?</a></p>
 
