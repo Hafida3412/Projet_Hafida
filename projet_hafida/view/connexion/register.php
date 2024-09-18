@@ -1,7 +1,8 @@
 <?php
 
 ?>
-<img src="public\img\chat.png" alt="regard d'un chat" style="width: 100%; height: auto; object-fit: contain;">
+<img src="public/img/chat.png" alt="regard d'un chat" class="chat-image">
+
 <h1>S'inscrire</h1>
 
 <form action="index.php?ctrl=security&action=register" method="POST"><!--STRUCTURE DE L'URL POUR DECLENCHER UNE ACTION: INDEX.PHP?CTRL ACTION= METHOD= ID= -->
