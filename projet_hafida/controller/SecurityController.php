@@ -44,22 +44,26 @@ class SecurityController extends AbstractController{
                 "password" => password_hash($pass1, PASSWORD_DEFAULT)
                  ]
         );
-     //REDIRECTION APRES L INSCRIPTION
-               header("Location: index.php?ctrl=security&action=login");
-        exit;
-        } else {
-               header("Location: index.php?ctrl=security&action=register");
-        exit;
-        $this->redirectTo("security","register");
-    }   
-        }
-    }
-            } 
-        return [
-                 "view" => VIEW_DIR . "connexion/register.php",
-                 "meta_description" => "Formulaire d'inscription"
-            ];
-     }  
+     // REDIRECTION APRES L INSCRIPTION
+     header("Location: index.php?ctrl=security&action=login");
+     exit;
+ } else {
+     header("Location: index.php?ctrl=security&action=register");
+     exit;
+ }
+}
+} else {
+// Redirection vers le formulaire d'inscription si des champs sont manquants
+header("Location: index.php?ctrl=security&action=register");
+exit;
+}
+}
+
+return [
+"view" => VIEW_DIR . "connexion/register.php",
+"meta_description" => "Formulaire d'inscription"
+];
+}
 
     //MISE EN PLACE DE LA FONCTION SE CONNECTER
     public function login() {
