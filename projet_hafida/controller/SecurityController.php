@@ -89,19 +89,16 @@ return [
                 header("Location:index.php?ctrl=home&action=index");//SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D ACCUEIL
                 exit;  
                     
+            } else {
+                Session::addFlash("error", "Erreur d'adresse mail ou de mot de passe.");
+            }
         } else {
-    // Erreur d'adresse mail ou de mot de passe
-                header("Location: index.php?ctrl=security&action=login");
-        exit;
-                }
-        } else {
-    // Utilisateur introuvable
-                header("Location: index.php?security&action=login");
-        exit;
+            Session::addFlash("error", "Utilisateur introuvable.");
         }
+    } else {
+        Session::addFlash("error", "Tous les champs sont obligatoires.");
     }
-    // Afficher le formulaire de connexion
-                }
+}
         
             return [
             "view" => VIEW_DIR . "connexion/login.php",
