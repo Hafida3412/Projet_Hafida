@@ -1,0 +1,6 @@
+.chat-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 20px; /* Ajoute une marge de 20px au-dessus de l'image */
+}

@@ -56,7 +56,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
-<img src="public/img/chat.png" alt="regard d'un chat" style="width: 100%; height: auto; object-fit: contain;">
+<img src="public/img/chat.png" alt="regard d'un chat" class="chat-image">
 
 <div class="login-container">
 <h1>Se connecter</h1>

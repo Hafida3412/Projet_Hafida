@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/home.css">
+        <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/login.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/register.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/listAnnonces.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/detailsAnnonce.css">
