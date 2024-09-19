@@ -12,7 +12,7 @@
     <label for="email">Mail</label>
     <input type="email" name="email" id="email" required><br>
 
-    <label for="pass1">Mot de passe</label>
+    <label for="pass1">Mot de passe <small class="password-hint">(Au moins 12 caractères, dont 1 lettre majuscule, 1 lettre minuscule et 1 chiffre)</small></label>
     <input type="password" name="pass1" id="pass1" required><br>
 
     <label for="pass2">Confirmation du mot de passe</label>

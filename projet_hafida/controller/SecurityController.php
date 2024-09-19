@@ -22,38 +22,41 @@ class SecurityController extends AbstractController{
              $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
              $pass1 = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-         
-     //VERIFIER LA VALIDITE DES FILTRES:
-        if($pseudo && $email && $pass1 && $pass2){
- 
-     //var_dump("ok");die;
+    
+    // Définir une regex pour le mot de passe
+    $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/"; // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
+
+    // Vérifier la validité des filtres
+    if ($pseudo && $email && $pass1 && $pass2) {
+    //var_dump("ok");die;
              $userManager = new UtilisateurManager();
              $utilisateur = $userManager->checkUserExists($email);//création de la function checkUserExists dans utilisateurManager pour vérifier si l'utilisateur existe
-     //SI L UTILISATEUR EXISTE
-        if($utilisateur){
-             header("Location: index.php?ctrl=security&action=register"); 
-        exit; 
-        } else {
-     //var_dump("utilisateur inexistant");die;
-     //insertion de l'utilisateur en BDD
-        if($pass1 == $pass2 && strlen($pass1) >= 5) {//VERIFICATION QUE LES MDP SONT IDENTIQUES
-                             
-                $userManager->add([//on récupère la function add du fichier Manager
+    //SI L UTILISATEUR EXISTE
+    if ($utilisateur) {
+        Session::addFlash("error", "Cet email est déjà utilisé.");
+        header("Location: index.php?ctrl=security&action=register");
+        exit;
+    } else {
+        // Vérification que les mots de passe sont identiques et que le mot de passe respecte la regex
+        if ($pass1 === $pass2 && preg_match($passwordRegex, $pass1)) {
+            $userManager->add([
                 "pseudo" => $pseudo,
                 "email" => $email,
                 "password" => password_hash($pass1, PASSWORD_DEFAULT)
-                 ]
-        );
-     // REDIRECTION APRES L INSCRIPTION
-     header("Location: index.php?ctrl=security&action=login");
-     exit;
- } else {
-     header("Location: index.php?ctrl=security&action=register");
-     exit;
- }
+            ]);
+
+    // Redirection après l'inscription
+    header("Location: index.php?ctrl=security&action=login");
+    exit;
+} else {
+    Session::addFlash("error", "Le mot de passe doit contenir au moins 12 caractères, incluant une lettre majuscule, une lettre minuscule et un chiffre.");
+    header("Location: index.php?ctrl=security&action=register");
+    exit;
+}
 }
 } else {
 // Redirection vers le formulaire d'inscription si des champs sont manquants
+Session::addFlash("error", "Tous les champs sont obligatoires.");
 header("Location: index.php?ctrl=security&action=register");
 exit;
 }
@@ -67,44 +70,57 @@ return [
 
     //MISE EN PLACE DE LA FONCTION SE CONNECTER
     public function login() {
-
-        if(isset($_POST["submitLogin"])) {
-   
-    //PROTECTION XSS (=FILTRES)
-            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
+        if (isset($_POST["submitLogin"])) {
+            // PROTECTION XSS (=FILTRES)
+            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-        if($email && $password) {//REQUETE PREPARE POUR LUTTER CTRE LES INJECTIONS SQL
-        //var_dump("ok");die;
-    //si l'utilisateur existe
-            $userManager = new UtilisateurManager();
-            $utilisateur = $userManager->checkUserExists($email);
-
-        if($utilisateur){
-        // var_dump($utilisateur);die;
-            $hash = $utilisateur->getPassword();
-
-        if(password_verify($password, $hash)){//VERIFICATION DU MDP
-            $_SESSION["utilisateur"] = $utilisateur; //on stocke dans un tableau SESSION l'intégralité des infos du user
-                header("Location:index.php?ctrl=home&action=index");//SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D ACCUEIL
-                exit;  
-                    
+    
+            // Définir une regex pour le mot de passe
+            $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/"; // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
+    
+            // Vérifier que l'email et le mot de passe existent
+            if ($email && $password) {
+                // Vérification du mot de passe avec la regex
+                if (!preg_match($passwordRegex, $password)) {
+                    Session::addFlash("error", "Le mot de passe doit contenir au moins 12 caractères, incluant une lettre majuscule, une lettre minuscule et un chiffre.");
+                    return [
+                        "view" => VIEW_DIR . "connexion/login.php",
+                        "meta_description" => "Formulaire de connexion"
+                    ];
+                }
+                
+                // REQUETE PREPARE POUR LUTTER CONTRE LES INJECTIONS SQL
+                $userManager = new UtilisateurManager();
+                $utilisateur = $userManager->checkUserExists($email);
+    
+                // Si l'utilisateur existe
+                if ($utilisateur) {
+                    $hash = $utilisateur->getPassword();
+    
+                    // VERIFICATION DU MDP
+                    if (password_verify($password, $hash)) {
+                        // On stocke dans une SESSION l'intégralité des infos du user
+                        $_SESSION["utilisateur"] = $utilisateur; 
+                        // SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D'ACCUEIL
+                        header("Location:index.php?ctrl=home&action=index");
+                        exit;
+                    } else {
+                        Session::addFlash("error", "Erreur d'adresse mail ou de mot de passe.");
+                    }
+                } else {
+                    Session::addFlash("error", "Utilisateur introuvable.");
+                }
             } else {
-                Session::addFlash("error", "Erreur d'adresse mail ou de mot de passe.");
+                Session::addFlash("error", "Tous les champs sont obligatoires.");
             }
-        } else {
-            Session::addFlash("error", "Utilisateur introuvable.");
         }
-    } else {
-        Session::addFlash("error", "Tous les champs sont obligatoires.");
-    }
-}
-        
-            return [
+    
+        return [
             "view" => VIEW_DIR . "connexion/login.php",
             "meta_description" => "Formulaire de connexion"
         ];
     }
+    
     
     // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
     public function monCompte(){

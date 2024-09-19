@@ -12,6 +12,10 @@ label[for="consentement"] {
     align-items: baseline;/*éléments alignés sur la même ligne de base*/
 }
 
+.password-hint {
+    font-size: 0.7em; /* Réduit la taille de police */
+    color: #666; /* Couleur du texte */
+}
 
 
 
