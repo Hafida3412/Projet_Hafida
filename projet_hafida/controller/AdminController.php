@@ -96,4 +96,61 @@ public function supprimerUtilisateur() {
     exit;
 }
 
+public function editAnnonce() {
+    $utilisateur = Session::getUtilisateur();
+    
+    // Check if the user is admin
+    if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN")) {
+        Session::addFlash('error', 'Accès refusé. Vous devez être administrateur pour effectuer cette action.');
+        header('Location: index.php?ctrl=security&action=login');
+        exit;
+    }
+
+    // Check if an ID is provided
+    if (isset($_GET['id'])) {
+        $annonceId = $_GET['id'];
+        $annonceManager = new AnnonceManager();
+        $annonce = $annonceManager->findOneById($annonceId);
+        
+        // If the announcement doesn't exist, redirect
+        if (!$annonce) {
+            Session::addFlash('error', "Annonce introuvable.");
+            header('Location: index.php?ctrl=admin&action=AllAnnonces');
+            exit;
+        }
+
+        // If the form has been submitted, process the data
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $updatedData = [
+                'nbChat' => $_POST['nbChat'],
+                'dateDebut' => $_POST['dateDebut'],
+                'dateFin' => $_POST['dateFin'],
+                'description' => $_POST['description'],
+                'estValide' => $_POST['estValide'] ? 1 : 0 // Checkbox as boolean
+            ];
+
+            // Call the update method from the manager
+            if ($annonceManager->update($annonceId, $updatedData)) {
+                Session::addFlash('success', 'Annonce mise à jour avec succès.');
+                header('Location: index.php?ctrl=admin&action=AllAnnonces');
+                exit;
+            } else {
+                Session::addFlash('error', 'Erreur lors de la mise à jour de l\'annonce.');
+            }
+        }
+
+        return [
+            'view' => VIEW_DIR . 'admin/editAnnonce.php',
+            'meta_description' => 'Éditer l\'annonce',
+            'data' => [
+                'annonce' => $annonce
+            ]
+        ];
+    } else {
+        Session::addFlash('error', 'Aucune annonce à éditer.');
+        header('Location: index.php?ctrl=admin&action=AllAnnonces');
+        exit;
+    }
+}
+
 }

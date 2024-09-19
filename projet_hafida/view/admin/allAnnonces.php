@@ -1,27 +1,105 @@
+<!--Ce code affiche la liste des annonces récupérées depuis la base de données-->
 <?php
-// On extrait la liste des utilisateurs depuis le tableau de résultats
-$annonces = $result["data"]["annonces"]; // Sert à éviter l'erreur si 'annonces' n'existe pas
+$annonces = $result["data"]['annonces']; 
 ?>
-<div class="bg_allAnnonces">
-<h1>Toutes les annonces</h1>
 
-<?php if (!empty($annonces)): ?>
-    <div class="annonces-list">
-        <?php foreach ($annonces as $annonce): ?>
-            <div class='annonce'> <!-- Cadre de l'annonce -->
-                <p><strong>Annonce de <?= htmlspecialchars($annonce->getUtilisateur()->getPseudo()) ?></strong><br>
-                Date de création: <?= date('d-m-Y H:i:s', strtotime($annonce->getDateCreation())) ?><br>
-                Nb de chats: <?= htmlspecialchars($annonce->getNbChat()) ?><br>
-                Date de début: <?= date('d-m-Y', strtotime($annonce->getDateDebut())) ?><br>
-                Date de fin: <?= date('d-m-Y', strtotime($annonce->getDateFin())) ?><br>
-                Description: <?= htmlspecialchars($annonce->getDescription()) ?><br>
-                Ville: <?= htmlspecialchars($annonce->getLogement()->getVille()) ?><br>
-                État: <?= $annonce->getEstValide() ? 'Validé' : 'Non Validé' ?><br>
-                <a href='index.php?ctrl=location&action=detailsAnnonce&id=<?= $annonce->getId() ?>'>Consulter</a>
-                </p>
-            </div> <!-- Fermeture du cadre de l'annonce -->
-        <?php endforeach; ?>
-    </div>
-<?php else: ?>
-    <p>Aucune annonce trouvée.</p>
-<?php endif; ?></div>
+<main class="bg-annonces">
+    <h1>Profitez de l’opportunité de garder un chat à domicile pendant
+       l’absence de son <br> propriétaire!</h1>
+<br>
+<!--Création du formulaire de recherche d'annonce par ville-->
+<form method="GET" action="index.php">
+    <input type="hidden" name="ctrl" value="location">
+    <input type="hidden" name="action" value="rechercheAnnonce">
+
+    <label for="ville">Rechercher par ville</label>
+    <input type="text" name="ville" id="ville" placeholder="Entrez une ville">
+    <button class="annonce-info" type="submit">Rechercher</button>
+</form>
+
+
+    <h1>Consulter les annonces</h1>
+   
+    <div class="annonce-container">
+<?php
+
+if (!empty($annonces)) {
+foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et affiche les détails de celle-ci 
+    echo "<div class='annonce'>"; // Ouverture du cadre de l'annonce
+    
+    //Détails de l'annonce:
+    echo "<p>"."<strong>"."Annonce de ".$annonce->getUtilisateur()->getPseudo()."</strong>"."<br>" .
+    (date('d-m-Y H:i:s', strtotime($annonce->getDateCreation()))).
+    "<br> Nb de chats: ".$annonce->getNbChat()."<br>
+    Date de début: ".(date('d-m-Y ', strtotime($annonce->getDateDebut())))."<br>
+    Date de fin: ".(date('d-m-Y ', strtotime($annonce->getDateFin()))).
+    "<br> Description: ".$annonce->getDescription()."<br> 
+    Ville: ".$annonce->getLogement()->getVille()."<br> 
+    <a href='index.php?ctrl=location&action=detailsAnnonce&id=".$annonce->getId()."'>Consulter</a>"."<br>";
+
+    //Il peut également supprimer une annonce s'il en est l'auteur en cliquant sur le bouton "Supprimer" après confirmation
+    if (App\Session::getUtilisateur() && App\Session::getUtilisateur()->hasRole("ROLE_ADMIN")) { ?>
+        <!-- Un bouton "supprimer" est affiché au bas de chaque annonce de l'utilisateur connecté -->
+        <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
+            <button class="btn-delete" type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
+        </form>
+    
+        <?php if (App\Session::getUtilisateur() && App\Session::getUtilisateur()->hasRole("ROLE_ADMIN")) { ?>
+            <a href="index.php?ctrl=admin&action=editAnnonce&id=<?php echo $annonce->getId(); ?>">Éditer</a>
+        <?php } ?>
+    <?php } 
+    
+    echo "</p></div>"; // Fermeture du cadre de l'annonce</p>
+    }
+} else {
+  echo "<p>Aucune annonce trouvée.</p>";
+}
+
+?>
+</div>
+</main>
+<?php
+
+// PAGINATION DE LA LISTE DES ANNONCES
+
+// On définit la page courante
+/*On utilise la fonction isset($_GET['page']) pour vérifier si la page est définie 
+dans l'URL. Si c'est le cas, on utilise la valeur récupérée via intval($_GET['page']) 
+pour convertir la valeur en entier. (Sinon, on peut utiliser la valeur 1 par défaut.)
+*/
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page depuis l'URL
+$totalPages = 3; //On définit la variable $totalPages qui représente le nombre total de pages.
+?>
+
+<nav aria-label="Pagination"><!--Cet attribut indique aux utilisateurs de technologies 
+d'assistance que cette section de navigation est dédiée à la pagination--> 
+  <ul class="pagination">
+    <?php if ($page > 1): // Si la page courante n'est pas la première ?> 
+      <li class="page-item">
+    <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
+      echo $page - 1; ?>">Précédent</a></li>
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $totalPages; $i++): // Boucle FOR pour afficher les numéros de page?>
+      <li class="page-item <?php if ($i == $page) 
+      echo 'active'; ?>"><!--On utilise la classe active pour la page courante.-->
+      <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
+      echo $i; ?>"><?php 
+      echo $i; ?></a></li>
+    <?php endfor; ?>
+
+    <!--On utilise une condition if pour vérifier si la page courante est inférieure
+     au nombre total de pages. Si c'est le cas, on affiche le lien "Suivant".-->
+    <?php if ($page < $totalPages): // Si la page courante n'est pas la dernière?>
+      <li class="page-item">
+      <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
+      echo $page + 1; ?>">Suivant</a></li>
+    <?php endif; ?>
+  </ul>
+</nav>
+
+
+
+
+
+

@@ -104,6 +104,18 @@ class AnnonceManager extends Manager{
     );
 }
 
+public function update($id, $data) {
+    $sql = "UPDATE " . $this->tableName . " 
+            SET nbChat = :nbChat, 
+                dateDebut = :dateDebut, 
+                dateFin = :dateFin, 
+                description = :description, 
+                estValide = :estValide
+            WHERE id_annonce = :id";
+
+    return DAO::update($sql, array_merge($data, ['id' => $id]));
+}
+
 }
    
 
