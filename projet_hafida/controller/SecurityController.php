@@ -173,59 +173,63 @@ return [
     }
 }
 
+// MISE EN PLACE DE LA FONCTION MOT DE PASSE OUBLIÉ
 public function forgotPassword() {
+    // Ici, l'utilisateur peut saisir son email
     if (isset($_POST["submitForgotPassword"])) {
+        // Filtrer l'email
         $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-
         if ($email) {
             $userManager = new UtilisateurManager();
             $utilisateur = $userManager->checkUserExists($email);
 
             if ($utilisateur) {
-                // Ici nous générerons un jeton de réinitialisation
-                $token = bin2hex(random_bytes(16)); // Générer un jeton
-                // Stocker le jeton dans la base de données contre l'utilisateur, définir une date d'expiration (ex : 1 heure)
-                $userManager->storeResetToken($utilisateur->getId(), $token);
+                // On stocke l'ID utilisateur dans la session pour le réinitialiser plus tard
+                Session::setUtilisateur($utilisateur);
 
-                // Envoyer un email à l'utilisateur
-                $resetLink = "Location: index.php?ctrl=security&action=resetPassword&token=" . $token;
-                mail($email, "Demande de réinitialisation de mot de passe", "Pour réinitialiser votre mot de passe, cliquez sur ce lien : " . $resetLink);
-
-                Session::addFlash("success", "Un lien de réinitialisation du mot de passe a été envoyé à votre adresse email.");
-                header("Location: index.php?ctrl=security&action=login");
+                // Redirection vers la page de réinitialisation
+                header("Location: index.php?ctrl=security&action=resetPassword");
                 exit;
             } else {
-                Session::addFlash("error", "Aucun utilisateur trouvé avec cet email.");
+                Session::addFlash("error", "Email introuvable.");
             }
+        } else {
+            Session::addFlash("error", "Veuillez entrer une adresse email valide.");
         }
     }
 
     return [
         "view" => VIEW_DIR . "connexion/forgotPassword.php",
-        "meta_description" => "Réinitialiser le mot de passe"
+        "meta_description" => "Récupération du mot de passe"
     ];
 }
 
-// MISE EN PLACE DE LA FONCTION POUR RÉINITIALISER LE MOT DE PASSE
+// MISE EN PLACE DE LA FONCTION RÉINITIALISER LE MOT DE PASSE
 public function resetPassword() {
+    $utilisateur = Session::getUtilisateur(); // Récupérer l'utilisateur en session
+
+    if (!$utilisateur) {
+        Session::addFlash("error", "Aucun utilisateur connecté.");
+        header("Location: index.php?ctrl=security&action=login");
+        exit;
+    }
+
     if (isset($_POST["submitResetPassword"])) {
-        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $token = filter_input(INPUT_GET, "token", FILTER_SANITIZE_STRING);
+        // Filtrer le nouveau mot de passe
+        $newPassword = filter_input(INPUT_POST, "newPassword", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        if ($password && $token) {
+        if ($newPassword) {
             $userManager = new UtilisateurManager();
-            $utilisateurId = $userManager->validateResetToken($token); // Vérifier la validité du jeton
+            // Mettre à jour le mot de passe
+            $userManager->updatePassword($utilisateur->getId(), password_hash($newPassword, PASSWORD_DEFAULT));
+            Session::addFlash("success", "Votre mot de passe a été réinitialisé avec succès!");
 
-            if ($utilisateurId) {
-                // Mettre à jour le mot de passe de l'utilisateur
-                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-                $userManager->updatePassword($utilisateurId, $hashedPassword);
-                Session::addFlash("success", "Votre mot de passe a été mis à jour avec succès.");
-                header("Location: index.php?ctrl=security&action=login");
-                exit;
-            } else {
-                Session::addFlash("error", "Le lien de réinitialisation est invalide ou a expiré.");
-            }
+            // Nettoyer la session
+            Session::setUtilisateur(null); // Clear user session after resetting password
+            header("Location: index.php?ctrl=security&action=login");
+            exit;
+        } else {
+            Session::addFlash("error", "Veuillez entrer un mot de passe.");
         }
     }
 
@@ -234,6 +238,7 @@ public function resetPassword() {
         "meta_description" => "Réinitialiser le mot de passe"
     ];
 }
+
 }
 
 
