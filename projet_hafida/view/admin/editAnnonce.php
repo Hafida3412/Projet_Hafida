@@ -16,5 +16,5 @@
     <label for="estValide">Annonce Valide</label>
     <input type="checkbox" name="estValide" id="estValide" <?php echo $result['data']['annonce']->getEstValide() ? 'checked' : ''; ?>>
 
-    <button type="submit">Mettre à Jour</button>
+    <button type="submit" class="btn-edit">Mettre à Jour</button>
 </form>

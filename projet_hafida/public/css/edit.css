@@ -1,0 +1,24 @@
+/* Style pour le bouton "Mettre à Jour" dans le formulaire d'édition */
+.btn-edit[type="submit"] {
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de couleurs correspondant */
+    color: #fff; /* Couleur du texte en blanc pour un bon contraste */
+    padding: 12px 20px; /* Espacement interne du bouton */
+    border: none; /* Pas de bordure sur le bouton */
+    cursor: pointer; /* Pointeur de souris au survol */
+    border-radius: 5px; /* Coins arrondis pour un aspect cohérent */
+    font-size: 16px; /* Taille de la police du bouton */
+    margin-top: 20px; /* Marge en haut pour séparer le bouton du contenu précédent */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour les transitions */
+}
+
+.btn-edit [type="submit"]:hover {
+    transform: scale(1.05); /* Légère amplification au survol */
+    background: linear-gradient(90deg, #f0b85f, #6B2C1A); /* Change l'ordre du dégradé sur le survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+}
+
+.btn-edit {
+    display: block; /* Transforme l'input en élément bloc */
+    margin: 20px auto; /* Ajoute une marge de 20px en haut et en bas, et centre horizontalement */
+    padding: 10px 20px; /* Ajoute un peu de padding pour la taille */
+}

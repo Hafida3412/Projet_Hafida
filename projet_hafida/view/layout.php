@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/listeLogementsUtilisateur.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/listUtilisateurs.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/allAnnonces.css">
+        <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/edit.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/faq.css">
 
 
