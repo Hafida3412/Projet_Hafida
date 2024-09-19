@@ -39,16 +39,19 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
 
     //Il peut également supprimer une annonce s'il en est l'auteur en cliquant sur le bouton "Supprimer" après confirmation
     if (App\Session::getUtilisateur() && App\Session::getUtilisateur()->hasRole("ROLE_ADMIN")) { ?>
-        <!-- Un bouton "supprimer" est affiché au bas de chaque annonce de l'utilisateur connecté -->
-        <div class="button-admin">
-        <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
-            <button class="btn-delete" type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
-        </form>
-    
-        <?php if (App\Session::getUtilisateur() && App\Session::getUtilisateur()->hasRole("ROLE_ADMIN")) { ?>
-          <button class="btn-edit" href="index.php?ctrl=admin&action=editAnnonce&id=<?php echo $annonce->getId(); ?>">Éditer</a>
-        </div>
-        <?php } ?>
+      <div class="button-admin">
+          <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
+              <button class="btn-delete" type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
+          </form>
+          
+          <form method="get" action="index.php" style="display:inline;">
+              <input type="hidden" name="ctrl" value="admin">
+              <input type="hidden" name="action" value="editAnnonce">
+              <input type="hidden" name="id" value="<?php echo $annonce->getId(); ?>">
+              <button class="btn-edit" type="submit">Éditer</button>
+          </form>
+      </div>
+        <?php  ?>
     <?php } 
     
     echo "</p></div>"; // Fermeture du cadre de l'annonce</p>

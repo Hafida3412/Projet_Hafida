@@ -25,6 +25,33 @@
         transform: scale(1.02); /* Légère augmentation en taille au survol */
     }
   
+    .button-admin {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        margin-top: 10px; /* Ajoute un espace au-dessus du conteneur */
+    }
+    
+    .btn-delete, .btn-edit {
+        background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+        color: #fff; /* couleur de texte du bouton */
+        font-size: 16px; /* Taille de la police du bouton */
+        padding: 10px; /* uniformiser paddings */
+        border: none; /* pas de bordure sur le bouton */
+        cursor: pointer; /* curseur style pointer au survol */
+        width: 120px; /* ou utilisez un pourcentage comme width: 100px;*/
+        border-radius: 5px;  
+        margin: 0 5px; /* Espace entre les boutons */
+    }
+    
+    .btn-delete:hover, .btn-edit:hover {
+        transform: scale(1.05); /* Légère amplification au survol */
+        color: #330802; /* Change la couleur du texte au survol */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+    }
+    
     /* Responsiveness */
     @media(max-width: 768px) {
         .annonce {
