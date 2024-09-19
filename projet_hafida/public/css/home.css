@@ -154,6 +154,7 @@ section {
   padding: 10px 20px;
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
   color: white; /* Couleur du texte */
+  font-size: 16px; /* Taille de la police du bouton */
   text-decoration: none; /* Pas de souligné sur le lien */
   border-radius: 5px; /* Coins arrondis du bouton */
   transition: background-color 0.3s; /* Transition pour l'effet de survol */
@@ -273,6 +274,7 @@ section {
   margin-top: 20px; /* Ajoute un espace au-dessus du bouton */
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
   color: white; /* Couleur du texte */
+  font-size: 16px; /* Taille de la police du bouton */
   text-decoration: none; /* Pas de souligné */
   padding: 10px 20px;
   border-radius: 5px; /* Coins arrondis */

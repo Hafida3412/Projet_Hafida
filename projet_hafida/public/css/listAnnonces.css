@@ -91,14 +91,16 @@
 .page-item a.page-link:hover {
     background-color: #f0b85f; /* Changer la couleur au survol */
     color: #6B2C1A; /* Couleur du texte au survol */
+    font-size: 16px; /* Taille de la police du bouton */
 }
 
 
 /* Style pour le bouton de suppression */
-button.btn-delete {
+button.btn-delete{
     background: linear-gradient(90deg, #6B2C1A, #f0b85f);
      /* couleur de fond du bouton */
     color: #fff; /* couleur de texte du bouton */
+    font-size: 16px; /* Taille de la police du bouton */
     padding: 5px 10px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
@@ -109,7 +111,7 @@ button.btn-delete {
 }
     
 /* Style pour le bouton de suppression au survol */
-button.btn-delete:hover {
+button.btn-delete:hover{
     color: #330802; /* Change la couleur du texte au survol */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */

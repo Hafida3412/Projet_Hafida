@@ -2,8 +2,6 @@
     .bg_allAnnonces{
         background-image: url(../img/blanc.jpg);
         background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
-        
-
     }
     
     .annonces-list {
@@ -26,7 +24,7 @@
     .annonce:hover {
         transform: scale(1.02); /* Légère augmentation en taille au survol */
     }
-
+  
     /* Responsiveness */
     @media(max-width: 768px) {
         .annonce {
