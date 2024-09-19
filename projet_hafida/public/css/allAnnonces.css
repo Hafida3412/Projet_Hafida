@@ -27,9 +27,8 @@
   
     .button-admin {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
-        
+        align-items: center; /* Aligne les boutons verticalement */
         margin-top: 10px; /* Ajoute un espace au-dessus du conteneur */
     }
     

@@ -30,6 +30,7 @@ class AnnonceManager extends Manager{
         }
     
         $sql = "SELECT *
+        
                 FROM " . $this->tableName . "
                 ORDER BY " . $order[0] . " " . $order[1] . "
                 LIMIT " . $offset . ", " . $perPage;

@@ -76,32 +76,7 @@ $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Récupérer la page
 $totalPages = 3; //On définit la variable $totalPages qui représente le nombre total de pages.
 ?>
 
-<nav aria-label="Pagination"><!--Cet attribut indique aux utilisateurs de technologies 
-d'assistance que cette section de navigation est dédiée à la pagination--> 
-  <ul class="pagination">
-    <?php if ($page > 1): // Si la page courante n'est pas la première ?> 
-      <li class="page-item">
-    <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
-      echo $page - 1; ?>">Précédent</a></li>
-    <?php endif; ?>
 
-    <?php for ($i = 1; $i <= $totalPages; $i++): // Boucle FOR pour afficher les numéros de page?>
-      <li class="page-item <?php if ($i == $page) 
-      echo 'active'; ?>"><!--On utilise la classe active pour la page courante.-->
-      <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
-      echo $i; ?>"><?php 
-      echo $i; ?></a></li>
-    <?php endfor; ?>
-
-    <!--On utilise une condition if pour vérifier si la page courante est inférieure
-     au nombre total de pages. Si c'est le cas, on affiche le lien "Suivant".-->
-    <?php if ($page < $totalPages): // Si la page courante n'est pas la dernière?>
-      <li class="page-item">
-      <a class="page-link" href="index.php?ctrl=location&action=index&page=<?php 
-      echo $page + 1; ?>">Suivant</a></li>
-    <?php endif; ?>
-  </ul>
-</nav>
 
 
 
