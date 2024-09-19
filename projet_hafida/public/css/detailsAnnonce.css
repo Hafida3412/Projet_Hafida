@@ -167,7 +167,7 @@
 button.annonce-info{
     background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
     color: #fff; /* couleur de texte du bouton */
-    font-size: 16px; /* Taille de la police du bouton */
+    font-size: 15px; /* Taille de la police du bouton */
     padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */

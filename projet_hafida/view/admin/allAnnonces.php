@@ -40,12 +40,14 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     //Il peut également supprimer une annonce s'il en est l'auteur en cliquant sur le bouton "Supprimer" après confirmation
     if (App\Session::getUtilisateur() && App\Session::getUtilisateur()->hasRole("ROLE_ADMIN")) { ?>
         <!-- Un bouton "supprimer" est affiché au bas de chaque annonce de l'utilisateur connecté -->
+        <div class="button-admin">
         <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
             <button class="btn-delete" type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
         </form>
     
         <?php if (App\Session::getUtilisateur() && App\Session::getUtilisateur()->hasRole("ROLE_ADMIN")) { ?>
-            <a href="index.php?ctrl=admin&action=editAnnonce&id=<?php echo $annonce->getId(); ?>">Éditer</a>
+          <button class="btn-edit" href="index.php?ctrl=admin&action=editAnnonce&id=<?php echo $annonce->getId(); ?>">Éditer</a>
+        </div>
         <?php } ?>
     <?php } 
     
