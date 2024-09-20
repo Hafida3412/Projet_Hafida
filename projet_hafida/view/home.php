@@ -11,7 +11,6 @@
       N'hésitez pas à consulter les annonces disponibles et à contacter les propriétaires 
       pour organiser cette garde temporaire. <br>
       Bonnes vacances à vous !</p>
-    <br>
   </div>
   </div>
 
@@ -23,7 +22,6 @@
     <li><i class="fas fa-smile"></i> Des attentions pour les chats</li>
   </ul>
 </section>
-<br>
 
 <section class="attraction">
   <h2>Rejoignez notre communauté</h2>
@@ -45,7 +43,7 @@
       <p>
         Devenez pet-sitter et aidez les propriétaires tout en profitant de la compagnie de ces adorables félins. 
         Parfait pour les amoureux des animaux cherchant à gagner un peu d'argent pendant leurs temps libres !
-      </p><br>
+      </p>
       <div class="button-container">
       <a href="index.php?ctrl=location&action=index" class="button">Consultez nos annonces</a>
     </div>
@@ -70,26 +68,25 @@
 </section>
 
 <section class="explications">
-  <div class="benefice1">
+<div class="benefice1">
     <h2>Pourquoi opter pour le home-sitting pour votre chat</h2>
     <ul>
-      <li>Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
-      <li>Bénéficie d'une présence rassurante et constante à la maison</li>
-      <li>Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
+        <li>Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
+        <li>Bénéficie d'une présence rassurante et constante à la maison</li>
+        <li>Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
     </ul>
-    <img src="public\img\catsitter.jpg" alt="catsitter">
-  </div>
-  
-  <div class="benefice2">
+    <img src="public/img/catsitter.jpg" alt="catsitter">
+</div>
+
+<div class="benefice2">
     <h2>Les avantages du home-sitting pour vous</h2>
     <ul>
-      <li>Garde à domicile</li>
-      <li>Sérénité de confier votre chat et votre maison à une personne de confiance</li>
-      <li>Recevez régulièrement des nouvelles et des photos de votre chat pendant votre absence</li>
+        <li>Garde à domicile</li>
+        <li>Sérénité de confier votre chat et votre maison à une personne de confiance</li>
+        <li>Recevez régulièrement des nouvelles et des photos de votre chat pendant votre absence</li>
     </ul>
-    <img src="public\img\catsitter2.jpg" alt="catsitter">
-  </div>
-  </div>
+    <img src="public/img/catsitter2.jpg" alt="catsitter">
+</div>
 </section>
 
 <section class="temoignages">
@@ -113,7 +110,7 @@
       <div class="avatar">
         <img src="public/img/chloe.jpg" alt="Chloé P.">
       </div>
-      <p>"Une expérience formidable ! Mon chat a été traité comme un roi."</p>
+      <p>"Une expérience formidable ! Mon chat a été traité comme un roi. Je suis très satisfaite!"</p>
       <signature>Chloé P.</signature>
     </blockquote>
   </div>

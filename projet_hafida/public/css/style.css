@@ -1,3 +1,5 @@
+
+Copier
 /* Styles généraux pour les écrans de toutes les tailles */
 * {
     margin: 0;
@@ -22,42 +24,42 @@ html, body {
 /* Couleurs */
 body {
   font-family: 'Open Sans', sans-serif; /* police par défaut */
-    background-color: #f9f9f9; /* couleur de fond claire */
-    color: #333; /* couleur de texte sombre */
-  }
+  background-color: #f9f9f9; /* couleur de fond claire */
+  color: #333; /* couleur de texte sombre */
+}
   
-  a {
-    color:#330802; /*couleur du lien*/
-    text-decoration: none;
-  }
+a {
+  color: #330802; /*couleur du lien*/
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f0b85f; /* couleur de lien survolée */
+}
   
-  a:hover {
-    color: #f0b85f; /* couleur de lien survolée */
-  }
-  
-  h1 {
-    font-family: 'Cormorant', serif; /* police Cormorant pour H1 */
-    color: #6B2C1A; /* couleur de titre */
-    margin-top: 10px;
-    margin-bottom:10px;
-    text-align: center;
-  }
+h1 {
+  font-family: 'Cormorant', serif; /* police Cormorant pour H1 */
+  color: #6B2C1A; /* couleur de titre */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
    
-  /* Supprimer les hauteurs différentes pour h2 dans les sections */
-  .avantages h2, 
-  .concept h2, 
-  .temoignages h2, 
-  .explications .benefice1 h2, 
-  .explications .benefice2 h2 {
-    font-size: 30px; /* Assurez-vous que tous les h2 sont à la même taille */
-  }
-  h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant', serif; /* police Cormorant pour H1 */
-    color:#6B2C1A; /* couleur de titre sombre */
-    margin-bottom: 10px;
-    font-size: 30px;
-  }
-  
+/* Supprimer les hauteurs différentes pour h2 dans les sections */
+.avantages h2, 
+.concept h2, 
+.temoignages h2, 
+.explications .benefice1 h2, 
+.explications .benefice2 h2 {
+  font-size: 30px; /* Assurez-vous que tous les h2 sont à la même taille */
+}
+h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant', serif; /* police Cormorant pour H1 */
+  color: #6B2C1A; /* couleur de titre sombre */
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
 /* Header */
 header {
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de fond */
@@ -88,7 +90,7 @@ nav a {
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
-  color:  #eeeeee; /* Couleur de texte blanche pour augmenter le contraste */
+  color: #eeeeee; /* Couleur de texte blanche pour augmenter le contraste */
 }
 
 nav a:hover {
@@ -109,29 +111,11 @@ nav a:hover {
   margin-right: 10px; /* espace entre le logo et le texte */
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-  nav ul {
-      flex-direction: column; /* Changement en colonne pour les petites écrans */
-  }
-  
-  nav li {
-      margin: 10px 0; /* Ajuste la marge entre les éléments */
-  }
-
-  #nav-left img {
-      width: 100px; /* Ajustement pour la petite taille */
-  }
-}
-
-    
 /* Contenu */
-
-  main {
-    width: 100%; /* largeur du conteneur des annonces */
-    margin: 0 auto; /* centrage du conteneur */  
-  }
-
+main {
+  width: 100%; /* largeur du conteneur des annonces */
+  margin: 0 auto; /* centrage du conteneur */  
+}
 
 /* Footer */
 .footer {
@@ -153,12 +137,12 @@ nav a:hover {
 }
 
 .newsletter {
-    flex: 1;
-    margin-right: 200px; /* Réduction de l'espacement à droite pour déplacer le formulaire plus à gauche */
+  flex: 1;
+  margin-right: 200px; /* Réduction de l'espacement à droite pour déplacer le formulaire plus à gauche */
 }
 
 .newsletter form {
-  width:300px;
+  width: 300px;
   height: auto;
 }
 
@@ -228,71 +212,4 @@ nav a:hover {
 .footer-links a:hover {
   text-decoration: underline; /* Ajoute une décoration au survol (facultatif) */
   color: #f0b85f; /* Changement de couleur au survol */
-}
-
-/* Styles spécifiques aux écrans de taille moyenne (tablettes) */
-@media screen and (max-width: 1024px) {
-  main {
-      width: 90%; /* largeur du conteneur des annonces pour les tablettes */
-      margin: 0 auto; /* centrage du conteneur */
-  }
-
-  .card {
-      width: 70%; /* Ajustement pour tablette */
-  }
-
-  .benefice1, .benefice2 {
-      width: 45%; /* réduction de la largeur des cartes */
-  }
-}
-
-/* Styles spécifiques aux écrans de petite taille (smartphones) */
-@media screen and (max-width: 768px) {
-  main {
-      width: 100%; /* ajustement de la largeur du conteneur des annonces pour les smartphones */
-  }
-
-  body {
-      font-size: 14px; /* réduction de la taille de police pour les petits écrans */
-  }
-
-  nav ul {
-      flex-direction: column; /* navigation en colonne pour les petits écrans */
-      align-items: center; /* centrer les éléments de navigation */
-  }
-
-  nav li {
-      margin: 10px 0; /* ajuster l'espacement entre les éléments */
-  }
-
-  #nav-left img {
-      width: 80px; /* ajustement pour mobile */
-      height: 80px; /* hauteur ajustée */
-  }
-
-  /* Sections */
-  .explications, .concept {
-      flex-direction: column; /* modifier pour une seule colonne */
-      padding: 20px;
-  }
-
-  .benefice1, .benefice2 {
-      width: 100%; /* pleine largeur pour les petits écrans */
-      margin: 10px 0; /* espacement ajusté */
-  }
-
-  .card {
-      width: 100%; /* ajustement pour la card */
-      margin-bottom: 20px; /* espace entre les cartes */
-  }
-
-  .temoignages-container {
-      flex-direction: column; /* stack les témoignages */
-      align-items: center; /* centre les témoignages */
-  }
-
-  /* Cookies popup */
-  #cookie-popup {
-      width: 80%; /* popup plus large pour les petits écrans */
-  }
 }

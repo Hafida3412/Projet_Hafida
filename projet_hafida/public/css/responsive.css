@@ -1,0 +1,129 @@
+/* Styles spécifiques aux écrans de taille moyenne (tablettes) */
+@media screen and (max-width: 1024px) {
+    main {
+      width: 90%; /* largeur du conteneur des annonces pour les tablettes */
+      margin: 0 auto; /* centrage du conteneur */
+    }
+  
+    .card {
+      width: 70%; /* Ajustement pour tablette */
+    }
+  
+    .benefice1, .benefice2 {
+      width: 45%; /* réduction de la largeur des cartes */
+    }
+  }
+  
+  /* Styles spécifiques aux écrans de petite taille (smartphones) */
+  @media screen and (max-width: 768px) {
+    main {
+      width: 100%; /* ajustement de la largeur du conteneur des annonces pour les smartphones */
+    }
+  
+    body {
+      font-size: 14px; /* réduction de la taille de police pour les petits écrans */
+    }
+  
+    nav a {
+      font-size: 12px; /* Ajustement de la taille des liens de navigation */
+    }
+  
+    nav ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center; /* Centre les éléments dans la navbar */
+    }
+  
+    nav li {
+      margin: 10px 0; /* ajuster l'espacement entre les éléments */
+    }
+  
+    #nav-left img {
+      width: 80px; /* ajustement pour mobile */
+      height: 80px; /* hauteur ajustée */
+    }
+  
+    /* Sections */
+    .explications, .concept {
+      display: flex;
+      margin: 50px auto;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .attraction {
+      margin-bottom: 150px; /* marge en bas pour espace */
+    }
+  
+    .benefice1, .benefice2 {
+      width: 100%; /* pleine largeur pour les petits écrans */
+      margin: 10px 0; /* espacement ajusté */
+    }
+  
+    .temoignages-container {
+      flex-direction: column; /* stack les témoignages */
+      align-items: center; /* centre les témoignages */
+    }
+    
+    /* Cookies popup */
+    #cookie-popup {
+      width: 80%; /* popup plus large pour les petits écrans */
+    }
+  }
+  
+  /* Styles spécifiques à la section avantages */
+  .avantages ul {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  /* Petit écran (max-width: 768px) */
+  @media (max-width: 768px) {
+    .avantages ul {
+      flex-direction: column; /* Aligner verticalement les éléments */
+      align-items: center;    /* Centrer les éléments */
+    }
+  
+    .avantages li {
+      width: 80%; /* Ajuster la largeur sur des écrans plus petits */
+      padding: 30px; /* Réduire le padding */
+    }
+  }
+  
+  /* Styles de la section attraction */
+  .card-container {
+    flex-direction: row;
+    height: 500px;
+  }
+  
+  .card {
+    height: 450px; /* hauteur des cartes */
+    margin-bottom: 20px; /* espace entre les cartes */
+  }
+  
+  /* Petit écran (max-width: 768px) */
+  @media (max-width: 768px) {
+    .card-container {
+      align-items: flex-end;     /* Centrer les cartes */
+      height: 0; /* hauteur à 0 pour éviter d'afficher les cartes */
+    }
+  
+    .card {
+      width: 90%; /* Largeur de chaque carte sur petits écrans */
+      margin-bottom: 20px; /* Marges entre les cartes */
+    }
+  }
+  
+  /* Responsive pour tablette (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    .card {
+      width: 45%; /* Largeur des cartes à 45% sur les tablettes */
+    }
+  
+    .avantages li {
+      width: 40%; /* Ajuster la largeur sur tablette */
+      padding: 40px; /* Réduire le padding */
+    }
+  }
