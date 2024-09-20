@@ -68,8 +68,10 @@ nav {
   padding: 15px; /* Ajout d'un espacement autour */
 }
 
-#nav-right {
-  margin-left: auto; /* Fait glisser le nav-right à droite */
+.nav-right-links {
+  display: flex;
+  padding: 10px; /* Espacement autour des éléments */
+  margin-left:700px;
 }
 
 nav ul {
