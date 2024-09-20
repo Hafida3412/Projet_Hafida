@@ -31,6 +31,8 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/listUtilisateurs.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/allAnnonces.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/faq.css">
+        <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/responsive.css">
+
 
 
         <title>Chez Mon Chat</title>

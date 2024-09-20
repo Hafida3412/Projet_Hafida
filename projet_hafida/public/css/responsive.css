@@ -1,129 +1,154 @@
 /* Styles spécifiques aux écrans de taille moyenne (tablettes) */
 @media screen and (max-width: 1024px) {
     main {
-      width: 90%; /* largeur du conteneur des annonces pour les tablettes */
-      margin: 0 auto; /* centrage du conteneur */
+        width: 90%; /* largeur du conteneur des annonces pour les tablettes */
+        margin: 0 auto; /* centrage du conteneur */
     }
   
     .card {
-      width: 70%; /* Ajustement pour tablette */
+        width: 70%; /* Ajustement pour tablette */
+        margin-bottom: 15px; /* Réduction de l'espace entre les cartes */
     }
   
     .benefice1, .benefice2 {
-      width: 45%; /* réduction de la largeur des cartes */
+        width: 45%; /* réduction de la largeur des cartes */
+        margin-bottom: 15px; /* Réduction de l'espace entre les cartes de bénéfices */
     }
-  }
-  
-  /* Styles spécifiques aux écrans de petite taille (smartphones) */
-  @media screen and (max-width: 768px) {
+}
+nav {
+    overflow: hidden; /* Empêche le débordement */
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row; /* Dire à la liste de s'afficher horizontalement */
+    align-items: center; /* Centre les éléments de la barre de navigation */
+    margin: 0; /* Réinitialisation du margin */
+    padding: 0; /* Réinitialisation du padding */
+    white-space: nowrap; /* Évite le retour à la ligne */
+}
+
+nav li {
+    margin: 0 10px; /* Ajuster l'espacement entre les items */
+}
+
+/* Sur les petits écrans (ex. smartphones) */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0 10px; /* Ajouter un peu de padding sur les côtés */
+    }
+
+    nav ul {
+        flex-wrap: nowrap; /* Assure que les éléments ne s'enroulent pas */
+        overflow-x: auto; /* Permet le défilement horizontal si le contenu dépasse la largeur de l'écran */
+    }
+
+    nav a {
+        padding: 10px 15px; /* Assez d'espace pour rendre le lien cliquable facilement */
+        display: block; /* S'assurer que le lien occupe toute la largeur de l'élément parent */
+    }
+}
+/* Styles spécifiques aux écrans de petite taille (smartphones) */
+@media screen and (max-width: 768px) {
     main {
-      width: 100%; /* ajustement de la largeur du conteneur des annonces pour les smartphones */
+        width: 100%; /* ajustement de la largeur du conteneur des annonces pour les smartphones */
     }
   
     body {
-      font-size: 14px; /* réduction de la taille de police pour les petits écrans */
+        font-size: 14px; /* réduction de la taille de police pour les petits écrans */
     }
-  
+
     nav a {
-      font-size: 12px; /* Ajustement de la taille des liens de navigation */
+        font-size: 14px; /* Ajustement de la taille des liens de navigation */
     }
-  
+
+    
     nav ul {
-      display: flex;
-      flex-direction: row;
-      align-items: center; /* Centre les éléments dans la navbar */
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Centre les éléments dans la navbar */
+        margin-bottom: 10px;
     }
   
     nav li {
-      margin: 10px 0; /* ajuster l'espacement entre les éléments */
+        margin: 10px 0; /* ajuster l'espacement entre les éléments */
     }
   
     #nav-left img {
-      width: 80px; /* ajustement pour mobile */
-      height: 80px; /* hauteur ajustée */
+        width: 80px; /* ajustement pour mobile */
+        height: 80px; /* hauteur ajustée */
     }
   
     /* Sections */
     .explications, .concept {
-      display: flex;
-      margin: 50px auto;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  
-    .attraction {
-      margin-bottom: 150px; /* marge en bas pour espace */
+        display: flex;
+        margin: 30px auto;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
     }
   
     .benefice1, .benefice2 {
-      width: 100%; /* pleine largeur pour les petits écrans */
-      margin: 10px 0; /* espacement ajusté */
+        width: 45%; /* largeur pour les petits écrans */
+        margin: 5px 0; /* espacement ajusté */
     }
   
     .temoignages-container {
-      flex-direction: column; /* stack les témoignages */
-      align-items: center; /* centre les témoignages */
+        flex-direction: column; /* stack les témoignages */
+        align-items: center; /* centre les témoignages */
+        margin-top: 10px; /* Réduction de l'espace au-dessus */
     }
-    
-    /* Cookies popup */
-    #cookie-popup {
-      width: 80%; /* popup plus large pour les petits écrans */
+
+    /* Styles spécifiques à la section avantages */
+    .avantages {
+        margin-bottom: 30px; /* Espace entre la section avantages et la section attraction */
     }
-  }
-  
-  /* Styles spécifiques à la section avantages */
-  .avantages ul {
-    display: flex;
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  /* Petit écran (max-width: 768px) */
-  @media (max-width: 768px) {
+
     .avantages ul {
-      flex-direction: column; /* Aligner verticalement les éléments */
-      align-items: center;    /* Centrer les éléments */
+        display: flex;
+        padding: 0;
+        list-style-type: none;
+        margin-bottom: 20px; /* Réduction de l'espace sous la liste d'avantages */
+        flex-direction: column; /* Aligner verticalement les éléments */
+        align-items: center;    /* Centrer les éléments */
     }
   
     .avantages li {
-      width: 80%; /* Ajuster la largeur sur des écrans plus petits */
-      padding: 30px; /* Réduire le padding */
+        width: 80%; /* Ajuster la largeur sur des écrans plus petits */
+        padding: 25px; /* Réduire le padding */
+        margin-bottom: 15px; /* Réduction de l'espace entre les éléments d'avantages */
     }
-  }
-  
-  /* Styles de la section attraction */
-  .card-container {
-    flex-direction: row;
-    height: 500px;
-  }
-  
-  .card {
-    height: 450px; /* hauteur des cartes */
-    margin-bottom: 20px; /* espace entre les cartes */
-  }
-  
-  /* Petit écran (max-width: 768px) */
-  @media (max-width: 768px) {
+
+    .attraction {
+        margin-top: 30px;  /* Espace au-dessus de la section attraction */
+    }
+
+    /* Styles de la section attraction */
     .card-container {
-      align-items: flex-end;     /* Centrer les cartes */
-      height: 0; /* hauteur à 0 pour éviter d'afficher les cartes */
+        flex-direction: row;
+        height: 500px;
+        align-items: center; /* Centre les cartes */
+        margin-top: 20px; /* Espace au-dessus des cartes */
     }
-  
+
     .card {
-      width: 90%; /* Largeur de chaque carte sur petits écrans */
-      margin-bottom: 20px; /* Marges entre les cartes */
+        height: 350px; /* hauteur des cartes */
+        width: 90%; /* Largeur de chaque carte sur petits écrans */
+        margin-bottom: 15px; /* Marges entre les cartes */
     }
-  }
-  
-  /* Responsive pour tablette (max-width: 1024px) */
-  @media (max-width: 1024px) {
+}
+
+
+
+/* Styles spécifiques pour tablette (max-width: 1024px) */
+@media (max-width: 1024px) {
     .card {
-      width: 45%; /* Largeur des cartes à 45% sur les tablettes */
+        width: 45%; /* Largeur des cartes à 45% sur les tablettes */
     }
-  
+
     .avantages li {
-      width: 40%; /* Ajuster la largeur sur tablette */
-      padding: 40px; /* Réduire le padding */
+        width: 40%; /* Ajuster la largeur sur tablette */
+        padding: 40px; /* Réduire le padding */
+        margin-bottom: 15px; 
     }
-  }
+}
