@@ -50,7 +50,9 @@ h1 {
 h2 {
   font-size: 30px; /* Assurez-vous que tous les h2 sont à la même taille */
 }
-
+h3{
+  font-size: 28px;
+}
 /* Header */
 header {
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de fond */
