@@ -122,7 +122,6 @@ main {
 }
 
 /* Footer */
-/* Footer */
 .footer {
   background-color: #330802; /* Changez pour s'harmoniser avec les autres sections */
   padding: 40px 20px; /* Espacement intérieur */
@@ -207,6 +206,18 @@ input[type="email"]:focus {
   margin: 0 10px; /* Espacement entre les liens */
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.newsletter h4:hover, 
+.social-media h4:hover{
   text-decoration: underline; /* Souligner au survol */
+  color:rgba(240, 184, 95, 0.7);
 }
+
+.social-media a:hover{
+  color:rgba(240, 184, 95, 0.7);
+}
+
+
+
+
+
