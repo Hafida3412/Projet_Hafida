@@ -68,7 +68,7 @@ nav {
   padding: 15px; /* Ajout d'un espacement autour */
 }
 
-.nav-right-links {
+.nav-right-connect {
   display: flex;
   padding: 10px; /* Espacement autour des éléments */
   margin-left:700px;
@@ -122,100 +122,91 @@ main {
 }
 
 /* Footer */
+/* Footer */
 .footer {
-  margin-top: 20px;
-  background-color: #330802; 
-  color: #fff; 
-  padding: 20px; /* Augmentation de l'espacement interne */
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-end;
+  background-color: #330802; /* Changez pour s'harmoniser avec les autres sections */
+  padding: 40px 20px; /* Espacement intérieur */
+  text-align: center; /* Centrer le texte */
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between; /* Espace entre le formulaire et les réseaux sociaux */
-  width: 100%; /* Prendre toute la largeur disponible */
-  max-width: 1200px; /* Limite la largeur maximale */
-  margin-bottom: 20px; /* Espace entre le contenu et les liens en bas */
+  display: flex; /* Utiliser un modèle de flexbox pour un alignement plus facile */
+  justify-content: space-between; /* Espacement uniforme entre les éléments */
+  align-items: center; /* Centrer verticalement les éléments */
+  flex-wrap: wrap; /* Permet le passage à la ligne sur les petits écrans */
+  margin-bottom: 20px; /* Marges au bas pour l'espacement entre les sections */
 }
 
-.newsletter {
-  flex: 1;
-  margin-right: 200px; /* Réduction de l'espacement à droite pour déplacer le formulaire plus à gauche */
+.newsletter, .social-media {
+  flex: 1; /* Chaque section prend un espace égal */
+  min-width: 200px; /* Largeur minimum pour les petits écrans */
+  margin: 10px; /* Espacement entre les sections */
 }
 
-.newsletter form {
-  width: 300px;
-  height: auto;
+.newsletter form{
+  width:300px;
+}
+.newsletter h4, .social-media h4 {
+  font-size: 28px; /* Taille de police plus grande pour les titres */
+  margin-bottom: 15px; /* Espace sous les titres */
+  color: white; /* Couleur dorée, en harmonie avec votre thème */
 }
 
-.newsletter h4, 
-.social-media h4, 
-.footer-links p {
-  color: #fff; /* Mettre les titres et le texte du footer en blanc */
+input[type="email"] {
+  width: 100%; /* Largeur pleine du champ input */
+    max-width: 400px; /* Largeur maximale pour éviter une trop grande largeur */
+    height: 40px;
+    margin-right: 10px; /* Espacement entre l'input et le bouton */
+    border: 1px solid #ddd; /* Bordure claire pour se démarquer */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Ombre moderne */
+    transition: box-shadow 0.3s ease; /* Transition fluide pour l’ombre */
 }
 
-/* Styles spécifiques pour le formulaire de souscription à la newsletter */
-.newsletter input[type="email"] {
-  padding: 10px;
-  margin-right: 10px; /* Espacement à droite */
-  border: solid 1px #ccc; /* Ajout d'une bordure solide grise */
-  border-radius: 5px; 
-  background-color: white; /* Fond blanc */
-  color: #000; /* Texte en noir */
-  width: 90%; /* Augmentez la largeur à 90% */
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Effet estompé */
+input[type="email"]:focus {
+    outline: none; /* Supprime le contour par défaut */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Ombre plus profonde au focus */
 }
 
-.newsletter button {
-  padding: 10px;
+
+.button-button {
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
-  font-size: 16px; /* Taille de la police du bouton */
-  border: none; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  color: white; /* Changez ici pour garantir une bonne lisibilité */
+    color: #fff; /* couleur de texte du bouton */
+   
+    padding: 10px 15px; /* espacement interne du bouton */
+    border: none; /* pas de bordure sur le bouton */
+    cursor: pointer; /* curseur style pointer au survol */
+    
+    margin: 0 auto; /* Centrer le bouton horizontalement */
+     /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
+    border-radius: 5px;    
 }
 
-.newsletter button:hover {
-  color: #330802; /* Change la couleur du texte au survol */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
-}
-
-.social-media {
-  display: flex;
-  align-items: center;
-  margin-right: 190px; /* Réduction de l'espacement à gauche pour déplacer les icônes plus à gauche */
+.button-button:hover {
+  transform: scale(1.05); /* Légère amplification au survol */
+    color: #330802; /* Change la couleur du texte au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
 
 .social-media a {
-  color: #fff; 
-  margin: 0 10px; /* Espacement entre les icônes */
-  font-size: 20px; /* Taille des icônes */
+  margin: 0 10px; /* Espacement entre les icônes sociales */
+  text-decoration: none; /* Pas de soulignement */
+  color: white; /* Couleur d'icône dorée */
+  font-size: 1.5em; /* Taille des icônes sociales */
 }
 
-.social-media a:hover {
-  color: #f0b85f; /* Couleur des icônes au survol */
-}
-
-/* Footer links */
 .footer-links {
-  text-align: center; /* Centrer les liens */
-  margin-top: 20px; /* Espacement entre les sections et les liens */
+  font-size: 0.9em; /* Taille de police légèrement plus petite pour les liens */
+  color: white; /* Couleur de texte des liens */
 }
 
 .footer-links a {
-  color: white; /* Définit la couleur des liens en blanc */
+  color: white; /* Couleur des liens pour être en harmonie */
+  text-decoration: none; /* Pas de soulignement */
+  margin: 0 10px; /* Espacement entre les liens */
 }
 
 .footer-links a:hover {
-  text-decoration: underline; /* Ajoute une décoration au survol (facultatif) */
-  color: #f0b85f; /* Changement de couleur au survol */
-}
-
-.footer-text {
-  color: white; /* Définit la couleur du texte en blanc */
+  text-decoration: underline; /* Souligner au survol */
 }

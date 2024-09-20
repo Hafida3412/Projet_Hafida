@@ -73,7 +73,7 @@
                                         <?php
                                     }
                                 } else {
-                                    ?><div class="nav-right-links">
+                                    ?><div class="nav-right-connect">
                                     <li><a href="index.php?ctrl=security&action=login">Connexion</a></li>
                                     <li><a href="index.php?ctrl=security&action=register">Inscription</a></li>
                                 </div>   <?php
@@ -95,11 +95,11 @@
             <h4>Inscrivez-vous à notre newsletter</h4>
             <form action="#" method="POST">
                 <input type="email" placeholder="Votre email" required>
-                <button type="submit" class="button">S'inscrire</button>
+                <button type="submit" class="button-button">S'inscrire</button>
             </form>
         </div>
         <div class="social-media">
-            <h4>Suivez-nous</h4>
+            <h4>Suivez-nous!</h4>
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
