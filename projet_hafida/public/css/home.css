@@ -122,7 +122,7 @@ section {
 }
 
 .card {
-  flex: 1; /* Permet aux cartes de prendre le même espace */
+  /*flex: 1; /* Permet aux cartes de prendre le même espace */
   display: flex;
   flex-direction: column; /* Align les éléments en colonne */
   justify-content: flex-end; /* Espace entre les éléments pour que le contenu prenne toute la hauteur disponible */
