@@ -1,4 +1,6 @@
 <?php
+// Vérification des cookies
+//var_dump($_COOKIE);
 ?>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -66,7 +68,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <input type="email" name="email" id="email" value="lea@gmail.com" required><br>
 
 <label for="password">Mot de passe</label>
-<input type="password" name="password" id="password" value="AZERTY12345" required><br>
+<input type="password" name="password" id="password" value="Azerty1234567" required><br>
 
 <div class="g-recaptcha" data-sitekey="6LeUhkYqAAAAALeAYNXSofNNSW3Fw9vzIRzl4Ngw" data-action="LOGIN" required></div>
 <br/>

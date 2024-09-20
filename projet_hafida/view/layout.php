@@ -73,10 +73,10 @@
                                         <?php
                                     }
                                 } else {
-                                    ?><div class="connexion">
+                                    ?>
                                     <li><a href="index.php?ctrl=security&action=login">Connexion</a></li>
                                     <li><a href="index.php?ctrl=security&action=register">Inscription</a></li>
-                                    </div> <?php
+                                     <?php
                                 }
                                 ?>
                             </ul>
