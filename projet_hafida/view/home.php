@@ -23,7 +23,7 @@
   </ul>
 </section>
 
-<section class="attraction">
+<section id="community"class="attraction">
   <h2>Rejoignez notre communauté</h2>
   <div class="card-container">
 
@@ -52,7 +52,7 @@
 </section>
 
 <section class="parallax-image">
-<h2>Rejoignez-nous</h2> 
+<h2><a href="#community" class="join-link">Rejoignez-nous</a></h2> 
 </section>
 
 <section class="concept">

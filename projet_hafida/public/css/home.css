@@ -114,6 +114,15 @@ section {
   margin-top: 10px;
 }
 
+.join-link {
+    color: #fff; /* Couleur par défaut du texte (modifiable selon votre design) */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    transition: color 0.3s; /* Transition douce pour l'effet hover */
+}
+
+.join-link:hover {
+    color: #f39c12; /* Couleur du texte au survol (modifiable selon votre design) */
+}
 .card-container {
   display: flex;
   justify-content: space-around;
