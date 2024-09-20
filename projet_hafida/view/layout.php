@@ -95,7 +95,7 @@
             <h4>Inscrivez-vous à notre newsletter</h4>
             <form action="#" method="POST">
                 <input type="email" placeholder="Votre email" required>
-                <button type="submit">S'inscrire</button>
+                <button type="submit" class="button">S'inscrire</button>
             </form>
         </div>
         <div class="social-media">

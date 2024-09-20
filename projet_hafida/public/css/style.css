@@ -169,8 +169,7 @@ main {
   border-radius: 5px; 
   cursor: pointer; 
   color: white; /* Changez ici pour garantir une bonne lisibilité */
-  font-weight: bold; /* Rendre le texte un peu plus gros */
-}
+  }
 
 .newsletter button:hover {
   color: #330802; /* Change la couleur du texte au survol */
