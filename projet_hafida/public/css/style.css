@@ -1,9 +1,8 @@
-
 /* Styles généraux pour les écrans de toutes les tailles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -26,37 +25,30 @@ body {
   background-color: #f9f9f9; /* couleur de fond claire */
   color: #333; /* couleur de texte sombre */
 }
-  
+
 a {
-  color: #330802; /*couleur du lien*/
+  color: #330802; /* couleur du lien */
   text-decoration: none;
+  transition: color 0.3s ease; /* Animation pour le changement de couleur */
 }
 
 a:hover {
   color: #f0b85f; /* couleur de lien survolée */
 }
-  
-h1 {
-  font-family: 'Cormorant', serif; /* police Cormorant pour H1 */
-  color: #6B2C1A; /* couleur de titre */
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-   
-/* Supprimer les hauteurs différentes pour h2 dans les sections */
-.avantages h2, 
-.concept h2, 
-.temoignages h2, 
-.explications .benefice1 h2, 
-.explications .benefice2 h2 {
-  font-size: 30px; /* Assurez-vous que tous les h2 sont à la même taille */
-}
-h2, h3, h4, h5, h6 {
-  font-family: 'Cormorant', serif; /* police Cormorant pour H1 */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant', serif; /* police Cormorant pour tous les titres */
   color: #6B2C1A; /* couleur de titre sombre */
   margin-bottom: 10px;
-  font-size: 30px;
+}
+
+h1 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px; /* Assurez-vous que tous les h2 sont à la même taille */
 }
 
 /* Header */
@@ -66,10 +58,16 @@ header {
 }
 
 /* Navbar */
+
 nav {
   display: flex;
-  justify-content: space-between; /* espace les éléments sur toute la largeur */
-  align-items: center; /* centre les éléments verticalement */
+  justify-content: space-between; /* S'assure que le contenu est réparti */
+  align-items: center; /* Centre verticalement les éléments */
+  padding: 15px; /* Ajout d'un espacement autour */
+}
+
+#nav-right {
+  margin-left: auto; /* Fait glisser le nav-right à droite */
 }
 
 nav ul {
@@ -77,6 +75,10 @@ nav ul {
   display: flex; /* utilise flexbox pour aligner les éléments */
   margin: 0;
   padding: 0;
+}
+
+.nav-list li {
+  margin-left: 15px; /* Espace entre les éléments */
 }
 
 nav li {
@@ -88,7 +90,6 @@ nav a {
   font-size: 18px;
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
   color: #eeeeee; /* Couleur de texte blanche pour augmenter le contraste */
 }
 
@@ -122,6 +123,7 @@ main {
   background-color: #330802; 
   color: #fff; 
   padding: 20px; /* Augmentation de l'espacement interne */
+  display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: flex-end;
@@ -145,7 +147,9 @@ main {
   height: auto;
 }
 
-.newsletter h4, .social-media h4, .footer-links p {
+.newsletter h4, 
+.social-media h4, 
+.footer-links p {
   color: #fff; /* Mettre les titres et le texte du footer en blanc */
 }
 
@@ -169,7 +173,7 @@ main {
   border-radius: 5px; 
   cursor: pointer; 
   color: white; /* Changez ici pour garantir une bonne lisibilité */
-  }
+}
 
 .newsletter button:hover {
   color: #330802; /* Change la couleur du texte au survol */
@@ -187,22 +191,18 @@ main {
   color: #fff; 
   margin: 0 10px; /* Espacement entre les icônes */
   font-size: 20px; /* Taille des icônes */
-  transition: color 0.3s ease; /* Animation pour le changement de couleur */
 }
 
 .social-media a:hover {
   color: #f0b85f; /* Couleur des icônes au survol */
 }
 
+/* Footer links */
 .footer-links {
   text-align: center; /* Centrer les liens */
   margin-top: 20px; /* Espacement entre les sections et les liens */
 }
-.footer-text {
-  color: white; /* Définit la couleur du texte en blanc */
-}
 
-/* Changement de couleur au survol pour les liens dans le footer */
 .footer-links a {
   color: white; /* Définit la couleur des liens en blanc */
 }
@@ -210,4 +210,8 @@ main {
 .footer-links a:hover {
   text-decoration: underline; /* Ajoute une décoration au survol (facultatif) */
   color: #f0b85f; /* Changement de couleur au survol */
+}
+
+.footer-text {
+  color: white; /* Définit la couleur du texte en blanc */
 }
