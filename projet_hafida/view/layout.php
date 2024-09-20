@@ -33,8 +33,6 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/faq.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/responsive.css">
 
-
-
         <title>Chez Mon Chat</title>
     </head>
     <body>
@@ -49,45 +47,40 @@
                     <a href="index.php?ctrl=home&action=view">
                 <img src="public\img\Logo_gold-removebg-preview.png" alt="Logo">
             </a>
-                    <div id="nav-right">
-                        <?php
-                        // Si l'utilisateur est connecté
-                        if(App\Session::getUtilisateur()) {
-                            // Vérifiez si l'utilisateur est un administrateur
-                            if(App\Session::isAdmin()) {
-                                // Navbar pour les administrateurs
-                                ?>
-                                <ul class="nav-list">
-                                    <li><a href="index.php?ctrl=home&action=view">Accueil</a></li>
-                                    <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur() ?></a></li>
-                                    <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li>
-                                    <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li>
-                                    <li><a href="index.php?ctrl=admin&action=listUtilisateurs">Utilisateurs</a></li>
-                                    <li><a href="index.php?ctrl=admin&action=AllAnnonces">Annonces</a></li>
-                                    <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
-                                </ul>
-                                <?php
-                            } else {
-                                // Navbar pour les utilisateurs normaux
-                                ?>
-                                <ul class="nav-list">
-                                    <li><a href="index.php?ctrl=home&action=view">Accueil</a></li>
-                                    <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur() ?></a></li>
-                                    <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li>
-                                    <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li>
-                                    <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
-                                </ul>
-                                <?php
-                            }
-                        } else {
-                            ?>
+            <div id="nav-right">
                             <ul class="nav-list">
-                                <li><a href="index.php?ctrl=security&action=login">Connexion</a></li>
-                                <li><a href="index.php?ctrl=security&action=register">Inscription</a></li>
+                                <?php
+                                // Si l'utilisateur est connecté
+                                if (App\Session::getUtilisateur()) {
+                                    // Vérifiez si l'utilisateur est un administrateur
+                                    if (App\Session::isAdmin()) {
+                                        ?>
+                                        <li><a href="index.php?ctrl=home&action=view">Accueil</a></li>
+                                        <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li>
+                                        <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li>
+                                        <li><a href="index.php?ctrl=admin&action=listUtilisateurs">Utilisateurs</a></li>
+                                        <li><a href="index.php?ctrl=admin&action=AllAnnonces">Annonces</a></li>
+                                        <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur() ?></a></li>
+                                        <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <li><a href="index.php?ctrl=home&action=view">Accueil</a></li>
+                                        <li><a href="index.php?ctrl=location&action=index">Liste des annonces</a></li>
+                                        <li><a href="index.php?ctrl=location&action=ajoutAnnonces">Déposer une annonce</a></li>
+                                        <li><a href="index.php?ctrl=security&action=monCompte"><span class="fas fa-user"></span>&nbsp;<?= App\Session::getUtilisateur() ?></a></li>
+                                        <li><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
+                                        <?php
+                                    }
+                                } else {
+                                    ?><div class="connexion">
+                                    <li><a href="index.php?ctrl=security&action=login">Connexion</a></li>
+                                    <li><a href="index.php?ctrl=security&action=register">Inscription</a></li>
+                                    </div> <?php
+                                }
+                                ?>
                             </ul>
-                        <?php
-                        }
-                        ?>
+                        </div>
                     </div>
                 </nav>
             </header>

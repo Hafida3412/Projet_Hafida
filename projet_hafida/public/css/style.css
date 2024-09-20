@@ -80,11 +80,11 @@ nav ul {
 }
 
 nav li {
-  margin-right: 30px; /* espace entre les éléments */
+  margin-right: 10px; /* espace entre les éléments */
 }
 
 nav a {
-  padding: 12px 20px; /* Ajout de padding pour augmenter la zone cliquable */
+  padding: 12px 10px; /* Ajout de padding pour augmenter la zone cliquable */
   font-size: 18px;
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
