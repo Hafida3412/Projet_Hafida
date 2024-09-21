@@ -14,29 +14,29 @@ class SecurityController extends AbstractController{
     
 //MISE EN PLACE DE LA FONCTION S INSCRIRE
     public function register () {
-// On vérifie si le formulaire d'inscription a été soumis    
+        // On vérifie si le formulaire d'inscription a été soumis    
         if (isset($_POST["submitRegister"])) {           
-// On filtre les champs du formulaire d'inscription:
+            // On filtre les champs du formulaire d'inscription:
              $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
              $pass1 = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
-// Définition d'une regex pour le mot de passe
+            // Définition d'une regex pour le mot de passe
              $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/"; // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
 
-// On vérifie la validité des filtres
+        // On vérifie la validité des filtres
         if ($pseudo && $email && $pass1 && $pass2) {
         //var_dump("ok");die;
              $userManager = new UtilisateurManager();
              $utilisateur = $userManager->checkUserExists($email);//création de la function checkUserExists dans utilisateurManager pour vérifier si l'utilisateur existe
-// Si l'utilisateur existe
+        // Si l'utilisateur existe
         if ($utilisateur) {
             Session::addFlash("error", "Cet email est déjà utilisé.");
             header("Location: index.php?ctrl=security&action=register");
             exit;
         } else {
-// Vérification que les mots de passe sont identiques et que le mot de passe respecte la regex
+        // Vérification que les mots de passe sont identiques et que le mot de passe respecte la regex
         if ($pass1 === $pass2 && preg_match($passwordRegex, $pass1)) {
             $userManager->add([
                 "pseudo" => $pseudo,
@@ -44,7 +44,7 @@ class SecurityController extends AbstractController{
                 "password" => password_hash($pass1, PASSWORD_DEFAULT)
             ]);
 
-// Redirection après l'inscription
+        // Redirection après l'inscription
             header("Location: index.php?ctrl=security&action=login");
             exit;
         } else {
@@ -54,7 +54,7 @@ class SecurityController extends AbstractController{
         }
     }
 } else {
-// Redirection vers le formulaire d'inscription si des champs sont manquants
+            // Redirection vers le formulaire d'inscription si des champs sont manquants
             Session::addFlash("error", "Tous les champs sont obligatoires.");
             header("Location: index.php?ctrl=security&action=register");
             exit;
