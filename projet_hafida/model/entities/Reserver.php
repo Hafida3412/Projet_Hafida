@@ -38,15 +38,16 @@ Il initialise les attributs de la classe en utilisant les données fournies.*/
 }
 
 /* Getter et Setter pour chaque attribut */
+    /*Ces méthodes permettent d'accéder et de modifier les attributs de la classe */
 
-    public function getId()
+    public function getId()  // Retourne l'identifiant de la réservation
     {
         return $this->id;
     }
 
-    public function setId($id)
+    public function setId($id) // Définit l'identifiant de la réservation
     {
-        $this->id = $id;
+        $this->id = $id; // Permet le chaînage des méthodes
 
         return $this;
     }
