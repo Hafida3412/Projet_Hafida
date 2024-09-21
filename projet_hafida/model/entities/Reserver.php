@@ -4,25 +4,40 @@ namespace Model\Entities;
 use App\Entity;
 
 /*
-    En programmation orientée objet, une classe finale (final class) est une classe que vous ne pouvez pas étendre, c'est-à-dire qu'aucune autre classe ne peut hériter de cette classe. En d'autres termes, une classe finale ne peut pas être utilisée comme classe parente.
+    En programmation orientée objet, une classe finale (final class) est une classe que vous ne pouvez pas 
+    étendre, c'est-à-dire qu'aucune autre classe ne peut hériter de cette classe. En d'autres termes, une 
+    classe finale ne peut pas être utilisée comme classe parente.
 */
 
-final class Reserver extends Entity{
+/*
+   La classe Reserver représente une réservation avec plusieurs attributs
+   associés à des réservations dans une application. Cette classe est finale,
+   ce qui signifie qu'elle ne peut pas être étendue.
+*/
 
-    private $id;
-    private $valide;
-    private $numeroTelephone;
-    private $nbAdultes;
-    private $nbEnfants;
-    private $paiement;
-    private $question;
-    private $utilisateur;
-    private $annonce;
+ final class Reserver extends Entity{
 
-    public function __construct($data){         
+    // Attributs de la classe représentant les informations de réservation
+    private $id; // Identifiant unique de la réservation
+    private $valide; // Indicateur de la validité de la réservation (true/false)
+    private $numeroTelephone; // Numéro de téléphone lié à la réservation
+    private $nbAdultes; // Nombre d'adultes pour la réservation
+    private $nbEnfants; // Nombre d'enfants pour la réservation
+    private $paiement; // Détails du paiement pour la réservation
+    private $question; // Questions supplémentaires posées par l'utilisateur
+    private $utilisateur; // Information sur l'utilisateur qui a fait la réservation
+    private $annonce; // Annonce associée à la réservation
+
+    
+/*Constructeur de la classe Reserver.
+Il initialise les attributs de la classe en utilisant les données fournies.*/
+    
+     public function __construct($data){         
         $this->hydrate($data);  
 
 }
+
+/* Getter et Setter pour chaque attribut */
 
     public function getId()
     {
