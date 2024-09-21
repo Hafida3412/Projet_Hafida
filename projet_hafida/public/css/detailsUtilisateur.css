@@ -3,6 +3,7 @@
 .details-utilisateur {
     background-image: url(../img/oreille.jpg);
     background-size: cover; /* Pour couvrir tout le conteneur */
+    padding-bottom:10px;
 }
 
 .details-utilisateur h1 {

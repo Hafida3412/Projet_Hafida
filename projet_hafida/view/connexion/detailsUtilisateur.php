@@ -68,18 +68,12 @@ if(isset($reservations) && $reservations){
 <!-- Créer un logement -->
 
 <h1>Mes logements</h1>
-<div class="logement-actions">
-    <div class="button-container">
-        <a href="index.php?ctrl=location&action=creationLogement">
-            <button class="btn-reserver create-logement">Créer un nouveau logement</button>
-        </a>
-    </div>
+
     <div class="button-container">
         <a href="index.php?ctrl=location&action=listeLogementsUtilisateur">
             <button class="btn-reserver see-logements">Voir mes logements</button>
         </a>
     </div>
-</div>  
-
+  
    
        

@@ -123,6 +123,7 @@ main {
 
 /* Footer */
 .footer {
+  margin-top: 10px; /* ajoute un espacement au-dessus du footer */
   background-color: #330802; /* Changez pour s'harmoniser avec les autres sections */
   padding: 40px 20px; /* Espacement intérieur */
   text-align: center; /* Centrer le texte */
