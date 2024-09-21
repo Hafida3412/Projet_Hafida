@@ -12,32 +12,31 @@ class SecurityController extends AbstractController{
      // Affiche la vue du formulaire register
           //session_start();
     
-    //MISE EN PLACE DE LA FONCTION S INSCRIRE
+//MISE EN PLACE DE LA FONCTION S INSCRIRE
     public function register () {
-    
-        if (isset($_POST["submitRegister"])) {
-             
-     //FILTRER LES CHAMPS DU FORMULAIRE D INSCRIPTION:
+// On vérifie si le formulaire d'inscription a été soumis    
+        if (isset($_POST["submitRegister"])) {           
+// On filtre les champs du formulaire d'inscription:
              $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
              $pass1 = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
-    // Définir une regex pour le mot de passe
-    $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/"; // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
+// Définition d'une regex pour le mot de passe
+             $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/"; // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
 
-    // Vérifier la validité des filtres
-    if ($pseudo && $email && $pass1 && $pass2) {
-    //var_dump("ok");die;
+// On vérifie la validité des filtres
+        if ($pseudo && $email && $pass1 && $pass2) {
+        //var_dump("ok");die;
              $userManager = new UtilisateurManager();
              $utilisateur = $userManager->checkUserExists($email);//création de la function checkUserExists dans utilisateurManager pour vérifier si l'utilisateur existe
-    //SI L UTILISATEUR EXISTE
-    if ($utilisateur) {
-        Session::addFlash("error", "Cet email est déjà utilisé.");
-        header("Location: index.php?ctrl=security&action=register");
-        exit;
-    } else {
-        // Vérification que les mots de passe sont identiques et que le mot de passe respecte la regex
+// Si l'utilisateur existe
+        if ($utilisateur) {
+            Session::addFlash("error", "Cet email est déjà utilisé.");
+            header("Location: index.php?ctrl=security&action=register");
+            exit;
+        } else {
+// Vérification que les mots de passe sont identiques et que le mot de passe respecte la regex
         if ($pass1 === $pass2 && preg_match($passwordRegex, $pass1)) {
             $userManager->add([
                 "pseudo" => $pseudo,
@@ -45,30 +44,32 @@ class SecurityController extends AbstractController{
                 "password" => password_hash($pass1, PASSWORD_DEFAULT)
             ]);
 
-    // Redirection après l'inscription
-    header("Location: index.php?ctrl=security&action=login");
-    exit;
-} else {
-    Session::addFlash("error", "Le mot de passe doit contenir au moins 12 caractères, incluant une lettre majuscule, une lettre minuscule et un chiffre.");
-    header("Location: index.php?ctrl=security&action=register");
-    exit;
-}
-}
+// Redirection après l'inscription
+            header("Location: index.php?ctrl=security&action=login");
+            exit;
+        } else {
+            Session::addFlash("error", "Le mot de passe doit contenir au moins 12 caractères, incluant une lettre majuscule, une lettre minuscule et un chiffre.");
+            header("Location: index.php?ctrl=security&action=register");
+            exit;
+        }
+    }
 } else {
 // Redirection vers le formulaire d'inscription si des champs sont manquants
-Session::addFlash("error", "Tous les champs sont obligatoires.");
-header("Location: index.php?ctrl=security&action=register");
-exit;
-}
-}
+            Session::addFlash("error", "Tous les champs sont obligatoires.");
+            header("Location: index.php?ctrl=security&action=register");
+            exit;
+        }
+    }
 
-return [
-"view" => VIEW_DIR . "connexion/register.php",
-"meta_description" => "Formulaire d'inscription"
-];
-}
+            return [
+            "view" => VIEW_DIR . "connexion/register.php",
+            "meta_description" => "Formulaire d'inscription"
+        ];
+    }
 
-    //MISE EN PLACE DE LA FONCTION SE CONNECTER
+//MISE EN PLACE DE LA FONCTION SE CONNECTER
+/*Affiche la vue du formulaire de connexion et gère l'authentification*/
+
     public function login() {
         if (isset($_POST["submitLogin"])) {
             // PROTECTION XSS (=FILTRES)
@@ -89,28 +90,28 @@ return [
                     ];
                 }
                 
-                // REQUETE PREPARE POUR LUTTER CONTRE LES INJECTIONS SQL
+            // REQUETE PREPARE POUR LUTTER CONTRE LES INJECTIONS SQL
                 $userManager = new UtilisateurManager();
                 $utilisateur = $userManager->checkUserExists($email);
     
-                // Si l'utilisateur existe
+            // Si l'utilisateur existe
                 if ($utilisateur) {
                     $hash = $utilisateur->getPassword();
     
-                    // VERIFICATION DU MDP
-                    if (password_verify($password, $hash)) {
-                        // On stocke dans une SESSION l'intégralité des infos du user
-                        $_SESSION["utilisateur"] = $utilisateur; 
-                        // SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D'ACCUEIL
-                        header("Location:index.php?ctrl=home&action=index");
-                        exit;
-                    } else {
-                        Session::addFlash("error", "Erreur d'adresse mail ou de mot de passe.");
-                    }
-                } else {
-                    Session::addFlash("error", "Utilisateur introuvable.");
-                }
+            // VERIFICATION DU MDP
+                if (password_verify($password, $hash)) {
+            // On stocke dans une SESSION l'intégralité des infos du user
+                $_SESSION["utilisateur"] = $utilisateur; 
+            // SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D'ACCUEIL
+                header("Location:index.php?ctrl=home&action=index");
+                exit;
             } else {
+                Session::addFlash("error", "Erreur d'adresse mail ou de mot de passe.");
+            }
+        } else {
+                Session::addFlash("error", "Utilisateur introuvable.");
+            }
+        } else {
                 Session::addFlash("error", "Tous les champs sont obligatoires.");
             }
         }
@@ -122,12 +123,12 @@ return [
     }
     
     
-    // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
+// AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
     public function monCompte(){
         if(Session::getUtilisateur()) {
             $id_utilisateur = Session::getUtilisateur()->getId();
             $utilisateurManager = new UtilisateurManager();
-            $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
+            $utilisateur = $utilisateurManager->findOneById($id_utilisateur);//On récupère l'utilisateur
         } else {
             $this->redirectTo("connexion", "login.php");
         }
@@ -144,15 +145,18 @@ return [
             ]
         ];
     }
-    // MISE EN PLACE DE LA FONCTION LOGOUT
+
+// MISE EN PLACE DE LA FONCTION LOGOUT
+/* On déconnecte l'utilisateur */
+
     public function logout () {
-        session_unset();// Supprimer toutes les données de la session
+        session_unset();// Suppression de toutes les données de la session
     // Redirection après la déconnexion
         header("Location: index.php");
         exit;
-        }
+    }
 
-    //CREATION DE LA FONCTION UPDATE INFO POUR MODIFIER LES INFOS PERSORNELLES
+//CREATION DE LA FONCTION UPDATE INFO POUR MODIFIER LES INFOS PERSORNELLES
     public function updateInfo() {
     //On vérifie si l'utilisateur est connecté
     if(Session::getUtilisateur()) {
@@ -165,23 +169,23 @@ return [
             //On vérifie si le pseudo et l'email sont renseignés 
             // Vérification si les valeurs sont renseignées
             if($pseudo && $email) {
-                // Récupérer l'ID de l'utilisateur connecté 
+                // Récupération de l'ID de l'utilisateur connecté 
                 $id_utilisateur = Session::getUtilisateur()->getId();
 
-                // Récupérer les informations de l'utilisateur
+                // Récupération des informations de l'utilisateur
                 $utilisateurManager = new UtilisateurManager();
                 $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
 
-                // Mettre à jour le pseudo et l'email de l'utilisateur
+                // Mise à jour du pseudo et de l'email de l'utilisateur
                 $utilisateur->setPseudo($pseudo);
                 $utilisateur->setEmail($email);
 
-                // Mettre à jour le mot de passe uniquement s'il a été saisi
+                // Mise à jour du mot de passe uniquement s'il a été saisi
                 if(!empty($password)) {
                     $utilisateur->setPassword(password_hash($password, PASSWORD_DEFAULT));
                 }
 
-                // Mettre à jour les informations de l'utilisateur dans la base de données
+                // Mise à jour des informations de l'utilisateur dans la base de données
                 $utilisateurManager->update($utilisateur);
 
                 // Message de confirmation de la modification
@@ -200,14 +204,17 @@ return [
 }
 
 // MISE EN PLACE DE LA FONCTION MOT DE PASSE OUBLIÉ
+/* Affiche le formulaire pour le mot de passe oublié*/
+
 public function forgotPassword() {
     // Ici, l'utilisateur peut saisir son email
     if (isset($_POST["submitForgotPassword"])) {
-        // Filtrer l'email
+        // On filtre l'email
         $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+
         if ($email) {
             $userManager = new UtilisateurManager();
-            $utilisateur = $userManager->checkUserExists($email);
+            $utilisateur = $userManager->checkUserExists($email);//On vérifie si l'utilisateur existe
 
             if ($utilisateur) {
                 // On stocke l'ID utilisateur dans la session pour le réinitialiser plus tard
@@ -231,8 +238,10 @@ public function forgotPassword() {
 }
 
 // MISE EN PLACE DE LA FONCTION RÉINITIALISER LE MOT DE PASSE
+/*Gère la réinitialisation du mot de passe*/
+
 public function resetPassword() {
-    $utilisateur = Session::getUtilisateur(); // Récupérer l'utilisateur en session
+    $utilisateur = Session::getUtilisateur(); // On récupère l'utilisateur en session
 
     if (!$utilisateur) {
         Session::addFlash("error", "Aucun utilisateur connecté.");
@@ -241,17 +250,17 @@ public function resetPassword() {
     }
 
     if (isset($_POST["submitResetPassword"])) {
-        // Filtrer le nouveau mot de passe
+        // On filtre le nouveau mot de passe
         $newPassword = filter_input(INPUT_POST, "newPassword", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         if ($newPassword) {
             $userManager = new UtilisateurManager();
-            // Mettre à jour le mot de passe
+            // Mise à jour du mot de passe
             $userManager->updatePassword($utilisateur->getId(), password_hash($newPassword, PASSWORD_DEFAULT));
             Session::addFlash("success", "Votre mot de passe a été réinitialisé avec succès!");
 
-            // Nettoyer la session
-            Session::setUtilisateur(null); // Clear user session after resetting password
+            // Nettoyage de la session après réinitialisation
+            Session::setUtilisateur(null); 
             header("Location: index.php?ctrl=security&action=login");
             exit;
         } else {
