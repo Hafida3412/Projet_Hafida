@@ -38,7 +38,7 @@
         <input type="date" id="dateFin" name="dateFin" required><br>
 
         <label for="NbChat">Nombre de chat à garder:</label>
-        <input type="number" name="nbChat"><br>
+        <input type="number" name="nbChat" required><br>
 
         <label for="logements">Adresse du logement</label> 
         <select name="logements"><!--boucle pour récupérer les éléments via id_logement dans un menu déroulant-->
@@ -53,7 +53,7 @@
         <br>
         <!--Création d'un champs de texte pour la description de l'annonce-->
         <label for="description">Description :</label>
-        <textarea name="description" rows="4" cols="50"></textarea><br>
+        <textarea name="description" rows="4" cols="50" required></textarea><br>
 
         <!--Création du bouton "Déposer l'annonce"-->
         <!-- Création d'un conteneur pour centrer le bouton -->

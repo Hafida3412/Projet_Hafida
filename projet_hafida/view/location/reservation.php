@@ -10,15 +10,15 @@
 
      <!-- Champ pour le numéro de téléphone -->
     <label for="numeroTelephone">Numéro de téléphone</label>
-    <input type="text" name="numeroTelephone" id="numeroTelephone"><br>
+    <input type="text" name="numeroTelephone" id="numeroTelephone" required><br>
 
     <!-- Champ pour le nombre d'adultes -->
     <label for="nbAdultes">Nb d'adultes</label>
-    <input type="number" name="nbAdultes"><br>
+    <input type="number" name="nbAdultes" required><br>
 
     <!-- Champ pour le nombre d'enfants -->
     <label for="nbEnfants">Nb d'enfants</label>
-    <input type="number" name="nbEnfants"><br>
+    <input type="number" name="nbEnfants" required><br>
 
     <div class="paiement">
         <!-- Section pour choisir le mode de paiement -->
