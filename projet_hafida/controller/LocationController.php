@@ -102,11 +102,10 @@ return [
         $imageManager = new ImageManager();
         $images = $imageManager->findImagesByLogement($logement->getId()); // On récupère les images en utilisant cette méthode qui est dans ImageManager
     
-
-        // Récupérer les avis (changez ici l'identifiant)
+        // On récupère les avis
         $avisManager = new AvisManager();
-        $avis = $avisManager->findAvisByLogement($logement->getId()); // Assurez-vous que c'est correct
-    
+        $avis = $avisManager->findAvisByLogement($logement->getId()); 
+
         return [
             "view" => VIEW_DIR . "location/detailsAnnonce.php",
             "meta_description" => "Détails de l'annonce",
@@ -143,7 +142,7 @@ return [
                 // On vérifie que toutes les données nécessaires sont présentes
                 if ($dateDebut && $dateFin && $nbChat && $description && $id_logement) {
                     // Vérification que la date de début n'est pas dans le passé
-                    $currentDate = date("Y-m-d"); // Assurez-vous d'avoir la variable $currentDate définie
+                    $currentDate = date("Y-m-d"); 
                     if ($dateDebut < $currentDate) {
                         Session::addFlash("error", "La date de début ne peut pas être antérieure à aujourd'hui.");
                         return $this->redirectTo("location", "ajoutAnnonces");
@@ -300,14 +299,14 @@ return [
         // On crée une nouvelle instance de AvisManager pour gérer les avis
         // Récupération des avis
         $avisManager = new AvisManager();
-        $avis = $avisManager->findAvisByLogement($id); // Assurez-vous que vous récupérez les avis par logement
+        $avis = $avisManager->findAvisByLogement($id); // On récupére les avis par logement
                 
         // On ajoute l'avis en base de données
                 $avisManager->add([
                     "dateAvis" => date("Y-m-d H:i:s"),
                     "commentaire" => $commentaire,
-                    "logement_id" => $annonce->getLogement()->getId(), // Lier l'avis au logement de l'annonce
-                    "utilisateur_id" => Session::getUtilisateur()->getId() // Lier l'avis à l'utilisateur connecté
+                    "logement_id" => $annonce->getLogement()->getId(), // On lie l'avis au logement de l'annonce
+                    "utilisateur_id" => Session::getUtilisateur()->getId() // On lie l'avis à l'utilisateur connecté
                 ]);
 
         //On affiche un message pour confirmer que l'avis est enregistré
@@ -386,12 +385,12 @@ return [
             $name = $_FILES['file']['name']; // Nom original du fichier
             $size = $_FILES['file']['size']; // Taille du fichier
             $error = $_FILES['file']['error']; // Erreur, s'il y en a une
-            $type = $_FILES['file']['type']; // Type MIME du fichier
+            $type = $_FILES['file']['type']; // Type du fichier
 
     
             // Extraction de l'extension du fichier
             $tabExtension = explode('.', $name);  // Séparation du nom en utilisant le point comme séparateur
-            $extension = strtolower(end($tabExtension)); // Récupérer la dernière partie (extension) et la mettre en minuscules
+            $extension = strtolower(end($tabExtension)); // Récupération la dernière partie (extension) et écriture en minuscules
     
             // Liste des extensions autorisées pour le téléchargement
             $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png'];
@@ -409,7 +408,7 @@ return [
                      // Insertion des informations sur l'image dans la base de données
                     $imageManager->add([
                         "nomImage"=> $fileName, // Nom du fichier
-                        "altImage" => $annonce->getLogement()->getVille(), // Texte alternatif, basé sur la ville de logement
+                        "altImage" => $annonce->getLogement()->getVille(), // Texte alternatif, basé sur la ville du logement
                         "logement_id" => $annonce->getLogement()->getId() // ID du logement associé à l'annonce
                     ]);
                 }

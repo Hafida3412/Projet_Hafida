@@ -162,7 +162,7 @@ return [
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            //On vérifie si le pseudo et l'email et le MDP sont renseignés 
+            //On vérifie si le pseudo et l'email sont renseignés 
             // Vérification si les valeurs sont renseignées
             if($pseudo && $email) {
                 // Récupérer l'ID de l'utilisateur connecté 
