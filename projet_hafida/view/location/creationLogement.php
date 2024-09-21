@@ -5,19 +5,19 @@
  
     <form action="index.php?ctrl=location&action=creationLogement" method="post">
         <label for="nbChambre">Nombre de chambres:</label>
-        <input type="number" name="nbChambre"><br>
+        <input type="number" name="nbChambre" required><br>
 
         <label for="rue">Rue:</label>
-        <input type="text" name="rue"><br>
+        <input type="text" name="rue" required><br>
 
         <label for="CP">Code postal:</label>
-        <input type="text" name="CP"><br>
+        <input type="text" name="CP" required><br>
 
         <label for="ville">Ville:</label>
-        <input type="text" name="ville"><br>
+        <input type="text" name="ville" required><br>
 
         <label for="image">URL de l'image du logement:</label>
-        <input type="text" name="image"><br>
+        <input type="text" name="image" required><br>
 
         <label for="typeLogement">Type de logement:</label>
         <select name="typeLogement">
