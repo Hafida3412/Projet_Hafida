@@ -9,33 +9,34 @@ use App\Entity;
 
 final class Annonce extends Entity{
 
-    private $id;
-    private $dateCreation;
-    private $nbChat;
-    private $dateDebut;
-    private $dateFin;
-    private $description;
-    private $estValide;
-    private $logement;
-    private $utilisateur;
+     // Attributs de la classe Annonce
+     private $id;              // Identifiant de l'annonce
+     private $dateCreation;    // Date de création de l'annonce
+     private $nbChat;          // Nombre de chats (ou animaux) autorisés
+     private $dateDebut;       // Date de début de disponibilité
+     private $dateFin;         // Date de fin de disponibilité
+     private $description;     // Description de l'annonce
+     private $estValide;       // Indique si l'annonce est valide (booléen)
+     private $logement;        // Détails du logement associé à l'annonce (peut-être un objet)
+     private $utilisateur;     // Utilisateur ayant créé l'annonce (peut-être un objet)
 
-
+    // Le constructeur initialise l'annonce en hydratant ses propriétés à partir des données fournies.
     // chaque entité aura le même constructeur grâce à la méthode hydrate (issue de App\Entity)
     public function __construct($data){         
         $this->hydrate($data);        
     }
 
-    public function getId()
+    public function getId() // Getter pour l'identifiant de l'annonce
     {
         return $this->id;
     }
 
   
-    public function setId($id)
+    public function setId($id) // Setter pour l'identifiant de l'annonce
     {
         $this->id = $id;
 
-        return $this;
+        return $this;// Permet le chaînage des méthodes
     }
 
  
