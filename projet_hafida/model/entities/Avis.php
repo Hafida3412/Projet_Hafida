@@ -9,24 +9,27 @@ use App\Entity;
 
 final class Avis extends Entity{
 
-    private $id;
-    private $dateAvis;
-    private $commentaire;
-    private $logement;
-    private $utilisateur;
+    // Propriétés de la classe Avis
+    private $id;            // Identifiant de l'avis
+    private $dateAvis;      // Date de l'avis
+    private $commentaire;   // Contenu du commentaire
+    private $logement;      // Logement concerné par l'avis
+    private $utilisateur;   // Utilisateur ayant laissé l'avis
+   
 
+    // Constructeur qui initialise l'objet en appelant la méthode hydrate
     public function __construct($data){         
-        $this->hydrate($data);        
+        $this->hydrate($data); // Hydrate l'objet avec les données fournies          
     }
 
-    public function getId(){
+    public function getId(){ // Getter pour l'identifiant
         return $this->id;
     }
 
 
-    public function setId($id){
+    public function setId($id){ // Setter pour l'identifiant
         $this->id = $id;
-        return $this;
+        return $this; // Permet le chaînage des méthodes
     }
 
     
