@@ -14,68 +14,59 @@ use App\DAO;
 
 class LocationController extends AbstractController implements ControllerInterface{
 
-    //FONCTION POUR LISTER TOUTES LES ANNONCES
-public function index($id = null) {
-    
-    // On crée une nouvelle instance de AnnonceManager
-    $annonceManager = new AnnonceManager();
-    
-    // Pagination settings
-    $pageNum = isset($_GET['page']) ? (int)$_GET['page'] : 1;// Récupère le numéro de page
-    $perPage = 3;
+// FONCTION POUR LISTER TOUTES LES ANNONCES
 
-    // Récupérer le nombre total d'annonces
-    $totalAnnonces = $annonceManager->countAll(); 
+    public function index($id = null) {
+        $annonceManager = new AnnonceManager();
+        $pageNum = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Récupère le numéro de page
+        $perPage = 3;
 
-   // Calculer le nombre de pages
-    $totalPages = ceil(count($totalAnnonces) / $perPage);
-    $offset = ($pageNum - 1) * $perPage;// Calcule l'offset pour la requête SQL
+        $totalAnnonces = $annonceManager->countAll();
+        $totalPages = ceil($totalAnnonces / $perPage);
+        $offset = ($pageNum - 1) * $perPage;
 
-    // On récupère les annonces paginées en utilisant la méthode findAll avec la pagination
-    $annonces = $annonceManager->findAll(["dateCreation", "DESC"], $offset, $perPage);
-    
-    // le controller communique avec la vue "listAnnonces" (view) pour lui envoyer la liste des annonces (data) et les informations de pagination
-    return [
-        "view" => VIEW_DIR."location/listAnnonces.php",
-        "meta_description" => "Liste des annonces",
-        "data" => [
-            "annonces" => $annonces,
-            "page" => $pageNum, // Passer le numéro de la page actuelle
-            "totalPages" => $totalPages,
-            "id" => $id
-        ]
-    ];
-}
+        $annonces = $annonceManager->findAll(["dateCreation", "DESC"], $offset, $perPage);
 
-    //RECHERCHER UNE ANNONCE PAR VILLE
+        return [
+            "view" => VIEW_DIR . "location/listAnnonces.php",
+            "meta_description" => "Liste des annonces",
+            "data" => [
+                "annonces" => $annonces,
+                "page" => $pageNum,
+                "totalPages" => $totalPages,
+                "id" => $id,
+            ]
+        ];
+    }
+
+//RECHERCHER UNE ANNONCE PAR VILLE
+
     public function rechercheAnnonce() {
         $annonceManager = new AnnonceManager();
-    
     // On récupère la valeur de la ville saisie dans le formulaire de recherche
         $ville = filter_input(INPUT_GET, 'ville', FILTER_SANITIZE_SPECIAL_CHARS);
-
     // On recherche les annonces par ville en utilisant la requête findAnnoncesByVille
     // dans annonceManager
        $annonces = $annonceManager->findAnnoncesByVille($ville);
-
     // Message à afficher si aucune annonce n'est trouvée
        $message = null;
        if (empty($annonces)) {
        $message = "Aucune annonce trouvée pour la ville : " . htmlspecialchars($ville);
-}
+    }
 
-return [
-    "view" => VIEW_DIR . "location/listAnnonces.php",
-    "meta_description" => "Liste des annonces",
-    "data" => [
-        "annonces" => $annonces,
-        "message" => $message, // On passe le message à la vue
-    ]
-];
+    return [
+        "view" => VIEW_DIR . "location/listAnnonces.php",
+        "meta_description" => "Liste des annonces",
+        "data" => [
+            "annonces" => $annonces,
+            "message" => $message, // On passe le message à la vue
+        ]
+    ];
 }
         
+    
+//FONCTION POUR AFFICHER LES DETAILS DES ANNONCES
 
-    //FONCTION POUR AFFICHER LES DETAILS DES ANNONCES
     public function detailsAnnonce($id) {
         $annonceManager = new AnnonceManager(); //création d'une instance de la classe AnnonceManager pour gérer les annonces.
         $annonce = $annonceManager->findOneById($id); //on récupère l'annonce correspondant à l'identifiant passé en parametre 
@@ -119,13 +110,14 @@ return [
     }
     
     
-    //AJOUTER/DEPOSER UNE ANNONCE
+//AJOUTER/DEPOSER UNE ANNONCE
+
     public function ajoutAnnonces() {
-        // création de l'instance de la classe logementManager pour gérer les logements.
+    // création de l'instance de la classe logementManager pour gérer les logements.
         $logementManager = new LogementManager();
-        // on récupère l'id de l'utilisateur connecté
+    // on récupère l'id de l'utilisateur connecté
         $id = Session::getUtilisateur()->getId();
-        // on récupère les logements par utilisateur en utilisant la requête créée dans logementManager
+    // on récupère les logements par utilisateur en utilisant la requête créée dans logementManager
         $logements = $logementManager->listLogementsByUser($id);
     
         if (Session::getUtilisateur()) { // On vérifie si l'utilisateur est connecté
@@ -184,7 +176,7 @@ return [
     }
     
 
-    //CREATION D UN LOGEMENT
+//CREATION D UN LOGEMENT
     public function creationLogement() {
         //Instanciation d'un objet LogementManager
         $logementManager = new LogementManager();
@@ -199,7 +191,7 @@ return [
             $image = filter_input(INPUT_POST, "image", FILTER_VALIDATE_URL);
             $typeLogement = filter_input(INPUT_POST, "typeLogement", FILTER_VALIDATE_INT);
         
-            //On vérifie si toutes les données requises sont présentes
+        //On vérifie si toutes les données requises sont présentes
             if($nbChambre && $rue && $CP && $ville && $image && $typeLogement) {
                 $logementManager->add([
                     "nbChambre" => $nbChambre,
@@ -211,37 +203,38 @@ return [
                     // on rajoute l'utilisateur qui crée le logement
                     "utilisateur_id" => Session::getUtilisateur()->getId()
                 ]); 
-            // Ajout de message flash
+        // Ajout de message flash
             Session::addFlash("success", "Votre logement a été créé avec succès.");
                 
-            // Redirection vers la page de dépôt d'annonce après l'ajout
+        // Redirection vers la page de dépôt d'annonce après l'ajout
             return $this->redirectTo("location", "ajoutAnnonces");
             }
         }
         
         // Retour des informations nécessaires pour la vue de création de logement
-        return [
-            "view" => VIEW_DIR."location/creationLogement.php",
-            "meta_description" => "Création d'un logement",
-            "data" => []
-        ];
-    }
+            return [
+                "view" => VIEW_DIR."location/creationLogement.php",
+                "meta_description" => "Création d'un logement",
+                "data" => []
+            ];
+        }
 
-    //LISTE DE LOGEMENTS PAR UTILISATEUR
+//LISTE DE LOGEMENTS PAR UTILISATEUR
+
     public function listeLogementsUtilisateur(){
-        // Vérifiez si l'utilisateur est connecté
+    // Vérifiez si l'utilisateur est connecté
         if(!Session::getUtilisateur()){
-            // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
+    // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
             return $this->redirectTo("security", "login");
         }
 
-        // Récupérer l'ID de l'utilisateur connecté
+    // Récupérer l'ID de l'utilisateur connecté
         $userId = Session::getUtilisateur()->getId();
 
-        // Créer une instance du manager de logements
+    // Créer une instance du manager de logements
         $logementManager = new LogementManager();
 
-        // Récupérer la liste des logements de l'utilisateur connecté
+    // Récupérer la liste des logements de l'utilisateur connecté
         $logements = $logementManager->listLogementsByUser($userId);
 
         return [
@@ -253,18 +246,18 @@ return [
         ];
     }
 
-    //SUPPRIMER UNE ANNONCE D UN UTILISATEUR
+//SUPPRIMER UNE ANNONCE D UN UTILISATEUR
     public function supprimerAnnonce($id){
-        //On récupère l'annonce à supprimer
+    //On récupère l'annonce à supprimer
         $annonceManager = new annonceManager();
         $annonce = $annonceManager->findOneById($id);;
 
         if(Session::getUtilisateur()) {
-            // Vérifiez si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
+    // Vérifiez si l'id de l'utilisateur de l'annonce = id de l'utilisateur connecté 
             if(Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) {
-                // Supprimer d'abord les réservations associées
+    // Supprimer d'abord les réservations associées
                 $annonceManager->deleteReservations($id);
-                // Ensuite, on supprime l'annonce
+    // Ensuite, on supprime l'annonce
                 $annonceManager->deleteAnnonce($id);
                 $this->redirectTo("location", "index", $annonce->getLogement()->getId());
             }  
@@ -277,60 +270,61 @@ return [
         }
     }
     
-    //CREATION DE LA FONCTION POUR DONNER UN AVIS SUR UNE ANNONCE
+//CREATION DE LA FONCTION POUR DONNER UN AVIS SUR UNE ANNONCE
+    
     public function donnerAvis($id) {
-        // On vérifie si l'utilisateur est connecté
+// On vérifie si l'utilisateur est connecté
         if(!Session::getUtilisateur()){
-            // Message d'erreur si l'utilisateur n'est pas connecté
+// Message d'erreur si l'utilisateur n'est pas connecté
             Session::addFlash("error", "Veuillez vous connecter pour donner un avis.");
             $this->redirectTo("security", "login");
         }
         
-        // On récupère l'annonce à laquelle l'utilisateur souhaite poster un avis
+// On récupère l'annonce à laquelle l'utilisateur souhaite poster un avis
         $annonceManager = new AnnonceManager();//On crée une instance de AnnonceManager pour gérer les annonce
         $annonce = $annonceManager->findOneById($id);// On récupère l'annonce spécifique à partir de son identifiant
 
-        // On filtre le formulaire d'ajout d'avis
+// On filtre le formulaire d'ajout d'avis
         if(isset($_POST["submitAvis"])){
             $commentaire = filter_input(INPUT_POST, 'commentaire', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        // On vérifie que le commentaire est présent
+// On vérifie que le commentaire est présent
             if($commentaire){
-        // On crée une nouvelle instance de AvisManager pour gérer les avis
-        // Récupération des avis
+// On crée une nouvelle instance de AvisManager pour gérer les avis
+// Récupération des avis
         $avisManager = new AvisManager();
         $avis = $avisManager->findAvisByLogement($id); // On récupére les avis par logement
                 
-        // On ajoute l'avis en base de données
-                $avisManager->add([
-                    "dateAvis" => date("Y-m-d H:i:s"),
-                    "commentaire" => $commentaire,
-                    "logement_id" => $annonce->getLogement()->getId(), // On lie l'avis au logement de l'annonce
-                    "utilisateur_id" => Session::getUtilisateur()->getId() // On lie l'avis à l'utilisateur connecté
-                ]);
+// On ajoute l'avis en base de données
+        $avisManager->add([
+            "dateAvis" => date("Y-m-d H:i:s"),
+            "commentaire" => $commentaire,
+            "logement_id" => $annonce->getLogement()->getId(), // On lie l'avis au logement de l'annonce
+            "utilisateur_id" => Session::getUtilisateur()->getId() // On lie l'avis à l'utilisateur connecté
+        ]);
 
-        //On affiche un message pour confirmer que l'avis est enregistré
-                Session::addFlash("success", "Votre avis a été enregistré.");
-                $this->redirectTo("location", "index");
+//On affiche un message pour confirmer que l'avis est enregistré
+            Session::addFlash("success", "Votre avis a été enregistré.");
+            $this->redirectTo("location", "index");
             } else {
-                //Ou un message d'erreur
-                Session::addFlash("error", "Veuillez saisir un commentaire pour donner un avis.");
-                $this->redirectTo("location", "donnerAvis", $id);
+//Ou un message d'erreur
+            Session::addFlash("error", "Veuillez saisir un commentaire pour donner un avis.");
+            $this->redirectTo("location", "donnerAvis", $id);
             }
         }
         
-        // On retourne à la vue pour donner un avis avec les données nécessaires
+// On retourne à la vue pour donner un avis avec les données nécessaires
         return [
             "view" => VIEW_DIR . "location/donnerAvis.php",
             "meta_description" => "Donner un avis sur une annonce",
             "data" => [
                 "annonce_id" => $id,
-        
             ]
         ];
     }
 
-    //FONCTION CONTACT
+//FONCTION CONTACT
+
     public function contact() {
         return [
             "view" => VIEW_DIR . "location/contact.php",
@@ -338,7 +332,8 @@ return [
         ];
     }
 
-    //FONCTION FAQ
+//FONCTION FAQ
+
     public function FAQ() {
         return [
             "view" => VIEW_DIR . "location/FAQ.php",
@@ -346,7 +341,8 @@ return [
         ];
     }
 
-    //FONCTION MENTIONS LEGALES
+//FONCTION MENTIONS LEGALES
+
     public function MentionsLegales() {
         return [
             "view" => VIEW_DIR . "location/mentionsLegales.php",
@@ -354,7 +350,8 @@ return [
         ];
     }
 
-    //FONCTION REGLEMENT
+//FONCTION REGLEMENT
+
     public function Reglement() {
         return [
             "view" => VIEW_DIR . "location/reglement.php",
@@ -362,25 +359,25 @@ return [
         ];
     }    
 
-    //CREATION DE LA FONCTION UPLOAD IMAGE
+//CREATION DE LA FONCTION UPLOAD IMAGE
    
     public function uploadImage($annonce_id) {
         $annonceManager = new AnnonceManager();
         $imageManager = new ImageManager();
     
-        // On vérifie que l'annonce existe en récupérant les détails via l'ID
+// On vérifie que l'annonce existe en récupérant les détails via l'ID
         $annonce = $annonceManager->findOneById($annonce_id);
         if (!$annonce) {
-            //Si l'annonce n'est pas trouvée, on ajoute un message d'erreur à la session
+//Si l'annonce n'est pas trouvée, on ajoute un message d'erreur à la session
             Session::addFlash("error", "Annonce introuvable.");
-            // On redirige vers la page d'index des annonces
+// On redirige vers la page d'index des annonces
             $this->redirectTo("location", "index");
             return;// On termine l'exécution de cette fonction
         }
     
-         // On vérifie si un fichier a été soumis
+// On vérifie si un fichier a été soumis
         if (isset($_FILES['file'])) {
-         // On récupére des informations sur le fichier téléchargé
+// On récupére des informations sur le fichier téléchargé
             $tmpName = $_FILES['file']['tmp_name']; // Chemin temporaire du fichier
             $name = $_FILES['file']['name']; // Nom original du fichier
             $size = $_FILES['file']['size']; // Taille du fichier
@@ -388,24 +385,23 @@ return [
             $type = $_FILES['file']['type']; // Type du fichier
 
     
-            // Extraction de l'extension du fichier
+// Extraction de l'extension du fichier
             $tabExtension = explode('.', $name);  // Séparation du nom en utilisant le point comme séparateur
             $extension = strtolower(end($tabExtension)); // Récupération la dernière partie (extension) et écriture en minuscules
     
-            // Liste des extensions autorisées pour le téléchargement
+// Liste des extensions autorisées pour le téléchargement
             $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png'];
             $tailleMax = 4000000; // // Taille maximale en bytes (4 Mo)
     
-            // Vérification des conditions : extension autorisée, taille acceptable, et pas d'erreur
+// Vérification des conditions : extension autorisée, taille acceptable, et pas d'erreur
             if (in_array($extension, $extensionsAutorisees) && $size <= $tailleMax && $error == 0) {
-                // Génération d'un nom de fichier unique pour éviter les collisions
+// Génération d'un nom de fichier unique pour éviter les collisions
                 $uniqueName = uniqid('', true);
                 $fileName = $uniqueName . '.' . $extension; // Création du nom de fichier complet
 
-    
-                // Déplacement du fichier téléchargé vers le répertoire de destination
+// Déplacement du fichier téléchargé vers le répertoire de destination
                 if (move_uploaded_file($tmpName, './public/upload/' . $fileName)) {
-                     // Insertion des informations sur l'image dans la base de données
+// Insertion des informations sur l'image dans la base de données
                     $imageManager->add([
                         "nomImage"=> $fileName, // Nom du fichier
                         "altImage" => $annonce->getLogement()->getVille(), // Texte alternatif, basé sur la ville du logement
@@ -415,7 +411,7 @@ return [
             }
         }
     
-        // Redirect to the details of the uploaded image's advertisement
+// Redirect to the details of the uploaded image's advertisement
         $this->redirectTo("location", "detailsAnnonce", $annonce_id);
     }
     
