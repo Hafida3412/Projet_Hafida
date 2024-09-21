@@ -9,26 +9,27 @@ use App\Entity;
 
 final class Logement extends Entity{
 
-    private $id;
-    private $nbChambre;
-    private $rue;
-    private $cp;
-    private $ville;
-    private $image;
-    private $typeLogement;
-    private $utilisateur;
+    // Propriétés de la classe Logement
+    private $id;               // Identifiant unique du logement
+    private $nbChambre;       // Nombre de chambres dans le logement
+    private $rue;             // Adresse de la rue
+    private $cp;              // Code postal
+    private $ville;           // Ville
+    private $image;           // Image du logement
+    private $typeLogement;    // Type de logement (appartement, maison, etc.)
+    private $utilisateur;     // Utilisateur associé au logement
 
+    // Constructeur qui hydrate l'objet avec les données fournies
     public function __construct($data){         
         $this->hydrate($data);  
-
 }
 
-    public function getId()
+    public function getId() // Getter pour l'identifiant du logement
     {
         return $this->id;
     }
 
-    public function setId($id)
+    public function setId($id) // Setter pour l'identifiant du logement
     {
         $this->id = $id;
 
@@ -46,7 +47,6 @@ final class Logement extends Entity{
 
         return $this;
     }
-
 
     public function getRue()
     {
@@ -84,6 +84,7 @@ final class Logement extends Entity{
         return $this;
     }
 
+    // Méthode qui renvoie l'adresse complète sous forme de chaîne
     public function getAdresseComplete()
     {
         return $this->rue." ".$this->cp." ".$this->ville;
@@ -113,19 +114,11 @@ final class Logement extends Entity{
         return $this;
     }
 
-    /**
-     * Get the value of typeLogement
-     */ 
     public function getTypeLogement()
     {
         return $this->typeLogement;
     }
 
-    /**
-     * Set the value of typeLogement
-     *
-     * @return  self
-     */ 
     public function setTypeLogement($typeLogement)
     {
         $this->typeLogement = $typeLogement;
