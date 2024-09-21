@@ -9,22 +9,27 @@ use App\Entity;
 
 final class Utilisateur extends Entity{
 
-    private $id;
-    private $pseudo;
-    private $email;
-    private $password;
-    private $role;
-    private $nom;
-    private $prenom;
+    // Propriétés de la classe Utilisateur
+    private $id;        // Identifiant unique de l'utilisateur
+    private $pseudo;    // Pseudonyme de l'utilisateur
+    private $email;     // Adresse e-mail de l'utilisateur
+    private $password;  // Mot de passe de l'utilisateur
+    private $role;      // Rôle de l'utilisateur (ex: admin, utilisateur)
+    private $nom;       // Nom de l'utilisateur
+    private $prenom;    // Prénom de l'utilisateur
+
+    // Constructeur qui hydrate l'objet avec les données fournies
 
     public function __construct($data){         
         $this->hydrate($data);        
     }
 
+    // Méthode pour obtenir l'identifiant de l'utilisateur
         public function getId(){
         return $this->id;
     }
 
+    // Méthode pour définir l'identifiant de l'utilisateur
     public function setId($id){
         $this->id = $id;
         return $this;
@@ -108,11 +113,13 @@ final class Utilisateur extends Entity{
         return $this;
         }
 
+    // Méthode pour vérifier si l'utilisateur possède un ou plusieurs rôles spécifiques
     // Méthode pour vérifier le rôle ADMIN
     public function hasRole(...$roles) {
-        return in_array($this->role, $roles);
+        return in_array($this->role, $roles); // Vérifie si le rôle de l'utilisateur est dans les rôles spécifiés
     }
     
+    // Méthode pour convertir l'objet en chaîne de caractères (affiche le pseudonyme)
     public function __toString() {
     return $this->pseudo;
     }
