@@ -9,23 +9,24 @@ use App\Entity;
 
 final class Image extends Entity{
 
-    private $id;
-    private $nomImage;
-    private $altImage;
-    private $logement;
-    
+    // Propriétés de la classe Image
+    private $id;          // Identifiant de l'image
+    private $nomImage;    // Nom du fichier de l'image
+    private $altImage;    // Texte alternatif de l'image
+    private $logement;    // Référence à l'entité logement associée à l'image
 
+    // Constructeur qui hydrate l'objet avec les données fournies
     public function __construct($data){         
         $this->hydrate($data);        
     }
 
-    public function getId(){
+    public function getId(){ // Getter pour l'identifiant de l'image
         return $this->id;
     }
 
-    public function setId($id){
-        $this->id = $id;
-        return $this;
+    public function setId($id){ // Setter pour l'identifiant de l'image
+        $this->id = $id; // Assigner l'identifiant passé en paramètre à la propriété
+        return $this;    // Retourner $this pour permettre le chaînage
     }
 
         public function getNomImage()
