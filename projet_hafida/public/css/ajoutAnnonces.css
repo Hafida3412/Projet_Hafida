@@ -6,9 +6,30 @@ form {
     margin: 0 auto; /* Cela permet de centrer le formulaire horizontalement */
     border-radius:10px;  
 }
+
+/* Styles pour l'alerte */
+.alert {
+    color: #6B2C1A; /* Changer la couleur du texte */
+    
+    margin-top: 20px; /* Espace au-dessus du titre */
+    margin-bottom: 20px; /* Espace en dessous du titre */
+    background-color: rgba(255, 255, 255, 0.5); /* Fond blanc plus translucide */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Listes */
+.alert ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
 .container-creation{
     box-shadow: 4px 2px 2px rgb(207, 202, 202);
 }
+
 
 form label { 
     display: block; /* cela permet l'affichage en bloc des labels */ 

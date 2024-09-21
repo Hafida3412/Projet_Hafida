@@ -7,6 +7,24 @@
     
     <?php
   ?> 
+
+<div class="alert alert-warning">
+            <p>Avant de déposer une annonce, vous devez d'abord créer un logement. 
+               Veuillez suivre les étapes ci-dessous :</p>
+            <ul>
+                <li>Cliquez sur le bouton "Créer un nouveau logement" ci-dessous.</li>
+                <li>Remplissez le formulaire de création de logement avec toutes les informations nécessaires.</li>
+            </ul>
+        </div>
+
+        <div class="logement-actions">
+    <div class="button-container">
+        <a href="index.php?ctrl=location&action=creationLogement">
+            <button class="btn-reserver create-logement">Créer un nouveau logement</button>
+        </a>
+    </div>
+</div>
+
 <!--Création du formulaire pour déposer une annonce-->  
 <div class= "container-creation">
     <form action="index.php?ctrl=location&action=ajoutAnnonces" method="post">
@@ -14,7 +32,7 @@
         de l'utilisateur dans l'Url, trop dangereux.-->
         <label for="dateDebut">Date de début</label>
 <!--Pour éviter que l'utilisateur sélectionne une date antérieure à celle où il se connecte-->         
-        <input type="date" name="dateDebut" min="<?= date('Y-m-d'); ?>" required><br>
+        <input type="date" id="dateDebut" name="dateDebut" min="<?= date('Y-m-d'); ?>" required><br>
 
         <label for="dateFin">Date de fin</label>
         <input type="date" id="dateFin" name="dateFin" required><br>
@@ -22,11 +40,11 @@
         <label for="NbChat">Nombre de chat à garder:</label>
         <input type="number" name="nbChat"><br>
 
-        <label for="logements">Logements</label> 
+        <label for="logements">Adresse du logement</label> 
         <select name="logements"><!--boucle pour récupérer les éléments via id_logement dans un menu déroulant-->
         <?php foreach($logements as $logement): ?>
           <!--Chaque option affiche l'adresse complète du logement, le type de logement et le nombre de chambres-->
-        <option value="<?= $logement->getId() ?>"><?= $logement->getAdresseComplete() ?>:<?= $logement->getTypeLogement() ?> 
+        <option value ="<?= $logement->getId() ?>"><?= $logement->getAdresseComplete() ?>:<?= $logement->getTypeLogement() ?> 
          avec <?= $logement->getNbChambre() ?> chambres.
         </option><!--cf public function getAdresseComplete créée dans l'"entities" logement-->
         <?php endforeach; ?>
@@ -44,6 +62,7 @@
 </div>
     </form>
         </div>
+    
         </main>
 
         <script>
