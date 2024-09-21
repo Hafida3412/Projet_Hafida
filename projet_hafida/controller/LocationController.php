@@ -273,29 +273,29 @@ class LocationController extends AbstractController implements ControllerInterfa
 //CREATION DE LA FONCTION POUR DONNER UN AVIS SUR UNE ANNONCE
     
     public function donnerAvis($id) {
-// On vérifie si l'utilisateur est connecté
+        // On vérifie si l'utilisateur est connecté
         if(!Session::getUtilisateur()){
-// Message d'erreur si l'utilisateur n'est pas connecté
+        // Message d'erreur si l'utilisateur n'est pas connecté
             Session::addFlash("error", "Veuillez vous connecter pour donner un avis.");
             $this->redirectTo("security", "login");
         }
         
-// On récupère l'annonce à laquelle l'utilisateur souhaite poster un avis
+        // On récupère l'annonce à laquelle l'utilisateur souhaite poster un avis
         $annonceManager = new AnnonceManager();//On crée une instance de AnnonceManager pour gérer les annonce
         $annonce = $annonceManager->findOneById($id);// On récupère l'annonce spécifique à partir de son identifiant
 
-// On filtre le formulaire d'ajout d'avis
+        // On filtre le formulaire d'ajout d'avis
         if(isset($_POST["submitAvis"])){
             $commentaire = filter_input(INPUT_POST, 'commentaire', FILTER_SANITIZE_SPECIAL_CHARS);
 
-// On vérifie que le commentaire est présent
+        // On vérifie que le commentaire est présent
             if($commentaire){
-// On crée une nouvelle instance de AvisManager pour gérer les avis
-// Récupération des avis
+        // On crée une nouvelle instance de AvisManager pour gérer les avis
+        // Récupération des avis
         $avisManager = new AvisManager();
         $avis = $avisManager->findAvisByLogement($id); // On récupére les avis par logement
                 
-// On ajoute l'avis en base de données
+        // On ajoute l'avis en base de données
         $avisManager->add([
             "dateAvis" => date("Y-m-d H:i:s"),
             "commentaire" => $commentaire,
@@ -303,17 +303,17 @@ class LocationController extends AbstractController implements ControllerInterfa
             "utilisateur_id" => Session::getUtilisateur()->getId() // On lie l'avis à l'utilisateur connecté
         ]);
 
-//On affiche un message pour confirmer que l'avis est enregistré
+        //On affiche un message pour confirmer que l'avis est enregistré
             Session::addFlash("success", "Votre avis a été enregistré.");
             $this->redirectTo("location", "index");
             } else {
-//Ou un message d'erreur
+        //Ou un message d'erreur
             Session::addFlash("error", "Veuillez saisir un commentaire pour donner un avis.");
             $this->redirectTo("location", "donnerAvis", $id);
             }
         }
         
-// On retourne à la vue pour donner un avis avec les données nécessaires
+        // On retourne à la vue pour donner un avis avec les données nécessaires
         return [
             "view" => VIEW_DIR . "location/donnerAvis.php",
             "meta_description" => "Donner un avis sur une annonce",
@@ -365,19 +365,19 @@ class LocationController extends AbstractController implements ControllerInterfa
         $annonceManager = new AnnonceManager();
         $imageManager = new ImageManager();
     
-// On vérifie que l'annonce existe en récupérant les détails via l'ID
+        // On vérifie que l'annonce existe en récupérant les détails via l'ID
         $annonce = $annonceManager->findOneById($annonce_id);
         if (!$annonce) {
-//Si l'annonce n'est pas trouvée, on ajoute un message d'erreur à la session
+        //Si l'annonce n'est pas trouvée, on ajoute un message d'erreur à la session
             Session::addFlash("error", "Annonce introuvable.");
-// On redirige vers la page d'index des annonces
+        // On redirige vers la page d'index des annonces
             $this->redirectTo("location", "index");
             return;// On termine l'exécution de cette fonction
         }
     
-// On vérifie si un fichier a été soumis
+        // On vérifie si un fichier a été soumis
         if (isset($_FILES['file'])) {
-// On récupére des informations sur le fichier téléchargé
+        // On récupére des informations sur le fichier téléchargé
             $tmpName = $_FILES['file']['tmp_name']; // Chemin temporaire du fichier
             $name = $_FILES['file']['name']; // Nom original du fichier
             $size = $_FILES['file']['size']; // Taille du fichier
@@ -385,23 +385,23 @@ class LocationController extends AbstractController implements ControllerInterfa
             $type = $_FILES['file']['type']; // Type du fichier
 
     
-// Extraction de l'extension du fichier
+            // Extraction de l'extension du fichier
             $tabExtension = explode('.', $name);  // Séparation du nom en utilisant le point comme séparateur
             $extension = strtolower(end($tabExtension)); // Récupération la dernière partie (extension) et écriture en minuscules
     
-// Liste des extensions autorisées pour le téléchargement
+            // Liste des extensions autorisées pour le téléchargement
             $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png'];
             $tailleMax = 4000000; // // Taille maximale en bytes (4 Mo)
     
-// Vérification des conditions : extension autorisée, taille acceptable, et pas d'erreur
+            // Vérification des conditions : extension autorisée, taille acceptable, et pas d'erreur
             if (in_array($extension, $extensionsAutorisees) && $size <= $tailleMax && $error == 0) {
-// Génération d'un nom de fichier unique pour éviter les collisions
+            // Génération d'un nom de fichier unique pour éviter les collisions
                 $uniqueName = uniqid('', true);
                 $fileName = $uniqueName . '.' . $extension; // Création du nom de fichier complet
 
-// Déplacement du fichier téléchargé vers le répertoire de destination
+                // Déplacement du fichier téléchargé vers le répertoire de destination
                 if (move_uploaded_file($tmpName, './public/upload/' . $fileName)) {
-// Insertion des informations sur l'image dans la base de données
+                // Insertion des informations sur l'image dans la base de données
                     $imageManager->add([
                         "nomImage"=> $fileName, // Nom du fichier
                         "altImage" => $annonce->getLogement()->getVille(), // Texte alternatif, basé sur la ville du logement
@@ -411,7 +411,7 @@ class LocationController extends AbstractController implements ControllerInterfa
             }
         }
     
-// Redirect to the details of the uploaded image's advertisement
+        //Redirection vers la vue detailsAnnonce
         $this->redirectTo("location", "detailsAnnonce", $annonce_id);
     }
     
