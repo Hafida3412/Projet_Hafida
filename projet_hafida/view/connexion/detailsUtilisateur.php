@@ -7,30 +7,31 @@ $reservations = $result["data"]['reservations'];
 <!--Informations de l'utilisateur-->
 <h1>Mon Compte</h1>
 <div class="utilisateur-info">
-<p>Pseudo: <?= $utilisateur->getPseudo() ?></p>
-<p>Email: <?= $utilisateur->getEmail() ?></p>
-<p>Nom: <?= $utilisateur->getNom() ?></p>
-<p>Prénom: <?= $utilisateur->getPrenom() ?></p>
-<p>Rôle: <?= $utilisateur->getRole() ?></p>
+    <p>Pseudo: <?= htmlspecialchars($utilisateur->getPseudo()) ?></p>
+    <p>Email: <?= htmlspecialchars($utilisateur->getEmail()) ?></p>
+    <p>Nom: <?= htmlspecialchars($utilisateur->getNom()) ?></p>
+    <p>Prénom: <?= htmlspecialchars($utilisateur->getPrenom()) ?></p>
+    <p>Rôle: <?= htmlspecialchars($utilisateur->getRole()) ?></p>
 </div>
-
 
 <!-- Formulaire de modification des données personnelles -->
 <div class="utilisateur-info">
 <form method="post" action="index.php?ctrl=security&action=updateInfo">
-    <label for="pseudo">Pseudo:</label>
-    <input type="text" name="pseudo" value="<?= $utilisateur->getPseudo() ?>"><br>
-    
-    <label for="email">Email:</label>
-    <input type="email" name="email" value="<?= $utilisateur->getEmail() ?>"><br>
+    <input type="text" name="pseudo" value="<?= htmlspecialchars($utilisateur->getPseudo()) ?>" required><br>
+            
+            <label for="email">Votre nouvel Email:</label>
+            <input type="email" name="email" value="<?= htmlspecialchars($utilisateur->getEmail()) ?>"><br>
 
-    <label for="password">  Votre nouveau mot de passe:</label>
-    <input type="password" name="password" placeholder="Nouveau mot de passe"><br>
-    
-    <input type="submit" name="submitUpdate" value="Modifier mes données personnelles">
+            <label for="password">Votre nouveau mot de passe:</label>
+            <input type="password" name="password" placeholder="Nouveau mot de passe"><br>
+            <!-- Afficher un message de succès ou d'erreur, si nécessaire -->
+            <?php if(!empty($message)): ?>
+                <div class="message"><?= htmlspecialchars($message) ?></div>
+            <?php endif; ?>
+
+        <input type="submit" name="submitUpdate" value="Modifier mes données personnelles">
 </form>
 </div>
-
 
 <!-- Réservations -->
 <h1>Mes réservations</h1>

@@ -163,19 +163,29 @@ return [
             $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             //On vérifie si le pseudo et l'email et le MDP sont renseignés 
-            if($pseudo && $email && $password) {
-                //On récupère l'ID de l'utilisateur connecté 
+            // Vérification si les valeurs sont renseignées
+            if($pseudo && $email) {
+                // Récupérer l'ID de l'utilisateur connecté 
                 $id_utilisateur = Session::getUtilisateur()->getId();
-                //On récupère les informations de l'utilisateur à partir de l'ID
+
+                // Récupérer les informations de l'utilisateur
                 $utilisateurManager = new UtilisateurManager();
                 $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
-                //On met à jour le pseudo et l'email de l'utilisateur
+
+                // Mettre à jour le pseudo et l'email de l'utilisateur
                 $utilisateur->setPseudo($pseudo);
                 $utilisateur->setEmail($email);
-                $utilisateur->setPassword(password_hash($password, PASSWORD_DEFAULT));
-                //On met à jour les informations de l'utilisateur dans la base de données
+
+                // Mettre à jour le mot de passe uniquement s'il a été saisi
+                if(!empty($password)) {
+                    $utilisateur->setPassword(password_hash($password, PASSWORD_DEFAULT));
+                }
+
+                // Mettre à jour les informations de l'utilisateur dans la base de données
                 $utilisateurManager->update($utilisateur);
 
+                // Message de confirmation de la modification
+                Session::addFlash("success", "Vos données personnelles ont été modifiées avec succès.");
                  // Message de confirmation de la modification
                  Session::addFlash("success", "Vos données personnelles ont été modifiées avec succès.");
                 
