@@ -20,7 +20,8 @@ class ReservationsController extends AbstractController implements ControllerInt
         // On récupère l'ID de l'annonce via GET
             $annonceId = filter_input(INPUT_GET, 'annonceId', FILTER_VALIDATE_INT);
         // var_dump($annonceId); die;
- 
+        
+        // On vérifie que l'ID de l'annonce est présent
             if ($annonceId === null) {
         // Redirection ou gestion d'erreur si l'ID de l'annonce n'est pas fourni
             Session::addFlash("error", "Aucun ID d'annonce n'a été fourni.");
@@ -28,13 +29,16 @@ class ReservationsController extends AbstractController implements ControllerInt
             return;
         }
         //var_dump($annonceId);die;
+
+        // Vérification si le formulaire de réservation a été soumis
             if(isset($_POST["submitReservation"])){
- 
+        // Instanciation du manager pour vérifier la validité de l'annonce
         // On vérifie si l'annonce est déjà réservée
             $annonceManager = new AnnonceManager();
             $estValide = $annonceManager->isAnnonceValide($annonceId);
         //var_dump($estValide);die;
-    
+        
+        // Si l'annonce est déjà réservée, afficher un message d'erreur
              if($estValide){
         // Message d'erreur si l'annonce est déjà réservée
              Session::addFlash("error", "Cette annonce est déjà réservée.");
@@ -42,7 +46,7 @@ class ReservationsController extends AbstractController implements ControllerInt
             return;
         }
 
-        // On filtre les données du formulaire
+        // Filtrage et nettoyage des données du formulaire
             $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
             $nbAdultes = filter_input(INPUT_POST, "nbAdultes", FILTER_VALIDATE_INT);
             $nbEnfants = filter_input(INPUT_POST, "nbEnfants", FILTER_VALIDATE_INT);
@@ -53,11 +57,11 @@ class ReservationsController extends AbstractController implements ControllerInt
             $valide = 1; // Réservation validée
         //var_dump($numeroTelephone, $nbAdultes, $nbEnfants, $paiement, $question);die;
    
-        // Vérification des données
+        // Vérification de la validité des données fournies
             if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
         //Enregistrement des informations de la réservation dans la base de données
              $reserverManager = new ReserverManager();
-             $result= $reserverManager->add([
+            /* $result=*/ $reserverManager->add([
             "numeroTelephone" => $numeroTelephone,
             "nbAdultes" => $nbAdultes,
             "nbEnfants" => $nbEnfants,
@@ -79,7 +83,7 @@ class ReservationsController extends AbstractController implements ControllerInt
             return;
     }
 }
-
+        // On retourne la vue de réservation avec les données nécessaires
             return [
             "view" => VIEW_DIR . "location/reservation.php",
             "meta_description" => "Formulaire de réservation",
