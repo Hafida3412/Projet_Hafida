@@ -7,10 +7,11 @@ use Model\Managers\UtilisateurManager;
 
 class AnnonceManager extends Manager{
 
-    // on indique la classe POO et la table correspondante en BDD pour le manager concerné
-    protected $className = "Model\Entities\Annonce";
-    protected $tableName = "annonce";
+    // Déclaration de la classe POO et de la table correspondante en BDD pour le manager concerné
+    protected $className = "Model\Entities\Annonce";// Classe des entités Annonce
+    protected $tableName = "annonce"; // Nom de la table en BDD
 
+    // Constructeur qui établit la connexion à la base de données
     public function __construct(){
         parent::connect();
     }
@@ -18,59 +19,58 @@ class AnnonceManager extends Manager{
 
     // METHODE POUR COMPTER LE NOMBRE TOTAL D ANNONCES
     public function countAll() {
-        $sql = "SELECT COUNT(id_annonce) as total FROM " . $this->tableName;
-        $result = DAO::select($sql);
-        return (int)$this->getSingleScalarResult($result); // Assurez-vous que le résultat est un entier.
+        $sql = "SELECT COUNT(id_annonce) as total FROM " . $this->tableName; // Requête SQL pour compter les annonces
+        $result = DAO::select($sql); // Exécution de la requête
+        return (int)$this->getSingleScalarResult($result); // Retourne le résultat comme un entier
     }
-    //METHODE POUR PAGINER LES ANNONCES
+
+    
+    // METHODE POUR RECUPERER TOUTES LES ANNONCES AVEC PAGINATION
     public function findAll($order = null, $offset = 0, $perPage = PHP_INT_MAX) {
         if ($order === null) {
-            $order = ['id_annonce', 'ASC'];
+            $order = ['id_annonce', 'ASC'];// Ordre par défaut
         }
-    
+    // Requête SQL pour sélectionner les annonces avec un ordre et une limite de résultats
         $sql = "SELECT *
-        
                 FROM " . $this->tableName . "
                 ORDER BY " . $order[0] . " " . $order[1] . "
                 LIMIT " . $offset . ", " . $perPage;
-        return $this->getMultipleResults(DAO::select($sql), $this->className);
+        return $this->getMultipleResults(DAO::select($sql), $this->className);// Retourne les résultats
     }
     
-    //REQUETE POUR AFFICHER LES ANNONCES PAR UTILISATEUR
+    // REQUETE POUR AFFICHER LES ANNONCES D UN UTILISATEUR SPECIFIQUE
     public function findAnnoncesByUtilisateur($id){
         $sql = "SELECT*
         FROM ".$this->tableName. " t
-        WHERE utilisateur_id = :id";
-    //la requête renvoie un seul ou aucun résultat
+        WHERE utilisateur_id = :id"; // Filtrer par ID utilisateur
+    // Exécution de la requête et retour des résultats
     return  $this->getMultipleResults(
         DAO::select($sql, ['id' => $id]), //on précise "select"
         $this->className
     );
     }
 
-     //REQUETE POUR SUPPRIMER UNE ANNONCE
+     //REQUETE POUR SUPPRIMER UNE ANNONCE PAR SON ID
      public function deleteAnnonce($id) {
         $sql = "DELETE
                 FROM ".$this->tableName. " t
-                WHERE id_annonce = :id";
-    //la requête renvoie un seul ou aucun résultat
-     
-        return DAO::delete($sql, ['id' => $id]);
+                WHERE id_annonce = :id"; // Condition de suppression par ID
+    return DAO::delete($sql, ['id' => $id]); // Exécution de la requête de suppression
     }
 
-    // Méthode pour supprimer les réservations liées à une annonce
+    // METHODE POUR SUPPRIMER LES RESERVATIONS LIEES A UNE ANNONCE
     public function deleteReservations($annonceId) {
         $sql = "DELETE FROM reserver 
-        WHERE annonce_id = :id";
-    return DAO::delete($sql, ['id' => $annonceId]);
+        WHERE annonce_id = :id"; // Suppression des réservations par ID d'annonce
+    return DAO::delete($sql, ['id' => $annonceId]); // Exécution de la suppression
 }
 
-    // On ajoute cette méthode pour mettre à jour le statut de l'annonce
+    // METHODE POUR METTRE A JOUR LE STATUT DE L ANNONCE (valide)
     public function updateDisponibilite($annonceId){
         $sql = "UPDATE ".$this->tableName."
         SET estValide = 1 
-        WHERE id_annonce = :id"; 
-    return DAO::update($sql, ['id' => $annonceId]);
+        WHERE id_annonce = :id"; // Mise à jour pour rendre l'annonce valide
+    return DAO::update($sql, ['id' => $annonceId]); // Exécution de la mise à jour
 }
 
     //On vérifie si l'annonce est réservée en vérifiant si la colonne "estValide" est égale à 1
@@ -78,42 +78,42 @@ class AnnonceManager extends Manager{
     public function isAnnonceValide($annonceId){
         $sql = "SELECT estValide
                 FROM ".$this->tableName."
-                WHERE id_annonce = :id AND estValide = 1";;
+                WHERE id_annonce = :id AND estValide = 1";  // Vérification de l'état de l'annonce
     
         return $this->getSingleScalarResult(
             DAO::select($sql, ['id' => $annonceId], false)
-        ) == 1;
+        ) == 1; // Retourne vrai si l'annonce est valide
     }
 
     //REQUETE POUR AFFICHER LES ANNONCES PAR VILLE
     public function findAnnoncesByVille($ville){
-    /*1. on sélectionne tous les colonnes des tables "annonce" et "logement"
-      2. on joint les deux tables en utilisant la colonne "logement_id" de la 
-    table "annonce" et la colonne "id_logement" de la table "logement"
-      3. on filtre les résultats pour ne récupérer que les lignes où la ville 
-    est égale à la ville que nous recherchons*/
+    // Requête pour récupérer les annonces en fonction de la ville
     $sql = "SELECT *
             FROM ".$this->tableName." t 
             INNER JOIN logement 
             ON logement_id = logement.id_logement
-            WHERE ville = :ville";
+            WHERE ville = :ville"; // Jointure sur la table logement
+
     
     return $this->getMultipleResults(
         DAO::select($sql, ['ville' => $ville]), 
-        $this->className
+        $this->className // Retourne les annonces correspondantes
     );
 }
 
-public function update($id, $data) {
+
+    // METHODE POUR METTRE A JOUR UNE ANNONCE AVEC DES DONNEES SPECIFIQUES
+    public function update($id, $data) {
     $sql = "UPDATE " . $this->tableName . " 
             SET nbChat = :nbChat, 
                 dateDebut = :dateDebut, 
                 dateFin = :dateFin, 
                 description = :description, 
                 estValide = :estValide
-            WHERE id_annonce = :id";
+            WHERE id_annonce = :id"; // Requête pour mise à jour d'une annonce
 
-    return DAO::update($sql, array_merge($data, ['id' => $id]));
+
+    return DAO::update($sql, array_merge($data, ['id' => $id])); // Exécution de la mise à jour
 }
 
 }
