@@ -17,29 +17,42 @@ class LocationController extends AbstractController implements ControllerInterfa
 // FONCTION POUR LISTER TOUTES LES ANNONCES
 
 public function index($id = null) {
+    // Création d'une instance de AnnonceManager pour gérer les annonces
     $annonceManager = new AnnonceManager();
+
+    // Récupération du numéro de la page courante à partir des paramètres GET, par défaut à 1
     $pageNum = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+     // Définition du nombre d'annonces à afficher par page
     $perPage = 3;
 
+    // Comptage total des annonces via la méthode countAll() de AnnonceManager
     $totalAnnonces = $annonceManager->countAll();
     
+    // Vérification que le résultat de countAll() est bien un entier
     if (!is_int($totalAnnonces)) {
-        throw new \Exception("countAll() devait retourner un entier, mais a retourné: " . gettype($totalAnnonces));
+        throw new \Exception("countAll() devait retourner un entier, mais a retourné: " 
+        . gettype($totalAnnonces));
     }
 
+    // Calcul du nombre total de pages nécessaires pour afficher toutes les annonces
     $totalPages = ceil($totalAnnonces / $perPage);
+
+    // Calcul de l'offset (décalage) pour la requête de recherche d'annonces
     $offset = ($pageNum - 1) * $perPage;
 
+     /* Récupération des annonces pour la page courante en utilisant un tri par date de création 
+     et en appliquant l'offset et la limite*/
     $annonces = $annonceManager->findAll(["dateCreation", "DESC"], $offset, $perPage);
 
     return [
-        "view" => VIEW_DIR . "location/listAnnonces.php",
-        "meta_description" => "Liste des annonces",
-        "data" => [
-            "annonces" => $annonces,
-            "page" => $pageNum,
-            "totalPages" => $totalPages,
-            "id" => $id,
+        "view" => VIEW_DIR . "location/listAnnonces.php", // Chemin vers la vue des annonces
+        "meta_description" => "Liste des annonces", // Description à utiliser pour le SEO
+        "data" => [  // Données à passer à la vue
+            "annonces" => $annonces, // Annonces récupérées pour la page
+            "page" => $pageNum, // Numéro de la page courante
+            "totalPages" => $totalPages, // Nombre total de pages
+            "id" => $id, // ID passé en paramètre, s'il existe
         ]
     ];
 }
