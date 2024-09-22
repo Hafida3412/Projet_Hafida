@@ -75,7 +75,7 @@ public function index($id = null) {
     return [
         "view" => VIEW_DIR . "location/listAnnonces.php",
         "meta_description" => "Liste des annonces",
-        "data" => [
+        "data" => [ // Données à passer à la vue
             "annonces" => $annonces,
             "message" => $message, // On passe le message à la vue
         ]
@@ -118,7 +118,7 @@ public function index($id = null) {
         return [
             "view" => VIEW_DIR . "location/detailsAnnonce.php",
             "meta_description" => "Détails de l'annonce",
-            "data" => [
+            "data" => [ // Données à passer à la vue
                 "annonce" => $annonce,
                 "logement" => $logement,
                 "images" => $images, // On passe les images à la vue
@@ -258,7 +258,7 @@ public function index($id = null) {
         return [
             "view" => VIEW_DIR."location/listeLogementsUtilisateur.php",
             "meta_description" => "Détails de l'utilisateur et de ses logements",
-            "data" => [
+            "data" => [ // Données à passer à la vue
                 "logements" => $logements
             ]
         ];
@@ -281,7 +281,7 @@ public function index($id = null) {
             }  
             return [
                 "view" => VIEW_DIR."location/listAnnonces.php", 
-                "data" => [
+                "data" => [ // Données à passer à la vue
                     "annonces" => $annonceManager->findOneById($id)
                 ]
             ];
