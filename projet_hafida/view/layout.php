@@ -45,7 +45,7 @@
                     <nav>
                     <div id="nav-left" class="full-width">
                     <a href="index.php?ctrl=home&action=view">
-                <img src="public\img\Logo_gold-removebg-preview.png" alt="Logo">
+                <img src="public\img\Logo_gold-removebg-preview (1).webp" alt="Logo">
             </a>
             <div id="nav-right">
                             <ul class="nav-list">

@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<img src="public/img/chat.png" alt="regard d'un chat" class="chat-image">
+<img src="public/img/chat.webp" alt="regard d'un chat" class="chat-image">
 
 <h1>S'inscrire</h1>
 

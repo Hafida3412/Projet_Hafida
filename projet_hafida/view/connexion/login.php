@@ -58,14 +58,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
-<img src="public/img/chat.png" alt="regard d'un chat" class="chat-image">
+<img src="public/img/chat.webp" alt="regard d'un chat" class="chat-image">
 
 <div class="login-container">
 <h1>Se connecter</h1>
 
 <form action="index.php?ctrl=security&action=login" method="post">
 <label for="email">Email</label>
-<input type="email" name="email" id="email" value="lea@gmail.com" required><br>
+<input type="email" name="email" id="email" value="lea@exemple.com" required><br>
 
 <label for="password">Mot de passe</label>
 <input type="password" name="password" id="password" value="Azerty1234567" required><br>

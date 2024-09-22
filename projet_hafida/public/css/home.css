@@ -3,7 +3,7 @@
 /* Style du fond d'écran en parallaxe */
 
 .parallax{
-  background-image: url(../img/chatdodo.jpg);
+  background-image: url(../img/chatdodo.webp);
   background-size: 100%;
   max-width: 1500px; 
   margin: 0 auto; /* Centre la section horizontalement */
@@ -182,7 +182,7 @@ section {
 
 .parallax-image{
   /* The image used */
-  background-image: url("../img/pattemain.jpg");
+  background-image: url("../img/pattemain.webp");
   /* Set a specific height */
   min-height: 400px;
   /* Create the parallax scrolling effect */
@@ -251,7 +251,7 @@ section {
 }
 
 .concept {
-  background-image: url("../img/catwhite.jpg");
+  background-image: url("../img/catwhite.webp");
   background-size: cover;
   background-position: center;
   text-align: left; /* Aligne le texte à gauche */

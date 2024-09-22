@@ -1,7 +1,7 @@
 /* Style pour les annonces */
 
 .bg-annonces {
-    background-image: url(../img/chat_canape.jpg);
+    background-image: url(../img/chat_canape.webp);
     background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
     
 }

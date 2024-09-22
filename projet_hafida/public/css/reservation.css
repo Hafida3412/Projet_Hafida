@@ -1,7 +1,7 @@
 /* CREATION DU RESERVATION.CSS*/
 
 .bg_reservation{
-    background-image: url(../img/ordi.jpg);
+    background-image: url(../img/ordi.webp);
     background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
 }
 

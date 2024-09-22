@@ -94,21 +94,30 @@
   <div class="temoignages-container">
     <blockquote>
       <div class="avatar">
-        <img src="public/img/maria.jpg" alt="Maria B.">
+        <img src="public/img/maria.webp"  
+             sizes="(max-width: 600px) 50px, 
+                    (max-width: 800px) 60px, 
+                    70px" alt="Maria B.">
       </div>
       <p>"Je suis vraiment satisfaite de mon expérience. A renouveler sans aucune hésitation."</p>
       <signature>Maria B.</signature>
     </blockquote>
     <blockquote>
       <div class="avatar">
-        <img src="public/img/ali.jpg" alt="Ali E.">
+        <img src="public/img/ali.webp" 
+             sizes="(max-width: 600px) 50px, 
+                    (max-width: 800px) 60px, 
+                    70px" alt="Ali E.">
       </div>
       <p>"Je recommande ce site à tous les propriétaires de félins qui cherchent quelqu'un pour s'occuper de leur animal."</p>
       <signature>Ali E.</signature>
     </blockquote>
     <blockquote>
       <div class="avatar">
-        <img src="public/img/chloe.jpg" alt="Chloé P.">
+        <img src="public/img/chloe.webp" 
+             sizes="(max-width: 600px) 50px, 
+                    (max-width: 800px) 60px, 
+                    70px" alt="Chloé P.">
       </div>
       <p>"Une expérience formidable ! Mon chat a été traité comme un roi. Je suis très satisfaite!"</p>
       <signature>Chloé P.</signature>

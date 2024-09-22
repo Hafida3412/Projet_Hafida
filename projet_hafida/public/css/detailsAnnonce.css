@@ -2,7 +2,7 @@
 
 /* Fond de la vue détails annonce */
 .bg_details{
-    background-image: url(../img/oreille.jpg); /* Remplacez par le chemin de votre image */
+    background-image: url(../img/oreille.webp); /* Remplacez par le chemin de votre image */
     background-size: cover; /* Pour couvrir tout le conteneur */
     padding: 20px; /* Ajouter du padding pour éviter que le contenu touche le bord */
     display: flex;

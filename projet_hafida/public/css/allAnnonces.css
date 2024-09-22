@@ -1,6 +1,6 @@
 
     .bg_allAnnonces{
-        background-image: url(../img/blanc.jpg);
+        background-image: url(../img/blanc.webp);
         background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
     }
     

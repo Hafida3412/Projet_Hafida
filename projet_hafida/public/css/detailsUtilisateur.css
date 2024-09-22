@@ -1,7 +1,7 @@
 /* CSS de la vue detailsUtilisateur*/
 
 .details-utilisateur {
-    background-image: url(../img/oreille.jpg);
+    background-image: url(../img/oreille.webp);
     background-size: cover; /* Pour couvrir tout le conteneur */
     padding-bottom:10px;
 }
