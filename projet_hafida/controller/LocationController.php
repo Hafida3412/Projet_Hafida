@@ -16,28 +16,33 @@ class LocationController extends AbstractController implements ControllerInterfa
 
 // FONCTION POUR LISTER TOUTES LES ANNONCES
 
-    public function index($id = null) {
-        $annonceManager = new AnnonceManager();
-        $pageNum = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Récupère le numéro de page
-        $perPage = 3;
+public function index($id = null) {
+    $annonceManager = new AnnonceManager();
+    $pageNum = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $perPage = 3;
 
-        $totalAnnonces = $annonceManager->countAll();
-        $totalPages = ceil($totalAnnonces / $perPage);
-        $offset = ($pageNum - 1) * $perPage;
-
-        $annonces = $annonceManager->findAll(["dateCreation", "DESC"], $offset, $perPage);
-
-        return [
-            "view" => VIEW_DIR . "location/listAnnonces.php",
-            "meta_description" => "Liste des annonces",
-            "data" => [
-                "annonces" => $annonces,
-                "page" => $pageNum,
-                "totalPages" => $totalPages,
-                "id" => $id,
-            ]
-        ];
+    $totalAnnonces = $annonceManager->countAll();
+    
+    if (!is_int($totalAnnonces)) {
+        throw new \Exception("countAll() devait retourner un entier, mais a retourné: " . gettype($totalAnnonces));
     }
+
+    $totalPages = ceil($totalAnnonces / $perPage);
+    $offset = ($pageNum - 1) * $perPage;
+
+    $annonces = $annonceManager->findAll(["dateCreation", "DESC"], $offset, $perPage);
+
+    return [
+        "view" => VIEW_DIR . "location/listAnnonces.php",
+        "meta_description" => "Liste des annonces",
+        "data" => [
+            "annonces" => $annonces,
+            "page" => $pageNum,
+            "totalPages" => $totalPages,
+            "id" => $id,
+        ]
+    ];
+}
 
 //RECHERCHER UNE ANNONCE PAR VILLE
 

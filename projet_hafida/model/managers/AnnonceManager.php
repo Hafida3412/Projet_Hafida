@@ -20,9 +20,8 @@ class AnnonceManager extends Manager{
     public function countAll() {
         $sql = "SELECT COUNT(id_annonce) as total FROM " . $this->tableName;
         $result = DAO::select($sql);
-        return $this->getSingleScalarResult($result);
+        return (int)$this->getSingleScalarResult($result); // Assurez-vous que le résultat est un entier.
     }
-
     //METHODE POUR PAGINER LES ANNONCES
     public function findAll($order = null, $offset = 0, $perPage = PHP_INT_MAX) {
         if ($order === null) {
