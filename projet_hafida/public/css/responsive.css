@@ -1,145 +1,128 @@
-/* Styles spécifiques aux écrans de taille moyenne (tablettes) */
-@media screen and (max-width: 1024px) {
-    main {
-        width: 90%; /* largeur du conteneur des annonces pour les tablettes */
-        margin: 0 auto; /* centrage du conteneur */
-    }
-  
-    .card {
-        width: 70%; /* Ajustement pour tablette */
-        margin-bottom: 15px; /* Réduction de l'espace entre les cartes */
-    }
-  
-    .benefice1, .benefice2 {
-        width: 45%; /* réduction de la largeur des cartes */
-        margin-bottom: 15px; /* Réduction de l'espace entre les cartes de bénéfices */
-    }
-}
-/* Styles spécifiques aux petits écrans (max-width: 768px) */
+/* Styles spécifiques aux écrans de petite taille (smartphones) */
 @media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Aligne les éléments verticalement */
-        width: 100%; /* Prend toute la largeur */
+    main {
+        width: 100%; /* Ajuste la largeur du conteneur des annonces pour les smartphones */
     }
-    
-    nav li {
-        width: 100%; /* Chaque lien prendra toute la largeur */
-        text-align: center; /* Centre le texte des liens */
-        margin: 5px 0; /* Espace entre les liens */
+
+    body {
+        font-size: 14px; /* Réduction de la taille de la police */
+    }
+
+    nav ul {
+        display: flex; /* Utilisation de flexbox */
+        flex-direction: row; /* Aligne les éléments horizontalement */
+        align-items: center; /* Centre les éléments dans la navbar */
+        margin-bottom: 10px; /* Espace sous la navbar */
     }
 
     nav a {
-        display: block; /* Fait en sorte que le lien prenne la totalité de l'élément parent */
-        padding: 10px; /* Espace autour du texte */
+        font-size: 14px; /* Ajuste la taille des liens de navigation */
+        display: block; /* Permet au lien de prendre la totalité de l'élément parent */
+        padding: 10px; /* Espace autour du texte des liens */
+    }
+
+    nav li {
+        width: 100%; /* Chaque élément de la liste (lien) prendra toute la largeur */
+        text-align: center; /* Centre le texte des liens */
+        margin: 10px 0; /* Espace entre les liens */
     }
 
     /* Cacher le lien "Accueil" */
     nav li:first-child {
-        display: none; /* Cacher le premier lien (Accueil) */
-    }
-}
-
-/* Styles spécifiques aux écrans de petite taille (smartphones) */
-@media screen and (max-width: 768px) {
-    main {
-        width: 100%; /* ajustement de la largeur du conteneur des annonces pour les smartphones */
-    }
-  
-    body {
-        font-size: 14px; /* réduction de la taille de police pour les petits écrans */
+        display: none; /* Cache le premier lien (par exemple, lien vers "Accueil") */
     }
 
-    nav a {
-        font-size: 14px; /* Ajustement de la taille des liens de navigation */
-    }
-
-    
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center; /* Centre les éléments dans la navbar */
-        margin-bottom: 10px;
-    }
-  
-    nav li {
-        margin: 10px 0; /* ajuster l'espacement entre les éléments */
-    }
-  
     #nav-left img {
-        width: 80px; /* ajustement pour mobile */
-        height: 80px; /* hauteur ajustée */
-    }
-  
-    /* Sections */
-    .explications, .concept {
-        display: flex;
-        margin: 30px auto;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-  
-    .benefice1, .benefice2 {
-        width: 45%; /* largeur pour les petits écrans */
-        margin: 5px 0; /* espacement ajusté */
-    }
-  
-    .temoignages-container {
-        flex-direction: column; /* stack les témoignages */
-        align-items: center; /* centre les témoignages */
-        margin-top: 10px; /* Réduction de l'espace au-dessus */
+        width: 80px; /* Ajustement de la largeur du logo*/
+        height: 80px; /* Ajustement de la hauteur du logo */
     }
 
-    /* Styles spécifiques à la section avantages */
+/* Styles pour les sections d'explications et de concept */
+    .explications, .concept {
+        display: flex; /* Utilisation de flexbox */
+        margin: 30px auto; /* Espace autour de la section (marge automatique pour centrer) */
+        flex-wrap: nowrap; /* Évite le retour à la ligne des éléments */
+        flex-direction: row; /* Alignement des éléments en ligne */
+        justify-content: space-between; /* Espace égal entre les éléments */
+    }
+
+/* Styles pour les bénéfices */
+    .benefice1, .benefice2 {
+        width: 45%; /* Largeur fixée pour les éléments de bénéfice */
+        margin: 5px 0; /* Espacement entre les éléments de bénéfice */
+    }
+
+/* Styles pour le conteneur de témoignages */
+    .temoignages-container {
+        flex-direction: column; /* Aligne les témoignages en colonne */
+        align-items: center; /* Centre les témoignages */
+        margin-top: 10px; /* Réduction de l'espace au-dessus des témoignages */
+    }
+
+/* Styles pour la section des avantages */
     .avantages {
         margin-bottom: 30px; /* Espace entre la section avantages et la section attraction */
     }
 
     .avantages ul {
-        display: flex;
-        padding: 0;
-        list-style-type: none;
-        margin-bottom: 20px; /* Réduction de l'espace sous la liste d'avantages */
-        flex-direction: column; /* Aligner verticalement les éléments */
-        align-items: center;    /* Centrer les éléments */
+        display: flex; /* Utilisation de flexbox pour la liste des avantages */
+        padding: 0; /* Supprime le padding automatique */
+        list-style-type: none; /* Supprime les puces de la liste */
+        margin-bottom: 20px; /* Réduction de l'espace sous la liste des avantages */
+        flex-direction: column; /* Aligne les éléments de la liste verticalement */
+        align-items: center; /* Centre les éléments de la liste */
     }
-  
+
     .avantages li {
-        width: 80%; /* Ajuster la largeur sur des écrans plus petits */
-        padding: 25px; /* Réduire le padding */
-        margin-bottom: 15px; /* Réduction de l'espace entre les éléments d'avantages */
+        width: 80%; /* Ajustement de la largeur sur des écrans plus petits */
+        padding: 25px; /* Réduit le padding autour des éléments */
+        margin-bottom: 15px; /* Réduction de l'espace entre les éléments des avantages */
     }
 
+/* Styles pour la section attraction */
     .attraction {
-        margin-top: 30px;  /* Espace au-dessus de la section attraction */
+        margin-top: 30px; /* Espace au-dessus de la section attraction */
     }
 
-    /* Styles de la section attraction */
+/* Styles pour les conteneurs de cartes */
     .card-container {
-        flex-direction: row;
-        height: 500px;
-        align-items: center; /* Centre les cartes */
-        margin-top: 20px; /* Espace au-dessus des cartes */
+        flex-direction: row; /* Assure l'affichage des cartes en rangée */
+        height: 500px; /* Hauteur définie pour le conteneur des cartes */
+        align-items: center; /* Centre les cartes à l'intérieur du conteneur */
+        margin-top: 20px; /* Espace au-dessus du conteneur de cartes */
     }
 
     .card {
-        height: 350px; /* hauteur des cartes */
+        height: 350px; /* Hauteur de chaque carte */
         width: 90%; /* Largeur de chaque carte sur petits écrans */
-        margin-bottom: 15px; /* Marges entre les cartes */
+        margin-bottom: 15px; /* Espacement entre les cartes */
     }
 }
 
+/* Styles spécifiques aux petits écrans à tablettes (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    main {
+        width: 90%; /* Largeur du conteneur des annonces pour les tablettes */
+        margin: 0 auto; /* Centre le conteneur */
+    }
 
-
-/* Styles spécifiques pour tablette (max-width: 1024px) */
-@media (max-width: 1024px) {
     .card {
-        width: 45%; /* Largeur des cartes à 45% sur les tablettes */
+        width: 70%; /* Ajustement de la largeur des cartes pour tablette */
+        margin-bottom: 15px; /* Espacement entre les cartes de bénéfices */
+    }
+
+    .card-container {
+        flex-direction: row; /* Assure que les cartes s'affichent en rangée */
+    }
+
+    .benefice1, .benefice2 {
+        width: 45%; /* Réduction de la largeur des cartes de bénéfices */
+        margin-bottom: 15px; /* Réduction de l'espace entre les cartes de bénéfices */
     }
 
     .avantages li {
-        width: 40%; /* Ajuster la largeur sur tablette */
-        padding: 40px; /* Réduire le padding */
-        margin-bottom: 15px; 
+        width: 40%; /* On ajuste la largeur des éléments d'avantages sur tablette */
+        padding: 40px; /* Réduction du padding */
+        margin-bottom: 15px; /* Espacement ajusté entre les éléments d'avantages */
     }
 }
