@@ -53,7 +53,9 @@ h2 {
 h3{
   font-size: 28px;
 }
+
 /* Header */
+
 header {
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de fond */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet de profondeur */
@@ -67,10 +69,10 @@ header {
   margin-right: 20px; /* ajoute de l'espace entre le logo et les liens de navigation */
 }
 
-/* Ajustez la classe nav-list pour que les éléments de liste ne prennent que l'espace nécessaire */
-.nav-list {
-  display: flex; /* Assurez-vous que la classe nav-list est définie comme flex */
-  gap: 15px; /* Ajoutez un espace entre les éléments de navigation */
+
+.nav-list { /* on ajuste la classe nav-list pour que les éléments de liste ne prennent que l'espace nécessaire */
+  display: flex; 
+  gap: 15px; /* on ajoute un espace entre les éléments de navigation */
 }
 
 nav {
@@ -81,8 +83,8 @@ nav {
 }
 
 nav ul {
-  list-style: none; /* À enlever les puces */
-  display: flex; /* Utilise flexbox pour aligner les éléments */
+  list-style: none; /* pour enlever les puces */
+  display: flex; /* On utilise flexbox pour aligner les éléments */
   flex: 1; /* Permet à l'ul d'occuper tout l'espace disponible */
   justify-content: space-between; /* Répartit les éléments uniformément */
   margin: 0;
@@ -110,8 +112,8 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre au survol pour un effet de brillance */
 }
 
-
 /* Logo */
+
 #nav-left {
   display: flex; /* utilise flexbox pour aligner les éléments */
   align-items: center; /* centre les éléments verticalement */
@@ -176,7 +178,6 @@ input[type="email"]:focus {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Ombre plus profonde au focus */
 }
 
-
 .button-button {
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
     color: #fff; /* couleur de texte du bouton */
@@ -218,7 +219,7 @@ input[type="email"]:focus {
 .footer-links a:hover,
 .newsletter h4:hover, 
 .social-media h4:hover{
-  text-decoration: underline; /* Souligner au survol */
+  text-decoration: underline; /* pour souligner au survol */
   color:rgba(240, 184, 95, 0.7);
 }
 
