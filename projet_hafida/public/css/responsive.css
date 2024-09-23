@@ -15,39 +15,30 @@
         margin-bottom: 15px; /* Réduction de l'espace entre les cartes de bénéfices */
     }
 }
-nav {
-    overflow: hidden; /* Empêche le débordement */
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row; /* Dire à la liste de s'afficher horizontalement */
-    align-items: center; /* Centre les éléments de la barre de navigation */
-    margin: 0; /* Réinitialisation du margin */
-    padding: 0; /* Réinitialisation du padding */
-    white-space: nowrap; /* Évite le retour à la ligne */
-}
-
-nav li {
-    margin: 0 10px; /* Ajuster l'espacement entre les items */
-}
-
-/* Sur les petits écrans (ex. smartphones) */
+/* Styles spécifiques aux petits écrans (max-width: 768px) */
 @media screen and (max-width: 768px) {
-    nav {
-        padding: 0 10px; /* Ajouter un peu de padding sur les côtés */
-    }
-
     nav ul {
-        flex-wrap: nowrap; /* Assure que les éléments ne s'enroulent pas */
-        overflow-x: auto; /* Permet le défilement horizontal si le contenu dépasse la largeur de l'écran */
+        flex-direction: column; /* Aligne les éléments verticalement */
+        width: 100%; /* Prend toute la largeur */
+    }
+    
+    nav li {
+        width: 100%; /* Chaque lien prendra toute la largeur */
+        text-align: center; /* Centre le texte des liens */
+        margin: 5px 0; /* Espace entre les liens */
     }
 
     nav a {
-        padding: 10px 15px; /* Assez d'espace pour rendre le lien cliquable facilement */
-        display: block; /* S'assurer que le lien occupe toute la largeur de l'élément parent */
+        display: block; /* Fait en sorte que le lien prenne la totalité de l'élément parent */
+        padding: 10px; /* Espace autour du texte */
+    }
+
+    /* Cacher le lien "Accueil" */
+    nav li:first-child {
+        display: none; /* Cacher le premier lien (Accueil) */
     }
 }
+
 /* Styles spécifiques aux écrans de petite taille (smartphones) */
 @media screen and (max-width: 768px) {
     main {
