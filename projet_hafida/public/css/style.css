@@ -86,7 +86,6 @@ nav ul {
   list-style: none; /* pour enlever les puces */
   display: flex; /* On utilise flexbox pour aligner les éléments */
   flex: 1; /* Permet à l'ul d'occuper tout l'espace disponible */
-  justify-content: space-between; /* Répartit les éléments uniformément */
   margin: 0;
   padding: 0;
 }
