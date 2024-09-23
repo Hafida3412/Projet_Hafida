@@ -10,7 +10,6 @@ form {
 /* Styles pour l'alerte */
 .alert {
     color: #6B2C1A; /* Changer la couleur du texte */
-    
     margin-top: 20px; /* Espace au-dessus du titre */
     margin-bottom: 20px; /* Espace en dessous du titre */
     background-color: rgba(255, 255, 255, 0.5); /* Fond blanc plus translucide */
@@ -22,14 +21,18 @@ form {
 
 /* Listes */
 .alert ul {
-    list-style-type: disc;
-    padding-left: 20px;
+    /* Définit le type de puce à utiliser pour les éléments de la liste */
+    list-style-type: disc; /* Utilise des cercles pleins comme puces */
+    
+    /* Ajoute un espacement à gauche de la liste pour aligner les puces */
+    padding-left: 20px; /* Décale le contenu de la liste vers la droite */
 }
 
-.container-creation{
-    padding-bottom:20px;
+/* Style pour la classe .container-creation */
+.container-creation {
+    /* Ajoute un espacement en bas du conteneur pour éviter que d'autres éléments ne collent à lui */
+    padding-bottom: 20px; /* Crée un espace de 20 pixels sous le conteneur */
 }
-
 
 form label { 
     display: block; /* cela permet l'affichage en bloc des labels */ 
