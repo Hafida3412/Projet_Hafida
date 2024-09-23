@@ -75,7 +75,7 @@
         <li>Bénéficie d'une présence rassurante et constante à la maison</li>
         <li>Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
     </ul>
-    <img src="public/img/catsitter.jpg" alt="catsitter">
+    <img src="public/img/catsitter.webp" alt="catsitter">
 </div>
 
 <div class="benefice2">
@@ -85,7 +85,7 @@
         <li>Sérénité de confier votre chat et votre maison à une personne de confiance</li>
         <li>Recevez régulièrement des nouvelles et des photos de votre chat pendant votre absence</li>
     </ul>
-    <img src="public/img/catsitter2.jpg" alt="catsitter">
+    <img src="public/img/catsitter2.webp" alt="catsitter">
 </div>
 </section>
 
