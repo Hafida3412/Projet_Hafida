@@ -61,32 +61,36 @@ header {
 
 /* Navbar */
 
+#nav-left {
+  display: flex; /* utilise flexbox pour aligner les éléments */
+  align-items: center; /* centre les éléments verticalement */
+  margin-right: 20px; /* ajoute de l'espace entre le logo et les liens de navigation */
+}
+
+/* Ajustez la classe nav-list pour que les éléments de liste ne prennent que l'espace nécessaire */
+.nav-list {
+  display: flex; /* Assurez-vous que la classe nav-list est définie comme flex */
+  gap: 15px; /* Ajoutez un espace entre les éléments de navigation */
+}
+
 nav {
   display: flex;
-  justify-content: space-between; /* S'assure que le contenu est réparti */
+  justify-content: space-around; /* Espace autour des éléments */
   align-items: center; /* Centre verticalement les éléments */
   padding: 15px; /* Ajout d'un espacement autour */
 }
 
-.nav-right-connect {
-  display: flex;
-  padding: 10px; /* Espacement autour des éléments */
-  margin-left:700px;
-}
-
 nav ul {
-  list-style: none; /* A enlever les puces */
-  display: flex; /* utilise flexbox pour aligner les éléments */
+  list-style: none; /* À enlever les puces */
+  display: flex; /* Utilise flexbox pour aligner les éléments */
+  flex: 1; /* Permet à l'ul d'occuper tout l'espace disponible */
+  justify-content: space-between; /* Répartit les éléments uniformément */
   margin: 0;
   padding: 0;
 }
 
 .nav-list li {
-  margin-left: 15px; /* Espace entre les éléments */
-}
-
-nav li {
-  margin-right: 10px; /* espace entre les éléments */
+  margin: 0; /* Supprime les marges entre les liens */
 }
 
 nav a {
@@ -95,6 +99,9 @@ nav a {
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
   color: #eeeeee; /* Couleur de texte blanche pour augmenter le contraste */
+  flex-grow: 1; /* Permet aux liens d'occuper l'espace restant égal */
+  text-align: center; /* Centre horizontalement le texte des liens */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animation fluide pour le fond et la couleur */
 }
 
 nav a:hover {
@@ -102,6 +109,7 @@ nav a:hover {
   color: #330802; /* Couleur du texte au survol */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre au survol pour un effet de brillance */
 }
+
 
 /* Logo */
 #nav-left {
@@ -112,7 +120,7 @@ nav a:hover {
 #nav-left img {
   width: 120px; /* Ajustement de la taille du logo */
   height: auto; /* Assure le bon ratio */
-  margin-right: 10px; /* espace entre le logo et le texte */
+  margin-right: 20px; /* espace entre le logo et le texte */
 }
 
 /* Contenu */
