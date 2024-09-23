@@ -16,14 +16,18 @@ class UtilisateurManager extends Manager{
 
     //CREATION DE LA REQUETE QUI PERMET DE VERIFIER SI L UTILISATEUR EXISTE VIA SON MAIL
     public function checkUserExists($email) {
+    /*Définition de la requête SQL pour sélectionner tous les champs d'un utilisateur
+    avec une adresse e-mail correspondante*/
         $sql = "SELECT * 
                 FROM " . $this->tableName . " t
                 WHERE email = :email";
     
-        // Utilisez le bon paramètre pour exécuter la requête
+        // Utilisation du bon paramètre pour exécuter la requête
         return $this->getOneOrNullResult(
+             // Appel à la méthode DAO::select pour exécuter la requête
+             // Tout en passant l'adresse e-mail dans un tableau associatif
             DAO::select($sql, ['email' => $email], false), // Envoie l'email pour la requête
-            $this->className
+            $this->className // Indique la classe dans laquelle le résultat sera converti
         );
     }
     

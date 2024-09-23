@@ -38,9 +38,13 @@ class SecurityController extends AbstractController{
         } else {
         // Vérification que les mots de passe sont identiques et que le mot de passe respecte la regex
         if ($pass1 === $pass2 && preg_match($passwordRegex, $pass1)) {
+            // Ajout d'un nouvel utilisateur via le gestionnaire d'utilisateurs (userManager)
             $userManager->add([
-                "pseudo" => $pseudo,
+                "pseudo" => $pseudo,// Le pseudo de l'utilisateur, utilisé comme nom d'affichage
+                // L'adresse email de l'utilisateur, utilisée pour l'authentification et les notifications
                 "email" => $email,
+                // Le mot de passe de l'utilisateur, haché pour assurer la sécurité
+                // PASSWORD_DEFAULT utilise l'algorithme de hachage le plus sécurisé vers lequel PHP peut évoluer
                 "password" => password_hash($pass1, PASSWORD_DEFAULT)
             ]);
 
@@ -77,7 +81,8 @@ class SecurityController extends AbstractController{
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
             // Définir une regex pour le mot de passe
-            $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/"; // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
+            $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/"; 
+            // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
     
             // Vérifier que l'email et le mot de passe existent
             if ($email && $password) {
@@ -99,7 +104,10 @@ class SecurityController extends AbstractController{
                     $hash = $utilisateur->getPassword();
     
             // VERIFICATION DU MDP
+            // On vérifie si le mot de passe fourni correspond au hachage stocké en utilisant la fonction password_verify
                 if (password_verify($password, $hash)) {
+            // Le mot de passe est correct, on peut procéder à l'authentification de l'utilisateur
+            
             // On stocke dans une SESSION l'intégralité des infos du user
                 $_SESSION["utilisateur"] = $utilisateur; 
             // SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D'ACCUEIL
