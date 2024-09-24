@@ -77,15 +77,21 @@ header {
 
 nav {
   display: flex;
-  justify-content: space-around; /* Espace autour des éléments */
   align-items: center; /* Centre verticalement les éléments */
   padding: 15px; /* Ajout d'un espacement autour */
+}
+
+.nav-right-connect{
+  display: flex;
+  padding: 10px;
+
 }
 
 nav ul {
   list-style: none; /* pour enlever les puces */
   display: flex; /* On utilise flexbox pour aligner les éléments */
   flex: 1; /* Permet à l'ul d'occuper tout l'espace disponible */
+  justify-content:space-between;
   margin: 0;
   padding: 0;
 }

@@ -51,6 +51,7 @@
     background-color: transparent; /* Couleur de fond par défaut */
     border-radius: 25px; /* Coins arrondis pour un look doux */
     display: flex; /* Utilisez flexbox pour aligner les éléments */
+    justify-content: flex-start;
     list-style-type: none; /* Pour enlever les puces */
 }
 
