@@ -68,7 +68,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <input type="email" name="email" id="email" value="lea@exemple.com" required><br>
 
 <label for="password">Mot de passe</label>
-<input type="password" name="password" id="password" value="Azerty1234567" required><br>
+<input type="password" name="password" id="password" value="Azerty123456" required><br>
 
 <div class="g-recaptcha" data-sitekey="6LeUhkYqAAAAALeAYNXSofNNSW3Fw9vzIRzl4Ngw" data-action="LOGIN" required></div>
 <br/>
