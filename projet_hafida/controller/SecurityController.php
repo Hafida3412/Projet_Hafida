@@ -80,7 +80,15 @@ class SecurityController extends AbstractController{
             $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
-            // Définir une regex pour le mot de passe
+            // Vérification de la validité du reCAPTCHA
+        if (empty($_POST['g-recaptcha-response'])) {
+            Session::addFlash("error", "Veuillez cocher la case reCAPTCHA.");
+            return [
+                "view" => VIEW_DIR . "connexion/login.php",
+                "meta_description" => "Formulaire de connexion"
+            ];
+        }
+            // Définition d'une regex pour le mot de passe
             $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/"; 
             // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
     
@@ -107,7 +115,7 @@ class SecurityController extends AbstractController{
             // On vérifie si le mot de passe fourni correspond au hachage stocké en utilisant la fonction password_verify
                 if (password_verify($password, $hash)) {
             // Le mot de passe est correct, on peut procéder à l'authentification de l'utilisateur
-            
+
             // On stocke dans une SESSION l'intégralité des infos du user
                 $_SESSION["utilisateur"] = $utilisateur; 
             // SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D'ACCUEIL

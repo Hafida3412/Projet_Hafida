@@ -63,7 +63,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="login-container">
 <h1>Se connecter</h1>
 
-<form action="index.php?ctrl=security&action=login" method="post">
+<form id="loginForm" action="index.php?ctrl=security&action=login" method="post" onsubmit="return validateRecaptcha();">
 <label for="email">Email</label>
 <input type="email" name="email" id="email" value="lea@exemple.com" required><br>
 
