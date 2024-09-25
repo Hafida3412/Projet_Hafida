@@ -29,7 +29,8 @@ class SecurityController extends AbstractController{
         if ($pseudo && $email && $pass1 && $pass2) {
         //var_dump("ok");die;
              $userManager = new UtilisateurManager();
-             $utilisateur = $userManager->checkUserExists($email);//création de la function checkUserExists dans utilisateurManager pour vérifier si l'utilisateur existe
+             //création de la function checkUserExists dans utilisateurManager pour vérifier si l'utilisateur existe
+             $utilisateur = $userManager->checkUserExists($email);
         // Si l'utilisateur existe
         if ($utilisateur) {
             Session::addFlash("error", "Cet email est déjà utilisé.");

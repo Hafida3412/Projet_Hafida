@@ -70,7 +70,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label for="password">Mot de passe</label>
 <input type="password" name="password" id="password" value="Azerty123456" required><br>
 
-<div class="g-recaptcha" data-sitekey="6LeUhkYqAAAAALeAYNXSofNNSW3Fw9vzIRzl4Ngw" data-action="LOGIN" required></div>
+<div class="g-recaptcha" data-sitekey="6LeUhkYqAAAAALeAYNXSofNNSW3Fw9vzIRzl4Ngw" data-action="LOGIN"></div>
 <br/>
 <input type="submit" name="submitLogin" value="Se connecter">
 <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>

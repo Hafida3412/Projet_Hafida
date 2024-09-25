@@ -408,7 +408,7 @@ public function index($id = null) {
             $extension = strtolower(end($tabExtension)); // Récupération la dernière partie (extension) et écriture en minuscules
     
             // Liste des extensions autorisées pour le téléchargement
-            $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png'];
+            $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png', 'webp'];
             $tailleMax = 4000000; // // Taille maximale en bytes (4 Mo)
     
             // Vérification des conditions : extension autorisée, taille acceptable, et pas d'erreur
