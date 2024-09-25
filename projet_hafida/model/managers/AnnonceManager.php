@@ -17,7 +17,7 @@ class AnnonceManager extends Manager{
     }
 
 
-    // METHODE POUR COMPTER LE NOMBRE TOTAL D ANNONCES
+    // REQUETE POUR COMPTER LE NOMBRE TOTAL D ANNONCES
     public function countAll() {
         $sql = "SELECT COUNT(id_annonce) as total FROM " . $this->tableName; // Requête SQL pour compter les annonces
         $result = DAO::select($sql); // Exécution de la requête
@@ -25,7 +25,7 @@ class AnnonceManager extends Manager{
     }
 
     
-    // METHODE POUR RECUPERER TOUTES LES ANNONCES AVEC PAGINATION
+    // REQUETE POUR RECUPERER TOUTES LES ANNONCES AVEC PAGINATION
     public function findAll($order = null, $offset = 0, $perPage = PHP_INT_MAX) {
         if ($order === null) {
             $order = ['id_annonce', 'ASC'];// Ordre par défaut
@@ -38,6 +38,7 @@ class AnnonceManager extends Manager{
         return $this->getMultipleResults(DAO::select($sql), $this->className);// Retourne les résultats
     }
     
+
     // REQUETE POUR AFFICHER LES ANNONCES D UN UTILISATEUR SPECIFIQUE
     public function findAnnoncesByUtilisateur($id){
         $sql = "SELECT*
@@ -50,6 +51,7 @@ class AnnonceManager extends Manager{
     );
     }
 
+
      //REQUETE POUR SUPPRIMER UNE ANNONCE PAR SON ID
      public function deleteAnnonce($id) {
         $sql = "DELETE
@@ -58,23 +60,24 @@ class AnnonceManager extends Manager{
     return DAO::delete($sql, ['id' => $id]); // Exécution de la requête de suppression
     }
 
-    // METHODE POUR SUPPRIMER LES RESERVATIONS LIEES A UNE ANNONCE
+
+    // REQUETE POUR SUPPRIMER LES RESERVATIONS LIEES A UNE ANNONCE
     public function deleteReservations($annonceId) {
         $sql = "DELETE FROM reserver 
         WHERE annonce_id = :id"; // Suppression des réservations par ID d'annonce
     return DAO::delete($sql, ['id' => $annonceId]); // Exécution de la suppression
 }
 
-    // METHODE POUR METTRE A JOUR LE STATUT DE L ANNONCE (valide)
+
+    // REQUETE POUR METTRE A JOUR LE STATUT DE L ANNONCE (valide)
     public function updateDisponibilite($annonceId){
         $sql = "UPDATE ".$this->tableName."
         SET estValide = 1 
         WHERE id_annonce = :id"; // Mise à jour pour rendre l'annonce valide
     return DAO::update($sql, ['id' => $annonceId]); // Exécution de la mise à jour
 }
-
-    //On vérifie si l'annonce est réservée en vérifiant si la colonne "estValide" est égale à 1
-    //pour l'annonce sélectionnée
+    //On vérifie si l'annonce est réservée en vérifiant si la colonne "estValide"
+    // est égale à 1 pour l'annonce sélectionnée
     public function isAnnonceValide($annonceId){
         $sql = "SELECT estValide
                 FROM ".$this->tableName."
@@ -84,6 +87,7 @@ class AnnonceManager extends Manager{
             DAO::select($sql, ['id' => $annonceId], false)
         ) == 1; // Retourne vrai si l'annonce est valide
     }
+
 
     //REQUETE POUR AFFICHER LES ANNONCES PAR VILLE
     public function findAnnoncesByVille($ville){
@@ -112,8 +116,8 @@ class AnnonceManager extends Manager{
                 estValide = :estValide
             WHERE id_annonce = :id"; // Requête pour mise à jour d'une annonce
 
-
-    return DAO::update($sql, array_merge($data, ['id' => $id])); // Exécution de la mise à jour
+    // Exécution de la mise à jour
+    return DAO::update($sql, array_merge($data, ['id' => $id]));
 }
 
 }
