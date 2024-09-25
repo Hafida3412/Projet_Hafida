@@ -38,7 +38,8 @@ public function listUtilisateurs() {
     ];
 }
 
-// Méthode pour lister toutes les annonces
+//METHODE POUR LISTER TOUTES LES ANNONCES
+
 public function AllAnnonces() {
     // Vérifie si l'utilisateur est connecté et a le rôle "ROLE_ADMIN"
     $utilisateur = Session::getUtilisateur();
@@ -60,6 +61,8 @@ public function AllAnnonces() {
         ]
     ];
 }
+
+//METHODE POUR SUPPRIMER UN UTILISATEUR
 
 public function supprimerUtilisateur() {
     // Vérifie si l'utilisateur est connecté et a le rôle "ROLE_ADMIN"
@@ -96,6 +99,8 @@ public function supprimerUtilisateur() {
     exit;
 }
 
+
+//METHODE POUR EDITER UNE ANNONCE
 public function editAnnonce() {
     $utilisateur = Session::getUtilisateur();
     
@@ -126,7 +131,7 @@ public function editAnnonce() {
                 'dateDebut' => $_POST['dateDebut'],
                 'dateFin' => $_POST['dateFin'],
                 'description' => $_POST['description'],
-                'estValide' => $_POST['estValide'] ? 1 : 0 // Checkbox as boolean
+                'estValide' => $_POST['estValide'] ? 1 : 0 
             ];
 
             // On appelle la méthode de la mise à jour 

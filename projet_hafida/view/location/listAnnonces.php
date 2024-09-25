@@ -17,7 +17,6 @@ $annonces = $result["data"]['annonces'];
     <button class="annonce-info" type="submit">Rechercher</button>
 </form>
 
-
     <h1>Consulter les annonces</h1>
    
     <div class="annonce-container">
