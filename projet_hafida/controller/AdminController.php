@@ -99,27 +99,27 @@ public function supprimerUtilisateur() {
 public function editAnnonce() {
     $utilisateur = Session::getUtilisateur();
     
-    // Check if the user is admin
+    // On vérifie si l'utilisateur est l'admin
     if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN")) {
         Session::addFlash('error', 'Accès refusé. Vous devez être administrateur pour effectuer cette action.');
         header('Location: index.php?ctrl=security&action=login');
         exit;
     }
 
-    // Check if an ID is provided
+    // On vérifie si l'id est fourni
     if (isset($_GET['id'])) {
         $annonceId = $_GET['id'];
         $annonceManager = new AnnonceManager();
         $annonce = $annonceManager->findOneById($annonceId);
         
-        // If the announcement doesn't exist, redirect
+        // Si l'annonce n'existe pas, redirection
         if (!$annonce) {
             Session::addFlash('error', "Annonce introuvable.");
             header('Location: index.php?ctrl=admin&action=AllAnnonces');
             exit;
         }
 
-        // If the form has been submitted, process the data
+        // Si le formulaire a été soumis, on traite les données
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $updatedData = [
                 'nbChat' => $_POST['nbChat'],
@@ -129,7 +129,7 @@ public function editAnnonce() {
                 'estValide' => $_POST['estValide'] ? 1 : 0 // Checkbox as boolean
             ];
 
-            // Call the update method from the manager
+            // On appelle la méthode de la mise à jour 
             if ($annonceManager->update($annonceId, $updatedData)) {
                 Session::addFlash('success', 'Annonce mise à jour avec succès.');
                 header('Location: index.php?ctrl=admin&action=AllAnnonces');
