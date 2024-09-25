@@ -99,8 +99,8 @@ public function supprimerUtilisateur() {
 public function editAnnonce() {
     $utilisateur = Session::getUtilisateur();
     
-    // On vérifie si l'utilisateur est l'admin
-    if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN")) {
+    // On vérifie si l'utilisateur a le rôle "ROLE_ADMIN
+        if (!$utilisateur || !$utilisateur->hasRole("ROLE_ADMIN")) {
         Session::addFlash('error', 'Accès refusé. Vous devez être administrateur pour effectuer cette action.');
         header('Location: index.php?ctrl=security&action=login');
         exit;
