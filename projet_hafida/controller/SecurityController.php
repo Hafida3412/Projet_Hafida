@@ -117,7 +117,7 @@ class SecurityController extends AbstractController{
                 if (password_verify($password, $hash)) {
             // Le mot de passe est correct, on peut procéder à l'authentification de l'utilisateur
 
-            // On stocke dans une SESSION l'intégralité des infos du user
+            // On stocke dans une SESSION l'intégralité des infos de l'utilisateur
                 $_SESSION["utilisateur"] = $utilisateur; 
             // SI CONNEXION REUSSIE: REDIRECTION VERS PAGE D'ACCUEIL
                 header("Location:index.php?ctrl=home&action=index");

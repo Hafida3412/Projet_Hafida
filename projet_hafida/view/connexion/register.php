@@ -5,7 +5,8 @@
 
 <h1>S'inscrire</h1>
 
-<form action="index.php?ctrl=security&action=register" method="POST"><!--STRUCTURE DE L'URL POUR DECLENCHER UNE ACTION: INDEX.PHP?CTRL ACTION= METHOD= ID= -->
+<!--STRUCTURE DE L'URL POUR DECLENCHER UNE ACTION: INDEX.PHP?CTRL ACTION= METHOD= ID= -->
+<form action="index.php?ctrl=security&action=register" method="POST">
     <label for="pseudo">Pseudo</label>
     <input type="text" name="pseudo" id="pseudo" required><br>
 
