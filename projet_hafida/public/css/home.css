@@ -115,14 +115,27 @@ section {
 }
 
 .join-link {
-    color: #fff; /* Couleur par défaut du texte (modifiable selon votre design) */
-    text-decoration: none; /* Supprime le soulignement par défaut */
-    transition: color 0.3s; /* Transition douce pour l'effet hover */
+  color: #fff; /* Couleur par défaut du texte */
+  text-decoration: none; /* Supprime le soulignement */
+  transition: all 0.3s; /* Ajoute une transition douce pour couleur et fond */
+  padding: 5px 10px; /* Ajoute du padding pour un espace autour du texte */
+  border-radius: 10px; /* Coins arrondis pour un effet doux */
 }
 
+/* Nouveau style pour le lien au survol */
 .join-link:hover {
-    color: #ffff00; /* Couleur du texte au survol */
+  background-color: #ffffff; /* Fond blanc au survol */
+  color: #6B2C1A; /* Couleur du texte (vous pouvez choisir celle qui vous convient) */
 }
+
+/* Pour assurer une meilleure visibilité */
+.parallax-image h2 { 
+  color: white; 
+  text-align: center; 
+  padding: 150px;
+  transition: background-color 0.3s; /* Transition pour un changement de fond */
+}
+
 .card-container {
   display: flex;
   justify-content: space-around;
