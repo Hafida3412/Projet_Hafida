@@ -1,15 +1,29 @@
 /*CREATION DU REGISTER.CSS*/
 
+.register-form {
+    max-width: 800px; /* Ajustez cette largeur selon vos besoins */
+    margin: 0 auto; /* Centre le formulaire */
+    padding: 20px; /* Ajoute un espacement intérieur */
+    background-color: #fff; /* Fond blanc pour le formulaire */
+    border: 1px solid #ddd; /* Bordure autour du formulaire */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre pour profondeur */
+}
+
 .submit-container {
     display: flex;
     justify-content: center; /* Centre le contenu horizontalement */
     margin-top: 20px; /* Marge au-dessus du bouton pour l'espacement */
 }
 
-label[for="consentement"] {
-    display: flex;/*utilisation de flexbox*/
-    flex-wrap: nowrap;/*affichage en ligne des éléments à l'intérieur du label*/
-    align-items: baseline;/*éléments alignés sur la même ligne de base*/
+.consentement-label {
+    display: flex;                /* Utiliser flex pour aligner horizontalement */
+    align-items: baseline;       
+    margin: 10px 0;             /* Marge autour pour l'espacement général */
+}
+
+.consentement-label input[type="checkbox"] {
+    margin-right: 10px;         /* Espace entre la checkbox et le texte */
 }
 
 .password-hint {
