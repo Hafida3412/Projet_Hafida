@@ -46,8 +46,8 @@
     
     .btn-delete:hover, .btn-edit:hover {
         transform: scale(1.05); /* Légère amplification au survol */
-        color: #330802; /* Change la couleur du texte au survol */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
+        background: #f0b85f; /* Couleur de fond au survol */
+        color: #6B2C1A; /* Couleur du texte au survol */
         transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
     }
     

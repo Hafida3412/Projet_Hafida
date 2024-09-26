@@ -84,7 +84,6 @@ nav {
 .nav-right-connect{
   display: flex;
   padding: 10px;
-
 }
 
 nav ul {
@@ -112,8 +111,10 @@ nav a {
 }
 
 nav a:hover {
+  transform: scale(1.05); /* Légère amplification au survol */
   background: #f0b85f; /* Couleur de fond au survol */
   color: #6B2C1A; /* Couleur du texte au survol */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
 
 /* Logo */
@@ -121,7 +122,7 @@ nav a:hover {
 #nav-left {
   display: flex; /* utilise flexbox pour aligner les éléments */
   align-items: center; /* centre les éléments verticalement */
-  }
+}
 
 #nav-left img {
   width: 120px; /* Ajustement de la taille du logo */
@@ -194,8 +195,10 @@ input[type="email"]:focus {
 }
 
 .button-button:hover {
+  transform: scale(1.05); /* Légère amplification au survol */
   background: #f0b85f; /* Couleur de fond au survol */
   color: #6B2C1A; /* Couleur du texte au survol */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
 
 .social-media a {
