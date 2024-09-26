@@ -267,19 +267,25 @@ public function resetPassword() {
     }
 
     if (isset($_POST["submitResetPassword"])) {
-        // On filtre le nouveau mot de passe
+        // On filtre le nouveau mot de passe et la confirmation de mot de passe
         $newPassword = filter_input(INPUT_POST, "newPassword", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $confirmPassword = filter_input(INPUT_POST, "confirmPassword", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        if ($newPassword) {
-            $userManager = new UtilisateurManager();
-            // Mise à jour du mot de passe
-            $userManager->updatePassword($utilisateur->getId(), password_hash($newPassword, PASSWORD_DEFAULT));
-            Session::addFlash("success", "Votre mot de passe a été réinitialisé avec succès!");
+        // Vérification que les mots de passe correspondent
+        if ($newPassword && $confirmPassword) {
+            if ($newPassword === $confirmPassword) {
+                $userManager = new UtilisateurManager();
+                // Mise à jour du mot de passe
+                $userManager->updatePassword($utilisateur->getId(), password_hash($newPassword, PASSWORD_DEFAULT));
+                Session::addFlash("success", "Votre mot de passe a été réinitialisé avec succès!");
 
-            // Nettoyage de la session après réinitialisation
-            Session::setUtilisateur(null); 
-            header("Location: index.php?ctrl=security&action=login");
-            exit;
+                // Nettoyage de la session après réinitialisation
+                Session::setUtilisateur(null); 
+                header("Location: index.php?ctrl=security&action=login");
+                exit;
+            } else {
+                Session::addFlash("error", "Les mots de passe ne correspondent pas.");
+            }
         } else {
             Session::addFlash("error", "Veuillez entrer un mot de passe.");
         }
@@ -291,9 +297,8 @@ public function resetPassword() {
     ];
 }
 
+
 }
-
-
 
     
     
