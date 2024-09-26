@@ -83,7 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
 </section>
 
-<section id="community"class="attraction">
+<section class="attraction">
   <h2>Rejoignez notre communauté</h2>
   <div class="card-container">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <section class="parallax-image">
-<h2><a href="#community" class="join-link">Rejoignez-nous</a></h2> 
+    <h2><a href="index.php?ctrl=security&action=register" class="join-link">Rejoignez-nous</a></h2>
 </section>
 
 <section class="concept">
