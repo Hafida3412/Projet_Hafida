@@ -124,8 +124,8 @@ section {
 
 /* Nouveau style pour le lien au survol */
 .join-link:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* Fond blanc avec 80% d'opacité au survol */
-  color: #6B2C1A; /* Couleur du texte (vous pouvez choisir celle qui vous convient) */
+  background-color: rgba(255, 215, 0, 0.8); /* Fond doré avec opacité de 0.8 au survol */
+  color: #330802; /* Couleur du texte sombre au survol */
 }
 
 /* Pour assurer une meilleure visibilité */
