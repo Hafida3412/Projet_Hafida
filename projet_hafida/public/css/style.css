@@ -12,7 +12,7 @@ html, body {
 #wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* S'assure que le wrapper prend au moins 100% de la hauteur de la fenêtre */
+  min-height: 100vh; /* le wrapper prend au moins 100% de la hauteur de la fenêtre */
 }
 
 #mainpage {
@@ -33,7 +33,7 @@ a {
 }
 
 a:hover {
-  color: #f0b85f; /* couleur de lien survolée */
+  color:  #f79206; /* couleur de lien survolée */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -62,28 +62,52 @@ header {
 }
 
 /* Navbar */
-
-#nav-left {
-  display: flex; /* utilise flexbox pour aligner les éléments */
-  align-items: center; /* centre les éléments verticalement */
-  margin-right: 20px; /* ajoute de l'espace entre le logo et les liens de navigation */
-}
-
-
-.nav-list { /* on ajuste la classe nav-list pour que les éléments de liste ne prennent que l'espace nécessaire */
-  display: flex; 
-  gap: 15px; /* on ajoute un espace entre les éléments de navigation */
-}
-
+/* Global navigation bar styles */
 nav {
   display: flex;
+  justify-content: space-between; /* espace entre le logo et les liens */
   align-items: center; /* Centre verticalement les éléments */
   padding: 15px; /* Ajout d'un espacement autour */
 }
 
-.nav-right-connect{
+#nav-left {
   display: flex;
-  padding: 10px;
+  align-items: center;
+}
+
+#nav-left img {
+  width: 120px; /* Ajustement de la taille du logo */
+  height: auto; /* Assure le bon ratio */
+}
+
+#nav-right {
+  display: flex;
+  justify-content: flex-end; /* Aligner les éléments à droite */
+}
+
+.nav-list { 
+  display: flex; 
+  gap: 15px; /* espace entre les éléments de navigation */
+}
+
+.nav-right-connect {
+  display: flex;
+}
+
+.nav-list li {
+  margin: 0 10px; /* Espacement entre les liens */
+}
+
+
+/* Logo styles */
+#nav-left img {
+  width: 120px; /* Ajustement de la taille du logo */
+  height: auto; /* Assure le bon ratio */
+  margin-right: 20px; /* espace entre le logo et les éléments de navigation */
+}
+
+.nav-right-connect {
+  margin-left: auto; /* pousse les éléments à droite */
 }
 
 nav ul {
@@ -95,9 +119,7 @@ nav ul {
   padding: 0;
 }
 
-.nav-list li {
-  margin: 0; /* Supprime les marges entre les liens */
-}
+
 
 nav a {
   padding: 12px 10px; /* Ajout de padding pour augmenter la zone cliquable */
@@ -223,6 +245,7 @@ input[type="email"]:focus {
 .newsletter h4:hover, 
 .social-media h4:hover{
   text-decoration: underline; /* pour souligner au survol */
+  /* Couleur en rgba : un ton or pâle avec 70% d'opacité */
   color:rgba(240, 184, 95, 0.7);
 }
 

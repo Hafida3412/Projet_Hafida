@@ -27,10 +27,10 @@
         margin: 10px 0; /* Espace entre les liens */
     }
 
-    /* Cacher le lien "Accueil" */
+    /* Cacher le lien "Accueil" 
     nav li:first-child {
-        display: none; /* Cache le premier lien (par exemple, lien vers "Accueil") */
-    }
+        display: none; /* Cache le premier lien (par exemple, lien vers "Accueil") 
+    }*/
 
     #nav-left img {
         width: 80px; /* Ajustement de la largeur du logo*/

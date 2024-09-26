@@ -47,6 +47,7 @@
                     <a href="index.php?ctrl=home&action=view">
                 <img src="public\img\Logo_gold-removebg-preview (1).webp" alt="Logo">
             </a>
+            </div>
             <div id="nav-right">
                             <ul class="nav-list">
                                 <?php
@@ -81,7 +82,6 @@
                                 ?>
                             </ul>
                         </div>
-                    </div>
                 </nav>
             </header>
                 
