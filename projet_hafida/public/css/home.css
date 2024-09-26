@@ -124,7 +124,7 @@ section {
 
 /* Nouveau style pour le lien au survol */
 .join-link:hover {
-  background-color: rgba(255, 215, 0, 0.8); /* Fond doré avec opacité de 0.8 au survol */
+  background-color: rgba(240, 184, 95, 0.8); /* Fond doré avec opacité de 0.8 au survol */
   color: #330802; /* Couleur du texte sombre au survol */
 }
 
@@ -190,8 +190,10 @@ section {
 }
 
 .button:hover {
-  color: #330802; /* Couleur du texte au survol */
+  background: #f0b85f; /* Couleur de fond au survol */
+  color: #6B2C1A; /* Couleur du texte au survol */
 }
+  
 
 .parallax-image{
   /* The image used */
@@ -304,8 +306,8 @@ section {
 }
 
 .concept .button:hover {
-  background-color: #f0b85f; /* Couleur légèrement différente au survol */
-  color: #330802; /* Couleur du texte au survol */
+  background: #f0b85f; /* Couleur de fond au survol */
+  color: #6B2C1A; /* Couleur du texte au survol */
 }
 
 .concept {

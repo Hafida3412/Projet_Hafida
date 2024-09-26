@@ -112,9 +112,8 @@ nav a {
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.3); /* Fond semi-translucide au survol */
-  color: #330802; /* Couleur du texte au survol */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre au survol pour un effet de brillance */
+  background: #f0b85f; /* Couleur de fond au survol */
+  color: #6B2C1A; /* Couleur du texte au survol */
 }
 
 /* Logo */
@@ -122,7 +121,7 @@ nav a:hover {
 #nav-left {
   display: flex; /* utilise flexbox pour aligner les éléments */
   align-items: center; /* centre les éléments verticalement */
-}
+  }
 
 #nav-left img {
   width: 120px; /* Ajustement de la taille du logo */
@@ -186,21 +185,17 @@ input[type="email"]:focus {
 .button-button {
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
     color: #fff; /* couleur de texte du bouton */
-   
     padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
-    
     margin: 0 auto; /* Centrer le bouton horizontalement */
      /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
     border-radius: 5px;    
 }
 
 .button-button:hover {
-  transform: scale(1.05); /* Légère amplification au survol */
-    color: #330802; /* Change la couleur du texte au survol */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour l'effet de profondeur */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+  background: #f0b85f; /* Couleur de fond au survol */
+  color: #6B2C1A; /* Couleur du texte au survol */
 }
 
 .social-media a {
