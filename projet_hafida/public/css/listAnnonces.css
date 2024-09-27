@@ -1,10 +1,11 @@
 /* Style pour les annonces */
 
 .bg-annonces {
-    background-image: url(../img/chat_canape.webp);
-    background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
+    background-image: url(../img/chat_canape.webp); /* Définition de l'image d'arrière-plan */
+    background-size: cover; /* couvre tout le conteneur sans déformer l'image */
     
 }
+
 /* Style pour le conteneur des annonces */
 .annonce-container {
     display: flex; /* Utilise flexbox pour centrer les éléments */
@@ -17,15 +18,15 @@
 
 .annonce {
     background-color: #fff; /* couleur de fond du cadre de l'annonce */
-    border: solid 1px #ccc;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* bordure autour du cadre de l'annonce */
+    border: solid 1px #ccc; /* Bordure de l'annonce */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ombre autour du cadre de l'annonce */
     padding: 10px; /* espacement interne du cadre de l'annonce */
     width: 30%; /* largeur du cadre de l'annonce */
     margin: 10px; /* espacement entre les annonces */
     display: flex; /* Utilise flexbox pour l'affichage interne si nécessaire */
     flex-direction: column; /* Empile les enfants en colonne */
     align-items: flex-start; /* Aligne le contenu à gauche */
-    border-radius: 10px;
+    border-radius: 10px; /* Coins arrondis pour un style plus doux */
 }
 
 /* Style pour les annonces à partir de la deuxième annonce*/
@@ -47,11 +48,11 @@
 
 /* Style pour la pagination */
 .pagination {
-    padding: 12px 20px;
+    padding: 12px 20px; /* Espacement intérieur du conteneur de pagination */
     background-color: transparent; /* Couleur de fond par défaut */
-    border-radius: 25px; /* Coins arrondis pour un look doux */
-    display: flex; /* Utilisez flexbox pour aligner les éléments */
-    justify-content: flex-start;
+    border-radius: 25px; /* Coins arrondis */
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    justify-content: flex-start; /* Aligne les éléments à gauche */
     list-style-type: none; /* Pour enlever les puces */
 }
 
@@ -62,10 +63,10 @@
 
 /* Style pour le lien des numéros de page */
 .page-link {
-    display: inline-block; /* Afficher en tant qu'élément en ligne */
+    display: inline-block; /* Affiche en tant qu'élément en ligne */
     padding: 10px 15px; /* Espacement autour du lien */
     border-radius: 50%; /* Pour donner une forme ronde */
-    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de couleur pour le fond */
     text-decoration: none; /* Pas de soulignement */
 }
 
@@ -81,7 +82,7 @@
     border-radius: 5px; /* Coins arrondis pour les boutons */
 }
 
-/* Appliquer des styles à tous les boutons de navigation */
+/* Application de styles à tous les boutons de navigation */
 .page-item a.page-link {
     color: white; /* Couleur du texte */
     background-color: #6B2C1A; /* Couleur de fond */
