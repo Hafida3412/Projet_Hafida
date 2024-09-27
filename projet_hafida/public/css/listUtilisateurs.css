@@ -1,46 +1,90 @@
+/* Styles du corps de la page */
+body {
+    font-family: Arial, sans-serif; /* Police d'écriture */
+    background-color: #f4f7fa; /* Couleur d'arrière-plan */
+    margin: 0; /* Supprime la marge par défaut -->
+    padding: 20px; /* Ajoute un rembourrage autour du contenu */
+}
 
+/* Styles du titre principal */
+h1 {
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Centre le texte */
+}
 
-/* Styles de base pour le tableau */
+/* Container pour la table */
+.table-container {
+    max-width: 800px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    overflow-x: auto; /* Active le défilement horizontal si nécessaire */
+}
+
+/* Styles pour la table */
 table {
-    width: 100%; /* Prend toute la largeur disponible */
-    border-collapse: collapse; /* Efface les espaces entre les bordures des cellules */
-    margin-top: 20px; /* Marge supérieure pour espacer du contenu précédent */
-    max-width: 1500px; 
-    margin: 0 auto; /* Centre la section horizontalement */
+    width: 100%; /* La table prend toute la largeur du conteneur */
+    border-collapse: collapse; /* Supprime les espaces entre les cellules */
+    margin-top: 20px; /* Espace au-dessus de la table */
+    border-radius: 8px; /* Coins arrondis */
+    overflow: hidden; /* Cache les débordements */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre portée pour un effet de profondeur */
 }
 
-/* En-tête du tableau */
-th {
-    background-color: #6b2c1a;; /* Couleur de fond de l'en-tête */
-    color: white; /* Couleur du texte dans l'en-tête */
-    text-align: left; /* Alignement à gauche */
-    padding: 12px; /* Espacement interne */
+/* Styles de l'en-tête de la table */
+thead {
+    background-color: #6B2C1A; /* Couleur de fond de l'en-tête */
+    color: white; /* Couleur du texte de l'en-tête */
 }
 
-/* Cellules du tableau (données) */
-td {
-    border: 1px solid #dddddd; /* Bordure grise claire */
-    text-align: left; /* Alignement à gauche */
-    padding: 8px; /* Espacement interne */
+/* Styles pour les cellules de la table */
+th, td {
+    padding: 12px 15px; /* Rembourrage à l'intérieur des cellules */
+    text-align: left; /* Alignement du texte à gauche */
+    border-bottom: 1px solid #ddd; /* Bord inférieur pour séparer les lignes */
 }
 
-/* Ligne survolée */
-tr:hover {
-    background-color: #f1f1f1; /* Couleur de fond lors du survol */
+/* Style pour survoler une ligne du corps de la table */
+tbody tr:hover {
+    background-color: #f1f1f1; /* Couleur de fond au survol */
 }
 
-/* Alerte lorsque aucun utilisateur n'est trouvé */
-td[colspan="6"] {
-    text-align: center; /* Centrer le message d'alerte */
-    color: #ff0000; /* Couleur du texte d'alerte */
-    font-weight: bold; /* Mettre en gras */
+/* Alignement du dernier td */
+td:last-child {
+    text-align: center; /* Centre le dernier élément de la ligne */
 }
 
+/* Styles pour les liens de suppression */
 .supprimer a {
-    text-decoration: none; /* Enlève le soulignement sur les liens */
-    font-size: 18px; /* Taille de l'icône */
+    text-decoration: none; /* Supprime le soulignement des liens */
 }
 
+/* Styles au survol des liens de suppression */
 .supprimer a:hover {
-    color: darkred; /* Change la couleur de l'icône au survol */
+    color: darkred; /* Change la couleur au survol */
+}
+
+/* Styles pour les petits écrans (responsive) */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block; /* Affiche les éléments de la table en bloc */
+    }
+    thead tr {
+        position: absolute; /* Positionne l'en-tête en dehors de la vue */
+        top: -9999px; /* Haut hors de la vue */
+        left: -9999px; /* Gauche hors de la vue */
+    }
+    tbody tr {
+        margin-bottom: 15px; /* Marge entre les lignes */
+    }
+    td {
+        text-align: right; /* Aligne le texte à droite */
+        padding-left: 50%; /* Rembourrage à gauche pour décaler le texte */
+        position: relative; /* Position relative pour le pseudo-élément */
+    }
+    td:before {
+        position: absolute; /* Positionnement absolu pour l'étiquette */
+        left: 10px; /* Positionnement du côté gauche */
+        width: 45%; /* Largeur de la pseudo-élément */
+        padding-right: 10px; /* Rembourrage à droite */
+        white-space: nowrap; /* Empêche la coupure de ligne */
+    }
 }
