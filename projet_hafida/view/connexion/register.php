@@ -31,7 +31,7 @@
      <!-- Case à cocher pour le consentement à la politique de confidentialité -->
     <label for="consentement" class="consentement-label">
         <input type="checkbox" name="consentement" id="consentement"  required>
-        <a href="index.php?ctrl=location&action=mentionsLegales"> J'accepte que mes informations personnelles soient utilisées 
+        <a href="index.php?ctrl=location&action=politiqueConfidentialite"> J'accepte que mes informations personnelles soient utilisées 
     conformément à la politique de confidentialité.</a>
     </label><br>
 
