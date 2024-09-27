@@ -1,6 +1,7 @@
+
 .chat-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin-top: 20px; /* Ajoute une marge de 20px au-dessus de l'image */
+    width: 100%; /* Définit la largeur de l'image à 100% de son conteneur parent */
+    height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement tout en respectant le ratio d'aspect */
+    object-fit: contain; /* Réduit l'image pour qu'elle s'adapte dans son conteneur sans être rognée, en maintenant son aspect */
+    margin-top: 20px; /* Ajoute une marge de 20px au-dessus de l'image pour créer un espace entre l'image et les éléments situés au-dessus */
 }
