@@ -109,7 +109,7 @@
     <div class="footer-links">
         <p>&copy; <?= date_create("now")->format("Y") ?> - 
             <a href="index.php?ctrl=location&action=reglement">Règlement de notre site</a> - 
-            <a href="index.php?ctrl=location&action=mentionsLegales">Mentions légales</a> - 
+            <a href="index.php?ctrl=location&action=politiqueConfidentialite">Politique de Confidentialité</a> - 
             <a href="index.php?ctrl=location&action=FAQ">FAQ</a> - 
             <a href="index.php?ctrl=location&action=contact">Nous contacter</a>
         </p>

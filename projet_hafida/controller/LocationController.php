@@ -361,9 +361,9 @@ public function index($id = null) {
 
 //FONCTION MENTIONS LEGALES
 
-    public function MentionsLegales() {
+    public function politiqueConfidentialite() {
         return [
-            "view" => VIEW_DIR . "location/mentionsLegales.php",
+            "view" => VIEW_DIR . "location/politiqueConfidentialite.php",
             "meta_description" => "Mentions Légales",
         ];
     }
