@@ -17,13 +17,13 @@
 }
 
 .consentement-label {
-    display: flex;                /* Utiliser flex pour aligner horizontalement */
-    align-items: baseline;       
-    margin: 10px 0;             /* Marge autour pour l'espacement général */
+    display: flex; /* Utilisation de flex pour aligner horizontalement */
+    align-items: baseline; /* Aligne les éléments sur leur ligne de base */       
+    margin: 10px 0; /* Marge autour pour l'espacement général */
 }
 
 .consentement-label input[type="checkbox"] {
-    margin-right: 10px;         /* Espace entre la checkbox et le texte */
+    margin-right: 10px; /* Espace entre la checkbox et le texte */
 }
 
 .password-hint {
