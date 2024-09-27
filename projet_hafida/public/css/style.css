@@ -1,8 +1,8 @@
 /* Styles généraux pour les écrans de toutes les tailles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Supprime la marge par défaut */
+  padding: 0; /* Supprime le padding par défaut */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur et la hauteur totales */
 }
 
 html, body {
@@ -10,8 +10,8 @@ html, body {
 }
 
 #wrapper {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Utilise un modèle flexbox */
+  flex-direction: column; /* Organise les éléments en colonne */
   min-height: 100vh; /* le wrapper prend au moins 100% de la hauteur de la fenêtre */
 }
 
@@ -28,7 +28,7 @@ body {
 
 a {
   color: #330802; /* couleur du lien */
-  text-decoration: none;
+  text-decoration: none; /* Supprime la décoration de texte par défaut (soulignement) */
   transition: color 0.3s ease; /* Animation pour le changement de couleur */
 }
 
@@ -39,19 +39,19 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant', serif; /* police Cormorant pour tous les titres */
   color: #6B2C1A; /* couleur de titre sombre */
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Espacement en bas des titres */
 }
 
 h1 {
-  margin-top: 10px;
-  text-align: center;
+  margin-top: 10px; /* Espacement en haut du titre h1 */
+  text-align: center; /* Centre le texte du titre */
 }
 
 h2 {
   font-size: 30px; /* Assurez-vous que tous les h2 sont à la même taille */
 }
 h3{
-  font-size: 28px;
+  font-size: 28px; /* Taille de police pour h3 */
 }
 
 /* Header */
@@ -62,17 +62,17 @@ header {
 }
 
 /* Navbar */
-/* Global navigation bar styles */
+/* Styles de la barre de navigation */
 nav {
-  display: flex;
+  display: flex; /* Utilise flexbox pour l'agencement */
   justify-content: space-between; /* espace entre le logo et les liens */
   align-items: center; /* Centre verticalement les éléments */
   padding: 15px; /* Ajout d'un espacement autour */
 }
 
 #nav-left {
-  display: flex;
-  align-items: center;
+  display: flex; /* Aligne les éléments à gauche */
+  align-items: center; /* Assure le bon ratio */
 }
 
 #nav-left img {
@@ -110,20 +110,20 @@ nav {
   margin-left: auto; /* pousse les éléments à droite */
 }
 
+/* Liste de navigation */
 nav ul {
   list-style: none; /* pour enlever les puces */
   display: flex; /* On utilise flexbox pour aligner les éléments */
   flex: 1; /* Permet à l'ul d'occuper tout l'espace disponible */
-  justify-content:space-between;
-  margin: 0;
-  padding: 0;
+  justify-content:space-between; /* Espace uniforme entre les éléments */
+  margin: 0; /* Supprime la marge par défaut */
+  padding: 0; /* Supprime le padding par défaut */
 }
-
 
 
 nav a {
   padding: 12px 10px; /* Ajout de padding pour augmenter la zone cliquable */
-  font-size: 18px;
+  font-size: 18px; /* Taille de police pour les liens */
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
   color: #eeeeee; /* Couleur de texte blanche pour augmenter le contraste */
@@ -152,7 +152,7 @@ nav a:hover {
   margin-right: 20px; /* espace entre le logo et le texte */
 }
 
-/* Contenu */
+/* Styles du contenu principal */
 main {
   width: 100%; /* largeur du conteneur des annonces */
   margin: 0 auto; /* centrage du conteneur */  
@@ -167,9 +167,9 @@ main {
 }
 
 .footer-content {
-  display: flex; /* Utiliser un modèle de flexbox pour un alignement plus facile */
+  display: flex; /* Utilisation d'un modèle de flexbox pour un alignement plus facile */
   justify-content: space-between; /* Espacement uniforme entre les éléments */
-  align-items: center; /* Centrer verticalement les éléments */
+  align-items: center; /* On centre verticalement les éléments */
   flex-wrap: wrap; /* Permet le passage à la ligne sur les petits écrans */
   margin-bottom: 20px; /* Marges au bas pour l'espacement entre les sections */
 }
@@ -181,7 +181,7 @@ main {
 }
 
 .newsletter form{
-  width:300px;
+  width:300px; /* Largeur du formulaire d'inscription à la newsletter */
 }
 .newsletter h4, .social-media h4 {
   font-size: 28px; /* Taille de police plus grande pour les titres */
@@ -192,7 +192,7 @@ main {
 input[type="email"] {
   width: 100%; /* Largeur pleine du champ input */
     max-width: 400px; /* Largeur maximale pour éviter une trop grande largeur */
-    height: 40px;
+    height: 40px; /* Hauteur du champ */
     margin-right: 10px; /* Espacement entre l'input et le bouton */
     border: 1px solid #ddd; /* Bordure claire pour se démarquer */
     border-radius: 5px; /* Coins arrondis */
@@ -205,15 +205,16 @@ input[type="email"]:focus {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Ombre plus profonde au focus */
 }
 
+/* Styles pour le bouton */
 .button-button {
-  background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+  background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de fond */
     color: #fff; /* couleur de texte du bouton */
     padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
     margin: 0 auto; /* Centrer le bouton horizontalement */
      /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
-    border-radius: 5px;    
+    border-radius: 5px; /* Coins arrondis pour le bouton */   
 }
 
 .button-button:hover {
@@ -223,6 +224,7 @@ input[type="email"]:focus {
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
 
+/* Styles pour les icônes sociales */
 .social-media a {
   margin: 0 10px; /* Espacement entre les icônes sociales */
   text-decoration: none; /* Pas de soulignement */
@@ -230,6 +232,7 @@ input[type="email"]:focus {
   font-size: 1.5em; /* Taille des icônes sociales */
 }
 
+/* Styles pour les liens dans le footer */
 .footer-links {
   font-size: 0.9em; /* Taille de police légèrement plus petite pour les liens */
   color: white; /* Couleur de texte des liens */
@@ -246,11 +249,11 @@ input[type="email"]:focus {
 .social-media h4:hover{
   text-decoration: underline; /* pour souligner au survol */
   /* Couleur en rgba : un ton or pâle avec 70% d'opacité */
-  color:rgba(240, 184, 95, 0.7);
+  color:rgba(240, 184, 95, 0.7); /* Couleur dorée en survol */
 }
 
 .social-media a:hover{
-  color:rgba(240, 184, 95, 0.7);
+  color:rgba(240, 184, 95, 0.7); /* Couleur dorée en survol pour les icônes sociales */
 }
 
 
