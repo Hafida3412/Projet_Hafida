@@ -27,7 +27,7 @@ function changeSlide(direction) {
     slides[currentSlide].querySelector('.carousel-image').classList.add('zoom');
 }
 
-// Ajoutez un événement pour que la classe zoom soit ajoutée à l'image de départ
+// On ajoute un événement pour que la classe zoom soit ajoutée à l'image de départ
 document.addEventListener('DOMContentLoaded', function () {
     slides[currentSlide].querySelector('.carousel-image').classList.add('zoom');
 });

@@ -45,10 +45,10 @@
 
 /* Style pour le conteneur des images supplémentaires */
 .images img {
-    width: auto; /* Laissez la largeur s'ajuster automatiquement */
-    height: 200px; /* Définissez une hauteur fixe pour toutes les images */
-    max-height: 200px; /* Optionnel, mais pour assurer la contrainte maximale */
-    object-fit: cover; /* Remplir le conteneur tout en conservant les proportions */
+    width: auto; /* Largeur automatique pour s'adapter au conteneur */
+    height: 200px; /* Hauteur fixée pour toutes les images */
+    max-height: 200px; /* Hauteur maximale pour les images supplémentaires */
+    object-fit: cover; /* Remplit le conteneur tout en gardant les proportions */
 }
 
 /* Style pour le conteneur des images supplémentaires */
@@ -60,38 +60,32 @@
     height: 200px; /* Hauteur fixe pour le conteneur des images */
 }
 
-/* Style pour l'image active dans le carrousel */
-.images img.active {
-    opacity: 1; /* Rendre visible l'image active */
-    transform: scale(1.2); /* Zoomer sur l'image active */
-}
-
 /* Style pour le conteneur du carrousel d'images */
 .carousel {
     position: relative; /* Nécessaire pour positionner les flèches par rapport au carrousel */
-    display: flex; /* Utilisation de Flexbox pour centrer */
+    display: flex; /* Utilisation de Flexbox pour un alignement central du carousel */
     flex-direction: column; /* Aligne les images du carrousel en colonne */
     align-items: center; /* Centre le carrousel horizontalement */
-    width: 100%; /* Prendre 100% de largeur pour centrer */
+    width: 100%; /* Prend 100% de largeur pour centrer */
     max-width: 500px; /* Largeur maximale ajustable pour le carrousel */
     margin: 20px auto; /* Centrer le carrousel verticalement */
-    overflow: hidden;
-    border-radius: 10px;
+    overflow: hidden;  /* Masque tout débordement d'image */
+    border-radius: 10px;  /* Arrondit les coins du carrousel */
 }
 
 /* Style pour chaque diapositive d'image dans le carrousel */
 .image-slide {
-    min-width: 100%; 
-    box-sizing: border-box; 
-    display: flex; /* Assurez-vous d'utiliser flex pour un alignement correct */
+    min-width: 100%; /* Chaque slide remplit au minimum 100% du conteneur */
+    box-sizing: border-box; /* Inclut padding et bordure dans le calcul de la largeur */
+    display: flex; /* Utilisez flex pour l'alignement */
     justify-content: center; /* Centre le contenu des slides */
 }
 
 /* Style pour les images dans le carrousel */
 .carousel-image {
-    width: 100%; /* S'assure que l'image remplit le conteneur */
-    height: auto; /* Assure le respect du rapport d'aspect */
-    max-height: 400px; /* Définir la hauteur maximale pour éviter un débordement trop important */
+    width: 100%; /* Assure que l'image remplit le conteneur */
+    height: auto; /* Respecte le rapport d'aspect de l'image */
+    max-height: 400px; /* Définition de la hauteur maximale pour éviter un débordement trop important */
     object-fit: cover; /* Assure que l'image remplit le conteneur en conservant le rapport d'aspect */
 }
 
@@ -101,30 +95,31 @@
     height: auto; /* Pas de contrainte de hauteur spécifique pour garder l'aspect naturel */
 }
 
-/* Nouvelle classe pour l'effet de zoom */
+/* Classe pour l'effet de zoom */
 .carousel-image.zoom {
-    animation: zoomIn 0.5s ease; /* Applique une animation de zoom */
+    animation: zoomIn 0.5s ease; /* Application d'une animation de zoom */
 }
 
+/* Définition de l'animation de zoom */
 @keyframes zoomIn {
     from {
         transform: scale(0.8); /* Commence légèrement plus petit */
         opacity: 0; /* Débute avec une opacité de 0 */
     }
     to {
-        transform: scale(1); /* Retour à la taille normale */
+        transform: scale(1); /* Atteintla taille normale */
         opacity: 1; /* Opacité normale */
     }
 }
 
 /* Style pour les boutons de navigation (précédent et suivant) */
 .prev, .next {
-    position: absolute;  /* Positionnement absolu pour les placer par-dessus l'image */
-    top: 50%; /* Placer verticalement au milieu */
+    position: absolute;  /* Positionnement absolu pour les placer par-dessus le carousel */
+    top: 50%; /* Alignement vertical au milieu */
     transform: translateY(-50%); /* Ajuste la position pour un centrage parfait verticalement */
-    background-color: rgba(255, 255, 255, 0.7); /* Couleur de fond avec transparence */
+    background-color: rgba(255, 255, 255, 0.7); /* Couleur de fond avec transparence pour les boutons */
     border: none; /* Pas de bordure */
-    cursor: pointer; /* Change le curseur en pointeur sur le survol */
+    cursor: pointer; /* Change le curseur en pointeur lors du survol */
     padding: 10px; /* Espacement interne du bouton */
     z-index: 2; /* Assure que les boutons sont au-dessus d'autres éléments */
     border-radius: 50%; /* Bord arrondi pour les boutons */
@@ -146,8 +141,8 @@
 }
 
 .upload-img-container {
-    width: 100%; /* Ajustez le pourcentage selon vos besoins */
-    margin: 0 auto; /* Pour centrer horizontalement */
+    width: 100%; /* Définit la largeur à 100% pour le conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
     text-align: center; /* Centre le texte à l'intérieur */
 }
 
@@ -197,5 +192,7 @@ button.annonce-info:hover {
     transform: scale(1.05); /* Légère amplification au survol */
     background: #f0b85f; /* Couleur de fond au survol */
     color: #6B2C1A; /* Couleur du texte au survol */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* lorsque l'utilisateur 
+    survole le bouton, la couleur de fond, la couleur du texte et l'ombre portée changeront progressivement 
+    sur une durée de 0,3 seconde,*/
 }
