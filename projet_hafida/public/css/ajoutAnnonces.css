@@ -1,76 +1,82 @@
+/* Style général du formulaire */
 form { 
     background-color: #fff; /* couleur de fond du formulaire */ 
     padding: 20px; /*espacement interne du formulaire */ 
     margin-bottom: 20px; /* espacement en dessous du formulaire */ 
     width: 35%; /* pour limiter la largeur du formulaire à 35% */
-    margin: 0 auto; /* Cela permet de centrer le formulaire horizontalement */
-    border-radius:10px;  
+    margin: 0 auto;  /* centre le formulaire horizontalement */
+    border-radius:10px; /* arrondi des coins du formulaire */ 
 }
 
 /* Styles pour l'alerte */
 .alert {
-    color: #6B2C1A; /* Changer la couleur du texte */
+    color: #6B2C1A; /* couleur du texte de l'alerte */
     margin-top: 20px; /* Espace au-dessus du titre */
-    margin-bottom: 20px; /* Espace en dessous du titre */
+    margin-bottom: 20px; /* espace en dessous de l'alerte */
     background-color: rgba(255, 255, 255, 0.5); /* Fond blanc plus translucide */
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* espacement interne de l'alerte */
+    border-radius: 5px; /* arrondi des coins de l'alerte */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ombre légère autour de l'alerte */
 }
 
-/* Listes */
+/* Styles pour les listes dans l'alerte */
 .alert ul {
     /* Définit le type de puce à utiliser pour les éléments de la liste */
     list-style-type: disc; /* Utilise des cercles pleins comme puces */
     
     /* Ajoute un espacement à gauche de la liste pour aligner les puces */
-    padding-left: 20px; /* Décale le contenu de la liste vers la droite */
+    padding-left: 20px; /* ajoute un espacement à gauche pour aligner les puces */
 }
 
 /* Style pour la classe .container-creation */
 .container-creation {
     /* Ajoute un espacement en bas du conteneur pour éviter que d'autres éléments ne collent à lui */
-    padding-bottom: 20px; /* Crée un espace de 20 pixels sous le conteneur */
+    padding-bottom: 20px; /* ajoute un espace en bas du conteneur */
 }
 
+/* Styles des étiquettes du formulaire */
 form label { 
-    display: block; /* cela permet l'affichage en bloc des labels */ 
+    display: block;/* les labels s'affichent en bloc, occupant toute la largeur */
     margin-top: 10px; /* espacement au-dessus des labels */ 
 }
 
+/* Styles pour les champs de saisie */
 form input, form select, form textarea { 
     width: 100%; /* largeur à 100% des champs de saisie */ 
     padding: 5px; /* espacement interne des champs de saisie */ 
     margin-bottom: 20px; /*espacement en dessous des champs de saisie */ 
-    box-sizing: border-box; /*inclut le padding dans la largeur */ 
-    border-radius: 10px;
+    box-sizing: border-box; /*inclut le padding dans la largeur totale*/ 
+    border-radius: 10px; /* arrondi des coins pour les champs */
 }
 
+/* Style spécifique aux zones de texte */
 form textarea { 
     height: 100px; /* hauteur de 100px pour le champ de texte */ 
 }
 
+/* Conteneur pour centrer les boutons */
 .button-container {
     text-align: center; /* Cela centre le contenu à l'intérieur */
 }
 
+/* Styles pour le bouton de soumission */
 form input[type="submit"] { 
-    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* dégradé pour le fond du bouton */
     color: #fff; /* couleur de texte du bouton */
     font-size: 16px; /* Taille de la police du bouton */
     padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
-    cursor: pointer; /* curseur style pointer au survol */
-    width: 300px; /* ou utilisez un pourcentage comme width: 80%;*/ 
+    cursor: pointer; /* affiche un curseur style pointer au survol */
+    width: 300px; /* largeur fixe du bouton */ 
     margin: 0 auto; /* Centrer le bouton horizontalement */
      /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
-    border-radius: 5px;    
+    border-radius: 5px; /* arrondi des coins du bouton */       
 }
 
+/* Effets au survol pour le bouton de soumission */
 form input[type="submit"]:hover { 
-    transform: scale(1.05); /* Légère amplification au survol */
+    transform: scale(1.05);  /* Léger agrandissement au survol */
     background: #f0b85f; /* Couleur de fond au survol */
     color: #6B2C1A; /* Couleur du texte au survol */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* effet de transition */
 }
