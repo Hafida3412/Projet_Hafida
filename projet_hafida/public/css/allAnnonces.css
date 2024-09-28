@@ -1,66 +1,73 @@
+/* CSS pour la vue allAnnonces */
 
     .bg_allAnnonces{
-        background-image: url(../img/blanc.webp);
-        background-size: cover; /* couvrir tout le conteneur sans déformer l'image */
+        background-image: url(../img/blanc.webp); /* Image de fond à utiliser */
+        background-size: cover; /* Couvre tout le conteneur sans déformer l'image */
     }
-    
+
+/* Style pour la liste d'annonces */
     .annonces-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 20px; /* Espace entre les annonces */
+        display: flex; /* Utilise le modèle flexbox pour la mise en page */
+        flex-wrap: wrap; /* Permet l'emballage des éléments quand l'espace est insuffisant */
+        justify-content: space-around; /* Espace uniforme autour des annonces */
+        gap: 20px; /* Espacement entre les annonces */
     }
 
+/* Style pour chaque annonce */
     .annonce {
-        background-color: #ffffff;
-        border: solid 1px #ccc;
-        border-radius: 5px;
-        padding: 15px;
+        background-color: #ffffff; /* Couleur de fond blanc pour les annonces */
+        border: solid 1px #ccc; /* Bordure grise claire autour des annonces */
+        border-radius: 5px; /* Coins arrondis */
+        padding: 15px;  /* Espace intérieur autour du contenu de l'annonce */
         width: calc(33% - 20px); /* Trois annonces par ligne avec un espace de 20px */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-        transition: transform 0.2s;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre autour des annonces pour un effet de profondeur */
+        transition: transform 0.2s; /* Transition douce pour l'effet de transformation */
     }
 
+/* Effet d'agrandissement lors du survol de l'annonce */
     .annonce:hover {
         transform: scale(1.02); /* Légère augmentation en taille au survol */
     }
-  
+
+/* Conteneur pour les boutons d'administration */
     .button-admin {
-        display: flex;
-        justify-content: space-between;
+        display: flex;  /* Utilise flexbox pour aligner les boutons */
+        justify-content: space-between; /* Espace uniforme entre les boutons */
         align-items: center; /* Aligne les boutons verticalement */
         margin-top: 10px; /* Ajoute un espace au-dessus du conteneur */
     }
     
+/* Style pour les boutons de suppression et d'édition */    
     .btn-delete, .btn-edit {
-        background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+        background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de couleur pour le fond des boutons */
         color: #fff; /* couleur de texte du bouton */
         font-size: 16px; /* Taille de la police du bouton */
-        padding: 10px; /* uniformiser paddings */
+        padding: 10px; /* Uniformisation des espaces intérieurs */
         border: none; /* pas de bordure sur le bouton */
-        cursor: pointer; /* curseur style pointer au survol */
-        width: 120px; /* ou utilisez un pourcentage comme width: 100px;*/
-        border-radius: 5px;  
+        cursor: pointer; /* Change le curseur au survol pour montrer qu'il est cliquable */
+        width: 120px; /* Largeur fixe pour les boutons */
+        border-radius: 5px;  /* Coins arrondis pour les boutons */ 
         margin: 0 5px; /* Espace entre les boutons */
     }
-    
+
+/* Effet d'agrandissement et de changement de couleur au survol des boutons */
     .btn-delete:hover, .btn-edit:hover {
         transform: scale(1.05); /* Légère amplification au survol */
-        background: #f0b85f; /* Couleur de fond au survol */
-        color: #6B2C1A; /* Couleur du texte au survol */
-        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+        background: #f0b85f; /* Changer la couleur de fond au survol */
+        color: #6B2C1A; /* Change la couleur du texte au survol */
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour la transition */
     }
     
-    /* Responsiveness */
+/* Style Responsive */
     @media(max-width: 768px) {
         .annonce {
-            width: calc(50% - 20px); /* Deux annonces par ligne */
+            width: calc(50% - 20px); /* Réduit la largeur à 50% pour deux annonces par ligne sur écrans plus petits */
         }
     }
 
     @media(max-width: 480px) {
         .annonce {
-            width: 100%; /* Une annonce par ligne */
+            width: 100%; /* Une annonce par ligne pour les très petits écrans */
         }
     }
 
