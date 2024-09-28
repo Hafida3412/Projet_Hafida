@@ -1,16 +1,13 @@
 /* CSS de la vue FAQ*/
 
-/* Style pour enlever les puces par défaut */
 ol {
-    list-style: none; /* enlever les puces par défaut */
+    list-style: none; /* Style pour enlever les puces par défaut */
 }
 
-/* Espacement entre les questions */ 
 li {
     margin-bottom: 10px; /* espacement entre les questions */
 }
 
-/* Espacement entre les paragraphes */ 
 p {
     margin-bottom: 10px; /* espacement entre les paragraphes */
 }
