@@ -1,39 +1,33 @@
 
 //MISE EN PLACE D UN CAROUSEL D IMAGES DANS LA VUE DETAILSANNONCE
-let currentSlide = 0; // Variable pour suivre la diapositive actuellement affichée
 
-// Fonction pour changer la diapositive selon la direction (1 pour suivant, -1 pour précédent)
+let currentSlide = 0;
+const slides = document.querySelectorAll('.image-slide');
+
 function changeSlide(direction) {
-    const slides = document.querySelectorAll('.image-slide'); // Sélectionne toutes les diapositives
-    const totalSlides = slides.length; // Nombre total de diapositives
+    // Retire la classe zoom de l'image actuelle
+    slides[currentSlide].querySelector('.carousel-image').classList.remove('zoom');
 
-    // Cacher la diapositive actuelle
-    slides[currentSlide].style.display = 'none';
+    // Calcule l'index du slide suivant
+    currentSlide += direction;
 
-    // Calculer la nouvelle diapositive
-    currentSlide = (currentSlide + direction + totalSlides) % totalSlides; // Met à jour l'indice de la diapositive actuelle
+    // Remet le slide à 0 si on dépasse le nombre total, ou à la fin si on tombe en dessous de 0
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
 
-    // Afficher la nouvelle diapositive
-    slides[currentSlide].style.display = 'block'; // Met à jour l'affichage de la nouvelle diapositive
+    // Affiche le slide actuel
+    slides.forEach((slide, index) => {
+        slide.style.display = (index === currentSlide) ? 'block' : 'none';
+    });
+
+    // Ajoute la classe zoom à l'image actuelle
+    slides[currentSlide].querySelector('.carousel-image').classList.add('zoom');
 }
 
-// Code pour changer automatiquement les diapositives en survolant
-const carousel = document.querySelector('.carousel'); // Sélectionne l'élément carrousel
-carousel.addEventListener('mouseenter', () => {
-    clearInterval(slideInterval); // Arrête le changement automatique de diapositives au survol
+// Ajoutez un événement pour que la classe zoom soit ajoutée à l'image de départ
+document.addEventListener('DOMContentLoaded', function () {
+    slides[currentSlide].querySelector('.carousel-image').classList.add('zoom');
 });
-carousel.addEventListener('mouseleave', () => {
-    startSlideShow(); // Redémarre le diaporama automatique lorsque le curseur sort du carrousel
-});
-
-// Fonction pour démarrer le diaporama
-let slideInterval; // Variable pour stocker l'intervalle de changement de diapositives
-function startSlideShow() {
-    // Démarre un intervalle pour changer la diapositive automatiquement
-    slideInterval = setInterval(() => {
-        changeSlide(1); // Change à la diapositive suivante toutes les 3 secondes
-    }, 3000); // Temps d'affichage d'une diapositive (3000ms = 3 secondes)
-}
-
-// Démarrer le diaporama automatique au chargement de la page
-startSlideShow();

@@ -2,28 +2,28 @@
 
 /* Fond de la vue détails annonce */
 .bg_details{
-    background-image: url(../img/oreille.webp); /* Remplacez par le chemin de votre image */
+    background-image: url(../img/oreille.webp); /* Image d'arrière-plan*/
     background-size: cover; /* Pour couvrir tout le conteneur */
-    padding: 20px; /* Ajouter du padding pour éviter que le contenu touche le bord */
-    display: flex;
-    flex-direction: column; /* Pour empiler les éléments verticalement */
+    padding: 20px;  /* Ajoute de l'espace interne au conteneur */
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    flex-direction: column;  /* Aligne les éléments verticalement */
     align-items: center; /* Centre les éléments horizontalement */
-
 }
 
 /* Style pour le cadre des informations de l'annonce */
 .annonce-info {
-    display: flex;             /* Activer Flexbox */
-    flex-direction: column;    /* Aligner les éléments en colonne */
-    align-items: center;      /* Centrer les éléments horizontalement */
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
     background-color: rgba(255, 255, 255, 0.9); /* couleur de fond du cadre des informations de l'annonce */
     border: 1px solid #ccc; /* bordure autour du cadre */
     padding: 20px; /* espacement interne du cadre */
     width: 50%; /* largeur du cadre */  
-    margin: 15px 0; /* centrer le cadre */
-    border-radius: 10px;   
+    margin: 15px 0; /* centre le cadre */
+    border-radius: 10px; /* Arrondit les coins du cadre */  
     border: 1px solid #ccc; /* bordure autour du cadre de l'annonce */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur
+    code dans l'ordre: décalage horizontal, décalage vertical, flou et couleur */
 }
 
 /* Style pour les paragraphes dans le cadre des informations de l'annonce */
@@ -36,11 +36,11 @@
 .annonce-info img {
     display: block; /* Pour que l'image soit un bloc */
     margin: 0 auto; /* Pour centrer l'image horizontalement */
-    width: 80%; /* Utilisez 100% pour remplir le conteneur */
-    height: auto; /* Hauteur fixe pour uniformiser */
-    max-height: 400px;
-    object-fit: cover; /* Rendre l'image cohérente en taille */
-    border-radius: 5px;
+    width: 80%; /* Largeur de l'image relative au conteneur */
+    height: auto; /* Hauteur automatique pour conserver le ratio */
+    max-height: 400px; /* Hauteur maximale de l'image */
+    object-fit: cover; /* Recadre l'image pour remplir le conteneur */
+    border-radius: 5px;  /* Coins arrondis */
 }
 
 /* Style pour le conteneur des images supplémentaires */
@@ -53,7 +53,7 @@
 
 /* Style pour le conteneur des images supplémentaires */
 .images {
-    display: flex; /* Activez Flexbox */
+    display: flex; /* Utilisation de Flexbox pour afficher les images */
     flex-wrap: wrap; /* Permet aux images de passer à la ligne suivante */
     justify-content: center; /* Centre les images horizontalement */
     overflow: hidden; /* Masque les débordements */
@@ -79,7 +79,6 @@
     border-radius: 10px;
 }
 
-
 /* Style pour chaque diapositive d'image dans le carrousel */
 .image-slide {
     min-width: 100%; 
@@ -100,6 +99,22 @@
 .carousel-images {
     width: 100%; /* Largeur à 100% pour s'adapter au conteneur */
     height: auto; /* Pas de contrainte de hauteur spécifique pour garder l'aspect naturel */
+}
+
+/* Nouvelle classe pour l'effet de zoom */
+.carousel-image.zoom {
+    animation: zoomIn 0.5s ease; /* Applique une animation de zoom */
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8); /* Commence légèrement plus petit */
+        opacity: 0; /* Débute avec une opacité de 0 */
+    }
+    to {
+        transform: scale(1); /* Retour à la taille normale */
+        opacity: 1; /* Opacité normale */
+    }
 }
 
 /* Style pour les boutons de navigation (précédent et suivant) */
