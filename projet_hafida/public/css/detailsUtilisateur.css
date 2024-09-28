@@ -1,24 +1,24 @@
 /* CSS de la vue detailsUtilisateur*/
 
 .details-utilisateur {
-    background-image: url(../img/oreille.webp);
+    background-image: url(../img/oreille.webp); /* Image d'arrière-plan */
     background-size: cover; /* Pour couvrir tout le conteneur */
-    padding-bottom:10px;
+    padding-bottom:10px; /* Espace en bas du conteneur */
 }
 
 .details-utilisateur h1 {
-    font-size: 30px; /* Augmenter la taille de la police */
-    color: #6B2C1A; /* Changer la couleur du texte */
-    text-align: center; /* Centrer le texte */
+    font-size: 30px; /* Taille de la police */
+    color: #6B2C1A; /* Couleur du texte */
+    text-align: center; /* Centre le texte */
     margin-top: 20px; /* Espace au-dessus du titre */
     margin-bottom: 20px; /* Espace en dessous du titre */
     background-color: rgba(255, 255, 255, 0.5); /* Fond blanc plus translucide */
     border-radius: 8px; /* Coins arrondis */
     padding: 10px; /* Espacement intérieur */
-    width: 50%; /* Définir la largeur du titre */
-    margin-left: auto; /* Centrer horizontalement */
-    margin-right: auto; /* Centrer horizontalement */
-    backdrop-filter: blur(5px); /* Ajoute un flou en arrière-plan */
+    width: 50%; /* Définit la largeur du titre */
+    margin-left: auto; /* Centre le titre horizontalement */
+    margin-right: auto; /* Centre le titre horizontalement */
+    backdrop-filter: blur(5px); /* Ajout d'un flou en arrière-plan */
 }
 
 /* Style de la section d'informations sur l'utilisateur */
@@ -29,44 +29,45 @@
     width: 60%;  /* Largeur de 60% de la largeur de son conteneur */ 
     margin: 10px auto; /*Marge de 10 pixels de tous les côtés et centré horizontalment*/
     vertical-align: top; /*Alignement vertical en haut */ 
-    border-radius: 10px;
+    border-radius: 10px; /* Coins arrondis de la section */
 }
 
 /* Style des paragraphes*/
 .utilisateur-info p {
     font-size: 18px;  /*Taille de police*/
-    line-height: 1.5;  /* Hauteur de ligne de 1.5 */
-    margin-bottom: 10px; /*Marge en bas*/
+    line-height: 1.5;  /* Hauteur de ligne de 1.5 pour aérer le texte */
+    margin-bottom: 10px; /*Marge en bas des paragraphes*/
 }
 
 /* Style de la section des réservations*/ 
 .reservations {
-    background-color: #fff; 
-    border: 1px solid #ccc; 
-    padding: 10px; 
-    width: 60%; 
-    margin: 10px auto; /* Ajout de la propriété pour centrer horizontalement */
-    border-radius: 10px;
+    background-color: #fff; /* Fond de couleur blanche pour les réservations */
+    border: 1px solid #ccc;  /* Bordure grise */
+    padding: 10px; /* Espacement intérieur de 10 pixels */
+    width: 60%; /* Largeur de 60% de son conteneur */
+    margin: 10px auto; /* Marge de 10 pixels et centré horizontalement */
+    border-radius: 10px; /* Coins arrondis de la section */
 }
 
 /* Style des paragraphes dans la section des réservations */
 .reservations p {
-    font-size: 18px; 
-    line-height: 1.5; 
-    margin-bottom: 10px; 
+    font-size: 18px; /* Taille de police pour les paragraphes */
+    line-height: 1.5; /* Hauteur de ligne pour une meilleure lisibilité */
+    margin-bottom: 10px; /* Marge en bas des paragraphes */
 }
 
 /* Style des boutons dans la section des réservations */ 
 .reservations a button {
-    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f);  /* Dégradé de couleur pour le bouton */
     color: #fff; /* couleur de texte du bouton */
     padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
-    width: 200px; /* ou utilisez un pourcentage comme width: 80%;*/ 
-    margin: 0 auto; /* Centrer le bouton horizontalement */
-     /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
-    border-radius: 5px;    
+    width: 200px; /* /* Largeur du bouton */
+    margin: 0 auto; /* Centre le bouton horizontalement */
+     /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px 
+     entre le bouton et le contenu */
+    border-radius: 5px; /* Coins arrondis du bouton */   
 }
 
 /* Style du survol des boutons dans la section des réservations */
@@ -78,21 +79,21 @@
 }
 
 .create-logement {
-    margin-top: 20px; 
+    margin-top: 20px; /* Espace en haut pour créer un logement */
 }
 
 /* Style du bouton de réservation, du bouton "créer un logement" et du bouton "voir mes logements */ 
 .btn-reserver{
-    background: linear-gradient(90deg, #6B2C1A, #f0b85f); 
-    color: #fff; /* couleur de texte du bouton */
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de couleur pour le bouton */
+    color: #fff; /* Couleur du texte du bouton */
     font-size: 16px; /* Taille de la police du bouton */
     padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* curseur style pointer au survol */
-    width: 200px; /* ou utilisez un pourcentage comme width: 80%;*/ 
-    margin: 0 auto; /* Centrer le bouton horizontalement */
+    width: 200px; /* Largeur fixe du bouton */
+    margin: 0 auto; /* Centre le bouton horizontalement */
      /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px entre le bouton et le contenu */
-    border-radius: 5px;    
+    border-radius: 5px; /* Coins arrondis du bouton */    
 }
 
 /* Style du survol du bouton de réservation, du bouton "créer un logement" et du bouton "voir mes logements*/
