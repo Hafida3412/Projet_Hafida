@@ -234,11 +234,17 @@ public function forgotPassword() {
         // On filtre l'email
         $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
 
+        // Vérifie si une adresse email est fournie
         if ($email) {
+            // Crée une instance de UtilisateurManager pour gérer les utilisateurs
             $userManager = new UtilisateurManager();
-            $utilisateur = $userManager->checkUserExists($email);//On vérifie si l'utilisateur existe
+            //Vérifie si l'utilisateur associé à l'email existe dans la base de données
+            // La méthode checkUserExists retourne les informations de l'utilisateur si trouvé
+            $utilisateur = $userManager->checkUserExists($email);
 
-            if ($utilisateur) {
+            if ($utilisateur) {// Vérifie si la variable $utilisateur n'est pas vide ou nulle
+                // Cela permet de s'assurer qu'il y a effectivement un utilisateur à traiter.
+            
                 // On stocke l'ID utilisateur dans la session pour le réinitialiser plus tard
                 Session::setUtilisateur($utilisateur);
 
