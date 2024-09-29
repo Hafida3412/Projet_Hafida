@@ -24,8 +24,10 @@ public function listUtilisateurs() {
         exit;
     }
 
-    // On récupère tous les utilisateurs
+    // On crée une instance de la classe UtilisateurManager pour gérer les opérations sur les utilisateurs
     $utilisateurManager = new UtilisateurManager();
+    // On appelle la méthode findAll() pour récupérer tous les utilisateurs de la base de données
+    // Cette méthode retourne un tableau contenant tous les utilisateurs
     $utilisateurs = $utilisateurManager->findAll();
 
     // On retourne la vue et les données
@@ -49,8 +51,9 @@ public function AllAnnonces() {
         exit;
     }
 
-    // On récupère toutes les annonces
+    // On crée une instance de la classe AnnonceManager qui gère les annonces
     $annonceManager = new AnnonceManager();
+    // On récupère toutes les annonces en appelant la méthode findAll() de AnnonceManager
     $annonces = $annonceManager->findAll();
 
     return [
@@ -81,8 +84,10 @@ public function supprimerUtilisateur() {
         $utilisateurManager = new UtilisateurManager();
         
         // Suppression des réservations associées
-        $reserverManager = new ReserverManager(); // Ajoutez cette ligne pour le nouvel objet ReservationManager
-        $reserverManager->deleteByUserId($utilisateurId); // Ajoutez cette méthode à ReservationManager
+        // Instanciation de la classe ReserverManager qui gère les réservations
+        $reserverManager = new ReserverManager(); 
+        // Appel de la méthode deleteByUserId pour supprimer toutes les réservations associées à l'utilisateur spécifié par $utilisateurId
+        $reserverManager->deleteByUserId($utilisateurId); 
         
         // Suppression de l'utilisateur
         if ($utilisateurManager->delete($utilisateurId)) {
@@ -111,10 +116,14 @@ public function editAnnonce() {
         exit;
     }
 
-    // On vérifie si l'id est fourni
+    // Vérifie si le paramètre 'id' existe dans la requête GET
     if (isset($_GET['id'])) {
+        // Récupère l'identifiant de l'annonce depuis la requête GET
         $annonceId = $_GET['id'];
+         // Crée une instance de la classe AnnonceManager pour gérer les annonces
         $annonceManager = new AnnonceManager();
+        // Utilise la méthode findOneById pour trouver une annonce par son identifiant
+        // et stocke le résultat dans la variable $annonce
         $annonce = $annonceManager->findOneById($annonceId);
         
         // Si l'annonce n'existe pas, redirection
