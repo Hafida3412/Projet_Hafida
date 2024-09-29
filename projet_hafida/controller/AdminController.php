@@ -89,7 +89,7 @@ public function supprimerUtilisateur() {
         // Appel de la méthode deleteByUserId pour supprimer toutes les réservations associées à l'utilisateur spécifié par $utilisateurId
         $reserverManager->deleteByUserId($utilisateurId); 
         
-        // Suppression de l'utilisateur
+        // On essaye de supprimer l'utilisateur en utilisant l'identifiant fourni.
         if ($utilisateurManager->delete($utilisateurId)) {
             Session::addFlash('success', 'L\'utilisateur a été supprimé avec succès.');
         } else {
@@ -143,7 +143,7 @@ public function editAnnonce() {
                 'estValide' => $_POST['estValide'] ? 1 : 0 
             ];
 
-            // On appelle la méthode de la mise à jour 
+            // Tente de mettre à jour l'annonce avec l'ID spécifié en utilisant les nouvelles données fournies.
             if ($annonceManager->update($annonceId, $updatedData)) {
                 Session::addFlash('success', 'Annonce mise à jour avec succès.');
                 header('Location: index.php?ctrl=admin&action=AllAnnonces');
