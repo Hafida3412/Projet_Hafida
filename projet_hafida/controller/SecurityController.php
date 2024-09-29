@@ -142,11 +142,16 @@ class SecurityController extends AbstractController{
     
 // AFFICHER LE COMPTE D'UN UTILISATEUR CONNECTÉ
     public function monCompte(){
+        // On vérifie si un utilisateur est connecté en utilisant la session
         if(Session::getUtilisateur()) {
+            // Récupèration de l'identifiant de l'utilisateur connecté
             $id_utilisateur = Session::getUtilisateur()->getId();
+            // Création d'une instance du manager des utilisateurs
             $utilisateurManager = new UtilisateurManager();
-            $utilisateur = $utilisateurManager->findOneById($id_utilisateur);//On récupère l'utilisateur
+            // Récupère les informations de l'utilisateur à partir de son ID
+            $utilisateur = $utilisateurManager->findOneById($id_utilisateur);
         } else {
+            // Si aucun utilisateur n'est connecté, redirection vers la page de connexion
             $this->redirectTo("connexion", "login.php");
         }
         //Appel de la méthode pour récupérer les réservations de l'utilisateur connecté.
