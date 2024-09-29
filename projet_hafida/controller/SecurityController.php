@@ -271,10 +271,13 @@ public function forgotPassword() {
 public function resetPassword() {
     $utilisateur = Session::getUtilisateur(); // On récupère l'utilisateur en session
 
+    // Vérifie si la variable $utilisateur est vide ou nulle
     if (!$utilisateur) {
+        // Si l'utilisateur n'est pas connecté, on ajoute un message d'erreur à la session
         Session::addFlash("error", "Aucun utilisateur connecté.");
+        // Redirige l'utilisateur vers la page de connexion
         header("Location: index.php?ctrl=security&action=login");
-        exit;
+        exit; // Termine le script afin d'éviter toute exécution de code supplémentaire
     }
 
     if (isset($_POST["submitResetPassword"])) {
