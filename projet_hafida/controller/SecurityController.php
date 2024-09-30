@@ -23,7 +23,8 @@ class SecurityController extends AbstractController{
              $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
             // Définition d'une regex pour le mot de passe
-             $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/"; // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
+            // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
+             $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/"; 
 
         // On vérifie la validité des filtres
         if ($pseudo && $email && $pass1 && $pass2) {
@@ -74,7 +75,6 @@ class SecurityController extends AbstractController{
 
 //MISE EN PLACE DE LA FONCTION SE CONNECTER
 /*Affiche la vue du formulaire de connexion et gère l'authentification*/
-
     public function login() {
         if (isset($_POST["submitLogin"])) {
             // PROTECTION XSS (=FILTRES)
