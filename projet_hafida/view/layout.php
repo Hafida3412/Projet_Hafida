@@ -3,7 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Chez Mon Chat est un site de location de logements pour les amoureux des chats.">
+        
+        <meta name="description" content="Chez Mon Chat : le site idéal pour les propriétaires de chats et 
+        les amoureux des animaux. Louez un logement à tarif réduit tout en prenant soin des félins pendant 
+        vos vacances. Profitez d'un séjour économique tout en offrant câlins et attention aux chats dans 
+        leur environnement familier." />
+
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
