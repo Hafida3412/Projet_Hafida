@@ -3,25 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
+         <!-- Description du site pour le SEO -->
         <meta name="description" content="Chez Mon Chat : le site idéal pour les propriétaires de chats et 
         les amoureux des animaux. Louez un logement à tarif réduit tout en prenant soin des félins pendant 
         vos vacances. Profitez d'un séjour économique tout en offrant câlins et attention aux chats dans 
         leur environnement familier." />
 
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Préconnections pour améliorer la performance du chargement des polices -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+        
+         <!-- Liens pour les polices Google -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">        
-        <link rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+       
+         <!-- Liens vers les bibliothèques Font Awesome pour les icônes -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://cdn.tiny.cloud/1/zg3mwraazn1b2ezih16je1tc6z7gwp5yd4pod06ae5uai8pa/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+        
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/style.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/home.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/login.css">
@@ -38,25 +45,26 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/faq.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/responsive.css">
 
-        <title>Chez Mon Chat</title>
+        <title>Chez Mon Chat</title><!-- Titre de la page affiché dans l'onglet du navigateur -->
     </head>
     <body>
         <div id="wrapper"> 
             <div id="mainpage">
-                <!-- c'est ici que les messages (erreur ou succès) s'affichent-->
+                 <!-- Section pour afficher les messages d'erreur ou de succès à l'utilisateur -->
                 <h3 class="message" style="color: red"><?= App\Session::getFlash("error") ?></h3>
                 <h3 class="message" style="color: green"><?= App\Session::getFlash("success") ?></h3>
                 <header>
                     <nav>
                     <div id="nav-left" class="full-width">
                     <a href="index.php?ctrl=home&action=view">
+                <!-- Logo du site -->
                 <img src="public\img\Logo_gold-removebg-preview (1).webp" alt="Logo">
             </a>
             </div>
             <div id="nav-right">
                             <ul class="nav-list">
                                 <?php
-                                // Si l'utilisateur est connecté
+                                // Vérification si l'utilisateur est connecté
                                 if (App\Session::getUtilisateur()) {
                                     // Vérifiez si l'utilisateur est un administrateur
                                     if (App\Session::isAdmin()) {
