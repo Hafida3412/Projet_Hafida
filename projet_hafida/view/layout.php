@@ -87,6 +87,7 @@
                                         <?php
                                     }
                                 } else {
+                                     // Affichage des liens de connexion et d'inscription si l'utilisateur n'est pas connecté
                                     ?><div class="nav-right-connect">
                                     <li><a href="index.php?ctrl=security&action=login">Connexion</a></li>
                                     <li><a href="index.php?ctrl=security&action=register">Inscription</a></li>
@@ -99,7 +100,7 @@
             </header>
                 
                 <main id="forum">
-                    <?= $page ?>
+                    <?= $page ?> <!-- Contenu principal du site -->
                 </main>
             </div>
             <footer class="footer">
@@ -136,6 +137,7 @@
         </script>
         <script>
             $(document).ready(function(){
+                // Animation pour afficher et masquer les messages
                 $(".message").each(function(){
                     if($(this).text().length > 0){
                         $(this).slideDown(500, function(){
@@ -143,9 +145,11 @@
                         })
                     }
                 })
+                // Confirmation avant suppression
                 $(".delete-btn").on("click", function(){
                     return confirm("Etes-vous sûr de vouloir supprimer?")
                 })
+                 // Initialisation de l'éditeur TinyMCE
                 tinymce.init({
                     selector: '.post',
                     menubar: false,
