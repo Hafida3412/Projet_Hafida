@@ -29,9 +29,15 @@ public function findReservationsByUser($id_utilisateur){
 }
 
 public function deleteByUserId($userId) {
+    // Préparation de la requête SQL pour supprimer des enregistrements de la table spécifiée.
+    // On utilise une clause WHERE pour supprimer uniquement les enregistrements correspondant à l'identifiant de l'utilisateur.
     $sql = "DELETE FROM ".$this->tableName."
             WHERE utilisateur_id = :userId";
 
+    // Appel de la méthode DAO::delete pour exécuter la requête SQL.
+    // On passe la requête $sql et un tableau associatif contenant la valeur de :userId.
+    // Cette méthode exécutera la requête préparée en sécurisant les paramètres pour éviter les injections SQL.
     return DAO::delete($sql, ['userId' => $userId]);
 }
+
 }
