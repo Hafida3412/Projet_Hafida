@@ -21,9 +21,12 @@ class AvisManager extends Manager{
                 WHERE a.logement_id = :id
                 ORDER BY dateAvis DESC";
 
-        return $this->getMultipleResults(
-            DAO::select($sql, ['id' => $id]), 
-            $this->className
-        );
+        // Appel de la méthode getMultipleResults pour récupérer plusieurs résultats
+    return $this->getMultipleResults(
+    // Exécution d'une requête SQL via la méthode select de la classe DAO
+    DAO::select($sql, ['id' => $id]), 
+    // Spécification de la classe à utiliser pour mapper les résultats
+    $this->className
+);
     }
 }
