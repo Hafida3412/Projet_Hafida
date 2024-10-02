@@ -409,7 +409,7 @@ public function index($id = null) {
     
             // Liste des extensions autorisées pour le téléchargement
             $extensionsAutorisees = ['jpg', 'jpeg', 'gif', 'png', 'webp'];
-            $tailleMax = 4000000; // // Taille maximale en bytes (4 Mo)
+            $tailleMax = 4000000; // // Taille maximale en bytes (4 MB)
     
             // Vérification des conditions : extension autorisée, taille acceptable, et pas d'erreur
             if (in_array($extension, $extensionsAutorisees) && $size <= $tailleMax && $error == 0) {
