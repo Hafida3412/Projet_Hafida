@@ -189,22 +189,6 @@ main {
   color: white; /* Couleur dorée, en harmonie avec votre thème */
 }
 
-input[type="email"] {
-  width: 100%; /* Largeur pleine du champ input */
-    max-width: 400px; /* Largeur maximale pour éviter une trop grande largeur */
-    height: 40px; /* Hauteur du champ */
-    margin-right: 10px; /* Espacement entre l'input et le bouton */
-    border: 1px solid #ddd; /* Bordure claire pour se démarquer */
-    border-radius: 5px; /* Coins arrondis */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Ombre moderne */
-    transition: box-shadow 0.3s ease; /* Transition fluide pour l’ombre */
-}
-
-input[type="email"]:focus {
-    outline: none; /* Supprime le contour par défaut */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Ombre plus profonde au focus */
-}
-
 /* Styles pour le bouton */
 .button-button {
   background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de fond */
