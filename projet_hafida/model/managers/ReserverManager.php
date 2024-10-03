@@ -7,13 +7,13 @@ use Model\Managers\AnnonceManager;
 
 
 class ReserverManager extends Manager{
-
     // on indique la classe POO et la table correspondante en BDD pour le manager concerné
     protected $className = "Model\Entities\Reserver";
     protected $tableName = "reserver";
 
     public function __construct(){
-        parent::connect();
+        parent::connect();/*appelle la méthode connect() de la classe parente pour établir une 
+    connexion à la base de données */    
     }
 
 //Méthode pour récupérer les réservations pour chaque utilisateur
