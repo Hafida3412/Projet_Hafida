@@ -15,8 +15,7 @@ class ReservationsController extends AbstractController implements ControllerInt
          if (!Session::getUtilisateur()) {
              // Redirection vers la page de connexion si l'utilisateur n'est pas connecté 
              $this->redirectTo("connexion", "login"); return; }
-
- 
+             
         // On récupère l'ID de l'annonce via GET
             $annonceId = filter_input(INPUT_GET, 'annonceId', FILTER_VALIDATE_INT);
         // var_dump($annonceId); die;

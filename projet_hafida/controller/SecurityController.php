@@ -21,7 +21,15 @@ class SecurityController extends AbstractController{
              $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
              $pass1 = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    
+             $consentement = isset($_POST['consentement']); // On vérifie si la case à cocher a été cochée
+
+        // On vérifie que le consentement est donné
+        if (!$consentement) {
+            Session::addFlash("error", "Vous devez accepter la politique de confidentialité.");
+            header("Location: index.php?ctrl=security&action=register");
+            exit;
+        }
+
             // Définition d'une regex pour le mot de passe
             // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
              $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/"; 
