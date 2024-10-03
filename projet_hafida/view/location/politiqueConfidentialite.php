@@ -35,7 +35,7 @@ $hebergeur = "[Nom de l'hébergeur]";
 <p>Nous collectons les données personnelles que vous nous fournissez lors de votre inscription sur notre site, notamment votre nom, prénom et adresse email.</p>
 
 <h2>2. Finalités du traitement des données</h2>
-<p>Les données collectées ont pour finalité de vous permettre de créer un compte sur notre site et de bénéficier des services que nous offrons. Elles peuvent également être utilisées pour vous envoyer des informations importantes concernant notre service et, si vous le souhaitez, des newsletters.</p>
+<p>Les données collectées ont pour finalité de vous permettre de créer un compte sur notre site et de bénéficier des services que nous offrons.</p>
 
 <h2>3. Durée de conservation des données</h2>
 <p>Vos données personnelles seront conservées pendant une durée maximale de 3 ans à compter de votre dernière interaction avec notre site.</p>
