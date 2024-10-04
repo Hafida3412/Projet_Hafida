@@ -80,7 +80,7 @@ class ReservationsController extends AbstractController implements ControllerInt
             Session::addFlash("success", "Votre réservation a été effectuée avec succès.");
 
         // Redirection vers la confirmation de réservation
-            $this->redirectTo("location", "confirmation");
+            $this->redirectTo("reservations", "confirmation");
             return;
     }
 }
