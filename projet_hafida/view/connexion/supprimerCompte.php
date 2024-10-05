@@ -18,4 +18,4 @@ use App\Session;
     <input type="submit" name="confirmDeletion" value="Confirmer la suppression">
 </form>
 
-<p><a href="index.php?ctrl=security&action=monCompte">Retour à mon compte</a></p>
+<p><a href="index.php?ctrl=security&action=monCompte"><button class="btn-returnCount">Retour à mon compte</button></a></p>

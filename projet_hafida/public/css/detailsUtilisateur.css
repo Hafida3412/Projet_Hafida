@@ -39,7 +39,7 @@
     margin-bottom: 10px; /*Marge en bas des paragraphes*/
 }
 
-.btn-deleteCount{
+.btn-deleteCount, .btn-returnCount{
     background: linear-gradient(90deg, #6B2C1A, #f0b85f);  /* Dégradé de couleur pour le bouton */
     color: #fff; /* couleur de texte du bouton */
     font-size: 16px;
@@ -53,7 +53,8 @@
     border-radius: 5px; /* Coins arrondis du bouton */     
 }
 
-.btn-deleteCount:hover{
+.btn-deleteCount:hover,
+.btn-returnCount:hover{
     transform: scale(1.05); /* Légère amplification au survol/ L'élt est agrandi de 5%*/
     background: #f0b85f; /* Couleur de fond au survol */
     color: #6B2C1A; /* Couleur du texte au survol */
