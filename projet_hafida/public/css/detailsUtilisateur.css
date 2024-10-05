@@ -39,6 +39,28 @@
     margin-bottom: 10px; /*Marge en bas des paragraphes*/
 }
 
+.btn-deleteCount{
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f);  /* Dégradé de couleur pour le bouton */
+    color: #fff; /* couleur de texte du bouton */
+    font-size: 16px;
+    padding: 10px 15px; /* espacement interne du bouton */
+    border: none; /* pas de bordure sur le bouton */
+    cursor: pointer; /* curseur style pointer au survol */
+    width: 200px; /* /* Largeur du bouton */
+    margin: 0 auto; /* Centre le bouton horizontalement */
+     /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px 
+     entre le bouton et le contenu */
+    border-radius: 5px; /* Coins arrondis du bouton */     
+}
+
+.btn-deleteCount:hover{
+    transform: scale(1.05); /* Légère amplification au survol/ L'élt est agrandi de 5%*/
+    background: #f0b85f; /* Couleur de fond au survol */
+    color: #6B2C1A; /* Couleur du texte au survol */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide/
+    L'effet "ease" commence lentement, accélère, puis ralentit à la fin.*/
+}
+
 /* Style de la section des réservations*/ 
 .reservations {
     background-color: #fff; /* Fond de couleur blanche pour les réservations */

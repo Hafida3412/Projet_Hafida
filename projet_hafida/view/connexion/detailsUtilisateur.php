@@ -12,6 +12,8 @@ $reservations = $result["data"]['reservations'];
     <p>Nom: <?= htmlspecialchars($utilisateur->getNom()) ?></p>
     <p>Prénom: <?= htmlspecialchars($utilisateur->getPrenom()) ?></p>
     <p>Rôle: <?= htmlspecialchars($utilisateur->getRole()) ?></p>
+    <!-- Lien vers la suppression du compte -->
+<p><a href="index.php?ctrl=security&action=supprimerCompte"><button class="btn-deleteCount">Supprimer mon compte</button></a></p>
 </div>
 
 <!-- Formulaire de modification des données personnelles -->
