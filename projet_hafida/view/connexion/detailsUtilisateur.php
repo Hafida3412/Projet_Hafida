@@ -76,8 +76,6 @@ if(isset($reservations) && $reservations){
         </a>
     </div>
 
-<!-- Lien vers la suppression du compte -->
-<p><a href="index.php?ctrl=security&action=supprimerCompte">Supprimer mon compte</a></p>
-  
+
    
        

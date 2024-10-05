@@ -78,13 +78,6 @@ class UtilisateurManager extends Manager{
             'id' => $userId
         ]);
     }
-
-    public function delete($id) {
-        $sql = "DELETE FROM " . $this->tableName . "
-                WHERE id_utilisateur = :id";
-        
-        return DAO::delete($sql, ['id' => $id]);
-    }
     
 }
 

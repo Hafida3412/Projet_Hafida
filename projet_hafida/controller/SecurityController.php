@@ -320,40 +320,6 @@ public function resetPassword() {
 }
 
 
-public function supprimerCompte() {
-    // Vérifie si l'utilisateur est connecté
-    $utilisateur = Session::getUtilisateur();
-    
-    if (!$utilisateur) {
-        Session::addFlash('error', 'Vous devez être connecté pour supprimer votre compte.');
-        header('Location: index.php?ctrl=security&action=login');
-        exit;
-    }
-
-    // Si le formulaire de confirmation a été soumis
-    if (isset($_POST['confirmDeletion'])) {
-        $utilisateurManager = new UtilisateurManager();
-        
-        // Suppression de l'utilisateur
-        if ($utilisateurManager->delete($utilisateur->getId())) {
-            Session::addFlash('success', 'Votre compte a été supprimé avec succès.');
-            // Déconnexion l'utilisateur
-            Session::setUtilisateur(null); 
-            header('Location: index.php');
-            exit;
-        } else {
-            Session::addFlash('error', 'Erreur lors de la suppression de votre compte.');
-            header('Location: index.php?ctrl=security&action=monCompte');
-            exit;
-        }
-    }
-
-    return [
-        "view" => VIEW_DIR . "connexion/supprimerCompte.php", // Créez ce fichier pour gérer la confirmation.
-        "meta_description" => "Confirmation de la suppression du compte"
-    ];
-}
-
 }
 
     
