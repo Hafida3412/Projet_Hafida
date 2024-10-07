@@ -59,13 +59,16 @@ abstract class DAO{
             echo $e->getMessage();
         }
     }
+
     /**
     * Méthode pour exécuter des requêtes d'update
+    * 
     * @param string $sql Requête SQL d'update
     * @param mixed $params Les paramètres de la requête
-    * @return boolean Etat de l'exécution de la requête
+    * @return boolean Etat de l'exécution de la requête (true ou false)
     */
-    public static function update($sql, $params){
+
+    public static function update($sql, $params){ // Prépare la requête d'update
         try{
             $stmt = self::$bdd->prepare($sql);
             
@@ -74,18 +77,20 @@ abstract class DAO{
             
         }
         catch(\Exception $e){
-            
+            // Affiche le message d'erreur en cas d'exception
             echo $e->getMessage();
         }
     }
     
     /**
     * Méthode pour exécuter des requêtes de suppression
+    * 
     * @param string $sql Requête SQL de suppression
     * @param mixed $params Les paramètres de la requête
-    * @return boolean Etat de l'exécution de la requête
+    * @return boolean Etat de l'exécution de la requête (true ou false)
     */
-    public static function delete($sql, $params){
+
+    public static function delete($sql, $params){ // Prépare la requête de suppression
         try{
             $stmt = self::$bdd->prepare($sql);
             
@@ -94,33 +99,37 @@ abstract class DAO{
             
         }
         catch(\Exception $e){
+             // Affiche la requête et le message d'erreur
             echo $sql;
             echo $e->getMessage();
-            die();
+            die();// Arrête le script en cas d'erreur
         }
     }
 
     /**
      * Cette méthode permet les requêtes de type SELECT
      * 
-     * @param string $sql la chaine de caractère contenant la requête elle-même
-     * @param mixed $params=null les paramètres de la requête
-     * @param bool $multiple=true vrai si le résultat est composé de plusieurs enregistrements (défaut), false si un seul résultat doit être récupéré
+     * @param string $sql La chaîne de caractère contenant la requête elle-même
+     * @param mixed $params=null Les paramètres de la requête
+     * @param bool $multiple=true Vrai si le résultat est composé de plusieurs enregistrements (défaut), false si un seul résultat doit être récupéré
      * 
-     * @return array|null les enregistrements en FETCH_ASSOC ou null si aucun résultat
+     * @return array|null Les enregistrements en FETCH_ASSOC ou null si aucun résultat
      */
-    public static function select($sql, $params = null, bool $multiple = true):?array
+
+    public static function select($sql, $params = null, bool $multiple = true):?array 
     {
         try{
-            $stmt = self::$bdd->prepare($sql);
-            $stmt->execute($params);
+            $stmt = self::$bdd->prepare($sql);// Prépare la requête SELECT
+            $stmt->execute($params);// Exécute la requête
             
+             // Récupère les résultats en fonction de la valeur de $multiple
             $results = ($multiple) ? $stmt->fetchAll() : $stmt->fetch();
 
-            $stmt->closeCursor();
-            return ($results == false) ? null : $results;
+            $stmt->closeCursor();// Libère le curseur de la requête
+            return ($results == false) ? null : $results;// Renvoie null si aucun résultat, sinon les résultats
         }
         catch(\Exception $e){
+            // Affiche le message d'erreur en cas d'exception
             echo $e->getMessage();
         }
     }
