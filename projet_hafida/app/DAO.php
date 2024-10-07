@@ -12,47 +12,50 @@ namespace App;
  */
 abstract class DAO{
 
-    private static $host   = 'mysql:host=127.0.0.1;port=3306';
-    private static $dbname = 'projet_hafida';
-    private static $dbuser = 'root';
-    private static $dbpass = '';
+    // Paramètres de connexion à la base de données
+    private static $host   = 'mysql:host=127.0.0.1;port=3306'; // Hôte et port de la BDD
+    private static $dbname = 'projet_hafida';// Nom de la base de données
+    private static $dbuser = 'root';// Nom d'utilisateur pour se connecter à la BDD
+    private static $dbpass = '';// Mot de passe pour l'utilisateur
 
-    private static $bdd;
+    private static $bdd; // Instance de PDO pour la connexion à la BDD
 
     /**
-     * cette méthode permet de créer l'unique instance de PDO de l'application
+     * Méthode de connexion à la base de données
+     * Cette méthode crée l'unique instance de PDO de l'application
      */
-    /**
-    * Méthode de connexion à la base de données
-    */
     public static function connect(){
-        
+        // Initialisation de l'instance PDO avec les paramètres définis
         self::$bdd = new \PDO(
             self::$host.';dbname='.self::$dbname,
             self::$dbuser,
             self::$dbpass,
             array(
-                \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
-                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+                \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'", // Définit le jeu de caractères à UTF-8
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,// Active le mode d'exception pour les erreurs
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC // Définit le mode de récupération par défaut à FETCH_ASSOC
             )   
         );
     }
+
     /**
     * Méthode pour exécuter des requêtes d'insertion
+    * 
     * @param string $sql Requête SQL d'insertion
-    * @return string L'identifiant de l'enregistrement ajouté en base
+    * @return string L'identifiant de l'enregistrement ajouté en base, ou null en cas d'erreur
     */
+
     public static function insert($sql){
         try{
-            $stmt = self::$bdd->prepare($sql);
-            $stmt->execute();
+            $stmt = self::$bdd->prepare($sql);// Prépare la requête d'insertion
+            $stmt->execute(); // Exécute la requête
             //on renvoie l'id de l'enregistrement qui vient d'être ajouté en base, 
             //pour s'en servir aussitôt dans le controleur
             return self::$bdd->lastInsertId();
             
         }
         catch(\Exception $e){
+            // Affiche le message d'erreur en cas d'exception
             echo $e->getMessage();
         }
     }
