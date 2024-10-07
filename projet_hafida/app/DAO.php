@@ -10,6 +10,7 @@ namespace App;
  * @method static insert() requètes d'insertion dans la BDD
  * @method static select() requètes de sélection
  */
+
 abstract class DAO{
 
     // Paramètres de connexion à la base de données
@@ -24,6 +25,7 @@ abstract class DAO{
      * Méthode de connexion à la base de données
      * Cette méthode crée l'unique instance de PDO de l'application
      */
+    
     public static function connect(){
         // Initialisation de l'instance PDO avec les paramètres définis
         self::$bdd = new \PDO(
