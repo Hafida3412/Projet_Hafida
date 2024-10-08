@@ -101,11 +101,12 @@ class SecurityController extends AbstractController{
             $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/"; 
             // Au moins 12 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre
     
-            // Vérifier que l'email et le mot de passe existent
+            // Vérification que l'email et le mot de passe existent
             if ($email && $password) {
                 // Vérification du mot de passe avec la regex
                 if (!preg_match($passwordRegex, $password)) {
-                    Session::addFlash("error", "Le mot de passe doit contenir au moins 12 caractères, incluant une lettre majuscule, une lettre minuscule et un chiffre.");
+                    Session::addFlash("error", "Le mot de passe doit contenir au moins 12 caractères, 
+                    incluant une lettre majuscule, une lettre minuscule et un chiffre.");
                     return [
                         "view" => VIEW_DIR . "connexion/login.php",
                         "meta_description" => "Formulaire de connexion"
