@@ -18,10 +18,14 @@ class ReserverManager extends Manager{
 
 //Méthode pour récupérer les réservations pour chaque utilisateur
 public function findReservationsByUser($id_utilisateur){
+// Prépare une requête SQL pour sélectionner toutes les colonnes
+// de la table spécifiée dans $this->tableName
+// où la colonne 'utilisateur_id' correspond à l'identifiant de l'utilisateur donné.    
     $sql = "SELECT *
             FROM ".$this->tableName."
             WHERE utilisateur_id = :id";
-
+// Exécute la requête SQL avec l'identifiant de l'utilisateur en tant que paramètre
+// et récupère les résultats multiples sous forme d'objets de la classe spécifiée par $this->className.
     return $this->getMultipleResults(
         DAO::select($sql, ['id' => $id_utilisateur]),
         $this->className
