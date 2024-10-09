@@ -75,9 +75,10 @@ class AnnonceManager extends Manager{
         SET estValide = 1 
         WHERE id_annonce = :id"; // Mise à jour pour rendre l'annonce valide
     return DAO::update($sql, ['id' => $annonceId]); // Exécution de la mise à jour
+
 }
-    //On vérifie si l'annonce est réservée en vérifiant si la colonne "estValide"
-    // est égale à 1 pour l'annonce sélectionnée
+    /*REQUETE POUR VERIFIER SI L ANNONCE EST RESERVEE EN VERIFIANT SI 
+    LA COLONNE "estValide" = 1 POUR L ANNONCE SELECTIONNEE*/
     public function isAnnonceValide($annonceId){
         $sql = "SELECT estValide
                 FROM ".$this->tableName."
