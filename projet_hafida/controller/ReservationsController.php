@@ -61,7 +61,7 @@ class ReservationsController extends AbstractController implements ControllerInt
    
         // Vérification de la validité des données fournies et on s'assure que toutes les données nécessaires sont fournies.
             if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
-        //Enregistrement des informations de la réservation dans la base de données
+        //Enregistrement des informations de la réservation dans la base de données via $erserverManager
              $reserverManager = new ReserverManager();
             /* $result=*/ $reserverManager->add([
             "numeroTelephone" => $numeroTelephone,
@@ -75,7 +75,7 @@ class ReservationsController extends AbstractController implements ControllerInt
             ]);
         //var_dump($result);die;
 
-        // Mise à jour du statut de l'annonce pour indiquer qu'elle est fermée
+        // Mise à jour du statut de l'annonce pour indiquer qu'elle est réservée
             $annonceManager->updateDisponibilite($annonceId);
         // Ajout d'un message de confirmation pour l'utilisateur
             Session::addFlash("success", "Votre réservation a été effectuée avec succès.");
@@ -85,7 +85,8 @@ class ReservationsController extends AbstractController implements ControllerInt
             return;
     }
 }
-        // On retourne la vue de réservation avec les données nécessaires
+        // Si le formulaire n'a pas été soumis, on prépare la vue de réservation, 
+        //qui affichera le formulaire correspondant à l'annonce sélectionnée.
             return [
             "view" => VIEW_DIR . "location/reservation.php",
             "meta_description" => "Formulaire de réservation",
