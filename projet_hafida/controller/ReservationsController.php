@@ -18,7 +18,7 @@ class ReservationsController extends AbstractController implements ControllerInt
              return; 
         }
              
-        // On récupère l'ID de l'annonce via GET
+        // On récupère l'identifiant de l'annonce à partir des paramètres GET de l'URL, qui doit être un nombre entier.
             $annonceId = filter_input(INPUT_GET, 'annonceId', FILTER_VALIDATE_INT);
         // var_dump($annonceId); die;
         
