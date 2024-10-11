@@ -47,7 +47,8 @@ class ReservationsController extends AbstractController implements ControllerInt
             return;
         }
 
-        // Filtrage et nettoyage des données du formulaire
+        // On filtre et nettoie les données fournies par l'utilisateur dans le formulaire de réservation.
+        // Chaque champ est filtré pour éviter des attaques XSS et assurer qu'il soit conforme au type attendu.
             $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
             $nbAdultes = filter_input(INPUT_POST, "nbAdultes", FILTER_VALIDATE_INT);
             $nbEnfants = filter_input(INPUT_POST, "nbEnfants", FILTER_VALIDATE_INT);
