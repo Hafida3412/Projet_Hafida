@@ -33,8 +33,8 @@ class ReservationsController extends AbstractController implements ControllerInt
 
         // Vérification si le formulaire de réservation a été soumis
             if(isset($_POST["submitReservation"])){
-        // Instanciation du manager pour vérifier la validité de l'annonce
-        // On vérifie si l'annonce est déjà réservée
+        // On instancie le gestionnaire d'annonces et 
+        // On vérifie si l'annonce est déjà réservée ($estValide)
             $annonceManager = new AnnonceManager();
             $estValide = $annonceManager->isAnnonceValide($annonceId);
         //var_dump($estValide);die;
