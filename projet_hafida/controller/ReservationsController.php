@@ -59,7 +59,7 @@ class ReservationsController extends AbstractController implements ControllerInt
             $valide = 1; // Réservation validée
         //var_dump($numeroTelephone, $nbAdultes, $nbEnfants, $paiement, $question);die;
    
-        // Vérification de la validité des données fournies
+        // Vérification de la validité des données fournies et on s'assure que toutes les données nécessaires sont fournies.
             if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
         //Enregistrement des informations de la réservation dans la base de données
              $reserverManager = new ReserverManager();
