@@ -15,7 +15,6 @@ namespace App;
 */
 
 abstract class AbstractController{
-
     /*
      La méthode index() est une méthode abstraite qui doit être implémentée par les 
      classes filles.

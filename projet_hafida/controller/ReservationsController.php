@@ -1,15 +1,17 @@
 <?php
 namespace Controller;
 
-use App\Session;
-use App\AbstractController;
-use App\ControllerInterface;
-use Model\Managers\AnnonceManager;
-use Model\Managers\ReserverManager;
+// Importation des classes nécessaires
+use App\Session; // Gestion des sessions utilisateur
+use App\AbstractController;// Classe de base pour le contrôle des routes
+use App\ControllerInterface;// Interface pour garantir que le contrôleur implémente certaines méthodes
+use Model\Managers\AnnonceManager;// Gestion des annonces
+use Model\Managers\ReserverManager;// Gestion des réservations
 
+// Déclaration de la classe ReservationsController qui étend AbstractController et implémente ControllerInterface
 class ReservationsController extends AbstractController implements ControllerInterface{
 
-//FONCTION DE RESERVATION D UNE ANNONCE
+//METHODE DE RESERVATION D UNE ANNONCE
 
     public function reservation(){ // On vérifie que l'utilisateur est connecté
          if (!Session::getUtilisateur()) {
@@ -61,7 +63,7 @@ class ReservationsController extends AbstractController implements ControllerInt
    
         // Vérification de la validité des données fournies et on s'assure que toutes les données nécessaires sont fournies.
             if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
-        //Enregistrement des informations de la réservation dans la base de données via $erserverManager
+        //Enregistrement des informations de la réservation dans la base de données via $ReserverManager
              $reserverManager = new ReserverManager();
             /* $result=*/ $reserverManager->add([
             "numeroTelephone" => $numeroTelephone,

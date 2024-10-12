@@ -20,5 +20,5 @@ namespace App;
 interface ControllerInterface{
 
     // Méthode pour afficher la page d'accueil
-    public function index();
+    public function index();// Méthode exigée par l'interface
 }
