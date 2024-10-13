@@ -34,7 +34,8 @@ class HomeController extends AbstractController implements ControllerInterface {
 
         return [
             "view" => VIEW_DIR."security/users.php", // Chemin de la vue à afficher pour la liste des utilisateurs
-            "meta_description" => "Liste des utilisateurs", // Description pour le SEO
+            "meta" => "Liste des utilisateurs", // Description pour le SEO
+            "title" => "Liste des utilisateurs",
             "data" => [ 
                 "utilisateurs" => $users // Données des utilisateurs à passer à la vue
             ]

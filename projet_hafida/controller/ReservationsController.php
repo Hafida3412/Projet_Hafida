@@ -106,7 +106,7 @@ class ReservationsController extends AbstractController implements ControllerInt
         return [
         "view" => VIEW_DIR . "location/confirmation.php",
         "meta" => "Confirmation de réservation",
-        "title" => "Confirmation d'annonce",
+        "title" => "Confirmation de réservation",
         ];
     }
 }

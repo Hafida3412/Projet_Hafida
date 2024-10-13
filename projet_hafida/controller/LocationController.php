@@ -236,7 +236,8 @@ public function index($id = null) {
         // Retour des informations nécessaires pour la vue de création de logement
             return [
                 "view" => VIEW_DIR."location/creationLogement.php",
-                "meta_description" => "Création d'un logement",
+                "meta" => "Création d'un logement",
+                "title" => "Création d'un logement",
                 "data" => []
             ];
         }
@@ -261,7 +262,8 @@ public function index($id = null) {
 
         return [
             "view" => VIEW_DIR."location/listeLogementsUtilisateur.php",
-            "meta_description" => "Détails de l'utilisateur et de ses logements",
+            "meta" => "Détails de l'utilisateur et de ses logements",
+            "title" => "Mes logements",
             "data" => [ // Données à passer à la vue
                 "logements" => $logements
             ]
@@ -338,7 +340,8 @@ public function index($id = null) {
         // On retourne à la vue pour donner un avis avec les données nécessaires
         return [
             "view" => VIEW_DIR . "location/donnerAvis.php",
-            "meta_description" => "Donner un avis sur une annonce",
+            "meta" => "Donner un avis sur une annonce",
+            "title" => "Donner un avis",
             "data" => [
                 "annonce_id" => $id,
             ]
@@ -350,7 +353,8 @@ public function index($id = null) {
     public function contact() {
         return [
             "view" => VIEW_DIR . "location/contact.php",
-            "meta_description" => "Nous contacter",
+            "meta" => "Nous contacter",
+            "title" => "Nous contacter"
         ];
     }
 
@@ -359,7 +363,8 @@ public function index($id = null) {
     public function FAQ() {
         return [
             "view" => VIEW_DIR . "location/FAQ.php",
-            "meta_description" => "Foire aux Questions",
+            "meta" => "Foire aux Questions",
+            "title" => "FAQ"
         ];
     }
 
@@ -368,7 +373,8 @@ public function index($id = null) {
     public function politiqueConfidentialite() {
         return [
             "view" => VIEW_DIR . "location/politiqueConfidentialite.php",
-            "meta_description" => "Mentions Légales",
+            "meta" => "Mentions Légales",
+            "title" => "Mentions Légales",
         ];
     }
 
@@ -377,7 +383,8 @@ public function index($id = null) {
     public function Reglement() {
         return [
             "view" => VIEW_DIR . "location/reglement.php",
-            "meta_description" => "Règlement de notre site",
+            "meta" => "Règlement de notre site",
+            "title" => "Règlement de notre site",
         ];
     }    
 
