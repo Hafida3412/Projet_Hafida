@@ -101,7 +101,7 @@ class ReservationsController extends AbstractController implements ControllerInt
     ];   
 }
 
- 
+}
 //FONCTION DE CONFIRMATION
 
     public function confirmation(){
