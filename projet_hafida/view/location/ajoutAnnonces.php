@@ -38,7 +38,7 @@
         <input type="date" id="dateFin" name="dateFin" required><br>
 
         <label for="NbChat">Nombre de chat à garder:</label>
-        <input type="number" name="nbChat" required><br>
+        <input type="number" name="nbChat"  min="0" required><br>  <!-- min="0" pour éviter les valeurs négatives -->
 
         <label for="logements">Adresse du logement</label> 
         <select name="logements"><!--boucle pour récupérer les éléments via id_logement dans un menu déroulant-->

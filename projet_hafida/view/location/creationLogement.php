@@ -6,7 +6,7 @@
     <form action="index.php?ctrl=location&action=creationLogement" method="post">
          <!-- Champ pour le nombre de chambres -->
         <label for="nbChambre">Nombre de chambres:</label>
-        <input type="number" name="nbChambre" required><br>
+        <input type="number" name="nbChambre"  min="0" required><br>
 
         <!-- Champ pour l'adresse (rue) -->
         <label for="rue">Rue:</label>

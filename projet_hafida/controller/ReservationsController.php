@@ -34,7 +34,7 @@ class ReservationsController extends AbstractController implements ControllerInt
         //var_dump($annonceId);die;
 
         // Vérification si le formulaire de réservation a été soumis
-            if(isset($_POST["submitReservation"])){ //$_POST contient les données envoyées via la méthode POST à partir du formulaire
+            if(isset($_POST["submitReservation"])){ //$_POST contient les données envoyées via la méthode POST à partir du formulaire de réservation
         // On instancie un gestionnaire d'annonces pour vérifier si l'annonce est déjà réservée ($estValide)
             $annonceManager = new AnnonceManager();//classe qui gère les opérations liées aux annonces
             $estValide = $annonceManager->isAnnonceValide($annonceId);//méthode qui interroge la BDD pour déterminer si l'annonce est déjà réservée

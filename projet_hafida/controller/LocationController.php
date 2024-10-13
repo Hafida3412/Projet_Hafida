@@ -161,12 +161,18 @@ public function index($id = null) {
                         return $this->redirectTo("location", "ajoutAnnonces");
                     }
     
-                    // Vérification que la date de fin est supérieure ou égale à la date de début
-                    if ($dateFin < $dateDebut) {
-                        Session::addFlash("error", "La date de fin doit être postérieure ou égale à la date de début.");
-                        return $this->redirectTo("location", "ajoutAnnonces");
+                // Vérification que la date de fin est supérieure ou égale à la date de début
+                if ($dateFin < $dateDebut) {
+                    Session::addFlash("error", "La date de fin doit être postérieure ou égale à la date de début.");
+                    return $this->redirectTo("location", "ajoutAnnonces");
                     }
                     
+                // Vérification que le nombre de chats est positif
+                if ($nbChat < 0) {
+                    Session::addFlash("error", "Le nombre de chats doit être supérieur ou égal à zéro.");
+                    return $this->redirectTo("location", "ajoutAnnonces");
+                    }
+
                     // On insère l'annonce dans la BDD grâce à la fonction "add" du fichier Manager
                     $annonceManager->add([
                         "dateDebut" => $dateDebut,
@@ -213,6 +219,11 @@ public function index($id = null) {
             $image = filter_input(INPUT_POST, "image", FILTER_VALIDATE_URL);
             $typeLogement = filter_input(INPUT_POST, "typeLogement", FILTER_VALIDATE_INT);
         
+        // Vérification que le nombre de chats est positif
+        if ($nbChambre< 0) {
+            Session::addFlash("error", "Le nombre de chambre doit être supérieur ou égal à zéro.");
+            return $this->redirectTo("location", "ajoutAnnonces");
+            }
         //On vérifie si toutes les données requises sont présentes
             if($nbChambre && $rue && $CP && $ville && $image && $typeLogement) {
                 $logementManager->add([
