@@ -23,8 +23,9 @@ $logements = $result["data"]['logements'];
             echo "<div class='logement-image'><img src='" . htmlspecialchars($logement->getImage()) . "' alt='Image du logement' class='annonce-info-img'></div>";
            
             // Formulaire de suppression du logement
-            echo "<form method='post' action='index.php?ctrl=location&action=supprimerLogement&id=" . $logement->getId() . "'>";
-            echo "<button class='btn-delete' type='submit' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce logement ?')\">Supprimer</button>";
+            // Formulaire de suppression du logement
+            echo "<form method='post' action='index.php?ctrl=location&action=supprimerLogement&id=" . $logement->getId() . "' class='no-background'>"; // Ajout de la classe "no-background"
+            echo "<button class='btn-delete-logement button-button' type='submit' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce logement ?')\">Supprimer mon logement</button>";
             echo "</form>";
             
             echo "</div>"; 

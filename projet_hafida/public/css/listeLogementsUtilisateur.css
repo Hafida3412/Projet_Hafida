@@ -22,5 +22,35 @@
     object-fit: contain; /* ajustement de l'image du logement */
 }
 
+.no-background {
+    background: none; /* Enlève le fond */
+    border: none; /* Enlève les bordures si nécessaire */
+    padding: 0; /* Enlève le padding pour un rendu plus plat */
+    margin: 0; /* Enlève les marges pour un alignement parfait */
+}
+
+.btn-delete-logement{
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de couleur pour le fond */
+        color: #fff; /* couleur de texte  */
+        font-size: 16px; /* Taille de la police  */
+        padding: 10px; /* Uniformisation des espaces intérieurs */
+        border: none; /* pas de bordure */
+        cursor: pointer; /* Change le curseur au survol pour montrer qu'il est cliquable */
+        min-width: 120px; /* Largeur minimale  */
+        border-radius: 5px;  /* Coins arrondis */ 
+        margin: 0 5px; /* Espace */
+        display: flex;  /* Utilise flexbox pour l'alignement  */
+        justify-content: space-between; /* Espace uniforme */
+        align-items: center; /* Aligne le bouton verticalement */
+        margin-top: 10px; /* Ajoute un espace au-dessus du conteneur */
+    }
+
+/* Effet d'agrandissement et de changement de couleur au survol des boutons */
+    .btn-delete-logement:hover{
+        transform: scale(1.05); /* Légère amplification au survol */
+        background: #f0b85f; /* Changer la couleur de fond au survol */
+        color: #6B2C1A; /* Change la couleur du texte au survol */
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour la transition */
+    }
 
 
