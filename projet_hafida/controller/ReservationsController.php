@@ -34,14 +34,13 @@ class ReservationsController extends AbstractController implements ControllerInt
         //var_dump($annonceId);die;
 
         // Vérification si le formulaire de réservation a été soumis
-            if(isset($_POST["submitReservation"])){
-        // On instancie le gestionnaire d'annonces et 
-        // On vérifie si l'annonce est déjà réservée ($estValide)
-            $annonceManager = new AnnonceManager();
-            $estValide = $annonceManager->isAnnonceValide($annonceId);
+            if(isset($_POST["submitReservation"])){ //$_POST contient les données envoyées via la méthode POST à partir du formulaire
+        // On instancie un gestionnaire d'annonces pour vérifier si l'annonce est déjà réservée ($estValide)
+            $annonceManager = new AnnonceManager();//classe qui gère les opérations liées aux annonces
+            $estValide = $annonceManager->isAnnonceValide($annonceId);//méthode qui interroge la BDD pour déterminer si l'annonce est déjà réservée
         //var_dump($estValide);die;
         
-        // Si l'annonce est déjà réservée, afficher un message d'erreur
+        // Si l'annonce est déjà réservée, on affiche un message d'erreur
              if($estValide){
         // Message d'erreur si l'annonce est déjà réservée
              Session::addFlash("error", "Cette annonce est déjà réservée.");
@@ -66,7 +65,7 @@ class ReservationsController extends AbstractController implements ControllerInt
         // Vérification de la validité des données fournies et on s'assure que toutes les données nécessaires sont fournies.
             if ($nom && $prenom && $numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
         //Enregistrement des informations de la réservation dans la base de données via $ReserverManager
-             $reserverManager = new ReserverManager();
+             $reserverManager = new ReserverManager();// classe utilisée pour gérer les opérations liées à la réservation incluant l'ajout de données à la BDD
             /* $result=*/ $reserverManager->add([
             "nom" => $nom,   
             "prenom" => $prenom,
@@ -83,7 +82,7 @@ class ReservationsController extends AbstractController implements ControllerInt
 
         // Mise à jour du statut de l'annonce pour indiquer qu'elle est réservée
             $annonceManager->updateDisponibilite($annonceId);
-        // Ajout d'un message de confirmation pour l'utilisateur
+        // Un message de succès est ajouté à la session
             Session::addFlash("success", "Votre réservation a été effectuée avec succès.");
 
         // Redirection vers la confirmation de réservation
@@ -91,7 +90,7 @@ class ReservationsController extends AbstractController implements ControllerInt
             return;
     }
 }
-        // Si le formulaire n'a pas été soumis, on prépare la vue de réservation, 
+        // Si le formulaire n'a pas été soumis, la méthode prépare la vue de réservation, 
         //qui affichera le formulaire correspondant à l'annonce sélectionnée.
             return [
             "view" => VIEW_DIR . "location/reservation.php",
