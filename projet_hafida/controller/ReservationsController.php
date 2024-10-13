@@ -51,6 +51,8 @@ class ReservationsController extends AbstractController implements ControllerInt
 
         // On filtre et nettoie les données fournies par l'utilisateur dans le formulaire de réservation.
         // Chaque champ est filtré pour éviter des attaques XSS et assurer qu'il soit conforme au type attendu.
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_SPECIAL_CHARS);
+            $prenom= filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_SPECIAL_CHARS);
             $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
             $nbAdultes = filter_input(INPUT_POST, "nbAdultes", FILTER_VALIDATE_INT);
             $nbEnfants = filter_input(INPUT_POST, "nbEnfants", FILTER_VALIDATE_INT);
@@ -62,10 +64,12 @@ class ReservationsController extends AbstractController implements ControllerInt
         //var_dump($numeroTelephone, $nbAdultes, $nbEnfants, $paiement, $question);die;
    
         // Vérification de la validité des données fournies et on s'assure que toutes les données nécessaires sont fournies.
-            if ($numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
+            if ($nom && $prenom && $numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
         //Enregistrement des informations de la réservation dans la base de données via $ReserverManager
              $reserverManager = new ReserverManager();
             /* $result=*/ $reserverManager->add([
+            "nom" => $nom,   
+            "prenom" => $prenom,
             "numeroTelephone" => $numeroTelephone,
             "nbAdultes" => $nbAdultes,
             "nbEnfants" => $nbEnfants,
