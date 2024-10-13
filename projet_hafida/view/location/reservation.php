@@ -22,11 +22,11 @@
 
     <!-- Champ pour le nombre d'adultes -->
     <label for="nbAdultes">Nb d'adultes</label>
-    <input type="number" name="nbAdultes" required><br>
+    <input type="number" name="nbAdultes" min="1" required><br>
 
     <!-- Champ pour le nombre d'enfants -->
     <label for="nbEnfants">Nb d'enfants</label>
-    <input type="number" name="nbEnfants" required><br>
+    <input type="number" name="nbEnfants"  min="0" required><br>
 
     <div class="paiement">
         <!-- Section pour choisir le mode de paiement -->

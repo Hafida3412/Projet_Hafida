@@ -63,7 +63,7 @@ class ReservationsController extends AbstractController implements ControllerInt
         //var_dump($numeroTelephone, $nbAdultes, $nbEnfants, $paiement, $question);die;
    
         // Vérification de la validité des données fournies et on s'assure que toutes les données nécessaires sont fournies.
-            if ($nom && $prenom && $numeroTelephone && $nbAdultes !== false && $nbEnfants !== false && $paiement)  {
+            if ($nom && $prenom && $numeroTelephone && $nbAdultes !== false && $nbAdultes > 0 && $nbEnfants !== false && $paiement)  {
         //Enregistrement des informations de la réservation dans la base de données via $ReserverManager
              $reserverManager = new ReserverManager();// classe utilisée pour gérer les opérations liées à la réservation incluant l'ajout de données à la BDD
             /* $result=*/ $reserverManager->add([
