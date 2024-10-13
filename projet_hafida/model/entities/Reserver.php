@@ -19,6 +19,8 @@ use App\Entity;
 
     // Attributs de la classe représentant les informations de réservation
     private $id; // Identifiant unique de la réservation
+    private $nom;
+    private $prenom;
     private $valide; // Indicateur de la validité de la réservation (true/false)
     private $numeroTelephone; // Numéro de téléphone lié à la réservation
     private $nbAdultes; // Nombre d'adultes pour la réservation
@@ -48,6 +50,29 @@ Il initialise les attributs de la classe en utilisant les données fournies.*/
     public function setId($id) // Définit l'identifiant de la réservation
     {
         $this->id = $id; // Permet le chaînage des méthodes
+
+        return $this;
+    }
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
 
         return $this;
     }
@@ -147,4 +172,5 @@ Il initialise les attributs de la classe en utilisant les données fournies.*/
 
         return $this;
     }
+
 }
