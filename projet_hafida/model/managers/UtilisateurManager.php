@@ -30,7 +30,6 @@ class UtilisateurManager extends Manager{
         );
     }
     
-
     //CREATION DE LA REQUETE UPDATE POUR MODIFIER LES DONNEES PERSONNELLES DE L UTILISATEUR
     public function update($utilisateur) {
         $sql = "UPDATE ".$this->tableName."

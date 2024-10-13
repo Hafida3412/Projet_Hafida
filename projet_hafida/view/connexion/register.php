@@ -16,6 +16,14 @@
     <label for="pseudo">Pseudo</label>
     <input type="text" name="pseudo" id="pseudo" required><br>
 
+     <!-- Champ pour le nom -->
+     <label for="nom">Nom</label>
+    <input type="text" name="nom" id="nom" required><br>
+
+    <!-- Champ pour le prénom -->
+    <label for="prenom">Prénom</label>
+    <input type="text" name="prenom" id="prenom" required><br>
+
      <!-- Champ pour l'email -->
     <label for="email">Mail</label>
     <input type="email" name="email" id="email" required><br>

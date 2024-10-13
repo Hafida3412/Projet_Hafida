@@ -18,6 +18,8 @@ class SecurityController extends AbstractController{
         if (isset($_POST["submitRegister"])) {           
             // On filtre les champs du formulaire d'inscription:
              $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+             $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+             $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
              $pass1 = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -35,7 +37,7 @@ class SecurityController extends AbstractController{
              $passwordRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/"; 
 
         // On vérifie la validité des filtres
-        if ($pseudo && $email && $pass1 && $pass2) {
+        if ($pseudo && $nom && $prenom && $email && $pass1 && $pass2) {
         //var_dump("ok");die;
              $userManager = new UtilisateurManager();
              //création de la function checkUserExists dans utilisateurManager pour vérifier si l'utilisateur existe
@@ -51,6 +53,8 @@ class SecurityController extends AbstractController{
             // Ajout d'un nouvel utilisateur via le gestionnaire d'utilisateurs (userManager)
             $userManager->add([
                 "pseudo" => $pseudo,// Le pseudo de l'utilisateur, utilisé comme nom d'affichage
+                "nom" => $nom,
+                "prenom" => $prenom,
                 // L'adresse email de l'utilisateur, utilisée pour l'authentification et les notifications
                 "email" => $email,
                 // Le mot de passe de l'utilisateur, haché pour assurer la sécurité
