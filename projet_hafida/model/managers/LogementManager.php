@@ -30,6 +30,13 @@ class LogementManager extends Manager{
         );
 
     }
+
+    // SUPPRIMER UN LOGEMENT PAR SON ID
+    public function deleteLogement($id) {
+    $sql = "DELETE FROM ".$this->tableName." 
+            WHERE id_logement = :id"; // Condition de suppression par ID
+    return DAO::delete($sql, ['id' => $id]);
+}
     
     }
     

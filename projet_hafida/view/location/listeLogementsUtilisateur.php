@@ -21,6 +21,12 @@ $logements = $result["data"]['logements'];
             echo "<p><strong>Nombre de chambres:</strong> " . htmlspecialchars($logement->getNbChambre()) . "</p>";
             echo "<p><strong>Ville:</strong> " . htmlspecialchars($logement->getVille()) . "</p>";
             echo "<div class='logement-image'><img src='" . htmlspecialchars($logement->getImage()) . "' alt='Image du logement' class='annonce-info-img'></div>";
+           
+            // Formulaire de suppression du logement
+            echo "<form method='post' action='index.php?ctrl=location&action=supprimerLogement&id=" . $logement->getId() . "'>";
+            echo "<button class='btn-delete' type='submit' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce logement ?')\">Supprimer</button>";
+            echo "</form>";
+            
             echo "</div>"; 
         }
     }

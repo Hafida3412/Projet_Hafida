@@ -270,6 +270,35 @@ public function index($id = null) {
         ];
     }
 
+// SUPPRIMER UN LOGEMENT
+public function supprimerLogement($id) {
+    $logementManager = new LogementManager();
+    
+    // Vérifiez si l'utilisateur est connecté
+    if(Session::getUtilisateur()) {
+        // Vérifiez si le logement existe
+        $logement = $logementManager->findOneById($id);
+        if ($logement) {
+            // Vérifiez si l'utilisateur de l'annonce est le même que l'utilisateur connecté
+            if(Session::getUtilisateur()->getId() == $logement->getUtilisateur()->getId()) {
+                // Supprimer le logement
+                $logementManager->deleteLogement($id);
+                Session::addFlash("success", "Le logement a été supprimé avec succès.");
+            } else {
+                Session::addFlash("error", "Vous n'avez pas la permission de supprimer ce logement.");
+            }
+        } else {
+            Session::addFlash("error", "Logement introuvable.");
+        }
+    } else {
+        Session::addFlash("error", "Veuillez vous connecter pour supprimer un logement.");
+    }
+
+    // Redirige vers la liste des logements
+    $this->redirectTo("location", "listeLogementsUtilisateur");
+}
+
+
 //SUPPRIMER UNE ANNONCE D UN UTILISATEUR
     public function supprimerAnnonce($id){
     //On récupère l'annonce à supprimer
