@@ -47,7 +47,8 @@ public function index($id = null) {
 
     return [
         "view" => VIEW_DIR . "location/listAnnonces.php", // Chemin vers la vue des annonces
-        "meta_description" => "Liste des annonces", // Description à utiliser pour le SEO
+        "meta" => "Liste des annonces", // Description pour le SEO
+        "title" => "Annonces Disponibles", // Description pour le SEO
         "data" => [  // Données à passer à la vue
             "annonces" => $annonces, // Annonces récupérées pour la page
             "page" => $pageNum, // Numéro de la page courante
@@ -74,7 +75,8 @@ public function index($id = null) {
 
     return [
         "view" => VIEW_DIR . "location/listAnnonces.php",
-        "meta_description" => "Liste des annonces",
+        "meta" => "Recherche d'annonces", 
+        "title" => "Résultats de la Recherche", 
         "data" => [ // Données à passer à la vue
             "annonces" => $annonces,
             "message" => $message, // On passe le message à la vue
@@ -117,7 +119,8 @@ public function index($id = null) {
 
         return [
             "view" => VIEW_DIR . "location/detailsAnnonce.php",
-            "meta_description" => "Détails de l'annonce",
+            "meta" => "Détails de l'annonce",
+            "title" => "Détails", 
             "data" => [ // Données à passer à la vue
                 "annonce" => $annonce,
                 "logement" => $logement,
@@ -186,7 +189,8 @@ public function index($id = null) {
         // On affiche le formulaire de dépôt d'annonce
         return [
             "view" => VIEW_DIR . "location/ajoutAnnonces.php",
-            "meta_description" => "Déposer une annonce",
+            "meta" => "Déposer une annonce",
+            "title" => "Déposer une annonce",
             "data" => [
                 "logements" => $logements
             ]

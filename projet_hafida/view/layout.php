@@ -5,11 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
          <!-- Description du site pour le SEO -->
-        <meta name="description" content="Chez Mon Chat : le site idéal pour les propriétaires de chats et 
-        les amoureux des animaux. Louez un logement à tarif réduit tout en prenant soin des félins pendant 
-        vos vacances. Profitez d'un séjour économique tout en offrant câlins et attention aux chats dans 
-        leur environnement familier." />
-
+        <meta name="description" content=" <?=$meta?>" />
+        <title><?= $title?></title><!-- Titre de la page affiché dans l'onglet du navigateur -->
+        
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <!-- Préconnections pour améliorer la performance du chargement des polices -->
@@ -46,7 +44,7 @@
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/faq.css">
         <link rel="stylesheet" href="<?= PUBLIC_DIR ?>/css/responsive.css">
 
-        <title>Chez Mon Chat</title><!-- Titre de la page affiché dans l'onglet du navigateur -->
+        
     </head>
     <body>
         <div id="wrapper"> 

@@ -77,7 +77,8 @@ class SecurityController extends AbstractController{
 
             return [
             "view" => VIEW_DIR . "connexion/register.php",
-            "meta_description" => "Formulaire d'inscription"
+            "meta" => "Formulaire d'inscription",
+            "title" => "Formulaire d'inscription"
         ];
     }
 
@@ -94,7 +95,8 @@ class SecurityController extends AbstractController{
             Session::addFlash("error", "Veuillez cocher la case reCAPTCHA.");
             return [
                 "view" => VIEW_DIR . "connexion/login.php",
-                "meta_description" => "Formulaire de connexion"
+                "meta" => "Formulaire de connexion",
+                "title" => "Formulaire de connexion"
             ];
         }
             // Définition d'une regex pour le mot de passe
@@ -109,7 +111,8 @@ class SecurityController extends AbstractController{
                     incluant une lettre majuscule, une lettre minuscule et un chiffre.");
                     return [
                         "view" => VIEW_DIR . "connexion/login.php",
-                        "meta_description" => "Formulaire de connexion"
+                        "meta" => "Formulaire de connexion",
+                        "title" => "Formulaire de connexion"
                     ];
                 }
                 
@@ -144,7 +147,8 @@ class SecurityController extends AbstractController{
     
         return [
             "view" => VIEW_DIR . "connexion/login.php",
-            "meta_description" => "Formulaire de connexion"
+            "meta" => "Formulaire de connexion",
+            "title" => "Formulaire de connexion"
         ];
     }
     
@@ -169,7 +173,8 @@ class SecurityController extends AbstractController{
 
         return [
             "view" => VIEW_DIR . "connexion/detailsUtilisateur.php",
-            "meta_description" => "Mon compte",
+            "meta" => "Mon compte",
+            "title" => "Mon compte",
             "data" => [
                 "utilisateur" => $utilisateur,
                 "reservations" =>$reservations// Rajout de la variable $reservations dans le tableau data
@@ -270,7 +275,8 @@ public function forgotPassword() {
 
     return [
         "view" => VIEW_DIR . "connexion/forgotPassword.php",
-        "meta_description" => "Récupération du mot de passe"
+        "meta" => "Récupération du mot de passe",
+        "title" => "Récupération du mot de passe"
     ];
 }
 
@@ -316,7 +322,8 @@ public function resetPassword() {
 
     return [
         "view" => VIEW_DIR . "connexion/resetPassword.php",
-        "meta_description" => "Réinitialiser le mot de passe"
+        "meta" => "Réinitialiser le mot de passe",
+        "title" => "Réinitialiser le mot de passe"
     ];
 }
 
@@ -350,7 +357,8 @@ public function supprimerCompte() {
 
     return [
         "view" => VIEW_DIR . "connexion/supprimerCompte.php", // Créez ce fichier pour gérer la confirmation.
-        "meta_description" => "Confirmation de la suppression du compte"
+        "meta" => "Confirmation de la suppression du compte",
+        "title" => "Confirmation de la suppression du compte"
     ];
 }
 

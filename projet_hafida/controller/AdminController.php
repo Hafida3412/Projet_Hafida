@@ -33,7 +33,8 @@ public function listUtilisateurs() {
     // On retourne la vue et les données
     return [
         'view' => VIEW_DIR . 'admin/listUtilisateurs.php',
-        "meta_description" => "Liste des Utilisateurs",
+        "meta" => "Liste des Utilisateurs",
+        "title" => "Liste des Utilisateurs",
         "data" => [
             "utilisateurs" => $utilisateurs
         ]
@@ -58,7 +59,8 @@ public function AllAnnonces() {
 
     return [
         'view' => VIEW_DIR . 'admin/allAnnonces.php',
-        "meta_description" => "Toutes les annonces",
+        "meta" => "Toutes les annonces",
+        "title" => "Toute les annonces",
         "data" => [
             "annonces" => $annonces
         ]
@@ -154,9 +156,10 @@ public function editAnnonce() {
         }
 
         return [
-            'view' => VIEW_DIR . 'admin/editAnnonce.php',
-            'meta_description' => 'Éditer l\'annonce',
-            'data' => [
+            "view" => VIEW_DIR . 'admin/editAnnonce.php',
+            "meta" => 'Éditer l\'annonce',
+            "title" => 'Éditer l\'annonce',
+            "data" => [
                 'annonce' => $annonce
             ]
         ];

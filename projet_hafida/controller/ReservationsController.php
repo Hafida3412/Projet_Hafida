@@ -91,7 +91,8 @@ class ReservationsController extends AbstractController implements ControllerInt
         //qui affichera le formulaire correspondant à l'annonce sélectionnée.
             return [
             "view" => VIEW_DIR . "location/reservation.php",
-            "meta_description" => "Formulaire de réservation",
+            "meta" => "Formulaire de réservation",
+            "title" => "Réservation d'annonce",
             "data" => [ 
             "annonceId" => $annonceId 
         ]
@@ -104,7 +105,8 @@ class ReservationsController extends AbstractController implements ControllerInt
     public function confirmation(){
         return [
         "view" => VIEW_DIR . "location/confirmation.php",
-        "meta_description" => "Confirmation de réservation",
+        "meta" => "Confirmation de réservation",
+        "title" => "Confirmation d'annonce",
         ];
     }
 }

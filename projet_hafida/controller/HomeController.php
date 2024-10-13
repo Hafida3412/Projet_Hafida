@@ -13,7 +13,12 @@ class HomeController extends AbstractController implements ControllerInterface {
     public function index(){
         return [
             "view" => VIEW_DIR."home.php", // Chemin de la vue à afficher
-            "meta_description" => "Page d'accueil" // Description pour le SEO
+            "meta" => "Chez Mon Chat : le site idéal pour les propriétaires de chats et 
+        les amoureux des animaux. Louez un logement à tarif réduit tout en prenant soin des félins pendant 
+        vos vacances. Profitez d'un séjour économique tout en offrant câlins et attention aux chats dans 
+        leur environnement familier. ",
+            "title" => "accueil"
+         // Description pour le SEO
         ];
     }
     
