@@ -17,13 +17,6 @@ class ReservationsController extends AbstractController implements ControllerInt
          if (!Session::getUtilisateur()) {
              // Redirection vers la page de connexion si l'utilisateur n'est pas connecté 
              $this->redirectTo("connexion", "login"); 
-             return; // Vérifiez si l'utilisateur est connecté
-             if (!Session::getUtilisateur()) {
-                 Session::addFlash("error", "Vous devez être connecté pour réserver une annonce. Veuillez vous connecter ou créer un compte.");
-                 $this->redirectTo("connexion", "login"); // Redirection vers la page de connexion
-                 return; 
-             }
-        }
              
         // On récupère l'identifiant de l'annonce à partir des paramètres GET de l'URL, qui doit être un nombre entier.
             $annonceId = filter_input(INPUT_GET, 'annonceId', FILTER_VALIDATE_INT);
