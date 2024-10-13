@@ -7,10 +7,12 @@
 
 <!-- Formulaire de réservation avec méthode POST -->
 <form action="index.php?ctrl=reservations&action=reservation&annonceId=<?= $annonceId?>" method="POST">
-
+    
+    <!-- Champ pour le nom -->
     <label for="nom">Nom</label>
     <input type="text" name="nom" id="nom" required><br>
 
+    <!-- Champ pour le prénom -->
     <label for="prenom">Prénom</label>
     <input type="text" name="prenom" id="prenom" required><br>
 
