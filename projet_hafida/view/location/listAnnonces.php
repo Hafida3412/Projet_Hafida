@@ -43,15 +43,27 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
             <button class="btn-delete"on  type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
         </form>
     <?php } 
-    echo "</p></div>"; // Fermeture du cadre de l'annonce</p>
-    }
+   if (!App\Session::getUtilisateur()) {
+    // Utilisateur non connecté
+    echo "<p>Veuillez vous connecter ou vous inscrire pour réserver cette annonce. <br>
+    <a href='index.php?ctrl=connexion&action=login'>Se connecter</a></p>";
+    echo "<p><a href='index.php?ctrl=utilisateur&action=register'>S'inscrire</a></p>";
 } else {
-  echo "<p>Aucune annonce trouvée.</p>";
+    // Utilisateur connecté
+    $annonceId = intval($annonce->getId()); // Mise à jour de l'ID de l'annonce
+    echo "<a href='index.php?ctrl=reservations&action=reservation&annonceId={$annonceId}' class='btn-reserve'>Réserver</a>";
 }
 
+echo "</p>"; // Fermeture du paragraphe de l'annonce
+echo "</div>"; // Fermeture du cadre de l'annonce
+}
+} else {
+echo "<p>Aucune annonce trouvée.</p>";
+}
 ?>
 </div>
 </main>
+
 <?php
 
 // PAGINATION DE LA LISTE DES ANNONCES

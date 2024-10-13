@@ -6,7 +6,7 @@
 <h1>Réservation</h1>
 
 <!-- Formulaire de réservation avec méthode POST -->
-<form action="index.php?ctrl=reservations&action=reservation&annonceId=<?= $annonceId?>" method="POST">
+<form action="index.php?ctrl=reservations&action=reservation&annonceId=<?= $annonceId ?>" method="POST">
     
     <!-- Champ pour le nom -->
     <label for="nom">Nom</label>
