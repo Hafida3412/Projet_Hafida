@@ -36,26 +36,19 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     Ville: ".$annonce->getLogement()->getVille()."<br> 
     <a href='index.php?ctrl=location&action=detailsAnnonce&id=".$annonce->getId()."'>Consulter</a>"."<br>";
 
-    //Il peut également supprimer une annonce s'il en est l'auteur en cliquant sur le bouton "Supprimer" après confirmation
-    if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
-    <!--Un bouton "supprimer" est affiché au bas de chaque annonce de 'utilisateur connecté-->
-        <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
-            <button class="btn-delete"on  type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
-        </form>
-    <?php } 
-   if (!App\Session::getUtilisateur()) {
-    // Utilisateur non connecté
-    echo "<p>Veuillez vous connecter ou vous inscrire pour réserver cette annonce. <br>
-    <a href='index.php?ctrl=connexion&action=login'>Se connecter</a></p>";
-    echo "<p><a href='index.php?ctrl=utilisateur&action=register'>S'inscrire</a></p>";
-} 
-
-echo "</p>"; // Fermeture du paragraphe de l'annonce
-echo "</div>"; // Fermeture du cadre de l'annonce
-}
-} else {
-echo "<p>Aucune annonce trouvée.</p>";
-}
+     //Il peut également supprimer une annonce s'il en est l'auteur en cliquant sur le bouton "Supprimer" après confirmation
+     if(App\Session::getUtilisateur() && App\Session::getUtilisateur()->getId() == $annonce->getUtilisateur()->getId()) { ?>
+      <!--Un bouton "supprimer" est affiché au bas de chaque annonce de 'utilisateur connecté-->
+          <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
+              <button class="btn-delete"on  type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
+          </form>
+      <?php } 
+      echo "</p></div>"; // Fermeture du cadre de l'annonce</p>
+      }
+  } else {
+    echo "<p>Aucune annonce trouvée.</p>";
+  }
+  
 ?>
 </div>
 </main>

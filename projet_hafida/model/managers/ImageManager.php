@@ -18,7 +18,8 @@ class ImageManager extends Manager{
 
     public function findImagesByLogement($logementId) {
          // Prépare la requête SQL pour sélectionner toutes les images associées à l'ID de logement fourni
-        $sql = "SELECT * FROM " . $this->tableName . " WHERE logement_id = :logementId";
+        $sql = "SELECT * FROM " . $this->tableName . 
+        " WHERE logement_id = :logementId";
         // Exécute la requête SQL et retourne les résultats multiples sous forme d'objets de la classe Image
         return $this->getMultipleResults(
             DAO::select($sql, ['logementId' => $logementId]), 

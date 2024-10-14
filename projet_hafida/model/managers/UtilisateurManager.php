@@ -70,7 +70,8 @@ class UtilisateurManager extends Manager{
     }
     
     public function updatePassword($userId, $hashedPassword) {
-        $sql = "UPDATE " . $this->tableName . " SET password = :password WHERE id_utilisateur = :id";
+        $sql = "UPDATE " . $this->tableName . 
+        " SET password = :password WHERE id_utilisateur = :id";
         
         return DAO::select($sql, [
             'password' => $hashedPassword,
