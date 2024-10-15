@@ -14,12 +14,9 @@
     /* Navbar */
     nav {
         display: flex; 
-        justify-content: space-between;
-        align-items: center;
         padding: 15px;
         flex-wrap: wrap; /* Permet à la barre de navigation de réagir à la taille */
-        flex-direction: column; /* Aligne verticalement pour petits écrans */
-        align-items: flex-start; /* Aligne à gauche */
+       
     }
 
     nav ul {
