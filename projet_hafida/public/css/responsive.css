@@ -113,6 +113,68 @@
     .footer-links a {
         margin: 10px 0; /* Ajuste l'espacement vertical entre les liens */
     }
+    /* Styles généraux pour le formulaire de connexion */
+.login-container {
+    max-width: 400px; /* Largeur maximale pour le conteneur du formulaire */
+    margin: 50px auto; /* Centre le formulaire horizontalement et ajoute une marge en haut */
+    padding: 20px; /* Ajoute de l'espacement interne */
+    background-color: #fff; /* Couleur de fond blanche pour le formulaire */
+    border-radius: 10px; /* Coins arrondis pour le conteneur */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre pour profondeur */
+  }
+  
+  /* Styles pour les champs de formulaire */
+  .login-container input[type="email"],
+  .login-container input[type="password"],
+  .login-container input[type="submit"] {
+    width: 100%; /* Largeur complète pour les champs */
+    padding: 12px; /* Padding intérieur */
+    margin: 10px 0; /* Espacement autour des champs */
+    border: 1px solid #ddd; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur */
+    font-size: 16px; /* Taille de police */
+  }
+  
+  /* Style pour le bouton de soumission */
+  .login-container input[type="submit"] {
+    background-color: #6B2C1A; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    cursor: pointer; /* Curseur du pointeur pour indiquer que c'est cliquable */
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+  }
+  
+  .login-container input[type="submit"]:hover {
+    background-color: #f0b85f; /* Couleur de fond au survol */
+  }
+  
+  /* Styles pour les textes et liens */
+  .login-container h1 {
+    font-size: 24px; /* Taille de police pour le titre */
+    text-align: center; /* Centre le texte */
+    margin-bottom: 20px; /* Marge inférieure */
+  }
+  
+  .login-container p {
+    text-align: center; /* Centre le texte */
+  }
+  
+  /* Media query pour les appareils de petite taille */
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 15px; /* Espacement interne pour les petits écrans */
+    }
+  
+    .login-container h1 {
+      font-size: 22px; /* Ajustement de la taille du titre pour les petits écrans */
+    }
+  
+    .login-container input[type="submit"] {
+      padding: 10px; /* Ajuste le padding pour le bouton sur les petits écrans */
+      font-size: 14px; /* Ajustement de la taille de la police du bouton */
+    }
+  }
+  
 }
 
 /* Pour les tablettes et petits écrans (max-width: 1024px) */

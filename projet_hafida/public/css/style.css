@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   margin-top: 10px; /* Espacement en haut du titre h1 */
   text-align: center; /* Centre le texte du titre */
+  font-size: 36px;
 }
 
 h2 {
@@ -121,7 +122,8 @@ nav ul {
 
 
 nav a {
-  font-size: 18px; /* Taille de police pour les liens */
+  padding: 12px 10px; /* Ajout de padding pour augmenter la zone cliquable */
+  font-size: 24px; /* Taille de police pour les liens */
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
   color: #eeeeee; /* Couleur de texte blanche pour augmenter le contraste */

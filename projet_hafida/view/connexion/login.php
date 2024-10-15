@@ -21,6 +21,8 @@
 <input type="password" name="password" id="password" value="Azerty123456" required><br>
 
 <!-- Widget reCAPTCHA de Google pour la vérification humaine -->
+<div class="login-container">
+<div class="recaptcha" id="recaptcha-container">
 <div class="g-recaptcha" data-sitekey="6LeUhkYqAAAAALeAYNXSofNNSW3Fw9vzIRzl4Ngw" data-action="LOGIN"></div>
 <br/>
 <!-- Bouton de soumission du formulaire -->

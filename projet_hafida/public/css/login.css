@@ -5,3 +5,18 @@
     object-fit: contain; /* Réduit l'image pour qu'elle s'adapte dans son conteneur sans être rognée, en maintenant son aspect */
     margin-top: 20px; /* Ajoute une marge de 20px au-dessus de l'image pour créer un espace entre l'image et les éléments situés au-dessus */
 }
+
+@media screen and (max-width: 768px) {
+.recaptcha {
+    display: flex; /* Permet une mise en page flexible */
+    justify-content: center; /* Centre le reCAPTCHA horizontalement */
+    width: 100%; /* Prend toute la largeur disponible */
+  }
+  
+  /* Ajoute éventuellement des marges */
+  .recaptcha iframe {
+    max-width: 100%; /* Le reCAPTCHA ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
+
+}
