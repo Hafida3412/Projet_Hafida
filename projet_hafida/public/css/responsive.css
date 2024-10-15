@@ -8,34 +8,60 @@
         font-size: 14px; /* Réduction de la taille de la police */
     }
 
+    /* Navbar */
+nav {
+    display: flex; /* Utilise flexbox pour l'agencement */
+    justify-content: space-between; /* Espace entre le logo et les liens */
+    align-items: center; /* Centre verticalement les éléments */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne quand ils ne rentrent pas */
+  }
+  
+  /* Styles de la liste de navigation */
+  nav ul {
+    list-style: none; /* Pas de puces */
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    flex: 1; /* Permet à l'ul d'occuper tout l'espace disponible */
+    justify-content: space-around; /* Espace uniforme entre les éléments */
+    margin: 0; /* Supprime la marge par défaut */
+    padding: 0; /* Supprime le padding par défaut */
+  }
+  
+  /* Styles des items de navigation */
+  nav li {
+    margin: 0 10px; /* Espacement entre les liens */
+    transition: transform 0.3s ease; /* Animation pour le changement */
+  }
+  
+  nav li:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+  }
+  
+  /* Logo styles */
+  #nav-left img {
+    width: 120px; /* Ajustement de la taille du logo */
+    height: auto; /* Assure le bon ratio */
+  }
+  
+  /* Ajout de styles spécifiques aux petits écrans */
+  @media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column; /* Aligne verticalement dans les petits écrans */
+      align-items: flex-start; /* Aligne à gauche */
+    }
+  
     nav ul {
-        display: flex; /* Utilisation de flexbox */
-        flex-direction: row; /* Aligne les éléments horizontalement */
-        align-items: center; /* Centre les éléments dans la navbar */
-        margin-bottom: 10px; /* Espace sous la navbar */
+      flex-direction: column; /* Ajuste la liste en colonne */
+      align-items: center; /* Centre les éléments */
     }
-
-    nav a {
-        font-size: 14px; /* Ajuste la taille des liens de navigation */
-        display: block; /* Permet au lien de prendre la totalité de l'élément parent */
-        padding: 10px; /* Espace autour du texte des liens */
-    }
-
+  
     nav li {
-        width: 100%; /* Chaque élément de la liste (lien) prendra toute la largeur */
-        text-align: center; /* Centre le texte des liens */
-        margin: 10px 0; /* Espace entre les liens */
+      margin: 10px 0; /* Espacement vertical entre les éléments */
     }
-
-    /* Cacher le lien "Accueil" 
-    nav li:first-child {
-        display: none; /* Cache le premier lien (par exemple, lien vers "Accueil") 
-    }*/
-
+  
     #nav-left img {
-        width: 80px; /* Ajustement de la largeur du logo*/
-        height: 80px; /* Ajustement de la hauteur du logo */
+      width: 100px; /* Réduit la taille pour les écrans plus petits */
     }
+  }
 
 /* Styles pour les sections d'explications et de concept */
     .explications, .concept {
@@ -125,4 +151,67 @@
         padding: 40px; /* Réduction du padding */
         margin-bottom: 15px; /* Espacement ajusté entre les éléments d'avantages */
     }
+
+    
+@media screen and (max-width: 1024px) {
+    nav ul {
+        flex-direction: row; /* Peux retourner à une ligne sur les tablettes */
+        justify-content: center; /* Centre les éléments horizontalement */
+    }
+
+    nav li {
+        width: auto; /* Laisser la largeur automatique pour les éléments */
+    }
+}
+/* Style pour le bouton "réserver" */
+button.annonce-info {
+    background: linear-gradient(90deg, #6B2C1A, #f0b85f);
+    color: #fff;
+    font-size: 2vw; /* Taille de la police en fonction de la largeur de la fenêtre */
+    padding: 10px 15px; 
+    border: none; 
+    cursor: pointer; 
+    width: 50%; /* Utilisez un pourcentage pour que le bouton prenne 50% de la largeur de son conteneur */
+    max-width: 300px; /* Limite la largeur maximale pour des écrans plus larges */
+    margin: 20px auto; /* Centre le bouton horizontalement avec une marge supérieure */
+    border-radius: 5px;   
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transitions pour hover */
+}
+
+/* Style au survol du bouton "réserver" */
+button.annonce-info:hover {
+    transform: scale(1.05); /* Légère amplification au survol */
+    background: #f0b85f; 
+    color: #6B2C1A; 
+}
+
+/* Ajustements pour les écrans plus petits (mobile) */
+@media (max-width: 600px) {
+    button.annonce-info {
+        font-size: 3vw; /* Ajustement de la taille de police à 3vw pour les petits écrans */
+        padding: 12px; /* Ajustement d'espacement */
+    }
+}
+
+@media (max-width: 768px) { /* Pour les tablettes et petits écrans */
+    .footer-links {
+        flex-direction: column; /* Aligne les liens en colonne */
+        align-items: center; /* Centre les éléments */
+    }
+
+    .footer-links a {
+        margin: 10px 0; /* Ajuste l'espacement vertical entre les liens */
+    }
+}
+
+@media (max-width: 480px) { /* Pour les mobiles */
+    .footer-links {
+        padding: 10px 0; /* Réduction de rembourrage */
+    }
+
+    .footer-links a {
+        font-size: 0.9em; /* Réduit la taille de police pour mobile */
+    }
+}
+
 }

@@ -87,7 +87,6 @@ nav {
 
 .nav-list { 
   display: flex; 
-  gap: 15px; /* espace entre les éléments de navigation */
 }
 
 .nav-right-connect {
@@ -122,7 +121,6 @@ nav ul {
 
 
 nav a {
-  padding: 12px 10px; /* Ajout de padding pour augmenter la zone cliquable */
   font-size: 18px; /* Taille de police pour les liens */
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
@@ -217,9 +215,24 @@ main {
 }
 
 /* Styles pour les liens dans le footer */
+
 .footer-links {
-  font-size: 0.9em; /* Taille de police légèrement plus petite pour les liens */
-  color: white; /* Couleur de texte des liens */
+  display: flex; /* Utiliser flex pour l'alignement */
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est restreint */
+  justify-content: center; /* Centrer les éléments horizontalement */
+  align-content: flex-start;
+  margin-top: 10px; /* Ajoute un espacement en haut */
+  padding: 20px; /* Ajoute un peu de rembourrage */
+}
+.footer-links a {
+  margin: 5px 15px; /* Ajuste l'espacement entre les liens */
+  text-align: center; /* Centre le texte */
+  font-size: 0.9em; /* Taille de la police */
+  color: white; /* Couleur uniforme pour les liens */
+}
+
+.footer-links {
+  font-size: calc(0.8em + 0.1vw); /* Donne une taille de police responsive qui change avec la largeur de la vue */
 }
 
 .footer-links a {
