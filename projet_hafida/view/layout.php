@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <!-- Meta tag pour Responsive design (essentiel pour la réactivité) -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
          <!-- Description du site pour le SEO -->
