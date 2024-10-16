@@ -75,6 +75,7 @@
         flex-direction: column; /* Assure que les cartes s'affichent en colonne */
         height: auto; /* La hauteur automatique pour laisser de l'espace aux cartes */
         margin-top: 20px; /* Espace au-dessus du conteneur de cartes */
+        align-items: center;
     }
 
     .card {
