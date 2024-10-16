@@ -68,8 +68,8 @@ class ReservationsController extends AbstractController implements ControllerInt
         //Cela garantit que nbAdultes est supérieur à 0 et que nbEnfants est valide (0 ou plus).
         //Enregistrement des informations de la réservation dans la base de données via $ReserverManager
             $reserverManager = new ReserverManager();// classe utilisée pour gérer les opérations liées à la réservation incluant l'ajout de données à la BDD
-            /* $result=*/ $reserverManager->add([
-            "nom" => $nom,   
+            /* $result=*/ $reserverManager->add([//la méthode add prend un tableau associatif comme paramètre qui contient les info relatives à la réservation
+            "nom" => $nom,// CLE => VALEUR (= Le nom de la personne effectuant la réservation)
             "prenom" => $prenom,
             "numeroTelephone" => $numeroTelephone,
             "nbAdultes" => $nbAdultes,
@@ -83,7 +83,8 @@ class ReservationsController extends AbstractController implements ControllerInt
         // var_dump($result);die;
 
         // Mise à jour du statut de l'annonce pour indiquer qu'elle est réservée
-            $annonceManager->updateDisponibilite($annonceId);
+            $annonceManager->updateDisponibilite($annonceId);// appel à la méthode updateDisponibilite() de l'objet $annonceManager.
+                                                            //   prend un paramètre $annonceId, qui est l'identifiant de l'annonce 
         // Un message de succès est ajouté à la session
             Session::addFlash("success", "Votre réservation a été effectuée avec succès.");
 
