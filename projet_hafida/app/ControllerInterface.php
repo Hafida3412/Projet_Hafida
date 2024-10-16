@@ -18,7 +18,6 @@ namespace App;
 */
 
 interface ControllerInterface{
-
-    // Méthode pour afficher la page d'accueil
-    public function index();// Méthode exigée par l'interface
+    // Méthode abstraite qui doit être implémentée par les classes dérivées.
+    public function index();
 }

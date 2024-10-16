@@ -9,9 +9,7 @@ use Model\Managers\ReserverManager;
 
 
 class AdminController extends AbstractController{
-
-//FONCTION POUR LISTER TOUS LES UTILISATEURS
-
+//METHODE POUR LISTER TOUS LES UTILISATEURS
 public function listUtilisateurs() {
     // Vérifie si l'utilisateur est connecté
     $utilisateur = Session::getUtilisateur();

@@ -8,7 +8,6 @@ avec les utilisateurs*/
 
 // Déclaration de la classe HomeController qui étend AbstractController et implémente ControllerInterface
 class HomeController extends AbstractController implements ControllerInterface {
-
     // Méthode principale du controller, généralement utilisée pour afficher la page d'accueil
     public function index(){
         return [

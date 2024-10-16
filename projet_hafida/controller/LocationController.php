@@ -13,9 +13,7 @@ use Model\Managers\ImageManager;
 use App\DAO; 
 
 class LocationController extends AbstractController implements ControllerInterface{
-
-// FONCTION POUR LISTER TOUTES LES ANNONCES
-
+// METHODE POUR LISTER TOUTES LES ANNONCES
 public function index($id = null) {
     // Création d'une instance de AnnonceManager pour gérer les annonces
     $annonceManager = new AnnonceManager();
