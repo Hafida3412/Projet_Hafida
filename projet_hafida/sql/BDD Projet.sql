@@ -39,11 +39,11 @@ CREATE TABLE IF NOT EXISTS `annonce` (
 
 -- Listage des données de la table projet_hafida.annonce : ~5 rows (environ)
 INSERT INTO `annonce` (`id_annonce`, `logement_id`, `utilisateur_id`, `dateCreation`, `nbChat`, `dateDebut`, `dateFin`, `description`, `estValide`) VALUES
-	(1, 1, 1, '2024-06-09 13:15:48', 1, '2024-07-15', '2024-07-30', 'Jolie maison au coeur de la ville', 0),
-	(2, 2, 2, '2024-06-09 13:19:21', 2, '2024-08-01', '2024-08-15', 'Bel appartement haussmanien, spacieux et confortable. Garage.', 0),
-	(10, 7, 5, '2024-09-08 11:59:35', 1, '2024-09-23', '2024-09-29', 'Grande maison, très spacieuse, avec vue sur la mer. Chat très sociable.', 0),
+	(1, 1, 1, '2024-06-09 13:15:48', 1, '2024-07-15', '2024-07-30', 'Jolie maison au coeur de la ville. Chat sociable, gourmand, n\'aime pas sortir.', 1),
+	(2, 2, 2, '2024-06-09 13:19:21', 2, '2024-08-01', '2024-08-15', 'Bel appartement haussmanien, spacieux et confortable. Garage.\r\nChat très sociable. Aime jouer et qu\'on s\'occupe de lui. Il n\'aime pas sortir. Il dort beaucoup.', 1),
+	(10, 7, 5, '2024-09-08 11:59:35', 1, '2024-09-23', '2024-09-29', 'Grande maison, très spacieuse, avec vue sur la mer. Chat très sociable. Aime jouer et qu\'on s\'occupe de lui. Il n\'aime pas sortir. Il dort beaucoup.', 0),
 	(12, 8, 7, '2024-09-09 21:11:03', 1, '2024-09-16', '2024-09-22', 'Grande maison spacieuse avec 3 chambres. La mer est à 2km. Commerces et transports en commun à proximité. Chat très sociable.', 1),
-	(19, 16, 5, '2024-10-14 22:24:07', 1, '2024-10-18', '2024-10-25', 'zafzafazf', 0);
+	(19, 16, 5, '2024-10-14 22:24:07', 1, '2024-10-18', '2024-10-25', 'Mon chat aime jouer et qu\'on s\'occupe de lui. Il n\'aime pas sortir. Il dort beaucoup.', 0);
 
 -- Listage de la structure de table projet_hafida. avis
 CREATE TABLE IF NOT EXISTS `avis` (
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   CONSTRAINT `FK_image_logement` FOREIGN KEY (`logement_id`) REFERENCES `logement` (`id_logement`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.image : ~23 rows (environ)
+-- Listage des données de la table projet_hafida.image : ~20 rows (environ)
 INSERT INTO `image` (`id_image`, `nomImage`, `altImage`, `logement_id`) VALUES
 	(1, '66d9f7254e3a84.68958559.jpg', 'Mulhouse', 3),
 	(2, '66d9f8f505ed79.79606379.jpg', 'Mulhouse', 3),
@@ -152,11 +152,13 @@ CREATE TABLE IF NOT EXISTS `reserver` (
   KEY `id_annonce` (`annonce_id`) USING BTREE,
   CONSTRAINT `FK_reserver_annonce` FOREIGN KEY (`annonce_id`) REFERENCES `annonce` (`id_annonce`) ON DELETE SET NULL,
   CONSTRAINT `FK_reserver_utilisateur` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.reserver : ~1 rows (environ)
+-- Listage des données de la table projet_hafida.reserver : ~3 rows (environ)
 INSERT INTO `reserver` (`utilisateur_id`, `annonce_id`, `nom`, `prenom`, `valide`, `numeroTelephone`, `nbAdultes`, `nbEnfants`, `paiement`, `question`, `id_reserver`) VALUES
-	(NULL, 12, 'Lemand', 'Edouard', 1, '0764432167', 2, 2, 'cb', 'NON', 12);
+	(NULL, 12, 'Lemand', 'Edouard', 1, '0764432167', 2, 2, 'cb', 'NON', 12),
+	(5, 2, 'DURAND', 'Léa', 1, '0764432167', 1, 1, 'cb', 'non', 13),
+	(7, 1, 'DUPONT', 'MARC', 1, '0786874589', 2, 2, 'cb', 'NON', 14);
 
 -- Listage de la structure de table projet_hafida. typelogement
 CREATE TABLE IF NOT EXISTS `typelogement` (
