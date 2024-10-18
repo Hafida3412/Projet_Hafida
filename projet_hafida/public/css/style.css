@@ -123,7 +123,7 @@ nav ul {
 
 nav a {
   padding: 12px 10px; /* Ajout de padding pour augmenter la zone cliquable */
-  font-size: 24px; /* Taille de police pour les liens */
+  font-size: 18px; /* Taille de police pour les liens */
   background-color: transparent; /* Couleur de fond par défaut */
   border-radius: 25px; /* Coins arrondis pour un look doux */
   color: #eeeeee; /* Couleur de texte blanche pour augmenter le contraste */

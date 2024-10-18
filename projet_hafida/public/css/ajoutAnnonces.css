@@ -39,6 +39,7 @@ form {
 form label { 
     display: block;/* les labels s'affichent en bloc, occupant toute la largeur */
     margin-top: 10px; /* espacement au-dessus des labels */ 
+    font-size: 18px;
 }
 
 /* Styles pour les champs de saisie */
@@ -65,7 +66,7 @@ form textarea {
 form input[type="submit"] { 
     background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* dégradé pour le fond du bouton */
     color: #fff; /* couleur de texte du bouton */
-    font-size: 20px; /* Taille de la police du bouton */
+    font-size: 18px; /* Taille de la police du bouton */
     padding: 10px 15px; /* espacement interne du bouton */
     border: none; /* pas de bordure sur le bouton */
     cursor: pointer; /* affiche un curseur style pointer au survol */
