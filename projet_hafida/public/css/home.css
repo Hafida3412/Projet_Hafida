@@ -51,6 +51,18 @@ section {
   animation-delay: 1s; /* Délai d'attente avant l'apparition du texte */
 }
 
+.welcome-text-mobile{
+  display:none;
+}
+
+.h2-benefice1-mobile,
+.h2-benefice2-mobile{
+  display:none;
+}
+.li-benefice1-mobile{
+  display:none;
+}
+
 /* Animation d'apparition */ 
 @keyframes fade-in { 
   0% { opacity: 0; } /* Opacité initiale */

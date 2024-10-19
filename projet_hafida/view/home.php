@@ -147,7 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <div class="benefice2">
-    <h2 class="h2-benefice2">>Les avantages du home-sitting pour vous</h2>
+    <h2 class="h2-benefice2">Les avantages du home-sitting pour vous</h2>
     <h2 class="h2-benefice2-mobile">Les avantages du home-sitting</h2>
     <ul>
         <li>Garde à domicile</li>
