@@ -57,6 +57,19 @@ nav {
         background: #f0b85f; /* Changement de fond au survol */
     }
 
+    .welcome-title{
+        font-size:30px;
+    }
+
+    .welcome-text{
+        display: none;
+    }
+
+.content {
+    padding: 10px;
+}
+
+
     .avantages ul {
         display: flex;
         padding: 0;

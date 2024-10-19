@@ -71,6 +71,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       N'hésitez pas à consulter les annonces disponibles et à contacter les propriétaires 
       pour organiser cette garde temporaire. <br>
       Bonnes vacances à vous !</p>
+      <p class="welcome-text-mobile">Sur notre site, profitez de vacances à moindre coût en échange de quelques 
+      attentions pour un chat.
+      <br />
+      </p>
   </div>
   </div>
 
