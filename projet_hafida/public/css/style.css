@@ -237,8 +237,9 @@ main {
   font-size: calc(0.8em + 0.1vw); /* Donne une taille de police responsive qui change avec la largeur de la vue */
 }
 
-.footer-links a {
+.footer-links p{
   color: white; /* Couleur des liens pour être en harmonie */
+  font-size:18px;
   text-decoration: none; /* Pas de soulignement */
   margin: 0 10px; /* Espacement entre les liens */
 }

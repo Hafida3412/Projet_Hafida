@@ -1,283 +1,73 @@
-/* Styles spécifiques aux écrans de petite taille (smartphones) */
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 14px; /* Réduction de la taille de la police */
+/* Styles pour les écrans de bureau */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+/* Masquer le menu par défaut pour mobile */
+.nav-list {
+    display: flex;
+}
+
+/* Styles pour le bouton de menu hamburger */
+.menu-icon {
+    display: none; /* Cacher par défaut */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Styles pour le menu hamburger */
+@media (max-width: 768px) {
+    #nav-left {
+        flex: 1; /* Prend tout l'espace disponible */
+    }
+    
+    .nav-list {
+        display: none; /* Caché par défaut sur mobile */
+        flex-direction: column; /* Empiler verticalement */
+        width: 100%; /* Prend toute la largeur */
+        position: absolute; /* Positionné absolument */
+        top: 60px; /* Position juste en dessous de la navbar */
+        left: 0;
+        background: linear-gradient(90deg, #6B2C1A, #f0b85f); /* Dégradé de couleur pour le fond */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre */
+        z-index: 1000; /* Pour garantir qu'il soit au-dessus d'autres éléments */
     }
 
-    main {
-        width: 100%; /* Ajuste la largeur du conteneur des annonces pour les smartphones */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centre les composants au centre */
+    /* Affichage du menu lorsque le bouton est cliqué */
+    .nav-list.active {
+        display: flex; /* Montre le menu */
     }
 
-    /* Navbar */
-    nav {
-        display: flex; 
-        padding: 15px;
-        flex-wrap: wrap; /* Permet à la barre de navigation de réagir à la taille */
-       
+    .menu-icon {
+        display: block; /* Affiche le bouton hamburger sur mobile */
     }
 
-    nav ul {
-        list-style: none; /* Pas de puces */
-        display: flex;
-        flex-direction: column; /* Ajuste la liste en colonne */
-        align-items: center; /* Centre les éléments */
-        padding: 0; /* Supprime le padding par défaut */
-        margin: 0; /* Supprime la marge par défaut */
+    nav a {
+       /* Padding pour les éléments */
+        text-align: center; /* Centre le texte */
+        font-size: 16px;
+        padding: 3px 5px; /* Ajout de padding pour augmenter la zone cliquable */
     }
 
-    nav li {
-        margin: 10px 0; /* Espacement vertical entre les éléments */
-        transition: transform 0.3s ease; /* Animation pour le changement */
-    }
-
-    nav li:hover {
-        transform: scale(1.05); /* Effet de zoom au survol */
-    }
-
-    #nav-left img {
-        width: 100px; /* Réduit la taille pour les écrans plus petits */
-        height: auto; /* Assure le bon ratio */
-    }
-
-    /* Autres styles généraux */
-    .explications, .concept,
-    .temoignages-container,
-    .avantages {
-        display: flex;
-        flex-wrap: nowrap; /* Évite le retour à la ligne des éléments */
-        flex-direction: column; /* Aligne les éléments en colonne */
-        align-items: center; /* Centre les éléments comportementaux */
-        margin: 30px auto; /* Espace autour de la section (marge automatique pour centrer) */
-    }
-
-    .benefice1, .benefice2 {
-        width: 100%; /* Réduction de la largeur */
-        margin: 5px 0; /* Espacement entre les éléments de bénéfice */
+    nav a:hover {
+        transform: scale(0); /* Légère amplification au survol */
+        background: #f0b85f; /* Changement de fond au survol */
     }
 
     .avantages ul {
-        width: 100%; /* Force la liste à prendre toute la largeur disponible */
-        padding: 0; /* Supprime le padding automatique */
-        list-style-type: none; /* Supprime les puces de la liste */
-        margin-bottom: 20px; /* Réduction de l'espace sous la liste des avantages */
+        display: flex;
+        padding: 0;
+        list-style-type: none;
+        flex-direction: column;
     }
-
-    .avantages li {
-        width: 80%; /* Ajustement de la largeur sur des écrans plus petits */
-        padding: 25px; /* Réduit le padding autour des éléments */
-        margin-bottom: 15px; /* Réduction de l'espace entre les éléments des avantages */
-    }
-
+    
     .card-container {
-        flex-direction: column; /* Assure que les cartes s'affichent en colonne */
-        height: auto; /* La hauteur automatique pour laisser de l'espace aux cartes */
-        margin-top: 20px; /* Espace au-dessus du conteneur de cartes */
+        display: flex;
         align-items: center;
+        margin-top: 20px;
+        flex-direction: column;
     }
-
-    .card {
-        height: 350px; /* Hauteur de chaque carte */
-        width: 90%; /* Largeur de chaque carte sur petits écrans */
-        margin-bottom: 15px; /* Espacement entre les cartes */
-    }
-
-    /* Styles pour le bouton "réserver" */
-    button.annonce-info {
-        background: linear-gradient(90deg, #6B2C1A, #f0b85f);
-        color: #fff;
-        padding: 12px; /* Ajustement d'espacement */
-        border: none; 
-        cursor: pointer; 
-        width: 50%; /* Utilisez un pourcentage pour que le bouton prenne 50% de la largeur de son conteneur */
-        margin: 20px auto; /* Centre le bouton horizontalement avec une marge supérieure */
-        border-radius: 5px;   
-        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transitions pour hover */
-    }
-
-    button.annonce-info:hover {
-        transform: scale(1.05); /* Légère amplification au survol */
-        background: #f0b85f; 
-        color: #6B2C1A; 
-    }
-
-    .footer-links {
-        flex-direction: column; /* Aligne les liens en colonne */
-        align-items: center; /* Centre les éléments */
-    }
-
-    .footer-links a {
-        margin: 10px 0; /* Ajuste l'espacement vertical entre les liens */
-    }
-    /* Styles généraux pour le formulaire de connexion */
-.login-container {
-    max-width: 800px; /* Ajustez cette largeur selon vos besoins */
-    margin: 0 auto; /* Centre le formulaire */
-    padding: 20px; /* Ajoute un espacement intérieur */
-    background-color: #fff; /* Fond blanc pour le formulaire */
-    border: 1px solid #ddd; /* Bordure autour du formulaire */
-    border-radius: 5px; /* Coins arrondis */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre pour profondeur */
-}
-  }
-  
-  /* Styles pour les champs de formulaire */
-  .login-container input[type="email"],
-  .login-container input[type="password"],
-  .login-container input[type="submit"] {
-    width: 100%; /* Largeur complète pour les champs */
-    padding: 12px; /* Padding intérieur */
-    margin: 10px 0; /* Espacement autour des champs */
-    border: 1px solid #ddd; /* Bordure grise */
-    border-radius: 10px; /* Coins arrondis */
-    box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur */
-    font-size: 16px; /* Taille de police */
-    width:auto;
-  }
-  
-  /* Style pour le bouton de soumission */
-  .login-container input[type="submit"] {
-    background-color: #6B2C1A; /* Couleur de fond du bouton */
-    color: white; /* Couleur du texte */
-    cursor: pointer; /* Curseur du pointeur pour indiquer que c'est cliquable */
-    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
-  }
-  
-  .login-container input[type="submit"]:hover {
-    background-color: #f0b85f; /* Couleur de fond au survol */
-  }
-  
-  /* Styles pour les textes et liens */
-  .login-container h1 {
-    font-size: 24px; /* Taille de police pour le titre */
-    text-align: center; /* Centre le texte */
-    margin-bottom: 20px; /* Marge inférieure */
-  }
-  
-  .login-container p {
-    text-align: center; /* Centre le texte */
-  }
-  
-  /* Media query pour les appareils de petite taille */
-  @media (max-width: 480px) {
-    .login-container {
-      padding: 15px; /* Espacement interne pour les petits écrans */
-    }
-  
-    .login-container h1 {
-      font-size: 22px; /* Ajustement de la taille du titre pour les petits écrans */
-    }
-  
-    .login-container input[type="submit"] {
-      padding: 10px; /* Ajuste le padding pour le bouton sur les petits écrans */
-      font-size: 14px; /* Ajustement de la taille de la police du bouton */
-    }
-  }
-  
-
-
-/* Pour les tablettes et petits écrans (max-width: 1024px) */
-@media screen and (max-width: 1024px) {
-    main {
-        width: 90%; /* Largeur du conteneur des annonces pour les tablettes */
-        margin: 0 auto; /* Centre le conteneur */
-    }
-
-    .card {
-        width: 70%; /* Ajustement de la largeur des cartes pour tablette */
-    }
-
-    .benefice1, .benefice2 {
-        width: 45%; /* Réduction de la largeur des cartes de bénéfices */
-    }
-
-    .avantages li {
-        width: 40%; /* Ajustement de la largeur des éléments d'avantages sur tablette */
-        padding: 40px; /* Réduction du padding */
-    }
-
-    nav ul {
-        flex-direction: row; /* Peut retourner à une ligne sur les tablettes */
-        justify-content: center; /* Centre les éléments horizontalement */
-    }
-}
-
-/* Styles à appliquer pour les écrans plus petits (max-width: 480px) */
-@media (max-width: 480px) {
-    .annonce {
-        width: 100%; /* Un par ligne pour les petits écrans */
-    }
-
-    .footer-links {
-        padding: 10px 0; /* Réduction de rembourrage */
-    }
-
-    .footer-links a {
-        font-size: 0.9em; /* Réduit la taille de police pour mobile */
-    }
-
-    h1 {
-        font-size: 1.5em; /* Ajuste la taille du titre principal */
-    }
-
-    h2 {
-        font-size: 1.2em; /* Ajuste la taille du titre secondaire */
-    }
-
-    .btn-reserver {
-        width: 80%; /* Ajuste la largeur pour les petits écrans */
-    }
-}
-
-/* Annonces Styles */
-.annonce-container {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux annonces de passer à la ligne */
-    justify-content: center; /* Centre les annonces */
-    width: 100%; /* Prend toute la largeur disponible */
-}
-
-/* Annonce */
-.annonce {
-    background-color: #fff;
-    border: solid 1px #ccc;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    width: calc(33.33% - 20px); /* Trois par ligne pour les écrans larges */
-    box-sizing: border-box; /* Inclut le padding et les marges dans la largeur */
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .annonce {
-        width: calc(50% - 20px); /* Deux par ligne pour les tablettes */
-    }
-
-.avantages ul {
-        display: flex;
-        padding: 0;
-        list-style-type: none;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-}
-}
-
-@media (max-width: 480px) {
-    .annonce {
-        width: 100%; /* Un par ligne pour les petits écrans */
-    }
-
-.avantages ul {
-        display: flex;
-        padding: 0;
-        list-style-type: none;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-}
 }

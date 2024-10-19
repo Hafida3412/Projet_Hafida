@@ -40,3 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // On ajoute la classe 'zoom' à l'image de départ pour afficher l'effet de zoom
     slides[currentSlide].querySelector('.carousel-image').classList.add('zoom');
 });
+
+$(document).ready(function() {
+    // Gestion du clic sur le bouton hamburger
+    $(".menu-icon").on("click", function() {
+        $(".nav-list").toggleClass("active"); // Ajout ou suppression de la classe active
+    });
+});

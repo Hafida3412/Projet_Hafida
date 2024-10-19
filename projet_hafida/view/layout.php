@@ -62,6 +62,9 @@
             </a>
             </div>
             <div id="nav-right">
+            <div id="menu-toggle" class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
                             <ul class="nav-list">
                                 <?php
                                 // Vérification si l'utilisateur est connecté
