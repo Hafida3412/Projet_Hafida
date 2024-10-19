@@ -133,17 +133,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="explications">
 <div class="benefice1">
-    <h2>Pourquoi opter pour le home-sitting pour votre chat</h2>
+    <h2 class="h2-benefice1">Pourquoi opter pour le home-sitting pour votre chat</h2>
+    <h2 class="h2-benefice1-mobile">Pourquoi opter pour le home-sitting?</h2>
     <ul>
-        <li>Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
-        <li>Bénéficie d'une présence rassurante et constante à la maison</li>
-        <li>Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
-    </ul>
+        <li class="li-benefice1">Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
+        <li class="li-benefice1-mobile">Continue de profiter de son environnement familier et apaisant</li>
+        <li class="li-benefice1">Bénéficie d'une présence rassurante et constante à la maison</li>
+        <li class="li-benefice1-mobile">Bénéficie d'une présence rassurante et constante à la maison</li>
+        <li class="li-benefice1">Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
+        <li class="li-benefice1-mobile">Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
+      </ul>
     <img src="public/img/catsitter.webp" alt="catsitter">
 </div>
 
 <div class="benefice2">
-    <h2>Les avantages du home-sitting pour vous</h2>
+    <h2 class="h2-benefice2">>Les avantages du home-sitting pour vous</h2>
+    <h2 class="h2-benefice2-mobile">Les avantages du home-sitting</h2>
     <ul>
         <li>Garde à domicile</li>
         <li>Sérénité de confier votre chat et votre maison à une personne de confiance</li>
@@ -154,7 +159,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <section class="temoignages">
-  <h2>Ce que nos utilisateurs disent de nous</h2>
+  <h2 class="h2-temoignages">Ce que nos utilisateurs disent de nous</h2>
   <div class="temoignages-container">
     <blockquote>
       <div class="avatar">

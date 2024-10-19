@@ -20,8 +20,9 @@ nav {
 
 /* Styles pour le menu hamburger */
 @media (max-width: 768px) {
-    #nav-left {
-        flex: 1; /* Prend tout l'espace disponible */
+    #nav-left img {
+        width: 80px;
+        height:80px;
     }
     
     .nav-list {
@@ -38,8 +39,13 @@ nav {
 
     /* Affichage du menu lorsque le bouton est cliqué */
     .nav-list.active {
-        display: flex; /* Montre le menu */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
     }
+    
 
     .menu-icon {
         display: block; /* Affiche le bouton hamburger sur mobile */
@@ -69,7 +75,19 @@ nav {
     padding: 10px;
 }
 
+.h2-benefice1,
+.h2-benefice2{
+    display: none;
+}
+.li-benefice1{
+    display: none;
+}
 
+.h2-temoignages {
+    text-align: center; /* Centre le texte horizontalement */
+    margin: 0; /* Optionnel : réinitialise la marge */
+    padding: 20px 0; /* Optionnel : ajoute de l'espace autour du titre */
+}
     .avantages ul {
         display: flex;
         padding: 0;
@@ -83,4 +101,8 @@ nav {
         margin-top: 20px;
         flex-direction: column;
     }
+form input{
+    font-size: 16px;
+}
+
 }
