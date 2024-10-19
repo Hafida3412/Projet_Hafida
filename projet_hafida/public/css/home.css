@@ -51,12 +51,6 @@ section {
   animation-delay: 1s; /* Délai d'attente avant l'apparition du texte */
 }
 
-
-
-.h2-benefice1-mobile,
-.h2-benefice2-mobile{
-  display:none;
-}
 .li-benefice1-mobile{
   display:none;
 }
@@ -407,3 +401,4 @@ section {
 #scrollUp:hover .fa-solid {
   color: #FFD700; /* Couleur dorée assez visible pour le survol de l'icône */
 }
+

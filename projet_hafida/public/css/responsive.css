@@ -71,23 +71,26 @@ nav {
         display: none;
     }
 
-.content {
+    .content {
     padding: 10px;
-}
+    }
 
-.h2-benefice1,
-.h2-benefice2{
+    .h2-benefice1{
     display: none;
-}
-.li-benefice1{
-    display: none;
-}
+    }
 
-.h2-temoignages {
+    .h2-benefice2{
+    display: none;
+    }
+    .li-benefice1{
+    display: none;  
+    }
+    .h2-temoignages {
     text-align: center; /* Centre le texte horizontalement */
     margin: 0; /* Optionnel : réinitialise la marge */
     padding: 20px 0; /* Optionnel : ajoute de l'espace autour du titre */
-}
+    }
+
     .avantages ul {
         display: flex;
         padding: 0;
@@ -102,12 +105,12 @@ nav {
         flex-direction: column;
     }
 
-form {
+    form {
     width:auto;
-}
+    }   
 
-form input{
+    form input{
     font-size: 16px;
-}
+    }
 
 }

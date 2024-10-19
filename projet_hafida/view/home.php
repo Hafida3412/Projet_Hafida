@@ -137,11 +137,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="h2-benefice1-mobile">Pourquoi opter pour le home-sitting?</h2>
     <ul>
         <li class="li-benefice1">Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
-        <li class="li-benefice1-mobile">Continue de profiter de son environnement familier et apaisant</li>
+        <li class="h2-benefice1-mobile">Continue de profiter de son environnement familier et apaisant.</li>
         <li class="li-benefice1">Bénéficie d'une présence rassurante et constante à la maison</li>
-        <li class="li-benefice1-mobile">Bénéficie d'une présence rassurante et constante à la maison</li>
+        <li class="h2-benefice1-mobile">Bénéficie d'une présence rassurante et constante à la maison</li>
         <li class="li-benefice1">Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
-        <li class="li-benefice1-mobile">Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
+        <li class="h2-benefice1-mobile">Conservation de ses habitudes et de ses repères.</li>
       </ul>
     <img src="public/img/catsitter.webp" alt="catsitter">
 </div>
