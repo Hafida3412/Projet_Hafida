@@ -51,9 +51,7 @@ section {
   animation-delay: 1s; /* Délai d'attente avant l'apparition du texte */
 }
 
-.welcome-text-mobile{
-  display:none;
-}
+
 
 .h2-benefice1-mobile,
 .h2-benefice2-mobile{
