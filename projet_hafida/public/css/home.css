@@ -402,3 +402,7 @@ section {
   color: #FFD700; /* Couleur dorée assez visible pour le survol de l'icône */
 }
 
+.welcome-text-mobile{
+  display:none;
+}
+

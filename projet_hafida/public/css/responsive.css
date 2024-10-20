@@ -1,21 +1,21 @@
 /* Styles pour les écrans de bureau */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px;
 }
 
 /* Masquer le menu par défaut pour mobile */
 .nav-list {
-    display: flex;
+display: flex;
 }
 
 /* Styles pour le bouton de menu hamburger */
 .menu-icon {
-    display: none; /* Cacher par défaut */
-    font-size: 24px;
-    cursor: pointer;
+display: none; /* Cacher par défaut */
+font-size: 24px;
+cursor: pointer;
 }
 
 /* Styles pour le menu hamburger */
@@ -82,9 +82,8 @@ nav {
     .h2-benefice2{
     display: none;
     }
-    .li-benefice1{
-    display: none;  
-    }
+
+
     .h2-temoignages {
     text-align: center; /* Centre le texte horizontalement */
     margin: 0; /* Optionnel : réinitialise la marge */
@@ -92,17 +91,17 @@ nav {
     }
 
     .avantages ul {
-        display: flex;
-        padding: 0;
-        list-style-type: none;
-        flex-direction: column;
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    flex-direction: column;
     }
     
     .card-container {
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
-        flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
     }
 
     form {

@@ -65,9 +65,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="welcome-title">BIENVENUE CHEZ MON CHAT</h1>
     <p class="welcome-text">Sur notre site chez mon chat, vous pouvez trouver des 
       propriétaires de félins qui cherchent quelqu'un pour s'occuper de leur animal 
-      pendant leur absence. <br>
+      pendant leur absence. 
       Cela vous permet de profiter de vacances à moindre coût en échange de quelques 
-      attentions pour leur chat. <br>
+      attentions pour leur chat. 
       N'hésitez pas à consulter les annonces disponibles et à contacter les propriétaires 
       pour organiser cette garde temporaire. <br>
       Bonnes vacances à vous !</p>
@@ -137,11 +137,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="h2-benefice1-mobile">Pourquoi opter pour le home-sitting?</h2>
     <ul>
         <li class="li-benefice1">Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
-        <li class="h2-benefice1-mobile">Continue de profiter de son environnement familier et apaisant.</li>
+        <li class="li-benefice1-mobile">Continue de profiter de son environnement familier et apaisant.</li>
         <li class="li-benefice1">Bénéficie d'une présence rassurante et constante à la maison</li>
-        <li class="h2-benefice1-mobile">Bénéficie d'une présence rassurante et constante à la maison</li>
+        <li class="li-benefice1-mobile">Bénéficie d'une présence rassurante et constante à la maison</li>
         <li class="li-benefice1">Conservation de ses habitudes et de ses repères (litière, gamelles, jouets...)</li>
-        <li class="h2-benefice1-mobile">Conservation de ses habitudes et de ses repères.</li>
+        <li class="li-benefice1-mobile">Conservation de ses habitudes et de ses repères.</li>
       </ul>
     <img src="public/img/catsitter.webp" alt="catsitter">
 </div>
