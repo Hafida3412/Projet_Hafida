@@ -67,9 +67,15 @@ cursor: pointer;
         font-size:30px;
     }
 
-    .welcome-text{
-        display: none;
-    }
+    .welcome-text {
+        display: none; /* Masquer pour mobile */
+      }
+      .welcome-text-mobile {
+        display: block; /* Affiche pour mobile */
+        opacity: 0; /* Opacité initiale à 0 */
+        animation: fade-in 2s forwards; /* Animation d'apparition */
+        animation-delay: 1s; /* Délai pour apparition */
+      }
 
     .content {
     padding: 10px;

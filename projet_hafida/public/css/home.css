@@ -51,6 +51,9 @@ section {
   animation-delay: 1s; /* Délai d'attente avant l'apparition du texte */
 }
 
+.welcome-text-mobile{
+  display:none;
+}
 .li-benefice1-mobile{
   display:none;
 }
@@ -402,7 +405,5 @@ section {
   color: #FFD700; /* Couleur dorée assez visible pour le survol de l'icône */
 }
 
-.welcome-text-mobile{
-  display:none;
-}
+
 
