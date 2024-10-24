@@ -91,6 +91,7 @@
      /* Note: ce style permet d'avoir un bouton qui se centre horizontalement et qui a un espace de 10px 
      entre le bouton et le contenu */
     border-radius: 5px; /* Coins arrondis du bouton */   
+    font-size: 16px;
 }
 
 /* Style du survol des boutons dans la section des réservations */
