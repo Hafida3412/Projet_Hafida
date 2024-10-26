@@ -3,24 +3,26 @@ namespace Controller;
 
 // Importation des classes nécessaires
 use App\Session; // Gestion des sessions utilisateur
-use App\AbstractController;// Classe de base pour le contrôle des routes
+use App\AbstractController;// Classe de base pour le contrôle des redirections
 use App\ControllerInterface;// Interface pour garantir que le contrôleur implémente certaines méthodes
 use Model\Managers\AnnonceManager;// Gestion des annonces
 use Model\Managers\ReserverManager;// Gestion des réservations
 
 // Déclaration de la classe ReservationsController qui étend AbstractController et implémente ControllerInterface
 class ReservationsController extends AbstractController implements ControllerInterface{
+// elle hérite de la classe AbstractController, ce qui signifie qu'elle bénéficie des méthodes et propriétés définies dans la classe parente.
+//ex: redirectTo peut être utilisé directement sans réécriture
 
 //METHODE DE RESERVATION D UNE ANNONCE
 
     public function reservation(){ // On vérifie que l'utilisateur est connecté
         
-        if (!Session::getUtilisateur()) {
+        if (!Session::getUtilisateur()) {//On appelle la méthode getUtilisateur de la classe Session
             // Redirection vers la page de connexion si l'utilisateur n'est pas connecté 
             $this->redirectTo("connexion", "login");
         }
         
-    // On récupère l'identifiant de l'annonce à partir des paramètres GET de l'URL, qui doit être un nombre entier.
+    // On récupère l'identifiant de l'annonce à partir du paramètre GET de l'URL, qui doit être un nombre entier.
         $annonceId = filter_input(INPUT_GET, 'annonceId', FILTER_VALIDATE_INT);
     // var_dump($annonceId); die;
     
@@ -36,21 +38,22 @@ class ReservationsController extends AbstractController implements ControllerInt
 
     // Vérification si le formulaire de réservation a été soumis
         if(isset($_POST["submitReservation"])){ //$_POST contient les données envoyées via la méthode POST à partir du formulaire de réservation
-        // On instancie un gestionnaire d'annonces pour vérifier si l'annonce est déjà réservée ($estValide)
-            $annonceManager = new AnnonceManager();//classe qui gère les opérations liées aux annonces
-            $estValide = $annonceManager->isAnnonceValide($annonceId);//méthode qui interroge la BDD pour déterminer si l'annonce est déjà réservée
+    // On crée une nouvelle instance de la classe annonceManager 
+        $annonceManager = new AnnonceManager();
+    // On appelle la méthode isAnnonceValide de l'objet $annonceManager.   
+        $estValide = $annonceManager->isAnnonceValide($annonceId);
+    // La méthode isAnnonceValide vérifie si l'annonce correspondante à l'id est réservée ou pas.
         //var_dump($estValide);die;
     
         // Si l'annonce est déjà réservée, on affiche un message d'erreur
             if($estValide){
-            // Message d'erreur si l'annonce est déjà réservée
+            // Message d'erreur temporaire si l'annonce est déjà réservée
                 Session::addFlash("error", "Cette annonce est déjà réservée.");
-                $this->redirectTo("location", "index");
                 return;
             }
 
-        // On filtre et nettoie les données fournies par l'utilisateur dans le formulaire de réservation.
-        // Chaque champ est filtré pour éviter des attaques XSS et assurer qu'il soit conforme au type attendu.
+    //Les données saisies par l'utilisateur dans le formulaire de réservation sont filtrées 
+    //et nettoyées pour prévenir les attaques XSS et garantir leur conformité avec les types de données attendus.
             $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_SPECIAL_CHARS);
             $prenom= filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_SPECIAL_CHARS);
             $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -63,12 +66,12 @@ class ReservationsController extends AbstractController implements ControllerInt
             $valide = 1; // Réservation validée
         //var_dump($numeroTelephone, $nbAdultes, $nbEnfants, $paiement, $question);die;
 
-    // Vérification de la validité des données fournies et on s'assure que toutes les données nécessaires sont fournies.
+    // On vérifie que les données fournies respectent les conditions prédéfinies
         if ($nom && $prenom && $numeroTelephone && $nbAdultes !== false && $nbAdultes > 0 && $nbEnfants !== false && $paiement)  {
-        //Cela garantit que nbAdultes est supérieur à 0 et que nbEnfants est valide (0 ou plus).
-        //Enregistrement des informations de la réservation dans la base de données via $ReserverManager
-            $reserverManager = new ReserverManager();// classe utilisée pour gérer les opérations liées à la réservation incluant l'ajout de données à la BDD
-            /* $result=*/ $reserverManager->add([//la méthode add prend un tableau associatif comme paramètre qui contient les info relatives à la réservation
+    //Enregistrement des informations de la réservation dans la base de données via $ReserverManager
+            $reserverManager = new ReserverManager();
+            /* $result=*/ $reserverManager->add([
+    //la méthode add prend un tableau associatif comme paramètre qui contient les info relatives à la réservation
             "nom" => $nom,// CLE => VALEUR (= Le nom de la personne effectuant la réservation)
             "prenom" => $prenom,
             "numeroTelephone" => $numeroTelephone,
