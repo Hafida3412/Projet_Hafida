@@ -33,11 +33,10 @@ class ReservationsController extends AbstractController implements ControllerInt
             $this->redirectTo("location", "index");
             return;
         }
-    
     //var_dump($annonceId);die;
 
     // Vérification si le formulaire de réservation a été soumis
-        if(isset($_POST["submitReservation"])){ //$_POST contient les données envoyées via la méthode POST à partir du formulaire de réservation
+        if(isset($_POST["submitReservation"])){ 
     // On crée une nouvelle instance de la classe annonceManager 
         $annonceManager = new AnnonceManager();
     // On appelle la méthode isAnnonceValide de l'objet $annonceManager.   
@@ -52,8 +51,8 @@ class ReservationsController extends AbstractController implements ControllerInt
                 return;
             }
 
-    //Les données saisies par l'utilisateur dans le formulaire de réservation sont filtrées 
-    //et nettoyées pour prévenir les attaques XSS et garantir leur conformité avec les types de données attendus.
+    //Les informations que l'utilisateur entre dans le formulaire de réservation sont vérifiées et nettoyées 
+    //pour éviter les attaques XSS et pour s'assurer qu'elles correspondent aux types de données attendus.
             $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_SPECIAL_CHARS);
             $prenom= filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_SPECIAL_CHARS);
             $numeroTelephone = filter_input(INPUT_POST, "numeroTelephone", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -67,7 +66,7 @@ class ReservationsController extends AbstractController implements ControllerInt
         //var_dump($numeroTelephone, $nbAdultes, $nbEnfants, $paiement, $question);die;
 
     // On vérifie que les données fournies respectent les conditions prédéfinies
-        if ($nom && $prenom && $numeroTelephone && $nbAdultes !== false && $nbAdultes > 0 && $nbEnfants !== false && $paiement)  {
+        if ($nom && $prenom && $numeroTelephone && $nbAdultes !== false && $nbAdultes > 0 && $nbEnfants !== false && $paiement){
     //Enregistrement des informations de la réservation dans la base de données via $ReserverManager
             $reserverManager = new ReserverManager();
             /* $result=*/ $reserverManager->add([
@@ -87,10 +86,8 @@ class ReservationsController extends AbstractController implements ControllerInt
 
         // Mise à jour du statut de l'annonce pour indiquer qu'elle est réservée
             $annonceManager->updateDisponibilite($annonceId);// appel à la méthode updateDisponibilite() de l'objet $annonceManager.
-                                                            //   prend un paramètre $annonceId, qui est l'identifiant de l'annonce 
         // Un message de succès est ajouté à la session
             Session::addFlash("success", "Votre réservation a été effectuée avec succès.");
-
         // Redirection vers la confirmation de réservation
             $this->redirectTo("reservations", "confirmation");
             return;
