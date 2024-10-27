@@ -81,22 +81,22 @@ $result = $ctrl->$action($id);
 Chargement de la page : Selon l'action effectuée, il charge la vue correspondante 
 dans un buffer et inclut le layout principal pour afficher la page finale.
 */
-if($action == "ajax"){ //si l'action était ajax
+if($action == "ajax"){ //si l'action était ajax cela signifie que l'on attend une réponse rapide sans recharger toute la page.
     //on affiche directement le return du contrôleur (càd la réponse HTTP sera uniquement celle-ci)
     echo $result;
 }
 else{
-    ob_start();//démarre un buffer (tampon de sortie)
-    $meta = $result['meta'];
+    ob_start();//démarre un buffer (tampon de sortie):capture tout ce qui est affiché dans un tampon au lieu de l'envoyer directement au navigateur.
+    $meta = $result['meta'];//Les informations sont extraites du tableau $result.
     $title = $result['title'];
     /* la vue s'insère dans le buffer qui devra être vidé au milieu du layout */
-    include($result['view']);
+    include($result['view']);//Le code inclut une vue spécifique (un fichier de template HTML ou PHP) définie dans $result['view']. Ce contenu est placé dans le tampon.
     /* je place cet affichage dans une variable */
-    $page = ob_get_contents();
+    $page = ob_get_contents();//Le contenu capturé (la vue) est stocké dans la variable $page à l'aide de ob_get_contents().
     /* j'efface le tampon */
-    ob_end_clean();
+    ob_end_clean();//ob_end_clean() vide le tampon sans l'afficher, préparant ainsi pour l'affichage du layout.
     /* j'affiche le template principal (layout) */
-    include VIEW_DIR."layout.php";
+    include VIEW_DIR."layout.php";//qui contient la structure globale de la page (cf $page dans le layout).
 }
 
 /*En résumé, ce fichier gère le routage des requêtes HTTP vers les contrôleurs, 
