@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="explications">
 <div class="benefice1">
-    <h2 class="h2-benefice1">Pourquoi opter pour le home-sitting pour votre chat</h2>
+    
     <h2 class="h2-benefice1-mobile">Pourquoi opter pour le home-sitting?</h2>
     <ul>
         <li class="li-benefice1">Continue de profiter de son environnement familier et apaisant, sans le stress du déplacement</li>
@@ -147,7 +147,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <div class="benefice2">
-    <h2 class="h2-benefice2">Les avantages du home-sitting pour vous</h2>
     <h2 class="h2-benefice2-mobile">Les avantages du home-sitting</h2>
     <ul>
         <li>Garde à domicile</li>
