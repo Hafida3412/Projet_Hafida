@@ -59,15 +59,17 @@ CREATE TABLE IF NOT EXISTS `avis` (
   CONSTRAINT `FK__utilisateur` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id_utilisateur`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.avis : ~7 rows (environ)
+-- Listage des données de la table projet_hafida.avis : ~8 rows (environ)
 INSERT INTO `avis` (`id_avis`, `dateAvis`, `commentaire`, `logement_id`, `utilisateur_id`) VALUES
 	(1, '2024-06-10 09:21:52', 'Nous avons passé un super séjour. Le logement est super confortable et bien situé.', 1, 3),
 	(2, '2024-06-10 09:23:15', 'Nous sommes très satisfaits de notre séjour. L\'hôte était disponible et son logement super', 2, 3),
 	(3, '2024-09-04 21:01:19', 'Le séjour s&#39;est très bien passé...L&#39;endroit est magnifique.', 3, 5),
-	(4, '2024-09-04 22:14:39', 'Je suis ravie de mon séjour', 4, 5),
-	(5, '2024-09-05 10:57:00', 'Très ravie de mon expérience', 1, 5),
+	(4, '2024-09-04 22:14:39', 'Je suis ravie de mon séjour', 10, 3),
+	(5, '2024-09-05 10:57:00', 'Très ravie de mon expérience', 1, 7),
 	(6, '2024-09-08 11:02:06', 'Très satisfait', 7, 5),
-	(7, '2024-09-08 12:53:16', 'Nous avons passé une semaine super! La mer à proximité, l&#39;endroit est bien situé. Chat trop mignon.', 7, 7);
+	(7, '2024-09-08 12:53:16', 'Nous avons passé une semaine super! La mer à proximité, l&#39;endroit est bien situé. Chat trop mignon.', 7, 7),
+	(8, '2024-10-27 14:53:39', 'Super expérience, très satisfait. Le chat était trop mignon, très calin, pas difficile...les propriétaires disponibles, on pouvait facilement les joindre par téléphone.', 1, 7),
+	(9, '2024-10-27 15:00:48', 'Très belle expérience, le chat était trop mignon, très calin, il adore jouer et qu&#39;on s&#39;occupe de lui. Les propriétaires étaient facilement joignables.', 8, 5);
 
 -- Listage de la structure de table projet_hafida. image
 CREATE TABLE IF NOT EXISTS `image` (
@@ -80,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   CONSTRAINT `FK_image_logement` FOREIGN KEY (`logement_id`) REFERENCES `logement` (`id_logement`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.image : ~20 rows (environ)
+-- Listage des données de la table projet_hafida.image : ~24 rows (environ)
 INSERT INTO `image` (`id_image`, `nomImage`, `altImage`, `logement_id`) VALUES
 	(1, '66d9f7254e3a84.68958559.jpg', 'Mulhouse', 3),
 	(2, '66d9f8f505ed79.79606379.jpg', 'Mulhouse', 3),
@@ -101,7 +103,11 @@ INSERT INTO `image` (`id_image`, `nomImage`, `altImage`, `logement_id`) VALUES
 	(23, '66df49758c5ee5.38135258.jpg', 'La Rochelle', 8),
 	(24, '66df49fc996700.65547571.jpg', 'La Rochelle', 8),
 	(26, '66df4c512df8f8.36007712.jpg', 'La Rochelle', 8),
-	(27, '66df4f5679f3c8.73749744.jpg', 'La Rochelle', 8);
+	(27, '66df4f5679f3c8.73749744.jpg', 'La Rochelle', 8),
+	(28, '671e4db8d9e1e1.11878908.jpeg', 'Illkirch', 16),
+	(29, '671e4e347773a7.84471205.jpg', 'Illkirch', 16),
+	(30, '671e4e80c383f3.61457786.jpg', 'Illkirch', 16),
+	(31, '671e5001695168.33621772.jpg', 'Illkirch', 16);
 
 -- Listage de la structure de table projet_hafida. logement
 CREATE TABLE IF NOT EXISTS `logement` (
@@ -154,11 +160,11 @@ CREATE TABLE IF NOT EXISTS `reserver` (
   CONSTRAINT `FK_reserver_utilisateur` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE SET NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.reserver : ~3 rows (environ)
+-- Listage des données de la table projet_hafida.reserver : ~2 rows (environ)
 INSERT INTO `reserver` (`utilisateur_id`, `annonce_id`, `nom`, `prenom`, `valide`, `numeroTelephone`, `nbAdultes`, `nbEnfants`, `paiement`, `question`, `id_reserver`) VALUES
 	(NULL, 12, 'Lemand', 'Edouard', 1, '0764432167', 2, 2, 'cb', 'NON', 12),
-	(5, 2, 'DURAND', 'Léa', 1, '0764432167', 1, 1, 'cb', 'non', 13),
-	(7, 1, 'DUPONT', 'MARC', 1, '0786874589', 2, 2, 'cb', 'NON', 14);
+	(7, 1, 'DUPONT', 'MARC', 1, '0786874589', 2, 2, 'cb', 'NON', 14),
+	(5, 12, 'DURAND', 'Léa', 1, '0987654321', 1, 3, 'cb', 'NON', 16);
 
 -- Listage de la structure de table projet_hafida. typelogement
 CREATE TABLE IF NOT EXISTS `typelogement` (
