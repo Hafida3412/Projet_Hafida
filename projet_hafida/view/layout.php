@@ -140,11 +140,17 @@
         </script>
         <script>
             $(document).ready(function(){
-                // Animation pour afficher et masquer les messages
+                // Lorsque le document est prêt, commence l'exécution du code à l'intérieur
+
+                // Animation pour afficher et masquer les messages:
+                // Sélectionne chaque élément avec la classe "message"
                 $(".message").each(function(){
+                    // Vérifie si le texte de l'élément n'est pas vide
                     if($(this).text().length > 0){
+                        // Si le texte existe, anime l'élément avec un effet de "glissement" vers le bas
                         $(this).slideDown(500, function(){
-                            $(this).delay(3000).slideUp(500)
+                            // Après que l'élément soit complètement visible, attend 3000 ms (3 secondes)
+                            $(this).delay(3000).slideUp(500)/// Puis anime l'élément avec un effet de "glissement" vers le haut
                         })
                     }
                 })
@@ -152,20 +158,28 @@
                 $(".delete-btn").on("click", function(){
                     return confirm("Etes-vous sûr de vouloir supprimer?")
                 })
-                 // Initialisation de l'éditeur TinyMCE
-                tinymce.init({
-                    selector: '.post',
-                    menubar: false,
-                    plugins: [
+                 // Configuration pour initialiser l'éditeur de texte TinyMCE sur une page web
+                tinymce.init({//pour initialiser TinyMCE avec des options spécifiées dans un objet JavaScript.
+                    selector: '.post',//tous les éléments avec la classe post seront transformés en éditeurs
+                    menubar: false,//Cette option désactive la barre de menu en haut de l'éditeur.
+                    plugins: [/*Cette section définit les plugins supplémentaires qui seront activés 
+                    dans l'éditeur. Les plugins cités permettent d'ajouter des fonctionnalités comme la gestion 
+                    des listes, l'insertion d'images, la recherche et le remplacement de texte, etc.*/
                         'advlist autolink lists link image charmap print preview anchor',
                         'searchreplace visualblocks code fullscreen',
                         'insertdatetime media table paste code help wordcount'
                     ],
-                    toolbar: 'undo redo | formatselect | ' +
+                    toolbar: /*Cette option spécifie les boutons qui apparaîtront sur la barre d'outils de l’éditeur. 
+                    Les boutons incluent les options pour annuler/rétablir des actions, le formatage du texte, 
+                    l'alignement, les listes, etc. */
+                    'undo redo | formatselect | ' +
                     'bold italic backcolor | alignleft aligncenter ' +
                     'alignright alignjustify | bullist numlist outdent indent | ' +
                     'removeformat | help',
-                    content_css: '//www.tiny.cloud/css/codepen.min.css'
+                    content_css:/*Cette option permet de chargé une feuille de style CSS externe pour styliser le contenu 
+                    à l'intérieur de l'éditeur. Cela peut aider à rendre l’apparence du contenu saisie similaire à sa 
+                    présentation finale. */ 
+                    '//www.tiny.cloud/css/codepen.min.css'
                 });
             })
         </script>

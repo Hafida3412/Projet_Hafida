@@ -65,9 +65,9 @@
     
         </main>
 
-        <script>
-    // Écouteur d'événement sur le champ de date de début
-    document.getElementById('dateDebut').addEventListener('change', function() {
+<script>
+        // Écouteur d'événement sur le champ de date de début
+        document.getElementById('dateDebut').addEventListener('change', function() {
         // Récupère la date sélectionnée
         var dateDebut = new Date(this.value);
         // Active le champ de date de fin
