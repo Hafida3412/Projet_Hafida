@@ -9,14 +9,18 @@ $annonces = $result["data"]['annonces'];
 <br>
 <!--Création du formulaire de recherche d'annonce par ville-->
 <form method="GET" action="index.php">
+    <!-- Champ caché pour spécifier le contrôleur à utiliser -->
     <input type="hidden" name="ctrl" value="location">
+    <!-- Champ caché pour spécifier l'action à effectuer -->
     <input type="hidden" name="action" value="rechercheAnnonce">
 
+    <!-- Étiquette pour le champ de ville -->
     <label for="ville">Rechercher par ville</label>
+    <!-- Champ de saisie pour entrer le nom de la ville -->
     <input type="text" name="ville" id="ville" placeholder="Entrez une ville">
+    <!-- Bouton pour soumettre le formulaire -->
     <button class="annonce-info" type="submit">Rechercher</button>
 </form>
-
 
     <h1>Consulter les annonces</h1>
    
@@ -40,14 +44,20 @@ foreach($annonces as $annonce){ //La boucle foreach parcourt chaque annonce et a
     //Il peut également supprimer une annonce s'il en est l'auteur en cliquant sur le bouton "Supprimer" après confirmation
     if (App\Session::getUtilisateur() && App\Session::getUtilisateur()->hasRole("ROLE_ADMIN")) { ?>
       <div class="button-admin">
+          <!-- Formulaire pour supprimer une annonce -->
           <form method="post" action="index.php?ctrl=location&action=supprimerAnnonce&id=<?php echo $annonce->getId(); ?>">
-              <button class="btn-delete" type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
+          <!-- Bouton de suppression avec confirmation -->   
+          <button class="btn-delete" type="submit" name="submitDelete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">Supprimer</button>
           </form>
           
           <form method="get" action="index.php" style="display:inline;">
+              <!-- Champ caché pour indiquer le contrôleur à utiliser -->
               <input type="hidden" name="ctrl" value="admin">
+              <!-- Champ caché pour spécifier l'action à réaliser, ici l'édition d'une annonce -->
               <input type="hidden" name="action" value="editAnnonce">
+              <!-- Champ caché pour transmettre l'identifiant unique de l'annonce à éditer -->
               <input type="hidden" name="id" value="<?php echo $annonce->getId(); ?>">
+               <!-- Bouton de soumission qui permet de lancer l'édition de l'annonce -->
               <button class="btn-edit" type="submit">Éditer</button>
           </form>
       </div>
