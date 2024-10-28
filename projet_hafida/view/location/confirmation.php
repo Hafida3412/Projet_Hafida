@@ -18,7 +18,7 @@ Prénom: <?= Session::getUtilisateur()->getPrenom() ?><br>
 <p>Si vous avez des questions ou des modifications à apporter à votre réservation, 
 veuillez nous contacter au plus tôt.</p> 
 <br>
-<p>Nous vous souhaitons un agréable séjour chez Chouchou!</p> 
+<p>Nous vous souhaitons un agréable séjour!</p> 
 <br>
 <p>L'équipe Chez mon Chat.</p>
 <br>
