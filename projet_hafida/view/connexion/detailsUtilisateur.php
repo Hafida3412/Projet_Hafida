@@ -40,8 +40,8 @@ $reservations = $result["data"]['reservations'];
 <div class="reservations">
 <?php
 
-if(isset($reservations) && $reservations){
-    foreach($reservations as $reservation){
+if(isset($reservations) && $reservations){//vérifie si la variable $reservations est définie et contient des données (=un tableau).
+    foreach($reservations as $reservation){//une boucle foreach est utilisée pour itérer sur chaque élément du tableau $reservations.
         // On affiche les détails de chaque réservation
         echo  
         "<p>"."<u>Ma réservation:</u>"."<br>". // Ajout des balises <u> pour souligner le texte
