@@ -133,8 +133,11 @@
     </div>
 </footer>
         </div>
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
+        <!-- Inclusion de la bibliothèque jQuery version 3.4.1 depuis le CDN de jQuery :
+         -- URL de la bibliothèque jQuery 
+         -- Hash pour la vérification de l'intégrité du fichier
+         -- Indique que les requêtes cross-origin sont autorisées -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous">
         </script>
@@ -142,7 +145,7 @@
             $(document).ready(function(){
                 // Lorsque le document est prêt, commence l'exécution du code à l'intérieur
 
-                // Animation pour afficher et masquer les messages:
+                // Animation pour afficher et masquer les messages/
                 // Sélectionne chaque élément avec la classe "message"
                 $(".message").each(function(){
                     // Vérifie si le texte de l'élément n'est pas vide
