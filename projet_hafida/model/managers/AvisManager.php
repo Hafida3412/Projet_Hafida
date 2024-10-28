@@ -7,9 +7,10 @@ use App\DAO;
 class AvisManager extends Manager{
 
     // on indique la classe POO et la table correspondante en BDD pour le manager concerné
-    protected $className = "Model\Entities\Avis";
-    protected $tableName = "avis";
+    protected $className = "Model\Entities\Avis"; //classe qui représente les avis
+    protected $tableName = "avis";// nom de la table dans la BDD
 
+    // Appelle le constructeur parent pour établir une connexion à la base de données
     public function __construct(){
         parent::connect();
     }
