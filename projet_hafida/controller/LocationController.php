@@ -13,7 +13,9 @@ use Model\Managers\ImageManager;
 use App\DAO; 
 
 class LocationController extends AbstractController implements ControllerInterface{
+
 // METHODE POUR LISTER TOUTES LES ANNONCES
+
 public function index($id = null) {
     // Création d'une instance de AnnonceManager pour gérer les annonces
     $annonceManager = new AnnonceManager();
@@ -29,19 +31,27 @@ public function index($id = null) {
     
     // Vérification que le résultat de countAll() est bien un entier
     if (!is_int($totalAnnonces)) {
+        /*Si $totalAnnonces n'est pas un entier, une exception est lancée.Elle envoie un message. 
+        L'exception est un objet de la classe Exception*/
         throw new \Exception("countAll() devait retourner un entier, mais a retourné: " 
-        . gettype($totalAnnonces));
+        . gettype($totalAnnonces));/*fonction qui renvoie le type de la variable $totalAnnonces
+        sous forme de chaîne, nous informe du type incorrect retourné par la fonction.*/
     }
 
     // Calcul du nombre total de pages nécessaires pour afficher toutes les annonces
-    $totalPages = ceil($totalAnnonces / $perPage);
+    $totalPages = ceil($totalAnnonces / $perPage);/*La fonction ceil() utilisée pour arrondir le résultat à l'entier supérieur le plus proche. */
 
     // Calcul de l'offset (décalage) pour la requête de recherche d'annonces
-    $offset = ($pageNum - 1) * $perPage;
+    //il indique quelle annonce est la première à afficher pour la page actuelle. Par exemple :
+    $offset = ($pageNum - 1) * $perPage;//Page 2:Offset=(2-1)*3=3 càd commencer à partir de la 4ème annonce.
 
      /* Récupération des annonces pour la page courante en utilisant un tri par date de création 
      et en appliquant l'offset et la limite*/
     $annonces = $annonceManager->findAll(["dateCreation", "DESC"], $offset, $perPage);
+    /*cette ligne appelle la méthode findAll() de l'objet $annonceManager avec les arguments suivants :
+    Tri par date de création en ordre descendant.
+    offset pour indiquer à partir de quelle annonce commencer à récupérer.
+    perPage pour spécifier le nombre d'annonces à récupérer.*/
 
     return [
         "view" => VIEW_DIR . "location/listAnnonces.php", // Chemin vers la vue des annonces
