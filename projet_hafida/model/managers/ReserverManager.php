@@ -16,7 +16,7 @@ class ReserverManager extends Manager{
     connexion à la base de données */    
     }
 
-//Méthode pour récupérer les réservations pour chaque utilisateur
+//METHODE POUR RECUPERER LES RESERVATIONS POUR CHAQUE UTILISATEUR
 public function findReservationsByUser($id_utilisateur){
 // Prépare une requête SQL pour sélectionner toutes les colonnes
 // de la table spécifiée dans $this->tableName
@@ -32,6 +32,8 @@ public function findReservationsByUser($id_utilisateur){
     );
 }
 
+
+//METHODE POUR SUPPRIMER DES DONNEES ASSOCIEES A UN UTILISATEUR IDENTIFIE PAR SON IDENTIFIANT (userId). 
 public function deleteByUserId($userId) {
     // Préparation de la requête SQL pour supprimer des enregistrements de la table spécifiée.
     // On utilise une clause WHERE pour supprimer uniquement les enregistrements correspondant à l'identifiant de l'utilisateur.
