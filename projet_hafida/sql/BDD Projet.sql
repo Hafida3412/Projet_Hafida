@@ -39,10 +39,10 @@ CREATE TABLE IF NOT EXISTS `annonce` (
 
 -- Listage des données de la table projet_hafida.annonce : ~5 rows (environ)
 INSERT INTO `annonce` (`id_annonce`, `logement_id`, `utilisateur_id`, `dateCreation`, `nbChat`, `dateDebut`, `dateFin`, `description`, `estValide`) VALUES
-	(1, 1, 1, '2024-06-09 13:15:48', 1, '2024-07-15', '2024-07-30', 'Jolie maison au coeur de la ville. Chat sociable, gourmand, n\'aime pas sortir.', 1),
-	(2, 2, 2, '2024-06-09 13:19:21', 2, '2024-08-01', '2024-08-15', 'Bel appartement haussmanien, spacieux et confortable. Garage.\r\nChat très sociable. Aime jouer et qu\'on s\'occupe de lui. Il n\'aime pas sortir. Il dort beaucoup.', 1),
+	(1, 1, 1, '2024-06-09 13:15:48', 1, '2024-07-15', '2024-07-30', 'Jolie maison au coeur de la ville. Chat sociable, gourmand, n\'aime pas sortir.', 0),
+	(2, 2, 2, '2024-06-09 13:19:21', 2, '2024-08-01', '2024-08-15', 'Bel appartement haussmanien, spacieux et confortable. Garage.\r\nChat très sociable. Aime jouer et qu\'on s\'occupe de lui. Il n\'aime pas sortir. Il dort beaucoup.', 0),
 	(10, 7, 5, '2024-09-08 11:59:35', 1, '2024-09-23', '2024-09-29', 'Grande maison, très spacieuse, avec vue sur la mer. Chat très sociable. Aime jouer et qu\'on s\'occupe de lui. Il n\'aime pas sortir. Il dort beaucoup.', 0),
-	(12, 8, 7, '2024-09-09 21:11:03', 1, '2024-09-16', '2024-09-22', 'Grande maison spacieuse avec 3 chambres. La mer est à 2km. Commerces et transports en commun à proximité. Chat très sociable.', 1),
+	(12, 8, 7, '2024-09-09 21:11:03', 1, '2024-09-16', '2024-09-22', 'Grande maison spacieuse avec 3 chambres. La mer est à 2km. Commerces et transports en commun à proximité. Chat très sociable.', 0),
 	(19, 16, 5, '2024-10-14 22:24:07', 1, '2024-10-18', '2024-10-25', 'Mon chat aime jouer et qu\'on s\'occupe de lui. Il n\'aime pas sortir. Il dort beaucoup.', 0);
 
 -- Listage de la structure de table projet_hafida. avis
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `avis` (
   CONSTRAINT `FK__utilisateur` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id_utilisateur`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table projet_hafida.avis : ~8 rows (environ)
+-- Listage des données de la table projet_hafida.avis : ~9 rows (environ)
 INSERT INTO `avis` (`id_avis`, `dateAvis`, `commentaire`, `logement_id`, `utilisateur_id`) VALUES
 	(1, '2024-06-10 09:21:52', 'Nous avons passé un super séjour. Le logement est super confortable et bien situé.', 1, 3),
 	(2, '2024-06-10 09:23:15', 'Nous sommes très satisfaits de notre séjour. L\'hôte était disponible et son logement super', 2, 3),
@@ -107,7 +107,15 @@ INSERT INTO `image` (`id_image`, `nomImage`, `altImage`, `logement_id`) VALUES
 	(28, '671e4db8d9e1e1.11878908.jpeg', 'Illkirch', 16),
 	(29, '671e4e347773a7.84471205.jpg', 'Illkirch', 16),
 	(30, '671e4e80c383f3.61457786.jpg', 'Illkirch', 16),
-	(31, '671e5001695168.33621772.jpg', 'Illkirch', 16);
+	(31, '671e5001695168.33621772.jpg', 'Illkirch', 16),
+	(32, '6720093cd1f412.93455917.jpg', 'Strasbourg', 1),
+	(33, '6720098f8df842.19052838.jpg', 'Strasbourg', 1),
+	(34, '672009e1771477.37201310.jpg', 'Strasbourg', 1),
+	(35, '67200a4edfed05.57497749.jpg', 'Strasbourg', 1),
+	(36, '67200bb3d8dc76.83145908.jpg', 'Vesoul', 2),
+	(37, '67200c0619d8b0.57023013.jpg', 'Vesoul', 2),
+	(38, '67200c4d4c3d85.79597497.jpg', 'Vesoul', 2),
+	(39, '67200cecaf7a27.89678246.jpg', 'Vesoul', 2);
 
 -- Listage de la structure de table projet_hafida. logement
 CREATE TABLE IF NOT EXISTS `logement` (
@@ -129,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `logement` (
 -- Listage des données de la table projet_hafida.logement : ~11 rows (environ)
 INSERT INTO `logement` (`id_logement`, `typeLogement_id`, `utilisateur_id`, `nbChambre`, `rue`, `CP`, `ville`, `image`) VALUES
 	(1, 1, 4, 4, 'rue Emile Mathis', '67000', 'Strasbourg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRejWjXOlNie6FTSAeZ2RJoyumDhGJV_fhlaw&s'),
-	(2, 2, 1, 3, 'rue du Chemin', '70000', 'Vesoul', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLKSrOL_x6rdXBh7i4bJ9o7NJXiK3RjuCK3g&s'),
+	(2, 2, 1, 3, 'rue du Chemin', '70000', 'Vesoul', 'https://images.pexels.com/photos/29120627/pexels-photo-29120627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
 	(3, 1, 4, 3, 'rue du Poitou', '68000', 'Mulhouse', 'https://images.pexels.com/photos/3555615/pexels-photo-3555615.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'),
 	(4, 1, 4, 4, 'rue des Platanes', '68000', 'Mulhouse', 'https://th.bing.com/th/id/R.21658bbd6bd48d461370b96c05580dba?rik=GFSJzRIkgsui5A&pid=ImgRaw&r=0'),
 	(5, 1, 4, 4, 'rue des Jonquilles', '70000', 'Vesoul', 'https://th.bing.com/th/id/R.2ba5d5204d04be664899c094a482327a?rik=Jk7ANqt4NAQBRA&riu=http%3a%2f%2fmedias.residences-immobilier.com%2farticles_RI%2fimages%2fPhoto_8489_679.jpg&ehk=i8Us4QINxY8MbmajIunoZuW6Mrr9%2ftV1JKCgAlOMPQE%3d&risl=&pid=ImgRaw&r=0'),
@@ -163,8 +171,7 @@ CREATE TABLE IF NOT EXISTS `reserver` (
 -- Listage des données de la table projet_hafida.reserver : ~2 rows (environ)
 INSERT INTO `reserver` (`utilisateur_id`, `annonce_id`, `nom`, `prenom`, `valide`, `numeroTelephone`, `nbAdultes`, `nbEnfants`, `paiement`, `question`, `id_reserver`) VALUES
 	(NULL, 12, 'Lemand', 'Edouard', 1, '0764432167', 2, 2, 'cb', 'NON', 12),
-	(7, 1, 'DUPONT', 'MARC', 1, '0786874589', 2, 2, 'cb', 'NON', 14),
-	(5, 12, 'DURAND', 'Léa', 1, '0987654321', 1, 3, 'cb', 'NON', 16);
+	(7, 1, 'DUPONT', 'MARC', 1, '0786874589', 2, 2, 'cb', 'NON', 14);
 
 -- Listage de la structure de table projet_hafida. typelogement
 CREATE TABLE IF NOT EXISTS `typelogement` (
