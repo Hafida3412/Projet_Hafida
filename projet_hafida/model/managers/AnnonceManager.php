@@ -84,8 +84,11 @@ class AnnonceManager extends Manager{
                 FROM ".$this->tableName."
                 WHERE id_annonce = :id AND estValide = 1";  // Vérification de l'état de l'annonce
     
-        return $this->getSingleScalarResult(
-            DAO::select($sql, ['id' => $annonceId], false)
+        return $this->getSingleScalarResult(/* est appelé pour récupérer un résultat unique de la requête 
+            (il retourne une seule valeur). */
+            DAO::select($sql, ['id' => $annonceId], false)/* exécute la requête SQL en passant le paramètre :id 
+            avec la valeur de $annonceId. La méthode select de la classe DAO exécute cette requête 
+            et retourne les résultats.*/
         ) == 1; // Retourne vrai si l'annonce est valide
     }
 
@@ -118,7 +121,9 @@ class AnnonceManager extends Manager{
             WHERE id_annonce = :id"; // Requête pour mise à jour d'une annonce
 
     // Exécution de la mise à jour
-    return DAO::update($sql, array_merge($data, ['id' => $id]));
+    return DAO::update($sql, array_merge($data, ['id' => $id]));/*La fonction array_merge garantit 
+    que les données envoyées à la base de données incluent également l'identifiant de l'enregistrement
+    à mettre à jour.*/
 }
 
 }
