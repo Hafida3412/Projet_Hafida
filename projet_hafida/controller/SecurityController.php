@@ -126,7 +126,8 @@ class SecurityController extends AbstractController{
     
             // Si l'utilisateur existe
                 if ($utilisateur) {
-                    $hash = $utilisateur->getPassword();
+                    $hash = $utilisateur->getPassword();//appelle la méthode getPassword() de l'objet $utilisateur.
+                    // getPassword retourne la version hachée du MDP
     
             // VERIFICATION DU MDP
             // On vérifie si le mot de passe fourni correspond au hachage stocké en utilisant la fonction password_verify
@@ -196,7 +197,7 @@ class SecurityController extends AbstractController{
         exit;
     }
 
-//CREATION DE LA FONCTION UPDATE INFO POUR MODIFIER LES INFOS PERSORNELLES
+//CREATION DE LA FONCTION UPDATE INFO POUR MODIFIER LES INFOS PERSONNELLES
     public function updateInfo() {
     //On vérifie si l'utilisateur est connecté
     if(Session::getUtilisateur()) {
@@ -305,14 +306,17 @@ public function resetPassword() {
         $confirmPassword = filter_input(INPUT_POST, "confirmPassword", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         // Vérification que les mots de passe correspondent
-        if ($newPassword && $confirmPassword) {
-            if ($newPassword === $confirmPassword) {
-                $userManager = new UtilisateurManager();
-                // Mise à jour du mot de passe
+        if ($newPassword && $confirmPassword) {// On vérifie si les 2 lignes sont bien définies
+            if ($newPassword === $confirmPassword) {// Comparaison des 2 MDP
+                $userManager = new UtilisateurManager();// On crée une instance de la classe UtilisateurManager
+                // Mise à jour/réinitialisation du mot de passe
+                /*Cette fonction prend deux informations :
+                L'id de l'utilisateur et le nouveau MDP, qui est sécurisé/chiffré grâce à la fonction password_hash*/
                 $userManager->updatePassword($utilisateur->getId(), password_hash($newPassword, PASSWORD_DEFAULT));
                 Session::addFlash("success", "Votre mot de passe a été réinitialisé avec succès!");
 
                 // Nettoyage de la session après réinitialisation
+                // Déconnexion de l'utilisateur
                 Session::setUtilisateur(null); 
                 header("Location: index.php?ctrl=security&action=login");
                 exit;
@@ -365,8 +369,6 @@ public function supprimerCompte() {
         "title" => "Confirmation de la suppression du compte"
     ];
 }
-
-
 }
 
     

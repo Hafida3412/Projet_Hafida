@@ -1,5 +1,5 @@
 <?php
-namespace Controller; // Déclaration du namespace pour organiser le cod
+namespace Controller; // Déclaration du namespace pour organiser le code
 
 use App\AbstractController; // Importation de la classe AbstractController
 use App\ControllerInterface; // Importation de l'interface ControllerInterface

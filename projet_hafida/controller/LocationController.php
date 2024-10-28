@@ -90,7 +90,7 @@ public function index($id = null) {
         $annonce = $annonceManager->findOneById($id); //on récupère l'annonce correspondant à l'identifiant passé en parametre 
     
         if (!$annonce) {
-            // Si l'annonce n'existe pas, vous pouvez gérer l'erreur en affichant un message ou en redirigeant
+            // Si l'annonce n'existe pas, message d'erreur et redirection
             Session::addFlash("error", "Annonce introuvable.");
             $this->redirectTo("location", "index");
             return; // important de sortir de la fonction après la redirection
@@ -113,7 +113,7 @@ public function index($id = null) {
     
         // On récupère les avis
         $avisManager = new AvisManager();
-        $avis = $avisManager->findAvisByLogement($logement->getId()); 
+        $avis = $avisManager->findAvisByLogement($logement->getId()); //Méthode dans AvisManager
 
         return [
             "view" => VIEW_DIR . "location/detailsAnnonce.php",
