@@ -106,7 +106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>Vous aimez les chats ?</h3>
       <p>
         Devenez pet-sitter et aidez les propriétaires tout en profitant de la compagnie de ces adorables félins. 
-        Parfait pour les amoureux des animaux cherchant à gagner un peu d'argent pendant leurs temps libres !
+        Parfait pour les amoureux des animaux!
       </p>
       <div class="button-container">
       <a href="index.php?ctrl=location&action=index" class="button">Consultez nos annonces</a>
