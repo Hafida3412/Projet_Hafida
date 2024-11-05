@@ -7,7 +7,7 @@ $reservations = $result["data"]['reservations'];
 <!--Informations de l'utilisateur-->
 <h1>Mon Compte</h1>
 <div class="utilisateur-info">
-    <p>Pseudo: <?= htmlspecialchars($utilisateur->getPseudo()) ?></p>
+    <p>Pseudo: <?= ($utilisateur->getPseudo()) ?></p>
     <p>Email: <?= htmlspecialchars($utilisateur->getEmail()) ?></p>
     <p>Nom: <?= htmlspecialchars($utilisateur->getNom()) ?></p>
     <p>Prénom: <?= htmlspecialchars($utilisateur->getPrenom()) ?></p>
@@ -19,7 +19,7 @@ $reservations = $result["data"]['reservations'];
 <!-- Formulaire de modification des données personnelles -->
 <div class="utilisateur-info">
 <form method="post" action="index.php?ctrl=security&action=updateInfo">
-    <input type="text" name="pseudo" value="<?= htmlspecialchars($utilisateur->getPseudo()) ?>" required><br>
+    <input type="text" name="pseudo" value="<?= ($utilisateur->getPseudo()) ?>" required><br>
             
             <label for="email">Votre nouvel Email:</label>
             <input type="email" name="email" value="<?= htmlspecialchars($utilisateur->getEmail()) ?>"><br>

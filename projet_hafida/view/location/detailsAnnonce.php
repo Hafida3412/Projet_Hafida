@@ -15,7 +15,7 @@ $images = $result["data"]['images']; // On récupère les images
 <div class="bg_details">
 <div class="annonce-info">
     <!-- Affichage des informations de l'annonce -->
-    <h2>Annonce de <?= htmlspecialchars($annonce->getUtilisateur()->getPseudo()) ?></h2>
+    <h2>Annonce de <?=($annonce->getUtilisateur()->getPseudo()) ?></h2>
         <p><strong>Nb de chats à garder:</strong> <?= $annonce->getNbChat() ?></p>
         <p><strong>Date de début:</strong> <?= date('d-m-Y', strtotime($annonce->getDateDebut())) ?></p>
         <p><strong>Date de fin:</strong> <?= date('d-m-Y', strtotime($annonce->getDateFin())) ?></p>
